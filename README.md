@@ -1,21 +1,19 @@
-# Website for STA 221 at Duke University
+# Website for 210 at Duke University
 
-# Fall 2024
+# Spring 2025
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/96cad683-cf19-4c47-ba1c-00ea6c56c8ea/deploy-status)](https://app.netlify.com/sites/sta221-fa24/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/30eccc27-fc5e-4bb3-b9c7-4daab3b0c833/deploy-status)](https://app.netlify.com/sites/sta210-sp25/deploys)
 
-:link: [sta210-fa24.netlify.app](https://sta210-fa24.netlify.app/)
+:link: [sta210-sp25.netlify.app](https://sta210-sp25.netlify.app)
 
 ## Colors
 
--   primary color: #407E99
+-   primary color: #338EA0
 -   main accent: #871d89
 
 ## Attribution
 
 This website is design is based on the [STA 210 Spring 2022 website](https://sta210-s22.github.io/website/), and the design of the schedule page is adapted from [STA 199 Fall 2022](https://sta199-f22-1.github.io/). Both sites are by Dr. Mine Çetinkaya-Rundel.
-
-Content is based on [STA 210 Fall 2023](https://sta210-fa21.netlify.app) taught by Dr. Maria Tackett, [STA 221 Fall 2023](https://www2.stat.duke.edu/courses/Fall23/sta211.01/course-schedule.html) taught by Dr. Miheer Dewaskar, and [STA 221 Spring 2023](https://www2.stat.duke.edu/courses/Spring23/sta211.01/) taught by Dr. Yue Jiang.
 
 <hr>
 
