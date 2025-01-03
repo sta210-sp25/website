@@ -3,17 +3,17 @@ project:
 
 website:
   page-navigation: true
-  title: "STA 221 - Fall 2024"
-  description: "Homepage for STA 221 - Regression Analysis: Theory and Applications at Duke University, Fall 2023"
-  site-url: https://sta221-fa24.netlify.app
+  title: "STA 210 - Spring 2025"
+  description: "Homepage for STA 210 - Regression Analysis at Duke University"
+  site-url: https://sta210-sp25.netlify.app
 
-  repo-url: https://github.com/sta221-fa24/website
+  repo-url: https://github.com/sta210-sp25/website
   repo-actions: [issue]
   
   page-footer:
     background: "#497E99"
     left: |
-      &copy; Copyright 2024, Maria Tackett
+      &copy; Copyright 2025, Maria Tackett
     right: |
       This site is built with [Quarto](https://quarto.org/)
 
@@ -23,7 +23,7 @@ website:
     align: center
     tools: 
       - icon: github
-        href: https://github.com/sta221-fa24
+        href: https://github.com/sta210-sp25
         text: "GitHub organization"
       - icon: code-square
         href: https://cmgr.oit.duke.edu/containers
@@ -48,8 +48,6 @@ website:
         text: Support
       - href: index.qmd
         text: Schedule 
-      - href: links.qmd
-        text: Useful links
       - section: Computing
         contents: 
         - href: computing-access.qmd
@@ -68,6 +66,8 @@ website:
           text: HW 03
         - href: hw/hw-04.qmd
           text: HW 04
+        - href: hw/hw-05.qmd
+          text: HW 05
         - href: hw/stats-experience.qmd
           text: Statistics experience
       - section: Labs
@@ -90,12 +90,12 @@ website:
           text: Instructions
         - href: project-tips.qmd
           text: Tips + resources
-      - href: https://duke.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=ccfa023a-c78c-4254-93ea-b1d80116d1dc
-        text: Lecture recordings
-      - href: math-rules.qmd
-        text: Math rules
-      - href: exam-02-practice.qmd
-        text: Exam 02 Practice
+  #    - href: https://duke.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=ccfa023a-c78c-4254-93ea-b1d80116d1dc
+  #      text: Lecture recordings
+      - href: links.qmd
+        text: Useful links
+      - href: https://forms.office.com/r/RPkWfBB4vf
+        text: Lecture recording request
         
 
 format:

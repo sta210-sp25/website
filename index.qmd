@@ -1,5 +1,5 @@
 ---
-title: "STA 221 - Regression Analysis: Theory and Applications"
+title: "STA 210 - Regression Analysis"
 navbar: false
 editor: visual
 freeze: false
@@ -16,7 +16,7 @@ library(googlesheets4)
 library(gt)
 library(tidyverse)
 gs4_deauth()
-d <- read_sheet("https://docs.google.com/spreadsheets/d/16bxgvmXj-9jpqmo5GW7f2Js1P4a_rhLN96mYdjHHIVU/edit?usp=sharing", sheet = "Sheet1")
+d <- read_sheet("https://docs.google.com/spreadsheets/d/1kWfz9VhxfRXgCNHW1Q0t1CXsPAnww4WTO5COmQsSGmE/edit?usp=sharing", sheet = "Sheet1")
 ```
 
 ::: column-screen-right
@@ -81,14 +81,14 @@ d |>
     }
   ) |>
   fmt_date(date, date_style = 30) |>
-  sub_missing(columns = c(date, topic, notes), missing_text = "") |>
+  sub_missing(columns = c(date, topic, due), missing_text = "") |>
   cols_align(
     align = "center", 
     columns = c(week, dow, prepare, slides, ae, hw, lab,project)
     ) |>
   cols_align(
     align = "left", 
-    columns = c(date, topic, notes)
+    columns = c(date, topic, due)
     ) |>
   tab_style(
     style = cell_borders(
