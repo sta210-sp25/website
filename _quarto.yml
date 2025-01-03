@@ -29,13 +29,13 @@ website:
         href: https://cmgr.oit.duke.edu/containers
         text: "RStudio Containers"
       - icon: chat-dots-fill
-        href: https://edstem.org/us/courses/62513/discussion/
+        href: https://edstem.org/us/courses/70992/discussion/
       - icon: check-square-fill
         menu:
           - text: Canvas
-            url: https://canvas.duke.edu/courses/38867
+            url: https://canvas.duke.edu/courses/47067
           - text: Gradescope
-            url: https://www.gradescope.com/courses/829034
+            url: https://www.gradescope.com/courses/938130
     style: "docked"
     search: true
     collapse-level: 1
