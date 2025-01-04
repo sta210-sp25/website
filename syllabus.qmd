@@ -18,24 +18,26 @@ format:
 
 ### Teaching team
 
-+---------------------+-----------------+--------------------------------+
-| Name                | Role            | Office Hours                   |
-+=====================+=================+================================+
-| Prof. Maria Tackett | Instructor      | *or by appointment*            |
-+---------------------+-----------------+--------------------------------+
-| Sylvia Vincent      | Head TA\        |                                |
-|                     | Lab 01L leader  |                                |
-+---------------------+-----------------+--------------------------------+
-| Ishrit Gupta        | Lab 02L leader  |                                |
-+---------------------+-----------------+--------------------------------+
-| Kareena Legare      | Lab 01L helper  |                                |
-+---------------------+-----------------+--------------------------------+
-|                     |                 |                                |
-+---------------------+-----------------+--------------------------------+
++---------------------+----------------+------------------------------+
+| Name                | Role           | Office Hours                 |
++=====================+================+==============================+
+| Prof. Maria Tackett | Instructor     | *or by appointment*          |
++---------------------+----------------+------------------------------+
+| Sylvia Vincent      | Head TA\       |                              |
+|                     | Lab 01L leader |                              |
++---------------------+----------------+------------------------------+
+| Ishrit Gupta        | Lab 02L leader |                              |
++---------------------+----------------+------------------------------+
+| Kareena Legare      | Lab 01L helper |                              |
++---------------------+----------------+------------------------------+
+|                     |                |                              |
++---------------------+----------------+------------------------------+
 
 ## Course description
 
-\[UPDATE\]
+In STA 210, students will learn how linear and logistic regression models are used to explore multivariable relationships and apply these methods to answer relevant and engaging questions using a data-driven approach. Students will develop computing skills to implement a reproducible data analysis workflow and gain experience communicating statistical results. Throughout the semester, students will work on a team project where they will develop a research question, answer it using methods learned in the course, and share results through a written report and presentation.
+
+Topics include applications of linear and logistic regression, interpretation, diagnostics, model selection, and model assessment. Students will gain experience using the computing tools R and GitHub to analyze real-world data from a variety of fields. This class emphasizes data analysis over mathematical theory.
 
 ### Prerequisites
 
