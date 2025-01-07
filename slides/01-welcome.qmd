@@ -6,15 +6,15 @@ date-format: "MMM DD, YYYY"
 footer: "[🔗 STA 210 - Spring 2025](https://sta210-sp25.netlify.app)"
 logo: "../images/logo.png"
 format: 
-  html: default
-  revealjs:
+  revealjs: 
     theme: slides.scss
     multiplex: false
     transition: fade
     slide-number: true
     incremental: false 
     chalkboard: true
-    output-file: 01-welcome-slides.html
+  html: 
+    output-file: 01-welcome-notes.html
 execute:
   freeze: auto
   echo: true
@@ -35,32 +35,30 @@ bibliography: references.bib
     -   Statistician at Capital One
     -   PhD in Statistics from University of Virginia
     -   Assistant Professor of the Practice, Department of Statistical Science at Duke
--   Work focuses on statistics education and sense of belonging in introductory math and statistics classes
+-   Work focuses on statistics education, curriculum design, and sense of belonging in introductory math and statistics classes
 -   Co-leader of the Bass Connections team Mental Health and the Justice System in Durham County
--   Mom of 19-month-old twins 🙂
+-   Mom of 2-year-old twins 🙂
 :::
 
 ------------------------------------------------------------------------
 
 ## Teaching Assistants (TAs)
 
--   Kat Husar (PhD): Head TA + Lab 02 leader
+-   Sylvia Vincent (PhD): Head TA + Lab leader
 
--   Jon Campbell (MS): Lab 01 leader
+-   Ishrit Gupta (UG): Lab 02 helper
 
--   Ishrit Gupta (UG): Lab 01 helper
-
--   Alan Wang (UG): Lab 02 helper
+-   Kareena Legare (UG): Lab 01 helper
 
 ## Check-in on Ed Discussion!
 
 ::: question
 Click on the link or scan the QR code to answer the Ed Discussion poll
 
-<https://edstem.org/us/courses/62513/discussion/625046>
+<https://edstem.org/us/courses/70992/discussion/713771>
 
 <center>\
-![](images/01/ed-discussion-qr-lec-01.png){width="30%"}</center>
+![](images/01/ed-discussion-qr-code.png){width="30%"}</center>
 :::
 
 ## Topics
@@ -69,7 +67,7 @@ Click on the link or scan the QR code to answer the Ed Discussion poll
 
 -   Syllabus activity
 
--   Reproducibility
+-   Data exploration (time permitting)
 
 # Regression Analysis
 
@@ -91,7 +89,7 @@ Source: ChatGPT (with modification)
 
 </div>
 
-## Example: Rent vs. commute time
+## Example: Rent vs. commute time <!-- update example-->
 
 [New Yorkers Will Pay \$56 A Month To Trim A Minute Off Their Commute](https://fivethirtyeight.com/features/new-yorkers-will-pay-56-a-month-to-trim-a-minute-off-their-commute/)
 
@@ -129,57 +127,38 @@ y_n
 \end{bmatrix}
 $$
 
-# STA 221
+# STA 210
 
-## What is STA 221?
+## What is STA 210?
 
-<br>
+Learn how to use linear and and logistic regression models to analyze multivariable relationships and answer questions about real-world phenomena using a data-driven approach.
 
-:::::: columns
-::: {.column width="40%"}
-<center>
+This course emphasizes application over mathematical theory.
 
-<h2><font color="#993399"> STA 210 </font></h2>
+**Pre-requisites**
 
-Application
+100-level Statistical Science course or Statistical Science 230, 231, or 240L
 
-</center>
+. . .
+
+::: callout-note
+If you are interested in the theoretical aspects of regression and/or becoming a statistics major, STA 221 - Regression Analysis: Theory and Applications may be a better fit. Come talk with me after class!
 :::
-
-::: {.column width="10%"}
-<center>
-
-<h2><font color="#993399">+</font></h2>
-
-</center>
-:::
-
-::: {.column width="40%"}
-<center>
-
-<h2><font color="#993399">STA 211</font></h2>
-
-Theory
-
-</center>
-:::
-::::::
-
-<br>
-
-**Prerequisites:** Introductory statistics or probability course [**and**]{.underline} linear algebra
-
-**Recommended corequisite:** Probability course at Duke
 
 ## Course learning objectives {.midi}
 
 By the end of the semester, you will be able to...
 
--   analyze data to explore real-world multivariable relationships.
--   fit, interpret, and draw conclusions from linear and logistic regression models.
+-   analyze real-world data to answer questions about multivariable relationships.
+
+-   use R to fit and evaluate linear and logistic regression models.
+
+-   assess whether a proposed model is appropriate and describe its limitations.
+
 -   implement a reproducible analysis workflow using R for analysis, Quarto to write reports and GitHub for version control and collaboration.
--   explain the mathematical foundations of linear and logistic regression.
+
 -   effectively communicate statistical results to a general audience.
+
 -   assess the ethical considerations and implications of analysis decisions.
 
 ## Course topics {.midi}
@@ -191,11 +170,11 @@ By the end of the semester, you will be able to...
 
 -   Coefficient estimation and interpretation
 -   Prediction
+-   Inference
 -   Model assessment
--   Matrix representation of regression
--   Estimators
--   Model conditions and diagnostics
--   Different types of predictor variables
+-   Model assumptions and diagnostics
+-   Different types of predictors
+-   Model comparison + cross validation
 :::
 ::::
 
@@ -207,6 +186,7 @@ By the end of the semester, you will be able to...
 -   Prediction
 -   Model assessment
 -   Inference
+-   Multinomial logistic regression
 :::
 
 ::: {.fragment fragment-index="3"}
@@ -223,15 +203,16 @@ By the end of the semester, you will be able to...
 
 ## Course toolkit {.midi}
 
--   **Website**: <https://sta221-fa24.netlify.app>
+-   **Website**: <https://sta210-sp25.netlify.app>
     -   Central hub for the course!
     -   **Tour of the website**
--   **Canvas**: <https://canvas.duke.edu/courses/38867>
+-   **Canvas**: <https://canvas.duke.edu/courses/47067>
+    -   Office hours
     -   Gradebook
     -   Announcements
     -   Gradescope
     -   Ed Discussion
--   **GitHub:** [https://github.com/sta221-fa24](github.com/sta221-fa24)
+-   **GitHub:** [https://github.com/sta210-sp25](github.com/sta210-sp25)
     -   Distribute assignments
     -   Platform for version control and collaboration
 
@@ -262,7 +243,7 @@ By the end of the semester, you will be able to...
 
 -   Facilitates version control and collaboration
 
--   All work in [STA 221 course organization](https://github.com/sta221-fa24)
+-   All work in [STA 210 course organization](https://github.com/sta210-sp25)
 :::
 :::::
 :::::::::
@@ -301,59 +282,55 @@ It is my intent that students from all diverse backgrounds and perspectives be w
 
 ## Syllabus activity assignments
 
--   Group 1: [What to expect in lectures and labs](https://sta221-fa24.netlify.app/syllabus#lectures-and-labs)
+-   Group 1: [What to expect in the course](https://sta210-sp25.netlify.app/syllabus#what-to-expect-in-the-course)
 
--   Group 2: [Homework and lab assignments](https://sta221-fa24.netlify.app/syllabus#labs)
+-   Group 2: [Homework and lab assignments](https://sta210-sp25.netlify.app/syllabus#labs)
 
--   Group 3: [Exams and project](https://sta221-fa24.netlify.app/syllabus#exams)
+-   Group 3: [Exams Project, Participation](https://sta210-sp25.netlify.app/syllabus#exams)
 
--   Group 4: [Participation (Application exercises + teamwork)](https://sta221-fa24.netlify.app/syllabus#participation-application-exercises-teamwork)
+-   Group 4: [Academic honesty (except AI policy)](https://sta210-sp25.netlify.app/syllabus#academic-honesty)
 
--   Group 5: [Academic honesty (except AI policy)](https://sta221-fa24.netlify.app/syllabus#academic-honesty)
+-   Group 5: [Artificial intelligence policy](https://sta210-sp25.netlify.app/syllabus#academic-honesty)
 
--   Group 6: [Artificial intelligence policy](https://sta221-fa24.netlify.app/syllabus#academic-honesty)
+-   Group 6:[Late work policy and waiver for extenuating circumstances](https://sta210-sp25.netlify.app/syllabus#late-work-policy)
 
--   Group 7: [Late work policy and waiver for extenuating circumstances](https://sta221-fa24.netlify.app/syllabus#attendance-policy)
+-   Group 7: [Attendance and lecture recording request](https://sta210-sp25.netlify.app/syllabus#attendance-policy)
 
--   Group 8: [Attendance and lecture recording request](https://sta221-fa24.netlify.app/syllabus#late-work-policy)
-
--   Group 9: [Getting help in the course](https://sta221-fa24.netlify.app/syllabus#getting-help-in-the-course)
+-   Group 8: [Getting help in the course](https://sta210-sp25.netlify.app/syllabus#getting-help-in-the-course)
 
 ## Syllabus activity report out
 
 ::: incremental
--   Group 1: [What to expect in lectures and labs](https://sta221-fa24.netlify.app/syllabus#lectures-and-labs)
+-   Group 1: [What to expect in the course](https://sta210-sp25.netlify.app/syllabus#what-to-expect-in-the-course)
 
--   Group 2: [Homework and lab assignments](https://sta221-fa24.netlify.app/syllabus#labs)
+-   Group 2: [Homework and lab assignments](https://sta210-sp25.netlify.app/syllabus#labs)
 
--   Group 3: [Exams and project](https://sta221-fa24.netlify.app/syllabus#exams)
+-   Group 3: [Exams Project, Participation](https://sta210-sp25.netlify.app/syllabus#exams)
 
--   Group 4: [Participation (Application exercises + teamwork)](https://sta221-fa24.netlify.app/syllabus#participation-application-exercises-teamwork)
+-   Group 4: [Academic honesty (except AI policy)](https://sta210-sp25.netlify.app/syllabus#academic-honesty)
 
--   Group 5: [Academic honesty (except AI policy)](https://sta221-fa24.netlify.app/syllabus#academic-honesty)
+-   Group 5: [Artificial intelligence policy](https://sta210-sp25.netlify.app/syllabus#academic-honesty)
 
--   Group 6: [Artificial intelligence policy](https://sta221-fa24.netlify.app/syllabus#academic-honesty)
+-   Group 6:[Late work policy and waiver for extenuating circumstances](https://sta210-sp25.netlify.app/syllabus#late-work-policy)
 
--   Group 7: [Late work policy and waiver for extenuating circumstances](https://sta221-fa24.netlify.app/syllabus#late-work-policy)
+-   Group 7: [Attendance and lecture recording request](https://sta210-sp25.netlify.app/syllabus#attendance-policy)
 
--   Group 8: [Attendance and lecture recording request](https://sta221-fa24.netlify.app/syllabus#late-work-policy)
-
--   Group 9: [Getting help in the course](https://sta221-fa24.netlify.app/syllabus#getting-help-in-the-course)
+-   Group 8: [Getting help in the course](https://sta210-sp25.netlify.app/syllabus#getting-help-in-the-course)
 :::
 
 ## Grading
 
-| Category                         | Percentage |
-|----------------------------------|------------|
-| Homework                         | 25%        |
-| Final project                    | 15%        |
-| Lab                              | 15%        |
-| Exam 01                          | 20%        |
-| Exam 02                          | 20%        |
-| Participation (AEs and teamwork) | 5%         |
-| Total                            | 100%       |
+| Category                       | Percentage |
+|--------------------------------|------------|
+| Homework                       | 30%        |
+| Final project                  | 15%        |
+| Labs                           | 10%        |
+| Exam 01                        | 20%        |
+| Exam 02                        | 20%        |
+| Participation (AEs + Teamwork) | 5%         |
+| Total                          | 100%       |
 
-## Five tips for success in STA 221
+## Five tips for success in STA 210
 
 1.  Complete all the preparation work before class.
 
@@ -367,132 +344,16 @@ It is my intent that students from all diverse backgrounds and perspectives be w
 
 # Questions?
 
-Raise your hand or post under the Lectures channel on Ed Discussion.
+# Let's look at data!
 
-# Reproducible workflow
-
-## Reproducibility checklist
-
-::: question
-What does it mean for an analysis to be reproducible?
+::: appex
+📋 [sta210-sp25.netlify.app/ae/ae-01-movies.html](https://sta210-sp25.netlify.app/ae/ae-01-movies.html)
 :::
 
-. . .
+## Looking ahead
 
-**Near term goals**:
+-   Labs start on Monday, January 13
 
-✔️ Can the tables and figures be exactly reproduced from the code and data?
+-   Review [syllabus](https://sta210-sp25.netlify.app/syllabus)
 
-✔️ Does the code actually do what you think it does?
-
-✔️ In addition to what was done, is it clear *why* it was done?
-
-. . .
-
-**Long term goals**:
-
-✔️ Can the code be used for other data?
-
-✔️ Can you extend the code to do other things?
-
-## Why is reproducibility important?
-
--   Results produced are more reliable and trustworthy [@ostblom2022]
-
--   Facilitates more effective collaboration [@ostblom2022]
-
--   Contributing to science, which builds and organizes knowledge in terms of testable hypotheses [@alexander2023]
-
--   Possible to identify and correct errors or biases in the analysis process [@alexander2023]
-
-## Toolkit
-
--   **Scriptability** $\rightarrow$ R
-
--   **Literate programming** (code, narrative, output in one place) $\rightarrow$ Quarto
-
--   **Version control** $\rightarrow$ Git / GitHub
-
-## R and RStudio
-
--   R is a statistical programming language
-
--   RStudio is a convenient interface for R (an integrated development environment, IDE)
-
-![Source: Statistical Inference via Data Science](images/01/r_vs_rstudio_1.png){fig-align="center"}
-
-------------------------------------------------------------------------
-
-## RStudio IDE
-
-![](images/01/rstudio-panes.png){fig-align="center"}
-
-## Quarto
-
--   Fully reproducible reports -- the analysis is run from the beginning each time you render
-
--   Code goes in chunks and narrative goes outside of chunks
-
--   Visual editor to make document editing experience similar to a word processor (Google docs, Word, Pages, etc.)
-
-## Quarto
-
-![](images/01/quarto.png){fig-align="center"}
-
-## How will we use Quarto?
-
--   Every application exercise and assignment is written in a Quarto document
-
--   You'll have a template Quarto document to start with
-
--   The amount of scaffolding in the template will decrease over the semester
-
-# Version control with git and GitHub
-
-## What is versioning?
-
-<br>
-
-![](images/01/lego-steps.png){fig-align="center"}
-
-------------------------------------------------------------------------
-
-## What is versioning?
-
-with human readable messages
-
-![](images/01/lego-steps-commit-messages.png){fig-align="center"}
-
-------------------------------------------------------------------------
-
-## Why do we need version control?
-
-::::: columns
-::: {.column width="50%"}
-![](images/01/phd_comics_vc.gif){fig-align="center"}
-:::
-
-::: {.column width="50%"}
-Provides a clear record of how the analysis methods evolved. This makes analysis auditable and thus more trustworthy and reliable. [@ostblom2022]
-:::
-:::::
-
-## git and GitHub
-
-![](images/01/git-github.png){fig-align="center"}
-
--   **git** is a version control system -- like "Track Changes" features from Microsoft Word.
--   **GitHub** is the home for your git-based projects on the internet (like DropBox but much better).
--   There are a lot of git commands and very few people know them all. 99% of the time you will use git to add, commit, push, and pull.
-
-## This week
-
--   Complete [Lab 00 tasks](https://sta221-fa24.netlify.app/labs/lab-00)
-
--   Review [syllabus](https://sta221-fa24.netlify.app/syllabus)
-
--   Complete reading to prepare for Thursday's lecture
-
--   Thursday's lecture: Simple linear regression
-
-## References
+-   Complete Tuesday's prepare <!--ADD LINK-->

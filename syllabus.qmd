@@ -45,7 +45,7 @@ Topics include applications of linear and logistic regression, interpretation, d
 
 100-level Statistical Science course or Statistical Science 230, 231, or 240L
 
-# Course learning objectives
+## Course learning objectives
 
 By the end of the semester, you will be able to…
 
