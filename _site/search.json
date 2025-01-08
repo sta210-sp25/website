@@ -472,7 +472,7 @@
     "href": "index.html",
     "title": "STA 210 - Regression Analysis",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nTh\nJan 9\nWelcome to STA 210!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nJan 13\nLab 00: Getting started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 14\nThe big picture\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 16\nSimple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nJan 20\nNo lab: Martin Luther King Jr. Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 21\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 23\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4\nM\nJan 27\nLab 01: Simple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 28\nMultiple linear regression (MLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due, Statistics experience assigned\n\n\n\nTh\nJan 30\nCategorical predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nM\nFeb 3\nLab 02: Multipe linear regression + Meet your team!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 4\nMLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 6\nModel assumptions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n6\nM\nFeb 10\nLab 02: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject research questions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 11\nModel diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n\nTh\nFeb 13\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7\nM\nFeb 17\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 18\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 20\nNo lecture: Exam 01 Take-home\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nFeb 24\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 25\nVariable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 27\nInteractions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nM\nMar 3\nLab 04: Variable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 4\nModel comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 6\nCross validation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n10\nM\nMar 10\nNo lab: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 11\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 13\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nM\nMar 17\nLab: Project exploratory data analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 18\nProbabilities + Odds + Odds ratios\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n\nTh\nMar 20\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nM\nMar 24\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 25\nLR: Prediction + Assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 27\nLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nM\nMar 31\nLab 05: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 1\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n\nTh\nApr 3\nMulitnomial logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nM\nApr 7\nLab 06: Multinomial logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 8\nMultinomial: Inference + Prediction\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 10\nModeling in practice\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nApr 14\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 15\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 05 due, Statistics experience due\n\n\n\nTh\nApr 17\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n16\nM\nApr 21\nLab: Project work-day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 22\nWrap up + Looking ahead\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nTh\nJan 9\nWelcome to STA 210!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nJan 13\nLab 00: Getting started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 14\nThe big picture\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 16\nSimple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nJan 20\nNo lab: Martin Luther King Jr. Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 21\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 23\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4\nM\nJan 27\nLab 01: Simple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 28\nMultiple linear regression (MLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due, Statistics experience assigned\n\n\n\nTh\nJan 30\nCategorical predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nM\nFeb 3\nLab 02: Multipe linear regression + Meet your team!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 4\nMLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 6\nModel assumptions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n6\nM\nFeb 10\nLab 02: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject research questions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 11\nModel diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n\nTh\nFeb 13\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7\nM\nFeb 17\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 18\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 20\nNo lecture: Exam 01 Take-home\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nFeb 24\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 25\nVariable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 27\nInteractions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nM\nMar 3\nLab 04: Variable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 4\nModel comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 6\nCross validation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n10\nM\nMar 10\nNo lab: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 11\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 13\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nM\nMar 17\nLab: Project exploratory data analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 18\nProbabilities + Odds + Odds ratios\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n\nTh\nMar 20\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nM\nMar 24\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 25\nLR: Prediction + Assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 27\nLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nM\nMar 31\nLab 05: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 1\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n\nTh\nApr 3\nMulitnomial logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nM\nApr 7\nLab 06: Multinomial logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 8\nMultinomial: Inference + Prediction\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 10\nModeling in practice\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nApr 14\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 15\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 05 due, Statistics experience due\n\n\n\nTh\nApr 17\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n16\nM\nApr 21\nLab: Project work-day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 22\nWrap up + Looking ahead\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period",
     "crumbs": [
       "Schedule"
     ]
@@ -575,39 +575,11 @@
     "text": "Appendix\nBelow is a list of genres in the data set:\n\nmovies |&gt; \n  arrange(genre) |&gt; \n  select(genre) |&gt;\n  distinct() |&gt;\n  datatable()"
   },
   {
-    "objectID": "prepare/prepare-nov5.html",
-    "href": "prepare/prepare-nov5.html",
-    "title": "Wellness day",
+    "objectID": "prepare/prepare-lec02.html",
+    "href": "prepare/prepare-lec02.html",
+    "title": "Prepare for Lecture 02: The big picture",
     "section": "",
-    "text": "Below are suggested activities during lecture on November 5.\n\nCatch up on / review course content\nWork on Lab 05 with your team\nWork on the project presentation with your team\nWork on the statistics experience assignment\nParticipate in a DuWell Wellness Event\nParticipate in Election Day activities as you are able"
-  },
-  {
-    "objectID": "prepare/prepare-sep5.html",
-    "href": "prepare/prepare-sep5.html",
-    "title": "Prepare for September 5 lecture",
-    "section": "",
-    "text": "Review linear algebra concepts (as needed)\n\nMatrices and vectors: [slides][video]\nMatrix-Vector products: [slides][video]\nVector geometry: [slides][video]\nMatrix multiplication: [slides][video]\n\n\n\n\n\n\n\nNote\n\n\n\nAll linear algebra review materials from Math 218: Matrices and Vectors (Summer 2024) taught by Dr. Brian Fitzpatrick at Duke University"
-  },
-  {
-    "objectID": "prepare/prepare-sep12.html",
-    "href": "prepare/prepare-sep12.html",
-    "title": "Prepare for September 12 lecture",
-    "section": "",
-    "text": "📖 Read Multiple Linear Regression\n✅ Review Vector Geometry [slides][video]1\n🎥: Watch Geometric interpretation of least squares"
-  },
-  {
-    "objectID": "prepare/prepare-sep12.html#footnotes",
-    "href": "prepare/prepare-sep12.html#footnotes",
-    "title": "Prepare for September 12 lecture",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nFrom Math 218: Matrices and Vectors (Summer 2024) taught by Dr. Brian Fitzpatrick at Duke University↩︎"
-  },
-  {
-    "objectID": "prepare/prepare-sep10.html",
-    "href": "prepare/prepare-sep10.html",
-    "title": "Prepare for September 10 lecture",
-    "section": "",
-    "text": "Review class notes and readings on simple linear regression.\nWe will extend what we’ve done thus far to multiple linear regression, with 2 or more predictors."
+    "text": "📖 Read R for Data Science, Introduction: What you will learn\n📖 Read GitHub for supporting, reusing, contributing, and failing safely\n🎥 Watch Meet the Toolkit: R + RStudio\n🎥 Watch Meet the Toolkit: Quarto"
   },
   {
     "objectID": "hw/hw-02.html",
@@ -849,32 +821,11 @@
     ]
   },
   {
-    "objectID": "prepare/prepare-sep3.html",
-    "href": "prepare/prepare-sep3.html",
-    "title": "Prepare for September 3 lecture",
+    "objectID": "prepare/prepare-lec03.html",
+    "href": "prepare/prepare-lec03.html",
+    "title": "Prepare for Lecture 03: Simple linear regression",
     "section": "",
-    "text": "📖 Read Section 4.7: Model Assessment\n✅ Go through R resource (optional)"
-  },
-  {
-    "objectID": "prepare/prepare-aug29.html",
-    "href": "prepare/prepare-aug29.html",
-    "title": "Prepare for August 29 lecture",
-    "section": "",
-    "text": "📖 Read Simple Linear Regression\n✅ Complete Lab 00 tasks"
-  },
-  {
-    "objectID": "prepare/prepare-nov12.html",
-    "href": "prepare/prepare-nov12.html",
-    "title": "November 12 lecture",
-    "section": "",
-    "text": "📖 Classification module in Google Machine Learning Crash Course"
-  },
-  {
-    "objectID": "prepare/prepare-sep19.html",
-    "href": "prepare/prepare-sep19.html",
-    "title": "Prepare for September 19 lecture",
-    "section": "",
-    "text": "📖 Read Inference for Simple Linear Regression:\n\nSections 5.1 - 5.3\nSection 5.6\nSection 5.8\nSection 5.9"
+    "text": "📖 Read Simple linear regression, Section 4.1 - 4.6\n📖 Read Simple linear regression, Section 4.8"
   },
   {
     "objectID": "support.html",
