@@ -89,43 +89,25 @@ Source: ChatGPT (with modification)
 
 </div>
 
-## Example: Rent vs. commute time <!-- update example-->
+## Regression in practice
 
-[New Yorkers Will Pay \$56 A Month To Trim A Minute Off Their Commute](https://fivethirtyeight.com/features/new-yorkers-will-pay-56-a-month-to-trim-a-minute-off-their-commute/)
+![](images/01/harry-potter-regression.png){fig-align="center" width="60%"}
 
-. . .
+::: aside
+[Rodgers, J. L. (2024). Reading Harry Potter in French: Using Regression to Evaluate Foreign Language Vocabulary Learning by an Old Guy. CHANCE, 37(3), 13–21.](https://canvas.duke.edu/courses/47067/files/folder/articles?preview=2433433)
+:::
 
-$$
-\text{rent} = \beta_0 + \beta_1 ~ \text{commute_time} + \epsilon
-$$
+## Regression in practice
 
-<br>
-
-. . .
+![](images/01/harry-potter-graph.png){fig-align="center" width="65%"}
 
 $$
-\begin{bmatrix}
-y_1 \\
-y_2 \\
-\vdots \\
-y_n
-\end{bmatrix} = 
-\begin{bmatrix}
-1 & x_1 \\
-1 & x_2 \\
-\vdots & \vdots \\
-1 & x_n
-\end{bmatrix}
-\begin{bmatrix}
-\beta_0 \\
-\beta_1 \\
-\end{bmatrix} +  \begin{bmatrix}
-\epsilon_1 \\
-\epsilon_2 \\
-\vdots \\
-\epsilon_n
-\end{bmatrix}
+\text{Lookups} = 23.0 - 0.04 \times \text{Page Number}
 $$
+
+::: aside
+[Rodgers, J. L. (2024). Reading Harry Potter in French: Using Regression to Evaluate Foreign Language Vocabulary Learning by an Old Guy. CHANCE, 37(3), 13–21.](https://canvas.duke.edu/courses/47067/files/folder/articles?preview=2433433)
+:::
 
 # STA 210
 

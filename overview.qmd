@@ -28,28 +28,24 @@ Topics include applications of linear and logistic regression, interpretation, d
 
 [Maria Tackett](https://www2.stat.duke.edu/~mt324) is an Assistant Professor of the Practice in the Department of Statistical Science at Duke University. Her work focuses on understanding how active learning strategies can be used to promote engagement and student motivation in undergraduate statistics courses. She also studies how classroom practices in introductory math and statistics courses impact students' sense of community, self-efficacy, and learning outcomes.
 
-+----------------------+---------------+
-| Office hours         | Location      |
-+======================+===============+
-| Mon 10 - 11am        | Old Chem 118B |
-+----------------------+---------------+
-| *or by appointment.* |               |
-+----------------------+---------------+
+**See Canvas for office hours times and locations.**
 
 ## Teaching assistants
 
-+----------------+----------------+-----------------------+---------------+
-| **Name**       | **Role**       | **Office Hours**      |               |
-+----------------+----------------+-----------------------+---------------+
-| Sylvia Vincent | Head TA\       | Thu 1 - 3pm           |               |
-|                | Lab 01L leader |                       |               |
-|                |                |                       |               |
-|                | Lab 02L leader |                       |               |
-+----------------+----------------+-----------------------+---------------+
-| Ishrit Gupta   | Lab 02L leader |                       |               |
-+----------------+----------------+-----------------------+---------------+
-| Kareena Legare | Lab 01L helper | Tue 10:30am - 12:30pm |               |
-+----------------+----------------+-----------------------+---------------+
++----------------+----------------+
+| **Name**       | **Role**       |
++----------------+----------------+
+| Sylvia Vincent | Head TA\       |
+|                | Lab 01L leader |
+|                |                |
+|                | Lab 02L leader |
++----------------+----------------+
+| Ishrit Gupta   | Lab 02L leader |
++----------------+----------------+
+| Kareena Legare | Lab 01L helper |
++----------------+----------------+
+
+**See Canvas for office hours times and locations.**
 
 # License
 

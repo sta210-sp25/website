@@ -15,7 +15,7 @@
     "href": "syllabus.html",
     "title": "STA 210 Syllabus",
     "section": "",
-    "text": "Lecture\nTue & Thu 3:05 - 4:20pm\nOld Chemistry 116\n\n\nLab 01\nMon 3:05 - 4:20pm\nOld Chemistry 001\n\n\nLab 02\nMon 4:40 - 5:55pm\nPerkins Link #5\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nRole\nOffice Hours\n\n\n\n\nProf. Maria Tackett\nInstructor\nMon 10 - 11am , Old Chem 118B\nor by appointment\n\n\nSylvia Vincent\nHead TA\nLab 01L leader\nThu 1 - 3pm\n\n\nIshrit Gupta\nLab 02L leader\n\n\n\nKareena Legare\nLab 01L helper\nTue 10:30am - 12:30pm",
+    "text": "Lecture\nTue & Thu 3:05 - 4:20pm\nOld Chemistry 116\n\n\nLab 01\nMon 3:05 - 4:20pm\nOld Chemistry 001\n\n\nLab 02\nMon 4:40 - 5:55pm\nPerkins Link #5\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nRole\n\n\n\n\nProf. Maria Tackett\nInstructor\n\n\nSylvia Vincent\nHead TA\nLab 01L leader\n\n\nIshrit Gupta\nLab 02L leader\n\n\nKareena Legare\nLab 01L helper\n\n\n\nSee Canvas for office hours.",
     "crumbs": [
       "Syllabus"
     ]
@@ -25,7 +25,7 @@
     "href": "syllabus.html#course-info",
     "title": "STA 210 Syllabus",
     "section": "",
-    "text": "Lecture\nTue & Thu 3:05 - 4:20pm\nOld Chemistry 116\n\n\nLab 01\nMon 3:05 - 4:20pm\nOld Chemistry 001\n\n\nLab 02\nMon 4:40 - 5:55pm\nPerkins Link #5\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nRole\nOffice Hours\n\n\n\n\nProf. Maria Tackett\nInstructor\nMon 10 - 11am , Old Chem 118B\nor by appointment\n\n\nSylvia Vincent\nHead TA\nLab 01L leader\nThu 1 - 3pm\n\n\nIshrit Gupta\nLab 02L leader\n\n\n\nKareena Legare\nLab 01L helper\nTue 10:30am - 12:30pm",
+    "text": "Lecture\nTue & Thu 3:05 - 4:20pm\nOld Chemistry 116\n\n\nLab 01\nMon 3:05 - 4:20pm\nOld Chemistry 001\n\n\nLab 02\nMon 4:40 - 5:55pm\nPerkins Link #5\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nRole\n\n\n\n\nProf. Maria Tackett\nInstructor\n\n\nSylvia Vincent\nHead TA\nLab 01L leader\n\n\nIshrit Gupta\nLab 02L leader\n\n\nKareena Legare\nLab 01L helper\n\n\n\nSee Canvas for office hours.",
     "crumbs": [
       "Syllabus"
     ]
@@ -216,11 +216,18 @@
     "text": "What is regression analysis?\n\n\nRegression analysis is a statistical method used to examine the relationship between a response variable and one or more predictor variables. It is used for predicting future values, understanding relationships between variables, and identifying key predictors. It also helps in modeling trends, assessing the impact of changes, and detecting outliers in data.\n\nSource: ChatGPT (with modification)"
   },
   {
-    "objectID": "slides/01-welcome.html#example-rent-vs.-commute-time",
-    "href": "slides/01-welcome.html#example-rent-vs.-commute-time",
+    "objectID": "slides/01-welcome.html#regression-in-practice",
+    "href": "slides/01-welcome.html#regression-in-practice",
     "title": "Welcome to STA 210!",
-    "section": "Example: Rent vs. commute time ",
-    "text": "Example: Rent vs. commute time \nNew Yorkers Will Pay $56 A Month To Trim A Minute Off Their Commute\n\n\\[\n\\text{rent} = \\beta_0 + \\beta_1 ~ \\text{commute_time} + \\epsilon\n\\]\n\n\n\n\\[\n\\begin{bmatrix}\ny_1 \\\\\ny_2 \\\\\n\\vdots \\\\\ny_n\n\\end{bmatrix} =\n\\begin{bmatrix}\n1 & x_1 \\\\\n1 & x_2 \\\\\n\\vdots & \\vdots \\\\\n1 & x_n\n\\end{bmatrix}\n\\begin{bmatrix}\n\\beta_0 \\\\\n\\beta_1 \\\\\n\\end{bmatrix} +  \\begin{bmatrix}\n\\epsilon_1 \\\\\n\\epsilon_2 \\\\\n\\vdots \\\\\n\\epsilon_n\n\\end{bmatrix}\n\\]"
+    "section": "Regression in practice",
+    "text": "Regression in practice\n\n\n\n\n\n\n\nRodgers, J. L. (2024). Reading Harry Potter in French: Using Regression to Evaluate Foreign Language Vocabulary Learning by an Old Guy. CHANCE, 37(3), 13–21."
+  },
+  {
+    "objectID": "slides/01-welcome.html#regression-in-practice-1",
+    "href": "slides/01-welcome.html#regression-in-practice-1",
+    "title": "Welcome to STA 210!",
+    "section": "Regression in practice",
+    "text": "Regression in practice\n\n\n\n\n\n\\[\n\\text{Lookups} = 23.0 - 0.04 \\times \\text{Page Number}\n\\]\n\n\nRodgers, J. L. (2024). Reading Harry Potter in French: Using Regression to Evaluate Foreign Language Vocabulary Learning by an Old Guy. CHANCE, 37(3), 13–21."
   },
   {
     "objectID": "slides/01-welcome.html#what-is-sta-210",
@@ -356,11 +363,18 @@
     "text": "What is regression analysis?\n\n\nRegression analysis is a statistical method used to examine the relationship between a response variable and one or more predictor variables. It is used for predicting future values, understanding relationships between variables, and identifying key predictors. It also helps in modeling trends, assessing the impact of changes, and detecting outliers in data.\n\nSource: ChatGPT (with modification)"
   },
   {
-    "objectID": "slides/01-welcome-notes.html#example-rent-vs.-commute-time",
-    "href": "slides/01-welcome-notes.html#example-rent-vs.-commute-time",
+    "objectID": "slides/01-welcome-notes.html#regression-in-practice",
+    "href": "slides/01-welcome-notes.html#regression-in-practice",
     "title": "Welcome to STA 210!",
-    "section": "Example: Rent vs. commute time ",
-    "text": "Example: Rent vs. commute time \nNew Yorkers Will Pay $56 A Month To Trim A Minute Off Their Commute\n. . .\n\\[\n\\text{rent} = \\beta_0 + \\beta_1 ~ \\text{commute_time} + \\epsilon\n\\]\n\n. . .\n\\[\n\\begin{bmatrix}\ny_1 \\\\\ny_2 \\\\\n\\vdots \\\\\ny_n\n\\end{bmatrix} =\n\\begin{bmatrix}\n1 & x_1 \\\\\n1 & x_2 \\\\\n\\vdots & \\vdots \\\\\n1 & x_n\n\\end{bmatrix}\n\\begin{bmatrix}\n\\beta_0 \\\\\n\\beta_1 \\\\\n\\end{bmatrix} +  \\begin{bmatrix}\n\\epsilon_1 \\\\\n\\epsilon_2 \\\\\n\\vdots \\\\\n\\epsilon_n\n\\end{bmatrix}\n\\]"
+    "section": "Regression in practice",
+    "text": "Regression in practice\n\n\n\n\n\n\n\nRodgers, J. L. (2024). Reading Harry Potter in French: Using Regression to Evaluate Foreign Language Vocabulary Learning by an Old Guy. CHANCE, 37(3), 13–21."
+  },
+  {
+    "objectID": "slides/01-welcome-notes.html#regression-in-practice-1",
+    "href": "slides/01-welcome-notes.html#regression-in-practice-1",
+    "title": "Welcome to STA 210!",
+    "section": "Regression in practice",
+    "text": "Regression in practice\n\n\n\n\n\n\\[\n\\text{Lookups} = 23.0 - 0.04 \\times \\text{Page Number}\n\\]\n\n\nRodgers, J. L. (2024). Reading Harry Potter in French: Using Regression to Evaluate Foreign Language Vocabulary Learning by an Old Guy. CHANCE, 37(3), 13–21."
   },
   {
     "objectID": "slides/01-welcome-notes.html#what-is-sta-210",
@@ -458,7 +472,7 @@
     "href": "index.html",
     "title": "STA 210 - Regression Analysis",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nTh\nJan 9\nWelcome to STA 210!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nJan 13\nLab 00: Getting started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 14\nThe big picture\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 16\nSimple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nJan 20\nNo lab: Martin Luther King Jr. Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 21\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 23\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4\nM\nJan 27\nLab 01: Simple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 28\nMultiple linear regression (MLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due, Statistics experience assigned\n\n\n\nTh\nJan 30\nCategorical predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nM\nFeb 3\nLab 02: Multipe linear regression + Meet your team!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 4\nMLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 6\nModel assumptions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n6\nM\nFeb 10\nLab 02: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject research questions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 11\nModel diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n\nTh\nFeb 13\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7\nM\nFeb 17\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 18\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 20\nNo lecture: Exam 01 Take-home\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nFeb 24\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 25\nVariable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 27\nInteractions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nM\nMar 3\nLab 04: Variable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 4\nModel comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 6\nCross validation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n10\nM\nMar 10\nNo lab: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 11\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 13\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nM\nMar 17\nLab: Project exploratory data analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 18\nProbabilities + Odds + Odds ratios\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n\nTh\nMar 20\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nM\nMar 24\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 25\nLR: Prediction + Assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 27\nLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nM\nMar 31\nLab 05: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 1\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n\nTh\nApr 3\nMulitnomial logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nM\nApr 7\nLab 06: Multinomial logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 8\nMultinomial: Inference + Prediction\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 10\nModeling in practice\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nApr 14\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 15\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 05 due, Statistics experience due\n\n\n\nTh\nApr 17\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n16\nM\nApr 21\nLab: Project work-day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 22\nWrap up + Looking ahead\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nTh\nJan 9\nWelcome to STA 210!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nJan 13\nLab 00: Getting started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 14\nThe big picture\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 16\nSimple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nJan 20\nNo lab: Martin Luther King Jr. Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 21\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 23\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4\nM\nJan 27\nLab 01: Simple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 28\nMultiple linear regression (MLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due, Statistics experience assigned\n\n\n\nTh\nJan 30\nCategorical predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nM\nFeb 3\nLab 02: Multipe linear regression + Meet your team!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 4\nMLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 6\nModel assumptions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n6\nM\nFeb 10\nLab 02: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject research questions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 11\nModel diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n\nTh\nFeb 13\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7\nM\nFeb 17\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 18\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 20\nNo lecture: Exam 01 Take-home\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nFeb 24\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 25\nVariable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 27\nInteractions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nM\nMar 3\nLab 04: Variable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 4\nModel comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 6\nCross validation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n10\nM\nMar 10\nNo lab: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 11\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 13\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nM\nMar 17\nLab: Project exploratory data analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 18\nProbabilities + Odds + Odds ratios\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n\nTh\nMar 20\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nM\nMar 24\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 25\nLR: Prediction + Assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 27\nLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nM\nMar 31\nLab 05: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 1\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n\nTh\nApr 3\nMulitnomial logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nM\nApr 7\nLab 06: Multinomial logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 8\nMultinomial: Inference + Prediction\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 10\nModeling in practice\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nApr 14\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 15\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 05 due, Statistics experience due\n\n\n\nTh\nApr 17\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n16\nM\nApr 21\nLab: Project work-day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 22\nWrap up + Looking ahead\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period",
     "crumbs": [
       "Schedule"
     ]
@@ -796,7 +810,7 @@
     "href": "overview.html#teaching-assistants",
     "title": "STA 210 - Regression Analysis",
     "section": "Teaching assistants",
-    "text": "Teaching assistants\n\n\n\n\n\n\n\n\n\nName\nRole\nOffice Hours\n\n\n\nSylvia Vincent\nHead TA\nLab 01L leader\nLab 02L leader\nThu 1 - 3pm\n\n\n\nIshrit Gupta\nLab 02L leader\n\n\n\n\nKareena Legare\nLab 01L helper\nTue 10:30am - 12:30pm",
+    "text": "Teaching assistants\n\n\n\n\n\n\n\nName\nRole\n\n\nSylvia Vincent\nHead TA\nLab 01L leader\nLab 02L leader\n\n\nIshrit Gupta\nLab 02L leader\n\n\nKareena Legare\nLab 01L helper\n\n\n\nSee Canvas for office hours times and locations.",
     "crumbs": [
       "Overview"
     ]
@@ -887,7 +901,7 @@
     "href": "support.html#office-hours",
     "title": "Course support",
     "section": "Office hours",
-    "text": "Office hours\nThe teaching team is here to help you be successful in the course. You are encouraged to attend office hours during the times posted on the home page to ask questions about the course content and assignments. A lot of questions are most effectively answered in-person, so office hours are a valuable resource. I encourage you to take advantage of them!\nMake a pledge to stop by office hours at least once during the first three weeks of class. If you truly have no questions to ask, just stop by and say hi and introduce yourself. You can find a list of everyone’s office hours here.",
+    "text": "Office hours\nThe teaching team is here to help you be successful in the course. You are encouraged to attend office hours during the times posted on the home page to ask questions about the course content and assignments. A lot of questions are most effectively answered in-person, so office hours are a valuable resource. I encourage you to take advantage of them!\nMake a pledge to stop by office hours at least once during the first three weeks of class. If you truly have no questions to ask, just stop by and say hi and introduce yourself. You can find a list of everyone’s office hours on the course Canvas site.",
     "crumbs": [
       "Support"
     ]
