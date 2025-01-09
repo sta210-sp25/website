@@ -194,7 +194,7 @@ By the end of the semester, you will be able to...
     -   Announcements
     -   Gradescope
     -   Ed Discussion
--   **GitHub:** [https://github.com/sta210-sp25](github.com/sta210-sp25)
+-   **GitHub:** <https://github.com/sta210-sp25>
     -   Distribute assignments
     -   Platform for version control and collaboration
 
