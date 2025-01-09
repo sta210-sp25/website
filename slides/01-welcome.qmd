@@ -42,7 +42,7 @@ bibliography: references.bib
 
 ------------------------------------------------------------------------
 
-## Teaching Assistants (TAs)
+## Meet the Teaching Assistants (TAs)!
 
 -   Sylvia Vincent (PhD): Head TA + Lab leader
 
@@ -332,10 +332,12 @@ It is my intent that students from all diverse backgrounds and perspectives be w
 📋 [sta210-sp25.netlify.app/ae/ae-01-movies.html](https://sta210-sp25.netlify.app/ae/ae-01-movies.html)
 :::
 
-## Looking ahead
-
--   Labs start on Monday, January 13
+## Before next class
 
 -   Review [syllabus](https://sta210-sp25.netlify.app/syllabus)
 
--   Complete Tuesday's prepare <!--ADD LINK-->
+-   Complete [Prepare for Lecture 02: The big picture](../prepare/prepare-lec02.html)
+
+-   Labs start on Monday, January 13
+
+-   Office hours start on Monday, January 13
