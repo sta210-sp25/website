@@ -84,7 +84,7 @@ movies |>
 
     Post your response on ED Discussion.
 
-    [edstem.org/us/courses/70992/discussion/713819](https://edstem.org/us/courses/70992/discussion/713819)
+    <https://edstem.org/us/courses/70992/discussion/5951333>
 
 3.  \[Time permitting\] Discuss the following: Notice in the graph above that `budget` and `gross` are log-transformed. Why are the log-transformed values of the variables displayed rather than the original values (in U.S. dollars)? **Post your group's response in the AE 01 Movie Budgets comments on Ed Discussion.**
 

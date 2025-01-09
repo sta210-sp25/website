@@ -55,10 +55,12 @@ bibliography: references.bib
 ::: question
 Click on the link or scan the QR code to answer the Ed Discussion poll
 
-<https://edstem.org/us/courses/70992/discussion/713771>
+<https://edstem.org/us/courses/70992/discussion/5951332>
 
-<center>\
-![](images/01/ed-discussion-qr-code.png){width="30%"}</center>
+<center>
+
+![](images/clipboard-540043045.png){width="35%"}\
+</center>
 :::
 
 ## Topics
