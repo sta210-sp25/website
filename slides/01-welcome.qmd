@@ -57,9 +57,7 @@ Click on the link or scan the QR code to answer the Ed Discussion poll
 
 <https://edstem.org/us/courses/70992/discussion/5951332>
 
-<center>
-
-![](images/clipboard-540043045.png){width="35%"}\
+<center>![](images/clipboard-540043045.png){width="35%"}\
 </center>
 :::
 

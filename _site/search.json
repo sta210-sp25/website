@@ -1022,5 +1022,222 @@
       "Project",
       "Instructions"
     ]
+  },
+  {
+    "objectID": "slides/02-big-picture.html#announcements",
+    "href": "slides/02-big-picture.html#announcements",
+    "title": "The big picture",
+    "section": "Announcements ",
+    "text": "Announcements \n\nResources for extra R review\n\nLearn R: An interactive introduction to data analysis R (focus on Chapters 4 - 6)\nDuke Library Center for Data and Visualization Sciences workshops\n\nR for Lunch: data wrangling with dplyr (Fri, Sep 1, 12:30 - 1:30)\nR for Lunch: visualization with ggplot2 (Fri, Sep 8, 12:30 - 1:30)\nSee the CDVS website for more information and to register.\n\n\nLast day of in-person work for this class is Dec 7\nLecture recordings request policy\nReadings for next week will be posted later this week"
+  },
+  {
+    "objectID": "slides/02-big-picture.html#topics",
+    "href": "slides/02-big-picture.html#topics",
+    "title": "The big picture",
+    "section": "Topics",
+    "text": "Topics\n\nData analysis life cycle\nReproducible data analysis\nAnalyzing multivariable relationships"
+  },
+  {
+    "objectID": "slides/02-big-picture.html#reproducibility-checklist",
+    "href": "slides/02-big-picture.html#reproducibility-checklist",
+    "title": "The big picture",
+    "section": "Reproducibility checklist",
+    "text": "Reproducibility checklist\n\nWhat does it mean for an analysis to be reproducible?\n\n\nNear term goals:\n✔️ Can the tables and figures be exactly reproduced from the code and data?\n✔️ Does the code actually do what you think it does?\n✔️ In addition to what was done, is it clear why it was done?\n\n\nLong term goals:\n✔️ Can the code be used for other data?\n✔️ Can you extend the code to do other things?"
+  },
+  {
+    "objectID": "slides/02-big-picture.html#why-is-reproducibility-important",
+    "href": "slides/02-big-picture.html#why-is-reproducibility-important",
+    "title": "The big picture",
+    "section": "Why is reproducibility important?",
+    "text": "Why is reproducibility important?\n\nResults produced are more reliable and trustworthy (Ostblom and Timbers 2022)\nFacilitates more effective collaboration (Ostblom and Timbers 2022)\nContributing to science, which builds and organizes knowledge in terms of testable hypotheses (Alexander 2023)\nPossible to identify and correct errors or biases in the analysis process (Alexander 2023)"
+  },
+  {
+    "objectID": "slides/02-big-picture.html#when-things-go-wrong",
+    "href": "slides/02-big-picture.html#when-things-go-wrong",
+    "title": "The big picture",
+    "section": "When things go wrong",
+    "text": "When things go wrong\n\n\n\nReproducibility error\nConsequence\nSource(s)\n\n\n\n\nLimitations in Excel data formats\nLoss of 16,000 COVID case records in the UK\n(Kelion 2020)\n\n\nAutomatic formatting in Excel\nImportant genes disregarded in scientific studies\n(Ziemann, Eren, and El-Osta 2016)\n\n\nDeletion of a cell caused rows to shift\nMix-up of which patient group received the treatment\n(Wallensteen et al. 2018)\n\n\nUsing binary instead of explanatory labels\nMix-up of the intervention with the control group\n(Aboumatar and Wise 2019)\n\n\nUsing the same notation for missing data and zero values\nPaper retraction\n(Whitehouse et al. 2021)\n\n\nIncorrectly copying data in a spreadsheet\nDelay in the opening of a hospital\n(Picken 2020)\n\n\n\nSource: Ostblom and Timbers (2022)"
+  },
+  {
+    "objectID": "slides/02-big-picture.html#toolkit",
+    "href": "slides/02-big-picture.html#toolkit",
+    "title": "The big picture",
+    "section": "Toolkit",
+    "text": "Toolkit\n\nScriptability \\(\\rightarrow\\) R\nLiterate programming (code, narrative, output in one place) \\(\\rightarrow\\) Quarto\nVersion control \\(\\rightarrow\\) Git / GitHub\n\n\n\n\n\n\n\nNote\n\n\nYou will start using these computing tools in Lab 01."
+  },
+  {
+    "objectID": "slides/02-big-picture.html#r-and-rstudio",
+    "href": "slides/02-big-picture.html#r-and-rstudio",
+    "title": "The big picture",
+    "section": "R and RStudio",
+    "text": "R and RStudio\n\nR is a statistical programming language\nRStudio is a convenient interface for R (an integrated development environment, IDE)\n\n\nSource: Statistical Inference via Data Science"
+  },
+  {
+    "objectID": "slides/02-big-picture.html#rstudio-ide",
+    "href": "slides/02-big-picture.html#rstudio-ide",
+    "title": "The big picture",
+    "section": "RStudio IDE",
+    "text": "RStudio IDE"
+  },
+  {
+    "objectID": "slides/02-big-picture.html#quarto",
+    "href": "slides/02-big-picture.html#quarto",
+    "title": "The big picture",
+    "section": "Quarto",
+    "text": "Quarto\n\nFully reproducible reports – the analysis is run from the beginning each time you render\nCode goes in chunks and narrative goes outside of chunks\nVisual editor to make document editing experience similar to a word processor (Google docs, Word, Pages, etc.)"
+  },
+  {
+    "objectID": "slides/02-big-picture.html#quarto-1",
+    "href": "slides/02-big-picture.html#quarto-1",
+    "title": "The big picture",
+    "section": "Quarto",
+    "text": "Quarto"
+  },
+  {
+    "objectID": "slides/02-big-picture.html#how-will-we-use-quarto",
+    "href": "slides/02-big-picture.html#how-will-we-use-quarto",
+    "title": "The big picture",
+    "section": "How will we use Quarto?",
+    "text": "How will we use Quarto?\n\nEvery application exercise and assignment is written in a Quarto document\nYou’ll have a template Quarto document to start with\nThe amount of scaffolding in the template will decrease over the semester"
+  },
+  {
+    "objectID": "slides/02-big-picture.html#what-is-versioning",
+    "href": "slides/02-big-picture.html#what-is-versioning",
+    "title": "The big picture",
+    "section": "What is versioning?",
+    "text": "What is versioning?"
+  },
+  {
+    "objectID": "slides/02-big-picture.html#what-is-versioning-1",
+    "href": "slides/02-big-picture.html#what-is-versioning-1",
+    "title": "The big picture",
+    "section": "What is versioning?",
+    "text": "What is versioning?\nwith human readable messages"
+  },
+  {
+    "objectID": "slides/02-big-picture.html#why-do-we-need-version-control",
+    "href": "slides/02-big-picture.html#why-do-we-need-version-control",
+    "title": "The big picture",
+    "section": "Why do we need version control?",
+    "text": "Why do we need version control?\n\n\n\n\n\n\n\n\nProvides a clear record of how the analysis methods evolved. This makes analysis auditable and thus more trustworthy and reliable. (Ostblom and Timbers 2022)"
+  },
+  {
+    "objectID": "slides/02-big-picture.html#git-and-github",
+    "href": "slides/02-big-picture.html#git-and-github",
+    "title": "The big picture",
+    "section": "git and GitHub",
+    "text": "git and GitHub\n\n\ngit is a version control system – like “Track Changes” features from Microsoft Word.\nGitHub is the home for your git-based projects on the internet (like DropBox but much better).\nThere are a lot of git commands and very few people know them all. 99% of the time you will use git to add, commit, push, and pull."
+  },
+  {
+    "objectID": "slides/02-big-picture.html#carbohydrates-in-starbucks-food",
+    "href": "slides/02-big-picture.html#carbohydrates-in-starbucks-food",
+    "title": "The big picture",
+    "section": "Carbohydrates in Starbucks food",
+    "text": "Carbohydrates in Starbucks food\n\nStarbucks often displays the total calories in their food items but not the other nutritional information.\nCarbohydrates are a body’s main fuel source. The Dietary Guidelines for America recommend that carbohydrates make up 45% to 65% of total daily calories.1\nOur goal is to understand the relationship between the amount of carbohydrates and calories in Starbucks food items. We’d also like to assess if the relationship differs based on the type of food item (bakery, salad, sandwich, etc.)\n\nSource: Mayo Clinic"
+  },
+  {
+    "objectID": "slides/02-big-picture.html#starbucks-data",
+    "href": "slides/02-big-picture.html#starbucks-data",
+    "title": "The big picture",
+    "section": "Starbucks data",
+    "text": "Starbucks data\n\n\nObservations: 77 Starbucks food items\nVariables:\n\ncarb: Total carbohydrates (in grams)\ncalories: Total calories\nbakery: 1: bakery food item, 0: other food type"
+  },
+  {
+    "objectID": "slides/02-big-picture.html#terminology",
+    "href": "slides/02-big-picture.html#terminology",
+    "title": "The big picture",
+    "section": "Terminology",
+    "text": "Terminology\n\ncarb is the response variable\n\nvariable whose variation we want to understand / variable we wish to predict\nalso known as outcome or dependent variable\n\n\n\n\ncalories, bakery are the predictor variables\n\nvariables used to account for variation in the response\nalso known as explanatory, independent, or input variables"
+  },
+  {
+    "objectID": "slides/02-big-picture.html#univariate-exploratory-data-analysis",
+    "href": "slides/02-big-picture.html#univariate-exploratory-data-analysis",
+    "title": "The big picture",
+    "section": "Univariate exploratory data analysis",
+    "text": "Univariate exploratory data analysis"
+  },
+  {
+    "objectID": "slides/02-big-picture.html#bivariate-exploratory-data-analysis",
+    "href": "slides/02-big-picture.html#bivariate-exploratory-data-analysis",
+    "title": "The big picture",
+    "section": "Bivariate exploratory data analysis",
+    "text": "Bivariate exploratory data analysis"
+  },
+  {
+    "objectID": "slides/02-big-picture.html#function-between-response-and-predictors",
+    "href": "slides/02-big-picture.html#function-between-response-and-predictors",
+    "title": "The big picture",
+    "section": "Function between response and predictors",
+    "text": "Function between response and predictors\n\n\\[\\text{carb} = f(\\text{calories}, \\text{bakery}) + \\epsilon\\]\n\n\nGoal: Determine \\(f\\)\nHow do we determine \\(f\\)?\n\nMake an assumption about the functional form \\(f\\) (parametric model)\nUse the data to fit a model based on that form"
+  },
+  {
+    "objectID": "slides/02-big-picture.html#determine-f",
+    "href": "slides/02-big-picture.html#determine-f",
+    "title": "The big picture",
+    "section": "Determine \\(f\\)",
+    "text": "Determine \\(f\\)\n\nChoose the functional form of \\(f\\), i.e., choose the appropriate model given the response variable\n\n\nSuppose \\(f\\) takes the form of a linear model\n\\[y = f(\\mathbf{X}) = \\beta_0 + \\beta_1 x_1 + \\dots + \\beta_p x_p + \\epsilon\\]\n\n\n\nUse the data to fit (or train) the model, i.e, estimate the model parameters, \\(\\beta_0, \\beta_1, \\ldots, \\beta_p\\)"
+  },
+  {
+    "objectID": "slides/02-big-picture.html#carb-vs.-calories",
+    "href": "slides/02-big-picture.html#carb-vs.-calories",
+    "title": "The big picture",
+    "section": "Carb vs. Calories",
+    "text": "Carb vs. Calories\n\n\\[\\text{carb} = \\beta_0 + \\beta_1 ~\\text{calories} + \\epsilon\\]"
+  },
+  {
+    "objectID": "slides/02-big-picture.html#carb-vs.-calories-bakery",
+    "href": "slides/02-big-picture.html#carb-vs.-calories-bakery",
+    "title": "The big picture",
+    "section": "Carb vs. Calories + Bakery",
+    "text": "Carb vs. Calories + Bakery\n\n\\[\\text{carb} = \\beta_0 + \\beta_1 ~\\text{calories} + \\beta_2 ~\\text{bakery} + \\epsilon\\]"
+  },
+  {
+    "objectID": "slides/02-big-picture.html#carb-vs.-calories-bakery-with-interaction",
+    "href": "slides/02-big-picture.html#carb-vs.-calories-bakery-with-interaction",
+    "title": "The big picture",
+    "section": "Carb vs. Calories + Bakery (with interaction)",
+    "text": "Carb vs. Calories + Bakery (with interaction)\n\n\\[{\\small \\text{carb} = \\beta_0 + \\beta_1 ~\\text{calories} + \\beta_2 ~\\text{bakery} + \\beta_3 ~ \\text{calories} \\times \\text{bakery}  + \\epsilon}\\]"
+  },
+  {
+    "objectID": "slides/02-big-picture.html#statistical-model-vs.-regression-equation",
+    "href": "slides/02-big-picture.html#statistical-model-vs.-regression-equation",
+    "title": "The big picture",
+    "section": "Statistical model vs. regression equation",
+    "text": "Statistical model vs. regression equation\nStatistical model (also known as data-generating model)\n\\[{\\small \\text{carb} = \\beta_0 + \\beta_1 ~\\text{calories} + \\beta_2 ~\\text{bakery} + \\beta_3 ~ \\text{calories} \\times \\text{bakery}  + \\epsilon}\\]\nModels the process for generating values of the response in the population (function + error)\n\n\nRegression equation\nEstimate of the function using the sample data\n\\[{\\small \\hat{\\text{carb}} = \\hat{\\beta}_0 + \\hat{\\beta}_1 ~\\text{calories} + \\hat{\\beta}_2 ~\\text{bakery} + \\hat{\\beta}_3 ~ \\text{calories} \\times \\text{bakery}}\\]"
+  },
+  {
+    "objectID": "slides/02-big-picture.html#why-fit-a-model",
+    "href": "slides/02-big-picture.html#why-fit-a-model",
+    "title": "The big picture",
+    "section": "Why fit a model?",
+    "text": "Why fit a model?\n\nPrediction: Expected value of the response variable for given values of the predictor variables\nInference: Conclusion about the relationship between the response and predictor variables\n\n\n\nWhat is an example of a prediction question that can be answered using the model of carb vs. calories and bakery?\nWhat is an example of an inference question that can be answered using the model of carb vs. calories and bakery?"
+  },
+  {
+    "objectID": "slides/02-big-picture.html#recap",
+    "href": "slides/02-big-picture.html#recap",
+    "title": "The big picture",
+    "section": "Recap",
+    "text": "Recap\n\nReproducibility\n\nIt is best practice conduct all data analysis in a reproducible way\nWe will implement a reproducible workflow using R, Quarto, and git/GitHub\n\n\n\n\nMultivariable relationships\n\nWe can use exploratory data analysis to describe the relationship between two variables\nWe make an assumption about the relationship between variables when doing linear regression\nThe two main objectives for fitting a linear regression model are (1) prediction and (2) inference"
+  },
+  {
+    "objectID": "slides/02-big-picture.html#references",
+    "href": "slides/02-big-picture.html#references",
+    "title": "The big picture",
+    "section": "References",
+    "text": "References\n\n\n\n\nAlexander, Rohan. 2023. “Telling Stories with Data,” June. https://doi.org/10.1201/9781003229407.\n\n\nOstblom, Joel, and Tiffany Timbers. 2022. “Opinionated Practices for Teaching Reproducibility: Motivation, Guided Instruction and Practice.” Journal of Statistics and Data Science Education 30 (3): 241–50. https://doi.org/10.1080/26939169.2022.2074922."
+  },
+  {
+    "objectID": "slides/02-big-picture.html#why-is-reproducibility-important-1",
+    "href": "slides/02-big-picture.html#why-is-reproducibility-important-1",
+    "title": "The big picture",
+    "section": "Why is reproducibility important?",
+    "text": "Why is reproducibility important?\n\n\n\n\n\n\n\nOriginally reported “the intervention, compared with usual care, resulted in a fewer number of mean COPD-related hospitalizations and emergency department visits at 6 months per participant.”\nThere were actually more COPD-related hospitalizations and emergency department visits in the intervention group compared to the control group\nMixed up the intervention vs. control group using “0/1” coding\n\n\n\n\n\nhttps://jamanetwork.com/journals/jama/fullarticle/2752474"
+  },
+  {
+    "objectID": "slides/02-big-picture.html#for-next-time",
+    "href": "slides/02-big-picture.html#for-next-time",
+    "title": "The big picture",
+    "section": "For next time",
+    "text": "For next time\n\nComplete Lec 03 - Simple linear regression prepare\nBring fully-charged laptop or device with keyboard for in-class application exercise (AE)"
   }
 ]
