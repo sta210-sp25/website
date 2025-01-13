@@ -220,7 +220,7 @@
     "href": "slides/02-big-picture.html#toolkit",
     "title": "The big picture",
     "section": "Toolkit",
-    "text": "Toolkit\n\nScriptability \\(\\rightarrow\\) R\nLiterate programming (code, narrative, output in one place) \\(\\rightarrow\\) Quarto\nVersion control \\(\\rightarrow\\) Git / GitHub\n\n\n\n\n\n\n\nNote\n\n\nYou will start using these computing tools in Lab 01."
+    "text": "Toolkit\n\nScriptability \\(\\rightarrow\\) R\nLiterate programming (code, narrative, output in one place) \\(\\rightarrow\\) Quarto\nVersion control \\(\\rightarrow\\) Git / GitHub"
   },
   {
     "objectID": "slides/02-big-picture.html#r-and-rstudio",
@@ -304,7 +304,7 @@
     "href": "slides/02-big-picture.html#terminology",
     "title": "The big picture",
     "section": "Terminology",
-    "text": "Terminology\n\ncarb is the response variable\n\nvariable whose variation we want to understand / variable we wish to predict\nalso known as outcome or dependent variable\n\n\n\n\ncalories, bakery are the predictor variables\n\nvariables used to account for variation in the response\nalso known as explanatory, independent, or input variables"
+    "text": "Terminology\n\nlife_exp is the response variable\n\nvariable whose variation we want to understand / variable we wish to predict\nalso known as outcome or dependent variable\n\n\n\n\nincome_inequality, education are the predictor variables\n\nvariables used to account for variation in the response\nalso known as explanatory, independent, or input variables"
   },
   {
     "objectID": "slides/02-big-picture.html#univariate-exploratory-data-analysis",
@@ -325,14 +325,14 @@
     "href": "slides/02-big-picture.html#function-between-response-and-predictors",
     "title": "The big picture",
     "section": "Function between response and predictors",
-    "text": "Function between response and predictors\n\n\\[\\text{carb} = f(\\text{calories}, \\text{bakery}) + \\epsilon\\]\n\n\nGoal: Determine \\(f\\)\nHow do we determine \\(f\\)?\n\nMake an assumption about the functional form \\(f\\) (parametric model)\nUse the data to fit a model based on that form"
+    "text": "Function between response and predictors\n\n\\[\\text{life_exp} = f(\\text{income_inequality}, \\text{education}) + \\epsilon\\]\n\n\nGoal: Determine \\(f\\)\nHow do we determine \\(f\\)?\n\nMake an assumption about the functional form \\(f\\) (parametric model)\nUse the data to fit a model based on that form"
   },
   {
     "objectID": "slides/02-big-picture.html#determine-f",
     "href": "slides/02-big-picture.html#determine-f",
     "title": "The big picture",
     "section": "Determine \\(f\\)",
-    "text": "Determine \\(f\\)\n\nChoose the functional form of \\(f\\), i.e., choose the appropriate model given the response variable\n\n\nSuppose \\(f\\) takes the form of a linear model\n\\[y = f(\\mathbf{X}) = \\beta_0 + \\beta_1 x_1 + \\dots + \\beta_p x_p + \\epsilon\\]\n\n\n\nUse the data to fit (or train) the model, i.e, estimate the model parameters, \\(\\beta_0, \\beta_1, \\ldots, \\beta_p\\)"
+    "text": "Determine \\(f\\)\n\nChoose the functional form of \\(f\\), i.e., choose the appropriate model given the response variable\n\n\nSuppose \\(f\\) takes the form of a linear model\n\\[y = f(\\mathbf{X}) = \\beta_0 + \\beta_1 x_1 + \\dots + \\beta_p x_p + \\epsilon\\]\n\n\n\nUse the data to fit (or train) the model, i.e, compute estimates the model parameters, denoted \\(\\hat{\\beta}_0, \\hat{\\beta}_1, \\ldots, \\hat{\\beta}_p\\)"
   },
   {
     "objectID": "slides/02-big-picture.html#carb-vs.-calories",
@@ -360,14 +360,14 @@
     "href": "slides/02-big-picture.html#statistical-model-vs.-regression-equation",
     "title": "The big picture",
     "section": "Statistical model vs. regression equation",
-    "text": "Statistical model vs. regression equation\nStatistical model (also known as data-generating model)\n\\[{\\small \\text{carb} = \\beta_0 + \\beta_1 ~\\text{calories} + \\beta_2 ~\\text{bakery} + \\beta_3 ~ \\text{calories} \\times \\text{bakery}  + \\epsilon}\\]\nModels the process for generating values of the response in the population (function + error)\n\n\nRegression equation\nEstimate of the function using the sample data\n\\[{\\small \\hat{\\text{carb}} = \\hat{\\beta}_0 + \\hat{\\beta}_1 ~\\text{calories} + \\hat{\\beta}_2 ~\\text{bakery} + \\hat{\\beta}_3 ~ \\text{calories} \\times \\text{bakery}}\\]"
+    "text": "Statistical model vs. regression equation\nStatistical model (also known as data-generating model)\n\n\\[{\\small \\text{life_exp} = \\beta_0 + \\beta_1 ~\\text{income_inequality} + \\beta_2 ~\\text{education} + \\epsilon}\\]\n\nModels the process for generating values of the response in the population (function + error), i.e., the population-level model.\n\n\nRegression equation (also known as the fitted model)\nEstimate of the function using the sample data\n\n\\[{\\small \\widehat{\\text{life_exp}} = \\hat{\\beta}_0 + \\hat{\\beta}_1 ~\\text{income_inequality} + \\hat{\\beta}_2 ~\\text{education}}\\]"
   },
   {
     "objectID": "slides/02-big-picture.html#why-fit-a-model",
     "href": "slides/02-big-picture.html#why-fit-a-model",
     "title": "The big picture",
     "section": "Why fit a model?",
-    "text": "Why fit a model?\n\nPrediction: Expected value of the response variable for given values of the predictor variables\nInference: Conclusion about the relationship between the response and predictor variables\n\n\n\nWhat is an example of a prediction question that can be answered using the model of carb vs. calories and bakery?\nWhat is an example of an inference question that can be answered using the model of carb vs. calories and bakery?"
+    "text": "Why fit a model?\n\nPrediction: Expected value of the response variable for given values of the predictor variables\nInference: Conclusion about the relationship between the response and predictor variables\n\n\n\nWhat is an example of a prediction question that can be answered using the model of life_exp vs. income_inequality and education?\nWhat is an example of an inference question that can be answered using the model of life_exp vs.income_inequality and education?"
   },
   {
     "objectID": "slides/02-big-picture.html#recap",
@@ -388,7 +388,7 @@
     "href": "slides/02-big-picture.html#references",
     "title": "The big picture",
     "section": "References",
-    "text": "References\n\n\n\n\nAlexander, Rohan. 2023. “Telling Stories with Data,” June. https://doi.org/10.1201/9781003229407.\n\n\nOstblom, Joel, and Tiffany Timbers. 2022. “Opinionated Practices for Teaching Reproducibility: Motivation, Guided Instruction and Practice.” Journal of Statistics and Data Science Education 30 (3): 241–50. https://doi.org/10.1080/26939169.2022.2074922."
+    "text": "References\n\n\n\n\nAlexander, Rohan. 2023. “Telling Stories with Data,” June. https://doi.org/10.1201/9781003229407.\n\n\nOstblom, Joel, and Tiffany Timbers. 2022. “Opinionated Practices for Teaching Reproducibility: Motivation, Guided Instruction and Practice.” Journal of Statistics and Data Science Education 30 (3): 241–50. https://doi.org/10.1080/26939169.2022.2074922.\n\n\nZarulli, Virginia, Elizaveta Sopina, Veronica Toffolutti, and Adam Lenart. 2021. “Health Care System Efficiency and Life Expectancy: A 140-Country Study.” Edited by Srinivas Goli. PLOS ONE 16 (7): e0253450. https://doi.org/10.1371/journal.pone.0253450."
   },
   {
     "objectID": "slides/lab-00.html#meet-your-tas",
@@ -1232,5 +1232,40 @@
       "Project",
       "Instructions"
     ]
+  },
+  {
+    "objectID": "slides/02-big-picture.html#education-and-life-expectancy",
+    "href": "slides/02-big-picture.html#education-and-life-expectancy",
+    "title": "The big picture",
+    "section": "Education and life expectancy",
+    "text": "Education and life expectancy\n\nZarulli et al. (2021)\n\n\nClick here to access the original research paper."
+  },
+  {
+    "objectID": "slides/02-big-picture.html#life-expectancy-and-education-data",
+    "href": "slides/02-big-picture.html#life-expectancy-and-education-data",
+    "title": "The big picture",
+    "section": "Life expectancy and education data",
+    "text": "Life expectancy and education data\n\nObservations: 140 countries\nVariables:\n\nlife_exp: The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic area. ( from the World Health Organization)\nincome_inequality: Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (Gini coefficient).\neducation: Indicator of whether a country’s education index is above (High) or below (Low) the median index for the 140 countries in the data set.\n\nEducation index: Average of mean years of schooling (of adults) and expected years of school (of children), both expressed as an index obtained by scaling wit the corresponding maxima"
+  },
+  {
+    "objectID": "slides/02-big-picture.html#life_exp-vs.-income_inequality",
+    "href": "slides/02-big-picture.html#life_exp-vs.-income_inequality",
+    "title": "The big picture",
+    "section": "life_exp vs. income_inequality",
+    "text": "life_exp vs. income_inequality\n\n\\[\\widehat{\\text{life_exp}} = \\hat{\\beta}_0 + \\hat{\\beta}_1 ~\\text{income_inequality}\\]"
+  },
+  {
+    "objectID": "slides/02-big-picture.html#life_exp-vs.-income_inequality-education",
+    "href": "slides/02-big-picture.html#life_exp-vs.-income_inequality-education",
+    "title": "The big picture",
+    "section": "life_exp vs. income_inequality + education",
+    "text": "life_exp vs. income_inequality + education\n\n\\[\\widehat{\\text{life_exp}} = \\hat{\\beta}_0 + \\hat{\\beta}_1 ~\\text{income_inequality} + \\hat{\\beta}_2 ~\\text{education}\\]"
+  },
+  {
+    "objectID": "slides/02-big-picture.html#life_exp-vs.-income_inequality-education-with-interaction",
+    "href": "slides/02-big-picture.html#life_exp-vs.-income_inequality-education-with-interaction",
+    "title": "The big picture",
+    "section": "life_exp vs. income_inequality + education (with interaction)",
+    "text": "life_exp vs. income_inequality + education (with interaction)\n\n\\[{\\small \\widehat{\\text{life_exp}} = \\hat{\\beta}_0 + \\hat{\\beta}_1 ~\\text{income_inequality} + \\hat{\\beta}_2 ~\\text{education} + \\hat{\\beta}_3 ~ \\text{income_inequality} \\times \\text{education}}\\]"
   }
 ]

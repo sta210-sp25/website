@@ -49,7 +49,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-99765824333a3b497436fa5dfa15b91b.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-318eb5f4afb895565f6c9ce42ff54cac.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -233,11 +233,11 @@ Prof.&nbsp;Maria Tackett
 <li><p>Possible to identify and correct errors or biases in the analysis process <span class="citation" data-cites="alexander2023">(<a href="#/references" role="doc-biblioref" onclick="">Alexander 2023</a>)</span></p></li>
 </ul>
 </section>
-<section id="why-is-reproducibility-important-1" class="slide level2">
+<section id="why-is-reproducibility-important-1" class="slide level2 midi">
 <h2>Why is reproducibility important?</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/02/jama-retraction.png" class="quarto-figure quarto-figure-center"></p>
+<p><img data-src="images/02/jama-retraction.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
 </figure>
 </div>
 <div class="small">
@@ -260,19 +260,6 @@ Prof.&nbsp;Maria Tackett
 <li><p><strong>Literate programming</strong> (code, narrative, output in one place) <span class="math inline">\(\rightarrow\)</span> Quarto</p></li>
 <li><p><strong>Version control</strong> <span class="math inline">\(\rightarrow\)</span> Git / GitHub</p></li>
 </ul>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p>You will start using these computing tools in Lab 01.</p>
-</div>
-</div>
-</div>
 </section>
 <section id="r-and-rstudio" class="slide level2">
 <h2>R and RStudio</h2>
@@ -348,31 +335,33 @@ Prof.&nbsp;Maria Tackett
 <h1>Multivariable relationships</h1>
 
 </section>
-<section id="carbohydrates-in-starbucks-food" class="slide level2">
-<h2>Carbohydrates in Starbucks food</h2>
+<section id="education-and-life-expectancy" class="slide level2">
+<h2>Education and life expectancy</h2>
+<!--# update the introduction-->
+<p><span class="citation" data-cites="zarulli2021">Zarulli et al. (<a href="#/references" role="doc-biblioref" onclick="">2021</a>)</span></p>
+
+<aside><div>
+<p><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0253450">Click here</a> to access the original research paper.</p>
+</div></aside></section>
+<section id="life-expectancy-and-education-data" class="slide level2">
+<h2>Life expectancy and education data</h2>
 <ul>
-<li><p>Starbucks often displays the total calories in their food items but not the other nutritional information.</p></li>
-<li><p>Carbohydrates are a body’s main fuel source. The Dietary Guidelines for America recommend that carbohydrates make up 45% to 65% of total daily calories.<sup>1</sup></p></li>
-<li><p>Our goal is to understand the relationship between the amount of carbohydrates and calories in Starbucks food items. We’d also like to assess if the relationship differs based on the type of food item (bakery, salad, sandwich, etc.)</p></li>
-</ul>
-<aside><ol class="aside-footnotes"><li id="fn1"><p>Source: <a href="https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/carbohydrates/art-20045705#:~:text=How%20many%20carbohydrates%20do%20you,grams%20of%20carbs%20a%20day.">Mayo Clinic</a></p></li></ol></aside></section>
-<section id="starbucks-data" class="slide level2">
-<h2>Starbucks data</h2>
-<!-- change example, or at a minimum change bakery labels to "bakery vs. not bakery" instead of 0 and 1.-->
-<ul>
-<li><strong>Observations</strong>: 77 Starbucks food items</li>
+<li><strong>Observations</strong>: 140 countries</li>
 <li><strong>Variables:</strong>
 <ul>
-<li><code>carb</code>: Total carbohydrates (in grams)</li>
-<li><code>calories</code>: Total calories</li>
-<li><code>bakery</code>: 1: bakery food item, 0: other food type</li>
+<li><code>life_exp</code>: <em>The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic area.</em> ( from the <a href="https://www.who.int/data/gho/indicator-metadata-registry/imr-details/65#:~:text=Definition%3A,%2C%20territory%2C%20or%20geographic%20area.">World Health Organization</a>)</li>
+<li><code>income_inequality</code>: <em>Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (Gini coefficient).</em></li>
+<li><code>education</code>: Indicator of whether a country’s education index is above (<code>High</code>) or below (<code>Low</code>) the median index for the 140 countries in the data set.
+<ul>
+<li>Education index: <em>Average of mean years of schooling (of adults) and expected years of school (of children), both expressed as an index obtained by scaling wit the corresponding maxima</em></li>
+</ul></li>
 </ul></li>
 </ul>
 </section>
 <section id="terminology" class="slide level2">
 <h2>Terminology</h2>
 <ul>
-<li><code>carb</code> is the <strong>response variable</strong>
+<li><code>life_exp</code> is the <strong>response variable</strong>
 <ul>
 <li>variable whose variation we want to understand / variable we wish to predict</li>
 <li>also known as <em>outcome</em> or <em>dependent</em> variable</li>
@@ -380,7 +369,7 @@ Prof.&nbsp;Maria Tackett
 </ul>
 <div class="fragment">
 <ul>
-<li><code>calories</code>, <code>bakery</code> are the <strong>predictor variables</strong>
+<li><code>income_inequality</code>, <code>education</code> are the <strong>predictor variables</strong>
 <ul>
 <li>variables used to account for variation in the response</li>
 <li>also known as <em>explanatory</em>, <em>independent</em>, or <em>input</em> variables</li>
@@ -399,7 +388,7 @@ Prof.&nbsp;Maria Tackett
 <section id="function-between-response-and-predictors" class="slide level2">
 <h2>Function between response and predictors</h2>
 <div class="goal">
-<p><span class="math display">\[\text{carb} = f(\text{calories}, \text{bakery}) + \epsilon\]</span></p>
+<p><span class="math display">\[\text{life_exp} = f(\text{income_inequality}, \text{education}) + \epsilon\]</span></p>
 </div>
 <ul>
 <li><strong>Goal</strong>: Determine <span class="math inline">\(f\)</span></li>
@@ -421,36 +410,40 @@ Prof.&nbsp;Maria Tackett
 </ul>
 <div class="fragment">
 <ol start="2" type="1">
-<li>Use the data to fit (or train) the model, i.e, <strong>estimate the model parameters,</strong> <span class="math inline">\(\beta_0, \beta_1, \ldots, \beta_p\)</span></li>
+<li>Use the data to fit (or train) the model, i.e, <strong>compute estimates the model parameters</strong>, denoted <span class="math inline">\(\hat{\beta}_0, \hat{\beta}_1, \ldots, \hat{\beta}_p\)</span></li>
 </ol>
 </div>
 </section>
-<section id="carb-vs.-calories" class="slide level2">
-<h2>Carb vs.&nbsp;Calories</h2>
+<section id="life_exp-vs.-income_inequality" class="slide level2">
+<h2><code>life_exp</code> vs.&nbsp;<code>income_inequality</code></h2>
 
-<img data-src="02-big-picture_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p><span class="math display">\[\text{carb} = \beta_0 + \beta_1 ~\text{calories} + \epsilon\]</span></p>
+<img data-src="02-big-picture_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p><span class="math display">\[\widehat{\text{life_exp}} = \hat{\beta}_0 + \hat{\beta}_1 ~\text{income_inequality}\]</span></p>
 </section>
-<section id="carb-vs.-calories-bakery" class="slide level2">
-<h2>Carb vs.&nbsp;Calories + Bakery</h2>
+<section id="life_exp-vs.-income_inequality-education" class="slide level2">
+<h2><code>life_exp</code> vs.&nbsp;<code>income_inequality</code> + <code>education</code></h2>
 
-<img data-src="02-big-picture_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p><span class="math display">\[\text{carb} = \beta_0 + \beta_1 ~\text{calories} + \beta_2 ~\text{bakery} + \epsilon\]</span></p>
-</section>
-<section id="carb-vs.-calories-bakery-with-interaction" class="slide level2">
-<h2>Carb vs.&nbsp;Calories + Bakery (with interaction)</h2>
-
-<img data-src="02-big-picture_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p><span class="math display">\[{\small \text{carb} = \beta_0 + \beta_1 ~\text{calories} + \beta_2 ~\text{bakery} + \beta_3 ~ \text{calories} \times \text{bakery}  + \epsilon}\]</span></p>
+<img data-src="02-big-picture_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p><span class="math display">\[\widehat{\text{life_exp}} = \hat{\beta}_0 + \hat{\beta}_1 ~\text{income_inequality} + \hat{\beta}_2 ~\text{education}\]</span></p>
 </section>
 <section id="statistical-model-vs.-regression-equation" class="slide level2 midi">
 <h2>Statistical model vs.&nbsp;regression equation</h2>
 <p><strong>Statistical model (also known as data-generating model)</strong></p>
-<p><span class="math display">\[{\small \text{carb} = \beta_0 + \beta_1 ~\text{calories} + \beta_2 ~\text{bakery} + \beta_3 ~ \text{calories} \times \text{bakery}  + \epsilon}\]</span></p>
-<p>Models the process for generating values of the response in the population (function + error)</p>
+<div class="equation">
+<p><span class="math display">\[{\small \text{life_exp} = \beta_0 + \beta_1 ~\text{income_inequality} + \beta_2 ~\text{education} + \epsilon}\]</span></p>
+</div>
+<p>Models the process for generating values of the response in the population (function + error), i.e., the <u>population-level</u> model.</p>
 <p><br></p>
 <div class="fragment">
-<p><strong>Regression equation</strong></p>
+<p><strong>Regression equation (also known as the fitted model)</strong></p>
 <p>Estimate of the function using the sample data</p>
-<p><span class="math display">\[{\small \hat{\text{carb}} = \hat{\beta}_0 + \hat{\beta}_1 ~\text{calories} + \hat{\beta}_2 ~\text{bakery} + \hat{\beta}_3 ~ \text{calories} \times \text{bakery}}\]</span></p>
+<div class="equation">
+<p><span class="math display">\[{\small \widehat{\text{life_exp}} = \hat{\beta}_0 + \hat{\beta}_1 ~\text{income_inequality} + \hat{\beta}_2 ~\text{education}}\]</span></p>
 </div>
+</div>
+</section>
+<section id="life_exp-vs.-income_inequality-education-with-interaction" class="slide level2">
+<h2><code>life_exp</code> vs.&nbsp;<code>income_inequality</code> + <code>education</code> (with interaction)</h2>
+
+<img data-src="02-big-picture_files/figure-revealjs/unnamed-chunk-6-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p><span class="math display">\[{\small \widehat{\text{life_exp}} = \hat{\beta}_0 + \hat{\beta}_1 ~\text{income_inequality} + \hat{\beta}_2 ~\text{education} + \hat{\beta}_3 ~ \text{income_inequality} \times \text{education}}\]</span></p>
 </section>
 <section id="why-fit-a-model" class="slide level2">
 <h2>Why fit a model?</h2>
@@ -460,8 +453,8 @@ Prof.&nbsp;Maria Tackett
 </ul>
 <div class="question">
 <ul>
-<li><p>What is an example of a <strong>prediction</strong> question that can be answered using the model of carb vs.&nbsp;calories and bakery?</p></li>
-<li><p>What is an example of an <strong>inference</strong> question that can be answered using the model of carb vs.&nbsp;calories and bakery?</p></li>
+<li><p>What is an example of a <strong>prediction</strong> question that can be answered using the model of <code>life_exp</code> vs.&nbsp;<code>income_inequality</code> and <code>education</code>?</p></li>
+<li><p>What is an example of an <strong>inference</strong> question that can be answered using the model of <code>life_exp</code> vs.<code>income_inequality</code> and <code>education</code>?</p></li>
 </ul>
 </div>
 </section></section>
@@ -509,9 +502,11 @@ Alexander, Rohan. 2023. <span>“Telling Stories with Data,”</span> June. <a h
 <div id="ref-ostblom2022" class="csl-entry" role="listitem">
 Ostblom, Joel, and Tiffany Timbers. 2022. <span>“Opinionated Practices for Teaching Reproducibility: Motivation, Guided Instruction and Practice.”</span> <em>Journal of Statistics and Data Science Education</em> 30 (3): 241–50. <a href="https://doi.org/10.1080/26939169.2022.2074922">https://doi.org/10.1080/26939169.2022.2074922</a>.
 </div>
+<div id="ref-zarulli2021" class="csl-entry" role="listitem">
+Zarulli, Virginia, Elizaveta Sopina, Veronica Toffolutti, and Adam Lenart. 2021. <span>“Health Care System Efficiency and Life Expectancy: A 140-Country Study.”</span> Edited by Srinivas Goli. <em>PLOS ONE</em> 16 (7): e0253450. <a href="https://doi.org/10.1371/journal.pone.0253450">https://doi.org/10.1371/journal.pone.0253450</a>.
+</div>
 </div>
 </section></section>
-
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../images/logo.png" class="slide-logo"></p>

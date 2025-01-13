@@ -120,9 +120,9 @@ What does it mean for an analysis to be reproducible?
 
 -   Possible to identify and correct errors or biases in the analysis process [@alexander2023]
 
-## Why is reproducibility important? 
+## Why is reproducibility important? {.midi}
 
-![](images/02/jama-retraction.png){fig-align="center"}
+![](images/02/jama-retraction.png){fig-align="center" width="50%"}
 
 ::: small
 -   Originally reported "the intervention, compared with usual care, resulted in a fewer number of mean COPD-related hospitalizations and emergency department visits at 6 months per participant."
@@ -145,10 +145,6 @@ What does it mean for an analysis to be reproducible?
 -   **Literate programming** (code, narrative, output in one place) $\rightarrow$ Quarto
 
 -   **Version control** $\rightarrow$ Git / GitHub
-
-::: callout-note
-You will start using these computing tools in Lab 01.
-:::
 
 ## R and RStudio
 
@@ -226,42 +222,47 @@ Provides a clear record of how the analysis methods evolved. This makes analysis
 
 # Multivariable relationships
 
-## Carbohydrates in Starbucks food
+## Education and life expectancy
 
--   Starbucks often displays the total calories in their food items but not the other nutritional information.
+<!--# update the introduction-->
 
--   Carbohydrates are a body's main fuel source. The Dietary Guidelines for America recommend that carbohydrates make up 45% to 65% of total daily calories.[^1]
+@zarulli2021
 
--   Our goal is to understand the relationship between the amount of carbohydrates and calories in Starbucks food items. We'd also like to assess if the relationship differs based on the type of food item (bakery, salad, sandwich, etc.)
-
-[^1]: Source: [Mayo Clinic](https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/carbohydrates/art-20045705#:~:text=How%20many%20carbohydrates%20do%20you,grams%20of%20carbs%20a%20day.)
+::: aside
+[Click here](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0253450) to access the original research paper.
+:::
 
 ------------------------------------------------------------------------
 
-## Starbucks data
+## Life expectancy and education data
 
-<!-- change example, or at a minimum change bakery labels to "bakery vs. not bakery" instead of 0 and 1.-->
+```{r}
+#| echo: false
+library(readxl)
 
-```{r data, echo  = F}
-starbucks <- openintro::starbucks |>
-  mutate(bakery = factor(if_else(type == "bakery", 1, 0)))
+life_exp <- read_excel("data/life-expectancy-data.xlsx") |> 
+  rename(life_exp = `Life_expectancy_at_birth`, 
+         income_inequality = `Income_inequality_Gini_coefficient`) |>
+  mutate(education = if_else(Education_Index > median(Education_Index), "High", "Low"))
+  
 ```
 
--   **Observations**: 77 Starbucks food items
+-   **Observations**: `r nrow(life_exp)` countries
 -   **Variables:**
-    -   `carb`: Total carbohydrates (in grams)
-    -   `calories`: Total calories
-    -   `bakery`: 1: bakery food item, 0: other food type
+    -   `life_exp`: *The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic area.* ( from the [World Health Organization](https://www.who.int/data/gho/indicator-metadata-registry/imr-details/65#:~:text=Definition%3A,%2C%20territory%2C%20or%20geographic%20area.))
+    -   `income_inequality`: *Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (Gini coefficient).*
+    -   `education`: Indicator of whether a country's education index is above (`High`) or below (`Low`) the median index for the `r nrow(life_exp)` countries in the data set.
+        -   Education index: *Average of mean years of schooling (of adults) and expected years of school (of children), both expressed as an index obtained by scaling wit the corresponding maxima*
 
 ## Terminology
 
--   `carb` is the **response variable**
+-   `life_exp` is the **response variable**
     -   variable whose variation we want to understand / variable we wish to predict
     -   also known as *outcome* or *dependent* variable
 
 . . .
 
--   `calories`, `bakery` are the **predictor variables**
+-   `income_inequality`, `education` are the **predictor variables**
     -   variables used to account for variation in the response
     -   also known as *explanatory*, *independent*, or *input* variables
 
@@ -269,19 +270,19 @@ starbucks <- openintro::starbucks |>
 
 ```{r univariate}
 #| echo: false
-p1 <- ggplot(data = starbucks, aes(x = carb))  + 
+p1 <- ggplot(data = life_exp, aes(x = life_exp))  + 
   geom_histogram(fill = "steelblue", color = "black") + 
-  labs(x = "Carbohydrates (in grams)", 
+  labs(x = "Life expectancy (in years))", 
        y = "Count")
 
-p2 <- ggplot(data = starbucks, aes(x = calories))  + 
+p2 <- ggplot(data = life_exp, aes(x = income_inequality))  + 
   geom_histogram(fill = "steelblue", color = "black") + 
-  labs(x = "Calories", 
+  labs(x = "Income inequality", 
        y = "Count") 
 
-p3 <- ggplot(data = starbucks, aes(x = bakery))  + 
+p3 <- ggplot(data = life_exp, aes(x = education))  + 
   geom_bar(fill = "steelblue", color = "black") + 
-  labs(x = "Bakery Item", 
+  labs(x = "Education Index", 
        y = "Count")
 
 p1 + (p2 / p3)
@@ -291,16 +292,16 @@ p1 + (p2 / p3)
 
 ```{r bivariate}
 #| echo: false
-p1 <- ggplot(data = starbucks, aes(x = calories, y = carb)) + 
+p1 <- ggplot(data = life_exp, aes(x = income_inequality, y = life_exp)) + 
   geom_point(alpha = 0.5) +
   geom_smooth(method = "lm", se = FALSE, color = "steelblue") +
-  labs(x = "Calories", 
-      y  = "Carbohydrates (grams)")
+  labs(x = "Income inequality", 
+      y  = "Life expectancy (in years)")
 
-p2 <- ggplot(data = starbucks, aes(x = bakery, y = carb)) + 
+p2 <- ggplot(data = life_exp, aes(x = education, y = life_exp)) + 
   geom_boxplot(fill = "steelblue", color = "black") +
-  labs(x = "Bakery", 
-      y  = "Carbohydrates (grams)")
+  labs(x = "Education index", 
+      y  = "Life expectancy (in years)")
   
 p1 + p2
 ```
@@ -308,7 +309,7 @@ p1 + p2
 ## Function between response and predictors
 
 ::: goal
-$$\text{carb} = f(\text{calories}, \text{bakery}) + \epsilon$$
+$$\text{life_exp} = f(\text{income_inequality}, \text{education}) + \epsilon$$
 :::
 
 -   **Goal**: Determine $f$
@@ -325,81 +326,87 @@ $$\text{carb} = f(\text{calories}, \text{bakery}) + \epsilon$$
 
 . . .
 
-2.  Use the data to fit (or train) the model, i.e, **estimate the model parameters,** $\beta_0, \beta_1, \ldots, \beta_p$
+2.  Use the data to fit (or train) the model, i.e, **compute estimates the model parameters**, denoted $\hat{\beta}_0, \hat{\beta}_1, \ldots, \hat{\beta}_p$
 
-## Carb vs. Calories
+## `life_exp` vs. `income_inequality`
 
 ```{r echo = F}
-ggplot(data = starbucks, aes(x = calories, y = carb)) + 
+ggplot(data = life_exp, aes(x = income_inequality, y = life_exp)) + 
   geom_point(alpha = 0.5) +
   geom_smooth(method = "lm", se = FALSE, color = "steelblue") +
-  labs(x = "Calories", 
-      y  = "Carbohydrates (grams)", 
-      title = "Total Carbohydrates vs. Calories")
+  labs(x = "Income inequality", 
+      y  = "Life expectancy (in years))", 
+      title = "Life expectancy vs. income inequality")
 ```
 
-$$\text{carb} = \beta_0 + \beta_1 ~\text{calories} + \epsilon$$
+$$\widehat{\text{life_exp}} = \hat{\beta}_0 + \hat{\beta}_1 ~\text{income_inequality}$$
 
 ------------------------------------------------------------------------
 
-## Carb vs. Calories + Bakery
+## `life_exp` vs. `income_inequality` + `education`
 
 ```{r echo = F}
-model1 <- lm(carb ~ calories + bakery, data = starbucks)
+model1 <- lm(life_exp ~ income_inequality + education, data = life_exp)
 model1 <- tidy(model1)
 ```
 
 ```{r echo = F}
-ggplot(data = starbucks, aes(x = calories, y = carb, color = bakery)) + 
-  geom_point(alpha = 0.5) +
+ggplot(data = life_exp, aes(x = income_inequality, y = life_exp, color = education, shape = education)) + 
+  geom_point(alpha = 0.8) +
   geom_abline(slope = model1$estimate[2], intercept = model1$estimate[1], color = "#1B9E77") +
   geom_abline(slope = model1$estimate[2], intercept = model1$estimate[1] + model1$estimate[3], color = "#7570B3") +
-  labs(x = "Calories", 
-      y  = "Carbohydrates (grams)",
-      color = "Bakery", 
-      title = "Total Carbohydrates vs. Calories", 
-      subtitle = "by Bakery") + 
+  labs(x = "Income inequality", 
+      y  = "Life expectancy (in years)",
+      color = "Education", 
+      shape = "Education",
+      title = "Life expectancy vs. income inequality", 
+      subtitle = "by education") + 
   scale_color_manual(values=c("#1B9E77", "#7570B3"))
 ```
 
-$$\text{carb} = \beta_0 + \beta_1 ~\text{calories} + \beta_2 ~\text{bakery} + \epsilon$$
-
-## Carb vs. Calories + Bakery (with interaction)
-
-```{r}
-#| echo: false
-
-ggplot(data = starbucks, aes(x = calories, y = carb, color = bakery)) + 
-  geom_point(alpha = 0.5) +
-  geom_smooth(method = "lm", se = FALSE) +
-  labs(x = "Calories", 
-      y  = "Carbohydrates (grams)",
-      color = "Bakery", 
-      title = "Total Carbohydrates vs. Calories", 
-      subtitle = "With Interaction") + 
-  scale_color_manual(values=c("#1B9E77", "#7570B3"))
-
-```
-
-$${\small \text{carb} = \beta_0 + \beta_1 ~\text{calories} + \beta_2 ~\text{bakery} + \beta_3 ~ \text{calories} \times \text{bakery}  + \epsilon}$$
+$$\widehat{\text{life_exp}} = \hat{\beta}_0 + \hat{\beta}_1 ~\text{income_inequality} + \hat{\beta}_2 ~\text{education}$$
 
 ## Statistical model vs. regression equation {.midi}
 
 **Statistical model (also known as data-generating model)**
 
-$${\small \text{carb} = \beta_0 + \beta_1 ~\text{calories} + \beta_2 ~\text{bakery} + \beta_3 ~ \text{calories} \times \text{bakery}  + \epsilon}$$
+::: equation
+$${\small \text{life_exp} = \beta_0 + \beta_1 ~\text{income_inequality} + \beta_2 ~\text{education} + \epsilon}$$
+:::
 
-Models the process for generating values of the response in the population (function + error)
+Models the process for generating values of the response in the population (function + error), i.e., the [population-level]{.underline} model.
 
 <br>
 
 . . .
 
-**Regression equation**
+**Regression equation (also known as the fitted model)**
 
 Estimate of the function using the sample data
 
-$${\small \hat{\text{carb}} = \hat{\beta}_0 + \hat{\beta}_1 ~\text{calories} + \hat{\beta}_2 ~\text{bakery} + \hat{\beta}_3 ~ \text{calories} \times \text{bakery}}$$
+::: equation
+$${\small \widehat{\text{life_exp}} = \hat{\beta}_0 + \hat{\beta}_1 ~\text{income_inequality} + \hat{\beta}_2 ~\text{education}}$$
+:::
+
+## `life_exp` vs. `income_inequality` + `education` (with interaction)
+
+```{r}
+#| echo: false
+
+ggplot(data = life_exp, aes(x = income_inequality, y = life_exp, color = education, shape = education)) + 
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Income inequality", 
+      y  = "Life expectancy (in years)",
+      color = "Education", 
+      shape = "Education",
+      title = "Life expectancy vs. income inequality", 
+      subtitle = "by education (with interaction)") + 
+  scale_color_manual(values=c("#1B9E77", "#7570B3"))
+
+```
+
+$${\small \widehat{\text{life_exp}} = \hat{\beta}_0 + \hat{\beta}_1 ~\text{income_inequality} + \hat{\beta}_2 ~\text{education} + \hat{\beta}_3 ~ \text{income_inequality} \times \text{education}}$$
 
 ## Why fit a model?
 
@@ -408,9 +415,9 @@ $${\small \hat{\text{carb}} = \hat{\beta}_0 + \hat{\beta}_1 ~\text{calories} + \
 -   **Inference:** Conclusion about the relationship between the response and predictor variables
 
 ::: question
--   What is an example of a **prediction** question that can be answered using the model of carb vs. calories and bakery?
+-   What is an example of a **prediction** question that can be answered using the model of `life_exp` vs. `income_inequality` and `education`?
 
--   What is an example of an **inference** question that can be answered using the model of carb vs. calories and bakery?
+-   What is an example of an **inference** question that can be answered using the model of `life_exp` vs.`income_inequality` and `education`?
 :::
 
 # Application exercise
