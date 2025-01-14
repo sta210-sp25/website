@@ -163,22 +163,19 @@ Prof.&nbsp;Maria Tackett
 
   <p class="date">Jan 14, 2025</p>
 </section>
-<section id="announcements" class="slide level2 midi">
-<h2>Announcements <!--# UPDATE--></h2>
+<section id="announcements" class="slide level2">
+<h2>Announcements</h2>
 <ul>
-<li>Resources for extra R review
+<li>Office hours start this week
 <ul>
-<li><p><a href="https://learnr.numbat.space/">Learn R: An interactive introduction to data analysis R</a> (focus on Chapters 4 - 6)</p></li>
-<li><p>Duke Library Center for Data and Visualization Sciences workshops</p>
-<ul>
-<li><p>R for Lunch: data wrangling with dplyr (Fri, Sep 1, 12:30 - 1:30)</p></li>
-<li><p>R for Lunch: visualization with ggplot2 (Fri, Sep 8, 12:30 - 1:30)</p></li>
-<li><p>See the <a href="https://library.duke.edu/data/workshops">CDVS website</a> for more information and to register.</p></li>
+<li>See office hours schedule on Canvas</li>
 </ul></li>
+<li>Complete <a href="../labs/lab-00.html">Lab 00 tasks</a></li>
+<li>Introduction to R workshops at Duke library
+<ul>
+<li><a href="https://duke.libcal.com/event/13664829">Data wrangling with dplyr</a> - Thu, Jan 16 at 12pm</li>
+<li><a href="https://duke.libcal.com/event/13660125">Data visualization with ggplot2</a> - Thu, Jan 23 at 12pm</li>
 </ul></li>
-<li>Last day of in-person work for this class is Dec 7</li>
-<li><a href="https://sta210-fa23.netlify.app/syllabus#lecture-recording-request">Lecture recordings request policy</a></li>
-<li>Readings for next week will be posted later this week</li>
 </ul>
 </section>
 <section>
@@ -237,10 +234,10 @@ Prof.&nbsp;Maria Tackett
 <h2>Why is reproducibility important?</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/02/jama-retraction.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+<p><img data-src="images/02/jama-retraction.png" class="quarto-figure quarto-figure-center" style="width:55.0%"></p>
 </figure>
 </div>
-<div class="small">
+<div>
 <ul>
 <li><p>Originally reported “the intervention, compared with usual care, resulted in a fewer number of mean COPD-related hospitalizations and emergency department visits at 6 months per participant.”</p></li>
 <li><p>There were actually <strong>more</strong> COPD-related hospitalizations and emergency department visits in the intervention group compared to the control group</p></li>
@@ -337,24 +334,27 @@ Prof.&nbsp;Maria Tackett
 </section>
 <section id="education-and-life-expectancy" class="slide level2">
 <h2>Education and life expectancy</h2>
-<!--# update the introduction-->
-<p><span class="citation" data-cites="zarulli2021">Zarulli et al. (<a href="#/references" role="doc-biblioref" onclick="">2021</a>)</span></p>
+<p>The data set comes from <span class="citation" data-cites="zarulli2021">Zarulli et al. (<a href="#/references" role="doc-biblioref" onclick="">2021</a>)</span> who analyze the effects of a country’s healthcare expenditures and other factors on the country’s life expectancy. The data are originally from the <a href="http://hdr.undp.org/en/data.">Human Development Database</a> and <a href="https://apps.who.int/nha/database/">World Health Organization</a>.</p>
+<p>There are 140 countries (observations) in the data set.</p>
 
 <aside><div>
-<p><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0253450">Click here</a> to access the original research paper.</p>
+<p><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0253450">Click here</a> for the original research paper.</p>
 </div></aside></section>
-<section id="life-expectancy-and-education-data" class="slide level2">
-<h2>Life expectancy and education data</h2>
+<section id="variable-definitions" class="slide level2">
+<h2>Variable definitions</h2>
+<div>
 <ul>
-<li><strong>Observations</strong>: 140 countries</li>
-<li><strong>Variables:</strong>
+<li class="fragment"><p><code>life_exp</code>: <em>The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic area.</em> ( from the <a href="https://www.who.int/data/gho/indicator-metadata-registry/imr-details/65#:~:text=Definition%3A,%2C%20territory%2C%20or%20geographic%20area.">World Health Organization</a>)</p></li>
+<li class="fragment"><p><code>income_inequality</code>: <em>Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (Gini coefficient).</em></p></li>
+</ul>
+</div>
+</section>
+<section id="variable-definitions-1" class="slide level2">
+<h2>Variable definitions</h2>
 <ul>
-<li><code>life_exp</code>: <em>The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic area.</em> ( from the <a href="https://www.who.int/data/gho/indicator-metadata-registry/imr-details/65#:~:text=Definition%3A,%2C%20territory%2C%20or%20geographic%20area.">World Health Organization</a>)</li>
-<li><code>income_inequality</code>: <em>Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (Gini coefficient).</em></li>
 <li><code>education</code>: Indicator of whether a country’s education index is above (<code>High</code>) or below (<code>Low</code>) the median index for the 140 countries in the data set.
 <ul>
-<li>Education index: <em>Average of mean years of schooling (of adults) and expected years of school (of children), both expressed as an index obtained by scaling wit the corresponding maxima</em></li>
-</ul></li>
+<li>Education index: <em>Average of mean years of schooling (of adults) and expected years of school (of children), both expressed as an index obtained by scaling wit the corresponding maxima.</em></li>
 </ul></li>
 </ul>
 </section>
@@ -410,7 +410,7 @@ Prof.&nbsp;Maria Tackett
 </ul>
 <div class="fragment">
 <ol start="2" type="1">
-<li>Use the data to fit (or train) the model, i.e, <strong>compute estimates the model parameters</strong>, denoted <span class="math inline">\(\hat{\beta}_0, \hat{\beta}_1, \ldots, \hat{\beta}_p\)</span></li>
+<li>Use the data to fit (or train) the model, i.e, <strong>compute estimates of the model parameters</strong>, denoted <span class="math inline">\(\hat{\beta}_0, \hat{\beta}_1, \ldots, \hat{\beta}_p\)</span></li>
 </ol>
 </div>
 </section>
@@ -419,14 +419,14 @@ Prof.&nbsp;Maria Tackett
 
 <img data-src="02-big-picture_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p><span class="math display">\[\widehat{\text{life_exp}} = \hat{\beta}_0 + \hat{\beta}_1 ~\text{income_inequality}\]</span></p>
 </section>
-<section id="life_exp-vs.-income_inequality-education" class="slide level2">
+<section id="life_exp-vs.-income_inequality-education" class="slide level2 midi">
 <h2><code>life_exp</code> vs.&nbsp;<code>income_inequality</code> + <code>education</code></h2>
 
 <img data-src="02-big-picture_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p><span class="math display">\[\widehat{\text{life_exp}} = \hat{\beta}_0 + \hat{\beta}_1 ~\text{income_inequality} + \hat{\beta}_2 ~\text{education}\]</span></p>
 </section>
 <section id="statistical-model-vs.-regression-equation" class="slide level2 midi">
 <h2>Statistical model vs.&nbsp;regression equation</h2>
-<p><strong>Statistical model (also known as data-generating model)</strong></p>
+<p><strong>Statistical model (also known as the data-generating model)</strong></p>
 <div class="equation">
 <p><span class="math display">\[{\small \text{life_exp} = \beta_0 + \beta_1 ~\text{income_inequality} + \beta_2 ~\text{education} + \epsilon}\]</span></p>
 </div>
@@ -440,7 +440,7 @@ Prof.&nbsp;Maria Tackett
 </div>
 </div>
 </section>
-<section id="life_exp-vs.-income_inequality-education-with-interaction" class="slide level2">
+<section id="life_exp-vs.-income_inequality-education-with-interaction" class="slide level2 midi">
 <h2><code>life_exp</code> vs.&nbsp;<code>income_inequality</code> + <code>education</code> (with interaction)</h2>
 
 <img data-src="02-big-picture_files/figure-revealjs/unnamed-chunk-6-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p><span class="math display">\[{\small \widehat{\text{life_exp}} = \hat{\beta}_0 + \hat{\beta}_1 ~\text{income_inequality} + \hat{\beta}_2 ~\text{education} + \hat{\beta}_3 ~ \text{income_inequality} \times \text{education}}\]</span></p>
@@ -451,18 +451,20 @@ Prof.&nbsp;Maria Tackett
 <li><p><strong>Prediction:</strong> Expected value of the response variable for given values of the predictor variables</p></li>
 <li><p><strong>Inference:</strong> Conclusion about the relationship between the response and predictor variables</p></li>
 </ul>
+<div class="fragment">
 <div class="question">
 <ul>
 <li><p>What is an example of a <strong>prediction</strong> question that can be answered using the model of <code>life_exp</code> vs.&nbsp;<code>income_inequality</code> and <code>education</code>?</p></li>
 <li><p>What is an example of an <strong>inference</strong> question that can be answered using the model of <code>life_exp</code> vs.<code>income_inequality</code> and <code>education</code>?</p></li>
 </ul>
 </div>
+</div>
 </section></section>
 <section>
 <section id="application-exercise" class="title-slide slide level1 center">
 <h1>Application exercise</h1>
 <div class="appex">
-<p>📋 <a href="https://sta210-fa23.netlify.app/ae/ae-02-bikeshare.html">sta210-fa23.netlify.app/ae/ae-02-bikeshare</a></p>
+<p>📋 <a href="../ae/ae-02-life-expectancy.html">sta210-sp25.netlify.app/ae/ae-02-life-expectancy</a></p>
 </div>
 </section>
 <section id="recap" class="slide level2 midi">

@@ -184,8 +184,8 @@
     "objectID": "slides/02-big-picture.html#announcements",
     "href": "slides/02-big-picture.html#announcements",
     "title": "The big picture",
-    "section": "Announcements ",
-    "text": "Announcements \n\nResources for extra R review\n\nLearn R: An interactive introduction to data analysis R (focus on Chapters 4 - 6)\nDuke Library Center for Data and Visualization Sciences workshops\n\nR for Lunch: data wrangling with dplyr (Fri, Sep 1, 12:30 - 1:30)\nR for Lunch: visualization with ggplot2 (Fri, Sep 8, 12:30 - 1:30)\nSee the CDVS website for more information and to register.\n\n\nLast day of in-person work for this class is Dec 7\nLecture recordings request policy\nReadings for next week will be posted later this week"
+    "section": "Announcements",
+    "text": "Announcements\n\nOffice hours start this week\n\nSee office hours schedule on Canvas\n\nComplete Lab 00 tasks\nIntroduction to R workshops at Duke library\n\nData wrangling with dplyr - Thu, Jan 16 at 12pm\nData visualization with ggplot2 - Thu, Jan 23 at 12pm"
   },
   {
     "objectID": "slides/02-big-picture.html#topics",
@@ -286,18 +286,25 @@
     "text": "git and GitHub\n\n\ngit is a version control system – like “Track Changes” features from Microsoft Word.\nGitHub is the home for your git-based projects on the internet (like DropBox but much better).\nThere are a lot of git commands and very few people know them all. 99% of the time you will use git to add, commit, push, and pull."
   },
   {
-    "objectID": "slides/02-big-picture.html#carbohydrates-in-starbucks-food",
-    "href": "slides/02-big-picture.html#carbohydrates-in-starbucks-food",
+    "objectID": "slides/02-big-picture.html#education-and-life-expectancy",
+    "href": "slides/02-big-picture.html#education-and-life-expectancy",
     "title": "The big picture",
-    "section": "Carbohydrates in Starbucks food",
-    "text": "Carbohydrates in Starbucks food\n\nStarbucks often displays the total calories in their food items but not the other nutritional information.\nCarbohydrates are a body’s main fuel source. The Dietary Guidelines for America recommend that carbohydrates make up 45% to 65% of total daily calories.1\nOur goal is to understand the relationship between the amount of carbohydrates and calories in Starbucks food items. We’d also like to assess if the relationship differs based on the type of food item (bakery, salad, sandwich, etc.)\n\nSource: Mayo Clinic"
+    "section": "Education and life expectancy",
+    "text": "Education and life expectancy\nThe data set comes from Zarulli et al. (2021) who analyze the effects of a country’s healthcare expenditures and other factors on the country’s life expectancy. The data are originally from the Human Development Database and World Health Organization.\nThere are 140 countries (observations) in the data set.\n\n\nClick here for the original research paper."
   },
   {
-    "objectID": "slides/02-big-picture.html#starbucks-data",
-    "href": "slides/02-big-picture.html#starbucks-data",
+    "objectID": "slides/02-big-picture.html#variable-definitions",
+    "href": "slides/02-big-picture.html#variable-definitions",
     "title": "The big picture",
-    "section": "Starbucks data",
-    "text": "Starbucks data\n\n\nObservations: 77 Starbucks food items\nVariables:\n\ncarb: Total carbohydrates (in grams)\ncalories: Total calories\nbakery: 1: bakery food item, 0: other food type"
+    "section": "Variable definitions",
+    "text": "Variable definitions\n\n\nlife_exp: The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic area. ( from the World Health Organization)\nincome_inequality: Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (Gini coefficient)."
+  },
+  {
+    "objectID": "slides/02-big-picture.html#variable-definitions-1",
+    "href": "slides/02-big-picture.html#variable-definitions-1",
+    "title": "The big picture",
+    "section": "Variable definitions",
+    "text": "Variable definitions\n\neducation: Indicator of whether a country’s education index is above (High) or below (Low) the median index for the 140 countries in the data set.\n\nEducation index: Average of mean years of schooling (of adults) and expected years of school (of children), both expressed as an index obtained by scaling wit the corresponding maxima."
   },
   {
     "objectID": "slides/02-big-picture.html#terminology",
@@ -332,42 +339,42 @@
     "href": "slides/02-big-picture.html#determine-f",
     "title": "The big picture",
     "section": "Determine \\(f\\)",
-    "text": "Determine \\(f\\)\n\nChoose the functional form of \\(f\\), i.e., choose the appropriate model given the response variable\n\n\nSuppose \\(f\\) takes the form of a linear model\n\\[y = f(\\mathbf{X}) = \\beta_0 + \\beta_1 x_1 + \\dots + \\beta_p x_p + \\epsilon\\]\n\n\n\nUse the data to fit (or train) the model, i.e, compute estimates the model parameters, denoted \\(\\hat{\\beta}_0, \\hat{\\beta}_1, \\ldots, \\hat{\\beta}_p\\)"
+    "text": "Determine \\(f\\)\n\nChoose the functional form of \\(f\\), i.e., choose the appropriate model given the response variable\n\n\nSuppose \\(f\\) takes the form of a linear model\n\\[y = f(\\mathbf{X}) = \\beta_0 + \\beta_1 x_1 + \\dots + \\beta_p x_p + \\epsilon\\]\n\n\n\nUse the data to fit (or train) the model, i.e, compute estimates of the model parameters, denoted \\(\\hat{\\beta}_0, \\hat{\\beta}_1, \\ldots, \\hat{\\beta}_p\\)"
   },
   {
-    "objectID": "slides/02-big-picture.html#carb-vs.-calories",
-    "href": "slides/02-big-picture.html#carb-vs.-calories",
+    "objectID": "slides/02-big-picture.html#life_exp-vs.-income_inequality",
+    "href": "slides/02-big-picture.html#life_exp-vs.-income_inequality",
     "title": "The big picture",
-    "section": "Carb vs. Calories",
-    "text": "Carb vs. Calories\n\n\\[\\text{carb} = \\beta_0 + \\beta_1 ~\\text{calories} + \\epsilon\\]"
+    "section": "life_exp vs. income_inequality",
+    "text": "life_exp vs. income_inequality\n\n\\[\\widehat{\\text{life_exp}} = \\hat{\\beta}_0 + \\hat{\\beta}_1 ~\\text{income_inequality}\\]"
   },
   {
-    "objectID": "slides/02-big-picture.html#carb-vs.-calories-bakery",
-    "href": "slides/02-big-picture.html#carb-vs.-calories-bakery",
+    "objectID": "slides/02-big-picture.html#life_exp-vs.-income_inequality-education",
+    "href": "slides/02-big-picture.html#life_exp-vs.-income_inequality-education",
     "title": "The big picture",
-    "section": "Carb vs. Calories + Bakery",
-    "text": "Carb vs. Calories + Bakery\n\n\\[\\text{carb} = \\beta_0 + \\beta_1 ~\\text{calories} + \\beta_2 ~\\text{bakery} + \\epsilon\\]"
-  },
-  {
-    "objectID": "slides/02-big-picture.html#carb-vs.-calories-bakery-with-interaction",
-    "href": "slides/02-big-picture.html#carb-vs.-calories-bakery-with-interaction",
-    "title": "The big picture",
-    "section": "Carb vs. Calories + Bakery (with interaction)",
-    "text": "Carb vs. Calories + Bakery (with interaction)\n\n\\[{\\small \\text{carb} = \\beta_0 + \\beta_1 ~\\text{calories} + \\beta_2 ~\\text{bakery} + \\beta_3 ~ \\text{calories} \\times \\text{bakery}  + \\epsilon}\\]"
+    "section": "life_exp vs. income_inequality + education",
+    "text": "life_exp vs. income_inequality + education\n\n\\[\\widehat{\\text{life_exp}} = \\hat{\\beta}_0 + \\hat{\\beta}_1 ~\\text{income_inequality} + \\hat{\\beta}_2 ~\\text{education}\\]"
   },
   {
     "objectID": "slides/02-big-picture.html#statistical-model-vs.-regression-equation",
     "href": "slides/02-big-picture.html#statistical-model-vs.-regression-equation",
     "title": "The big picture",
     "section": "Statistical model vs. regression equation",
-    "text": "Statistical model vs. regression equation\nStatistical model (also known as data-generating model)\n\n\\[{\\small \\text{life_exp} = \\beta_0 + \\beta_1 ~\\text{income_inequality} + \\beta_2 ~\\text{education} + \\epsilon}\\]\n\nModels the process for generating values of the response in the population (function + error), i.e., the population-level model.\n\n\nRegression equation (also known as the fitted model)\nEstimate of the function using the sample data\n\n\\[{\\small \\widehat{\\text{life_exp}} = \\hat{\\beta}_0 + \\hat{\\beta}_1 ~\\text{income_inequality} + \\hat{\\beta}_2 ~\\text{education}}\\]"
+    "text": "Statistical model vs. regression equation\nStatistical model (also known as the data-generating model)\n\n\\[{\\small \\text{life_exp} = \\beta_0 + \\beta_1 ~\\text{income_inequality} + \\beta_2 ~\\text{education} + \\epsilon}\\]\n\nModels the process for generating values of the response in the population (function + error), i.e., the population-level model.\n\n\nRegression equation (also known as the fitted model)\nEstimate of the function using the sample data\n\n\\[{\\small \\widehat{\\text{life_exp}} = \\hat{\\beta}_0 + \\hat{\\beta}_1 ~\\text{income_inequality} + \\hat{\\beta}_2 ~\\text{education}}\\]"
+  },
+  {
+    "objectID": "slides/02-big-picture.html#life_exp-vs.-income_inequality-education-with-interaction",
+    "href": "slides/02-big-picture.html#life_exp-vs.-income_inequality-education-with-interaction",
+    "title": "The big picture",
+    "section": "life_exp vs. income_inequality + education (with interaction)",
+    "text": "life_exp vs. income_inequality + education (with interaction)\n\n\\[{\\small \\widehat{\\text{life_exp}} = \\hat{\\beta}_0 + \\hat{\\beta}_1 ~\\text{income_inequality} + \\hat{\\beta}_2 ~\\text{education} + \\hat{\\beta}_3 ~ \\text{income_inequality} \\times \\text{education}}\\]"
   },
   {
     "objectID": "slides/02-big-picture.html#why-fit-a-model",
     "href": "slides/02-big-picture.html#why-fit-a-model",
     "title": "The big picture",
     "section": "Why fit a model?",
-    "text": "Why fit a model?\n\nPrediction: Expected value of the response variable for given values of the predictor variables\nInference: Conclusion about the relationship between the response and predictor variables\n\n\n\nWhat is an example of a prediction question that can be answered using the model of life_exp vs. income_inequality and education?\nWhat is an example of an inference question that can be answered using the model of life_exp vs.income_inequality and education?"
+    "text": "Why fit a model?\n\nPrediction: Expected value of the response variable for given values of the predictor variables\nInference: Conclusion about the relationship between the response and predictor variables\n\n\n\n\nWhat is an example of a prediction question that can be answered using the model of life_exp vs. income_inequality and education?\nWhat is an example of an inference question that can be answered using the model of life_exp vs.income_inequality and education?"
   },
   {
     "objectID": "slides/02-big-picture.html#recap",
@@ -530,84 +537,119 @@
     ]
   },
   {
-    "objectID": "prepare/prepare-lec03.html",
-    "href": "prepare/prepare-lec03.html",
-    "title": "Prepare for Lecture 03: Simple linear regression",
+    "objectID": "ae/ae-02-life-expectancy.html",
+    "href": "ae/ae-02-life-expectancy.html",
+    "title": "AE 02: Life expectancy and healthcare expenditure",
     "section": "",
-    "text": "📖 Read Simple linear regression, Section 4.1 - 4.6\n📖 Read Simple linear regression, Section 4.8"
+    "text": "Important\n\n\n\nFor this AE, you will discuss the questions in groups. This AE does not count towards the Application Exercise grade.\nlibrary(tidyverse)\nlibrary(readxl)\nlibrary(tidymodels)\nlibrary(patchwork)"
   },
   {
-    "objectID": "hw/stats-experience.html",
-    "href": "hw/stats-experience.html",
-    "title": "Statistics Experience",
-    "section": "",
-    "text": "To be posted.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n–&gt;\n\n–&gt;\n\n–&gt;\n\n–&gt;\n\n–&gt;\n\n–&gt;\n\n–&gt;",
-    "crumbs": [
-      "Homework",
-      "Statistics experience"
-    ]
+    "objectID": "ae/ae-02-life-expectancy.html#introduction",
+    "href": "ae/ae-02-life-expectancy.html#introduction",
+    "title": "AE 02: Life expectancy and healthcare expenditure",
+    "section": "Introduction",
+    "text": "Introduction\nThe data set comes from Zarulli et al. (2021), who analyze the effects of a country’s healthcare expenditures and other factors on the country’s life expectancy. The data are originally from the Human Development Database and World Health Organization.\nThis AE will focus on the following variables:\n\nlife_exp: The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic area. ( from the World Health Organization)\nhealth_pct_gdp: Spending on healthcare goods and services, expressed as a percentage of GDP. It excludes capital health expenditures such as buildings, machinery, information technology and stocks of vaccines for emergency or outbreaks.\n\nClick here for the original research paper and a full list of variables in the original data set.\n\nlife_exp &lt;- read_excel(\"data/life-expectancy-data.xlsx\") |&gt; \n  rename(life_exp = `Life_expectancy_at_birth`, \n         health_pct_gdp = `Domestic_general_government_health_expenditure_pct_of_GDP`)\n\n\nlife_exp |&gt;\n  select(life_exp, health_pct_gdp) |&gt;\n  glimpse()\n\nRows: 140\nColumns: 2\n$ life_exp       &lt;dbl&gt; 63.8, 78.2, 59.9, 76.2, 74.6, 83.0, 81.3, 72.5, 71.8, 7…\n$ health_pct_gdp &lt;dbl&gt; 5, 41, 44, 74, 16, 68, 73, 20, 18, 61, 84, 66, 21, 74, …"
   },
   {
-    "objectID": "hw/hw-03.html",
-    "href": "hw/hw-03.html",
-    "title": "HW 03",
+    "objectID": "ae/ae-02-life-expectancy.html#exercises",
+    "href": "ae/ae-02-life-expectancy.html#exercises",
+    "title": "AE 02: Life expectancy and healthcare expenditure",
+    "section": "Exercises",
+    "text": "Exercises\nWe begin by visualizing the distributions of life expectancy, health expenditure percentage, and the relationship between these two variables.\n\np1 &lt;- ggplot(life_exp, aes(x = life_exp)) +\n  geom_histogram() + \n  labs(x = \"Life expectancy\")\n\np2 &lt;- ggplot(life_exp, aes(x = health_pct_gdp)) +\n  geom_histogram() + \n  labs(x = \"% Health expenditure\")\n\np3 &lt;- ggplot(life_exp, aes(x = health_pct_gdp, y = life_exp)) +\n  geom_point() + \n  labs(x = \"% Health expenditure\", \n       y = \"Life expectancy\")\n\n(p1 | p2) / p3\n\n\n\n\n\n\n\n\n\nExercise 1\nDescribe the relationship between life expectancy and healthcare expenditure as a percentage of the GDP. Comment on how we expect the life expectancy to change as the percentage on healthcare expenditure changes.\n\n\nExercise 2\nSuppose you want to fit a model so you can use the healthcare expenditure as a percentage of GDP to predict life expectancy. Would a model of the form\n\\[\\text{life_exp} = \\beta_0 + \\beta_1 ~ \\text{health_pct_gdp} + \\epsilon\\]\nbe a useful model for the data? Why or why not?"
+  },
+  {
+    "objectID": "prepare/prepare-lec02.html",
+    "href": "prepare/prepare-lec02.html",
+    "title": "Prepare for Lecture 02: The big picture",
+    "section": "",
+    "text": "📖 Read R for Data Science, Introduction: What you will learn\n📖 Read GitHub for supporting, reusing, contributing, and failing safely\n🎥 Watch Meet the Toolkit: R + RStudio\n🎥 Watch Meet the Toolkit: Quarto"
+  },
+  {
+    "objectID": "hw/hw-02.html",
+    "href": "hw/hw-02.html",
+    "title": "HW 02",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Homework",
-      "HW 03"
+      "HW 02"
     ]
   },
   {
-    "objectID": "hw/hw-04.html",
-    "href": "hw/hw-04.html",
-    "title": "HW 04",
+    "objectID": "hw/hw-01.html",
+    "href": "hw/hw-01.html",
+    "title": "HW 01",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Homework",
-      "HW 04"
+      "HW 01"
     ]
   },
   {
-    "objectID": "overview.html",
-    "href": "overview.html",
-    "title": "STA 210 - Regression Analysis",
+    "objectID": "hw/hw-05.html",
+    "href": "hw/hw-05.html",
+    "title": "HW 05",
     "section": "",
-    "text": "In STA 210, students will learn how linear and logistic regression models are used to explore multivariable relationships and apply these methods to answer relevant and engaging questions using a data-driven approach. Students will develop computing skills to implement a reproducible data analysis workflow and gain experience communicating statistical results. Throughout the semester, students will work on a team project where they will develop a research question, answer it using methods learned in the course, and share results through a written report and presentation.\nTopics include applications of linear and logistic regression, interpretation, diagnostics, model selection, and model assessment. Students will gain experience using the computing tools R and GitHub to analyze real-world data from a variety of fields. This class emphasizes data analysis over mathematical theory.\n\n\n100-level Statistical Science course or Statistical Science 230, 231, or 240L",
+    "text": "To be posted.",
     "crumbs": [
-      "Overview"
+      "Homework",
+      "HW 05"
     ]
   },
   {
-    "objectID": "overview.html#pre-requisites",
-    "href": "overview.html#pre-requisites",
-    "title": "STA 210 - Regression Analysis",
-    "section": "",
-    "text": "100-level Statistical Science course or Statistical Science 230, 231, or 240L",
-    "crumbs": [
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "overview.html#teaching-assistants",
-    "href": "overview.html#teaching-assistants",
-    "title": "STA 210 - Regression Analysis",
-    "section": "Teaching assistants",
-    "text": "Teaching assistants\n\n\n\n\n\n\n\nName\nRole\n\n\nSylvia Vincent\nHead TA\nLab 01L leader\nLab 02L leader\n\n\nIshrit Gupta\nLab 02L leader\n\n\nKareena Legare\nLab 01L helper\n\n\n\nSee Canvas for office hours times and locations.",
-    "crumbs": [
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "labs/lab-05.html",
-    "href": "labs/lab-05.html",
-    "title": "Lab 05",
+    "objectID": "labs/lab-06.html",
+    "href": "labs/lab-06.html",
+    "title": "Lab 06",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 05"
+      "Lab 06"
+    ]
+  },
+  {
+    "objectID": "labs/lab-04.html",
+    "href": "labs/lab-04.html",
+    "title": "Lab 04",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 04"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html",
+    "href": "labs/lab-01.html",
+    "title": "Lab 01",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-02.html",
+    "href": "labs/lab-02.html",
+    "title": "Lab 02",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 02"
+    ]
+  },
+  {
+    "objectID": "labs/lab-03.html",
+    "href": "labs/lab-03.html",
+    "title": "Lab 03",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 03"
     ]
   },
   {
@@ -688,99 +730,85 @@
     ]
   },
   {
-    "objectID": "labs/lab-03.html",
-    "href": "labs/lab-03.html",
-    "title": "Lab 03",
+    "objectID": "labs/lab-05.html",
+    "href": "labs/lab-05.html",
+    "title": "Lab 05",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 03"
+      "Lab 05"
     ]
   },
   {
-    "objectID": "labs/lab-02.html",
-    "href": "labs/lab-02.html",
-    "title": "Lab 02",
+    "objectID": "overview.html",
+    "href": "overview.html",
+    "title": "STA 210 - Regression Analysis",
     "section": "",
-    "text": "To be posted.",
+    "text": "In STA 210, students will learn how linear and logistic regression models are used to explore multivariable relationships and apply these methods to answer relevant and engaging questions using a data-driven approach. Students will develop computing skills to implement a reproducible data analysis workflow and gain experience communicating statistical results. Throughout the semester, students will work on a team project where they will develop a research question, answer it using methods learned in the course, and share results through a written report and presentation.\nTopics include applications of linear and logistic regression, interpretation, diagnostics, model selection, and model assessment. Students will gain experience using the computing tools R and GitHub to analyze real-world data from a variety of fields. This class emphasizes data analysis over mathematical theory.\n\n\n100-level Statistical Science course or Statistical Science 230, 231, or 240L",
     "crumbs": [
-      "Labs",
-      "Lab 02"
+      "Overview"
     ]
   },
   {
-    "objectID": "labs/lab-01.html",
-    "href": "labs/lab-01.html",
-    "title": "Lab 01",
+    "objectID": "overview.html#pre-requisites",
+    "href": "overview.html#pre-requisites",
+    "title": "STA 210 - Regression Analysis",
     "section": "",
-    "text": "To be posted.",
+    "text": "100-level Statistical Science course or Statistical Science 230, 231, or 240L",
     "crumbs": [
-      "Labs",
-      "Lab 01"
+      "Overview"
     ]
   },
   {
-    "objectID": "labs/lab-04.html",
-    "href": "labs/lab-04.html",
-    "title": "Lab 04",
-    "section": "",
-    "text": "To be posted.",
+    "objectID": "overview.html#teaching-assistants",
+    "href": "overview.html#teaching-assistants",
+    "title": "STA 210 - Regression Analysis",
+    "section": "Teaching assistants",
+    "text": "Teaching assistants\n\n\n\n\n\n\n\nName\nRole\n\n\nSylvia Vincent\nHead TA\nLab 01L leader\nLab 02L leader\n\n\nIshrit Gupta\nLab 02L leader\n\n\nKareena Legare\nLab 01L helper\n\n\n\nSee Canvas for office hours times and locations.",
     "crumbs": [
-      "Labs",
-      "Lab 04"
+      "Overview"
     ]
   },
   {
-    "objectID": "labs/lab-06.html",
-    "href": "labs/lab-06.html",
-    "title": "Lab 06",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 06"
-    ]
-  },
-  {
-    "objectID": "hw/hw-05.html",
-    "href": "hw/hw-05.html",
-    "title": "HW 05",
+    "objectID": "hw/hw-04.html",
+    "href": "hw/hw-04.html",
+    "title": "HW 04",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Homework",
-      "HW 05"
+      "HW 04"
     ]
   },
   {
-    "objectID": "hw/hw-01.html",
-    "href": "hw/hw-01.html",
-    "title": "HW 01",
+    "objectID": "hw/hw-03.html",
+    "href": "hw/hw-03.html",
+    "title": "HW 03",
     "section": "",
     "text": "To be posted.",
     "crumbs": [
       "Homework",
-      "HW 01"
+      "HW 03"
     ]
   },
   {
-    "objectID": "hw/hw-02.html",
-    "href": "hw/hw-02.html",
-    "title": "HW 02",
+    "objectID": "hw/stats-experience.html",
+    "href": "hw/stats-experience.html",
+    "title": "Statistics Experience",
     "section": "",
-    "text": "To be posted.",
+    "text": "To be posted.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n–&gt;\n\n–&gt;\n\n–&gt;\n\n–&gt;\n\n–&gt;\n\n–&gt;\n\n–&gt;",
     "crumbs": [
       "Homework",
-      "HW 02"
+      "Statistics experience"
     ]
   },
   {
-    "objectID": "prepare/prepare-lec02.html",
-    "href": "prepare/prepare-lec02.html",
-    "title": "Prepare for Lecture 02: The big picture",
+    "objectID": "prepare/prepare-lec03.html",
+    "href": "prepare/prepare-lec03.html",
+    "title": "Prepare for Lecture 03: Simple linear regression",
     "section": "",
-    "text": "📖 Read R for Data Science, Introduction: What you will learn\n📖 Read GitHub for supporting, reusing, contributing, and failing safely\n🎥 Watch Meet the Toolkit: R + RStudio\n🎥 Watch Meet the Toolkit: Quarto"
+    "text": "📖 Read Simple linear regression, Section 4.1 - 4.6\n📖 Read Simple linear regression, Section 4.8"
   },
   {
     "objectID": "ae/ae-01-movies.html",
@@ -884,7 +912,7 @@
     "href": "index.html",
     "title": "STA 210 - Regression Analysis",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nTh\nJan 9\nWelcome to STA 210!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nJan 13\nLab 00: Getting started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 14\nThe big picture\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 16\nSimple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nJan 20\nNo lab: Martin Luther King Jr. Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 21\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 23\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4\nM\nJan 27\nLab 01: Simple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 28\nMultiple linear regression (MLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due, Statistics experience assigned\n\n\n\nTh\nJan 30\nCategorical predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nM\nFeb 3\nLab 02: Multipe linear regression + Meet your team!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 4\nMLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 6\nModel assumptions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n6\nM\nFeb 10\nLab 02: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject research questions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 11\nModel diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n\nTh\nFeb 13\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7\nM\nFeb 17\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 18\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 20\nNo lecture: Exam 01 Take-home\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nFeb 24\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 25\nVariable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 27\nInteractions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nM\nMar 3\nLab 04: Variable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 4\nModel comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 6\nCross validation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n10\nM\nMar 10\nNo lab: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 11\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 13\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nM\nMar 17\nLab: Project exploratory data analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 18\nProbabilities + Odds + Odds ratios\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n\nTh\nMar 20\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nM\nMar 24\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 25\nLR: Prediction + Assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 27\nLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nM\nMar 31\nLab 05: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 1\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n\nTh\nApr 3\nMulitnomial logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nM\nApr 7\nLab 06: Multinomial logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 8\nMultinomial: Inference + Prediction\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 10\nModeling in practice\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nApr 14\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 15\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 05 due, Statistics experience due\n\n\n\nTh\nApr 17\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n16\nM\nApr 21\nLab: Project work-day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 22\nWrap up + Looking ahead\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nTh\nJan 9\nWelcome to STA 210!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nJan 13\nLab 00: Getting started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 14\nThe big picture\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 16\nSimple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nJan 20\nNo lab: Martin Luther King Jr. Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 21\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 23\nInference for regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4\nM\nJan 27\nLab 01: Simple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 28\nMultiple linear regression (MLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due, Statistics experience assigned\n\n\n\nTh\nJan 30\nCategorical predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nM\nFeb 3\nLab 02: Multipe linear regression + Meet your team!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 4\nMLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 6\nModel assumptions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n6\nM\nFeb 10\nLab 03: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject research questions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 11\nModel diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n\nTh\nFeb 13\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7\nM\nFeb 17\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 18\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 20\nNo lecture: Exam 01 Take-home\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nFeb 24\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 25\nVariable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 27\nInteractions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nM\nMar 3\nLab 04: Variable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 4\nModel comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 6\nCross validation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n10\nM\nMar 10\nNo lab: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 11\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 13\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nM\nMar 17\nLab: Project exploratory data analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 18\nProbabilities + Odds + Odds ratios\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n\nTh\nMar 20\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nM\nMar 24\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 25\nLR: Prediction + Assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 27\nLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nM\nMar 31\nLab 05: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 1\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n\nTh\nApr 3\nMulitnomial logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nM\nApr 7\nLab 06: Multinomial logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 8\nMultinomial: Inference + Prediction\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 10\nModeling in practice\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nApr 14\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 15\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 05 due, Statistics experience due\n\n\n\nTh\nApr 17\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n16\nM\nApr 21\nLab: Project work-day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 22\nWrap up + Looking ahead\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period",
     "crumbs": [
       "Schedule"
     ]
@@ -1232,40 +1260,5 @@
       "Project",
       "Instructions"
     ]
-  },
-  {
-    "objectID": "slides/02-big-picture.html#education-and-life-expectancy",
-    "href": "slides/02-big-picture.html#education-and-life-expectancy",
-    "title": "The big picture",
-    "section": "Education and life expectancy",
-    "text": "Education and life expectancy\n\nZarulli et al. (2021)\n\n\nClick here to access the original research paper."
-  },
-  {
-    "objectID": "slides/02-big-picture.html#life-expectancy-and-education-data",
-    "href": "slides/02-big-picture.html#life-expectancy-and-education-data",
-    "title": "The big picture",
-    "section": "Life expectancy and education data",
-    "text": "Life expectancy and education data\n\nObservations: 140 countries\nVariables:\n\nlife_exp: The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic area. ( from the World Health Organization)\nincome_inequality: Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (Gini coefficient).\neducation: Indicator of whether a country’s education index is above (High) or below (Low) the median index for the 140 countries in the data set.\n\nEducation index: Average of mean years of schooling (of adults) and expected years of school (of children), both expressed as an index obtained by scaling wit the corresponding maxima"
-  },
-  {
-    "objectID": "slides/02-big-picture.html#life_exp-vs.-income_inequality",
-    "href": "slides/02-big-picture.html#life_exp-vs.-income_inequality",
-    "title": "The big picture",
-    "section": "life_exp vs. income_inequality",
-    "text": "life_exp vs. income_inequality\n\n\\[\\widehat{\\text{life_exp}} = \\hat{\\beta}_0 + \\hat{\\beta}_1 ~\\text{income_inequality}\\]"
-  },
-  {
-    "objectID": "slides/02-big-picture.html#life_exp-vs.-income_inequality-education",
-    "href": "slides/02-big-picture.html#life_exp-vs.-income_inequality-education",
-    "title": "The big picture",
-    "section": "life_exp vs. income_inequality + education",
-    "text": "life_exp vs. income_inequality + education\n\n\\[\\widehat{\\text{life_exp}} = \\hat{\\beta}_0 + \\hat{\\beta}_1 ~\\text{income_inequality} + \\hat{\\beta}_2 ~\\text{education}\\]"
-  },
-  {
-    "objectID": "slides/02-big-picture.html#life_exp-vs.-income_inequality-education-with-interaction",
-    "href": "slides/02-big-picture.html#life_exp-vs.-income_inequality-education-with-interaction",
-    "title": "The big picture",
-    "section": "life_exp vs. income_inequality + education (with interaction)",
-    "text": "life_exp vs. income_inequality + education (with interaction)\n\n\\[{\\small \\widehat{\\text{life_exp}} = \\hat{\\beta}_0 + \\hat{\\beta}_1 ~\\text{income_inequality} + \\hat{\\beta}_2 ~\\text{education} + \\hat{\\beta}_3 ~ \\text{income_inequality} \\times \\text{education}}\\]"
   }
 ]

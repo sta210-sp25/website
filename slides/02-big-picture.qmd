@@ -19,7 +19,7 @@ html-math-method:
   method: mathjax
   url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
   html: 
-    output-file: 01-welcome-notes.html
+    output-file: 02-big-picture-notes.html
 execute:
   freeze: auto
   echo: true
@@ -52,21 +52,14 @@ ggplot2::theme_set(ggplot2::theme_bw(base_size = 16))
 
 ```
 
-## Announcements <!--# UPDATE--> {.midi}
+## Announcements
 
--   Resources for extra R review
-    -   [Learn R: An interactive introduction to data analysis R](https://learnr.numbat.space/) (focus on Chapters 4 - 6)
-
-    -   Duke Library Center for Data and Visualization Sciences workshops
-
-        -   R for Lunch: data wrangling with dplyr (Fri, Sep 1, 12:30 - 1:30)
-
-        -   R for Lunch: visualization with ggplot2 (Fri, Sep 8, 12:30 - 1:30)
-
-        -   See the [CDVS website](https://library.duke.edu/data/workshops) for more information and to register.
--   Last day of in-person work for this class is Dec 7
--   [Lecture recordings request policy](https://sta210-fa23.netlify.app/syllabus#lecture-recording-request)
--   Readings for next week will be posted later this week
+-   Office hours start this week
+    -   See office hours schedule on Canvas
+-   Complete [Lab 00 tasks](../labs/lab-00.html)
+-   Introduction to R workshops at Duke library
+    -   [Data wrangling with dplyr](https://duke.libcal.com/event/13664829) - Thu, Jan 16 at 12pm
+    -   [Data visualization with ggplot2](https://duke.libcal.com/event/13660125) - Thu, Jan 23 at 12pm
 
 # Questions from last class?
 
@@ -122,15 +115,17 @@ What does it mean for an analysis to be reproducible?
 
 ## Why is reproducibility important? {.midi}
 
-![](images/02/jama-retraction.png){fig-align="center" width="50%"}
+![](images/02/jama-retraction.png){fig-align="center" width="55%"}
 
-::: small
+<div>
+
 -   Originally reported "the intervention, compared with usual care, resulted in a fewer number of mean COPD-related hospitalizations and emergency department visits at 6 months per participant."
 
 -   There were actually **more** COPD-related hospitalizations and emergency department visits in the intervention group compared to the control group
 
 -   Mixed up the intervention vs. control group using "0/1" coding
-:::
+
+</div>
 
 :::: aside
 ::: small
@@ -224,18 +219,6 @@ Provides a clear record of how the analysis methods evolved. This makes analysis
 
 ## Education and life expectancy
 
-<!--# update the introduction-->
-
-@zarulli2021
-
-::: aside
-[Click here](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0253450) to access the original research paper.
-:::
-
-------------------------------------------------------------------------
-
-## Life expectancy and education data
-
 ```{r}
 #| echo: false
 library(readxl)
@@ -243,16 +226,32 @@ library(readxl)
 life_exp <- read_excel("data/life-expectancy-data.xlsx") |> 
   rename(life_exp = `Life_expectancy_at_birth`, 
          income_inequality = `Income_inequality_Gini_coefficient`) |>
-  mutate(education = if_else(Education_Index > median(Education_Index), "High", "Low"))
-  
+  mutate(education = if_else(Education_Index > median(Education_Index), "High", "Low"), 
+         education = factor(education, levels = c("Low", "High")))
 ```
 
--   **Observations**: `r nrow(life_exp)` countries
--   **Variables:**
-    -   `life_exp`: *The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic area.* ( from the [World Health Organization](https://www.who.int/data/gho/indicator-metadata-registry/imr-details/65#:~:text=Definition%3A,%2C%20territory%2C%20or%20geographic%20area.))
-    -   `income_inequality`: *Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (Gini coefficient).*
-    -   `education`: Indicator of whether a country's education index is above (`High`) or below (`Low`) the median index for the `r nrow(life_exp)` countries in the data set.
-        -   Education index: *Average of mean years of schooling (of adults) and expected years of school (of children), both expressed as an index obtained by scaling wit the corresponding maxima*
+The data set comes from @zarulli2021 who analyze the effects of a country's healthcare expenditures and other factors on the country's life expectancy. The data are originally from the [Human Development Database](http://hdr.undp.org/en/data.) and [World Health Organization](https://apps.who.int/nha/database/).
+
+There are `r nrow(life_exp)` countries (observations) in the data set.
+
+::: aside
+[Click here](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0253450) for the original research paper.
+:::
+
+------------------------------------------------------------------------
+
+## Variable definitions
+
+::: incremental
+-   `life_exp`: *The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic area.* ( from the [World Health Organization](https://www.who.int/data/gho/indicator-metadata-registry/imr-details/65#:~:text=Definition%3A,%2C%20territory%2C%20or%20geographic%20area.))
+
+-   `income_inequality`: *Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (Gini coefficient).*
+:::
+
+## Variable definitions
+
+-   `education`: Indicator of whether a country's education index is above (`High`) or below (`Low`) the median index for the `r nrow(life_exp)` countries in the data set.
+    -   Education index: *Average of mean years of schooling (of adults) and expected years of school (of children), both expressed as an index obtained by scaling wit the corresponding maxima.*
 
 ## Terminology
 
@@ -272,7 +271,7 @@ life_exp <- read_excel("data/life-expectancy-data.xlsx") |>
 #| echo: false
 p1 <- ggplot(data = life_exp, aes(x = life_exp))  + 
   geom_histogram(fill = "steelblue", color = "black") + 
-  labs(x = "Life expectancy (in years))", 
+  labs(x = "Life expectancy (in years)", 
        y = "Count")
 
 p2 <- ggplot(data = life_exp, aes(x = income_inequality))  + 
@@ -282,7 +281,7 @@ p2 <- ggplot(data = life_exp, aes(x = income_inequality))  +
 
 p3 <- ggplot(data = life_exp, aes(x = education))  + 
   geom_bar(fill = "steelblue", color = "black") + 
-  labs(x = "Education Index", 
+  labs(x = "Education index", 
        y = "Count")
 
 p1 + (p2 / p3)
@@ -326,7 +325,7 @@ $$\text{life_exp} = f(\text{income_inequality}, \text{education}) + \epsilon$$
 
 . . .
 
-2.  Use the data to fit (or train) the model, i.e, **compute estimates the model parameters**, denoted $\hat{\beta}_0, \hat{\beta}_1, \ldots, \hat{\beta}_p$
+2.  Use the data to fit (or train) the model, i.e, **compute estimates of the model parameters**, denoted $\hat{\beta}_0, \hat{\beta}_1, \ldots, \hat{\beta}_p$
 
 ## `life_exp` vs. `income_inequality`
 
@@ -343,7 +342,7 @@ $$\widehat{\text{life_exp}} = \hat{\beta}_0 + \hat{\beta}_1 ~\text{income_inequa
 
 ------------------------------------------------------------------------
 
-## `life_exp` vs. `income_inequality` + `education`
+## `life_exp` vs. `income_inequality` + `education` {.midi}
 
 ```{r echo = F}
 model1 <- lm(life_exp ~ income_inequality + education, data = life_exp)
@@ -352,23 +351,23 @@ model1 <- tidy(model1)
 
 ```{r echo = F}
 ggplot(data = life_exp, aes(x = income_inequality, y = life_exp, color = education, shape = education)) + 
-  geom_point(alpha = 0.8) +
-  geom_abline(slope = model1$estimate[2], intercept = model1$estimate[1], color = "#1B9E77") +
-  geom_abline(slope = model1$estimate[2], intercept = model1$estimate[1] + model1$estimate[3], color = "#7570B3") +
+  geom_point(alpha = 0.8, size = 2) +
+  geom_abline(slope = model1$estimate[2], intercept = model1$estimate[1], color = "#440154FF", size = 1.5) +
+  geom_abline(slope = model1$estimate[2], intercept = model1$estimate[1] + model1$estimate[3], color = "#29AF7FFF", size = 1.5) +
   labs(x = "Income inequality", 
       y  = "Life expectancy (in years)",
       color = "Education", 
       shape = "Education",
       title = "Life expectancy vs. income inequality", 
       subtitle = "by education") + 
-  scale_color_manual(values=c("#1B9E77", "#7570B3"))
+  scale_color_manual(values=c("#440154FF", "#29AF7FFF"))
 ```
 
 $$\widehat{\text{life_exp}} = \hat{\beta}_0 + \hat{\beta}_1 ~\text{income_inequality} + \hat{\beta}_2 ~\text{education}$$
 
 ## Statistical model vs. regression equation {.midi}
 
-**Statistical model (also known as data-generating model)**
+**Statistical model (also known as the data-generating model)**
 
 ::: equation
 $${\small \text{life_exp} = \beta_0 + \beta_1 ~\text{income_inequality} + \beta_2 ~\text{education} + \epsilon}$$
@@ -388,21 +387,21 @@ Estimate of the function using the sample data
 $${\small \widehat{\text{life_exp}} = \hat{\beta}_0 + \hat{\beta}_1 ~\text{income_inequality} + \hat{\beta}_2 ~\text{education}}$$
 :::
 
-## `life_exp` vs. `income_inequality` + `education` (with interaction)
+## `life_exp` vs. `income_inequality` + `education` (with interaction) {.midi}
 
 ```{r}
 #| echo: false
 
 ggplot(data = life_exp, aes(x = income_inequality, y = life_exp, color = education, shape = education)) + 
-  geom_point(alpha = 0.5) +
-  geom_smooth(method = "lm", se = FALSE) +
+  geom_point(alpha = 0.8, size = 2) +
+  geom_smooth(method = "lm", se = FALSE, size = 1.5) +
   labs(x = "Income inequality", 
       y  = "Life expectancy (in years)",
       color = "Education", 
       shape = "Education",
       title = "Life expectancy vs. income inequality", 
       subtitle = "by education (with interaction)") + 
-  scale_color_manual(values=c("#1B9E77", "#7570B3"))
+  scale_color_manual(values=c("#440154FF", "#29AF7FFF"))
 
 ```
 
@@ -414,6 +413,8 @@ $${\small \widehat{\text{life_exp}} = \hat{\beta}_0 + \hat{\beta}_1 ~\text{incom
 
 -   **Inference:** Conclusion about the relationship between the response and predictor variables
 
+. . .
+
 ::: question
 -   What is an example of a **prediction** question that can be answered using the model of `life_exp` vs. `income_inequality` and `education`?
 
@@ -423,7 +424,7 @@ $${\small \widehat{\text{life_exp}} = \hat{\beta}_0 + \hat{\beta}_1 ~\text{incom
 # Application exercise
 
 ::: appex
-📋 [sta210-fa23.netlify.app/ae/ae-02-bikeshare](https://sta210-fa23.netlify.app/ae/ae-02-bikeshare.html)
+📋 [sta210-sp25.netlify.app/ae/ae-02-life-expectancy](../ae/ae-02-life-expectancy.html)
 :::
 
 ## Recap {.midi}
