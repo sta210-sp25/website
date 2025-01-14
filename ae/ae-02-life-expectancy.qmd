@@ -22,7 +22,7 @@ library(patchwork)
 
 ## Introduction
 
-The data set comes from @zarulli2021, who analyze the effects of a country's healthcare expenditures and other factors on the country's life expectancy. The data are originally from the [Human Development Database](http://hdr.undp.org/en/data.) and [World Health Organization](https://apps.who.int/nha/database/).
+The data set comes from @zarulli2021, who analyze the effects of a country's healthcare expenditures and other factors on the country's life expectancy. The data are originally from the [Human Development Database](http://hdr.undp.org/en/data) and [World Health Organization](https://apps.who.int/nha/database/).
 
 This AE will focus on the following variables:
 
