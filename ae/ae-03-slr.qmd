@@ -13,7 +13,8 @@ Go to the [course GitHub organization](https://github.com/sta210-sp25) and locat
 **This AE does not count towards the participation grade.**
 :::
 
-```{r load-packages}
+```{r}
+#| label: load-packages
 #| message: false
 library(tidyverse)
 library(tidymodels)
@@ -68,17 +69,23 @@ There appears to be one day with a very small number of bike rentals. What was t
 
 ## Exercise 2
 
-In the raw data, seasons are coded as 1, 2, 3, 4 as numerical values, corresponding to winter, spring, summer, and fall respectively. Recode the `season` variable to make it a categorical variable (a factor) with levels corresponding to season names, making sure that the levels appear in a reasonable order in the variable (i.e., not alphabetical).
+In the raw data, seasons are coded as 1, 2, 3, 4, numeric values that correspond to winter, spring, summer, and fall respectively. Complete the code below to make `season` a categorical variable with levels corresponding to season names stored in the original order.
 
 ```{r}
 #| label: recode-season
 
-# add code here
+bikeshare <- bikeshare |>
+  mutate(season = case_when(
+    season == 1 ~ "Winter", 
+    season == 2 ~ "Spring", 
+    season == 3 ~ "Summer", 
+    season == 4 ~ "Fall"
+  ))
 ```
 
 ## Exercise 3
 
-We want to evaluate whether the relationship between temperature and daily bike rentals is the same for each season. To answer this question, first create a scatter plot of daily bike rentals vs. temperature faceted by season.
+We want to evaluate whether the relationship between temperature and daily bike rentals is the same for each season. To answer this question, begin by creating a scatter plot of daily bike rentals vs. temperature faceted by season.
 
 ```{r}
 #| label: bike-temp-by-season
@@ -102,9 +109,7 @@ Filter your data for the season with the strongest apparent relationship between
 
 ## Exercise 6
 
-::: {.callout-note appearance="minimal" icon="false"}
-Using the subset of the data from [Exercise 5], fit a linear model to predict daily bike rentals using temperature for this season.
-:::
+Using the data from [Exercise 5], fit a linear model to predict daily bike rentals using temperature for this season.
 
 ```{r}
 #| label: fit-model
@@ -125,7 +130,7 @@ Use the output to write out the estimated regression equation.
 
 Suppose you work for a bike share company in Durham, NC, and they want to predict daily bike rentals in 2024. What is one reason you might recommend they use your analysis for this task? What is one reason you would recommend they [**not**]{.underline} use your analysis for this task?
 
-------------------------------------------------------------------------
+# Submission
 
 ::: callout-important
 To submit the AE:

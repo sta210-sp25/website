@@ -1469,14 +1469,14 @@
     "href": "ae/ae-03-slr.html#exercise-2",
     "title": "AE 03: Simple linear regression",
     "section": "Exercise 2",
-    "text": "Exercise 2\nIn the raw data, seasons are coded as 1, 2, 3, 4 as numerical values, corresponding to winter, spring, summer, and fall respectively. Recode the season variable to make it a categorical variable (a factor) with levels corresponding to season names, making sure that the levels appear in a reasonable order in the variable (i.e., not alphabetical).\n\n# add code here"
+    "text": "Exercise 2\nIn the raw data, seasons are coded as 1, 2, 3, 4, numeric values that correspond to winter, spring, summer, and fall respectively. Complete the code below to make season a categorical variable with levels corresponding to season names stored in the original order.\n\nbikeshare &lt;- bikeshare |&gt;\n  mutate(season = case_when(\n    season == 1 ~ \"Winter\", \n    season == 2 ~ \"Spring\", \n    season == 3 ~ \"Summer\", \n    season == 4 ~ \"Fall\"\n  ))"
   },
   {
     "objectID": "ae/ae-03-slr.html#exercise-3",
     "href": "ae/ae-03-slr.html#exercise-3",
     "title": "AE 03: Simple linear regression",
     "section": "Exercise 3",
-    "text": "Exercise 3\nWe want to evaluate whether the relationship between temperature and daily bike rentals is the same for each season. To answer this question, first create a scatter plot of daily bike rentals vs. temperature faceted by season.\n\n# add code developed during livecoding here"
+    "text": "Exercise 3\nWe want to evaluate whether the relationship between temperature and daily bike rentals is the same for each season. To answer this question, begin by creating a scatter plot of daily bike rentals vs. temperature faceted by season.\n\n# add code developed during livecoding here"
   },
   {
     "objectID": "ae/ae-03-slr.html#exercise-4",
@@ -1497,7 +1497,7 @@
     "href": "ae/ae-03-slr.html#exercise-6",
     "title": "AE 03: Simple linear regression",
     "section": "Exercise 6",
-    "text": "Exercise 6\n\n\n\n\n\n\nUsing the subset of the data from Exercise 5, fit a linear model to predict daily bike rentals using temperature for this season.\n\n\n\n\n# add code developed during livecoding here"
+    "text": "Exercise 6\nUsing the data from Exercise 5, fit a linear model to predict daily bike rentals using temperature for this season.\n\n# add code developed during livecoding here"
   },
   {
     "objectID": "ae/ae-03-slr.html#exercise-7",
@@ -1518,7 +1518,7 @@
     "href": "ae/ae-03-slr.html#exercise-9",
     "title": "AE 03: Simple linear regression",
     "section": "Exercise 9",
-    "text": "Exercise 9\nSuppose you work for a bike share company in Durham, NC, and they want to predict daily bike rentals in 2024. What is one reason you might recommend they use your analysis for this task? What is one reason you would recommend they not use your analysis for this task?\n\n\n\n\n\n\n\nImportant\n\n\n\nTo submit the AE:\n\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your ae-03- repo on GitHub. (AEs are not submitted on Gradescope.)"
+    "text": "Exercise 9\nSuppose you work for a bike share company in Durham, NC, and they want to predict daily bike rentals in 2024. What is one reason you might recommend they use your analysis for this task? What is one reason you would recommend they not use your analysis for this task?"
   },
   {
     "objectID": "support.html",
