@@ -773,7 +773,7 @@
     "href": "slides/03-slr-intro.html#interpretation",
     "title": "Simple Linear Regression",
     "section": "Interpretation",
-    "text": "Interpretation\n\\[\n\\widehat{\\text{audience}} = 32.3142 + 0.5187 \\times \\text{critics}\n\\]\n\n\nPost your answers to the following questions on Ed Discussion:\n\nThe slope of the model for predicting audience score from critics score is 0.5187 . Which of the following is the best interpretation of this value?\n32.3142 is the predicted mean audience score for what type of movies?"
+    "text": "Interpretation\n\\[\n\\widehat{\\text{audience}} = 32.3142 + 0.5187 \\times \\text{critics}\n\\]\n\nAnswer the following questions on Ed Discussion:\n\nThe slope of the model for predicting audience score from critics score is 0.5187 . Which of the following is the best interpretation of this value?\n32.3142 is the predicted mean audience score for what type of movies?\n\n🔗 https://edstem.org/us/courses/70992/discussion/5978732"
   },
   {
     "objectID": "slides/03-slr-intro.html#does-it-make-sense-to-interpret-the-intercept",
@@ -1004,7 +1004,7 @@
     "href": "slides/03-slr-intro-notes.html#interpretation",
     "title": "Simple Linear Regression",
     "section": "Interpretation",
-    "text": "Interpretation\n\\[\n\\widehat{\\text{audience}} = 32.3142 + 0.5187 \\times \\text{critics}\n\\]\n\n\nPost your answers to the following questions on Ed Discussion:\n\nThe slope of the model for predicting audience score from critics score is 0.5187 . Which of the following is the best interpretation of this value?\n32.3142 is the predicted mean audience score for what type of movies?"
+    "text": "Interpretation\n\\[\n\\widehat{\\text{audience}} = 32.3142 + 0.5187 \\times \\text{critics}\n\\]\n\nAnswer the following questions on Ed Discussion:\n\nThe slope of the model for predicting audience score from critics score is 0.5187 . Which of the following is the best interpretation of this value?\n32.3142 is the predicted mean audience score for what type of movies?\n\n🔗 https://edstem.org/us/courses/70992/discussion/5978732"
   },
   {
     "objectID": "slides/03-slr-intro-notes.html#does-it-make-sense-to-interpret-the-intercept",
