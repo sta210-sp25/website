@@ -572,3 +572,5 @@ predict(movie_fit, more_new_movies)
 </div>
 
 ## For next class
+
+-   Prepare for [Lecture 04: Inference for simple linear regression](../prepare/prepare-lec04.html)
