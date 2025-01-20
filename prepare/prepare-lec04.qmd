@@ -1,5 +1,5 @@
 ---
-title: "Prepare for Lecture 04: Inference for regression"
+title: "Prepare for Lecture 04: Inference - bootstrap confidence intervals"
 ---
 
 <br>
