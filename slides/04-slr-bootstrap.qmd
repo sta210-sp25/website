@@ -264,8 +264,9 @@ p_df_obs <- ggplot(duke_forest, aes(x = area, y = price)) +
     y = "Sale price (USD)",
     title = "Price and area of houses in Duke Forest"
   ) +
-  scale_y_continuous(labels = label_dollar()) +
-  scale_x_continuous(labels = label_number())
+  scale_x_continuous(labels = label_number(), limits = c(1000, 6500)) +
+  scale_y_continuous(labels = label_dollar(), limits = c(90000, 1550000)) 
+  
 
 p_df_obs
 ```
@@ -287,8 +288,8 @@ ggplot(df_boot_samples_5 |> filter(replicate == replicate_no),
     y = "Sale price (USD)",
     title = glue("Bootstrap sample {replicate_no}")
   ) +
-  scale_y_continuous(labels = label_dollar()) +
-  scale_x_continuous(labels = label_number())
+  scale_x_continuous(labels = label_number(), limits = c(1000, 6500)) +
+  scale_y_continuous(labels = label_dollar(), limits = c(90000, 1550000)) 
 ```
 :::
 :::::
@@ -321,8 +322,8 @@ ggplot(df_boot_samples_5 |> filter(replicate == replicate_no),
     y = "Sale price (USD)",
     title = glue("Bootstrap sample {replicate_no}")
   ) +
-  scale_y_continuous(labels = label_dollar()) +
-  scale_x_continuous(labels = label_number())
+  scale_x_continuous(labels = label_number(), limits = c(1000, 6500)) +
+  scale_y_continuous(labels = label_dollar(), limits = c(90000, 1550000)) 
 ```
 :::
 :::::
@@ -355,8 +356,8 @@ ggplot(df_boot_samples_5 |> filter(replicate == replicate_no),
     y = "Sale price (USD)",
     title = glue("Bootstrap sample {replicate_no}")
   ) +
-  scale_y_continuous(labels = label_dollar()) +
-  scale_x_continuous(labels = label_number())
+  scale_x_continuous(labels = label_number(), limits = c(1000, 6500)) +
+  scale_y_continuous(labels = label_dollar(), limits = c(90000, 1550000)) 
 ```
 :::
 :::::
@@ -389,8 +390,8 @@ ggplot(df_boot_samples_5 |> filter(replicate == replicate_no),
     y = "Sale price (USD)",
     title = glue("Bootstrap sample {replicate_no}")
   ) +
-  scale_y_continuous(labels = label_dollar()) +
-  scale_x_continuous(labels = label_number())
+  scale_x_continuous(labels = label_number(), limits = c(1000, 6500)) +
+  scale_y_continuous(labels = label_dollar(), limits = c(90000, 1550000)) 
 ```
 :::
 :::::
@@ -423,8 +424,8 @@ ggplot(df_boot_samples_5 |> filter(replicate == replicate_no),
     y = "Sale price (USD)",
     title = glue("Bootstrap sample {replicate_no}")
   ) +
-  scale_y_continuous(labels = label_dollar()) +
-  scale_x_continuous(labels = label_number())
+  scale_x_continuous(labels = label_number(), limits = c(1000, 6500)) +
+  scale_y_continuous(labels = label_dollar(), limits = c(90000, 1550000)) 
 ```
 :::
 :::::
@@ -457,8 +458,8 @@ ggplot(df_boot_samples_5, aes(x = area, y = price, group = replicate)) +
     y = "Sale price (USD)",
     title = glue("Bootstrap samples 1 - 5")
   ) +
-  scale_y_continuous(labels = label_dollar()) +
-  scale_x_continuous(labels = label_number())
+  scale_x_continuous(labels = label_number(), limits = c(1000, 6500)) +
+  scale_y_continuous(labels = label_dollar(), limits = c(90000, 1550000)) 
 ```
 :::
 :::::
@@ -496,8 +497,8 @@ p_df_boot_samples_100 <- ggplot(df_boot_samples_100, aes(x = area, y = price, gr
     y = "Sale price (USD)",
     title = glue("Bootstrap samples 1 - 100")
   ) +
-  scale_y_continuous(labels = label_dollar()) +
-  scale_x_continuous(labels = label_number())
+  scale_x_continuous(labels = label_number(), limits = c(1000, 6500)) +
+  scale_y_continuous(labels = label_dollar(), limits = c(90000, 1550000)) 
 
 p_df_boot_samples_100
 ```
@@ -577,7 +578,7 @@ df_boot_samples_100_hist +
 # Application exercise
 
 ::: appex
-📋 [AE 04: Bootstrap confidence intervals](https://sta210-fa23.netlify.app/ae/ae-04-bootstrap.html)
+📋 [sta210-sp25.netlify.app/ae/ae-04-bootstrap.html](..ae/ae-04-bootstrap.html)
 :::
 
 ## Computing the CI for the slope I
@@ -636,7 +637,7 @@ If we want to be very certain that we capture the population parameter, should w
 
 . . .
 
-![](images/05/garfield.png)
+![](images/04/garfield.png)
 
 ## Precision vs. accuracy
 
