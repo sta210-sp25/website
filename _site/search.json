@@ -766,7 +766,7 @@
     "href": "index.html",
     "title": "STA 210 - Regression Analysis",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nTh\nJan 9\nWelcome to STA 210!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nJan 13\nLab 00: Getting started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 14\nThe big picture\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 16\nSimple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nJan 20\nNo lab: Martin Luther King Jr. Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 21\nInference: Bootstrap confidence intervals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 23\nInference: Permutation tests\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4\nM\nJan 27\nLab 01: Simple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 28\nMultiple linear regression (MLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due, Statistics experience assigned\n\n\n\nTh\nJan 30\nCategorical predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nM\nFeb 3\nLab 02: Multipe linear regression + Meet your team!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 4\nMLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 6\nModel assumptions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n6\nM\nFeb 10\nLab 03: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject research questions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 11\nModel diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n\nTh\nFeb 13\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7\nM\nFeb 17\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 18\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 20\nNo lecture: Exam 01 Take-home\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nFeb 24\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 25\nVariable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 27\nInteractions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nM\nMar 3\nLab 04: Variable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 4\nModel comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 6\nCross validation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n10\nM\nMar 10\nNo lab: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 11\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 13\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nM\nMar 17\nLab: Project exploratory data analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 18\nProbabilities + Odds + Odds ratios\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n\nTh\nMar 20\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nM\nMar 24\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 25\nLR: Prediction + Assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 27\nLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nM\nMar 31\nLab 05: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 1\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n\nTh\nApr 3\nMulitnomial logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nM\nApr 7\nLab 06: Multinomial logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 8\nMultinomial: Inference + Prediction\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 10\nModeling in practice\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nApr 14\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 15\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 05 due, Statistics experience due\n\n\n\nTh\nApr 17\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n16\nM\nApr 21\nLab: Project work-day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 22\nWrap up + Looking ahead\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nTh\nJan 9\nWelcome to STA 210!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nJan 13\nLab 00: Getting started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 14\nThe big picture\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 16\nSimple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nJan 20\nNo lab: Martin Luther King Jr. Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 21\nInference: Bootstrap confidence intervals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 23\nInference: Permutation tests\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4\nM\nJan 27\nLab 01: Simple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 28\nMultiple linear regression (MLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due, Statistics experience assigned\n\n\n\nTh\nJan 30\nCategorical predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 01 due\n\n\n5\nM\nFeb 3\nLab 02: Multipe linear regression + Meet your team!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 4\nMLR: Inference using mathematical models\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 6\nInference + Model assumptions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 02 due\n\n\n6\nM\nFeb 10\nLab 03: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject research questions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 11\nModel diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n\nTh\nFeb 13\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 03 due\n\n\n7\nM\nFeb 17\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 18\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 20\nNo lecture: Exam 01 Take-home\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nFeb 24\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 25\nVariable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 27\nInteractions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nM\nMar 3\nLab 04: Variable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 4\nModel comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 6\nCross validation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 04 due\n\n\n10\nM\nMar 10\nNo lab: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 11\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 13\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nM\nMar 17\nLab: Project exploratory data analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 18\nProbabilities + Odds + Odds ratios\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n\nTh\nMar 20\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nM\nMar 24\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 25\nLR: Prediction + Assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 27\nLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nM\nMar 31\nLab 05: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 1\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n\nTh\nApr 3\nMulitnomial logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 05 due\n\n\n14\nM\nApr 7\nLab 06: Multinomial logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 8\nMultinomial: Inference + Prediction\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 10\nModeling in practice\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 06 due\n\n\n15\nM\nApr 14\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 15\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 05 due, Statistics experience due\n\n\n\nTh\nApr 17\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n16\nM\nApr 21\nLab: Project work-day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 22\nWrap up + Looking ahead\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period",
     "crumbs": [
       "Schedule"
     ]
@@ -1125,84 +1125,7 @@
     "href": "hw/hw-01.html",
     "title": "HW 01: Simple linear regression",
     "section": "",
-    "text": "Important\n\n\n\nThis assignment is due on Tuesday, January 28 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your GitHub repo\nFinal .pdf file submitted on Gradescope",
-    "crumbs": [
-      "Homework",
-      "HW 01"
-    ]
-  },
-  {
-    "objectID": "hw/hw-01.html#instructions",
-    "href": "hw/hw-01.html#instructions",
-    "title": "HW 01: Simple linear regression",
-    "section": "Instructions",
-    "text": "Instructions\nType your responses to each question in your Quarto document. Write all narrative using complete sentences and include informative axis labels and titles on visualizations. Use a reproducible workflow by periodically rendering the Quarto document, writing an informative commit message, and pushing the updated .qmd and .pdf files to GitHub.",
-    "crumbs": [
-      "Homework",
-      "HW 01"
-    ]
-  },
-  {
-    "objectID": "hw/hw-01.html#part-1-exploratory-data-analysis",
-    "href": "hw/hw-01.html#part-1-exploratory-data-analysis",
-    "title": "HW 01: Simple linear regression",
-    "section": "Part 1: Exploratory data analysis",
-    "text": "Part 1: Exploratory data analysis\n\nExercise 1\nCreate a histogram of the distribution of the predictor variable bachelors and calculate appropriate summary statistics. Use the visualization and summary statistics to describe the distribution. Include an informative title and axis labels on the plot.\n\n\nExercise 2\nLet’s view the data in another way. Use the code below to make a map of the United States with the color of the counties filled in based on the percent of residents 25 years old and older who have a Bachelor’s degree. Fill in title and axis labels.\nThen use the plot answer the following:\n\nWhat are 2 observations you have from the map?\nWhat is a feature that is apparent in the map that wasn’t as easily apparent from the histogram in the previous exercise? What is a feature that is apparent in the histogram that is not as easily apparent from the map?\n\n\n\ncounty_map_data &lt;- left_join(county_data_sample, map_data_sample)\n\nggplot(data = map_data_all) +\n  geom_polygon(aes(x = long, y = lat, group = group),\n    fill = \"lightgray\", color = \"white\"\n    ) +\n  geom_polygon(data = county_map_data, aes(x = long, y = lat, group = group,\n    fill = bachelors)\n    ) +\n  labs(\n    x = \"Longitude\",\n    y = \"Latitude\",\n    fill = \"_____\",\n    title = \"_____\"\n  ) +\n  scale_fill_viridis_c(labels = label_percent(scale = 1)) +\n  coord_quickmap()\n\n\n\nExercise 3\nCreate a visualization of the relationship between bachelors and median_household_income and calculate the correlation. Use the visualization and correlation to describe the relationship between the two variables.\n\nThis is a good place to render, commit, and push changes to your hw-01 repo on GitHub. Write an informative commit message (e.g. “Completed exercises 1 - 3”), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.",
-    "crumbs": [
-      "Homework",
-      "HW 01"
-    ]
-  },
-  {
-    "objectID": "hw/hw-01.html#part-2-modeling",
-    "href": "hw/hw-01.html#part-2-modeling",
-    "title": "HW 01: Simple linear regression",
-    "section": "Part 2: Modeling",
-    "text": "Part 2: Modeling\n\nExercise 4\nWe will use a linear regression model to describe the relationship between bachelors and median_household_income.\nWrite the form of the statistical (theoretical) model we will use for this task using mathematical notation. Use variable names (bachelors and median_household_income) in the equation for your model1.\n\n\n\n\n\n\nTip\n\n\n\nWrite median household income in LaTex as\n\\text{median\\_household\\_income}\nto make it properly render in the .pdf document.\n\n\n\n\nExercise 5\n\nFit the regression line corresponding to the statistical model in the previous exercise. Neatly display the model output using 3 digits.\nWrite the equation of the fitted model using mathematical notation. Use variable names (bachelors and median_household_income) in the equation.\n\n\n\nExercise 6\n\nInterpret the slope in the context of the data.\nIs it useful to interpret the intercept for this data? If so, write the interpretation in the context of the data. Otherwise, briefly explain why not.\n\n\nThis is a good place to render, commit, and push changes to your hw-01 repo on GitHub. Write an informative commit message (e.g. “Completed exercises 4 -6”), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.",
-    "crumbs": [
-      "Homework",
-      "HW 01"
-    ]
-  },
-  {
-    "objectID": "hw/hw-01.html#part-3-inference-for-the-u.s.",
-    "href": "hw/hw-01.html#part-3-inference-for-the-u.s.",
-    "title": "HW 01: Simple linear regression",
-    "section": "Part 3: Inference for the U.S.",
-    "text": "Part 3: Inference for the U.S.\nWe will use the data from these 600 randomly selected counties to draw conclusions about the relationship between the percent of adults age 25 and older with a bachelor’s degree and median household income for the over 3,000 counties in the United States.\n\nExercise 7\n\nWhat is the population in this analysis? What is the sample?\nIs it reasonable to treat the sample in this analysis as representative of the population? Briefly explain why or why not.\n\n\n\nExercise 8\nNext, compute a 98% bootstrap confidence interval for the slope. Use set.seed(2025) and 1000 iterations. Show all relevant code and output used to compute the interval.\nWrite the 98% confidence interval using 3 digits.\n\n\nExercise 9\n\nInterpret the interval from the previous exercise in the context of the data.\nSuppose you wanted to evaluate the claim that there is no linear relationship between the percent of adults age 25 and older with a bachelor’s degree and median household income for counties in the United States. In other words, you want to evaluate the claim that \\(\\beta_1 = 0\\) in the model written in Exercise 4.\nDoes the confidence interval from the previous exercise support this claim? Briefly explain why or why not.\n\n\nNow is a good time to render your document again if you haven’t done so recently, commit (with an informative commit message), and push all updates.",
-    "crumbs": [
-      "Homework",
-      "HW 01"
-    ]
-  },
-  {
-    "objectID": "hw/hw-01.html#submission",
-    "href": "hw/hw-01.html#submission",
-    "title": "HW 01: Simple linear regression",
-    "section": "Submission",
-    "text": "Submission\n\n\n\n\n\n\nWarning\n\n\n\nBefore you wrap up the assignment, make sure all documents are updated on your GitHub repo. We will be checking these to make sure you have been practicing how to commit and push changes.\nRemember – you must turn in a PDF file to the Gradescope page before the submission deadline for full credit.\n\n\nTo submit your assignment:\n\nAccess Gradescope through the STA 210 Canvas site.\nClick on the assignment, and you’ll be prompted to submit it.\nMark the pages associated with each exercise. All of the pages of your lab should be associated with at least one question (i.e., should be “checked”).\nSelect the first page of your .PDF submission to be associated with the “Workflow & formatting” section.",
-    "crumbs": [
-      "Homework",
-      "HW 01"
-    ]
-  },
-  {
-    "objectID": "hw/hw-01.html#grading-50-points",
-    "href": "hw/hw-01.html#grading-50-points",
-    "title": "HW 01: Simple linear regression",
-    "section": "Grading (50 points)",
-    "text": "Grading (50 points)\n\n\n\nComponent\nPoints\n\n\n\n\nEx 1\n5\n\n\nEx 2\n5\n\n\nEx 3\n5\n\n\nEx 4\n5\n\n\nEx 5\n5\n\n\nEx 6\n5\n\n\nEx 7\n5\n\n\nEx 8\n5\n\n\nEx 9\n5\n\n\nWorkflow & formatting\n5\n\n\n\nThe “Workflow & formatting” grade is to assess the reproducible workflow and document format for the applied exercises. This includes having at least 3 informative commit messages, a neatly organized document with readable code and your name and the date updated in the YAML.",
-    "crumbs": [
-      "Homework",
-      "HW 01"
-    ]
-  },
-  {
-    "objectID": "hw/hw-01.html#footnotes",
-    "href": "hw/hw-01.html#footnotes",
-    "title": "HW 01: Simple linear regression",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nClick here for a guide on writing mathematical symbols using LaTex.↩︎",
+    "text": "To be posted.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n–&gt;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n–&gt;",
     "crumbs": [
       "Homework",
       "HW 01"
