@@ -385,13 +385,14 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#ae-03-follow-up" id="toc-ae-03-follow-up" class="nav-link active" data-scroll-target="#ae-03-follow-up">AE 03 Follow-up</a>
+  <li><a href="#announcements" id="toc-announcements" class="nav-link active" data-scroll-target="#announcements">Announcements</a></li>
+  <li><a href="#ae-03-follow-up" id="toc-ae-03-follow-up" class="nav-link" data-scroll-target="#ae-03-follow-up">AE 03 Follow-up</a>
   <ul class="collapse">
   <li><a href="#ae-03-follow-up-1" id="toc-ae-03-follow-up-1" class="nav-link" data-scroll-target="#ae-03-follow-up-1">AE 03 Follow-up</a></li>
   </ul></li>
-  <li><a href="#application-exercise" id="toc-application-exercise" class="nav-link" data-scroll-target="#application-exercise">Application exercise</a>
+  <li><a href="#application-exercise" id="toc-application-exercise" class="nav-link" data-scroll-target="#application-exercise">Application exercise</a></li>
+  <li><a href="#simulation-based-inference" id="toc-simulation-based-inference" class="nav-link" data-scroll-target="#simulation-based-inference">Simulation-based inference</a>
   <ul class="collapse">
-  <li><a href="#simulation-based-inference" id="toc-simulation-based-inference" class="nav-link" data-scroll-target="#simulation-based-inference">Simulation-based inference</a></li>
   <li><a href="#topics" id="toc-topics" class="nav-link" data-scroll-target="#topics">Topics</a></li>
   <li><a href="#computational-setup" id="toc-computational-setup" class="nav-link" data-scroll-target="#computational-setup">Computational setup</a></li>
   <li><a href="#data-houses-in-duke-forest" id="toc-data-houses-in-duke-forest" class="nav-link" data-scroll-target="#data-houses-in-duke-forest">Data: Houses in Duke Forest</a></li>
@@ -462,6 +463,15 @@ window.Quarto = {
 </header>
 
 
+<section id="announcements" class="level2">
+<h2 class="anchored" data-anchor-id="announcements">Announcements</h2>
+<ul>
+<li><p>HW 01 due Tuesday, January 28 at 11:59pm</p>
+<ul>
+<li>Released after class today</li>
+</ul></li>
+</ul>
+</section>
 <section id="ae-03-follow-up" class="level1">
 <h1>AE 03 Follow-up</h1>
 <section id="ae-03-follow-up-1" class="level2 midi">
@@ -482,17 +492,19 @@ window.Quarto = {
 <h1>Application exercise</h1>
 <div class="appex">
 <p>📋 <a href="https://sta210-sp25.netlify.app/ae/ae-03-slr.html" class="uri">https://sta210-sp25.netlify.app/ae/ae-03-slr.html</a></p>
+<p>Complete exercises 6 - 9.</p>
 </div>
 <ul>
 <li><p>Find your <code>ae-03</code> repo in the course GitHub organization.</p></li>
 <li><p>If you do not see an <code>ae-03</code> repo, use the link to create one: <a href="https://classroom.github.com/a/jxxCTVVo" class="uri">https://classroom.github.com/a/jxxCTVVo</a></p></li>
 </ul>
-<section id="simulation-based-inference" class="level2">
-<h2 class="anchored" data-anchor-id="simulation-based-inference">Simulation-based inference</h2>
 </section>
+<section id="simulation-based-inference" class="level1">
+<h1>Simulation-based inference</h1>
 <section id="topics" class="level2">
 <h2 class="anchored" data-anchor-id="topics">Topics</h2>
 <ul>
+<li>Introduce inference for a population slope</li>
 <li>Find range of plausible values for the slope using bootstrap confidence intervals</li>
 </ul>
 </section>
@@ -537,7 +549,7 @@ window.Quarto = {
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Area (square feet)"</span>,</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Sale price (USD)"</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"sales price (USD)"</span>,</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Price and area of houses in Duke Forest"</span></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> <span class="fu">label_dollar</span>()) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -554,12 +566,10 @@ window.Quarto = {
 <section id="modeling" class="level2 midi">
 <h2 class="midi anchored" data-anchor-id="modeling">Modeling</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>df_fit <span class="ot">&lt;-</span> <span class="fu">linear_reg</span>() <span class="sc">|&gt;</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a>  <span class="co">#set_engine("lm") |&gt;</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">fit</span>(price <span class="sc">~</span> area, <span class="at">data =</span> duke_forest)</span>
-<span id="cb3-4"><a href="#cb3-4"></a></span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="fu">tidy</span>(df_fit) <span class="sc">|&gt;</span></span>
-<span id="cb3-6"><a href="#cb3-6"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">2</span>) <span class="co">#neatly format table to 2 digits</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>df_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(price <span class="sc">~</span> area, <span class="at">data =</span> duke_forest)</span>
+<span id="cb3-2"><a href="#cb3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="fu">tidy</span>(df_fit) <span class="sc">|&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">2</span>) <span class="co">#neatly format table to 2 digits</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <thead>
@@ -590,20 +600,20 @@ window.Quarto = {
 </table>
 </div>
 </div>
-<p>. . .</p>
-<p><br></p>
+<p>. . .<br>
+</p>
 <ul>
 <li><strong>Intercept:</strong> Duke Forest houses that are 0 square feet are expected to sell, for $116,652, on average.
 <ul>
 <li>Is this interpretation useful?</li>
 </ul></li>
-<li><strong>Slope:</strong> For each additional square foot, we expect the sale price of Duke Forest houses to be higher by $159, on average.</li>
+<li><strong>Slope:</strong> For each additional square foot, we expect the sales price of Duke Forest houses to be higher by $159, on average.</li>
 </ul>
 </section>
 <section id="from-sample-to-population" class="level2 midi">
 <h2 class="midi anchored" data-anchor-id="from-sample-to-population">From sample to population</h2>
 <blockquote class="blockquote">
-<p>For each additional square foot, we expect the sale price of Duke Forest houses to be higher by $159, on average.</p>
+<p>For each additional square foot, we expect the sales price of Duke Forest houses to be higher by $159, on average.</p>
 </blockquote>
 <p><br></p>
 <ul>
@@ -644,7 +654,7 @@ window.Quarto = {
 </section>
 <section id="confidence-interval-for-the-slope-1" class="level2 midi">
 <h2 class="midi anchored" data-anchor-id="confidence-interval-for-the-slope-1">Confidence interval for the slope</h2>
-<p>A confidence interval will allow us to make a statement like “<em>For each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by $159, plus or minus X dollars.</em>”</p>
+<p>A confidence interval will allow us to make a statement like “<em>For each additional square foot, the model predicts the sales price of Duke Forest houses to be higher, on average, by $159, plus or minus X dollars.</em>”</p>
 <p>. . .</p>
 <ul>
 <li><p>Should X be $10? $100? $1000?</p></li>
@@ -661,11 +671,11 @@ window.Quarto = {
 <li>Two approaches:
 <ol class="incremental" type="1">
 <li>Via simulation (what we’ll do today)</li>
-<li>Via mathematical models (what we’ll do in the next class)</li>
+<li>Via theoretical results and mathematical models (what we’ll do in an upcoming class)</li>
 </ol></li>
 <li><strong>Bootstrapping</strong> to quantify the variability of the slope for the purpose of estimation:
 <ul class="incremental">
-<li>Bootstrap new samples from the original sample</li>
+<li>Bootstrap new samples from the original sample, i.e.&nbsp;take sample of size <span class="math inline">\(n\)</span> with replacement</li>
 <li>Fit models to each of the samples and estimate the slope</li>
 <li>Use features of the distribution of the bootstrapped slopes to construct a confidence interval</li>
 </ul></li>
@@ -674,7 +684,6 @@ window.Quarto = {
 </section>
 <section id="bootstrap-sample-1" class="level2">
 <h2 class="anchored" data-anchor-id="bootstrap-sample-1">Bootstrap sample 1</h2>
-<!-- Fix the scales for these slides, so the difference in slopes is easier to see-->
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell" data-layout-align="center">
@@ -860,7 +869,7 @@ window.Quarto = {
 <section id="slopes-of-bootstrap-samples" class="level2">
 <h2 class="anchored" data-anchor-id="slopes-of-bootstrap-samples">Slopes of bootstrap samples</h2>
 <div class="question">
-<p><strong>Fill in the blank:</strong> For each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by $159, plus or minus ___ dollars.</p>
+<p><strong>Fill in the blank:</strong> For each additional square foot, the model predicts the sales price of Duke Forest houses to be higher, on average, by $159, plus or minus ___ dollars.</p>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -875,7 +884,7 @@ window.Quarto = {
 <section id="slopes-of-bootstrap-samples-1" class="level2">
 <h2 class="anchored" data-anchor-id="slopes-of-bootstrap-samples-1">Slopes of bootstrap samples</h2>
 <div class="question">
-<p><strong>Fill in the blank:</strong> For each additional square foot, we expect the sale price of Duke Forest houses to be higher, on average, by $159, plus or minus ___ dollars.</p>
+<p><strong>Fill in the blank:</strong> For each additional square foot, we expect the sales price of Duke Forest houses to be higher, on average, by $159, plus or minus ___ dollars.</p>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -916,7 +925,7 @@ window.Quarto = {
 <div class="incremental">
 <ul class="incremental">
 <li>A 95% confidence interval is bounded by the middle 95% of the bootstrap distribution</li>
-<li>We are 95% confident that for each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by $90.43 to $205.77.</li>
+<li>We are 95% confident that for each additional square foot, sales price of Duke Forest houses to be higher, on average, by $90.43 to $205.77.</li>
 </ul>
 </div>
 </section>

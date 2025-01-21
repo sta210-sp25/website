@@ -766,7 +766,7 @@
     "href": "index.html",
     "title": "STA 210 - Regression Analysis",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nTh\nJan 9\nWelcome to STA 210!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nJan 13\nLab 00: Getting started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 14\nThe big picture\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 16\nSimple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nJan 20\nNo lab: Martin Luther King Jr. Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 21\nInference: Bootstrap confidence intervals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 23\nInference: Permutation tests\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4\nM\nJan 27\nLab 01: Simple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 28\nMultiple linear regression (MLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due, Statistics experience assigned\n\n\n\nTh\nJan 30\nCategorical predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nM\nFeb 3\nLab 02: Multipe linear regression + Meet your team!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 4\nMLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 6\nModel assumptions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n6\nM\nFeb 10\nLab 03: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject research questions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 11\nModel diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n\nTh\nFeb 13\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7\nM\nFeb 17\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 18\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 20\nNo lecture: Exam 01 Take-home\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nFeb 24\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 25\nVariable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 27\nInteractions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nM\nMar 3\nLab 04: Variable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 4\nModel comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 6\nCross validation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n10\nM\nMar 10\nNo lab: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 11\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 13\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nM\nMar 17\nLab: Project exploratory data analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 18\nProbabilities + Odds + Odds ratios\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n\nTh\nMar 20\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nM\nMar 24\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 25\nLR: Prediction + Assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 27\nLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nM\nMar 31\nLab 05: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 1\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n\nTh\nApr 3\nMulitnomial logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nM\nApr 7\nLab 06: Multinomial logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 8\nMultinomial: Inference + Prediction\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 10\nModeling in practice\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nApr 14\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 15\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 05 due, Statistics experience due\n\n\n\nTh\nApr 17\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n16\nM\nApr 21\nLab: Project work-day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 22\nWrap up + Looking ahead\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nTh\nJan 9\nWelcome to STA 210!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nJan 13\nLab 00: Getting started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 14\nThe big picture\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 16\nSimple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nJan 20\nNo lab: Martin Luther King Jr. Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 21\nInference: Bootstrap confidence intervals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 23\nInference: Permutation tests\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4\nM\nJan 27\nLab 01: Simple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 28\nMultiple linear regression (MLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due, Statistics experience assigned\n\n\n\nTh\nJan 30\nCategorical predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5\nM\nFeb 3\nLab 02: Multipe linear regression + Meet your team!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 4\nMLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 6\nModel assumptions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n6\nM\nFeb 10\nLab 03: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject research questions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 11\nModel diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n\nTh\nFeb 13\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7\nM\nFeb 17\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 18\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 20\nNo lecture: Exam 01 Take-home\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nFeb 24\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 25\nVariable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 27\nInteractions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nM\nMar 3\nLab 04: Variable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 4\nModel comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 6\nCross validation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n10\nM\nMar 10\nNo lab: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 11\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 13\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nM\nMar 17\nLab: Project exploratory data analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 18\nProbabilities + Odds + Odds ratios\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n\nTh\nMar 20\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nM\nMar 24\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 25\nLR: Prediction + Assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 27\nLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nM\nMar 31\nLab 05: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 1\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n\nTh\nApr 3\nMulitnomial logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14\nM\nApr 7\nLab 06: Multinomial logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 8\nMultinomial: Inference + Prediction\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 10\nModeling in practice\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15\nM\nApr 14\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 15\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 05 due, Statistics experience due\n\n\n\nTh\nApr 17\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n16\nM\nApr 21\nLab: Project work-day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 22\nWrap up + Looking ahead\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period",
     "crumbs": [
       "Schedule"
     ]
@@ -1238,7 +1238,7 @@
     "href": "ae/ae-04-bootstrap.html",
     "title": "AE 04: Bootstrap confidence intervals",
     "section": "",
-    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-04 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class. The responses are due in your GitHub repo no later than Thursday, September 14 at 11:59pm.\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)\nlibrary(knitr)"
+    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-04 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class.\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)\nlibrary(knitr)"
   },
   {
     "objectID": "ae/ae-04-bootstrap.html#data",
@@ -1259,7 +1259,7 @@
     "href": "ae/ae-04-bootstrap.html#model",
     "title": "AE 04: Bootstrap confidence intervals",
     "section": "Model",
-    "text": "Model\n\ndf_fit &lt;- linear_reg() |&gt;\n  set_engine(\"lm\") |&gt;\n  fit(price ~ area, data = duke_forest)\n\ntidy(df_fit) |&gt;\n  kable(digits = 2)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00"
+    "text": "Model\n\ndf_fit &lt;- lm(price ~ area, data = duke_forest)\n\ntidy(df_fit) |&gt;\n  kable(digits = 2)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00"
   },
   {
     "objectID": "ae/ae-04-bootstrap.html#bootstrap-confidence-interval",
@@ -1273,7 +1273,7 @@
     "href": "ae/ae-04-bootstrap.html#changing-confidence-level",
     "title": "AE 04: Bootstrap confidence intervals",
     "section": "Changing confidence level",
-    "text": "Changing confidence level\n\nModify the code from Step 3 to create a 90% confidence interval.\n\n# Paste code for 90% confidence interval\n\n\n\nModify the code from Step 3 to create a 99% confidence interval.\n\n# Paste code for 90% confidence interval\n\n\nWhich confidence level produces the most accurate confidence interval (90%, 95%, 99%)? Explain\nWhich confidence level produces the most precise confidence interval (90%, 95%, 99%)? Explain\nIf we want to be very certain that we capture the population parameter, should we use a wider or a narrower interval? What drawbacks are associated with using a wider interval?\n\n\n\n\n\n\n\nImportant\n\n\n\nTo submit the AE:\n\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your ae-04 repo on GitHub. (You do not submit AEs on Gradescope)."
+    "text": "Changing confidence level\n\nModify the code from Step 3 to create a 90% confidence interval.\n\n# Code for the 90% confidence interval\n\n\n\nModify the code from Step 3 to create a 99% confidence interval.\n\n# Code for the 99% confidence interval\n\n\nWhich confidence level produces the most accurate confidence interval (90%, 95%, 99%)? Explain\nWhich confidence level produces the most precise confidence interval (90%, 95%, 99%)? Explain\nIf we want to be very certain that we capture the population parameter, should we use a wider or a narrower interval? What drawbacks are associated with using a wider interval?\n\n\n\n\n\n\n\nImportant\n\n\n\nTo submit the AE:\n\nRender the document to produce the PDF with all of your work from today’s class.\nPush all your work to your ae-04 repo on GitHub. (You do not submit AEs on Gradescope)."
   },
   {
     "objectID": "ae/ae-03-slr.html",
@@ -1461,28 +1461,28 @@
     "href": "slides/04-slr-bootstrap-notes.html",
     "title": "SLR: Simulation-based inference",
     "section": "",
-    "text": "Goal: Use simple linear regression to model the relationship between temperature and daily bike rentals in the winter season"
+    "text": "HW 01 due Tuesday, January 28 at 11:59pm\n\nReleased after class today"
+  },
+  {
+    "objectID": "slides/04-slr-bootstrap-notes.html#announcements",
+    "href": "slides/04-slr-bootstrap-notes.html#announcements",
+    "title": "SLR: Simulation-based inference",
+    "section": "",
+    "text": "HW 01 due Tuesday, January 28 at 11:59pm\n\nReleased after class today"
   },
   {
     "objectID": "slides/04-slr-bootstrap-notes.html#ae-03-follow-up-1",
     "href": "slides/04-slr-bootstrap-notes.html#ae-03-follow-up-1",
     "title": "SLR: Simulation-based inference",
-    "section": "",
-    "text": "Goal: Use simple linear regression to model the relationship between temperature and daily bike rentals in the winter season"
-  },
-  {
-    "objectID": "slides/04-slr-bootstrap-notes.html#simulation-based-inference",
-    "href": "slides/04-slr-bootstrap-notes.html#simulation-based-inference",
-    "title": "SLR: Simulation-based inference",
-    "section": "Simulation-based inference",
-    "text": "Simulation-based inference"
+    "section": "AE 03 Follow-up",
+    "text": "AE 03 Follow-up\nGoal: Use simple linear regression to model the relationship between temperature and daily bike rentals in the winter season"
   },
   {
     "objectID": "slides/04-slr-bootstrap-notes.html#topics",
     "href": "slides/04-slr-bootstrap-notes.html#topics",
     "title": "SLR: Simulation-based inference",
     "section": "Topics",
-    "text": "Topics\n\nFind range of plausible values for the slope using bootstrap confidence intervals"
+    "text": "Topics\n\nIntroduce inference for a population slope\nFind range of plausible values for the slope using bootstrap confidence intervals"
   },
   {
     "objectID": "slides/04-slr-bootstrap-notes.html#computational-setup",
@@ -1503,21 +1503,21 @@
     "href": "slides/04-slr-bootstrap-notes.html#exploratory-data-analysis",
     "title": "SLR: Simulation-based inference",
     "section": "Exploratory data analysis",
-    "text": "Exploratory data analysis\n\n\nCode\nggplot(duke_forest, aes(x = area, y = price)) +\n  geom_point(alpha = 0.7) +\n  labs(\n    x = \"Area (square feet)\",\n    y = \"Sale price (USD)\",\n    title = \"Price and area of houses in Duke Forest\"\n  ) +\n  scale_y_continuous(labels = label_dollar())"
+    "text": "Exploratory data analysis\n\n\nCode\nggplot(duke_forest, aes(x = area, y = price)) +\n  geom_point(alpha = 0.7) +\n  labs(\n    x = \"Area (square feet)\",\n    y = \"sales price (USD)\",\n    title = \"Price and area of houses in Duke Forest\"\n  ) +\n  scale_y_continuous(labels = label_dollar())"
   },
   {
     "objectID": "slides/04-slr-bootstrap-notes.html#modeling",
     "href": "slides/04-slr-bootstrap-notes.html#modeling",
     "title": "SLR: Simulation-based inference",
     "section": "Modeling",
-    "text": "Modeling\n\ndf_fit &lt;- linear_reg() |&gt;\n  #set_engine(\"lm\") |&gt;\n  fit(price ~ area, data = duke_forest)\n\ntidy(df_fit) |&gt;\n  kable(digits = 2) #neatly format table to 2 digits\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00\n\n\n\n\n\n. . .\n\n\nIntercept: Duke Forest houses that are 0 square feet are expected to sell, for $116,652, on average.\n\nIs this interpretation useful?\n\nSlope: For each additional square foot, we expect the sale price of Duke Forest houses to be higher by $159, on average."
+    "text": "Modeling\n\ndf_fit &lt;- lm(price ~ area, data = duke_forest)\n\ntidy(df_fit) |&gt;\n  kable(digits = 2) #neatly format table to 2 digits\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00\n\n\n\n\n\n. . .\n\n\nIntercept: Duke Forest houses that are 0 square feet are expected to sell, for $116,652, on average.\n\nIs this interpretation useful?\n\nSlope: For each additional square foot, we expect the sales price of Duke Forest houses to be higher by $159, on average."
   },
   {
     "objectID": "slides/04-slr-bootstrap-notes.html#from-sample-to-population",
     "href": "slides/04-slr-bootstrap-notes.html#from-sample-to-population",
     "title": "SLR: Simulation-based inference",
     "section": "From sample to population",
-    "text": "From sample to population\n\nFor each additional square foot, we expect the sale price of Duke Forest houses to be higher by $159, on average.\n\n\n\nThis estimate is valid for the single sample of 98 houses.\nBut what if we’re not interested quantifying the relationship between the size and price of a house in this single sample?\nWhat if we want to say something about the relationship between these variables for all houses in Duke Forest?"
+    "text": "From sample to population\n\nFor each additional square foot, we expect the sales price of Duke Forest houses to be higher by $159, on average.\n\n\n\nThis estimate is valid for the single sample of 98 houses.\nBut what if we’re not interested quantifying the relationship between the size and price of a house in this single sample?\nWhat if we want to say something about the relationship between these variables for all houses in Duke Forest?"
   },
   {
     "objectID": "slides/04-slr-bootstrap-notes.html#statistical-inference",
@@ -1545,14 +1545,14 @@
     "href": "slides/04-slr-bootstrap-notes.html#confidence-interval-for-the-slope-1",
     "title": "SLR: Simulation-based inference",
     "section": "Confidence interval for the slope",
-    "text": "Confidence interval for the slope\nA confidence interval will allow us to make a statement like “For each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by $159, plus or minus X dollars.”\n. . .\n\nShould X be $10? $100? $1000?\nIf we were to take another sample of 98 would we expect the slope calculated based on that sample to be exactly $159? Off by $10? $100? $1000?\nThe answer depends on how variable (from one sample to another sample) the sample statistic (the slope) is\nWe need a way to quantify the variability of the sample statistic"
+    "text": "Confidence interval for the slope\nA confidence interval will allow us to make a statement like “For each additional square foot, the model predicts the sales price of Duke Forest houses to be higher, on average, by $159, plus or minus X dollars.”\n. . .\n\nShould X be $10? $100? $1000?\nIf we were to take another sample of 98 would we expect the slope calculated based on that sample to be exactly $159? Off by $10? $100? $1000?\nThe answer depends on how variable (from one sample to another sample) the sample statistic (the slope) is\nWe need a way to quantify the variability of the sample statistic"
   },
   {
     "objectID": "slides/04-slr-bootstrap-notes.html#quantify-the-variability-of-the-slope",
     "href": "slides/04-slr-bootstrap-notes.html#quantify-the-variability-of-the-slope",
     "title": "SLR: Simulation-based inference",
     "section": "Quantify the variability of the slope",
-    "text": "Quantify the variability of the slope\nfor estimation\n\n\nTwo approaches:\n\nVia simulation (what we’ll do today)\nVia mathematical models (what we’ll do in the next class)\n\nBootstrapping to quantify the variability of the slope for the purpose of estimation:\n\nBootstrap new samples from the original sample\nFit models to each of the samples and estimate the slope\nUse features of the distribution of the bootstrapped slopes to construct a confidence interval"
+    "text": "Quantify the variability of the slope\nfor estimation\n\n\nTwo approaches:\n\nVia simulation (what we’ll do today)\nVia theoretical results and mathematical models (what we’ll do in an upcoming class)\n\nBootstrapping to quantify the variability of the slope for the purpose of estimation:\n\nBootstrap new samples from the original sample, i.e. take sample of size \\(n\\) with replacement\nFit models to each of the samples and estimate the slope\nUse features of the distribution of the bootstrapped slopes to construct a confidence interval"
   },
   {
     "objectID": "slides/04-slr-bootstrap-notes.html#bootstrap-sample-1",
@@ -1608,14 +1608,14 @@
     "href": "slides/04-slr-bootstrap-notes.html#slopes-of-bootstrap-samples",
     "title": "SLR: Simulation-based inference",
     "section": "Slopes of bootstrap samples",
-    "text": "Slopes of bootstrap samples\n\nFill in the blank: For each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by $159, plus or minus ___ dollars."
+    "text": "Slopes of bootstrap samples\n\nFill in the blank: For each additional square foot, the model predicts the sales price of Duke Forest houses to be higher, on average, by $159, plus or minus ___ dollars."
   },
   {
     "objectID": "slides/04-slr-bootstrap-notes.html#slopes-of-bootstrap-samples-1",
     "href": "slides/04-slr-bootstrap-notes.html#slopes-of-bootstrap-samples-1",
     "title": "SLR: Simulation-based inference",
     "section": "Slopes of bootstrap samples",
-    "text": "Slopes of bootstrap samples\n\nFill in the blank: For each additional square foot, we expect the sale price of Duke Forest houses to be higher, on average, by $159, plus or minus ___ dollars."
+    "text": "Slopes of bootstrap samples\n\nFill in the blank: For each additional square foot, we expect the sales price of Duke Forest houses to be higher, on average, by $159, plus or minus ___ dollars."
   },
   {
     "objectID": "slides/04-slr-bootstrap-notes.html#confidence-level",
@@ -1629,7 +1629,7 @@
     "href": "slides/04-slr-bootstrap-notes.html#confidence-interval-1",
     "title": "SLR: Simulation-based inference",
     "section": "95% confidence interval",
-    "text": "95% confidence interval\n\n\n\n\n\n\n\n\n\n\n\nA 95% confidence interval is bounded by the middle 95% of the bootstrap distribution\nWe are 95% confident that for each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by $90.43 to $205.77."
+    "text": "95% confidence interval\n\n\n\n\n\n\n\n\n\n\n\nA 95% confidence interval is bounded by the middle 95% of the bootstrap distribution\nWe are 95% confident that for each additional square foot, sales price of Duke Forest houses to be higher, on average, by $90.43 to $205.77."
   },
   {
     "objectID": "slides/04-slr-bootstrap-notes.html#computing-the-ci-for-the-slope-i",
@@ -1695,6 +1695,13 @@
     "text": "For next class\n\nComplete Prepare for Lecture 05: Inference for simple linear regression"
   },
   {
+    "objectID": "slides/04-slr-bootstrap.html#announcements",
+    "href": "slides/04-slr-bootstrap.html#announcements",
+    "title": "SLR: Simulation-based inference",
+    "section": "Announcements",
+    "text": "Announcements\n\nHW 01 due Tuesday, January 28 at 11:59pm\n\nReleased after class today"
+  },
+  {
     "objectID": "slides/04-slr-bootstrap.html#ae-03-follow-up-1",
     "href": "slides/04-slr-bootstrap.html#ae-03-follow-up-1",
     "title": "SLR: Simulation-based inference",
@@ -1702,18 +1709,11 @@
     "text": "AE 03 Follow-up\nGoal: Use simple linear regression to model the relationship between temperature and daily bike rentals in the winter season"
   },
   {
-    "objectID": "slides/04-slr-bootstrap.html#simulation-based-inference",
-    "href": "slides/04-slr-bootstrap.html#simulation-based-inference",
-    "title": "SLR: Simulation-based inference",
-    "section": "Simulation-based inference",
-    "text": "Simulation-based inference"
-  },
-  {
     "objectID": "slides/04-slr-bootstrap.html#topics",
     "href": "slides/04-slr-bootstrap.html#topics",
     "title": "SLR: Simulation-based inference",
     "section": "Topics",
-    "text": "Topics\n\nFind range of plausible values for the slope using bootstrap confidence intervals"
+    "text": "Topics\n\nIntroduce inference for a population slope\nFind range of plausible values for the slope using bootstrap confidence intervals"
   },
   {
     "objectID": "slides/04-slr-bootstrap.html#computational-setup",
@@ -1734,21 +1734,21 @@
     "href": "slides/04-slr-bootstrap.html#exploratory-data-analysis",
     "title": "SLR: Simulation-based inference",
     "section": "Exploratory data analysis",
-    "text": "Exploratory data analysis\n\n\nCode\nggplot(duke_forest, aes(x = area, y = price)) +\n  geom_point(alpha = 0.7) +\n  labs(\n    x = \"Area (square feet)\",\n    y = \"Sale price (USD)\",\n    title = \"Price and area of houses in Duke Forest\"\n  ) +\n  scale_y_continuous(labels = label_dollar())"
+    "text": "Exploratory data analysis\n\n\nCode\nggplot(duke_forest, aes(x = area, y = price)) +\n  geom_point(alpha = 0.7) +\n  labs(\n    x = \"Area (square feet)\",\n    y = \"sales price (USD)\",\n    title = \"Price and area of houses in Duke Forest\"\n  ) +\n  scale_y_continuous(labels = label_dollar())"
   },
   {
     "objectID": "slides/04-slr-bootstrap.html#modeling",
     "href": "slides/04-slr-bootstrap.html#modeling",
     "title": "SLR: Simulation-based inference",
     "section": "Modeling",
-    "text": "Modeling\n\ndf_fit &lt;- linear_reg() |&gt;\n  #set_engine(\"lm\") |&gt;\n  fit(price ~ area, data = duke_forest)\n\ntidy(df_fit) |&gt;\n  kable(digits = 2) #neatly format table to 2 digits\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00\n\n\n\n\n\n\n\n\nIntercept: Duke Forest houses that are 0 square feet are expected to sell, for $116,652, on average.\n\nIs this interpretation useful?\n\nSlope: For each additional square foot, we expect the sale price of Duke Forest houses to be higher by $159, on average."
+    "text": "Modeling\n\ndf_fit &lt;- lm(price ~ area, data = duke_forest)\n\ntidy(df_fit) |&gt;\n  kable(digits = 2) #neatly format table to 2 digits\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00\n\n\n\n\n\n. . .\n\n\nIntercept: Duke Forest houses that are 0 square feet are expected to sell, for $116,652, on average.\n\nIs this interpretation useful?\n\nSlope: For each additional square foot, we expect the sales price of Duke Forest houses to be higher by $159, on average."
   },
   {
     "objectID": "slides/04-slr-bootstrap.html#from-sample-to-population",
     "href": "slides/04-slr-bootstrap.html#from-sample-to-population",
     "title": "SLR: Simulation-based inference",
     "section": "From sample to population",
-    "text": "From sample to population\n\nFor each additional square foot, we expect the sale price of Duke Forest houses to be higher by $159, on average.\n\n\n\nThis estimate is valid for the single sample of 98 houses.\nBut what if we’re not interested quantifying the relationship between the size and price of a house in this single sample?\nWhat if we want to say something about the relationship between these variables for all houses in Duke Forest?"
+    "text": "From sample to population\n\nFor each additional square foot, we expect the sales price of Duke Forest houses to be higher by $159, on average.\n\n\n\nThis estimate is valid for the single sample of 98 houses.\nBut what if we’re not interested quantifying the relationship between the size and price of a house in this single sample?\nWhat if we want to say something about the relationship between these variables for all houses in Duke Forest?"
   },
   {
     "objectID": "slides/04-slr-bootstrap.html#statistical-inference",
@@ -1776,14 +1776,14 @@
     "href": "slides/04-slr-bootstrap.html#confidence-interval-for-the-slope-1",
     "title": "SLR: Simulation-based inference",
     "section": "Confidence interval for the slope",
-    "text": "Confidence interval for the slope\nA confidence interval will allow us to make a statement like “For each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by $159, plus or minus X dollars.”\n\n\nShould X be $10? $100? $1000?\nIf we were to take another sample of 98 would we expect the slope calculated based on that sample to be exactly $159? Off by $10? $100? $1000?\nThe answer depends on how variable (from one sample to another sample) the sample statistic (the slope) is\nWe need a way to quantify the variability of the sample statistic"
+    "text": "Confidence interval for the slope\nA confidence interval will allow us to make a statement like “For each additional square foot, the model predicts the sales price of Duke Forest houses to be higher, on average, by $159, plus or minus X dollars.”\n\n\nShould X be $10? $100? $1000?\nIf we were to take another sample of 98 would we expect the slope calculated based on that sample to be exactly $159? Off by $10? $100? $1000?\nThe answer depends on how variable (from one sample to another sample) the sample statistic (the slope) is\nWe need a way to quantify the variability of the sample statistic"
   },
   {
     "objectID": "slides/04-slr-bootstrap.html#quantify-the-variability-of-the-slope",
     "href": "slides/04-slr-bootstrap.html#quantify-the-variability-of-the-slope",
     "title": "SLR: Simulation-based inference",
     "section": "Quantify the variability of the slope",
-    "text": "Quantify the variability of the slope\nfor estimation\n\n\nTwo approaches:\n\nVia simulation (what we’ll do today)\nVia mathematical models (what we’ll do in the next class)\n\nBootstrapping to quantify the variability of the slope for the purpose of estimation:\n\nBootstrap new samples from the original sample\nFit models to each of the samples and estimate the slope\nUse features of the distribution of the bootstrapped slopes to construct a confidence interval"
+    "text": "Quantify the variability of the slope\nfor estimation\n\n\nTwo approaches:\n\nVia simulation (what we’ll do today)\nVia theoretical results and mathematical models (what we’ll do in an upcoming class)\n\nBootstrapping to quantify the variability of the slope for the purpose of estimation:\n\nBootstrap new samples from the original sample, i.e. take sample of size \\(n\\) with replacement\nFit models to each of the samples and estimate the slope\nUse features of the distribution of the bootstrapped slopes to construct a confidence interval"
   },
   {
     "objectID": "slides/04-slr-bootstrap.html#bootstrap-sample-1",
@@ -1839,14 +1839,14 @@
     "href": "slides/04-slr-bootstrap.html#slopes-of-bootstrap-samples",
     "title": "SLR: Simulation-based inference",
     "section": "Slopes of bootstrap samples",
-    "text": "Slopes of bootstrap samples\n\nFill in the blank: For each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by $159, plus or minus ___ dollars."
+    "text": "Slopes of bootstrap samples\n\nFill in the blank: For each additional square foot, the model predicts the sales price of Duke Forest houses to be higher, on average, by $159, plus or minus ___ dollars."
   },
   {
     "objectID": "slides/04-slr-bootstrap.html#slopes-of-bootstrap-samples-1",
     "href": "slides/04-slr-bootstrap.html#slopes-of-bootstrap-samples-1",
     "title": "SLR: Simulation-based inference",
     "section": "Slopes of bootstrap samples",
-    "text": "Slopes of bootstrap samples\n\nFill in the blank: For each additional square foot, we expect the sale price of Duke Forest houses to be higher, on average, by $159, plus or minus ___ dollars."
+    "text": "Slopes of bootstrap samples\n\nFill in the blank: For each additional square foot, we expect the sales price of Duke Forest houses to be higher, on average, by $159, plus or minus ___ dollars."
   },
   {
     "objectID": "slides/04-slr-bootstrap.html#confidence-level",
@@ -1860,7 +1860,7 @@
     "href": "slides/04-slr-bootstrap.html#confidence-interval-1",
     "title": "SLR: Simulation-based inference",
     "section": "95% confidence interval",
-    "text": "95% confidence interval\n\n\n\nA 95% confidence interval is bounded by the middle 95% of the bootstrap distribution\nWe are 95% confident that for each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by $90.43 to $205.77."
+    "text": "95% confidence interval\n\n\n\nA 95% confidence interval is bounded by the middle 95% of the bootstrap distribution\nWe are 95% confident that for each additional square foot, sales price of Duke Forest houses to be higher, on average, by $90.43 to $205.77."
   },
   {
     "objectID": "slides/04-slr-bootstrap.html#computing-the-ci-for-the-slope-i",

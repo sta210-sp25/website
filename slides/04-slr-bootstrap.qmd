@@ -48,6 +48,12 @@ knitr::opts_chunk$set(
 ggplot2::theme_set(ggplot2::theme_bw(base_size = 16))
 ```
 
+## Announcements
+
+-   HW 01 due Tuesday, January 28 at 11:59pm
+
+    -   Released after class today
+
 # AE 03 Follow-up
 
 ## AE 03 Follow-up {.midi}
@@ -86,16 +92,19 @@ ggplot(data = winter, aes(x = temp_orig, y = count)) +
 
 ::: appex
 📋 <https://sta210-sp25.netlify.app/ae/ae-03-slr.html>
+
+Complete exercises 6 - 9.
 :::
 
 -   Find your `ae-03` repo in the course GitHub organization.
 
 -   If you do not see an `ae-03` repo, use the link to create one: <https://classroom.github.com/a/jxxCTVVo>
 
-## Simulation-based inference
+# Simulation-based inference
 
 ## Topics
 
+-   Introduce inference for a population slope
 -   Find range of plausible values for the slope using bootstrap confidence intervals
 
 ## Computational setup
@@ -142,7 +151,7 @@ ggplot(duke_forest, aes(x = area, y = price)) +
   geom_point(alpha = 0.7) +
   labs(
     x = "Area (square feet)",
-    y = "Sale price (USD)",
+    y = "sales price (USD)",
     title = "Price and area of houses in Duke Forest"
   ) +
   scale_y_continuous(labels = label_dollar()) 
@@ -154,17 +163,13 @@ ggplot(duke_forest, aes(x = area, y = price)) +
 #| echo: true
 #| code-line-numbers: "|5|6"
 
-df_fit <- linear_reg() |>
-  #set_engine("lm") |>
-  fit(price ~ area, data = duke_forest)
+df_fit <- lm(price ~ area, data = duke_forest)
 
 tidy(df_fit) |>
   kable(digits = 2) #neatly format table to 2 digits
 ```
 
-. . .
-
-<br>
+. . .\
 
 ```{r}
 #| echo: false
@@ -174,11 +179,11 @@ slope <- tidy(df_fit) |> filter(term == "area") |> pull(estimate) |> round()
 
 -   **Intercept:** Duke Forest houses that are 0 square feet are expected to sell, for `r dollar(intercept)`, on average.
     -   Is this interpretation useful?
--   **Slope:** For each additional square foot, we expect the sale price of Duke Forest houses to be higher by `r dollar(slope)`, on average.
+-   **Slope:** For each additional square foot, we expect the sales price of Duke Forest houses to be higher by `r dollar(slope)`, on average.
 
 ## From sample to population {.midi}
 
-> For each additional square foot, we expect the sale price of Duke Forest houses to be higher by `r dollar(slope)`, on average.
+> For each additional square foot, we expect the sales price of Duke Forest houses to be higher by `r dollar(slope)`, on average.
 
 <br>
 
@@ -211,7 +216,7 @@ slope <- tidy(df_fit) |> filter(term == "area") |> pull(estimate) |> round()
 
 ## Confidence interval for the slope {.midi}
 
-A confidence interval will allow us to make a statement like "*For each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by `r dollar(slope)`, plus or minus X dollars.*"
+A confidence interval will allow us to make a statement like "*For each additional square foot, the model predicts the sales price of Duke Forest houses to be higher, on average, by `r dollar(slope)`, plus or minus X dollars.*"
 
 . . .
 
@@ -230,9 +235,9 @@ A confidence interval will allow us to make a statement like "*For each addition
 ::: incremental
 -   Two approaches:
     1.  Via simulation (what we'll do today)
-    2.  Via mathematical models (what we'll do in the next class)
+    2.  Via theoretical results and mathematical models (what we'll do in an upcoming class)
 -   **Bootstrapping** to quantify the variability of the slope for the purpose of estimation:
-    -   Bootstrap new samples from the original sample
+    -   Bootstrap new samples from the original sample, i.e. take sample of size $n$ with replacement
     -   Fit models to each of the samples and estimate the slope
     -   Use features of the distribution of the bootstrapped slopes to construct a confidence interval
 :::
@@ -248,8 +253,6 @@ df_boot_samples_5 <- duke_forest |>
 
 ## Bootstrap sample 1
 
-<!-- Fix the scales for these slides, so the difference in slopes is easier to see-->
-
 ::::: columns
 ::: {.column width="50%"}
 ```{r}
@@ -261,7 +264,7 @@ p_df_obs <- ggplot(duke_forest, aes(x = area, y = price)) +
   geom_smooth(method = "lm", se = FALSE, color = "#8F2D56") +
   labs(
     x = "Area (square feet)",
-    y = "Sale price (USD)",
+    y = "sales price (USD)",
     title = "Price and area of houses in Duke Forest"
   ) +
   scale_x_continuous(labels = label_number(), limits = c(1000, 6500)) +
@@ -285,7 +288,7 @@ ggplot(df_boot_samples_5 |> filter(replicate == replicate_no),
   geom_line(stat = "smooth", method = "lm", se = FALSE, alpha = 0.8) +
   labs(
     x = "Area (square feet)",
-    y = "Sale price (USD)",
+    y = "sales price (USD)",
     title = glue("Bootstrap sample {replicate_no}")
   ) +
   scale_x_continuous(labels = label_number(), limits = c(1000, 6500)) +
@@ -319,7 +322,7 @@ ggplot(df_boot_samples_5 |> filter(replicate == replicate_no),
   geom_line(stat = "smooth", method = "lm", se = FALSE, alpha = 0.8) +
   labs(
     x = "Area (square feet)",
-    y = "Sale price (USD)",
+    y = "sales price (USD)",
     title = glue("Bootstrap sample {replicate_no}")
   ) +
   scale_x_continuous(labels = label_number(), limits = c(1000, 6500)) +
@@ -353,7 +356,7 @@ ggplot(df_boot_samples_5 |> filter(replicate == replicate_no),
   geom_line(stat = "smooth", method = "lm", se = FALSE, alpha = 0.8) +
   labs(
     x = "Area (square feet)",
-    y = "Sale price (USD)",
+    y = "sales price (USD)",
     title = glue("Bootstrap sample {replicate_no}")
   ) +
   scale_x_continuous(labels = label_number(), limits = c(1000, 6500)) +
@@ -387,7 +390,7 @@ ggplot(df_boot_samples_5 |> filter(replicate == replicate_no),
   geom_line(stat = "smooth", method = "lm", se = FALSE, alpha = 0.8) +
   labs(
     x = "Area (square feet)",
-    y = "Sale price (USD)",
+    y = "sales price (USD)",
     title = glue("Bootstrap sample {replicate_no}")
   ) +
   scale_x_continuous(labels = label_number(), limits = c(1000, 6500)) +
@@ -421,7 +424,7 @@ ggplot(df_boot_samples_5 |> filter(replicate == replicate_no),
   geom_line(stat = "smooth", method = "lm", se = FALSE, alpha = 0.8) +
   labs(
     x = "Area (square feet)",
-    y = "Sale price (USD)",
+    y = "sales price (USD)",
     title = glue("Bootstrap sample {replicate_no}")
   ) +
   scale_x_continuous(labels = label_number(), limits = c(1000, 6500)) +
@@ -455,7 +458,7 @@ ggplot(df_boot_samples_5, aes(x = area, y = price, group = replicate)) +
   geom_line(stat = "smooth", method = "lm", se = FALSE, alpha = 0.5) +
   labs(
     x = "Area (square feet)",
-    y = "Sale price (USD)",
+    y = "sales price (USD)",
     title = glue("Bootstrap samples 1 - 5")
   ) +
   scale_x_continuous(labels = label_number(), limits = c(1000, 6500)) +
@@ -494,7 +497,7 @@ p_df_boot_samples_100 <- ggplot(df_boot_samples_100, aes(x = area, y = price, gr
   geom_line(stat = "smooth", method = "lm", se = FALSE, alpha = 0.05) +
   labs(
     x = "Area (square feet)",
-    y = "Sale price (USD)",
+    y = "sales price (USD)",
     title = glue("Bootstrap samples 1 - 100")
   ) +
   scale_x_continuous(labels = label_number(), limits = c(1000, 6500)) +
@@ -508,7 +511,7 @@ p_df_boot_samples_100
 ## Slopes of bootstrap samples
 
 ::: question
-**Fill in the blank:** For each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by `r dollar(slope)`, plus or minus \_\_\_ dollars.
+**Fill in the blank:** For each additional square foot, the model predicts the sales price of Duke Forest houses to be higher, on average, by `r dollar(slope)`, plus or minus \_\_\_ dollars.
 :::
 
 ```{r}
@@ -520,7 +523,7 @@ p_df_boot_samples_100 +
 ## Slopes of bootstrap samples
 
 ::: question
-**Fill in the blank:** For each additional square foot, we expect the sale price of Duke Forest houses to be higher, on average, by `r dollar(slope)`, plus or minus \_\_\_ dollars.
+**Fill in the blank:** For each additional square foot, we expect the sales price of Duke Forest houses to be higher, on average, by `r dollar(slope)`, plus or minus \_\_\_ dollars.
 :::
 
 ```{r}
@@ -572,7 +575,7 @@ df_boot_samples_100_hist +
 
 ::: incremental
 -   A 95% confidence interval is bounded by the middle 95% of the bootstrap distribution
--   We are 95% confident that for each additional square foot, the model predicts the sale price of Duke Forest houses to be higher, on average, by `r dollar(lower)` to `r dollar(upper)`.
+-   We are 95% confident that for each additional square foot, sales price of Duke Forest houses to be higher, on average, by `r dollar(lower)` to `r dollar(upper)`.
 :::
 
 # Application exercise
@@ -601,7 +604,7 @@ Take `100` bootstrap samples and fit models to each one:
 
 ```{r}
 #| echo: true
-#| code-line-numbers: "1,5,6"
+#| code-line-numbers: "1|3,4|5|6"
 
 set.seed(1120)
 

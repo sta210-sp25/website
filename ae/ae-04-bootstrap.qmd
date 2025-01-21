@@ -1,18 +1,20 @@
 ---
 title: "AE 04: Bootstrap confidence intervals"
 subtitle: "Houses in Duke Forest"
-date: "Sep 11, 2023"
+date: "January 21, 2025"
 editor: visual
 ---
 
 ::: callout-important
-Go to the [course GitHub organization](https://github.com/sta210-fa23) and locate your `ae-04` repo to get started.
+Go to the [course GitHub organization](https://github.com/sta210-sp25) and locate your `ae-04` repo to get started.
 
-Render, commit, and push your responses to GitHub by the end of class. The responses are due in your GitHub repo no later than Thursday, September 14 at 11:59pm.
+Render, commit, and push your responses to GitHub by the end of class.
 :::
 
-```{r load-packages}
+```{r}
+#| label: load-packages
 #| message: false
+
 library(tidyverse)
 library(tidymodels)
 library(openintro)
@@ -23,13 +25,17 @@ library(knitr)
 
 The data are on houses that were sold in the Duke Forest neighborhood of Durham, NC around November 2020. It was originally scraped from Zillow, and can be found in the `duke_forest` data set in the **openintro** R package.
 
-```{r glimpse-data}
+```{r}
+#| label: glimpse-data
 glimpse(duke_forest)
 ```
 
 ## Exploratory data analysis
 
-```{r scatterplot}
+```{r}
+#| label: scatterplot
+
+
 ggplot(duke_forest, aes(x = area, y = price)) +
   geom_point(alpha = 0.7) +
   labs(
@@ -42,10 +48,11 @@ ggplot(duke_forest, aes(x = area, y = price)) +
 
 ## Model
 
-```{r fit-model}
-df_fit <- linear_reg() |>
-  set_engine("lm") |>
-  fit(price ~ area, data = duke_forest)
+```{r}
+#| label: fit-model
+
+
+df_fit <- lm(price ~ area, data = duke_forest)
 
 tidy(df_fit) |>
   kable(digits = 2)
@@ -55,7 +62,8 @@ tidy(df_fit) |>
 
 ### 1. Calculate the observed fit (slope)
 
-```{r observed-fit}
+```{r}
+#| label: observed-fit
 
 observed_fit <- duke_forest |>
   specify(price ~ area) |>
@@ -68,7 +76,8 @@ observed_fit
 
 Fill in the code, then set `eval: true` .
 
-```{r bootstrap}
+```{r}
+#| label: bootstrap
 #| eval: false
 
 n = 100
@@ -86,7 +95,8 @@ boot_fits
 
 -   Make a histogram of the bootstrap samples to visualize the bootstrap distribution.
 
-    ```{r boot-hist}
+    ```{r}
+    #| label: boot-hist
     # Code for histogram
     ```
 
@@ -94,7 +104,8 @@ boot_fits
 
 Fill in the code, then set `eval: true` .
 
-```{r calc-ci}
+```{r}
+#| label: calc-ci
 #| eval: false
 
 get_confidence_interval(
@@ -109,14 +120,16 @@ get_confidence_interval(
 
 ### Modify the code from Step 3 to create a 90% confidence interval.
 
-```{r 90-ci}
-# Paste code for 90% confidence interval
+```{r}
+#| label: 90-ci
+# Code for the 90% confidence interval
 ```
 
 ### Modify the code from Step 3 to create a 99% confidence interval.
 
-```{r 99-ci}
-# Paste code for 90% confidence interval
+```{r}
+#| label: 99-ci
+# Code for the 99% confidence interval
 ```
 
 -   Which confidence level produces the most accurate confidence interval (90%, 95%, 99%)? Explain
