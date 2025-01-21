@@ -169,7 +169,7 @@ tidy(df_fit) |>
   kable(digits = 2) #neatly format table to 2 digits
 ```
 
-. . .\
+. . .
 
 ```{r}
 #| echo: false

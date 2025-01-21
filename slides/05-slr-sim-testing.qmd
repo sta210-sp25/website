@@ -304,7 +304,7 @@ $$
 
 ## Permutation, described {.smaller}
 
-::: columns
+::::: columns
 ::: {.column width="40%"}
 -   Use permuting to simulate data under the assumption the null hypothesis is true and measure the natural variability in the data due to sampling, [**not**]{.underline} due to variables being correlated
     -   Permute one variable to eliminate any existing relationship between the variables
@@ -325,11 +325,11 @@ duke_forest_rand <- duke_forest |>
 duke_forest_rand
 ```
 :::
-:::
+:::::
 
 ## Permutation, visualized
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 -   Each of the observed values for `area` (and for `price`) exist in both the observed data plot as well as the permuted `price` plot
 -   The permutation removes the relationship between `area` and `price`
@@ -353,7 +353,7 @@ duke_forest_rand |>
   labs(x = "Area", y = "Price")
 ```
 :::
-:::
+:::::
 
 ## Permutation, repeated
 
@@ -575,7 +575,7 @@ $$
 Y|X \sim N(\beta_0 + \beta_1 X, \sigma_\epsilon^2)
 $$
 
-::: columns
+::::: columns
 ::: {.column width="70%"}
 ```{r}
 #| out.width: "100%"
@@ -637,7 +637,7 @@ ggplot(dat, aes(x, y)) +
 -   Variance: $\sigma_\epsilon^2$, constant across the range of $X$
     -   How do we estimate $\sigma_\epsilon^2$?
 :::
-:::
+:::::
 
 ## Regression standard error
 
@@ -649,12 +649,12 @@ $$
 
 . . .
 
-::: question
+:::: question
 ::: nonincremental
 1.  Why divide by $n - 2$?
 2.  Why do we care about the value of the regression standard error?
 :::
-:::
+::::
 
 ## Standard error of $\hat{\beta}_1$
 

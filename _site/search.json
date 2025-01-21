@@ -213,7 +213,7 @@
     "href": "slides/05-slr-sim-testing.html#the-regression-model",
     "title": "SLR: Randomization test for the slope",
     "section": "The regression model",
-    "text": "The regression model\n\ndf_fit &lt;- linear_reg() |&gt;\n  set_engine(\"lm\") |&gt;\n  fit(price ~ area, data = duke_forest)\n\ntidy(df_fit) |&gt;\n  kable(digits = 2)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00\n\n\n\n\n\n\n\n\nSlope: For each additional square foot, we expect the sale price of Duke Forest houses to be higher by $159, on average."
+    "text": "The regression model\n\ndf_fit &lt;- linear_reg() |&gt;\n  set_engine(\"lm\") |&gt;\n  fit(price ~ area, data = duke_forest)\n\ntidy(df_fit) |&gt;\n  kable(digits = 2)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00\n\n\n\n\n\n\nSlope: For each additional square foot, we expect the sale price of Duke Forest houses to be higher by $159, on average."
   },
   {
     "objectID": "slides/05-slr-sim-testing.html#inference-for-simple-linear-regression",
@@ -332,21 +332,21 @@
     "href": "slides/05-slr-sim-testing.html#permutation-visualized",
     "title": "SLR: Randomization test for the slope",
     "section": "Permutation, visualized",
-    "text": "Permutation, visualized\n\n\n\nEach of the observed values for area (and for price) exist in both the observed data plot as well as the permuted price plot\nThe permutation removes the relationship between area and price\n\n\n\n\n`geom_smooth()` using formula = 'y ~ x'"
+    "text": "Permutation, visualized\n\n\n\nEach of the observed values for area (and for price) exist in both the observed data plot as well as the permuted price plot\nThe permutation removes the relationship between area and price"
   },
   {
     "objectID": "slides/05-slr-sim-testing.html#permutation-repeated",
     "href": "slides/05-slr-sim-testing.html#permutation-repeated",
     "title": "SLR: Randomization test for the slope",
     "section": "Permutation, repeated",
-    "text": "Permutation, repeated\nRepeated permutations allow for quantifying the variability in the slope under the condition that there is no linear relationship (i.e., that the null hypothesis is true)\n\n\n`geom_smooth()` using formula = 'y ~ x'"
+    "text": "Permutation, repeated\nRepeated permutations allow for quantifying the variability in the slope under the condition that there is no linear relationship (i.e., that the null hypothesis is true)"
   },
   {
     "objectID": "slides/05-slr-sim-testing.html#concluding-the-hypothesis-test",
     "href": "slides/05-slr-sim-testing.html#concluding-the-hypothesis-test",
     "title": "SLR: Randomization test for the slope",
     "section": "Concluding the hypothesis test",
-    "text": "Concluding the hypothesis test\n\nIs the observed slope of \\(\\hat{\\beta_1} = 159\\) (or an even more extreme slope) a likely outcome under the null hypothesis that \\(\\beta = 0\\)? What does this mean for our original question: “Do the data provide sufficient evidence that \\(\\beta_1\\) (the true slope for the population) is different from 0?”\n\n\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead.\n\n\nWarning: Removed 2 rows containing missing values (`geom_bar()`)."
+    "text": "Concluding the hypothesis test\n\nIs the observed slope of \\(\\hat{\\beta_1} = 159\\) (or an even more extreme slope) a likely outcome under the null hypothesis that \\(\\beta = 0\\)? What does this mean for our original question: “Do the data provide sufficient evidence that \\(\\beta_1\\) (the true slope for the population) is different from 0?”"
   },
   {
     "objectID": "slides/05-slr-sim-testing.html#permutation-pipeline-i",
@@ -395,14 +395,14 @@
     "href": "slides/05-slr-sim-testing.html#reason-around-the-p-value",
     "title": "SLR: Randomization test for the slope",
     "section": "Reason around the p-value",
-    "text": "Reason around the p-value\n\nIn a world where the there is no relationship between the area of a Duke Forest house and in its price (\\(\\beta_1 = 0\\)), what is the probability that we observe a sample of 98 houses where the slope fo the model predicting price from area is 159 or even more extreme?\n\n\n\nWarning: Removed 2 rows containing missing values (`geom_bar()`)."
+    "text": "Reason around the p-value\n\nIn a world where the there is no relationship between the area of a Duke Forest house and in its price (\\(\\beta_1 = 0\\)), what is the probability that we observe a sample of 98 houses where the slope fo the model predicting price from area is 159 or even more extreme?"
   },
   {
     "objectID": "slides/05-slr-sim-testing.html#compute-the-p-value",
     "href": "slides/05-slr-sim-testing.html#compute-the-p-value",
     "title": "SLR: Randomization test for the slope",
     "section": "Compute the p-value",
-    "text": "Compute the p-value\n\nWhat does this warning mean?\n\n\nget_p_value(\n  null_dist,\n  obs_stat = obs_fit,\n  direction = \"two-sided\"\n)\n\nWarning: Please be cautious in reporting a p-value of 0. This result is an\napproximation based on the number of `reps` chosen in the `generate()` step.\nSee `?get_p_value()` for more information.\n\nWarning: Please be cautious in reporting a p-value of 0. This result is an\napproximation based on the number of `reps` chosen in the `generate()` step.\nSee `?get_p_value()` for more information.\n\n\n# A tibble: 2 × 2\n  term      p_value\n  &lt;chr&gt;       &lt;dbl&gt;\n1 area            0\n2 intercept       0"
+    "text": "Compute the p-value\n\nWhat does this warning mean?\n\n\nget_p_value(\n  null_dist,\n  obs_stat = obs_fit,\n  direction = \"two-sided\"\n)\n\nWarning: Please be cautious in reporting a p-value of 0. This result is an approximation\nbased on the number of `reps` chosen in the `generate()` step.\nℹ See `get_p_value()` (`?infer::get_p_value()`) for more information.\nPlease be cautious in reporting a p-value of 0. This result is an approximation\nbased on the number of `reps` chosen in the `generate()` step.\nℹ See `get_p_value()` (`?infer::get_p_value()`) for more information.\n\n\n# A tibble: 2 × 2\n  term      p_value\n  &lt;chr&gt;       &lt;dbl&gt;\n1 area            0\n2 intercept       0"
   },
   {
     "objectID": "slides/05-slr-sim-testing.html#the-regression-model-revisited",
@@ -430,7 +430,7 @@
     "href": "slides/05-slr-sim-testing.html#mathematical-representation-visualized",
     "title": "SLR: Randomization test for the slope",
     "section": "Mathematical representation, visualized",
-    "text": "Mathematical representation, visualized\n\\[\nY|X \\sim N(\\beta_0 + \\beta_1 X, \\sigma_\\epsilon^2)\n\\]\n\n\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\nGraph reproduced from Beyond Multiple Linear Regression.\n\n\n\n\n\n\nMean: \\(\\beta_0 + \\beta_1 X\\), the predicted value based on the regression model\nVariance: \\(\\sigma_\\epsilon^2\\), constant across the range of \\(X\\)\n\nHow do we estimate \\(\\sigma_\\epsilon^2\\)?"
+    "text": "Mathematical representation, visualized\n\\[\nY|X \\sim N(\\beta_0 + \\beta_1 X, \\sigma_\\epsilon^2)\n\\]\n\n\n\n\n\n\n\nGraph reproduced from Beyond Multiple Linear Regression.\n\n\n\n\n\n\nMean: \\(\\beta_0 + \\beta_1 X\\), the predicted value based on the regression model\nVariance: \\(\\sigma_\\epsilon^2\\), constant across the range of \\(X\\)\n\nHow do we estimate \\(\\sigma_\\epsilon^2\\)?"
   },
   {
     "objectID": "slides/05-slr-sim-testing.html#regression-standard-error",
@@ -1433,7 +1433,7 @@
     "href": "slides/04-slr-bootstrap-notes.html#modeling",
     "title": "SLR: Simulation-based inference",
     "section": "Modeling",
-    "text": "Modeling\n\ndf_fit &lt;- lm(price ~ area, data = duke_forest)\n\ntidy(df_fit) |&gt;\n  kable(digits = 2) #neatly format table to 2 digits\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00\n\n\n\n\n\n. . .\n\n\nIntercept: Duke Forest houses that are 0 square feet are expected to sell, for $116,652, on average.\n\nIs this interpretation useful?\n\nSlope: For each additional square foot, we expect the sales price of Duke Forest houses to be higher by $159, on average."
+    "text": "Modeling\n\ndf_fit &lt;- lm(price ~ area, data = duke_forest)\n\ntidy(df_fit) |&gt;\n  kable(digits = 2) #neatly format table to 2 digits\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00\n\n\n\n\n\n. . .\n\nIntercept: Duke Forest houses that are 0 square feet are expected to sell, for $116,652, on average.\n\nIs this interpretation useful?\n\nSlope: For each additional square foot, we expect the sales price of Duke Forest houses to be higher by $159, on average."
   },
   {
     "objectID": "slides/04-slr-bootstrap-notes.html#from-sample-to-population",
@@ -1664,7 +1664,7 @@
     "href": "slides/04-slr-bootstrap.html#modeling",
     "title": "SLR: Simulation-based inference",
     "section": "Modeling",
-    "text": "Modeling\n\ndf_fit &lt;- lm(price ~ area, data = duke_forest)\n\ntidy(df_fit) |&gt;\n  kable(digits = 2) #neatly format table to 2 digits\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00\n\n\n\n\n\n. . .\n\n\nIntercept: Duke Forest houses that are 0 square feet are expected to sell, for $116,652, on average.\n\nIs this interpretation useful?\n\nSlope: For each additional square foot, we expect the sales price of Duke Forest houses to be higher by $159, on average."
+    "text": "Modeling\n\ndf_fit &lt;- lm(price ~ area, data = duke_forest)\n\ntidy(df_fit) |&gt;\n  kable(digits = 2) #neatly format table to 2 digits\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n116652.33\n53302.46\n2.19\n0.03\n\n\narea\n159.48\n18.17\n8.78\n0.00\n\n\n\n\n\n\n\nIntercept: Duke Forest houses that are 0 square feet are expected to sell, for $116,652, on average.\n\nIs this interpretation useful?\n\nSlope: For each additional square foot, we expect the sales price of Duke Forest houses to be higher by $159, on average."
   },
   {
     "objectID": "slides/04-slr-bootstrap.html#from-sample-to-population",
