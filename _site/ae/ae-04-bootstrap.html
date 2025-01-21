@@ -363,7 +363,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#bootstrap-confidence-interval" id="toc-bootstrap-confidence-interval" class="nav-link" data-scroll-target="#bootstrap-confidence-interval">Bootstrap confidence interval</a>
   <ul class="collapse">
   <li><a href="#calculate-the-observed-fit-slope" id="toc-calculate-the-observed-fit-slope" class="nav-link" data-scroll-target="#calculate-the-observed-fit-slope">1. Calculate the observed fit (slope)</a></li>
-  <li><a href="#take-n-bootstrap-samples-and-fit-models-to-each-one." id="toc-take-n-bootstrap-samples-and-fit-models-to-each-one." class="nav-link" data-scroll-target="#take-n-bootstrap-samples-and-fit-models-to-each-one.">2. Take <em>n</em> bootstrap samples and fit models to each one.</a></li>
+  <li><a href="#take-n_iter-bootstrap-samples-and-fit-models-to-each-one." id="toc-take-n_iter-bootstrap-samples-and-fit-models-to-each-one." class="nav-link" data-scroll-target="#take-n_iter-bootstrap-samples-and-fit-models-to-each-one.">2. Take <em>n_iter</em> bootstrap samples and fit models to each one.</a></li>
   <li><a href="#compute-the-95-confidence-interval-as-the-middle-95-of-the-bootstrap-distribution" id="toc-compute-the-95-confidence-interval-as-the-middle-95-of-the-bootstrap-distribution" class="nav-link" data-scroll-target="#compute-the-95-confidence-interval-as-the-middle-95-of-the-bootstrap-distribution">3. Compute the 95% confidence interval as the middle 95% of the bootstrap distribution</a></li>
   </ul></li>
   <li><a href="#changing-confidence-level" id="toc-changing-confidence-level" class="nav-link" data-scroll-target="#changing-confidence-level">Changing confidence level</a>
@@ -524,11 +524,11 @@ $ url        &lt;chr&gt; "https://www.zillow.com/homedetails/1-Learned-Pl-Durham
 </div>
 </div>
 </section>
-<section id="take-n-bootstrap-samples-and-fit-models-to-each-one." class="level3">
-<h3 class="anchored" data-anchor-id="take-n-bootstrap-samples-and-fit-models-to-each-one.">2. Take <em>n</em> bootstrap samples and fit models to each one.</h3>
+<section id="take-n_iter-bootstrap-samples-and-fit-models-to-each-one." class="level3">
+<h3 class="anchored" data-anchor-id="take-n_iter-bootstrap-samples-and-fit-models-to-each-one.">2. Take <em>n_iter</em> bootstrap samples and fit models to each one.</h3>
 <p>Fill in the code, then set <code>eval: true</code> .</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">=</span> <span class="dv">100</span></span>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>n_iter <span class="ot">=</span> <span class="dv">100</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">091222</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>boot_fits <span class="ot">&lt;-</span> ______ <span class="sc">|&gt;</span></span>

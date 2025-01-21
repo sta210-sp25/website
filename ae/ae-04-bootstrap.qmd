@@ -72,7 +72,7 @@ observed_fit <- duke_forest |>
 observed_fit
 ```
 
-### 2. Take *n* bootstrap samples and fit models to each one.
+### 2. Take *n_iter* bootstrap samples and fit models to each one.
 
 Fill in the code, then set `eval: true` .
 
@@ -80,7 +80,7 @@ Fill in the code, then set `eval: true` .
 #| label: bootstrap
 #| eval: false
 
-n = 100
+n_iter = 100
 set.seed(091222)
 
 boot_fits <- ______ |>
