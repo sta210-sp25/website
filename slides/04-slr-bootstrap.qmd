@@ -161,8 +161,6 @@ ggplot(duke_forest, aes(x = area, y = price)) +
 
 ```{r}
 #| echo: true
-#| code-line-numbers: "|5|6"
-
 df_fit <- lm(price ~ area, data = duke_forest)
 
 tidy(df_fit) |>
