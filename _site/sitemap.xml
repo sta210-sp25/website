@@ -29,6 +29,14 @@
     <lastmod>2025-01-13T00:44:15.882Z</lastmod>
   </url>
   <url>
+    <loc>https://sta210-sp25.netlify.app/slides/04-slr-bootstrap.html</loc>
+    <lastmod>2025-01-21T19:45:15.571Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta210-sp25.netlify.app/slides/04-slr-bootstrap-notes.html</loc>
+    <lastmod>2025-01-21T19:45:15.571Z</lastmod>
+  </url>
+  <url>
     <loc>https://sta210-sp25.netlify.app/index.html</loc>
     <lastmod>2025-01-07T18:45:37.742Z</lastmod>
   </url>
@@ -77,20 +85,24 @@
     <lastmod>2025-01-03T19:26:30.702Z</lastmod>
   </url>
   <url>
-    <loc>https://sta210-sp25.netlify.app/labs/lab-01.html</loc>
-    <lastmod>2025-01-03T19:25:50.334Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta210-sp25.netlify.app/labs/lab-02.html</loc>
-    <lastmod>2025-01-03T19:26:02.147Z</lastmod>
+    <loc>https://sta210-sp25.netlify.app/labs/lab-00.html</loc>
+    <lastmod>2025-01-06T19:17:25.967Z</lastmod>
   </url>
   <url>
     <loc>https://sta210-sp25.netlify.app/labs/lab-03.html</loc>
     <lastmod>2025-01-03T19:26:16.606Z</lastmod>
   </url>
   <url>
-    <loc>https://sta210-sp25.netlify.app/labs/lab-00.html</loc>
-    <lastmod>2025-01-06T19:17:25.967Z</lastmod>
+    <loc>https://sta210-sp25.netlify.app/labs/lab-02.html</loc>
+    <lastmod>2025-01-03T19:26:02.147Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta210-sp25.netlify.app/labs/lab-01.html</loc>
+    <lastmod>2025-01-03T19:25:50.334Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta210-sp25.netlify.app/labs/lab-01-draft.html</loc>
+    <lastmod>2025-01-23T11:28:34.428Z</lastmod>
   </url>
   <url>
     <loc>https://sta210-sp25.netlify.app/labs/lab-05.html</loc>
@@ -137,12 +149,12 @@
     <lastmod>2025-01-03T17:43:14.456Z</lastmod>
   </url>
   <url>
-    <loc>https://sta210-sp25.netlify.app/slides/04-slr-bootstrap-notes.html</loc>
-    <lastmod>2025-01-21T19:45:15.571Z</lastmod>
+    <loc>https://sta210-sp25.netlify.app/slides/lab-02.html</loc>
+    <lastmod>2023-10-08T17:28:42.516Z</lastmod>
   </url>
   <url>
-    <loc>https://sta210-sp25.netlify.app/slides/04-slr-bootstrap.html</loc>
-    <lastmod>2025-01-21T19:45:15.571Z</lastmod>
+    <loc>https://sta210-sp25.netlify.app/slides/lab-01.html</loc>
+    <lastmod>2025-01-23T11:28:32.522Z</lastmod>
   </url>
   <url>
     <loc>https://sta210-sp25.netlify.app/slides/03-slr-intro-notes.html</loc>
