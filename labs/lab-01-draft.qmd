@@ -15,14 +15,13 @@ This lab is due on **Thursday, January 30 at 11:59pm.**
 
 # Introduction
 
-In today's lab, you'll use simple linear regression to analyze the relationship between air temperature and ice duration for two lakes in Wisconsin.
+In today's lab, you'll use linear regression to analyze the relationship between air temperature and ice duration for two lakes in Wisconsin.
 
 ## Learning goals
 
 By the end of the lab you will...
 
--   Be able to fit a simple linear regression model using R.
--   Be able to interpret the slope and intercept for the model.
+-   Fit and interpret a simple linear regression model in R.
 -   Be able to use simulation-based inference to draw conclusions about the slope.
 -   Continue developing a workflow for reproducible data analysis.
 
@@ -42,23 +41,29 @@ library(tidyverse)
 library(tidymodels)
 library(knitr)
 library(lterdatasampler) 
+
+# add other packages as needed
 ```
 
 # Data: Ice cover and air temperature
 
-The datasets [`ntl_icecover`](https://lter.github.io/lterdatasampler/reference/ntl_icecover.html) and [`ntl_airtemp`](https://lter.github.io/lterdatasampler/reference/ntl_airtemp.html) [lterdatasampler](https://lter.github.io/lterdatasampler/index.html) R package[^1] contain information about ice cover and air temperature, respectively, at Lake Monona and Lake Mendota for days in 1885 through 2019. The data were originally collected at a [US Long Term Ecological Research program (LTER) Network](https://lternet.edu/).
-
-[^1]: https://lter.github.io/lterdatasampler/index.html
+The datasets `wi-icecover.csv` and `wi-air-temperature.csv` contain information about ice cover and air temperature, respectively, at Lake Monona and Lake Mendota (both in Madison, Wisconsin) for days in 1886 through 2019. The data were obtained from the [`ntl_icecover`](https://lter.github.io/lterdatasampler/reference/ntl_icecover.html) and [`ntl_airtemp`](https://lter.github.io/lterdatasampler/reference/ntl_airtemp.html) data frames in the [lterdatasampler](https://lter.github.io/lterdatasampler/) R package. They were originally collected by the [US Long Term Ecological Research program (LTER) Network](https://lternet.edu/).
 
 The primary variables for this analysis are
 
--   `year`: a number denoting the year of observation
+-   `year`: year of observation
 
--   `lakeid`: a factor denoting the lake name
+-   `lakeid`: lake name
 
--   `ice_duration`: a number denoting the number of days between the freeze and breakup dates of each lake
+-   `ice_duration`: number of days between the freeze and ice breakup dates of each lake
 
--   `ave_air_temp_adjusted`: a number denoting the air temperature in degrees Celsius, collected in Madison, WI and adjusted for biases
+-   `air_temp_avg`: yearly average air temperature in Madison, WI (degrees Celsius)
+
+```{r}
+#| message: false
+icecover <- read_csv("data/wi-icecover.csv")
+airtemp <- read_csv("data/wi-air-temperature.csv")
+```
 
 # Exercises
 
@@ -74,90 +79,94 @@ Make sure we can read all of your code in your PDF document. This means you will
 
 ### Exercise 1
 
-Fill in the code below to create a new data frame, `icecover_avg`, of the average ice duration by lake then year. How many observations (rows) are in `icecover_avg`? How many variables (columns)?
+Let's start by combining the data into a single data frame.
 
-```{r}
-icecover_avg <- ntl_icecover |>
-  group_by(____, _____) |>
-  summarise(avg_ice_duration = mean(_____), .groups = "drop")
-```
+a.  Join `icecover` and `airtemp` to create a new data frame that contains both the ice temperature and average air temperature. Your new data frame will have one row per lake per year.
+
+b.  How many observations (rows) are in the new data frame? How many variables (columns)?
+
+c.  We will also consider the change of ice duration over time. Add a new variable to the combined data frame that is the number of years since 1886 (the first year in the data set).
+
+::: callout-important
+You will use the combined data for the remainder of the lab.
+:::
 
 ### Exercise 2
 
--   Use `ntl_airtemp` to create a new data frame `airtemp_avg` of the average air temperature by year.
+a.  Make a histogram to visualize the distribution of the response variable `ice_duration` and calculate summary statistics for the center and spread of the distribution. Include informative axis labels and an informative title on the visualization.
 
--   Then, join `icecover_avg` and `airtemp_avg` to make a new data frame `ice_air_joined`. Remove the years that have missing data for the average annual air temperature or the average annual ice duration.
-
-::: callout-important
-You will use `ice_air_joined` for exercises 3 - 7.
-:::
+b.  Use the visualization and summary statistics to describe the distribution of `ice_duration`. Include the shape, center, spread, and potential presence of outliers in the description.
 
 ### Exercise 3
 
-Make a histogram to visualize the distribution of `avg_ice_duration` and calculate summary statistics for the center and spread of the distribution. Include informative axis labels and an informative title on the visualization.
+a.  Now visualize the distribution of `ice_duration` using a different type of plot.
 
-Use the visualization and summary statistics to describe the distribution of `avg_ice_duration` . Include the shape, center, spread, and potential presence of outliers in the description.
+::: callout-tip
+See the [Data visualization with ggplot2 cheatsheet](https://rstudio.github.io/cheatsheets/data-visualization.pdf) for inspiration.
+:::
+
+b.  What type of plot did you make? What is one feature of the distribution of ice duration that is more apparent in the plot from this exercise than the histogram? What is one feature of the distribution that is more apparent in the histogram than the plot in this exercise?
+
+::: render-commit-push
+This is a good place to render, commit, and push changes to your remote lab repo on GitHub. Click the checkbox next to each file in the Git pane to stage the updates you've made, write an informative commit message (e.g., "Completed Exercises 1 - 3"), and push. After you push the changes, the Git pane in RStudio should be empty.
+:::
 
 ### Exercise 4
 
-Make a histogram of the distribution of `avg_air_temp`. Then make another visualization of the distribution of `avg_air_temp` using a different type of plot. Include informative axis labels and an informative title on both visualizations.
+Let's look at the change in ice duration over time.
 
-What type of plot did you make? What is one feature of the distribution that is more apparent in the histogram than in the other plot? What is one feature of the distribution that is more apparent in the other plot than in the histogram?
+a.  Visualize ice duration over time for each lake.
 
-::: render-commit-push
-This is a good place to render, commit, and push changes to your remote lab repo on GitHub. Click the checkbox next to each file in the Git pane to stage the updates you've made, write an informative commit message (e.g., "Completed Exercises 1 - 4"), and push. After you push the changes, the Git pane in RStudio should be empty.
-:::
+b.  Use the visualization to describe how ice duration has generally changed over time.
+
+c.  Based on the visualization, do you think `lakeid` is a useful predictor of ice duration? Briefly explain why or why not.
 
 ### Exercise 5
 
-Make a visualization of `avg_ice_duration` versus `year` with the points colored by `lakeid`. Write two observations from the visualization.
+a.  Fit the linear regression model using years since 1886 to understand variability in ice duration. Neatly display the results using 3 digits.
+
+<!-- -->
+
+c.  Interpret the slope in the context of the data.
+
+d.  Does the intercept have a meaningful interpretation in this context? If so, interpret the intercept in the context of the data. Otherwise, explain why not.
 
 ### Exercise 6
 
-Create a visualization of `avg_air_temp` versus `year`. Include informative axis labels and an informative title on the visualization.
+Conduct a permutation test for the slope to assess whether there is sufficient evidence of a change in ice duration over time. In your response:
 
--   Use the visualization to write two observations about the trend of average air temperature over time.
+-   State the null and alternative hypotheses in words and mathematical notation
+-   Show all relevant code and output used to conduct the test. Use `set.seed(2025)` and 1000 iterations to construct the appropriate distribution.
+-   Visualize the simulated null distribution.
+-   State the conclusion in the context of the data.
 
--   Based on the visualizations of average ice duration and average air temperature over time, would you expect the linear model describing the association between average ice duration and average air temperature to have a positive or negative slope? Briefly explain.
+::: render-commit-push
+This is a good place to render, commit, and push changes to your remote lab repo on GitHub. Click the checkbox next to each file in the Git pane to stage the updates you've made, write an informative commit message (e.g., "Completed Exercises 4 - 6"), and push. After you push the changes, the Git pane in RStudio should be empty.
+:::
 
 ### Exercise 7
 
-Researchers would like to use a linear model to understand variability in the average ice duration based on the average air temperature. **Their analysis will focus only on Lake Monona.** Write the form of the statistical model the researchers would like to estimate. Use mathematical notation and variable names (`avg_air_temp` and `avg_ice_duration`) in the equation.
+Researchers are interested in the effect of air temperature on ice duration, so let's explore that relationship.
 
-::: callout-tip
-[Click here](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols) for a guide on writing mathematical symbols using LaTex. You will need to use a backslash (\\) before each underscore in the LaTex code. For example, `avg_air_temp` will be written as *avg\\\_air\\\_temp.*
-:::
+a.  Fit the linear regression model average air temperature to understand variability in ice duration. Neatly display the results using 3 digits.
 
-::: render-commit-push
-This is a good place to render, commit, and push changes to your remote lab repo on GitHub. Click the checkbox next to each file in the Git pane to stage the updates you've made, write an informative commit message, and push. After you push the changes, the Git pane in RStudio should be empty.
-:::
+b.  Use bootstrapping to construct a 93% confidence interval for the slope using the same seed as before `2025`. In your response:
+
+    -   First, set a seed for simulating reproducibly. Use the seed `210`.
+    -   Show all relevant code and output used construct the bootstrap confidence intervals. Use `set.seed(2025)` and 1000 iterations to construct the appropriate distribution.
+    -   Visualize the bootstrap distribution.
+
+c.  Interpret the confidence interval for the slope in the context of the data.
 
 ### Exercise 8
 
-Fit and display the output of the regression model corresponding to the statistical model in the previous exercise. **As in the previous exercise, only observations from Lake Monona should be included in the analysis.** Use the `tidy` and `kable` functions to neatly display the model output using three decimal places.
+We have seen evidence of changing ice duration over time and the effect of air temperature on ice duration. Now let's consider both of these effects in a single model.
 
--   Write the equation of the fitted model. Use mathematical notation and variable names (`avg_air_temp` and `avg_ice_duration`) in the equation.
+a.  Fit a linear regression model using both years since 1886 and average air temperature to understand variability in ice duration. Neatly display the results using 3 digits.
 
--   Interpret the slope in the context of the data.
+b.  How does the slope of `air_temp_avg` in this model compare to the slope from the model in the previous exercise? Does the slope indicate a stronger, weaker, or same effect of air temperature on ice duration?
 
--   Does the intercept have a meaningful interpretation in this context? If so, interpret the intercept in the context of the data. Otherwise, explain why not.
-
-### Exercise 9
-
-Use bootstrapping to construct a 93% confidence interval for the slope for Lake Monona. Follow these steps to accomplish this:
-
--   First, set a seed for simulating reproducibly. Use the seed `210`.
--   Save the value of slope estimated from the data.
--   Then, simulate the bootstrap distribution of the slope using 1,000 bootstrap samples.
--   Visualize the bootstrap distribution.
--   Calculate the bounds of the confidence interval using the percentile method.
--   Interpret the confidence interval in the context of the data.
-
-## Exercise 10
-
-> There is a statistically significant linear relationship between average air temperature and average ice duration on Lake Monona $(\beta_1 \neq 0)$.
-
-Does the confidence interval you calculated in the previous exercise support or refute this claim? Briefly explain.
+c.  Briefly explain why the slopes of air temperature differ between the two models.
 
 ::: render-commit-push
 Render, commit, and push your final changes to your remote lab repo on GitHub. Click the checkbox next to each file in the Git pane to stage the updates you've made, write an informative commit message, and push. After you push the changes, the Git pane in RStudio should be empty.
@@ -183,22 +192,18 @@ To submit your assignment:
 
 -   Select the first page of your .PDF submission to be associated with the *“Workflow & formatting”* section.
 
-# Grading (50 pts)
+# Grading (50 points)
 
 <br>
 
 | Component             | Points |
 |:----------------------|:-------|
-| Ex 1                  | 2      |
-| Ex 2                  | 4      |
-| Ex 3                  | 5      |
-| Ex 4                  | 5      |
-| Ex 5                  | 4      |
-| Ex 6                  | 5      |
-| Ex 7                  | 3      |
-| Ex 8                  | 6      |
-| Ex 9                  | 8      |
-| Ex 10                 | 4      |
-| Workflow & formatting | 4[^2]  |
-
-[^2]: The "Workflow & formatting" grade is to assess the reproducible workflow and document format. This includes having at least 3 informative commit messages, a neatly organized document with readable code and your name and the date in the YAML.
+| Ex 1                  | 4      |
+| Ex 2                  | 5      |
+| Ex 3                  | 4      |
+| Ex 4                  | 6      |
+| Ex 5                  | 6      |
+| Ex 6                  | 8      |
+| Ex 7                  | 9      |
+| Ex 8                  | 5      |
+| Workflow & formatting | 3      |

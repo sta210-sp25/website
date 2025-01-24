@@ -88,7 +88,7 @@ Make code easier to read and debug by
 
 -   Putting spaces before and after operators (`+`, `-`, `*`, `=`, `|>` )
 
--   In general, avoiding long lines of code, i.e. lines longer than 120 characters.
+-   In general, avoiding long lines of code, i.e. lines longer than 80 characters.
 
 See the [Tidyverse Style Guide](https://style.tidyverse.org/) for more tips on code styling.
 

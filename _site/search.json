@@ -1436,21 +1436,7 @@
     "href": "labs/lab-01-draft.html#learning-goals",
     "title": "Lab 01: Ice duration and air temperature in Madison, WI",
     "section": "Learning goals",
-    "text": "Learning goals\nBy the end of the lab you will…\n\nBe able to fit a simple linear regression model using R.\nBe able to interpret the slope and intercept for the model.\nBe able to use simulation-based inference to draw conclusions about the slope.\nContinue developing a workflow for reproducible data analysis."
-  },
-  {
-    "objectID": "labs/lab-01-draft.html#exercise-10",
-    "href": "labs/lab-01-draft.html#exercise-10",
-    "title": "Lab 01: Ice duration and air temperature in Madison, WI",
-    "section": "Exercise 10",
-    "text": "Exercise 10\n\nThere is a statistically significant linear relationship between average air temperature and average ice duration on Lake Monona \\((\\beta_1 \\neq 0)\\).\n\nDoes the confidence interval you calculated in the previous exercise support or refute this claim? Briefly explain.\n\nRender, commit, and push your final changes to your remote lab repo on GitHub. Click the checkbox next to each file in the Git pane to stage the updates you’ve made, write an informative commit message, and push. After you push the changes, the Git pane in RStudio should be empty."
-  },
-  {
-    "objectID": "labs/lab-01-draft.html#footnotes",
-    "href": "labs/lab-01-draft.html#footnotes",
-    "title": "Lab 01: Ice duration and air temperature in Madison, WI",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nhttps://lter.github.io/lterdatasampler/index.html↩︎\nThe “Workflow & formatting” grade is to assess the reproducible workflow and document format. This includes having at least 3 informative commit messages, a neatly organized document with readable code and your name and the date in the YAML.↩︎"
+    "text": "Learning goals\nBy the end of the lab you will…\n\nFit and interpret a simple linear regression model in R.\nBe able to use simulation-based inference to draw conclusions about the slope.\nContinue developing a workflow for reproducible data analysis."
   },
   {
     "objectID": "labs/lab-05.html",
@@ -1803,7 +1789,7 @@
     "href": "slides/lab-01.html#tips-code-style-contd",
     "title": "Lab 01",
     "section": "Tips: Code style cont’d",
-    "text": "Tips: Code style cont’d\nMake code easier to read and debug by\n\nPutting each element on a different line (start a new line after + and |&gt;)\nPutting spaces before and after operators (+, -, *, =, |&gt; )\nIn general, avoiding long lines of code, i.e. lines longer than 120 characters.\n\nSee the Tidyverse Style Guide for more tips on code styling."
+    "text": "Tips: Code style cont’d\nMake code easier to read and debug by\n\nPutting each element on a different line (start a new line after + and |&gt;)\nPutting spaces before and after operators (+, -, *, =, |&gt; )\nIn general, avoiding long lines of code, i.e. lines longer than 80 characters.\n\nSee the Tidyverse Style Guide for more tips on code styling."
   },
   {
     "objectID": "slides/lab-01.html#when-youre-done-with-lab",
