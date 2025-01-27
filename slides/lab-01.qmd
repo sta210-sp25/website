@@ -1,6 +1,6 @@
 ---
 title: "Lab 01"
-subtitle: "Simple linear regression"
+subtitle: "Linear regression"
 date: "2025-01-27"
 date-format: "MMM DD, YYYY"
 footer: "[🔗 STA 210 - Spring 2025](https://sta210-sp25.netlify.app)"
@@ -97,9 +97,9 @@ See the [Tidyverse Style Guide](https://style.tidyverse.org/) for more tips on c
 -   Make sure all your final changes have been pushed to your GitHub repo
 -   Submit the PDF of your responses to [**Gradescope**](https://www.gradescope.com/)
 
-## Lab 01: Air temperature and ice duration
+## Lab 01: Linear regression
 
--   Today's lab focuses on using linear regression to explore the relationship between air temperature and ice duration for two lakes in Wisconsin.
+-   Today's lab focuses on using linear regression to explore the relationship between air temperature and ice duration for two lakes in Wisconsin, along with the change in ice duration over time.
 
 -   There are markers throughout suggesting when to render, commit, and push changes to GitHub. These are to help you start using version control in your workflow.
 

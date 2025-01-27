@@ -1004,7 +1004,7 @@
     "href": "index.html",
     "title": "STA 210 - Regression Analysis",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nTh\nJan 9\nWelcome to STA 210!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nJan 13\nLab 00: Getting started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 14\nThe big picture\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 16\nSimple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nJan 20\nNo lab: Martin Luther King Jr. Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 21\nInference: Bootstrap confidence intervals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 23\nInference: Permutation tests\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4\nM\nJan 27\nLab 01: Simple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 28\nMultiple linear regression (MLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due, Statistics experience assigned\n\n\n\nTh\nJan 30\nCategorical predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 01 due\n\n\n5\nM\nFeb 3\nLab 02: Multipe linear regression + Meet your team!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 4\nMLR: Inference using mathematical models\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 6\nInference + Model assumptions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 02 due\n\n\n6\nM\nFeb 10\nLab 03: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject research questions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 11\nModel diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n\nTh\nFeb 13\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 03 due\n\n\n7\nM\nFeb 17\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 18\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 20\nNo lecture: Exam 01 Take-home\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nFeb 24\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 25\nVariable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 27\nInteractions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nM\nMar 3\nLab 04: Variable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 4\nModel comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 6\nCross validation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 04 due\n\n\n10\nM\nMar 10\nNo lab: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 11\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 13\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nM\nMar 17\nLab: Project exploratory data analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 18\nProbabilities + Odds + Odds ratios\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n\nTh\nMar 20\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nM\nMar 24\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 25\nLR: Prediction + Assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 27\nLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nM\nMar 31\nLab 05: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 1\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n\nTh\nApr 3\nMulitnomial logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 05 due\n\n\n14\nM\nApr 7\nLab 06: Multinomial logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 8\nMultinomial: Inference + Prediction\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 10\nModeling in practice\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 06 due\n\n\n15\nM\nApr 14\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 15\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 05 due, Statistics experience due\n\n\n\nTh\nApr 17\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n16\nM\nApr 21\nLab: Project work-day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 22\nWrap up + Looking ahead\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\nweek\ndow\ndate\ntopic\nprepare\nslides\nnotes\nae\nhw\nlab\nproject\ndue\n\n\n\n\n1\nTh\nJan 9\nWelcome to STA 210!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2\nM\nJan 13\nLab 00: Getting started\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 14\nThe big picture\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 16\nSimple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3\nM\nJan 20\nNo lab: Martin Luther King Jr. Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 21\nInference: Bootstrap confidence intervals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nJan 23\nInference: Permutation tests\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4\nM\nJan 27\nLab 01: Simple linear regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nJan 28\nMultiple linear regression (MLR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 01 due, Statistics experience assigned\n\n\n\nTh\nJan 30\nCategorical predictors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 01 due\n\n\n5\nM\nFeb 3\nLab 02: Multipe linear regression + Meet your team!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 4\nMLR: Inference using mathematical models\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 6\nInference + Model assumptions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 02 due\n\n\n6\nM\nFeb 10\nLab 03: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject research questions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 11\nModel diagnostics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 02 due\n\n\n\nTh\nFeb 13\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 03 due\n\n\n7\nM\nFeb 17\nExam 01 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 18\nExam 01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 20\nNo lecture: Exam 01 Take-home\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n8\nM\nFeb 24\nLab: Project proposal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nFeb 25\nVariable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nFeb 27\nInteractions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9\nM\nMar 3\nLab 04: Variable transformations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 4\nModel comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 6\nCross validation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 04 due\n\n\n10\nM\nMar 10\nNo lab: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 11\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 13\nNo lecture: Spring break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n11\nM\nMar 17\nLab: Project exploratory data analysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 18\nProbabilities + Odds + Odds ratios\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 03 due\n\n\n\nTh\nMar 20\nLogistic regression (LR)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12\nM\nMar 24\nLab: Project presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nMar 25\nLR: Prediction + Assessment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nMar 27\nLR: Model comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n13\nM\nMar 31\nLab 05: Logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 1\nLR: Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 04 due\n\n\n\nTh\nApr 3\nMulitnomial logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 05 due\n\n\n14\nM\nApr 7\nLab 06: Multinomial logistic regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 8\nMultinomial: Inference + Prediction\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTh\nApr 10\nModeling in practice\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab 06 due\n\n\n15\nM\nApr 14\nLab: Project peer review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 15\nExam 02 review\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHW 05 due, Statistics experience due\n\n\n\nTh\nApr 17\nExam 02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n16\nM\nApr 21\nLab: Project work-day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTu\nApr 22\nWrap up + Looking ahead\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExam period",
     "crumbs": [
       "Schedule"
     ]
@@ -1315,6 +1315,50 @@
     ]
   },
   {
+    "objectID": "labs/lab-01.html",
+    "href": "labs/lab-01.html",
+    "title": "Lab 01: Linear regression",
+    "section": "",
+    "text": "Important\n\n\n\nThis lab is due on Thursday, January 30 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your GitHub repo\nFinal .pdf file submitted on Gradescope",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-01.html#learning-goals",
+    "href": "labs/lab-01.html#learning-goals",
+    "title": "Lab 01: Linear regression",
+    "section": "Learning goals",
+    "text": "Learning goals\nBy the end of the lab you will…\n\nFit and interpret a linear regression models in R.\nUse simulation-based inference to draw conclusions about the slope.\nContinue developing a workflow for reproducible data analysis.",
+    "crumbs": [
+      "Labs",
+      "Lab 01"
+    ]
+  },
+  {
+    "objectID": "labs/lab-02.html",
+    "href": "labs/lab-02.html",
+    "title": "Lab 02",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 02"
+    ]
+  },
+  {
+    "objectID": "labs/lab-03.html",
+    "href": "labs/lab-03.html",
+    "title": "Lab 03",
+    "section": "",
+    "text": "To be posted.",
+    "crumbs": [
+      "Labs",
+      "Lab 03"
+    ]
+  },
+  {
     "objectID": "labs/lab-00.html",
     "href": "labs/lab-00.html",
     "title": "Lab 00: Getting Started",
@@ -1390,53 +1434,6 @@
       "Labs",
       "Lab 00"
     ]
-  },
-  {
-    "objectID": "labs/lab-03.html",
-    "href": "labs/lab-03.html",
-    "title": "Lab 03",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 03"
-    ]
-  },
-  {
-    "objectID": "labs/lab-02.html",
-    "href": "labs/lab-02.html",
-    "title": "Lab 02",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 02"
-    ]
-  },
-  {
-    "objectID": "labs/lab-01.html",
-    "href": "labs/lab-01.html",
-    "title": "Lab 01",
-    "section": "",
-    "text": "To be posted.",
-    "crumbs": [
-      "Labs",
-      "Lab 01"
-    ]
-  },
-  {
-    "objectID": "labs/lab-01-draft.html",
-    "href": "labs/lab-01-draft.html",
-    "title": "Lab 01: Ice duration and air temperature in Madison, WI",
-    "section": "",
-    "text": "Important\n\n\n\nThis lab is due on Thursday, January 30 at 11:59pm."
-  },
-  {
-    "objectID": "labs/lab-01-draft.html#learning-goals",
-    "href": "labs/lab-01-draft.html#learning-goals",
-    "title": "Lab 01: Ice duration and air temperature in Madison, WI",
-    "section": "Learning goals",
-    "text": "Learning goals\nBy the end of the lab you will…\n\nFit and interpret a simple linear regression model in R.\nBe able to use simulation-based inference to draw conclusions about the slope.\nContinue developing a workflow for reproducible data analysis."
   },
   {
     "objectID": "labs/lab-05.html",
@@ -1799,11 +1796,11 @@
     "text": "When you’re done with lab\n\nMake sure all your final changes have been pushed to your GitHub repo\nSubmit the PDF of your responses to Gradescope"
   },
   {
-    "objectID": "slides/lab-01.html#lab-01-air-temperature-and-ice-duration",
-    "href": "slides/lab-01.html#lab-01-air-temperature-and-ice-duration",
+    "objectID": "slides/lab-01.html#lab-01-linear-regression",
+    "href": "slides/lab-01.html#lab-01-linear-regression",
     "title": "Lab 01",
-    "section": "Lab 01: Air temperature and ice duration",
-    "text": "Lab 01: Air temperature and ice duration\n\nToday’s lab focuses on using linear regression to explore the relationship between air temperature and ice duration for two lakes in Wisconsin.\nThere are markers throughout suggesting when to render, commit, and push changes to GitHub. These are to help you start using version control in your workflow.\nThere are points for having a neatly formatted document and implementing a reproducible workflow\n\n🔗 sta210-sp25.netlify.app/labs/lab-01.html"
+    "section": "Lab 01: Linear regression",
+    "text": "Lab 01: Linear regression\n\nToday’s lab focuses on using linear regression to explore the relationship between air temperature and ice duration for two lakes in Wisconsin, along with the change in ice duration over time.\nThere are markers throughout suggesting when to render, commit, and push changes to GitHub. These are to help you start using version control in your workflow.\nThere are points for having a neatly formatted document and implementing a reproducible workflow\n\n🔗 sta210-sp25.netlify.app/labs/lab-01.html"
   },
   {
     "objectID": "slides/03-slr-intro-notes.html",
