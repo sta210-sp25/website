@@ -167,11 +167,7 @@ a.  Fit a linear regression model using years since 1886 [**and**]{.underline} a
 ::: callout-tip
 Below is template code for a model with 2 predictor variables:
 
-<center>
-
-`model <- lm(y ~ x1 + x2, data = my_data)`
-
-</center>
+<center>`model <- lm(y ~ x1 + x2, data = my_data)`</center>
 :::
 
 b.  How does the slope of `air_temp_avg` in this model compare to the slope in the model from the previous exercise? Does the slope indicate a stronger, weaker, or equal effect of air temperature on ice duration?
