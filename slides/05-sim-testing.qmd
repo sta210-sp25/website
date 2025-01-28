@@ -100,9 +100,7 @@ ggplot(duke_forest, aes(x = area, y = price)) +
 
 ```{r}
 
-df_fit <- linear_reg() |>
-  set_engine("lm") |>
-  fit(price ~ area, data = duke_forest)
+df_fit <- lm(price ~ area, data = duke_forest)
 
 tidy(df_fit) |>
   kable(digits = 2)
