@@ -102,7 +102,7 @@ b.  Use the visualization and summary statistics to describe the distribution of
 
 ### Exercise 3
 
-a.  Visualization the distribution of `ice_duration` using a different type of plot.
+a.  Visualize the distribution of `ice_duration` using a different type of plot.
 
 ::: callout-tip
 See the [Data visualization with ggplot2 cheatsheet](https://rstudio.github.io/cheatsheets/data-visualization.pdf) for inspiration.

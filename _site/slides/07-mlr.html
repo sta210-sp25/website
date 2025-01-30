@@ -242,8 +242,7 @@ Prof.&nbsp;Maria Tackett
 </section>
 <section id="data-palmer-penguins" class="slide level2 midi">
 <h2>Data: Palmer penguins</h2>
-<p>The data set contains data for penguins found on three islands in the Palmer Archipelago, Antarctica. Data were collected and made available by <a href="https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php">Dr.&nbsp;Kristen Gorman</a> and the <a href="https://pal.lternet.edu/">Palmer Station, Antarctica LTER</a>, a member of the <a href="https://lternet.edu/">Long Term Ecological Research Network</a>. These data can be found in the <strong>palmerpenguins</strong> R package.</p>
-<p><br></p>
+<p>The <code>penguins</code> data set contains data for penguins found on three islands in the Palmer Archipelago, Antarctica. Data were collected and made available by <a href="https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php">Dr.&nbsp;Kristen Gorman</a> and the <a href="https://pal.lternet.edu/">Palmer Station, Antarctica LTER</a>, a member of the <a href="https://lternet.edu/">Long Term Ecological Research Network</a>. These data can be found in the <strong>palmerpenguins</strong> R package.</p>
 <div class="fragment">
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -273,12 +272,12 @@ Prof.&nbsp;Maria Tackett
 <li><code>flipper_length_mm</code>: Flipper length in millimeters</li>
 <li><code>species</code>: Adelie, Gentoo, or Chinstrap species</li>
 </ul>
-<p><strong>Outcome</strong>: <code>body_mass_g</code>: Body mass in grams</p>
+<p><strong>Response</strong>: <code>body_mass_g</code>: Body mass in grams</p>
 <p><br></p>
 <p><strong>The goal of this analysis is to use the bill length, flipper length, and species to predict body mass.</strong></p>
 </section>
-<section id="outcome-body_mass_g" class="slide level2">
-<h2>Outcome: <code>body_mass_g</code></h2>
+<section id="response-body_mass_g" class="slide level2">
+<h2>Response: <code>body_mass_g</code></h2>
 
 <img data-src="07-mlr_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"><div class="cell">
 <div class="cell-output-display">
@@ -315,13 +314,6 @@ Prof.&nbsp;Maria Tackett
 <p>Why do we want to use a single model with all the predictors instead of 3 separate models?</p>
 </div>
 </div>
-</section>
-<section id="single-vs.-multiple-predictors" class="slide level2">
-<h2>Single vs.&nbsp;multiple predictors</h2>
-<p>So far we’ve used a <em>single predictor variable</em> to understand variation in a quantitative response variable</p>
-<div class="fragment">
-<p>Now we want to use <em>multiple predictor variables</em> to understand variation in a quantitative response variable</p>
-</div>
 </section></section>
 <section>
 <section id="multiple-linear-regression" class="title-slide slide level1 center">
@@ -356,7 +348,7 @@ Y|X_1, X_2, \ldots, X_p \sim N(\beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \be
 <h2>Multiple linear regression</h2>
 <p>At any combination of the predictors, the mean value of the response <span class="math inline">\(Y\)</span>, is</p>
 <p><span class="math display">\[
-\mu_{Y|X_1, \ldots, X_p} = \beta_0 + \beta_1 X_{1} + \beta_2 X_2 + \dots + \beta_p X_p
+E(Y|X_1, \ldots, X_p) = \beta_0 + \beta_1 X_{1} + \beta_2 X_2 + \dots + \beta_p X_p
 \]</span></p>
 <div class="fragment">
 <p>Using multiple linear regression, we can estimate the mean response for any combination of predictors</p>
@@ -539,7 +531,7 @@ Y|X_1, X_2, \ldots, X_p \sim N(\beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \be
 <section id="prediction-interval-for-haty" class="slide level2">
 <h2>Prediction interval for <span class="math inline">\(\hat{y}\)</span></h2>
 <div class="question">
-<p>Calculate a 90% confidence interval for the <strong>estimated body mass</strong> for an individual Gentoo penguin with a flipper length of 200 millimeters and bill length of 45 millimeters.</p>
+<p>Calculate a 90% prediction interval for the <strong>estimated body mass</strong> <strong>for an individual</strong> Gentoo penguin with a flipper length of 200 millimeters and bill length of 45 millimeters.</p>
 </div>
 <p><br></p>
 <div class="cell">
@@ -625,7 +617,7 @@ Y|X_1, X_2, \ldots, X_p \sim N(\beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \be
 <h2>Indicators in the model</h2>
 <ul>
 <li>We will use <span class="math inline">\(k-1\)</span> of the indicator variables in the model.</li>
-<li>The <strong>baseline</strong> is the category that doesn’t have a term in the model.</li>
+<li>The <strong>baseline</strong> is the category that doesn’t have a term in the model. This is also called the <em>reference level.</em></li>
 <li>The coefficients of the indicator variables in the model are interpreted as the expected change in the response compared to the baseline, holding all other variables constant.</li>
 <li>This approach is also called <strong>dummy coding</strong>.</li>
 </ul>
@@ -717,7 +709,7 @@ Y|X_1, X_2, \ldots, X_p \sim N(\beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \be
 <div>
 <ul>
 <li class="fragment">The baseline category is <code>Adelie</code>.</li>
-<li class="fragment">Penguins from the Chinstrap species are expected to have body mass that is 748.562 grams less on average, compared to penguins from the Adelie species, holding flipper length and bill length constant.</li>
+<li class="fragment">Penguins from the Chinstrap species are expected to have a body mass that is 748.562 grams less, on average, compared to penguins from the Adelie species, holding flipper length and bill length constant.</li>
 </ul>
 </div>
 </div>
@@ -990,7 +982,7 @@ X_{cent} = X  - C
 </div>
 </div>
 </section>
-<section id="original-vs.-mean-centered-model" class="slide level2 small">
+<section id="original-vs.-mean-centered-model" class="slide level2">
 <h2>Original vs.&nbsp;mean-centered model</h2>
 <div class="columns">
 <div class="column" style="width:50%;">

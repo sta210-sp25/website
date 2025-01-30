@@ -60,9 +60,7 @@ ggplot2::theme_set(ggplot2::theme_minimal(base_size = 16))
 
 ## Data: Palmer penguins {.midi}
 
-The data set contains data for penguins found on three islands in the Palmer Archipelago, Antarctica. Data were collected and made available by [Dr. Kristen Gorman](https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php) and the [Palmer Station, Antarctica LTER](https://pal.lternet.edu/), a member of the [Long Term Ecological Research Network](https://lternet.edu/). These data can be found in the **palmerpenguins** R package.
-
-<br>
+The `penguins` data set contains data for penguins found on three islands in the Palmer Archipelago, Antarctica. Data were collected and made available by [Dr. Kristen Gorman](https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php) and the [Palmer Station, Antarctica LTER](https://pal.lternet.edu/), a member of the [Long Term Ecological Research Network](https://lternet.edu/). These data can be found in the **palmerpenguins** R package.
 
 . . .
 
@@ -84,13 +82,13 @@ penguins
 -   `flipper_length_mm`: Flipper length in millimeters
 -   `species`: Adelie, Gentoo, or Chinstrap species
 
-**Outcome**: `body_mass_g`: Body mass in grams
+**Response**: `body_mass_g`: Body mass in grams
 
 <br>
 
 **The goal of this analysis is to use the bill length, flipper length, and species to predict body mass.**
 
-## Outcome: `body_mass_g`
+## Response: `body_mass_g`
 
 ```{r}
 #| echo: false
@@ -170,14 +168,6 @@ p4 + p5 / p6
 Why do we want to use a single model with all the predictors instead of 3 separate models?
 :::
 
-## Single vs. multiple predictors
-
-So far we've used a *single predictor variable* to understand variation in a quantitative response variable
-
-. . .
-
-Now we want to use *multiple predictor variables* to understand variation in a quantitative response variable
-
 # Multiple linear regression
 
 ## Multiple linear regression (MLR)
@@ -214,7 +204,7 @@ $$
 At any combination of the predictors, the mean value of the response $Y$, is
 
 $$
-\mu_{Y|X_1, \ldots, X_p} = \beta_0 + \beta_1 X_{1} + \beta_2 X_2 + \dots + \beta_p X_p
+E(Y|X_1, \ldots, X_p) = \beta_0 + \beta_1 X_{1} + \beta_2 X_2 + \dots + \beta_p X_p
 $$
 
 . . .
@@ -319,7 +309,7 @@ predict(penguin_fit, new_penguin, interval = "confidence",
 ## Prediction interval for $\hat{y}$
 
 ::: question
-Calculate a 90% confidence interval for the **estimated body mass** for an individual Gentoo penguin with a flipper length of 200 millimeters and bill length of 45 millimeters.
+Calculate a 90% prediction interval for the **estimated body mass** **for an individual** Gentoo penguin with a flipper length of 200 millimeters and bill length of 45 millimeters.
 :::
 
 <br>
@@ -378,7 +368,7 @@ penguins |>
 ## Indicators in the model {.midi}
 
 -   We will use $k-1$ of the indicator variables in the model.
--   The **baseline** is the category that doesn't have a term in the model.
+-   The **baseline** is the category that doesn't have a term in the model. This is also called the *reference level.*
 -   The coefficients of the indicator variables in the model are interpreted as the expected change in the response compared to the baseline, holding all other variables constant.
 -   This approach is also called **dummy coding**.
 
@@ -403,7 +393,7 @@ tidy(penguin_fit, conf.int  = T) |>
 
 ::: incremental
 -   The baseline category is `Adelie`.
--   Penguins from the Chinstrap species are expected to have body mass that is 748.562 grams less on average, compared to penguins from the Adelie species, holding flipper length and bill length constant.
+-   Penguins from the Chinstrap species are expected to have a body mass that is 748.562 grams less, on average, compared to penguins from the Adelie species, holding flipper length and bill length constant.
 :::
 
 . . .
@@ -528,7 +518,7 @@ tidy(penguin_cent_fit, conf.int = T) |>
   kable(digits = 3)
 ```
 
-## Original vs. mean-centered model {.small}
+## Original vs. mean-centered model 
 
 ::::: columns
 ::: {.column width="50%"}
