@@ -2935,39 +2935,53 @@
     ]
   },
   {
-    "objectID": "slides/lab-02.html#reminders",
-    "href": "slides/lab-02.html#reminders",
+    "objectID": "slides/lab-02.html#goals",
+    "href": "slides/lab-02.html#goals",
     "title": "Lab 02",
-    "section": "Reminders",
-    "text": "Reminders\n\n\nSelect the pages corresponding to each exercise when you when you submit the assignment on Gradescope.\n\nClick here for written and video instructions on submitting an assignment and marking pages on Gradescope.\n\nIn your write up:\n\nWrite all narrative in complete sentences.\nInclude an informative title and axis labels on graphs.\nWrite responses in the context of the data.\nDescribe distribution using shape, center, spread, and potential outliers. Describe relationships between variables using strength, direction, and shape."
+    "section": "Goals",
+    "text": "Goals\n\nMeet your team!\nTeam agreement\nLab 02: Coffee ratings"
   },
   {
-    "objectID": "slides/lab-02.html#axis-labels-and-titles",
-    "href": "slides/lab-02.html#axis-labels-and-titles",
+    "objectID": "slides/lab-02.html#meet-your-team",
+    "href": "slides/lab-02.html#meet-your-team",
     "title": "Lab 02",
-    "section": "Axis labels and titles",
-    "text": "Axis labels and titles\n\nBelow is a graph of association between flipper length in millimeters and body mass in grams of three species of penguins in Palmer Station, Antarctica. What are informative title and axis labels for this graph?"
+    "section": "Meet your team!",
+    "text": "Meet your team!\n\nClick here to find your team.\nSit with your team."
   },
   {
-    "objectID": "slides/lab-02.html#code-style",
-    "href": "slides/lab-02.html#code-style",
+    "objectID": "slides/lab-02.html#team-name-agreement",
+    "href": "slides/lab-02.html#team-name-agreement",
     "title": "Lab 02",
-    "section": "Code style",
-    "text": "Code style\nWhich code chunk would you rather read?\n\n# code chunk 1\npenguins|&gt;filter(!is.na(flipper_length_mm))|&gt;group_by(species)|&gt;summarise(min=min(flipper_length_mm),mean=mean(flipper_length_mm),sd=sd(flipper_length_mm),max=max(flipper_length_mm),n=n())\n\n\n\n\n# code chunk 2\npenguins |&gt; \n  filter(!is.na(flipper_length_mm)) |&gt; \n  group_by(species) |&gt; \n  summarise(min = min(flipper_length_mm), \n            mean = mean(flipper_length_mm), \n            max = max(flipper_length_mm),\n            n = n())"
+    "section": "Team name + agreement",
+    "text": "Team name + agreement\n\nCome up with a team name. You can’t have the same name as another group in the class, so be creative!\n\nYour TA will get your team name by the end of lab.\n\nFill out the team agreement. The goals of the agreement are to…\n\nGain a common understanding of the team’s goals and expectations for collaboration\nMake a plan for team communication\nMake a plan for working outside of lab"
   },
   {
-    "objectID": "slides/lab-02.html#code-style-contd",
-    "href": "slides/lab-02.html#code-style-contd",
+    "objectID": "slides/lab-02.html#team-workflow",
+    "href": "slides/lab-02.html#team-workflow",
     "title": "Lab 02",
-    "section": "Code style cont’d",
-    "text": "Code style cont’d\nMake code easier to read and debug by\n\nPutting each element on a different line (start a new line after + and |&gt;)\nPutting spaces before and after operators (+, -, *, =, |&gt; )\nIn general, avoiding long lines of code, i.e. lines longer than 120 characters.\n\nSee the Tidyverse Style Guide for more tips on code styling."
+    "section": "Team workflow",
+    "text": "Team workflow\n\nOnly one team member should type at a time. There are markers in today’s lab to help you determine whose turn it is to type.\n\nEvery team member should still be engaged in discussion for all questions, even if it’s not your turn type.\n\nDon’t forget to pull to get your teammates’ updates before making changes to the .qmd file.\n\n\n\n\n\n\nImportant\n\n\nOnly one submission per team on Gradescope. Read the submission instructions carefully!"
+  },
+  {
+    "objectID": "slides/lab-02.html#team-workflow-in-action",
+    "href": "slides/lab-02.html#team-workflow-in-action",
+    "title": "Lab 02",
+    "section": "Team workflow, in action",
+    "text": "Team workflow, in action\n\nComplete the “Workflow: Using Git and GitHub as a team” section of the lab in your teams.\nRaise your hand if you have any questions about the workflow.\n\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "slides/lab-02.html#tips-for-working-on-a-team",
+    "href": "slides/lab-02.html#tips-for-working-on-a-team",
+    "title": "Lab 02",
+    "section": "Tips for working on a team",
+    "text": "Tips for working on a team\n\nDo not pressure each other to finish early; use the time wisely to really learn the material and produce a quality report.\nThe labs are structured to help you learn the steps of a data analysis. Do not split up the lab among the team members; work on it together in its entirety.\nEveryone has something to contribute! Use the lab groups as an opportunity to share ideas and learn from each other."
   },
   {
     "objectID": "slides/lab-02.html#todays-lab",
     "href": "slides/lab-02.html#todays-lab",
     "title": "Lab 02",
     "section": "Today’s lab",
-    "text": "Today’s lab\n\nRemember to use a reproducible workflow with regular commits (and informative commit messages).\nPush all updated files after each commit! The Git pane should be clear after each Render -&gt; Commit -&gt; Push."
+    "text": "Today’s lab\nToday’s lab focuses on using statistical inference based on mathematical models to explore the relationship between coffee’s properties and the overall quality rating.\n\n🔗 https://sta210-sp25.netlify.app/labs/lab-02"
   },
   {
     "objectID": "slides/lab-01.html#tips-for-working-on-lab",

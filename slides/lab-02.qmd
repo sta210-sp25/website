@@ -1,17 +1,22 @@
 ---
 title: "Lab 02"
-subtitle: "Bootstrap confidence interval for the slope"
-author: "Sep 12 & 14, 2023"
-footer: "[🔗 STA 210 - Fall 2023 -  Schedule](https://sta210-fa23.netlify.app/schedule)"
+subtitle: "Inference using mathematical models + Meet your team"
+date: "2025-02-03"
+date-format: "MMM DD, YYYY"
+footer: "[🔗 STA 210 - Spring 2025](https://sta210-sp25.netlify.app)"
 logo: "../images/logo.png"
 format: 
-  revealjs:
+  revealjs: 
     theme: slides.scss
     multiplex: false
     transition: fade
     slide-number: true
     incremental: false 
     chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
 execute:
   freeze: auto
   echo: true
@@ -19,87 +24,67 @@ knitr:
   opts_chunk: 
     R.options:      
     width: 200
+bibliography: references.bib
 ---
 
-## Reminders {.midi}
+## Goals
 
-::: incremental
--   Select the pages corresponding to each exercise when you when you submit the assignment on Gradescope.
+-   Meet your team!
+-   Team agreement
+-   Lab 02: Coffee ratings
 
-    -   [Click here](https://help.gradescope.com/article/ccbpppziu9-student-submit-work#submitting_a_pdf) for written and video instructions on submitting an assignment and marking pages on Gradescope.
+## Meet your team!
 
--   In your write up:
+-   [**Click here**](https://prodduke-my.sharepoint.com/:x:/g/personal/mt324_duke_edu/EdLwgl9diOVEvUuObtRMeX0BpuAgYmfPLaomlbZsXEBogw?e=yz2sKZ) to find your team.
 
-    -   Write all narrative in complete sentences.
+-   Sit with your team.
 
-    -   Include an informative title and axis labels on graphs.
+## Team name + agreement
 
-    -   Write responses in the context of the data.
+-   Come up with a team name. You can't have the same name as another group in the class, so be creative!
 
-    -   Describe distribution using shape, center, spread, and potential outliers. Describe relationships between variables using strength, direction, and shape.
-:::
+    -   Your TA will get your team name by the end of lab.
 
-## Axis labels and titles
+-   Fill out the team agreement. The goals of the agreement are to...
 
-::: midi
-Below is a graph of association between flipper length in millimeters and body mass in grams of three species of penguins in Palmer Station, Antarctica. What are informative title and axis labels for this graph?
-:::
+    -   Gain a common understanding of the team's goals and expectations for collaboration
+    -   Make a plan for team communication
+    -   Make a plan for working outside of lab
+
+## Team workflow
+
+-   Only <u>**one**</u> team member should type at a time. There are markers in today's lab to help you determine whose turn it is to type.
+
+    -   Every team member should still be engaged in discussion for all questions, even if it's not your turn type.
+
+-   Don't forget to **pull** to get your teammates' updates before making changes to the `.qmd` file.
+
+    ::: callout-important
+    **Only one submission per team on Gradescope. Read the submission instructions carefully!**
+    :::
+
+## Team workflow, in action
+
+-   Complete the "Workflow: Using Git and GitHub as a team" section of the lab in your teams.
+-   Raise your hand if you have any questions about the workflow.
 
 ```{r}
 #| echo: false
-#| fig-align: center
-#| out-width: "60%"
-
-library(palmerpenguins)
-library(tidyverse)
-library(viridis)
-
-ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) + 
-  geom_point(size = 2) + 
-  theme_bw() +
-    scale_color_manual(values = c("darkorange","purple","cyan4")) 
+countdown::countdown(minutes = 5, font_size = "2em")
 ```
 
-## Code style
+## Tips for working on a team {.midi}
 
-Which code chunk would you rather read?
+-   Do not pressure each other to finish early; use the time wisely to really learn the material and produce a quality report.
 
-```{r}
-#| eval: false
-# code chunk 1
-penguins|>filter(!is.na(flipper_length_mm))|>group_by(species)|>summarise(min=min(flipper_length_mm),mean=mean(flipper_length_mm),sd=sd(flipper_length_mm),max=max(flipper_length_mm),n=n())
-```
+-   The labs are structured to help you learn the steps of a data analysis. Do not split up the lab among the team members; work on it together in its entirety.
+
+-   Everyone has something to contribute! Use the lab groups as an opportunity to share ideas and learn from each other.
+
+## Today's lab 
+
+Today's lab focuses on using statistical inference based on mathematical models to explore the relationship between coffee's properties and the overall quality rating.
 
 <br>
 
-. . .
-
-```{r}
-#| eval: false
-# code chunk 2
-penguins |> 
-  filter(!is.na(flipper_length_mm)) |> 
-  group_by(species) |> 
-  summarise(min = min(flipper_length_mm), 
-            mean = mean(flipper_length_mm), 
-            max = max(flipper_length_mm),
-            n = n())
-```
-
-## Code style cont'd
-
-Make code easier to read and debug by
-
--   Putting each element on a different line (start a new line after `+` and `|>`)
-
--   Putting spaces before and after operators (`+`, `-`, `*`, `=`, `|>` )
-
--   In general, avoiding long lines of code, i.e. lines longer than 120 characters.
-
-See the [Tidyverse Style Guide](https://style.tidyverse.org/) for more tips on code styling.
-
-## Today's lab
-
--   Remember to use a reproducible workflow with regular commits (and informative commit messages).
-
--   Push all updated files after each commit! The Git pane should be clear after each Render -\> Commit -\> Push.
+🔗 <https://sta210-sp25.netlify.app/labs/lab-02>
