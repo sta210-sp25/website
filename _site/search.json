@@ -209,11 +209,11 @@
     "text": "Variables\nPredictors:\n\nbill_length_mm: Bill length in millimeters\nflipper_length_mm: Flipper length in millimeters\nspecies: Adelie, Gentoo, or Chinstrap species\n\nResponse: body_mass_g: Body mass in grams\n\nThe goal of this analysis is to use the bill length, flipper length, and species to predict body mass."
   },
   {
-    "objectID": "slides/07-mlr.html#outcome-body_mass_g",
-    "href": "slides/07-mlr.html#outcome-body_mass_g",
+    "objectID": "slides/07-mlr.html#response-body_mass_g",
+    "href": "slides/07-mlr.html#response-body_mass_g",
     "title": "Multiple linear regression (MLR)",
-    "section": "Outcome: body_mass_g",
-    "text": "Outcome: body_mass_g\n\n\n\n\n\n\nmin\nmedian\nmax\niqr\n\n\n\n\n2700\n4050\n6300\n1200"
+    "section": "Response: body_mass_g",
+    "text": "Response: body_mass_g\n\n\n\n\n\n\nmin\nmedian\nmax\niqr\n\n\n\n\n2700\n4050\n6300\n1200"
   },
   {
     "objectID": "slides/07-mlr.html#predictors",
@@ -228,13 +228,6 @@
     "title": "Multiple linear regression (MLR)",
     "section": "Outcome vs. predictors",
     "text": "Outcome vs. predictors\n\n\n\nWhy do we want to use a single model with all the predictors instead of 3 separate models?"
-  },
-  {
-    "objectID": "slides/07-mlr.html#single-vs.-multiple-predictors",
-    "href": "slides/07-mlr.html#single-vs.-multiple-predictors",
-    "title": "Multiple linear regression (MLR)",
-    "section": "Single vs. multiple predictors",
-    "text": "Single vs. multiple predictors\nSo far we’ve used a single predictor variable to understand variation in a quantitative response variable\n\nNow we want to use multiple predictor variables to understand variation in a quantitative response variable"
   },
   {
     "objectID": "slides/07-mlr.html#multiple-linear-regression-mlr",
@@ -486,21 +479,21 @@
     "href": "slides/07-mlr-notes.html#data-palmer-penguins",
     "title": "Multiple linear regression (MLR)",
     "section": "Data: Palmer penguins",
-    "text": "Data: Palmer penguins\nThe data set contains data for penguins found on three islands in the Palmer Archipelago, Antarctica. Data were collected and made available by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER, a member of the Long Term Ecological Research Network. These data can be found in the palmerpenguins R package.\n\n. . .\n\n\n# A tibble: 342 × 4\n   body_mass_g flipper_length_mm bill_length_mm species\n         &lt;int&gt;             &lt;int&gt;          &lt;dbl&gt; &lt;fct&gt;  \n 1        3750               181           39.1 Adelie \n 2        3800               186           39.5 Adelie \n 3        3250               195           40.3 Adelie \n 4        3450               193           36.7 Adelie \n 5        3650               190           39.3 Adelie \n 6        3625               181           38.9 Adelie \n 7        4675               195           39.2 Adelie \n 8        3475               193           34.1 Adelie \n 9        4250               190           42   Adelie \n10        3300               186           37.8 Adelie \n# ℹ 332 more rows"
+    "text": "Data: Palmer penguins\nThe penguins data set contains data for penguins found on three islands in the Palmer Archipelago, Antarctica. Data were collected and made available by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER, a member of the Long Term Ecological Research Network. These data can be found in the palmerpenguins R package.\n. . .\n\n\n# A tibble: 342 × 4\n   body_mass_g flipper_length_mm bill_length_mm species\n         &lt;int&gt;             &lt;int&gt;          &lt;dbl&gt; &lt;fct&gt;  \n 1        3750               181           39.1 Adelie \n 2        3800               186           39.5 Adelie \n 3        3250               195           40.3 Adelie \n 4        3450               193           36.7 Adelie \n 5        3650               190           39.3 Adelie \n 6        3625               181           38.9 Adelie \n 7        4675               195           39.2 Adelie \n 8        3475               193           34.1 Adelie \n 9        4250               190           42   Adelie \n10        3300               186           37.8 Adelie \n# ℹ 332 more rows"
   },
   {
     "objectID": "slides/07-mlr-notes.html#variables",
     "href": "slides/07-mlr-notes.html#variables",
     "title": "Multiple linear regression (MLR)",
     "section": "Variables",
-    "text": "Variables\nPredictors:\n\nbill_length_mm: Bill length in millimeters\nflipper_length_mm: Flipper length in millimeters\nspecies: Adelie, Gentoo, or Chinstrap species\n\nOutcome: body_mass_g: Body mass in grams\n\nThe goal of this analysis is to use the bill length, flipper length, and species to predict body mass."
+    "text": "Variables\nPredictors:\n\nbill_length_mm: Bill length in millimeters\nflipper_length_mm: Flipper length in millimeters\nspecies: Adelie, Gentoo, or Chinstrap species\n\nResponse: body_mass_g: Body mass in grams\n\nThe goal of this analysis is to use the bill length, flipper length, and species to predict body mass."
   },
   {
-    "objectID": "slides/07-mlr-notes.html#outcome-body_mass_g",
-    "href": "slides/07-mlr-notes.html#outcome-body_mass_g",
+    "objectID": "slides/07-mlr-notes.html#response-body_mass_g",
+    "href": "slides/07-mlr-notes.html#response-body_mass_g",
     "title": "Multiple linear regression (MLR)",
-    "section": "Outcome: body_mass_g",
-    "text": "Outcome: body_mass_g\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmin\nmedian\nmax\niqr\n\n\n\n\n2700\n4050\n6300\n1200"
+    "section": "Response: body_mass_g",
+    "text": "Response: body_mass_g\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmin\nmedian\nmax\niqr\n\n\n\n\n2700\n4050\n6300\n1200"
   },
   {
     "objectID": "slides/07-mlr-notes.html#predictors",
@@ -515,13 +508,6 @@
     "title": "Multiple linear regression (MLR)",
     "section": "Outcome vs. predictors",
     "text": "Outcome vs. predictors\n\n\n\n\n\n\n\n\n\n. . .\n\nWhy do we want to use a single model with all the predictors instead of 3 separate models?"
-  },
-  {
-    "objectID": "slides/07-mlr-notes.html#single-vs.-multiple-predictors",
-    "href": "slides/07-mlr-notes.html#single-vs.-multiple-predictors",
-    "title": "Multiple linear regression (MLR)",
-    "section": "Single vs. multiple predictors",
-    "text": "Single vs. multiple predictors\nSo far we’ve used a single predictor variable to understand variation in a quantitative response variable\n. . .\nNow we want to use multiple predictor variables to understand variation in a quantitative response variable"
   },
   {
     "objectID": "slides/07-mlr-notes.html#multiple-linear-regression-mlr",
@@ -542,7 +528,7 @@
     "href": "slides/07-mlr-notes.html#multiple-linear-regression-2",
     "title": "Multiple linear regression (MLR)",
     "section": "Multiple linear regression",
-    "text": "Multiple linear regression\nAt any combination of the predictors, the mean value of the response \\(Y\\), is\n\\[\n\\mu_{Y|X_1, \\ldots, X_p} = \\beta_0 + \\beta_1 X_{1} + \\beta_2 X_2 + \\dots + \\beta_p X_p\n\\]\n. . .\nUsing multiple linear regression, we can estimate the mean response for any combination of predictors\n\\[\n\\hat{Y} = \\hat{\\beta}_0 + \\hat{\\beta}_1 X_{1} + \\hat{\\beta}_2 X_2 + \\dots + \\hat{\\beta}_p X_{p}\n\\]"
+    "text": "Multiple linear regression\nAt any combination of the predictors, the mean value of the response \\(Y\\), is\n\\[\nE(Y|X_1, \\ldots, X_p) = \\beta_0 + \\beta_1 X_{1} + \\beta_2 X_2 + \\dots + \\beta_p X_p\n\\]\n. . .\nUsing multiple linear regression, we can estimate the mean response for any combination of predictors\n\\[\n\\hat{Y} = \\hat{\\beta}_0 + \\hat{\\beta}_1 X_{1} + \\hat{\\beta}_2 X_2 + \\dots + \\hat{\\beta}_p X_{p}\n\\]"
   },
   {
     "objectID": "slides/07-mlr-notes.html#model-fit",
@@ -591,7 +577,7 @@
     "href": "slides/07-mlr-notes.html#prediction-interval-for-haty",
     "title": "Multiple linear regression (MLR)",
     "section": "Prediction interval for \\(\\hat{y}\\)",
-    "text": "Prediction interval for \\(\\hat{y}\\)\n\nCalculate a 90% confidence interval for the estimated body mass for an individual Gentoo penguin with a flipper length of 200 millimeters and bill length of 45 millimeters.\n\n\n\npredict(penguin_fit, new_penguin, interval = \"prediction\", \n        level = 0.90) |&gt;\n  kable(digits = 3)\n\n\n\n\nfit\nlwr\nupr\n\n\n\n\n4449.955\n3881.035\n5018.875"
+    "text": "Prediction interval for \\(\\hat{y}\\)\n\nCalculate a 90% prediction interval for the estimated body mass for an individual Gentoo penguin with a flipper length of 200 millimeters and bill length of 45 millimeters.\n\n\n\npredict(penguin_fit, new_penguin, interval = \"prediction\", \n        level = 0.90) |&gt;\n  kable(digits = 3)\n\n\n\n\nfit\nlwr\nupr\n\n\n\n\n4449.955\n3881.035\n5018.875"
   },
   {
     "objectID": "slides/07-mlr-notes.html#cautions",
@@ -619,14 +605,14 @@
     "href": "slides/07-mlr-notes.html#indicators-in-the-model",
     "title": "Multiple linear regression (MLR)",
     "section": "Indicators in the model",
-    "text": "Indicators in the model\n\nWe will use \\(k-1\\) of the indicator variables in the model.\nThe baseline is the category that doesn’t have a term in the model.\nThe coefficients of the indicator variables in the model are interpreted as the expected change in the response compared to the baseline, holding all other variables constant.\nThis approach is also called dummy coding.\n\n. . .\n\npenguins |&gt;\n  select(species, chinstrap, gentoo) |&gt;\n  slice(1, 152, 283)\n\n# A tibble: 3 × 3\n  species   chinstrap gentoo\n  &lt;fct&gt;         &lt;dbl&gt;  &lt;dbl&gt;\n1 Adelie            0      0\n2 Gentoo            0      1\n3 Chinstrap         1      0"
+    "text": "Indicators in the model\n\nWe will use \\(k-1\\) of the indicator variables in the model.\nThe baseline is the category that doesn’t have a term in the model. This is also called the reference level.\nThe coefficients of the indicator variables in the model are interpreted as the expected change in the response compared to the baseline, holding all other variables constant.\nThis approach is also called dummy coding.\n\n. . .\n\npenguins |&gt;\n  select(species, chinstrap, gentoo) |&gt;\n  slice(1, 152, 283)\n\n# A tibble: 3 × 3\n  species   chinstrap gentoo\n  &lt;fct&gt;         &lt;dbl&gt;  &lt;dbl&gt;\n1 Adelie            0      0\n2 Gentoo            0      1\n3 Chinstrap         1      0"
   },
   {
     "objectID": "slides/07-mlr-notes.html#interpreting-species",
     "href": "slides/07-mlr-notes.html#interpreting-species",
     "title": "Multiple linear regression (MLR)",
     "section": "Interpreting species",
-    "text": "Interpreting species\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n-3904.387\n529.257\n-7.377\n0.000\n-4945.450\n-2863.324\n\n\nflipper_length_mm\n27.429\n3.176\n8.638\n0.000\n21.182\n33.675\n\n\nspeciesChinstrap\n-748.562\n81.534\n-9.181\n0.000\n-908.943\n-588.182\n\n\nspeciesGentoo\n90.435\n88.647\n1.020\n0.308\n-83.937\n264.807\n\n\nbill_length_mm\n61.736\n7.126\n8.664\n0.000\n47.720\n75.753\n\n\n\n\n\n\n\n. . .\n\n\nThe baseline category is Adelie.\nPenguins from the Chinstrap species are expected to have body mass that is 748.562 grams less on average, compared to penguins from the Adelie species, holding flipper length and bill length constant.\n\n\n. . .\n\nInterpret the coefficient of Gentoo in the context of the data."
+    "text": "Interpreting species\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n-3904.387\n529.257\n-7.377\n0.000\n-4945.450\n-2863.324\n\n\nflipper_length_mm\n27.429\n3.176\n8.638\n0.000\n21.182\n33.675\n\n\nspeciesChinstrap\n-748.562\n81.534\n-9.181\n0.000\n-908.943\n-588.182\n\n\nspeciesGentoo\n90.435\n88.647\n1.020\n0.308\n-83.937\n264.807\n\n\nbill_length_mm\n61.736\n7.126\n8.664\n0.000\n47.720\n75.753\n\n\n\n\n\n\n\n. . .\n\n\nThe baseline category is Adelie.\nPenguins from the Chinstrap species are expected to have a body mass that is 748.562 grams less, on average, compared to penguins from the Adelie species, holding flipper length and bill length constant.\n\n\n. . .\n\nInterpret the coefficient of Gentoo in the context of the data."
   },
   {
     "objectID": "slides/07-mlr-notes.html#interpreting-the-intercept",
@@ -4390,12 +4376,5 @@
       "Project",
       "Instructions"
     ]
-  },
-  {
-    "objectID": "slides/07-mlr.html#response-body_mass_g",
-    "href": "slides/07-mlr.html#response-body_mass_g",
-    "title": "Multiple linear regression (MLR)",
-    "section": "Response: body_mass_g",
-    "text": "Response: body_mass_g\n\n\n\n\n\n\nmin\nmedian\nmax\niqr\n\n\n\n\n2700\n4050\n6300\n1200"
   }
 ]
