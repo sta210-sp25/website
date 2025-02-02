@@ -1,6 +1,6 @@
 ---
 title: "Lab 02"
-subtitle: "Inference using mathematical models + Meet your team"
+subtitle: "Inference using mathematical models + Meet your team!"
 date: "2025-02-03"
 date-format: "MMM DD, YYYY"
 footer: "[🔗 STA 210 - Spring 2025](https://sta210-sp25.netlify.app)"
@@ -81,7 +81,7 @@ countdown::countdown(minutes = 5, font_size = "2em")
 
 -   Everyone has something to contribute! Use the lab groups as an opportunity to share ideas and learn from each other.
 
-## Today's lab 
+## Today's lab
 
 Today's lab focuses on using statistical inference based on mathematical models to explore the relationship between coffee's properties and the overall quality rating.
 
