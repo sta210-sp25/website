@@ -230,8 +230,6 @@ Prof.&nbsp;Maria Tackett
 <li>Interaction terms</li>
 <li>ANOVA and sum of squares</li>
 <li><span class="math inline">\(R^2\)</span> and RMSE</li>
-<li>Adjusted <span class="math inline">\(R^2\)</span></li>
-<li>Comparing models with <span class="math inline">\(R^2\)</span> vs.&nbsp;<span class="math inline">\(R^2_{adj}\)</span></li>
 </ul>
 </div>
 </section>
@@ -565,7 +563,7 @@ X_{std} = \frac{X - \bar{X}}{S_X}
 </div>
 </div>
 </section>
-<section id="interaction-terms-in-the-model" class="slide level2">
+<section id="interaction-terms-in-the-model" class="slide level2 midi">
 <h2>Interaction terms in the model</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -669,20 +667,17 @@ X_{std} = \frac{X - \bar{X}}{S_X}
 <p>Which variables help us predict the amount customers tip at a restaurant? To answer this question, we will use data collected in 2011 by a student at St.&nbsp;Olaf who worked at a local restaurant.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 169 × 4
-     Tip Party Meal   Age   
-   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt; 
- 1  2.99     1 Dinner Yadult
- 2  2        1 Dinner Yadult
- 3  5        1 Dinner SenCit
- 4  4        3 Dinner Middle
- 5 10.3      2 Dinner SenCit
- 6  4.85     2 Dinner Middle
- 7  5        4 Dinner Yadult
- 8  4        3 Dinner Middle
- 9  5        2 Dinner Middle
-10  1.58     1 Dinner SenCit
-# ℹ 159 more rows</code></pre>
+<pre><code># A tibble: 8 × 4
+    Tip Party Meal   Age   
+  &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt; 
+1  2.99     1 Dinner Yadult
+2  2        1 Dinner Yadult
+3  5        1 Dinner SenCit
+4  4        3 Dinner Middle
+5 10.3      2 Dinner SenCit
+6  4.85     2 Dinner Middle
+7  5        4 Dinner Yadult
+8  4        3 Dinner Middle</code></pre>
 </div>
 </div>
 
@@ -701,7 +696,7 @@ X_{std} = \frac{X - \bar{X}}{S_X}
 <li><code>Age</code>: Age category of person paying the bill (Yadult, Middle, SenCit)</li>
 </ul>
 </div>
-<p><strong>Response</strong>: <code>Tip</code>: Amount of tip</p>
+<p><strong>Response</strong>: <code>Tip</code>: Amount of tip in US dollars</p>
 </section>
 <section id="response-tip" class="slide level2">
 <h2>Response: <code>Tip</code></h2>
@@ -732,12 +727,10 @@ X_{std} = \frac{X - \bar{X}}{S_X}
 <section id="fit-and-summarize-model" class="slide level2 midi">
 <h2>Fit and summarize model</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>tip_fit <span class="ot">&lt;-</span> <span class="fu">linear_reg</span>() <span class="sc">|&gt;</span></span>
-<span id="cb7-2"><a></a>  <span class="fu">set_engine</span>(<span class="st">"lm"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb7-3"><a></a>  <span class="fu">fit</span>(Tip <span class="sc">~</span> Party <span class="sc">+</span> Age, <span class="at">data =</span> tips)</span>
-<span id="cb7-4"><a></a></span>
-<span id="cb7-5"><a></a><span class="fu">tidy</span>(tip_fit) <span class="sc">|&gt;</span></span>
-<span id="cb7-6"><a></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>tip_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(Tip <span class="sc">~</span> Party <span class="sc">+</span> Age, <span class="at">data =</span> tips)</span>
+<span id="cb7-2"><a></a></span>
+<span id="cb7-3"><a></a><span class="fu">tidy</span>(tip_fit) <span class="sc">|&gt;</span></span>
+<span id="cb7-4"><a></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <thead>
@@ -813,6 +806,52 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 </ul>
 </div>
 </div>
+</section>
+<section id="augmented-data-frame" class="slide level2">
+<h2>Augmented data frame</h2>
+<p>Use the <code>augment()</code> function from the <strong>broom</strong> package to add columns for predicted values, residuals, and other observation-level model statistics</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>tip_aug <span class="ot">&lt;-</span> <span class="fu">augment</span>(tip_fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br></p>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 169 × 9
+     Tip Party Age    .fitted .resid   .hat .sigma   .cooksd .std.resid
+   &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;    &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;
+ 1  2.99     1 Yadult    1.67  1.32  0.0247   2.04 0.00274        0.657
+ 2  2        1 Yadult    1.67  0.333 0.0247   2.05 0.000173       0.165
+ 3  5        1 SenCit    3.05  1.95  0.0371   2.04 0.00911        0.972
+ 4  4        3 Middle    6.35 -2.35  0.0111   2.04 0.00376       -1.16 
+ 5 10.3      2 SenCit    4.89  5.45  0.0301   2.00 0.0571         2.71 
+ 6  4.85     2 Middle    4.51  0.337 0.0126   2.05 0.0000881      0.166
+ 7  5        4 Yadult    7.18 -2.18  0.0471   2.04 0.0148        -1.09 
+ 8  4        3 Middle    6.35 -2.35  0.0111   2.04 0.00376       -1.16 
+ 9  5        2 Middle    4.51  0.487 0.0126   2.05 0.000184       0.240
+10  1.58     1 SenCit    3.05 -1.47  0.0371   2.04 0.00524       -0.737
+# ℹ 159 more rows</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="finding-rmse-in-r" class="slide level2">
+<h2>Finding RMSE in R</h2>
+<p>Use the <code>rmse()</code> function from the <strong>yardstick</strong> package (part of <strong>tidymodels</strong>)</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">rmse</span>(tip_aug, <span class="at">truth =</span> Tip, <span class="at">estimate =</span> .fitted)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 3
+  .metric .estimator .estimate
+  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;
+1 rmse    standard        2.02</code></pre>
+</div>
+</div>
+<div class="fragment">
+<div class="question">
+<p>Is the model a good fit for the data? How can you</p>
+</div>
+</div>
 </section></section>
 <section>
 <section id="analysis-of-variance-anova" class="title-slide slide level1 center">
@@ -851,9 +890,9 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 <section id="anova-output-in-r1" class="slide level2">
 <h2>ANOVA output in R<sup>1</sup></h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">anova</span>(tip_fit<span class="sc">$</span>fit) <span class="sc">|&gt;</span></span>
-<span id="cb8-2"><a></a>  <span class="fu">tidy</span>() <span class="sc">|&gt;</span></span>
-<span id="cb8-3"><a></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">anova</span>(tip_fit) <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a></a>  <span class="fu">tidy</span>() <span class="sc">|&gt;</span></span>
+<span id="cb12-3"><a></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <thead>
@@ -1136,9 +1175,9 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 <p><span class="math inline">\(SST - SSR\)</span> = 1226.67</p>
 </center>
 </section>
-<section id="r-squared-r2" class="slide level2">
-<h2>R-squared, <span class="math inline">\(R^2\)</span></h2>
-<p>The <strong>coefficient of determination</strong> <span class="math inline">\(R^2\)</span> is the proportion of variation in the response, $Y$, that is explained by the regression model</p>
+<section id="r2" class="slide level2">
+<h2><span class="math inline">\(R^2\)</span></h2>
+<p>The <strong>coefficient of determination</strong> <span class="math inline">\(R^2\)</span> is the proportion of variation in the response, <span class="math inline">\(Y\)</span>, that is explained by the regression model</p>
 <div class="fragment">
 <p><span class="math display">\[
 R^2 = \frac{SSM}{SST} = 1 - \frac{SSR}{SST} = 1 - \frac{686.44}{1913.11} = 0.641
@@ -1146,25 +1185,38 @@ R^2 = \frac{SSM}{SST} = 1 - \frac{SSR}{SST} = 1 - \frac{686.44}{1913.11} = 0.641
 </div>
 <div class="fragment">
 <div class="question">
-<p>What is the range of <span class="math inline">\(R^2\)</span> Does <span class="math inline">\(R^2\)</span> have units?</p>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">glance</span>(tip_fit)<span class="sc">$</span>r.squared</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.6411891</code></pre>
-</div>
+<p>What is the range of <span class="math inline">\(R^2\)</span>? Does <span class="math inline">\(R^2\)</span> have units?</p>
 </div>
 </div>
 </section>
 <section id="interpreting-r2" class="slide level2">
 <h2>Interpreting <span class="math inline">\(R^2\)</span></h2>
-</section></section>
-<section id="application-exercise" class="title-slide slide level1 center">
-<h1>Application exercise?</h1>
-
-
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">glance</span>(tip_fit)<span class="sc">$</span>r.squared</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.6411891</code></pre>
+</div>
+</div>
+<div class="question">
+<p>Select the best interpretation for <span class="math inline">\(R^2\)</span> .</p>
+<ol type="a">
+<li>Party and age correctly predicts 64.12 % of tips.</li>
+<li>64.12 % of the variability in tips can be explained by party and age.</li>
+<li>64.12% of the variability in party and age can be explained by tips.</li>
+<li>64.12% of the time a the tips can be predicted by party and age.</li>
+</ol>
+</div>
 </section>
+<section id="recap" class="slide level2">
+<h2>Recap</h2>
+<ul>
+<li><p>Introduced interaction terms</p></li>
+<li><p>Introduced ANOVA and sum of squares</p></li>
+<li><p>Introduced <span class="math inline">\(R^2\)</span> and RMSE</p></li>
+</ul>
 
+
+</section></section>
 
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">

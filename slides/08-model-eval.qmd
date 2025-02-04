@@ -60,8 +60,6 @@ knitr::opts_chunk$set(
 -   Interaction terms
 -   ANOVA and sum of squares
 -   $R^2$ and RMSE
--   Adjusted $R^2$
--   Comparing models with $R^2$ vs. $R^2_{adj}$
 :::
 
 ## Computational setup
@@ -263,7 +261,7 @@ tidy(penguin_int_fit) |>
   row_spec(c(6,7), background = "#dce5b2")
 ```
 
-## Interaction terms in the model
+## Interaction terms in the model {.midi}
 
 ```{r}
 #| echo: false
@@ -312,7 +310,8 @@ tips <- read_csv(here::here("slides", "data/tip-data.csv")) |>
 ```{r}
 #| echo: false
 tips |>
-  select(Tip, Party, Meal, Age)
+  select(Tip, Party, Meal, Age) |>
+  slice(1:8)
 ```
 
 :::: aside
@@ -331,7 +330,7 @@ Dahlquist, Samantha, and Jin Dong. 2011. “The Effects of Credit Cards on Tippi
 -   `Age`: Age category of person paying the bill (Yadult, Middle, SenCit)
 :::
 
-**Response**: `Tip`: Amount of tip
+**Response**: `Tip`: Amount of tip in US dollars
 
 ## Response: `Tip`
 
@@ -421,9 +420,7 @@ p4 + p5 + p6
 ```{r}
 #| echo: true
 
-tip_fit <- linear_reg() |>
-  set_engine("lm") |>
-  fit(Tip ~ Party + Age, data = tips)
+tip_fit <- lm(Tip ~ Party + Age, data = tips)
 
 tidy(tip_fit) |>
   kable(digits = 3)
@@ -463,6 +460,39 @@ $$
 -   The value of RMSE is more useful for comparing across models than evaluating a single model
 :::
 
+## Augmented data frame
+
+Use the `augment()` function from the **broom** package to add columns for predicted values, residuals, and other observation-level model statistics
+
+```{r}
+#| echo: true
+tip_aug <- augment(tip_fit)
+```
+
+<br>
+
+. . .
+
+```{r}
+#| echo: false
+tip_aug
+```
+
+## Finding RMSE in R
+
+Use the `rmse()` function from the **yardstick** package (part of **tidymodels**)
+
+```{r}
+#| echo: true
+rmse(tip_aug, truth = Tip, estimate = .fitted)
+```
+
+. . .
+
+::: question
+Is the model a good fit for the data? How can you
+:::
+
 # Analysis of variance (ANOVA)
 
 ## Analysis of variance (ANOVA)
@@ -500,7 +530,7 @@ $$
 
 ```{r}
 #| echo: true
-anova(tip_fit$fit) |>
+anova(tip_fit) |>
   tidy() |>
   kable(digits = 2)
 ```
@@ -509,7 +539,7 @@ anova(tip_fit$fit) |>
 
 ```{r}
 #| echo: false
-anova(tip_fit$fit) |>
+anova(tip_fit) |>
   tidy() |>
   mutate(across(where(is.numeric), round, 2)) |>
   janitor::adorn_totals(where = "row", cols = 1:3, fill = "") |>
@@ -526,7 +556,7 @@ anova(tip_fit$fit) |>
 ::: {.column width="50%"}
 ```{r}
 #| echo: false
-anova(tip_fit$fit) |>
+anova(tip_fit) |>
   tidy() |>
   mutate(across(where(is.numeric), round, 2)) |>
   select(term, df, sumsq) |>
@@ -547,7 +577,7 @@ anova(tip_fit$fit) |>
 
 ```{r}
 #| echo: false
-anova_df <- anova(tip_fit$fit) |>
+anova_df <- anova(tip_fit) |>
   tidy() |>
   mutate(across(where(is.numeric), round, 2)) |>
   select(term, df, sumsq) 
@@ -574,7 +604,7 @@ $\sum_{i = 1}^n (y_i - \bar{y})^2$ = `r sum(anova_df$sumsq[1:3])`
 
 ```{r}
 #| echo: false
-anova_df <- anova(tip_fit$fit) |>
+anova_df <- anova(tip_fit) |>
   tidy() |>
   mutate(across(where(is.numeric), round, 2)) |>
   select(term, df, sumsq) 
@@ -601,7 +631,7 @@ $\sum_{i = 1}^n (y_i - \hat{y}_i)^2$ = `r anova_df$sumsq[3]`
 
 ```{r}
 #| echo: false
-anova_df <- anova(tip_fit$fit) |>
+anova_df <- anova(tip_fit) |>
   tidy() |>
   mutate(across(where(is.numeric), round, 2)) |>
   select(term, df, sumsq) 
@@ -624,9 +654,9 @@ $SST - SSR$ = `r sum(anova_df$sumsq[1:2])`
 
 </center>
 
-## R-squared, $R^2$
+##  $R^2$
 
-The **coefficient of determination** $R^2$ is the proportion of variation in the response, \$Y\$, that is explained by the regression model
+The **coefficient of determination** $R^2$ is the proportion of variation in the response, $Y$, that is explained by the regression model
 
 . . .
 
@@ -637,14 +667,36 @@ $$
 . . .
 
 ::: question
-What is the range of $R^2$ Does $R^2$ have units?
+What is the range of $R^2$? Does $R^2$ have units?
 :::
+
+## Interpreting $R^2$ 
 
 ```{r}
 #| echo: true
 glance(tip_fit)$r.squared
 ```
 
-## Interpreting $R^2$ 
+```{r}
+#| echo: false
 
-# Application exercise? 
+rsq <- round(glance(tip_fit)$r.squared * 100, 2)
+
+```
+
+::: question
+Select the best interpretation for $R^2$ .
+
+a.  Party and age correctly predicts `r rsq` % of tips.
+b.  `r rsq` % of the variability in tips can be explained by party and age.
+c.  `r rsq`% of the variability in party and age can be explained by tips.
+d.  `r rsq`% of the time a the tips can be predicted by party and age.
+:::
+
+## Recap 
+
+-   Introduced interaction terms
+
+-   Introduced ANOVA and sum of squares
+
+-   Introduced $R^2$ and RMSE
