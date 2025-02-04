@@ -4483,5 +4483,579 @@
       "Project",
       "Instructions"
     ]
+  },
+  {
+    "objectID": "slides/08-model-eval.html#announcements",
+    "href": "slides/08-model-eval.html#announcements",
+    "title": "Model evaluation",
+    "section": "Announcements",
+    "text": "Announcements\n\nLab 02 due Thursday at 11:59pm\nHW 02 released later today\nClick here to learn more about the Academic Resource Center\nStatistics experience due Tuesday, April 15"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#office-hours-poll",
+    "href": "slides/08-model-eval.html#office-hours-poll",
+    "title": "Model evaluation",
+    "section": "Office hours poll",
+    "text": "Office hours poll"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#topics",
+    "href": "slides/08-model-eval.html#topics",
+    "title": "Model evaluation",
+    "section": "Topics",
+    "text": "Topics\n\n\nRecap of MLR and predictor types\nInteraction terms\nANOVA and sum of squares\n\\(R^2\\) and RMSE\nAdjusted \\(R^2\\)\nComparing models with \\(R^2\\) vs. \\(R^2_{adj}\\)"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#computational-setup",
+    "href": "slides/08-model-eval.html#computational-setup",
+    "title": "Model evaluation",
+    "section": "Computational setup",
+    "text": "Computational setup\n\n# load packages\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(patchwork)\nlibrary(knitr)\nlibrary(kableExtra)\nlibrary(colorblindr)\n\n# set default theme and larger font size for ggplot2\nggplot2::theme_set(ggplot2::theme_bw(base_size = 20))"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#data-palmer-penguins",
+    "href": "slides/08-model-eval.html#data-palmer-penguins",
+    "title": "Model evaluation",
+    "section": "Data: Palmer penguins",
+    "text": "Data: Palmer penguins\nThe penguins data set contains data for penguins found on three islands in the Palmer Archipelago, Antarctica. Data were collected and made available by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER, a member of the Long Term Ecological Research Network. These data can be found in the palmerpenguins R package.\n\n\n\n# A tibble: 342 × 4\n   body_mass_g flipper_length_mm bill_length_mm species\n         &lt;int&gt;             &lt;int&gt;          &lt;dbl&gt; &lt;fct&gt;  \n 1        3750               181           39.1 Adelie \n 2        3800               186           39.5 Adelie \n 3        3250               195           40.3 Adelie \n 4        3450               193           36.7 Adelie \n 5        3650               190           39.3 Adelie \n 6        3625               181           38.9 Adelie \n 7        4675               195           39.2 Adelie \n 8        3475               193           34.1 Adelie \n 9        4250               190           42   Adelie \n10        3300               186           37.8 Adelie \n# ℹ 332 more rows"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#variables",
+    "href": "slides/08-model-eval.html#variables",
+    "title": "Model evaluation",
+    "section": "Variables",
+    "text": "Variables\nPredictors:\n\nbill_length_mm: Bill length in millimeters\nflipper_length_mm: Flipper length in millimeters\nspecies: Adelie, Gentoo, or Chinstrap species\n\nResponse: body_mass_g: Body mass in grams\n\nThe goal of this analysis is to use the bill length, flipper length, and species to predict body mass."
+  },
+  {
+    "objectID": "slides/08-model-eval.html#response-vs.-predictors",
+    "href": "slides/08-model-eval.html#response-vs.-predictors",
+    "title": "Model evaluation",
+    "section": "Response vs. predictors",
+    "text": "Response vs. predictors"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#model-fit",
+    "href": "slides/08-model-eval.html#model-fit",
+    "title": "Model evaluation",
+    "section": "Model fit",
+    "text": "Model fit\n\npenguin_fit &lt;- lm(body_mass_g ~ flipper_length_mm + species + \n                bill_length_mm, data = penguins)\n\ntidy(penguin_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-3904.387\n529.257\n-7.377\n0.000\n\n\nflipper_length_mm\n27.429\n3.176\n8.638\n0.000\n\n\nspeciesChinstrap\n-748.562\n81.534\n-9.181\n0.000\n\n\nspeciesGentoo\n90.435\n88.647\n1.020\n0.308\n\n\nbill_length_mm\n61.736\n7.126\n8.664\n0.000"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#interpreting-hatbeta_j",
+    "href": "slides/08-model-eval.html#interpreting-hatbeta_j",
+    "title": "Model evaluation",
+    "section": "Interpreting \\(\\hat{\\beta}_j\\)",
+    "text": "Interpreting \\(\\hat{\\beta}_j\\)\n\nThe estimated coefficient \\(\\hat{\\beta}_j\\) is the expected change in the mean of \\(Y\\) when \\(X_j\\) increases by one unit, holding the values of all other predictor variables constant.\n\n\n\nExample: The estimated coefficient for flipper_length_mm is 27.429. This means for each additional millimeter in a penguin’s flipper length, its body mass is expected to be greater by 27.429 grams, on average, holding species and bill length constant."
+  },
+  {
+    "objectID": "slides/08-model-eval.html#indicator-variables",
+    "href": "slides/08-model-eval.html#indicator-variables",
+    "title": "Model evaluation",
+    "section": "Indicator variables",
+    "text": "Indicator variables\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n-3904.387\n529.257\n-7.377\n0.000\n-4945.450\n-2863.324\n\n\nflipper_length_mm\n27.429\n3.176\n8.638\n0.000\n21.182\n33.675\n\n\nspeciesChinstrap\n-748.562\n81.534\n-9.181\n0.000\n-908.943\n-588.182\n\n\nspeciesGentoo\n90.435\n88.647\n1.020\n0.308\n-83.937\n264.807\n\n\nbill_length_mm\n61.736\n7.126\n8.664\n0.000\n47.720\n75.753\n\n\n\n\n\n\n\n\n\nInterpret the coefficient of Gentoo in the context of the data."
+  },
+  {
+    "objectID": "slides/08-model-eval.html#centering",
+    "href": "slides/08-model-eval.html#centering",
+    "title": "Model evaluation",
+    "section": "Centering",
+    "text": "Centering\n\nCentering a quantitative predictor means shifting every value by some constant \\(C\\)\n\n\\[\nX_{cent} = X  - C\n\\]\n\nOne common type of centering is mean-centering, in which every value of a predictor is shifted by its mean\nOnly quantitative predictors are centered\nCenter all quantitative predictors in the model for ease of interpretation\n\n\nHow does centering change the model and/or interpretations?"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#standardizing",
+    "href": "slides/08-model-eval.html#standardizing",
+    "title": "Model evaluation",
+    "section": "Standardizing",
+    "text": "Standardizing\n\nStandardizing a quantitative predictor mean shifting every value by the mean and dividing by the standard deviation of that variable\n\n\\[\nX_{std} = \\frac{X - \\bar{X}}{S_X}\n\\]\n\nOnly quantitative predictors are standardized\nStandardize all quantitative predictors in the model for ease of interpretation\n\n\nHow does standardizing change the model and/or interpretations?"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#interaction-terms-1",
+    "href": "slides/08-model-eval.html#interaction-terms-1",
+    "title": "Model evaluation",
+    "section": "Interaction terms",
+    "text": "Interaction terms\n\nSometimes the relationship between a predictor variable and the response depends on the value of another predictor variable.\nThis is an interaction effect.\nTo account for this, we can include interaction terms in the model."
+  },
+  {
+    "objectID": "slides/08-model-eval.html#bill-length-versus-species",
+    "href": "slides/08-model-eval.html#bill-length-versus-species",
+    "title": "Model evaluation",
+    "section": "Bill length versus species",
+    "text": "Bill length versus species\nIf the lines are not parallel, there is indication of a potential interaction effect, i.e., the slope of bill length may differ based on the species."
+  },
+  {
+    "objectID": "slides/08-model-eval.html#interaction-term-in-model",
+    "href": "slides/08-model-eval.html#interaction-term-in-model",
+    "title": "Model evaluation",
+    "section": "Interaction term in model",
+    "text": "Interaction term in model\n\npenguin_int_fit &lt;- lm(body_mass_g ~ flipper_length_mm + species + bill_length_mm + species * bill_length_mm,\n      data = penguins)\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-4297.905\n645.054\n-6.663\n0.000\n\n\nflipper_length_mm\n27.263\n3.175\n8.586\n0.000\n\n\nspeciesChinstrap\n1146.287\n726.217\n1.578\n0.115\n\n\nspeciesGentoo\n54.716\n619.934\n0.088\n0.930\n\n\nbill_length_mm\n72.692\n10.642\n6.831\n0.000\n\n\nspeciesChinstrap:bill_length_mm\n-41.035\n16.104\n-2.548\n0.011\n\n\nspeciesGentoo:bill_length_mm\n-1.163\n14.436\n-0.081\n0.936"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#interpreting-interaction-terms",
+    "href": "slides/08-model-eval.html#interpreting-interaction-terms",
+    "title": "Model evaluation",
+    "section": "Interpreting interaction terms",
+    "text": "Interpreting interaction terms\n\nWhat the interaction means: The effect of bill length on the body mass is 41.035 less when the penguin is from the Chinstrap species compared to the effect for the Adelie species, holding all else constant.\nInterpreting bill_length_mm for Chinstrap: For each additional millimeter in bill length, we expect the body mass of Chinstrap penguins to increase by 31.657 grams (72.692 - 41.035), holding all else constant."
+  },
+  {
+    "objectID": "slides/08-model-eval.html#summary",
+    "href": "slides/08-model-eval.html#summary",
+    "title": "Model evaluation",
+    "section": "Summary",
+    "text": "Summary\n\n\nIn general, how do\nindicators for categorical predictors impact the model equation?\ninteraction terms impact the model equation?"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#data-restaurant-tips",
+    "href": "slides/08-model-eval.html#data-restaurant-tips",
+    "title": "Model evaluation",
+    "section": "Data: Restaurant tips",
+    "text": "Data: Restaurant tips\nWhich variables help us predict the amount customers tip at a restaurant? To answer this question, we will use data collected in 2011 by a student at St. Olaf who worked at a local restaurant.\n\n\n# A tibble: 169 × 4\n     Tip Party Meal   Age   \n   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt; \n 1  2.99     1 Dinner Yadult\n 2  2        1 Dinner Yadult\n 3  5        1 Dinner SenCit\n 4  4        3 Dinner Middle\n 5 10.3      2 Dinner SenCit\n 6  4.85     2 Dinner Middle\n 7  5        4 Dinner Yadult\n 8  4        3 Dinner Middle\n 9  5        2 Dinner Middle\n10  1.58     1 Dinner SenCit\n# ℹ 159 more rows\n\n\n\n\n\nDahlquist, Samantha, and Jin Dong. 2011. “The Effects of Credit Cards on Tipping.” Project for Statistics 212-Statistics for the Sciences, St. Olaf College"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#variables-1",
+    "href": "slides/08-model-eval.html#variables-1",
+    "title": "Model evaluation",
+    "section": "Variables",
+    "text": "Variables\nPredictors:\n\n\nParty: Number of people in the party\nMeal: Time of day (Lunch, Dinner, Late Night)\nAge: Age category of person paying the bill (Yadult, Middle, SenCit)\n\n\nResponse: Tip: Amount of tip"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#outcome-tip",
+    "href": "slides/08-model-eval.html#outcome-tip",
+    "title": "Model evaluation",
+    "section": "Outcome: Tip",
+    "text": "Outcome: Tip"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#predictors",
+    "href": "slides/08-model-eval.html#predictors",
+    "title": "Model evaluation",
+    "section": "Predictors",
+    "text": "Predictors"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#relevel-categorical-predictors",
+    "href": "slides/08-model-eval.html#relevel-categorical-predictors",
+    "title": "Model evaluation",
+    "section": "Relevel categorical predictors",
+    "text": "Relevel categorical predictors\n\ntips &lt;- tips |&gt;\n  mutate(\n    Meal = fct_relevel(Meal, \"Lunch\", \"Dinner\", \"Late Night\"),\n    Age  = fct_relevel(Age, \"Yadult\", \"Middle\", \"SenCit\")\n  )"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#predictors-again",
+    "href": "slides/08-model-eval.html#predictors-again",
+    "title": "Model evaluation",
+    "section": "Predictors, again",
+    "text": "Predictors, again"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#outcome-vs.-predictors",
+    "href": "slides/08-model-eval.html#outcome-vs.-predictors",
+    "title": "Model evaluation",
+    "section": "Outcome vs. predictors",
+    "text": "Outcome vs. predictors"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#fit-and-summarize-model",
+    "href": "slides/08-model-eval.html#fit-and-summarize-model",
+    "title": "Model evaluation",
+    "section": "Fit and summarize model",
+    "text": "Fit and summarize model\n\ntip_fit &lt;- linear_reg() |&gt;\n  set_engine(\"lm\") |&gt;\n  fit(Tip ~ Party + Age, data = tips)\n\ntidy(tip_fit) |&gt;\n  kable(digits = 3)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-0.170\n0.366\n-0.465\n0.643\n\n\nParty\n1.837\n0.124\n14.758\n0.000\n\n\nAgeMiddle\n1.009\n0.408\n2.475\n0.014\n\n\nAgeSenCit\n1.388\n0.485\n2.862\n0.005\n\n\n\n\n\n\n\n\nOverall, how well does this model help us understand variablility n tips?"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#another-model-summary",
+    "href": "slides/08-model-eval.html#another-model-summary",
+    "title": "Model evaluation",
+    "section": "Another model summary",
+    "text": "Another model summary\n\nanova(tip_fit$fit) |&gt;\n  tidy() |&gt;\n  kable(digits = 2)\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nParty\n1\n1188.64\n1188.64\n285.71\n0.00\n\n\nAge\n2\n38.03\n19.01\n4.57\n0.01\n\n\nResiduals\n165\n686.44\n4.16\nNA\nNA"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#analysis-of-variance-anova-1",
+    "href": "slides/08-model-eval.html#analysis-of-variance-anova-1",
+    "title": "Model evaluation",
+    "section": "Analysis of variance (ANOVA)",
+    "text": "Analysis of variance (ANOVA)\nAnalysis of Variance (ANOVA): Technique to partition variability in Y by the sources of variability"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#anova",
+    "href": "slides/08-model-eval.html#anova",
+    "title": "Model evaluation",
+    "section": "ANOVA",
+    "text": "ANOVA\n\nMain Idea: Decompose the total variation in the response into\n\nthe variation that can be explained by the each of the variables in the model\nthe variation that can’t be explained by the model (left in the residuals)\n\nIf the variation that can be explained by the variables in the model is greater than the variation in the residuals, this signals that the model might be “valuable” (at least one of the \\(\\beta\\)’s not equal to 0)"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#anova-output-in-r1",
+    "href": "slides/08-model-eval.html#anova-output-in-r1",
+    "title": "Model evaluation",
+    "section": "ANOVA output in R1",
+    "text": "ANOVA output in R1\n\nanova(tip_fit$fit) |&gt;\n  tidy() |&gt;\n  kable(digits = 2)\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nParty\n1\n1188.64\n1188.64\n285.71\n0.00\n\n\nAge\n2\n38.03\n19.01\n4.57\n0.01\n\n\nResiduals\n165\n686.44\n4.16\nNA\nNA\n\n\n\n\n\nClick here for explanation about the way R calculates sum of squares for each variable."
+  },
+  {
+    "objectID": "slides/08-model-eval.html#anova-output-with-totals",
+    "href": "slides/08-model-eval.html#anova-output-with-totals",
+    "title": "Model evaluation",
+    "section": "ANOVA output, with totals",
+    "text": "ANOVA output, with totals\n\n\n\n\n\nterm\ndf\nsumsq\nmeansq\nstatistic\np.value\n\n\n\n\nParty\n1\n1188.64\n1188.64\n285.71\n0\n\n\nAge\n2\n38.03\n19.01\n4.57\n0.01\n\n\nResiduals\n165\n686.44\n4.16\n\n\n\n\nTotal\n168\n1913.11"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#sum-of-squares",
+    "href": "slides/08-model-eval.html#sum-of-squares",
+    "title": "Model evaluation",
+    "section": "Sum of Squares",
+    "text": "Sum of Squares\n\n\\[\n\\begin{aligned}\n\\color{#407E99}{SST} \\hspace{5mm}&= &\\color{#993399}{SSM} &\\hspace{5mm} +  &\\color{#8BB174}{SSR} \\\\[10pt]\n\\color{#407E99}{\\sum_{i=1}^n(y_i - \\bar{y})^2} \\hspace{5mm}&= &\\color{#993399}{\\sum_{i = 1}^{n}(\\hat{y}_i - \\bar{y})^2} &\\hspace{5mm}+ &\\color{#8BB174}{\\sum_{i = 1}^{n}(y_i - \\hat{y}_i)^2}\n\\end{aligned}\n\\]\n\n\nClick here to see why this equality holds."
+  },
+  {
+    "objectID": "slides/08-model-eval.html#sum-of-squares-ss_total",
+    "href": "slides/08-model-eval.html#sum-of-squares-ss_total",
+    "title": "Model evaluation",
+    "section": "Sum of squares: \\(SS_{Total}\\)",
+    "text": "Sum of squares: \\(SS_{Total}\\)\n\n\n\n\n\nterm\ndf\nsumsq\n\n\n\n\nParty\n1\n1188.64\n\n\nAge\n2\n38.03\n\n\nResiduals\n165\n686.44\n\n\nTotal\n168\n1913.11\n\n\n\n\n\n\n\n\n\n\\(SS_{Total}\\): Total sum of squares, variability of outcome\n\n\\(\\sum_{i = 1}^n (y_i - \\bar{y})^2\\) = 1913.11"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#sum-of-squares-ss_error",
+    "href": "slides/08-model-eval.html#sum-of-squares-ss_error",
+    "title": "Model evaluation",
+    "section": "Sum of squares: \\(SS_{Error}\\)",
+    "text": "Sum of squares: \\(SS_{Error}\\)\n\n\n\n\n\nterm\ndf\nsumsq\n\n\n\n\nParty\n1\n1188.64\n\n\nAge\n2\n38.03\n\n\nResiduals\n165\n686.44\n\n\nTotal\n168\n1913.11\n\n\n\n\n\n\n\n\n\n\\(SS_{Error}\\): Residual sum of squares, variability of residuals\n\n\\(\\sum_{i = 1}^n (y_i - \\hat{y}_i)^2\\) = 686.44"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#sum-of-squares-ss_model",
+    "href": "slides/08-model-eval.html#sum-of-squares-ss_model",
+    "title": "Model evaluation",
+    "section": "Sum of squares: \\(SS_{Model}\\)",
+    "text": "Sum of squares: \\(SS_{Model}\\)\n\n\n\n\n\nterm\ndf\nsumsq\n\n\n\n\nParty\n1\n1188.64\n\n\nAge\n2\n38.03\n\n\nResiduals\n165\n686.44\n\n\nTotal\n168\n1913.11\n\n\n\n\n\n\n\n\n\n\\(SS_{Model}\\): Variability explained by the model\n\n\\(SS_{Total} - SS_{Error}\\) = 1226.67"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#r-squared-r2",
+    "href": "slides/08-model-eval.html#r-squared-r2",
+    "title": "Model evaluation",
+    "section": "R-squared, \\(R^2\\)",
+    "text": "R-squared, \\(R^2\\)\nThe coefficient of determination \\(R^2\\) is the proportion of variation in the response, $Y$, that is explained by the regression model\n\n\\[\nR^2 = \\frac{SSM}{SST} = 1 - \\frac{SSR}{SST} = 1 - \\frac{686.44}{1913.11} = 0.641\n\\]\n\n\n\nWhat is the range of \\(R^2\\) Does \\(R^2\\) have units?\n\n\nglance(tip_fit)$r.squared\n\n[1] 0.6411891"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#r-squared-r2-1",
+    "href": "slides/08-model-eval.html#r-squared-r2-1",
+    "title": "Model evaluation",
+    "section": "R-squared, \\(R^2\\)",
+    "text": "R-squared, \\(R^2\\)\n\n\\(R^2\\) will always increase as we add more variables to the model + If we add enough variables, we can always achieve \\(R^2=100\\%\\)\nIf we only use \\(R^2\\) to choose a best fit model, we will be prone to choose the model with the most predictor variables"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#adjusted-r2",
+    "href": "slides/08-model-eval.html#adjusted-r2",
+    "title": "Model evaluation",
+    "section": "Adjusted \\(R^2\\)",
+    "text": "Adjusted \\(R^2\\)\n\nAdjusted \\(R^2\\): measure that includes a penalty for unnecessary predictor variables\nSimilar to \\(R^2\\), it is a measure of the amount of variation in the response that is explained by the regression model\nDiffers from \\(R^2\\) by using the mean squares (sumsq/df) rather than sums of squares and therefore adjusting for the number of predictor variables"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#r2-and-adjusted-r2",
+    "href": "slides/08-model-eval.html#r2-and-adjusted-r2",
+    "title": "Model evaluation",
+    "section": "\\(R^2\\) and Adjusted \\(R^2\\)",
+    "text": "\\(R^2\\) and Adjusted \\(R^2\\)\n\\[R^2 = \\frac{SS_{Model}}{SS_{Total}} = 1 - \\frac{SS_{Error}}{SS_{Total}}\\]\n\n\n\\[R^2_{adj} = 1 - \\frac{SS_{Error}/(n-p-1)}{SS_{Total}/(n-1)}\\]\nwhere\n\n\\(n\\) is the number of observations used to fit the model\n\\(p\\) is the number of terms (not including the intercept) in the model"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#using-r2-and-adjusted-r2",
+    "href": "slides/08-model-eval.html#using-r2-and-adjusted-r2",
+    "title": "Model evaluation",
+    "section": "Using \\(R^2\\) and Adjusted \\(R^2\\)",
+    "text": "Using \\(R^2\\) and Adjusted \\(R^2\\)\n\nAdjusted \\(R^2\\) can be used as a quick assessment to compare the fit of multiple models; however, it should not be the only assessment!\nUse \\(R^2\\) when describing the relationship between the response and predictor variables"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#comparing-models-with-r2_adj",
+    "href": "slides/08-model-eval.html#comparing-models-with-r2_adj",
+    "title": "Model evaluation",
+    "section": "Comparing models with \\(R^2_{adj}\\)",
+    "text": "Comparing models with \\(R^2_{adj}\\)\n\n\n\ntip_fit_1 &lt;- linear_reg() |&gt;\n  set_engine(\"lm\") |&gt;\n  fit(Tip ~ Party + \n            Age + \n            Meal,\n      \n    data = tips)\n\nglance(tip_fit_1) |&gt; \n  select(r.squared, adj.r.squared)\n\n# A tibble: 1 × 2\n  r.squared adj.r.squared\n      &lt;dbl&gt;         &lt;dbl&gt;\n1     0.674         0.664\n\n\n\n\ntip_fit_2 &lt;- linear_reg() |&gt;\n  set_engine(\"lm\") |&gt;\n  fit(Tip ~ Party + \n            Age + \n            Meal + \n            Day, \n      data = tips)\n\nglance(tip_fit_2) |&gt; \n  select(r.squared, adj.r.squared)\n\n# A tibble: 1 × 2\n  r.squared adj.r.squared\n      &lt;dbl&gt;         &lt;dbl&gt;\n1     0.683         0.662\n\n\n\n\n\nWhy did we not use the full recipe() workflow to fit Model 1 or Model 2?\nWhich model would we choose based on \\(R^2\\)?\nWhich model would we choose based on Adjusted \\(R^2\\)?\nWhich statistic should we use to choose the final model - \\(R^2\\) or Adjusted \\(R^2\\)? Why?\n\nVote on Ed Discussion [10:05am lecture][1:25pm lecture]"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#aic-bic",
+    "href": "slides/08-model-eval.html#aic-bic",
+    "title": "Model evaluation",
+    "section": "AIC & BIC",
+    "text": "AIC & BIC\nEstimators of prediction error and relative quality of models:\n\nAkaike’s Information Criterion (AIC): \\[AIC = n\\log(SS_\\text{Error}) - n \\log(n) + 2(p+1)\\] \n\n\nSchwarz’s Bayesian Information Criterion (BIC): \\[BIC = n\\log(SS_\\text{Error}) - n\\log(n) + log(n)\\times(p+1)\\]"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#aic-bic-1",
+    "href": "slides/08-model-eval.html#aic-bic-1",
+    "title": "Model evaluation",
+    "section": "AIC & BIC",
+    "text": "AIC & BIC\n\\[\n\\begin{aligned}\n& AIC = \\color{blue}{n\\log(SS_\\text{Error})} - n \\log(n) + 2(p+1) \\\\\n& BIC = \\color{blue}{n\\log(SS_\\text{Error})} - n\\log(n) + \\log(n)\\times(p+1)\n\\end{aligned}\n\\]\n\n\nFirst Term: Decreases as p increases"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#aic-bic-2",
+    "href": "slides/08-model-eval.html#aic-bic-2",
+    "title": "Model evaluation",
+    "section": "AIC & BIC",
+    "text": "AIC & BIC\n\\[\n\\begin{aligned}\n& AIC = n\\log(SS_\\text{Error}) - \\color{blue}{n \\log(n)} + 2(p+1) \\\\\n& BIC = n\\log(SS_\\text{Error}) - \\color{blue}{n\\log(n)} + \\log(n)\\times(p+1)\n\\end{aligned}\n\\]\n\nSecond Term: Fixed for a given sample size n"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#aic-bic-3",
+    "href": "slides/08-model-eval.html#aic-bic-3",
+    "title": "Model evaluation",
+    "section": "AIC & BIC",
+    "text": "AIC & BIC\n\\[\n\\begin{aligned} & AIC = n\\log(SS_\\text{Error}) - n\\log(n) + \\color{blue}{2(p+1)} \\\\\n& BIC = n\\log(SS_\\text{Error}) - n\\log(n) + \\color{blue}{\\log(n)\\times(p+1)}\n\\end{aligned}\n\\]\n\nThird Term: Increases as p increases"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#using-aic-bic",
+    "href": "slides/08-model-eval.html#using-aic-bic",
+    "title": "Model evaluation",
+    "section": "Using AIC & BIC",
+    "text": "Using AIC & BIC\n\\[\n\\begin{aligned} & AIC = n\\log(SS_{Error}) - n \\log(n) + \\color{red}{2(p+1)} \\\\\n& BIC = n\\log(SS_{Error}) - n\\log(n) + \\color{red}{\\log(n)\\times(p+1)}\n\\end{aligned}\n\\]\n\nChoose model with the smaller value of AIC or BIC\nIf \\(n \\geq 8\\), the penalty for BIC is larger than that of AIC, so BIC tends to favor more parsimonious models (i.e. models with fewer terms)"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#comparing-models-with-aic-and-bic",
+    "href": "slides/08-model-eval.html#comparing-models-with-aic-and-bic",
+    "title": "Model evaluation",
+    "section": "Comparing models with AIC and BIC",
+    "text": "Comparing models with AIC and BIC\n\n\n\ntip_fit_1 &lt;- linear_reg() |&gt;\n  set_engine(\"lm\") |&gt;\n  fit(Tip ~ Party + \n            Age + \n            Meal,\n      \n      data = tips)\n\nglance(tip_fit_1) |&gt; \n  select(AIC, BIC)\n\n# A tibble: 1 × 2\n    AIC   BIC\n  &lt;dbl&gt; &lt;dbl&gt;\n1  714.  736.\n\n\n\n\ntip_fit_2 &lt;- linear_reg() |&gt;\n  set_engine(\"lm\") |&gt;\n  fit(Tip ~ Party + \n            Age + \n            Meal + \n            Day, \n      data = tips)\n\nglance(tip_fit_2) |&gt; \n  select(AIC, BIC)\n\n# A tibble: 1 × 2\n    AIC   BIC\n  &lt;dbl&gt; &lt;dbl&gt;\n1  720.  757.\n\n\n\n\n\nWhich model would we choose based on AIC?\nWhich model would we choose based on BIC?"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#commonalities-between-criteria",
+    "href": "slides/08-model-eval.html#commonalities-between-criteria",
+    "title": "Model evaluation",
+    "section": "Commonalities between criteria",
+    "text": "Commonalities between criteria\n\n\\(R^2_{adj}\\), AIC, and BIC all apply a penalty for more predictors\nThe penalty for added model complexity attempts to strike a balance between underfitting (too few predictors in the model) and overfitting (too many predictors in the model)\nGoal: Parsimony"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#parsimony-and-occams-razor",
+    "href": "slides/08-model-eval.html#parsimony-and-occams-razor",
+    "title": "Model evaluation",
+    "section": "Parsimony and Occam’s razor",
+    "text": "Parsimony and Occam’s razor\n\nThe principle of parsimony is attributed to William of Occam (early 14th-century English nominalist philosopher), who insisted that, given a set of equally good explanations for a given phenomenon, the correct explanation is the simplest explanation1\nCalled Occam’s razor because he “shaved” his explanations down to the bare minimum\nParsimony in modeling:\n\n\nmodels should have as few parameters as possible\nlinear models should be preferred to non-linear models\nexperiments relying on few assumptions should be preferred to those relying on many\nmodels should be pared down until they are minimal adequate\nsimple explanations should be preferred to complex explanations\n\n\n\nSource: The R Book by Michael J. Crawley."
+  },
+  {
+    "objectID": "slides/08-model-eval.html#in-pursuit-of-occams-razor",
+    "href": "slides/08-model-eval.html#in-pursuit-of-occams-razor",
+    "title": "Model evaluation",
+    "section": "In pursuit of Occam’s razor",
+    "text": "In pursuit of Occam’s razor\n\nOccam’s razor states that among competing hypotheses that predict equally well, the one with the fewest assumptions should be selected\nModel selection follows this principle\nWe only want to add another variable to the model if the addition of that variable brings something valuable in terms of predictive power to the model\nIn other words, we prefer the simplest best model, i.e. parsimonious model"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#alternate-views",
+    "href": "slides/08-model-eval.html#alternate-views",
+    "title": "Model evaluation",
+    "section": "Alternate views",
+    "text": "Alternate views\n\nSometimes a simple model will outperform a more complex model . . . Nevertheless, I believe that deliberately limiting the complexity of the model is not fruitful when the problem is evidently complex. Instead, if a simple model is found that outperforms some particular complex model, the appropriate response is to define a different complex model that captures whatever aspect of the problem led to the simple model performing well.\n\nRadford Neal - Bayesian Learning for Neural Networks1\n\nSuggested blog post: Occam by Andrew Gelman"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#other-concerns-with-our-approach",
+    "href": "slides/08-model-eval.html#other-concerns-with-our-approach",
+    "title": "Model evaluation",
+    "section": "Other concerns with our approach",
+    "text": "Other concerns with our approach\n\nAll criteria we considered for model comparison require making predictions for our data and then uses the prediction error (\\(SS_{Error}\\)) somewhere in the formula\nBut we’re making prediction for the data we used to build the model (estimate the coefficients), which can lead to overfitting\nInstead we should\n\nsplit our data into testing and training sets\n“train” the model on the training data and pick a few models we’re genuinely considering as potentially good models\ntest those models on the testing set\n…and repeat this process multiple times"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#spending-our-data",
+    "href": "slides/08-model-eval.html#spending-our-data",
+    "title": "Model evaluation",
+    "section": "Spending our data",
+    "text": "Spending our data\n\nWe have already established that the idea of data spending where the test set was recommended for obtaining an unbiased estimate of performance.\nHowever, we usually need to understand the effectiveness of the model before using the test set.\nTypically we can’t decide on which final model to take to the test set without making model assessments.\nRemedy: Resampling to make model assessments on training data in a way that can generalize to new data."
+  },
+  {
+    "objectID": "slides/08-model-eval.html#resampling-for-model-assessment",
+    "href": "slides/08-model-eval.html#resampling-for-model-assessment",
+    "title": "Model evaluation",
+    "section": "Resampling for model assessment",
+    "text": "Resampling for model assessment\nResampling is only conducted on the training set. The test set is not involved. For each iteration of resampling, the data are partitioned into two subsamples:\n\nThe model is fit with the analysis set. Model fit statistics such as \\(R^2_{Adj}\\), AIC, and BIC are calculated based on this fit.\nThe model is evaluated with the assessment set."
+  },
+  {
+    "objectID": "slides/08-model-eval.html#resampling-for-model-assessment-1",
+    "href": "slides/08-model-eval.html#resampling-for-model-assessment-1",
+    "title": "Model evaluation",
+    "section": "Resampling for model assessment",
+    "text": "Resampling for model assessment\n\n\nImage source: Kuhn and Silge. Tidy modeling with R."
+  },
+  {
+    "objectID": "slides/08-model-eval.html#analysis-and-assessment-sets",
+    "href": "slides/08-model-eval.html#analysis-and-assessment-sets",
+    "title": "Model evaluation",
+    "section": "Analysis and assessment sets",
+    "text": "Analysis and assessment sets\n\nAnalysis set is analogous to training set.\nAssessment set is analogous to test set.\nThe terms analysis and assessment avoids confusion with initial split of the data.\nThese data sets are mutually exclusive."
+  },
+  {
+    "objectID": "slides/08-model-eval.html#cross-validation-1",
+    "href": "slides/08-model-eval.html#cross-validation-1",
+    "title": "Model evaluation",
+    "section": "Cross validation",
+    "text": "Cross validation\nMore specifically, v-fold cross validation – commonly used resampling technique:\n\nRandomly split your training data into v partitions\nUse v-1 partitions for analysis, and the remaining 1 partition for analysis (model fit + model fit statistics)\nRepeat v times, updating which partition is used for assessment each time\n\n\nLet’s give an example where v = 3…"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#to-get-started",
+    "href": "slides/08-model-eval.html#to-get-started",
+    "title": "Model evaluation",
+    "section": "To get started…",
+    "text": "To get started…\nSplit data into training and test sets\n\nset.seed(345)\n\ntips_split &lt;- initial_split(tips)\ntips_train &lt;- training(tips_split)\ntips_test &lt;- testing(tips_split)"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#to-get-started-1",
+    "href": "slides/08-model-eval.html#to-get-started-1",
+    "title": "Model evaluation",
+    "section": "To get started…",
+    "text": "To get started…\nCreate recipe\n\ntips_rec1 &lt;- recipe(Tip ~ Party + Age + Meal, \n                    data = tips_train)\n\ntips_rec1\n\n\n\n\n── Recipe ──────────────────────────────────────────────────────────────────────\n\n\n\n\n\n── Inputs \n\n\nNumber of variables by role\n\n\noutcome:   1\npredictor: 3"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#to-get-started-2",
+    "href": "slides/08-model-eval.html#to-get-started-2",
+    "title": "Model evaluation",
+    "section": "To get started…",
+    "text": "To get started…\nSpecify model\n\ntips_spec &lt;- linear_reg() |&gt;\n  set_engine(\"lm\")\n\n\nCreate workflow\n\ntips_wflow1 &lt;- workflow() |&gt;\n  add_model(tips_spec) |&gt;\n  add_recipe(tips_rec1)\n\ntips_wflow1\n\n══ Workflow ════════════════════════════════════════════════════════════════════\nPreprocessor: Recipe\nModel: linear_reg()\n\n── Preprocessor ────────────────────────────────────────────────────────────────\n0 Recipe Steps\n\n── Model ───────────────────────────────────────────────────────────────────────\nLinear Regression Model Specification (regression)\n\nComputational engine: lm"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#cross-validation-step-1",
+    "href": "slides/08-model-eval.html#cross-validation-step-1",
+    "title": "Model evaluation",
+    "section": "Cross validation, step 1",
+    "text": "Cross validation, step 1\nRandomly split your training data into 3 partitions:"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#tips-split-training-data",
+    "href": "slides/08-model-eval.html#tips-split-training-data",
+    "title": "Model evaluation",
+    "section": "Tips: Split training data",
+    "text": "Tips: Split training data\n\nfolds &lt;- vfold_cv(tips_train, v = 3)\nfolds\n\n#  3-fold cross-validation \n# A tibble: 3 × 2\n  splits          id   \n  &lt;list&gt;          &lt;chr&gt;\n1 &lt;split [84/42]&gt; Fold1\n2 &lt;split [84/42]&gt; Fold2\n3 &lt;split [84/42]&gt; Fold3"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#cross-validation-steps-2-and-3",
+    "href": "slides/08-model-eval.html#cross-validation-steps-2-and-3",
+    "title": "Model evaluation",
+    "section": "Cross validation, steps 2 and 3",
+    "text": "Cross validation, steps 2 and 3\n\n\nUse v-1 partitions for analysis, and the remaining 1 partition for assessment\nRepeat v times, updating which partition is used for assessment each time"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#tips-fit-resamples",
+    "href": "slides/08-model-eval.html#tips-fit-resamples",
+    "title": "Model evaluation",
+    "section": "Tips: Fit resamples",
+    "text": "Tips: Fit resamples\n\ntips_fit_rs1 &lt;- tips_wflow1 |&gt;\n  fit_resamples(folds)\n\ntips_fit_rs1 \n\n# Resampling results\n# 3-fold cross-validation \n# A tibble: 3 × 4\n  splits          id    .metrics         .notes          \n  &lt;list&gt;          &lt;chr&gt; &lt;list&gt;           &lt;list&gt;          \n1 &lt;split [84/42]&gt; Fold1 &lt;tibble [2 × 4]&gt; &lt;tibble [0 × 3]&gt;\n2 &lt;split [84/42]&gt; Fold2 &lt;tibble [2 × 4]&gt; &lt;tibble [0 × 3]&gt;\n3 &lt;split [84/42]&gt; Fold3 &lt;tibble [2 × 4]&gt; &lt;tibble [0 × 3]&gt;"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#cross-validation-now-what",
+    "href": "slides/08-model-eval.html#cross-validation-now-what",
+    "title": "Model evaluation",
+    "section": "Cross validation, now what?",
+    "text": "Cross validation, now what?\n\nWe’ve fit a bunch of models\nNow it’s time to use them to collect metrics (e.g., $R^2$, AIC, RMSE, etc. ) on each model and use them to evaluate model fit and how it varies across folds"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#collect-r2-and-rmse-from-cv",
+    "href": "slides/08-model-eval.html#collect-r2-and-rmse-from-cv",
+    "title": "Model evaluation",
+    "section": "Collect \\(R^2\\) and RMSE from CV",
+    "text": "Collect \\(R^2\\) and RMSE from CV\n\n# Produces summary across all CV\ncollect_metrics(tips_fit_rs1)\n\n# A tibble: 2 × 6\n  .metric .estimator  mean     n std_err .config             \n  &lt;chr&gt;   &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt; &lt;chr&gt;               \n1 rmse    standard   2.10      3  0.243  Preprocessor1_Model1\n2 rsq     standard   0.591     3  0.0728 Preprocessor1_Model1\n\n\n\nNote: These are calculated using the assessment data"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#deeper-look-into-r2-and-rmse",
+    "href": "slides/08-model-eval.html#deeper-look-into-r2-and-rmse",
+    "title": "Model evaluation",
+    "section": "Deeper look into \\(R^2\\) and RMSE",
+    "text": "Deeper look into \\(R^2\\) and RMSE\n\ncv_metrics1 &lt;- collect_metrics(tips_fit_rs1, summarize = FALSE) \n\ncv_metrics1\n\n# A tibble: 6 × 5\n  id    .metric .estimator .estimate .config             \n  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;               \n1 Fold1 rmse    standard       2.04  Preprocessor1_Model1\n2 Fold1 rsq     standard       0.736 Preprocessor1_Model1\n3 Fold2 rmse    standard       1.71  Preprocessor1_Model1\n4 Fold2 rsq     standard       0.509 Preprocessor1_Model1\n5 Fold3 rmse    standard       2.54  Preprocessor1_Model1\n6 Fold3 rsq     standard       0.528 Preprocessor1_Model1"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#better-tabulation-of-r2-and-rmse-from-cv",
+    "href": "slides/08-model-eval.html#better-tabulation-of-r2-and-rmse-from-cv",
+    "title": "Model evaluation",
+    "section": "Better tabulation of \\(R^2\\) and RMSE from CV",
+    "text": "Better tabulation of \\(R^2\\) and RMSE from CV\n\ncv_metrics1 |&gt;\n  mutate(.estimate = round(.estimate, 3)) |&gt;\n  pivot_wider(id_cols = id, names_from = .metric, values_from = .estimate) |&gt;\n  kable(col.names = c(\"Fold\", \"RMSE\", \"R-squared\"))\n\n\n\n\nFold\nRMSE\nR-squared\n\n\n\n\nFold1\n2.036\n0.736\n\n\nFold2\n1.709\n0.509\n\n\nFold3\n2.545\n0.528"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#how-does-rmse-compare-to-y",
+    "href": "slides/08-model-eval.html#how-does-rmse-compare-to-y",
+    "title": "Model evaluation",
+    "section": "How does RMSE compare to y?",
+    "text": "How does RMSE compare to y?\n\n\nCross validation RMSE stats:\n\ncv_metrics1 |&gt;\n  filter(.metric == \"rmse\") |&gt;\n  summarise(\n    min = min(.estimate),\n    max = max(.estimate),\n    mean = mean(.estimate),\n    sd = sd(.estimate)\n  )\n\n# A tibble: 1 × 4\n    min   max  mean    sd\n  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1  1.71  2.54  2.10 0.421\n\n\n\nTraining data tips:\n\ntips_train |&gt;\n  summarise(\n    min = min(Tip),\n    max = max(Tip),\n    mean = mean(Tip),\n    sd = sd(Tip)\n  )\n\n# A tibble: 1 × 4\n    min   max  mean    sd\n  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1     0  19.5  4.87  3.37"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#calculate-r2_adj-aic-and-bic-for-each-fold",
+    "href": "slides/08-model-eval.html#calculate-r2_adj-aic-and-bic-for-each-fold",
+    "title": "Model evaluation",
+    "section": "Calculate \\(R^2_{Adj}\\), AIC, and BIC for each fold",
+    "text": "Calculate \\(R^2_{Adj}\\), AIC, and BIC for each fold\n\n# Function to get Adj R-sq, AIC, BIC\ncalc_model_stats &lt;- function(x) {\n  glance(extract_fit_parsnip(x)) |&gt;\n    select(adj.r.squared, AIC, BIC)\n}\n\n# Fit model and calculate statistics for each fold\ntips_fit_rs1 &lt;-tips_wflow1 |&gt;\n  fit_resamples(resamples = folds, \n                control = control_resamples(extract = calc_model_stats))\n\ntips_fit_rs1\n\n# Resampling results\n# 3-fold cross-validation \n# A tibble: 3 × 5\n  splits          id    .metrics         .notes           .extracts       \n  &lt;list&gt;          &lt;chr&gt; &lt;list&gt;           &lt;list&gt;           &lt;list&gt;          \n1 &lt;split [84/42]&gt; Fold1 &lt;tibble [2 × 4]&gt; &lt;tibble [0 × 3]&gt; &lt;tibble [1 × 2]&gt;\n2 &lt;split [84/42]&gt; Fold2 &lt;tibble [2 × 4]&gt; &lt;tibble [0 × 3]&gt; &lt;tibble [1 × 2]&gt;\n3 &lt;split [84/42]&gt; Fold3 &lt;tibble [2 × 4]&gt; &lt;tibble [0 × 3]&gt; &lt;tibble [1 × 2]&gt;"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#collect-r2_adj-aic-bic-from-cv",
+    "href": "slides/08-model-eval.html#collect-r2_adj-aic-bic-from-cv",
+    "title": "Model evaluation",
+    "section": "Collect \\(R^2_{Adj}\\), AIC, BIC from CV",
+    "text": "Collect \\(R^2_{Adj}\\), AIC, BIC from CV\n\nmap_df(tips_fit_rs1$.extracts, ~ .x[[1]][[1]]) |&gt;\n  bind_cols(Fold = tips_fit_rs1$id)\n\n# A tibble: 3 × 4\n  adj.r.squared   AIC   BIC Fold \n          &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;\n1         0.550  369.  386. Fold1\n2         0.659  377.  394. Fold2\n3         0.718  337.  354. Fold3\n\n\n\nNote: These are based on the model fit from the analysis data"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#cross-validation-in-practice",
+    "href": "slides/08-model-eval.html#cross-validation-in-practice",
+    "title": "Model evaluation",
+    "section": "Cross validation in practice",
+    "text": "Cross validation in practice\n\n\nTo illustrate how CV works, we used v = 3:\n\n\nAnalysis sets are 2/3 of the training set\nEach assessment set is a distinct 1/3\nThe final resampling estimate of performance averages each of the 3 replicates\n\n\nThis was useful for illustrative purposes, but v = 3 is a poor choice in practice\nValues of v are most often 5 or 10; we generally prefer 10-fold cross-validation as a default"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#recap",
+    "href": "slides/08-model-eval.html#recap",
+    "title": "Model evaluation",
+    "section": "Recap",
+    "text": "Recap\n\nANOVA for multiple linear regression and sum of squares\nComparing models with\n\n\\(R^2\\) vs. \\(R^2_{Adj}\\)\nAIC and BIC\n\nOccam’s razor and parsimony\n\n\n\nCross validation for\n\nmodel evaluation\nmodel comparison"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#interaction-terms-in-the-model",
+    "href": "slides/08-model-eval.html#interaction-terms-in-the-model",
+    "title": "Model evaluation",
+    "section": "Interaction terms in the model",
+    "text": "Interaction terms in the model\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-4297.905\n645.054\n-6.663\n0.000\n\n\nflipper_length_mm\n27.263\n3.175\n8.586\n0.000\n\n\nspeciesChinstrap\n1146.287\n726.217\n1.578\n0.115\n\n\nspeciesGentoo\n54.716\n619.934\n0.088\n0.930\n\n\nbill_length_mm\n72.692\n10.642\n6.831\n0.000\n\n\nspeciesChinstrap:bill_length_mm\n-41.035\n16.104\n-2.548\n0.011\n\n\nspeciesGentoo:bill_length_mm\n-1.163\n14.436\n-0.081\n0.936\n\n\n\n\n\n\n\n\n\n\nWrite the model equation for penguins in the Adelie species.\nWrite the model equation for penguins in the Chinstrap species."
+  },
+  {
+    "objectID": "slides/08-model-eval.html#response-tip",
+    "href": "slides/08-model-eval.html#response-tip",
+    "title": "Model evaluation",
+    "section": "Response: Tip",
+    "text": "Response: Tip"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#response-vs.-predictors-1",
+    "href": "slides/08-model-eval.html#response-vs.-predictors-1",
+    "title": "Model evaluation",
+    "section": "Response vs. predictors",
+    "text": "Response vs. predictors"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#two-statistics",
+    "href": "slides/08-model-eval.html#two-statistics",
+    "title": "Model evaluation",
+    "section": "Two statistics",
+    "text": "Two statistics\n\nRoot mean square error, RMSE: A measure of the average error (average difference between observed and predicted values of the outcome)\nR-squared, \\(R^2\\) : Percentage of variability in the outcome explained by the regression model (in the context of SLR, the predictor)\n\n\nWhat indicates a good model fit? Higher or lower RMSE? Higher or lower \\(R^2\\)?"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#rmse",
+    "href": "slides/08-model-eval.html#rmse",
+    "title": "Model evaluation",
+    "section": "RMSE",
+    "text": "RMSE\n\\[\nRMSE = \\sqrt{\\frac{\\sum_{i=1}^n(y_i - \\hat{y}_i)^2}{n}} = \\sqrt{\\frac{\\sum_{i=1}^ne_i^2}{n}}\n\\]\n\n\n\nRanges between 0 (perfect predictor) and infinity (terrible predictor)\nSame units as the response variable\nThe value of RMSE is more useful for comparing across models than evaluating a single model"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#sum-of-squares-1",
+    "href": "slides/08-model-eval.html#sum-of-squares-1",
+    "title": "Model evaluation",
+    "section": "Sum of squares",
+    "text": "Sum of squares\n\n\n\n\n\n\n\nterm\ndf\nsumsq\n\n\n\n\nParty\n1\n1188.64\n\n\nAge\n2\n38.03\n\n\nResiduals\n165\n686.44\n\n\nTotal\n168\n1913.11\n\n\n\n\n\n\n\n\n\n\\(SST\\): Total sum of squares, variability of Response, \\(\\sum_{i = 1}^n (y_i - \\bar{y})^2\\)\n\\(SSR\\): Residual sum of squares, variability of residuals, \\(\\sum_{i = 1}^n (y_i - \\hat{y}_i)^2\\)\n\\(SSM = SST - SSR\\): Model sum of squares, variability explained by the model"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#sum-of-squares-sst",
+    "href": "slides/08-model-eval.html#sum-of-squares-sst",
+    "title": "Model evaluation",
+    "section": "Sum of squares: \\(SST\\)",
+    "text": "Sum of squares: \\(SST\\)\n\n\n\n\n\nterm\ndf\nsumsq\n\n\n\n\nParty\n1\n1188.64\n\n\nAge\n2\n38.03\n\n\nResiduals\n165\n686.44\n\n\nTotal\n168\n1913.11\n\n\n\n\n\n\n\n\n\n\\(SST\\): Total sum of squares, variability of the response\n\n\\(\\sum_{i = 1}^n (y_i - \\bar{y})^2\\) = 1913.11"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#sum-of-squares-ssr",
+    "href": "slides/08-model-eval.html#sum-of-squares-ssr",
+    "title": "Model evaluation",
+    "section": "Sum of squares: \\(SSR\\)",
+    "text": "Sum of squares: \\(SSR\\)\n\n\n\n\n\nterm\ndf\nsumsq\n\n\n\n\nParty\n1\n1188.64\n\n\nAge\n2\n38.03\n\n\nResiduals\n165\n686.44\n\n\nTotal\n168\n1913.11\n\n\n\n\n\n\n\n\n\n\\(SSR\\): Residual sum of squares, variability of residuals\n\n\\(\\sum_{i = 1}^n (y_i - \\hat{y}_i)^2\\) = 686.44"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#sum-of-squares-ssm",
+    "href": "slides/08-model-eval.html#sum-of-squares-ssm",
+    "title": "Model evaluation",
+    "section": "Sum of squares: \\(SSM\\)",
+    "text": "Sum of squares: \\(SSM\\)\n\n\n\n\n\nterm\ndf\nsumsq\n\n\n\n\nParty\n1\n1188.64\n\n\nAge\n2\n38.03\n\n\nResiduals\n165\n686.44\n\n\nTotal\n168\n1913.11\n\n\n\n\n\n\n\n\n\n\\(SSM\\): Variability explained by the model\n\n\\(SST - SSR\\) = 1226.67"
+  },
+  {
+    "objectID": "slides/08-model-eval.html#interpreting-r2",
+    "href": "slides/08-model-eval.html#interpreting-r2",
+    "title": "Model evaluation",
+    "section": "Interpreting \\(R^2\\)",
+    "text": "Interpreting \\(R^2\\)"
   }
 ]

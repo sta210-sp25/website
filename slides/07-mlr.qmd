@@ -133,7 +133,7 @@ p3 <- ggplot(penguins, aes(x = bill_length_mm)) +
 p1 + p2 / p3
 ```
 
-## Outcome vs. predictors {.small}
+## Response vs. predictors {.small}
 
 ```{r}
 #| echo: false
@@ -518,7 +518,7 @@ tidy(penguin_cent_fit, conf.int = T) |>
   kable(digits = 3)
 ```
 
-## Original vs. mean-centered model 
+## Original vs. mean-centered model
 
 ::::: columns
 ::: {.column width="50%"}
