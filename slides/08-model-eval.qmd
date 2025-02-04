@@ -51,7 +51,15 @@ knitr::opts_chunk$set(
 
 ## Office hours poll
 
-<!--# ADD this-->
+<center>
+
+```{=html}
+<iframe width="640px" height="480px" src="https://forms.office.com/r/QTxJvhGSFF?embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+```
+
+🔗 <https://forms.office.com/r/QTxJvhGSFF>
+
+</center>
 
 ## Topics
 
@@ -76,7 +84,7 @@ library(kableExtra)
 library(colorblindr)
 
 # set default theme and larger font size for ggplot2
-ggplot2::theme_set(ggplot2::theme_bw(base_size = 20))
+ggplot2::theme_set(ggplot2::theme_bw())
 ```
 
 # Recap: Multiple linear regression
@@ -289,9 +297,9 @@ tidy(penguin_int_fit) |>
 ::: question
 In general, how do
 
-indicators for categorical predictors impact the model equation?
+-   indicators for categorical predictors impact the model equation?
 
-interaction terms impact the model equation?
+-   interaction terms impact the model equation?
 :::
 
 # Model evaluation
@@ -339,6 +347,21 @@ Dahlquist, Samantha, and Jin Dong. 2011. “The Effects of Credit Cards on Tippi
 ggplot(tips, aes(x = Tip)) +
   geom_histogram(binwidth = 1) +
   labs(title = "Distribution of tips")
+```
+
+```{r}
+#| echo: false
+
+tips |> 
+  summarise(Min = min(Tip), 
+            Q1 = quantile(Tip, 0.25), 
+            Median = median(Tip), 
+            Q3 = quantile(Tip, 0.75), 
+            Max = max(Tip), 
+            Mean = mean(Tip), 
+            SD = sd(Tip)) |>
+  kable(digits = 2)
+
 ```
 
 ## Predictors
@@ -431,14 +454,14 @@ tidy(tip_fit) |>
 <br>
 
 ::: question
-Overall, how well does this model help us understand variablility n tips?
+Overall, how well does this model help us understand variability n tips?
 :::
 
 ## Two statistics
 
 -   **Root mean square error, RMSE**: A measure of the average error (average difference between observed and predicted values of the outcome)
 
--   **R-squared**, $R^2$ : Percentage of variability in the outcome explained by the regression model (in the context of SLR, the predictor)
+-   **R-squared**, $R^2$ : Percentage of variability in the outcome explained by the regression model
 
 ::: question
 What indicates a good model fit? Higher or lower RMSE? Higher or lower $R^2$?
@@ -460,7 +483,7 @@ $$
 -   The value of RMSE is more useful for comparing across models than evaluating a single model
 :::
 
-## Augmented data frame
+## Compute RMSE: Augmented data frame
 
 Use the `augment()` function from the **broom** package to add columns for predicted values, residuals, and other observation-level model statistics
 
@@ -468,8 +491,6 @@ Use the `augment()` function from the **broom** package to add columns for predi
 #| echo: true
 tip_aug <- augment(tip_fit)
 ```
-
-<br>
 
 . . .
 
@@ -487,10 +508,12 @@ Use the `rmse()` function from the **yardstick** package (part of **tidymodels**
 rmse(tip_aug, truth = Tip, estimate = .fitted)
 ```
 
+<br>
+
 . . .
 
 ::: question
-Is the model a good fit for the data? How can you
+Is the model a good fit for the data? What information do you need to make this determination?
 :::
 
 # Analysis of variance (ANOVA)
@@ -567,9 +590,9 @@ anova(tip_fit) |>
 :::
 
 ::: {.column width="50%"}
--   $SST$: Total sum of squares, variability of Response, $\sum_{i = 1}^n (y_i - \bar{y})^2$
--   $SSR$: Residual sum of squares, variability of residuals, $\sum_{i = 1}^n (y_i - \hat{y}_i)^2$
--   $SSM = SST - SSR$: Model sum of squares, variability explained by the model
+-   $SST$: Sum of squares total, variability of the response, $\sum_{i = 1}^n (y_i - \bar{y})^2$
+-   $SSR$: Sum of squares residuals, variability of residuals, $\sum_{i = 1}^n (y_i - \hat{y}_i)^2$
+-   $SSM = SST - SSR$: Sum of squares model, variability explained by the model
 :::
 :::::
 
@@ -592,7 +615,7 @@ anova_df |>
 
 <center>
 
-$SST$: Total sum of squares, variability of the response
+$SST$: Sum of squares total, variability of the response
 
 <br>
 
@@ -619,7 +642,7 @@ anova_df |>
 
 <center>
 
-$SSR$: Residual sum of squares, variability of residuals
+$SSR$: Sum of squares residuals, variability of residuals
 
 <br>
 
@@ -646,7 +669,7 @@ anova_df |>
 
 <center>
 
-$SSM$: Variability explained by the model
+$SSM$: Sum of squares model, Variability explained by the model
 
 <br>
 
@@ -654,7 +677,7 @@ $SST - SSR$ = `r sum(anova_df$sumsq[1:2])`
 
 </center>
 
-##  $R^2$
+## $R^2$
 
 The **coefficient of determination** $R^2$ is the proportion of variation in the response, $Y$, that is explained by the regression model
 
@@ -670,7 +693,7 @@ $$
 What is the range of $R^2$? Does $R^2$ have units?
 :::
 
-## Interpreting $R^2$ 
+## Interpreting $R^2$
 
 ```{r}
 #| echo: true
@@ -684,19 +707,25 @@ rsq <- round(glance(tip_fit)$r.squared * 100, 2)
 
 ```
 
+. . .
+
 ::: question
 Select the best interpretation for $R^2$ .
 
-a.  Party and age correctly predicts `r rsq` % of tips.
-b.  `r rsq` % of the variability in tips can be explained by party and age.
+a.  Party and age correctly predicts `r rsq`% of tips.
+b.  `r rsq`% of the variability in tips can be explained by party and age.
 c.  `r rsq`% of the variability in party and age can be explained by tips.
-d.  `r rsq`% of the time a the tips can be predicted by party and age.
+d.  `r rsq`% of the time tips can be predicted by party and age.
 :::
 
-## Recap 
+## Recap
 
 -   Introduced interaction terms
 
 -   Introduced ANOVA and sum of squares
 
 -   Introduced $R^2$ and RMSE
+
+## Next class
+
+-   Model comparison

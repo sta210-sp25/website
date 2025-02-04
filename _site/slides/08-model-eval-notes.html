@@ -8,7 +8,7 @@
 
 <meta name="author" content="Prof.&nbsp;Maria Tackett">
 
-<title>Multiple linear regression (MLR) – STA 210 - Spring 2025</title>
+<title>Model evaluation – STA 210 - Spring 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -136,7 +136,7 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar docked slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -145,7 +145,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Multiple linear regression (MLR)</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Model evaluation</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -389,69 +389,69 @@ window.Quarto = {
    
   <ul>
   <li><a href="#announcements" id="toc-announcements" class="nav-link active" data-scroll-target="#announcements">Announcements</a></li>
+  <li><a href="#office-hours-poll" id="toc-office-hours-poll" class="nav-link" data-scroll-target="#office-hours-poll">Office hours poll</a></li>
+  <li><a href="#topics" id="toc-topics" class="nav-link" data-scroll-target="#topics">Topics</a></li>
   <li><a href="#computational-setup" id="toc-computational-setup" class="nav-link" data-scroll-target="#computational-setup">Computational setup</a></li>
-  <li><a href="#considering-multiple-variables" id="toc-considering-multiple-variables" class="nav-link" data-scroll-target="#considering-multiple-variables">Considering multiple variables</a>
+  <li><a href="#recap-multiple-linear-regression" id="toc-recap-multiple-linear-regression" class="nav-link" data-scroll-target="#recap-multiple-linear-regression">Recap: Multiple linear regression</a>
   <ul class="collapse">
   <li><a href="#data-palmer-penguins" id="toc-data-palmer-penguins" class="nav-link" data-scroll-target="#data-palmer-penguins">Data: Palmer penguins</a></li>
   <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables">Variables</a></li>
-  <li><a href="#response-body_mass_g" id="toc-response-body_mass_g" class="nav-link" data-scroll-target="#response-body_mass_g">Response: <code>body_mass_g</code></a></li>
-  <li><a href="#predictors" id="toc-predictors" class="nav-link" data-scroll-target="#predictors">Predictors</a></li>
   <li><a href="#response-vs.-predictors" id="toc-response-vs.-predictors" class="nav-link" data-scroll-target="#response-vs.-predictors">Response vs.&nbsp;predictors</a></li>
-  </ul></li>
-  <li><a href="#multiple-linear-regression" id="toc-multiple-linear-regression" class="nav-link" data-scroll-target="#multiple-linear-regression">Multiple linear regression</a>
-  <ul class="collapse">
-  <li><a href="#multiple-linear-regression-mlr" id="toc-multiple-linear-regression-mlr" class="nav-link" data-scroll-target="#multiple-linear-regression-mlr">Multiple linear regression (MLR)</a></li>
-  <li><a href="#multiple-linear-regression-1" id="toc-multiple-linear-regression-1" class="nav-link" data-scroll-target="#multiple-linear-regression-1">Multiple linear regression</a></li>
-  <li><a href="#multiple-linear-regression-2" id="toc-multiple-linear-regression-2" class="nav-link" data-scroll-target="#multiple-linear-regression-2">Multiple linear regression</a></li>
   <li><a href="#model-fit" id="toc-model-fit" class="nav-link" data-scroll-target="#model-fit">Model fit</a></li>
-  <li><a href="#model-equation" id="toc-model-equation" class="nav-link" data-scroll-target="#model-equation">Model equation</a></li>
   <li><a href="#interpreting-hatbeta_j" id="toc-interpreting-hatbeta_j" class="nav-link" data-scroll-target="#interpreting-hatbeta_j">Interpreting <span class="math inline">\(\hat{\beta}_j\)</span></a></li>
-  <li><a href="#prediction" id="toc-prediction" class="nav-link" data-scroll-target="#prediction">Prediction</a></li>
-  <li><a href="#prediction-revisited" id="toc-prediction-revisited" class="nav-link" data-scroll-target="#prediction-revisited">Prediction, revisited</a></li>
-  <li><a href="#confidence-interval-for-hatmu_y" id="toc-confidence-interval-for-hatmu_y" class="nav-link" data-scroll-target="#confidence-interval-for-hatmu_y">Confidence interval for <span class="math inline">\(\hat{\mu}_y\)</span></a></li>
-  <li><a href="#prediction-interval-for-haty" id="toc-prediction-interval-for-haty" class="nav-link" data-scroll-target="#prediction-interval-for-haty">Prediction interval for <span class="math inline">\(\hat{y}\)</span></a></li>
-  <li><a href="#cautions" id="toc-cautions" class="nav-link" data-scroll-target="#cautions">Cautions</a></li>
-  </ul></li>
-  <li><a href="#types-of-predictors" id="toc-types-of-predictors" class="nav-link" data-scroll-target="#types-of-predictors">Types of predictors</a></li>
-  <li><a href="#categorical-predictors" id="toc-categorical-predictors" class="nav-link" data-scroll-target="#categorical-predictors">Categorical predictors</a>
-  <ul class="collapse">
   <li><a href="#indicator-variables" id="toc-indicator-variables" class="nav-link" data-scroll-target="#indicator-variables">Indicator variables</a></li>
-  <li><a href="#indicator-variables-for-species" id="toc-indicator-variables-for-species" class="nav-link" data-scroll-target="#indicator-variables-for-species">Indicator variables for <code>species</code></a></li>
-  <li><a href="#indicators-in-the-model" id="toc-indicators-in-the-model" class="nav-link" data-scroll-target="#indicators-in-the-model">Indicators in the model</a></li>
-  <li><a href="#interpreting-species" id="toc-interpreting-species" class="nav-link" data-scroll-target="#interpreting-species">Interpreting <code>species</code></a></li>
-  </ul></li>
-  <li><a href="#transforming-quantitative-predictors" id="toc-transforming-quantitative-predictors" class="nav-link" data-scroll-target="#transforming-quantitative-predictors">Transforming quantitative predictors</a>
-  <ul class="collapse">
-  <li><a href="#interpreting-the-intercept" id="toc-interpreting-the-intercept" class="nav-link" data-scroll-target="#interpreting-the-intercept">Interpreting the intercept</a></li>
   <li><a href="#centering" id="toc-centering" class="nav-link" data-scroll-target="#centering">Centering</a></li>
-  <li><a href="#centering-1" id="toc-centering-1" class="nav-link" data-scroll-target="#centering-1">Centering</a></li>
-  <li><a href="#original-vs.-mean-centered-variable" id="toc-original-vs.-mean-centered-variable" class="nav-link" data-scroll-target="#original-vs.-mean-centered-variable">Original vs.&nbsp;mean-centered variable</a></li>
-  <li><a href="#using-mean-centered-variables-in-the-model" id="toc-using-mean-centered-variables-in-the-model" class="nav-link" data-scroll-target="#using-mean-centered-variables-in-the-model">Using mean-centered variables in the model</a></li>
-  <li><a href="#original-vs.-mean-centered-model" id="toc-original-vs.-mean-centered-model" class="nav-link" data-scroll-target="#original-vs.-mean-centered-model">Original vs.&nbsp;mean-centered model</a></li>
   <li><a href="#standardizing" id="toc-standardizing" class="nav-link" data-scroll-target="#standardizing">Standardizing</a></li>
-  <li><a href="#standardizing-1" id="toc-standardizing-1" class="nav-link" data-scroll-target="#standardizing-1">Standardizing</a></li>
-  <li><a href="#original-vs.-standardized-variable" id="toc-original-vs.-standardized-variable" class="nav-link" data-scroll-target="#original-vs.-standardized-variable">Original vs.&nbsp;standardized variable</a></li>
-  <li><a href="#using-standardized-variables-in-the-model" id="toc-using-standardized-variables-in-the-model" class="nav-link" data-scroll-target="#using-standardized-variables-in-the-model">Using standardized variables in the model</a></li>
-  <li><a href="#original-vs.-standardized-model" id="toc-original-vs.-standardized-model" class="nav-link" data-scroll-target="#original-vs.-standardized-model">Original vs.&nbsp;standardized model</a></li>
   </ul></li>
   <li><a href="#interaction-terms" id="toc-interaction-terms" class="nav-link" data-scroll-target="#interaction-terms">Interaction terms</a>
   <ul class="collapse">
   <li><a href="#interaction-terms-1" id="toc-interaction-terms-1" class="nav-link" data-scroll-target="#interaction-terms-1">Interaction terms</a></li>
   <li><a href="#bill-length-versus-species" id="toc-bill-length-versus-species" class="nav-link" data-scroll-target="#bill-length-versus-species">Bill length versus species</a></li>
   <li><a href="#interaction-term-in-model" id="toc-interaction-term-in-model" class="nav-link" data-scroll-target="#interaction-term-in-model">Interaction term in model</a></li>
+  <li><a href="#interaction-terms-in-the-model" id="toc-interaction-terms-in-the-model" class="nav-link" data-scroll-target="#interaction-terms-in-the-model">Interaction terms in the model</a></li>
   <li><a href="#interpreting-interaction-terms" id="toc-interpreting-interaction-terms" class="nav-link" data-scroll-target="#interpreting-interaction-terms">Interpreting interaction terms</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  </ul></li>
+  <li><a href="#model-evaluation" id="toc-model-evaluation" class="nav-link" data-scroll-target="#model-evaluation">Model evaluation</a>
+  <ul class="collapse">
+  <li><a href="#data-restaurant-tips" id="toc-data-restaurant-tips" class="nav-link" data-scroll-target="#data-restaurant-tips">Data: Restaurant tips</a></li>
+  <li><a href="#variables-1" id="toc-variables-1" class="nav-link" data-scroll-target="#variables-1">Variables</a></li>
+  <li><a href="#response-tip" id="toc-response-tip" class="nav-link" data-scroll-target="#response-tip">Response: <code>Tip</code></a></li>
+  <li><a href="#predictors" id="toc-predictors" class="nav-link" data-scroll-target="#predictors">Predictors</a></li>
+  <li><a href="#relevel-categorical-predictors" id="toc-relevel-categorical-predictors" class="nav-link" data-scroll-target="#relevel-categorical-predictors">Relevel categorical predictors</a></li>
+  <li><a href="#predictors-again" id="toc-predictors-again" class="nav-link" data-scroll-target="#predictors-again">Predictors, again</a></li>
+  <li><a href="#response-vs.-predictors-1" id="toc-response-vs.-predictors-1" class="nav-link" data-scroll-target="#response-vs.-predictors-1">Response vs.&nbsp;predictors</a></li>
+  <li><a href="#fit-and-summarize-model" id="toc-fit-and-summarize-model" class="nav-link" data-scroll-target="#fit-and-summarize-model">Fit and summarize model</a></li>
+  <li><a href="#two-statistics" id="toc-two-statistics" class="nav-link" data-scroll-target="#two-statistics">Two statistics</a></li>
+  <li><a href="#rmse" id="toc-rmse" class="nav-link" data-scroll-target="#rmse">RMSE</a></li>
+  <li><a href="#compute-rmse-augmented-data-frame" id="toc-compute-rmse-augmented-data-frame" class="nav-link" data-scroll-target="#compute-rmse-augmented-data-frame">Compute RMSE: Augmented data frame</a></li>
+  <li><a href="#finding-rmse-in-r" id="toc-finding-rmse-in-r" class="nav-link" data-scroll-target="#finding-rmse-in-r">Finding RMSE in R</a></li>
+  </ul></li>
+  <li><a href="#analysis-of-variance-anova" id="toc-analysis-of-variance-anova" class="nav-link" data-scroll-target="#analysis-of-variance-anova">Analysis of variance (ANOVA)</a>
+  <ul class="collapse">
+  <li><a href="#analysis-of-variance-anova-1" id="toc-analysis-of-variance-anova-1" class="nav-link" data-scroll-target="#analysis-of-variance-anova-1">Analysis of variance (ANOVA)</a></li>
+  <li><a href="#anova" id="toc-anova" class="nav-link" data-scroll-target="#anova">ANOVA</a></li>
+  <li><a href="#sum-of-squares" id="toc-sum-of-squares" class="nav-link" data-scroll-target="#sum-of-squares">Sum of Squares</a></li>
+  <li><a href="#anova-output-in-r1" id="toc-anova-output-in-r1" class="nav-link" data-scroll-target="#anova-output-in-r1">ANOVA output in R</a></li>
+  <li><a href="#anova-output-with-totals" id="toc-anova-output-with-totals" class="nav-link" data-scroll-target="#anova-output-with-totals">ANOVA output, with totals</a></li>
+  <li><a href="#sum-of-squares-1" id="toc-sum-of-squares-1" class="nav-link" data-scroll-target="#sum-of-squares-1">Sum of squares</a></li>
+  <li><a href="#sum-of-squares-sst" id="toc-sum-of-squares-sst" class="nav-link" data-scroll-target="#sum-of-squares-sst">Sum of squares: <span class="math inline">\(SST\)</span></a></li>
+  <li><a href="#sum-of-squares-ssr" id="toc-sum-of-squares-ssr" class="nav-link" data-scroll-target="#sum-of-squares-ssr">Sum of squares: <span class="math inline">\(SSR\)</span></a></li>
+  <li><a href="#sum-of-squares-ssm" id="toc-sum-of-squares-ssm" class="nav-link" data-scroll-target="#sum-of-squares-ssm">Sum of squares: <span class="math inline">\(SSM\)</span></a></li>
+  <li><a href="#r2" id="toc-r2" class="nav-link" data-scroll-target="#r2"><span class="math inline">\(R^2\)</span></a></li>
+  <li><a href="#interpreting-r2" id="toc-interpreting-r2" class="nav-link" data-scroll-target="#interpreting-r2">Interpreting <span class="math inline">\(R^2\)</span></a></li>
   <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
+  <li><a href="#next-class" id="toc-next-class" class="nav-link" data-scroll-target="#next-class">Next class</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/sta210-sp25/website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="07-mlr.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/sta210-sp25/website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="08-model-eval.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Multiple linear regression (MLR)</h1>
+<h1 class="title">Model evaluation</h1>
 </div>
 
 
@@ -468,7 +468,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Jan 30, 2025</p>
+      <p class="date">Feb 04, 2025</p>
     </div>
   </div>
   
@@ -480,39 +480,55 @@ window.Quarto = {
 </header>
 
 
-<section id="announcements" class="level2 midi">
-<h2 class="midi anchored" data-anchor-id="announcements">Announcements</h2>
+<section id="announcements" class="level2">
+<h2 class="anchored" data-anchor-id="announcements">Announcements</h2>
 <ul>
-<li>Lab 01 due <strong>TODAY</strong> at 11:59pm</li>
-<li>Team labs start on Monday</li>
-<li><a href="https://prodduke.sharepoint.com/:p:/s/ARCStaff839/EZ4PKTRTlCVMpFZiR6XoRycB4UUlRMuI2_Rda9hKxNZtsA">Click here</a> to learn more about the Academic Resource Center</li>
-<li><a href="../hw/stats-experience.html">Statistics experience</a> due Tuesday, April 15</li>
+<li><p>Lab 02 due Thursday at 11:59pm</p></li>
+<li><p>HW 02 released later today</p></li>
+<li><p><a href="https://prodduke.sharepoint.com/:p:/s/ARCStaff839/EZ4PKTRTlCVMpFZiR6XoRycB4UUlRMuI2_Rda9hKxNZtsA">Click here</a> to learn more about the Academic Resource Center</p></li>
+<li><p><a href="../hw/stats-experience.html">Statistics experience</a> due Tuesday, April 15</p></li>
 </ul>
+</section>
+<section id="office-hours-poll" class="level2">
+<h2 class="anchored" data-anchor-id="office-hours-poll">Office hours poll</h2>
+<center>
+<iframe width="640px" height="480px" src="https://forms.office.com/r/QTxJvhGSFF?embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" msallowfullscreen=""> </iframe>
+<p>🔗 <a href="https://forms.office.com/r/QTxJvhGSFF" class="uri">https://forms.office.com/r/QTxJvhGSFF</a></p>
+</center>
+</section>
+<section id="topics" class="level2">
+<h2 class="anchored" data-anchor-id="topics">Topics</h2>
+<div class="nonincremental">
+<ul>
+<li>Recap of MLR and predictor types</li>
+<li>Interaction terms</li>
+<li>ANOVA and sum of squares</li>
+<li><span class="math inline">\(R^2\)</span> and RMSE</li>
+</ul>
+</div>
 </section>
 <section id="computational-setup" class="level2">
 <h2 class="anchored" data-anchor-id="computational-setup">Computational setup</h2>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load packages</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openintro)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(colorblindr)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># set default theme and larger font size for ggplot2</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">16</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(colorblindr)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># set default theme and larger font size for ggplot2</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_bw</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="considering-multiple-variables" class="level1">
-<h1>Considering multiple variables</h1>
+<section id="recap-multiple-linear-regression" class="level1">
+<h1>Recap: Multiple linear regression</h1>
 <section id="data-palmer-penguins" class="level2 midi">
 <h2 class="midi anchored" data-anchor-id="data-palmer-penguins">Data: Palmer penguins</h2>
 <p>The <code>penguins</code> data set contains data for penguins found on three islands in the Palmer Archipelago, Antarctica. Data were collected and made available by <a href="https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php">Dr.&nbsp;Kristen Gorman</a> and the <a href="https://pal.lternet.edu/">Palmer Station, Antarctica LTER</a>, a member of the <a href="https://lternet.edu/">Long Term Ecological Research Network</a>. These data can be found in the <strong>palmerpenguins</strong> R package.</p>
 <p>. . .</p>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 342 × 4
    body_mass_g flipper_length_mm bill_length_mm species
@@ -543,109 +559,21 @@ window.Quarto = {
 <p><br></p>
 <p><strong>The goal of this analysis is to use the bill length, flipper length, and species to predict body mass.</strong></p>
 </section>
-<section id="response-body_mass_g" class="level2">
-<h2 class="anchored" data-anchor-id="response-body_mass_g">Response: <code>body_mass_g</code></h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="07-mlr_files/figure-revealjs/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: right;">min</th>
-<th style="text-align: right;">median</th>
-<th style="text-align: right;">max</th>
-<th style="text-align: right;">iqr</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">2700</td>
-<td style="text-align: right;">4050</td>
-<td style="text-align: right;">6300</td>
-<td style="text-align: right;">1200</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-<section id="predictors" class="level2 small">
-<h2 class="small anchored" data-anchor-id="predictors">Predictors</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="07-mlr_files/figure-revealjs/unnamed-chunk-4-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
 <section id="response-vs.-predictors" class="level2 small">
 <h2 class="small anchored" data-anchor-id="response-vs.-predictors">Response vs.&nbsp;predictors</h2>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="07-mlr_files/figure-revealjs/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="960"></p>
+<p><img src="08-model-eval_files/figure-revealjs/unnamed-chunk-4-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="3000"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>. . .</p>
-<div class="question">
-<p>Why do we want to use a single model with all the predictors instead of 3 separate models?</p>
-</div>
-</section>
-</section>
-<section id="multiple-linear-regression" class="level1">
-<h1>Multiple linear regression</h1>
-<section id="multiple-linear-regression-mlr" class="level2">
-<h2 class="anchored" data-anchor-id="multiple-linear-regression-mlr">Multiple linear regression (MLR)</h2>
-<p>Based on the analysis goals, we will use a <strong>multiple linear regression</strong> model of the following form</p>
-<p><span class="math display">\[
-\begin{aligned}\widehat{\text{body_mass_g}} ~ =
-\hat{\beta}_0 &amp; + \hat{\beta}_1 \times \text{flipper_length_mm} \\ &amp; + \hat{\beta}_2 \times  \text{species}_1  \\
-&amp;+\hat{\beta}_3 \times \text{species}_2  \\ &amp;+ \hat{\beta}_4 \times \text{bill_length_mm}
-\end{aligned}
-\]</span></p>
-<p>Similar to simple linear regression, this model assumes that at each combination of the predictor variables, the values <code>body_mass_g</code> follow a Normal distribution.</p>
-</section>
-<section id="multiple-linear-regression-1" class="level2">
-<h2 class="anchored" data-anchor-id="multiple-linear-regression-1">Multiple linear regression</h2>
-<p><strong>Recall:</strong> The simple linear regression model assumes</p>
-<p><span class="math display">\[
-Y|X\sim N(\beta_0 + \beta_1 X, \sigma_{\epsilon}^2)
-\]</span></p>
-<p>. . .</p>
-<p><strong>Similarly:</strong> The multiple linear regression model assumes</p>
-<p><span class="math display">\[
-Y|X_1, X_2, \ldots, X_p \sim N(\beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_p X_p, \sigma_{\epsilon}^2)
-\]</span></p>
-</section>
-<section id="multiple-linear-regression-2" class="level2">
-<h2 class="anchored" data-anchor-id="multiple-linear-regression-2">Multiple linear regression</h2>
-<p>At any combination of the predictors, the mean value of the response <span class="math inline">\(Y\)</span>, is</p>
-<p><span class="math display">\[
-E(Y|X_1, \ldots, X_p) = \beta_0 + \beta_1 X_{1} + \beta_2 X_2 + \dots + \beta_p X_p
-\]</span></p>
-<p>. . .</p>
-<p>Using multiple linear regression, we can estimate the mean response for any combination of predictors</p>
-<p><span class="math display">\[
-\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1 X_{1} + \hat{\beta}_2 X_2 + \dots + \hat{\beta}_p X_{p}
-\]</span></p>
 </section>
 <section id="model-fit" class="level2">
 <h2 class="anchored" data-anchor-id="model-fit">Model fit</h2>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>penguin_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass_g <span class="sc">~</span> flipper_length_mm <span class="sc">+</span> species <span class="sc">+</span> </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                bill_length_mm, <span class="at">data =</span> penguins)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -703,29 +631,6 @@ E(Y|X_1, \ldots, X_p) = \beta_0 + \beta_1 X_{1} + \beta_2 X_2 + \dots + \beta_p 
 </div>
 </div>
 </section>
-<section id="model-equation" class="level2">
-<h2 class="anchored" data-anchor-id="model-equation">Model equation</h2>
-<p><span class="math display">\[
-\begin{align}\widehat{\text{body_mass_g}} =  -3904.387 &amp;+27.429 \times \text{flipper_length_mm}\\
-&amp; -748.562 \times \text{Chinstrap}\\  
-&amp;+ 90.435 \times \text{Gentoo}\\
-&amp;+ 61.736 \times \text{bill_length_mm}
-\end{align}
-\]</span></p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We will talk about why there are two terms in the model for <code>species</code> shortly!</p>
-</div>
-</div>
-</section>
 <section id="interpreting-hatbeta_j" class="level2">
 <h2 class="anchored" data-anchor-id="interpreting-hatbeta_j">Interpreting <span class="math inline">\(\hat{\beta}_j\)</span></h2>
 <ul>
@@ -733,191 +638,12 @@ Note
 </ul>
 <p>. . .</p>
 <ul>
-<li><strong>Example:</strong> The estimated coefficient for <code>flipper_length_mm</code> is 27.429. This means for each additional millimeter in a penguin’s flipper length, its body mass is expected to be greater by 27.429 grams, on average, holding species and bill length constant.</li>
+<li><strong>Example:</strong> The estimated coefficient for <code>flipper_length_mm</code> is 27.429. This means for each additional millimeter in a penguin’s flipper length, its body mass is expected to be greater by 27.429 grams, on average, <em>holding species and bill length constant.</em></li>
 </ul>
 </section>
-<section id="prediction" class="level2">
-<h2 class="anchored" data-anchor-id="prediction">Prediction</h2>
-<div class="question">
-<p>What is the predicted body mass for a Gentoo penguin with a flipper length of 200 millimeters and bill length of 45 millimeters?</p>
-</div>
-<p><br></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="fl">3904.387</span> <span class="sc">+</span> <span class="fl">27.429</span> <span class="sc">*</span> <span class="dv">200</span> <span class="sc">-</span> <span class="fl">748.562</span> <span class="sc">*</span> <span class="dv">0</span> <span class="sc">+</span> <span class="fl">90.435</span> <span class="sc">*</span> <span class="dv">1</span> <span class="sc">+</span> <span class="fl">61.736</span> <span class="sc">*</span> <span class="dv">45</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4449.968</code></pre>
-</div>
-</div>
-<p><br></p>
-<p>. . .</p>
-<p>The predicted body mass for a Gentoo penguin with a flipper length of 200 millimeters and bill length of 45 millimeters is 4449.968 grams.</p>
-</section>
-<section id="prediction-revisited" class="level2 midi">
-<h2 class="midi anchored" data-anchor-id="prediction-revisited">Prediction, revisited</h2>
-<p>Just like with simple linear regression, we can use the <code>predict()</code> function in R to calculate the appropriate intervals for our predicted values:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>new_penguin <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">flipper_length_mm  =</span> <span class="dv">200</span>, </span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">species =</span> <span class="st">"Gentoo"</span>, </span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">bill_length_mm =</span> <span class="dv">45</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(penguin_fit, new_penguin)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>       1 
-4449.955 </code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Difference in predicted value due to rounding the coefficients on the previous slide.</p>
-</div>
-</div>
-</section>
-<section id="confidence-interval-for-hatmu_y" class="level2">
-<h2 class="anchored" data-anchor-id="confidence-interval-for-hatmu_y">Confidence interval for <span class="math inline">\(\hat{\mu}_y\)</span></h2>
-<div class="question">
-<p>Calculate a 90% confidence interval for the <strong>estimated mean body mass</strong> a Gentoo penguins with a flipper length of 200 millimeters and bill length of 45 millimeters.</p>
-</div>
-<p><br></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(penguin_fit, new_penguin, <span class="at">interval =</span> <span class="st">"confidence"</span>, </span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">level =</span> <span class="fl">0.90</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: right;">fit</th>
-<th style="text-align: right;">lwr</th>
-<th style="text-align: right;">upr</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">4449.955</td>
-<td style="text-align: right;">4355.238</td>
-<td style="text-align: right;">4544.671</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-<section id="prediction-interval-for-haty" class="level2">
-<h2 class="anchored" data-anchor-id="prediction-interval-for-haty">Prediction interval for <span class="math inline">\(\hat{y}\)</span></h2>
-<div class="question">
-<p>Calculate a 90% prediction interval for the <strong>estimated body mass</strong> <strong>for an individual</strong> Gentoo penguin with a flipper length of 200 millimeters and bill length of 45 millimeters.</p>
-</div>
-<p><br></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(penguin_fit, new_penguin, <span class="at">interval =</span> <span class="st">"prediction"</span>, </span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">level =</span> <span class="fl">0.90</span>) <span class="sc">|&gt;</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: right;">fit</th>
-<th style="text-align: right;">lwr</th>
-<th style="text-align: right;">upr</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">4449.955</td>
-<td style="text-align: right;">3881.035</td>
-<td style="text-align: right;">5018.875</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-<section id="cautions" class="level2">
-<h2 class="anchored" data-anchor-id="cautions">Cautions</h2>
-<ul>
-<li><strong>Do not extrapolate!</strong> Because there are multiple predictor variables, there is the potential to extrapolate in many directions</li>
-<li>The multiple regression model only shows <strong>association, not causality</strong>
-<ul>
-<li>To show causality, you must have a carefully designed experiment or carefully account for confounding variables in an observational study</li>
-</ul></li>
-</ul>
-</section>
-</section>
-<section id="types-of-predictors" class="level1">
-<h1>Types of predictors</h1>
-</section>
-<section id="categorical-predictors" class="level1">
-<h1>Categorical predictors</h1>
 <section id="indicator-variables" class="level2">
 <h2 class="anchored" data-anchor-id="indicator-variables">Indicator variables</h2>
-<ul>
-<li><p>Suppose there is a categorical variable with <span class="math inline">\(k\)</span> categories (levels)</p></li>
-<li><p>We can make <span class="math inline">\(k\)</span> indicator variables - one indicator for each category</p></li>
-<li><p>An <strong>indicator variable</strong> takes values 1 or 0</p>
-<ul>
-<li>1 if the observation belongs to that category</li>
-<li>0 if the observation does not belong to that category</li>
-</ul></li>
-</ul>
-</section>
-<section id="indicator-variables-for-species" class="level2">
-<h2 class="anchored" data-anchor-id="indicator-variables-for-species">Indicator variables for <code>species</code></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">adelie =</span> <span class="fu">if_else</span>(species <span class="sc">==</span> <span class="st">"Adelie"</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">chinstrap =</span> <span class="fu">if_else</span>(species <span class="sc">==</span> <span class="st">"Chinstrap"</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">gentoo =</span> <span class="fu">if_else</span>(species <span class="sc">==</span> <span class="st">"Gentoo"</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>. . .</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 4
-  species   adelie chinstrap gentoo
-  &lt;fct&gt;      &lt;dbl&gt;     &lt;dbl&gt;  &lt;dbl&gt;
-1 Adelie         1         0      0
-2 Gentoo         0         0      1
-3 Chinstrap      0         1      0</code></pre>
-</div>
-</div>
-</section>
-<section id="indicators-in-the-model" class="level2 midi">
-<h2 class="midi anchored" data-anchor-id="indicators-in-the-model">Indicators in the model</h2>
-<ul>
-<li>We will use <span class="math inline">\(k-1\)</span> of the indicator variables in the model.</li>
-<li>The <strong>baseline</strong> is the category that doesn’t have a term in the model. This is also called the <em>reference level.</em></li>
-<li>The coefficients of the indicator variables in the model are interpreted as the expected change in the response compared to the baseline, holding all other variables constant.</li>
-<li>This approach is also called <strong>dummy coding</strong>.</li>
-</ul>
-<p>. . .</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(species, chinstrap, gentoo) <span class="sc">|&gt;</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span>, <span class="dv">152</span>, <span class="dv">283</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 3
-  species   chinstrap gentoo
-  &lt;fct&gt;         &lt;dbl&gt;  &lt;dbl&gt;
-1 Adelie            0      0
-2 Gentoo            0      1
-3 Chinstrap         1      0</code></pre>
-</div>
-</div>
-</section>
-<section id="interpreting-species" class="level2 midi">
-<h2 class="midi anchored" data-anchor-id="interpreting-species">Interpreting <code>species</code></h2>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
@@ -983,100 +709,9 @@ Note
 
 </div>
 </div>
-<p>. . .</p>
-<div class="incremental">
-<ul class="incremental">
-<li>The baseline category is <code>Adelie</code>.</li>
-<li>Penguins from the Chinstrap species are expected to have a body mass that is 748.562 grams less, on average, compared to penguins from the Adelie species, holding flipper length and bill length constant.</li>
-</ul>
-</div>
-<p>. . .</p>
-<div class="question">
-<p>Interpret the coefficient of <code>Gentoo</code> in the context of the data.</p>
-</div>
-</section>
-</section>
-<section id="transforming-quantitative-predictors" class="level1">
-<h1>Transforming quantitative predictors</h1>
-<section id="interpreting-the-intercept" class="level2 midi">
-<h2 class="midi anchored" data-anchor-id="interpreting-the-intercept">Interpreting the intercept</h2>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<colgroup>
-<col style="width: 23%">
-<col style="width: 13%">
-<col style="width: 13%">
-<col style="width: 13%">
-<col style="width: 10%">
-<col style="width: 13%">
-<col style="width: 13%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">term</th>
-<th style="text-align: right;">estimate</th>
-<th style="text-align: right;">std.error</th>
-<th style="text-align: right;">statistic</th>
-<th style="text-align: right;">p.value</th>
-<th style="text-align: right;">conf.low</th>
-<th style="text-align: right;">conf.high</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">-3904.387</td>
-<td style="text-align: right;">529.257</td>
-<td style="text-align: right;">-7.377</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">-4945.450</td>
-<td style="text-align: right;">-2863.324</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">flipper_length_mm</td>
-<td style="text-align: right;">27.429</td>
-<td style="text-align: right;">3.176</td>
-<td style="text-align: right;">8.638</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">21.182</td>
-<td style="text-align: right;">33.675</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">speciesChinstrap</td>
-<td style="text-align: right;">-748.562</td>
-<td style="text-align: right;">81.534</td>
-<td style="text-align: right;">-9.181</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">-908.943</td>
-<td style="text-align: right;">-588.182</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">speciesGentoo</td>
-<td style="text-align: right;">90.435</td>
-<td style="text-align: right;">88.647</td>
-<td style="text-align: right;">1.020</td>
-<td style="text-align: right;">0.308</td>
-<td style="text-align: right;">-83.937</td>
-<td style="text-align: right;">264.807</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">bill_length_mm</td>
-<td style="text-align: right;">61.736</td>
-<td style="text-align: right;">7.126</td>
-<td style="text-align: right;">8.664</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">47.720</td>
-<td style="text-align: right;">75.753</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>. . .</p>
 <p><br></p>
 <div class="question">
-<p>The intercept -3904.387 is not meaningful. Let’s transform some variables to make this intercept meaningful.</p>
+<p>Interpret the coefficient of <code>Gentoo</code> in the context of the data.</p>
 </div>
 </section>
 <section id="centering" class="level2 midi">
@@ -1093,243 +728,7 @@ X_{cent} = X  - C
 <li><p>Center all quantitative predictors in the model for ease of interpretation</p></li>
 </ul>
 <div class="question">
-<p>What is one reason one might want to center the quantitative predictors? What is are the units of centered variables?</p>
-</div>
-</section>
-<section id="centering-1" class="level2 midi">
-<h2 class="midi anchored" data-anchor-id="centering-1">Centering</h2>
-<p>Use the <code>scale()</code> function with <code>center = TRUE</code> and <code>scale = FALSE</code> to mean-center variables</p>
-<div class="cell" data-output-location="fragment">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">flipper_length_cent =</span> <span class="fu">scale</span>(flipper_length_mm, <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale =</span> <span class="cn">FALSE</span>), </span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">bill_length_cent =</span> <span class="fu">scale</span>(bill_length_mm, <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale =</span> <span class="cn">FALSE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="original-vs.-mean-centered-variable" class="level2">
-<h2 class="anchored" data-anchor-id="original-vs.-mean-centered-variable">Original vs.&nbsp;mean-centered variable</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Original variable</strong></p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="07-mlr_files/figure-revealjs/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-<p><br></p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: right;">Mean</th>
-<th style="text-align: right;">SD</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">200.915</td>
-<td style="text-align: right;">14.062</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<p><strong>Mean-centered variable</strong></p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="07-mlr_files/figure-revealjs/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-<p><br></p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: right;">Mean</th>
-<th style="text-align: right;">SD</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">14.062</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-<p><br></p>
-<p>. . .</p>
-</section>
-<section id="using-mean-centered-variables-in-the-model" class="level2">
-<h2 class="anchored" data-anchor-id="using-mean-centered-variables-in-the-model">Using mean-centered variables in the model</h2>
-<div class="question">
-<p>How do you expect the model to change if we use <code>flipper_length_cent</code> and <code>bill_length_cent</code> in the model?</p>
-</div>
-<p>. . .</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<colgroup>
-<col style="width: 26%">
-<col style="width: 11%">
-<col style="width: 13%">
-<col style="width: 13%">
-<col style="width: 10%">
-<col style="width: 11%">
-<col style="width: 13%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">term</th>
-<th style="text-align: right;">estimate</th>
-<th style="text-align: right;">std.error</th>
-<th style="text-align: right;">statistic</th>
-<th style="text-align: right;">p.value</th>
-<th style="text-align: right;">conf.low</th>
-<th style="text-align: right;">conf.high</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">4318.066</td>
-<td style="text-align: right;">45.674</td>
-<td style="text-align: right;">94.542</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">4228.225</td>
-<td style="text-align: right;">4407.908</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">flipper_length_cent</td>
-<td style="text-align: right;">27.429</td>
-<td style="text-align: right;">3.176</td>
-<td style="text-align: right;">8.638</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">21.182</td>
-<td style="text-align: right;">33.675</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">speciesChinstrap</td>
-<td style="text-align: right;">-748.562</td>
-<td style="text-align: right;">81.534</td>
-<td style="text-align: right;">-9.181</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">-908.943</td>
-<td style="text-align: right;">-588.182</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">speciesGentoo</td>
-<td style="text-align: right;">90.435</td>
-<td style="text-align: right;">88.647</td>
-<td style="text-align: right;">1.020</td>
-<td style="text-align: right;">0.308</td>
-<td style="text-align: right;">-83.937</td>
-<td style="text-align: right;">264.807</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">bill_length_cent</td>
-<td style="text-align: right;">61.736</td>
-<td style="text-align: right;">7.126</td>
-<td style="text-align: right;">8.664</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">47.720</td>
-<td style="text-align: right;">75.753</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-<section id="original-vs.-mean-centered-model" class="level2">
-<h2 class="anchored" data-anchor-id="original-vs.-mean-centered-model">Original vs.&nbsp;mean-centered model</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: left;">term</th>
-<th style="text-align: right;">estimate</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">-3904.387</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">flipper_length_mm</td>
-<td style="text-align: right;">27.429</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">speciesChinstrap</td>
-<td style="text-align: right;">-748.562</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">speciesGentoo</td>
-<td style="text-align: right;">90.435</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">bill_length_mm</td>
-<td style="text-align: right;">61.736</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: left;">term</th>
-<th style="text-align: right;">estimate</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">4318.066</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">flipper_length_cent</td>
-<td style="text-align: right;">27.429</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">speciesChinstrap</td>
-<td style="text-align: right;">-748.562</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">speciesGentoo</td>
-<td style="text-align: right;">90.435</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">bill_length_cent</td>
-<td style="text-align: right;">61.736</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-<div class="question">
-<p>What has changed? What is the same?</p>
+<p>How does centering change the model and/or interpretations?</p>
 </div>
 </section>
 <section id="standardizing" class="level2 midi">
@@ -1345,244 +744,7 @@ X_{std} = \frac{X - \bar{X}}{S_X}
 <li><p>Standardize all quantitative predictors in the model for ease of interpretation</p></li>
 </ul>
 <div class="question">
-<p>What is one reason one might want to standardize the quantitative predictors? What is are the units of standardized variables?</p>
-</div>
-</section>
-<section id="standardizing-1" class="level2">
-<h2 class="anchored" data-anchor-id="standardizing-1">Standardizing</h2>
-<p>Use the <code>scale()</code> function with <code>center = TRUE</code> and <code>scale = TRUE</code> to standardized variables</p>
-<p><br></p>
-<div class="cell" data-output-location="fragment">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">flipper_length_std =</span> <span class="fu">scale</span>(flipper_length_mm, <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale =</span> <span class="cn">TRUE</span>), </span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">bill_length_std =</span> <span class="fu">scale</span>(bill_length_mm, <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="original-vs.-standardized-variable" class="level2">
-<h2 class="anchored" data-anchor-id="original-vs.-standardized-variable">Original vs.&nbsp;standardized variable</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Original variable</strong></p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="07-mlr_files/figure-revealjs/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-<p><br></p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: right;">Mean</th>
-<th style="text-align: right;">SD</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">200.915</td>
-<td style="text-align: right;">14.062</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<p><strong>Standardized variable</strong></p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="07-mlr_files/figure-revealjs/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-<p><br></p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: right;">Mean</th>
-<th style="text-align: right;">SD</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-<p><br></p>
-<p>. . .</p>
-</section>
-<section id="using-standardized-variables-in-the-model" class="level2">
-<h2 class="anchored" data-anchor-id="using-standardized-variables-in-the-model">Using standardized variables in the model</h2>
-<div class="question">
-<p>How do you expect the model to change if we use <code>flipper_length_std</code> and <code>bill_length_std</code> in the model?</p>
-</div>
-<p>. . .</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 12%">
-<col style="width: 13%">
-<col style="width: 13%">
-<col style="width: 10%">
-<col style="width: 12%">
-<col style="width: 13%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">term</th>
-<th style="text-align: right;">estimate</th>
-<th style="text-align: right;">std.error</th>
-<th style="text-align: right;">statistic</th>
-<th style="text-align: right;">p.value</th>
-<th style="text-align: right;">conf.low</th>
-<th style="text-align: right;">conf.high</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">4318.066</td>
-<td style="text-align: right;">45.674</td>
-<td style="text-align: right;">94.542</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">4228.225</td>
-<td style="text-align: right;">4407.908</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">flipper_length_std</td>
-<td style="text-align: right;">385.696</td>
-<td style="text-align: right;">44.654</td>
-<td style="text-align: right;">8.638</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">297.862</td>
-<td style="text-align: right;">473.531</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">speciesChinstrap</td>
-<td style="text-align: right;">-748.562</td>
-<td style="text-align: right;">81.534</td>
-<td style="text-align: right;">-9.181</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">-908.943</td>
-<td style="text-align: right;">-588.182</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">speciesGentoo</td>
-<td style="text-align: right;">90.435</td>
-<td style="text-align: right;">88.647</td>
-<td style="text-align: right;">1.020</td>
-<td style="text-align: right;">0.308</td>
-<td style="text-align: right;">-83.937</td>
-<td style="text-align: right;">264.807</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">bill_length_std</td>
-<td style="text-align: right;">337.055</td>
-<td style="text-align: right;">38.902</td>
-<td style="text-align: right;">8.664</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">260.533</td>
-<td style="text-align: right;">413.577</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-<section id="original-vs.-standardized-model" class="level2">
-<h2 class="anchored" data-anchor-id="original-vs.-standardized-model">Original vs.&nbsp;standardized model</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: left;">term</th>
-<th style="text-align: right;">estimate</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">-3904.387</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">flipper_length_mm</td>
-<td style="text-align: right;">27.429</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">speciesChinstrap</td>
-<td style="text-align: right;">-748.562</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">speciesGentoo</td>
-<td style="text-align: right;">90.435</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">bill_length_mm</td>
-<td style="text-align: right;">61.736</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: left;">term</th>
-<th style="text-align: right;">estimate</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">4318.066</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">flipper_length_std</td>
-<td style="text-align: right;">385.696</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">speciesChinstrap</td>
-<td style="text-align: right;">-748.562</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">speciesGentoo</td>
-<td style="text-align: right;">90.435</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">bill_length_std</td>
-<td style="text-align: right;">337.055</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-<div class="question">
-<p>What has changed? What is the same?</p>
+<p>How does standardizing change the model and/or interpretations?</p>
 </div>
 </section>
 </section>
@@ -1599,11 +761,11 @@ X_{std} = \frac{X - \bar{X}}{S_X}
 <section id="bill-length-versus-species" class="level2">
 <h2 class="anchored" data-anchor-id="bill-length-versus-species">Bill length versus species</h2>
 <p>If the lines are not parallel, there is indication of a potential <strong>interaction effect</strong>, i.e., the slope of bill length may differ based on the species.</p>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="07-mlr_files/figure-revealjs/unnamed-chunk-32-1.png" class="img-fluid figure-img" width="960"></p>
+<p><img src="08-model-eval_files/figure-revealjs/unnamed-chunk-7-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="3000"></p>
 </figure>
 </div>
 </div>
@@ -1611,11 +773,11 @@ X_{std} = \frac{X - \bar{X}}{S_X}
 </section>
 <section id="interaction-term-in-model" class="level2 smaller">
 <h2 class="smaller anchored" data-anchor-id="interaction-term-in-model">Interaction term in model</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>penguin_int_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass_g <span class="sc">~</span> flipper_length_mm <span class="sc">+</span> species <span class="sc">+</span> bill_length_mm <span class="sc">+</span> species <span class="sc">*</span> bill_length_mm,</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">data =</span> penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>penguin_int_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass_g <span class="sc">~</span> flipper_length_mm <span class="sc">+</span> species <span class="sc">+</span> bill_length_mm <span class="sc">+</span> species <span class="sc">*</span> bill_length_mm,</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">data =</span> penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
@@ -1684,6 +846,84 @@ X_{std} = \frac{X - \bar{X}}{S_X}
 </div>
 </div>
 </section>
+<section id="interaction-terms-in-the-model" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="interaction-terms-in-the-model">Interaction terms in the model</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">estimate</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">std.error</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">statistic</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">-4297.905</td>
+<td style="text-align: right;">645.054</td>
+<td style="text-align: right;">-6.663</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">flipper_length_mm</td>
+<td style="text-align: right;">27.263</td>
+<td style="text-align: right;">3.175</td>
+<td style="text-align: right;">8.586</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">speciesChinstrap</td>
+<td style="text-align: right;">1146.287</td>
+<td style="text-align: right;">726.217</td>
+<td style="text-align: right;">1.578</td>
+<td style="text-align: right;">0.115</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">speciesGentoo</td>
+<td style="text-align: right;">54.716</td>
+<td style="text-align: right;">619.934</td>
+<td style="text-align: right;">0.088</td>
+<td style="text-align: right;">0.930</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">bill_length_mm</td>
+<td style="text-align: right;">72.692</td>
+<td style="text-align: right;">10.642</td>
+<td style="text-align: right;">6.831</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; background-color: rgba(220, 229, 178, 255) !important;">speciesChinstrap:bill_length_mm</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 255) !important;">-41.035</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 255) !important;">16.104</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 255) !important;">-2.548</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 255) !important;">0.011</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; background-color: rgba(220, 229, 178, 255) !important;">speciesGentoo:bill_length_mm</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 255) !important;">-1.163</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 255) !important;">14.436</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 255) !important;">-0.081</td>
+<td style="text-align: right; background-color: rgba(220, 229, 178, 255) !important;">0.936</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p><br></p>
+<div class="question">
+<ul>
+<li>Write the model equation for penguins in the Adelie species.</li>
+<li>Write the model equation for penguins in the Chinstrap species.</li>
+</ul>
+</div>
+</section>
 <section id="interpreting-interaction-terms" class="level2">
 <h2 class="anchored" data-anchor-id="interpreting-interaction-terms">Interpreting interaction terms</h2>
 <ul>
@@ -1696,26 +936,639 @@ X_{std} = \frac{X - \bar{X}}{S_X}
 <p><br></p>
 <div class="question">
 <p>In general, how do</p>
-<p>indicators for categorical predictors impact the model equation?</p>
-<p>interaction terms impact the model equation?</p>
+<ul>
+<li><p>indicators for categorical predictors impact the model equation?</p></li>
+<li><p>interaction terms impact the model equation?</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="model-evaluation" class="level1 page-columns page-full">
+<h1>Model evaluation</h1>
+<section id="data-restaurant-tips" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="data-restaurant-tips">Data: Restaurant tips</h2>
+<p>Which variables help us predict the amount customers tip at a restaurant? To answer this question, we will use data collected in 2011 by a student at St.&nbsp;Olaf who worked at a local restaurant.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8 × 4
+    Tip Party Meal   Age   
+  &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt; 
+1  2.99     1 Dinner Yadult
+2  2        1 Dinner Yadult
+3  5        1 Dinner SenCit
+4  4        3 Dinner Middle
+5 10.3      2 Dinner SenCit
+6  4.85     2 Dinner Middle
+7  5        4 Dinner Yadult
+8  4        3 Dinner Middle</code></pre>
+</div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<div class="small">
+<p>Dahlquist, Samantha, and Jin Dong. 2011. “The Effects of Credit Cards on Tipping.” Project for Statistics 212-Statistics for the Sciences, St.&nbsp;Olaf College</p>
+</div>
+</div></div></section>
+<section id="variables-1" class="level2">
+<h2 class="anchored" data-anchor-id="variables-1">Variables</h2>
+<p><strong>Predictors</strong>:</p>
+<div class="nonincremental">
+<ul>
+<li><code>Party</code>: Number of people in the party</li>
+<li><code>Meal</code>: Time of day (Lunch, Dinner, Late Night)</li>
+<li><code>Age</code>: Age category of person paying the bill (Yadult, Middle, SenCit)</li>
+</ul>
+</div>
+<p><strong>Response</strong>: <code>Tip</code>: Amount of tip in US dollars</p>
+</section>
+<section id="response-tip" class="level2">
+<h2 class="anchored" data-anchor-id="response-tip">Response: <code>Tip</code></h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="08-model-eval_files/figure-revealjs/unnamed-chunk-13-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="3000"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Min</th>
+<th style="text-align: right;">Q1</th>
+<th style="text-align: right;">Median</th>
+<th style="text-align: right;">Q3</th>
+<th style="text-align: right;">Max</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">SD</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4.5</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">19.46</td>
+<td style="text-align: right;">4.98</td>
+<td style="text-align: right;">3.37</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="predictors" class="level2">
+<h2 class="anchored" data-anchor-id="predictors">Predictors</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="08-model-eval_files/figure-revealjs/unnamed-chunk-15-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="3000"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="relevel-categorical-predictors" class="level2">
+<h2 class="anchored" data-anchor-id="relevel-categorical-predictors">Relevel categorical predictors</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>tips <span class="ot">&lt;-</span> tips <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">Meal =</span> <span class="fu">fct_relevel</span>(Meal, <span class="st">"Lunch"</span>, <span class="st">"Dinner"</span>, <span class="st">"Late Night"</span>),</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Age  =</span> <span class="fu">fct_relevel</span>(Age, <span class="st">"Yadult"</span>, <span class="st">"Middle"</span>, <span class="st">"SenCit"</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="predictors-again" class="level2">
+<h2 class="anchored" data-anchor-id="predictors-again">Predictors, again</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="08-model-eval_files/figure-revealjs/unnamed-chunk-17-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="3000"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="response-vs.-predictors-1" class="level2">
+<h2 class="anchored" data-anchor-id="response-vs.-predictors-1">Response vs.&nbsp;predictors</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="08-model-eval_files/figure-revealjs/unnamed-chunk-18-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="3600"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="fit-and-summarize-model" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="fit-and-summarize-model">Fit and summarize model</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>tip_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(Tip <span class="sc">~</span> Party <span class="sc">+</span> Age, <span class="at">data =</span> tips)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(tip_fit) <span class="sc">|&gt;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">-0.170</td>
+<td style="text-align: right;">0.366</td>
+<td style="text-align: right;">-0.465</td>
+<td style="text-align: right;">0.643</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Party</td>
+<td style="text-align: right;">1.837</td>
+<td style="text-align: right;">0.124</td>
+<td style="text-align: right;">14.758</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">AgeMiddle</td>
+<td style="text-align: right;">1.009</td>
+<td style="text-align: right;">0.408</td>
+<td style="text-align: right;">2.475</td>
+<td style="text-align: right;">0.014</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">AgeSenCit</td>
+<td style="text-align: right;">1.388</td>
+<td style="text-align: right;">0.485</td>
+<td style="text-align: right;">2.862</td>
+<td style="text-align: right;">0.005</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>. . .</p>
+<p><br></p>
+<div class="question">
+<p>Overall, how well does this model help us understand variability n tips?</p>
+</div>
+</section>
+<section id="two-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="two-statistics">Two statistics</h2>
+<ul>
+<li><p><strong>Root mean square error, RMSE</strong>: A measure of the average error (average difference between observed and predicted values of the outcome)</p></li>
+<li><p><strong>R-squared</strong>, <span class="math inline">\(R^2\)</span> : Percentage of variability in the outcome explained by the regression model</p></li>
+</ul>
+<div class="question">
+<p>What indicates a good model fit? Higher or lower RMSE? Higher or lower <span class="math inline">\(R^2\)</span>?</p>
+</div>
+</section>
+<section id="rmse" class="level2">
+<h2 class="anchored" data-anchor-id="rmse">RMSE</h2>
+<p><span class="math display">\[
+RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}^ne_i^2}{n}}
+\]</span></p>
+<p>. . .</p>
+<div class="incremental">
+<ul class="incremental">
+<li><p>Ranges between 0 (perfect predictor) and infinity (terrible predictor)</p></li>
+<li><p>Same units as the response variable</p></li>
+<li><p>The value of RMSE is more useful for comparing across models than evaluating a single model</p></li>
+</ul>
+</div>
+</section>
+<section id="compute-rmse-augmented-data-frame" class="level2">
+<h2 class="anchored" data-anchor-id="compute-rmse-augmented-data-frame">Compute RMSE: Augmented data frame</h2>
+<p>Use the <code>augment()</code> function from the <strong>broom</strong> package to add columns for predicted values, residuals, and other observation-level model statistics</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>tip_aug <span class="ot">&lt;-</span> <span class="fu">augment</span>(tip_fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>. . .</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 169 × 9
+     Tip Party Age    .fitted .resid   .hat .sigma   .cooksd .std.resid
+   &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;    &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;
+ 1  2.99     1 Yadult    1.67  1.32  0.0247   2.04 0.00274        0.657
+ 2  2        1 Yadult    1.67  0.333 0.0247   2.05 0.000173       0.165
+ 3  5        1 SenCit    3.05  1.95  0.0371   2.04 0.00911        0.972
+ 4  4        3 Middle    6.35 -2.35  0.0111   2.04 0.00376       -1.16 
+ 5 10.3      2 SenCit    4.89  5.45  0.0301   2.00 0.0571         2.71 
+ 6  4.85     2 Middle    4.51  0.337 0.0126   2.05 0.0000881      0.166
+ 7  5        4 Yadult    7.18 -2.18  0.0471   2.04 0.0148        -1.09 
+ 8  4        3 Middle    6.35 -2.35  0.0111   2.04 0.00376       -1.16 
+ 9  5        2 Middle    4.51  0.487 0.0126   2.05 0.000184       0.240
+10  1.58     1 SenCit    3.05 -1.47  0.0371   2.04 0.00524       -0.737
+# ℹ 159 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="finding-rmse-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="finding-rmse-in-r">Finding RMSE in R</h2>
+<p>Use the <code>rmse()</code> function from the <strong>yardstick</strong> package (part of <strong>tidymodels</strong>)</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rmse</span>(tip_aug, <span class="at">truth =</span> Tip, <span class="at">estimate =</span> .fitted)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 3
+  .metric .estimator .estimate
+  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;
+1 rmse    standard        2.02</code></pre>
+</div>
+</div>
+<p><br></p>
+<p>. . .</p>
+<div class="question">
+<p>Is the model a good fit for the data? What information do you need to make this determination?</p>
+</div>
+</section>
+</section>
+<section id="analysis-of-variance-anova" class="level1 page-columns page-full">
+<h1>Analysis of variance (ANOVA)</h1>
+<section id="analysis-of-variance-anova-1" class="level2">
+<h2 class="anchored" data-anchor-id="analysis-of-variance-anova-1">Analysis of variance (ANOVA)</h2>
+<p><strong>Analysis of Variance (ANOVA)</strong>: Technique to partition variability in Y by the sources of variability</p>
+<p><img src="images/clipboard-3964457409-01.png" class="img-fluid"></p>
+</section>
+<section id="anova" class="level2">
+<h2 class="anchored" data-anchor-id="anova">ANOVA</h2>
+<ul>
+<li><strong>Main Idea:</strong> Decompose the total variation in the response into
+<ul>
+<li><p>the variation that can be explained by the each of the variables in the model</p></li>
+<li><p>the variation that <strong>can’t</strong> be explained by the model (left in the residuals)</p></li>
+</ul></li>
+<li>If the variation that can be explained by the variables in the model is greater than the variation in the residuals, this signals that the model might be “valuable” (at least one of the <span class="math inline">\(\beta\)</span>’s not equal to 0)</li>
+</ul>
+</section>
+<section id="sum-of-squares" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="sum-of-squares">Sum of Squares</h2>
+<p><br></p>
+<p><span class="math display">\[
+\begin{aligned}
+\color{#407E99}{SST} \hspace{5mm}&amp;= &amp;\color{#993399}{SSM} &amp;\hspace{5mm} +  &amp;\color{#8BB174}{SSR} \\[10pt]
+\color{#407E99}{\sum_{i=1}^n(y_i - \bar{y})^2} \hspace{5mm}&amp;= &amp;\color{#993399}{\sum_{i = 1}^{n}(\hat{y}_i - \bar{y})^2} &amp;\hspace{5mm}+ &amp;\color{#8BB174}{\sum_{i = 1}^{n}(y_i - \hat{y}_i)^2}
+\end{aligned}
+\]</span></p>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p><a href="https://introregression.netlify.app/98-appendix#sum-of-squares">Click here</a> to see why this equality holds.</p>
+</div></div></section>
+<section id="anova-output-in-r1" class="level2">
+<h2 class="anchored" data-anchor-id="anova-output-in-r1">ANOVA output in R<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(tip_fit) <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>() <span class="sc">|&gt;</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">df</th>
+<th style="text-align: right;">sumsq</th>
+<th style="text-align: right;">meansq</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Party</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1188.64</td>
+<td style="text-align: right;">1188.64</td>
+<td style="text-align: right;">285.71</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Age</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">38.03</td>
+<td style="text-align: right;">19.01</td>
+<td style="text-align: right;">4.57</td>
+<td style="text-align: right;">0.01</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Residuals</td>
+<td style="text-align: right;">165</td>
+<td style="text-align: right;">686.44</td>
+<td style="text-align: right;">4.16</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="anova-output-with-totals" class="level2">
+<h2 class="anchored" data-anchor-id="anova-output-with-totals">ANOVA output, with totals</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">df</th>
+<th style="text-align: right;">sumsq</th>
+<th style="text-align: left;">meansq</th>
+<th style="text-align: left;">statistic</th>
+<th style="text-align: left;">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Party</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1188.64</td>
+<td style="text-align: left;">1188.64</td>
+<td style="text-align: left;">285.71</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Age</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">38.03</td>
+<td style="text-align: left;">19.01</td>
+<td style="text-align: left;">4.57</td>
+<td style="text-align: left;">0.01</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Residuals</td>
+<td style="text-align: right;">165</td>
+<td style="text-align: right;">686.44</td>
+<td style="text-align: left;">4.16</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">168</td>
+<td style="text-align: right;">1913.11</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="sum-of-squares-1" class="level2">
+<h2 class="anchored" data-anchor-id="sum-of-squares-1">Sum of squares</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">df</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">sumsq</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Party</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">1188.64</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Age</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">38.03</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Residuals</td>
+<td style="text-align: right;">165</td>
+<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">686.44</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">168</td>
+<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">1913.11</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><span class="math inline">\(SST\)</span>: Sum of squares total, variability of the response, <span class="math inline">\(\sum_{i = 1}^n (y_i - \bar{y})^2\)</span></li>
+<li><span class="math inline">\(SSR\)</span>: Sum of squares residuals, variability of residuals, <span class="math inline">\(\sum_{i = 1}^n (y_i - \hat{y}_i)^2\)</span></li>
+<li><span class="math inline">\(SSM = SST - SSR\)</span>: Sum of squares model, variability explained by the model</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="sum-of-squares-sst" class="level2">
+<h2 class="anchored" data-anchor-id="sum-of-squares-sst">Sum of squares: <span class="math inline">\(SST\)</span></h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">df</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">sumsq</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Party</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1188.64</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Age</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">38.03</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Residuals</td>
+<td style="text-align: right;">165</td>
+<td style="text-align: right;">686.44</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; background-color: rgba(217, 227, 228, 255) !important;">Total</td>
+<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">168</td>
+<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">1913.11</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p><br></p>
+<center>
+<p><span class="math inline">\(SST\)</span>: Sum of squares total, variability of the response</p>
+<p><br></p>
+<p><span class="math inline">\(\sum_{i = 1}^n (y_i - \bar{y})^2\)</span> = 1913.11</p>
+</center>
+</section>
+<section id="sum-of-squares-ssr" class="level2">
+<h2 class="anchored" data-anchor-id="sum-of-squares-ssr">Sum of squares: <span class="math inline">\(SSR\)</span></h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">df</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">sumsq</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Party</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1188.64</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Age</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">38.03</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; background-color: rgba(217, 227, 228, 255) !important;">Residuals</td>
+<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">165</td>
+<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">686.44</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">168</td>
+<td style="text-align: right;">1913.11</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p><br></p>
+<center>
+<p><span class="math inline">\(SSR\)</span>: Sum of squares residuals, variability of residuals</p>
+<p><br></p>
+<p><span class="math inline">\(\sum_{i = 1}^n (y_i - \hat{y}_i)^2\)</span> = 686.44</p>
+</center>
+</section>
+<section id="sum-of-squares-ssm" class="level2">
+<h2 class="anchored" data-anchor-id="sum-of-squares-ssm">Sum of squares: <span class="math inline">\(SSM\)</span></h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">df</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">sumsq</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left; background-color: rgba(217, 227, 228, 255) !important;">Party</td>
+<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">1</td>
+<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">1188.64</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; background-color: rgba(217, 227, 228, 255) !important;">Age</td>
+<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">2</td>
+<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">38.03</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Residuals</td>
+<td style="text-align: right;">165</td>
+<td style="text-align: right;">686.44</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">168</td>
+<td style="text-align: right;">1913.11</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p><br></p>
+<center>
+<p><span class="math inline">\(SSM\)</span>: Sum of squares model, Variability explained by the model</p>
+<p><br></p>
+<p><span class="math inline">\(SST - SSR\)</span> = 1226.67</p>
+</center>
+</section>
+<section id="r2" class="level2">
+<h2 class="anchored" data-anchor-id="r2"><span class="math inline">\(R^2\)</span></h2>
+<p>The <strong>coefficient of determination</strong> <span class="math inline">\(R^2\)</span> is the proportion of variation in the response, <span class="math inline">\(Y\)</span>, that is explained by the regression model</p>
+<p>. . .</p>
+<p><span class="math display">\[
+R^2 = \frac{SSM}{SST} = 1 - \frac{SSR}{SST} = 1 - \frac{686.44}{1913.11} = 0.641
+\]</span></p>
+<p>. . .</p>
+<div class="question">
+<p>What is the range of <span class="math inline">\(R^2\)</span>? Does <span class="math inline">\(R^2\)</span> have units?</p>
+</div>
+</section>
+<section id="interpreting-r2" class="level2">
+<h2 class="anchored" data-anchor-id="interpreting-r2">Interpreting <span class="math inline">\(R^2\)</span></h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(tip_fit)<span class="sc">$</span>r.squared</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.6411891</code></pre>
+</div>
+</div>
+<p>. . .</p>
+<div class="question">
+<p>Select the best interpretation for <span class="math inline">\(R^2\)</span> .</p>
+<ol type="a">
+<li>Party and age correctly predicts 64.12% of tips.</li>
+<li>64.12% of the variability in tips can be explained by party and age.</li>
+<li>64.12% of the variability in party and age can be explained by tips.</li>
+<li>64.12% of the time tips can be predicted by party and age.</li>
+</ol>
 </div>
 </section>
 <section id="recap" class="level2">
 <h2 class="anchored" data-anchor-id="recap">Recap</h2>
 <ul>
-<li><p>Introduced multiple linear regression</p></li>
-<li><p>Interpreted coefficients in the multiple linear regression model</p></li>
-<li><p>Calculated predictions and associated intervals for multiple linear regression models</p></li>
-<li><p>Mean-centered and standardized quantitative predictors</p></li>
-<li><p>Used indicator variables for categorical predictors</p></li>
-<li><p>Used interaction terms</p></li>
+<li><p>Introduced interaction terms</p></li>
+<li><p>Introduced ANOVA and sum of squares</p></li>
+<li><p>Introduced <span class="math inline">\(R^2\)</span> and RMSE</p></li>
+</ul>
+</section>
+<section id="next-class" class="level2">
+<h2 class="anchored" data-anchor-id="next-class">Next class</h2>
+<ul>
+<li>Model comparison</li>
 </ul>
 
 
 </section>
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p><a href="anova-table.html">Click here</a> for explanation about the way R calculates sum of squares for each variable.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 
 <script>
   // htmlwidgets need to know to resize themselves when slides are shown/hidden.

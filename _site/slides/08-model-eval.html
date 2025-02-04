@@ -220,7 +220,10 @@ Prof.&nbsp;Maria Tackett
 </section>
 <section id="office-hours-poll" class="slide level2">
 <h2>Office hours poll</h2>
-<!--# ADD this-->
+<center>
+<iframe width="640px" height="480px" src="https://forms.office.com/r/QTxJvhGSFF?embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" msallowfullscreen=""> </iframe>
+<p>🔗 <a href="https://forms.office.com/r/QTxJvhGSFF" class="uri">https://forms.office.com/r/QTxJvhGSFF</a></p>
+</center>
 </section>
 <section id="topics" class="slide level2">
 <h2>Topics</h2>
@@ -245,7 +248,7 @@ Prof.&nbsp;Maria Tackett
 <span id="cb1-7"><a></a><span class="fu">library</span>(colorblindr)</span>
 <span id="cb1-8"><a></a></span>
 <span id="cb1-9"><a></a><span class="co"># set default theme and larger font size for ggplot2</span></span>
-<span id="cb1-10"><a></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">20</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-10"><a></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_bw</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section>
@@ -653,8 +656,10 @@ X_{std} = \frac{X - \bar{X}}{S_X}
 <p><br></p>
 <div class="question">
 <p>In general, how do</p>
-<p>indicators for categorical predictors impact the model equation?</p>
-<p>interaction terms impact the model equation?</p>
+<ul>
+<li><p>indicators for categorical predictors impact the model equation?</p></li>
+<li><p>interaction terms impact the model equation?</p></li>
+</ul>
 </div>
 </section></section>
 <section>
@@ -701,11 +706,39 @@ X_{std} = \frac{X - \bar{X}}{S_X}
 <section id="response-tip" class="slide level2">
 <h2>Response: <code>Tip</code></h2>
 
-<img data-src="08-model-eval_files/figure-revealjs/unnamed-chunk-13-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
+<img data-src="08-model-eval_files/figure-revealjs/unnamed-chunk-13-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"><div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Min</th>
+<th style="text-align: right;">Q1</th>
+<th style="text-align: right;">Median</th>
+<th style="text-align: right;">Q3</th>
+<th style="text-align: right;">Max</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">SD</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4.5</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">19.46</td>
+<td style="text-align: right;">4.98</td>
+<td style="text-align: right;">3.37</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
 <section id="predictors" class="slide level2">
 <h2>Predictors</h2>
 
-<img data-src="08-model-eval_files/figure-revealjs/unnamed-chunk-14-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
+<img data-src="08-model-eval_files/figure-revealjs/unnamed-chunk-15-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
 <section id="relevel-categorical-predictors" class="slide level2">
 <h2>Relevel categorical predictors</h2>
 <div class="cell" data-layout-align="center">
@@ -719,11 +752,11 @@ X_{std} = \frac{X - \bar{X}}{S_X}
 <section id="predictors-again" class="slide level2">
 <h2>Predictors, again</h2>
 
-<img data-src="08-model-eval_files/figure-revealjs/unnamed-chunk-16-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
+<img data-src="08-model-eval_files/figure-revealjs/unnamed-chunk-17-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
 <section id="response-vs.-predictors-1" class="slide level2">
 <h2>Response vs.&nbsp;predictors</h2>
 
-<img data-src="08-model-eval_files/figure-revealjs/unnamed-chunk-17-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3600"></section>
+<img data-src="08-model-eval_files/figure-revealjs/unnamed-chunk-18-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3600"></section>
 <section id="fit-and-summarize-model" class="slide level2 midi">
 <h2>Fit and summarize model</h2>
 <div class="cell" data-layout-align="center">
@@ -778,7 +811,7 @@ X_{std} = \frac{X - \bar{X}}{S_X}
 <div class="fragment">
 <p><br></p>
 <div class="question">
-<p>Overall, how well does this model help us understand variablility n tips?</p>
+<p>Overall, how well does this model help us understand variability n tips?</p>
 </div>
 </div>
 </section>
@@ -786,7 +819,7 @@ X_{std} = \frac{X - \bar{X}}{S_X}
 <h2>Two statistics</h2>
 <ul>
 <li><p><strong>Root mean square error, RMSE</strong>: A measure of the average error (average difference between observed and predicted values of the outcome)</p></li>
-<li><p><strong>R-squared</strong>, <span class="math inline">\(R^2\)</span> : Percentage of variability in the outcome explained by the regression model (in the context of SLR, the predictor)</p></li>
+<li><p><strong>R-squared</strong>, <span class="math inline">\(R^2\)</span> : Percentage of variability in the outcome explained by the regression model</p></li>
 </ul>
 <div class="question">
 <p>What indicates a good model fit? Higher or lower RMSE? Higher or lower <span class="math inline">\(R^2\)</span>?</p>
@@ -807,13 +840,12 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 </div>
 </div>
 </section>
-<section id="augmented-data-frame" class="slide level2">
-<h2>Augmented data frame</h2>
+<section id="compute-rmse-augmented-data-frame" class="slide level2">
+<h2>Compute RMSE: Augmented data frame</h2>
 <p>Use the <code>augment()</code> function from the <strong>broom</strong> package to add columns for predicted values, residuals, and other observation-level model statistics</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>tip_aug <span class="ot">&lt;-</span> <span class="fu">augment</span>(tip_fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><br></p>
 <div class="fragment">
 <div class="cell" data-layout-align="center">
 <div class="cell-output cell-output-stdout">
@@ -847,9 +879,10 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 1 rmse    standard        2.02</code></pre>
 </div>
 </div>
+<p><br></p>
 <div class="fragment">
 <div class="question">
-<p>Is the model a good fit for the data? How can you</p>
+<p>Is the model a good fit for the data? What information do you need to make this determination?</p>
 </div>
 </div>
 </section></section>
@@ -1031,9 +1064,9 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 </div>
 </div><div class="column" style="width:50%;">
 <ul>
-<li><span class="math inline">\(SST\)</span>: Total sum of squares, variability of Response, <span class="math inline">\(\sum_{i = 1}^n (y_i - \bar{y})^2\)</span></li>
-<li><span class="math inline">\(SSR\)</span>: Residual sum of squares, variability of residuals, <span class="math inline">\(\sum_{i = 1}^n (y_i - \hat{y}_i)^2\)</span></li>
-<li><span class="math inline">\(SSM = SST - SSR\)</span>: Model sum of squares, variability explained by the model</li>
+<li><span class="math inline">\(SST\)</span>: Sum of squares total, variability of the response, <span class="math inline">\(\sum_{i = 1}^n (y_i - \bar{y})^2\)</span></li>
+<li><span class="math inline">\(SSR\)</span>: Sum of squares residuals, variability of residuals, <span class="math inline">\(\sum_{i = 1}^n (y_i - \hat{y}_i)^2\)</span></li>
+<li><span class="math inline">\(SSM = SST - SSR\)</span>: Sum of squares model, variability explained by the model</li>
 </ul>
 </div></div>
 </section>
@@ -1078,7 +1111,7 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 </div>
 <p><br></p>
 <center>
-<p><span class="math inline">\(SST\)</span>: Total sum of squares, variability of the response</p>
+<p><span class="math inline">\(SST\)</span>: Sum of squares total, variability of the response</p>
 <p><br></p>
 <p><span class="math inline">\(\sum_{i = 1}^n (y_i - \bar{y})^2\)</span> = 1913.11</p>
 </center>
@@ -1124,7 +1157,7 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 </div>
 <p><br></p>
 <center>
-<p><span class="math inline">\(SSR\)</span>: Residual sum of squares, variability of residuals</p>
+<p><span class="math inline">\(SSR\)</span>: Sum of squares residuals, variability of residuals</p>
 <p><br></p>
 <p><span class="math inline">\(\sum_{i = 1}^n (y_i - \hat{y}_i)^2\)</span> = 686.44</p>
 </center>
@@ -1170,7 +1203,7 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 </div>
 <p><br></p>
 <center>
-<p><span class="math inline">\(SSM\)</span>: Variability explained by the model</p>
+<p><span class="math inline">\(SSM\)</span>: Sum of squares model, Variability explained by the model</p>
 <p><br></p>
 <p><span class="math inline">\(SST - SSR\)</span> = 1226.67</p>
 </center>
@@ -1197,14 +1230,16 @@ R^2 = \frac{SSM}{SST} = 1 - \frac{SSR}{SST} = 1 - \frac{686.44}{1913.11} = 0.641
 <pre><code>[1] 0.6411891</code></pre>
 </div>
 </div>
+<div class="fragment">
 <div class="question">
 <p>Select the best interpretation for <span class="math inline">\(R^2\)</span> .</p>
 <ol type="a">
-<li>Party and age correctly predicts 64.12 % of tips.</li>
-<li>64.12 % of the variability in tips can be explained by party and age.</li>
+<li>Party and age correctly predicts 64.12% of tips.</li>
+<li>64.12% of the variability in tips can be explained by party and age.</li>
 <li>64.12% of the variability in party and age can be explained by tips.</li>
-<li>64.12% of the time a the tips can be predicted by party and age.</li>
+<li>64.12% of the time tips can be predicted by party and age.</li>
 </ol>
+</div>
 </div>
 </section>
 <section id="recap" class="slide level2">
@@ -1213,6 +1248,12 @@ R^2 = \frac{SSM}{SST} = 1 - \frac{SSR}{SST} = 1 - \frac{686.44}{1913.11} = 0.641
 <li><p>Introduced interaction terms</p></li>
 <li><p>Introduced ANOVA and sum of squares</p></li>
 <li><p>Introduced <span class="math inline">\(R^2\)</span> and RMSE</p></li>
+</ul>
+</section>
+<section id="next-class" class="slide level2">
+<h2>Next class</h2>
+<ul>
+<li>Model comparison</li>
 </ul>
 
 
