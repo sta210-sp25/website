@@ -2439,9 +2439,130 @@
   {
     "objectID": "hw/hw-02.html",
     "href": "hw/hw-02.html",
-    "title": "HW 02",
+    "title": "HW 02: Multiple linear regression",
     "section": "",
-    "text": "To be posted.",
+    "text": "Important\n\n\n\nThis assignment is due on Tuesday, February 11 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your GitHub repo\nFinal .pdf file submitted on Gradescope",
+    "crumbs": [
+      "Homework",
+      "HW 02"
+    ]
+  },
+  {
+    "objectID": "hw/hw-02.html#exercise-1",
+    "href": "hw/hw-02.html#exercise-1",
+    "title": "HW 02: Multiple linear regression",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nThere are some observations that have missing data for any of the variables of interest .\n\nRemove observations that have missing data for any of the variables of interest - Size, Theme, Pages, and Amazon_Price. Your updated data set will have 374 observations.\nWhat is a disadvantage of dropping observations that have missing values, instead of using a method to impute, i.e., fill in, the missing data? How might dropping these observations impact the generalizability of conclusions?",
+    "crumbs": [
+      "Homework",
+      "HW 02"
+    ]
+  },
+  {
+    "objectID": "hw/hw-02.html#exercise-2",
+    "href": "hw/hw-02.html#exercise-2",
+    "title": "HW 02: Multiple linear regression",
+    "section": "Exercise 2",
+    "text": "Exercise 2\n\nVisualize the distributions of the predictor variables Size, and Pages. Neatly arrange the plots using the patchwork package.\nUse the plots in part (a) to write an observation about each distribution.",
+    "crumbs": [
+      "Homework",
+      "HW 02"
+    ]
+  },
+  {
+    "objectID": "hw/hw-02.html#exercise-3",
+    "href": "hw/hw-02.html#exercise-3",
+    "title": "HW 02: Multiple linear regression",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nThe distribution of Theme is shown below. The bars are ordered by the frequency they occur in the data set.\n\nlegos |&gt;\n  count(Theme) |&gt;\nggplot(aes(x = fct_reorder(Theme, n), y = n)) +\n  geom_col() + \n    labs(title = \"Lego Set Theme\", \n         x = \"Theme\", \n         y = \"Number of LEGO sets\") + \n  coord_flip()\n\n\n\n\n\n\n\n\n\nWhat is one reason we may want to avoid putting the variable Theme in a model as is?\nWe will create a new variable that collapses some of the levels of Theme. Make a new variable called Theme_Col that has levels for the top four most frequent themes, then the category Other for all other themes.\nHow many observations are in each level for the new variable created in part (b)?\n\n\n\n\n\n\n\nNote\n\n\n\nYou will use Theme_Col, the collapsed Theme variable, for the remainder of the assignment.",
+    "crumbs": [
+      "Homework",
+      "HW 02"
+    ]
+  },
+  {
+    "objectID": "hw/hw-02.html#exercise-4",
+    "href": "hw/hw-02.html#exercise-4",
+    "title": "HW 02: Multiple linear regression",
+    "section": "Exercise 4",
+    "text": "Exercise 4\n\nFit a model using Size, Pages, and Theme_Col to predict Amazon_Price. Fit the model such that the intercept has a meaningful interpretation. Neatly display the model using three digits.\nInterpret the intercept in the context of the data.\nThe model output suggests that as the number of pages in the instruction booklet increases, the price of the set on Amazon is expected to increase. On the surface, it does not seem that the number of pages in the booklet would be a major predictor of the price on Amazon. What do you think this variable is actually measuring or is actually representing?",
+    "crumbs": [
+      "Homework",
+      "HW 02"
+    ]
+  },
+  {
+    "objectID": "hw/hw-02.html#exercise-5",
+    "href": "hw/hw-02.html#exercise-5",
+    "title": "HW 02: Multiple linear regression",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nNow let’s consider a model that allows for different effects of pages based on theme.\n\nMake a plot that can be used to visualize the effect of pages on the Amazon.com price based on the theme.\nBased on the plot in part (a), does the effect of the number of pages appear to differ based on theme? Briefly explain why or why not.\nModify the model from Exercise 4 such that the effect of the number of pages differs based on the theme. The intercept should still have a meaningful interpretation. Neatly display the model using three digits.",
+    "crumbs": [
+      "Homework",
+      "HW 02"
+    ]
+  },
+  {
+    "objectID": "hw/hw-02.html#exercise-6",
+    "href": "hw/hw-02.html#exercise-6",
+    "title": "HW 02: Multiple linear regression",
+    "section": "Exercise 6",
+    "text": "Exercise 6\n\nDescribe the effect of pages for the baseline level in the context of the data.\nDescribe the effect of pages for LEGOS in the Star Wars theme in the context of the data.\nBased on the p-values, do the data provide evidence that the effect of pages differs based on theme? Briefly explain. You can use a threshold of 0.05 for your assessment.",
+    "crumbs": [
+      "Homework",
+      "HW 02"
+    ]
+  },
+  {
+    "objectID": "hw/hw-02.html#exercise-7",
+    "href": "hw/hw-02.html#exercise-7",
+    "title": "HW 02: Multiple linear regression",
+    "section": "Exercise 7",
+    "text": "Exercise 7\n\nCompute RMSE for the model in Exercise 5. Interpret this value in the context of the data.\nCompute \\(R^2\\) for the model in Exercise 5. Interpret this value in the context of the data.\nWhich model is a better fit for the data, the model in Exercise 4 or the model in Exercise 5? Explain your response using any statistics used to make the determination.",
+    "crumbs": [
+      "Homework",
+      "HW 02"
+    ]
+  },
+  {
+    "objectID": "hw/hw-02.html#perceived-thread-of-covid-19",
+    "href": "hw/hw-02.html#perceived-thread-of-covid-19",
+    "title": "HW 02: Multiple linear regression",
+    "section": "Perceived thread of COVID-19",
+    "text": "Perceived thread of COVID-19\n\n\n\n\n\n\nImportant\n\n\n\nUse the following paper for Exercises 8 and 9.\n\n\nGarbe, Rau, and Toppe (2020) aimed to examine the relationship between personality traits, perceived threat of Covid-19 and stockpiling toilet paper. For this study, researchers conducted an online survey March 23 - 29, 2020 and used the results to fit multiple linear regression models to draw conclusions about their research questions. From their survey, they collected data on adults across 35 countries. Given the small number of responses from people outside of the United States, Canada, and Europe, only responses from people in these three locations were included in the regression analysis.\nLet’s consider their results for the model looking at the effect on perceived threat of Covid-19. The model can be found on page 6 of the paper. The perceived threat of Covid was quantified using the responses to the following survey question:\n\nHow threatened do you feel by Coronavirus? [Users select on a 10-point visual analogue scale (Not at all threatened to Extremely Threatened)]\n\nAs stated on page 5 of the paper “To ease interpretation, continuous variables were z-standardized and categorical variables were dummy-coded in all models.”\nClick here to access a PDF of the paper.",
+    "crumbs": [
+      "Homework",
+      "HW 02"
+    ]
+  },
+  {
+    "objectID": "hw/hw-02.html#exercise-8",
+    "href": "hw/hw-02.html#exercise-8",
+    "title": "HW 02: Multiple linear regression",
+    "section": "Exercise 8",
+    "text": "Exercise 8\n\nInterpret the coefficient of Age (0.072) in the context of the analysis.\nInterpret the coefficient of Place of residence in the context of the analysis. You can assume Emotionality = 0 in the interpretation.\nThe model includes an interaction between Place of residence and Emotionality. The authors describe Emotionality as a measure of “fearfulness, anxiety, dependence, sentimentality”. What does the coefficient for the interaction (0.101) mean in the context of the data?\n\n\n\n\n\n\n\nImportant\n\n\n\nThe following are general questions about linear regression. They are not specific to any of the previous analyses.",
+    "crumbs": [
+      "Homework",
+      "HW 02"
+    ]
+  },
+  {
+    "objectID": "hw/hw-02.html#exercise-9",
+    "href": "hw/hw-02.html#exercise-9",
+    "title": "HW 02: Multiple linear regression",
+    "section": "Exercise 9",
+    "text": "Exercise 9\nProve that the maximum value of \\(R^2\\) must be less than 1 if the data set contains observations such that there are different observed values of the response for the same value of the predictor (e.g., the data set contains observations \\((x_i, y_i)\\) and \\((x_j, y_j)\\) such that \\(x_i = x_j\\) and \\(y_i \\neq y_j\\) .",
+    "crumbs": [
+      "Homework",
+      "HW 02"
+    ]
+  },
+  {
+    "objectID": "hw/hw-02.html#exercise-10",
+    "href": "hw/hw-02.html#exercise-10",
+    "title": "HW 02: Multiple linear regression",
+    "section": "Exercise 10",
+    "text": "Exercise 10\nIn lecture we discussed how the distribution of the error terms (and thus the distribution of the response variable \\(Y\\)) for a given value of the predictor \\(X\\) has a variance of \\(\\sigma^2_{\\epsilon}\\). Therefore, we are assuming this variance is the same for all values of the predictor when we conduct inference.\nBriefly explain why this assumption is important when we conduct inference based on mathematical models but is not necessary for conducting simulation-based inference.",
     "crumbs": [
       "Homework",
       "HW 02"
