@@ -71,7 +71,9 @@ legos <- read_csv("data/lego-sample.csv") |>
   drop_na()
 ```
 
-# Exercises
+# Exercises[^1]
+
+[^1]: Exercise 9 is based on an exercise in @montgomery2021introduction .
 
 ::: callout-important
 All narrative should be written in complete sentences, and all visualizations should have informative titles and axis labels.
@@ -199,17 +201,17 @@ To submit your assignment:
 
 | Component             | Points |
 |-----------------------|--------|
-| Ex 1                  |        |
-| Ex 2                  |        |
-| Ex 3                  |        |
-| Ex 4                  |        |
-| Ex 5                  |        |
-| Ex 6                  |        |
-| Ex 7                  |        |
-| Ex 8                  |        |
-| Ex 9                  |        |
-| Ex 10                 |        |
-| Workflow & formatting |        |
+| Ex 1                  | 3      |
+| Ex 2                  | 5      |
+| Ex 3                  | 4      |
+| Ex 4                  | 6      |
+| Ex 5                  | 6      |
+| Ex 6                  | 6      |
+| Ex 7                  | 4      |
+| Ex 8                  | 6      |
+| Ex 9                  | 4      |
+| Ex 10                 | 3      |
+| Workflow & formatting | 3      |
 
 The “Workflow & formatting” grade is to assess the reproducible workflow and document format for the applied exercises. This includes having at least 3 informative commit messages, a neatly organized document with readable code and your name and the date updated in the YAML.
 
