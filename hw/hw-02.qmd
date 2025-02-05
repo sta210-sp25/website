@@ -86,7 +86,7 @@ b.  What is a disadvantage of dropping observations that have missing values, in
 
 ## Exercise 2
 
-a.  Visualize the distributions of the predictor variables `Size`, and `Pages`. Neatly arrange the plots using the [patchwork](https://patchwork.data-imaginist.com/index.html) package.
+a.  Visualize the distributions of the predictor variables `Size` and `Pages`. Neatly arrange the plots using the [patchwork](https://patchwork.data-imaginist.com/index.html) package.
 b.  Use the plots in part (a) to write an observation about each distribution.
 
 ## Exercise 3
@@ -138,8 +138,6 @@ c.  Based on the p-values, do the data provide evidence that the effect of pages
 a.  Compute RMSE for the model in Exercise 5. Interpret this value in the context of the data.
 
 b.  Compute $R^2$ for the model in Exercise 5. Interpret this value in the context of the data.
-
-c.  Which model is a better fit for the data, the model in Exercise 4 or the model in Exercise 5? Explain your response using any statistics used to make the determination.
 
 ## Perceived thread of COVID-19
 

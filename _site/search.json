@@ -2463,7 +2463,7 @@
     "href": "hw/hw-02.html#exercise-2",
     "title": "HW 02: Multiple linear regression",
     "section": "Exercise 2",
-    "text": "Exercise 2\n\nVisualize the distributions of the predictor variables Size, and Pages. Neatly arrange the plots using the patchwork package.\nUse the plots in part (a) to write an observation about each distribution.",
+    "text": "Exercise 2\n\nVisualize the distributions of the predictor variables Size and Pages. Neatly arrange the plots using the patchwork package.\nUse the plots in part (a) to write an observation about each distribution.",
     "crumbs": [
       "Homework",
       "HW 02"
@@ -2518,7 +2518,7 @@
     "href": "hw/hw-02.html#exercise-7",
     "title": "HW 02: Multiple linear regression",
     "section": "Exercise 7",
-    "text": "Exercise 7\n\nCompute RMSE for the model in Exercise 5. Interpret this value in the context of the data.\nCompute \\(R^2\\) for the model in Exercise 5. Interpret this value in the context of the data.\nWhich model is a better fit for the data, the model in Exercise 4 or the model in Exercise 5? Explain your response using any statistics used to make the determination.",
+    "text": "Exercise 7\n\nCompute RMSE for the model in Exercise 5. Interpret this value in the context of the data.\nCompute \\(R^2\\) for the model in Exercise 5. Interpret this value in the context of the data.",
     "crumbs": [
       "Homework",
       "HW 02"
