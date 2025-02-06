@@ -2945,28 +2945,28 @@
     "href": "ae/ae-06-model-compare.html#exercise-1",
     "title": "AE 06: Model comparison",
     "section": "Exercise 1",
-    "text": "Exercise 1\nSplit the data into training (80%) and testing (20%) sets. Use seed 2025.\n\n# add code here"
+    "text": "Exercise 1\nSplit the data into training (80%) and testing (20%) sets. Use seed 2025."
   },
   {
     "objectID": "ae/ae-06-model-compare.html#exercise-2",
     "href": "ae/ae-06-model-compare.html#exercise-2",
     "title": "AE 06: Model comparison",
     "section": "Exercise 2",
-    "text": "Exercise 2\nUse the training data to fit a model using Party, Age, and Meal to predict tips. Compute the \\(R^2\\) and \\(Adj. R^2\\) for this model.\n\n# add code here"
+    "text": "Exercise 2\nUse the training data to fit a model using Party, Age, and Meal to predict tips. Compute the \\(R^2\\) and \\(Adj. R^2\\) for this model."
   },
   {
     "objectID": "ae/ae-06-model-compare.html#exercise-3",
     "href": "ae/ae-06-model-compare.html#exercise-3",
     "title": "AE 06: Model comparison",
     "section": "Exercise 3",
-    "text": "Exercise 3\nNow fit a model predicting tips using Party, Age, and Meal, such that the effect of party can differ by Meal. Compute \\(R^2\\) and \\(Adj. R^2\\) for this model.\n\n# add code here"
+    "text": "Exercise 3\nNow fit a model predicting tips using Party, Age, and Meal, such that the effect of party can differ by Meal. Compute \\(R^2\\) and \\(Adj. R^2\\) for this model."
   },
   {
     "objectID": "ae/ae-06-model-compare.html#exercise-4",
     "href": "ae/ae-06-model-compare.html#exercise-4",
     "title": "AE 06: Model comparison",
     "section": "Exercise 4",
-    "text": "Exercise 4\n\nWhich model do you choose - the model from Exercise 2 or Exercise 3? Why?\nCompute RMSE for the selected model.\n\n\n# add code here"
+    "text": "Exercise 4\n\nWhich model do you choose - the model from Exercise 2 or Exercise 3? Why?\nCompute RMSE for the selected model."
   },
   {
     "objectID": "ae/ae-06-model-compare.html#exercise-5",
