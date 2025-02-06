@@ -6,8 +6,6 @@ editor: visual
 ---
 
 ::: callout-important
-Go to the [course GitHub organization](https://github.com/sta210-sp25) and locate your `ae-06` repo to get started.
-
 Render, commit, and push your responses to GitHub by the end of class.
 :::
 
@@ -47,7 +45,7 @@ tips <- read_csv("data/tip-data.csv")
 
 ## Exercise 1
 
-Split the data into training (80%) and testing (20%) sets. Use seed `210`.
+Split the data into training (80%) and testing (20%) sets. Use seed `2025`.
 
 ```{r}
 #| label: ex-1
@@ -93,9 +91,9 @@ Now fit a model predicting tips using `Party`, `Age`, and `Meal`, such that the 
 
 Now let's use the testing data to assess the performance of the model selected in Exercise 4.
 
-Compute the predicted tips for the testing data.
+-   Compute the predicted tips for the testing data. Add the predictions to the testing data set.
 
-Compute RMSE and R-sq for the testing data.
+-   Compute RMSE and $R^2$ for the testing data.
 
 ```{r}
 #| label: ex-5

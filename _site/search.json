@@ -2931,7 +2931,7 @@
     "href": "ae/ae-06-model-compare.html",
     "title": "AE 06: Model comparison",
     "section": "",
-    "text": "Important\n\n\n\nGo to the course GitHub organization and locate your ae-06 repo to get started.\nRender, commit, and push your responses to GitHub by the end of class.\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(knitr)"
+    "text": "Important\n\n\n\nRender, commit, and push your responses to GitHub by the end of class.\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(knitr)"
   },
   {
     "objectID": "ae/ae-06-model-compare.html#data",
@@ -2945,7 +2945,7 @@
     "href": "ae/ae-06-model-compare.html#exercise-1",
     "title": "AE 06: Model comparison",
     "section": "Exercise 1",
-    "text": "Exercise 1\nSplit the data into training (80%) and testing (20%) sets. Use seed 210.\n\n# add code here"
+    "text": "Exercise 1\nSplit the data into training (80%) and testing (20%) sets. Use seed 2025.\n\n# add code here"
   },
   {
     "objectID": "ae/ae-06-model-compare.html#exercise-2",
@@ -2973,7 +2973,7 @@
     "href": "ae/ae-06-model-compare.html#exercise-5",
     "title": "AE 06: Model comparison",
     "section": "Exercise 5",
-    "text": "Exercise 5\nNow let’s use the testing data to assess the performance of the model selected in Exercise 4.\nCompute the predicted tips for the testing data.\nCompute RMSE and R-sq for the testing data.\n\n# add code here"
+    "text": "Exercise 5\nNow let’s use the testing data to assess the performance of the model selected in Exercise 4.\n\nCompute the predicted tips for the testing data. Add the predictions to the testing data set.\nCompute RMSE and \\(R^2\\) for the testing data.\n\n\n# add code here"
   },
   {
     "objectID": "ae/ae-06-model-compare.html#exercise-6",
