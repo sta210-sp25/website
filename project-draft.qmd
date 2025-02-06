@@ -10,23 +10,23 @@ library(broom)
 
 ## Project milestones
 
-[Research topics](#research-topics) due Tuesday, February 11
+[Research topics](#research-topics) due Thursday, February 13
 
-[Project proposal](#project-proposal) due Tuesday, February 25
+[Project proposal](#project-proposal) <!--# due Tuesday, February 25-->
 
-[Exploratory data analysis](#eda) due Tuesday, March 18
+[Exploratory data analysis](#eda) <!--# due Tuesday, March 18-->
 
-[Presentation](#presentation) + [Presentation comments](#presentation-comments) Friday, March 28 (in lab)
+[Presentation](#presentation) + [Presentation comments](#presentation-comments) <!--# Friday, March 28 (in lab)-->
 
-[Analysis draft + peer review](#draft-report-peer-review) Friday, April 11 (peer review in lab)
+[Analysis draft + peer review](#draft-report-peer-review) <!--# Friday, April 11 (peer review in lab)-->
 
-[Written report](#written-report) due Monday, April 28
+[Written report](#written-report) <!--# due Monday, April 28-->
 
-[Project highlights] due Wednesday, April 30
+[Project highlights] <!--# due Wednesday, April 30-->
 
-[Reproducibility + organization](#reproducibility-organization) due Wednesday, April 30
+[Reproducibility + organization](#reproducibility-organization) <!--# due Wednesday, April 30-->
 
-[Final project survey] due Thursday, May 1
+[Final project survey] <!--# due Thursday, May 1-->
 
 ## Introduction
 
@@ -66,7 +66,7 @@ Develop three potential research topics. Include the following for <u>each</u> t
 
 ### Submission
 
-Write your responses in `research-topics.qmd` in your team's project GitHub repo. Push the qmd and rendered pdf documents to GitHub by the deadline, **Tuesday, February 11 at 11:59pm**.
+Write your responses in `research-topics.qmd` in your team's project GitHub repo. Push the qmd and rendered pdf documents to GitHub by the deadline, **Thursday, February 13 at 11:59pm**.
 
 ## Project proposal {#project-proposal}
 
