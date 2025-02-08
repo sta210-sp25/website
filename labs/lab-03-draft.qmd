@@ -1,6 +1,6 @@
 ---
-title: "Lab 02: Inference for regression using mathematical models"
-subtitle: "Coffee ratings"
+title: "Lab 03: Model comparison"
+subtitle: "Candy competition"
 execute:
   freeze: auto
   echo: true
@@ -10,7 +10,7 @@ execute:
 ---
 
 ::: callout-important
-This lab is due on **Thursday, February 6 at 11:59pm.** To be considered on time, the following must be done by the due date:
+This lab is due on **Thursday, February 13 at 11:59pm.** To be considered on time, the following must be done by the due date:
 
 -   Final `.qmd` and `.pdf` files pushed to your GitHub repo
 
@@ -32,7 +32,7 @@ By the end of the lab you will be able to
 
 # Getting started
 
--   Go to the [sta210-sp25](https://www.github.com/sta210-sp25) organization on GitHub. Click on the repo with the prefix **lab-02**. It contains the starter documents you need to complete the lab.
+-   Go to the [sta210-sp25](https://www.github.com/sta210-sp25) organization on GitHub. Click on the repo with the prefix **lab-03**. It contains the starter documents you need to complete the lab.
 
 -   Clone the repo and start a new project in RStudio. See the [Lab 00 instructions](https://sta210-sp25.netlify.app/labs/lab-00#getting-started) for details on cloning a repo and starting a new project in R.
 
@@ -63,14 +63,14 @@ library(knitr)
 library(fivethirtyeight)
 ```
 
-# Data: Candy competition 
+# Data: Candy competition
 
 The data from this lab comes from the the article FiveThirtyEight [*The Ultimate Halloween Candy Power Ranking*](https://fivethirtyeight.com/features/the-ultimate-halloween-candy-power-ranking) by Walt Hickey. To collect data, Hickey and collaborators at FiveThirtyEight set up an experiment people could vote on a series of randomly generated candy matchups (e.g. Reeses vs. Skittles). Click [here](http://walthickey.com/2017/10/18/whats-the-best-halloween-candy/) to check out some of the match ups.
 
 The data set contains the characteristics and win percentage from 85 candies in the experiment. The variables are
 
 | Variable | Description |
-|-----------------|-------------------------------------------------------|
+|------------------|------------------------------------------------------|
 | `chocolate` | Does it contain chocolate? |
 | `fruity` | Is it fruit flavored? |
 | `caramel` | Is there caramel in the candy? |

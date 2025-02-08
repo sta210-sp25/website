@@ -1,0 +1,69 @@
+---
+title: "Lab 02"
+subtitle: "Model comparison + Research topics!"
+date: "2025-02-10"
+date-format: "MMM DD, YYYY"
+footer: "[🔗 STA 210 - Spring 2025](https://sta210-sp25.netlify.app)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: true
+    incremental: false 
+    chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+execute:
+  freeze: auto
+  echo: true
+knitr:
+  opts_chunk: 
+    R.options:      
+    width: 200
+bibliography: references.bib
+---
+
+## Goals
+
+-   Project
+-   Lab 03: Model comparison
+
+## Final project
+
+-   **Goal**: Use the methods from STA 210 to analyze data and answer a research question developed by your team
+
+-   **Primary deliverables:**
+
+    1.  an in-person presentation about the exploratory data analysis and initial modeling
+
+    2.  a written, reproducible final report detailing your analysis
+
+    3.  a summary of your project highlights to share with the class
+
+    4.  a GitHub repository containing all work from the project
+
+-   There are periodic project milestones throughout the semester to help you work towards the primary deliverables
+
+## Today’s focus: Research topics
+
+-   **Goals:** Identify three potential research topics your team is interested in investigating and draft research questions.
+
+-   You do [**not**]{.underline} need to have a data set at this point
+
+-   You can discuss the topics you put in the student survey to help generate ideas
+
+-   **Submission (due Feb 16)**: All work for the project will be submitted in your team’s GitHub repo. You will receive feedback via an Issue on GitHub to model a workflow often used in practice.
+
+🔗[https://sta210-sp25.netlify.app/project](https://sta210-sp25.netlify.app/project.html)
+
+## Today's lab
+
+Today's lab focuses on using model comparsion to choose a model that can be used to describe what makes a good candy.
+
+<br>
+
+🔗 <https://sta210-sp25.netlify.app/labs/lab-03>

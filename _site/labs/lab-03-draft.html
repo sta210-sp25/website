@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lab 02: Inference for regression using mathematical models – STA 210 - Spring 2025</title>
+<title>Lab 03: Model comparison – STA 210 - Spring 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -142,7 +142,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lab 02: Inference for regression using mathematical models</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lab 03: Model comparison</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -417,8 +417,8 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 02: Inference for regression using mathematical models</h1>
-<p class="subtitle lead">Coffee ratings</p>
+<h1 class="title">Lab 03: Model comparison</h1>
+<p class="subtitle lead">Candy competition</p>
 </div>
 
 
@@ -445,7 +445,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This lab is due on <strong>Thursday, February 6 at 11:59pm.</strong> To be considered on time, the following must be done by the due date:</p>
+<p>This lab is due on <strong>Thursday, February 13 at 11:59pm.</strong> To be considered on time, the following must be done by the due date:</p>
 <ul>
 <li><p>Final <code>.qmd</code> and <code>.pdf</code> files pushed to your GitHub repo</p></li>
 <li><p>Final <code>.pdf</code> file submitted on Gradescope</p></li>
@@ -469,7 +469,7 @@ Important
 <section id="getting-started" class="level1">
 <h1>Getting started</h1>
 <ul>
-<li><p>Go to the <a href="https://www.github.com/sta210-sp25">sta210-sp25</a> organization on GitHub. Click on the repo with the prefix <strong>lab-02</strong>. It contains the starter documents you need to complete the lab.</p></li>
+<li><p>Go to the <a href="https://www.github.com/sta210-sp25">sta210-sp25</a> organization on GitHub. Click on the repo with the prefix <strong>lab-03</strong>. It contains the starter documents you need to complete the lab.</p></li>
 <li><p>Clone the repo and start a new project in RStudio. See the <a href="https://sta210-sp25.netlify.app/labs/lab-00#getting-started">Lab 00 instructions</a> for details on cloning a repo and starting a new project in R.</p></li>
 <li><p>Each person on the team should clone the repository and open a new project in RStudio. Throughout the lab, each person should get a chance to make commits and push to the repo.</p></li>
 <li><p><strong>Do not make any changes to the <code>.qmd</code> file until the instructions tell you do to so.</strong></p></li>
@@ -502,8 +502,8 @@ Important
 <p>The data set contains the characteristics and win percentage from 85 candies in the experiment. The variables are</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 23%">
-<col style="width: 76%">
+<col style="width: 25%">
+<col style="width: 75%">
 </colgroup>
 <thead>
 <tr class="header">
