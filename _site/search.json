@@ -3976,28 +3976,28 @@
   {
     "objectID": "slides/lab-03.html#goals",
     "href": "slides/lab-03.html#goals",
-    "title": "Lab 02",
+    "title": "Lab 03",
     "section": "Goals",
     "text": "Goals\n\nProject\nLab 03: Model comparison"
   },
   {
     "objectID": "slides/lab-03.html#final-project",
     "href": "slides/lab-03.html#final-project",
-    "title": "Lab 02",
+    "title": "Lab 03",
     "section": "Final project",
     "text": "Final project\n\nGoal: Use the methods from STA 210 to analyze data and answer a research question developed by your team\nPrimary deliverables:\n\nan in-person presentation about the exploratory data analysis and initial modeling\na written, reproducible final report detailing your analysis\na summary of your project highlights to share with the class\na GitHub repository containing all work from the project\n\nThere are periodic project milestones throughout the semester to help you work towards the primary deliverables"
   },
   {
     "objectID": "slides/lab-03.html#todays-focus-research-topics",
     "href": "slides/lab-03.html#todays-focus-research-topics",
-    "title": "Lab 02",
+    "title": "Lab 03",
     "section": "Today’s focus: Research topics",
     "text": "Today’s focus: Research topics\n\nGoals: Identify three potential research topics your team is interested in investigating and draft research questions.\nYou do not need to have a data set at this point\nYou can discuss the topics you put in the student survey to help generate ideas\nSubmission (due Feb 16): All work for the project will be submitted in your team’s GitHub repo. You will receive feedback via an Issue on GitHub to model a workflow often used in practice.\n\n🔗https://sta210-sp25.netlify.app/project"
   },
   {
     "objectID": "slides/lab-03.html#todays-lab",
     "href": "slides/lab-03.html#todays-lab",
-    "title": "Lab 02",
+    "title": "Lab 03",
     "section": "Today’s lab",
     "text": "Today’s lab\nToday’s lab focuses on using model comparsion to choose a model that can be used to describe what makes a good candy.\n\n🔗 https://sta210-sp25.netlify.app/labs/lab-03"
   },

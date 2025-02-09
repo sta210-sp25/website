@@ -1,5 +1,5 @@
 ---
-title: "Lab 02"
+title: "Lab 03"
 subtitle: "Model comparison + Research topics!"
 date: "2025-02-10"
 date-format: "MMM DD, YYYY"
