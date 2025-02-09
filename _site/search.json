@@ -3168,11 +3168,11 @@
     ]
   },
   {
-    "objectID": "hw/hw-02.html#perceived-thread-of-covid-19",
-    "href": "hw/hw-02.html#perceived-thread-of-covid-19",
+    "objectID": "hw/hw-02.html#perceived-threat-of-covid-19",
+    "href": "hw/hw-02.html#perceived-threat-of-covid-19",
     "title": "HW 02: Multiple linear regression",
-    "section": "Perceived thread of COVID-19",
-    "text": "Perceived thread of COVID-19\n\n\n\n\n\n\nImportant\n\n\n\nUse the following paper for Exercises 8 and 9.\n\n\nGarbe, Rau, and Toppe (2020) aimed to examine the relationship between personality traits, perceived threat of Covid-19 and stockpiling toilet paper. For this study, researchers conducted an online survey March 23 - 29, 2020 and used the results to fit multiple linear regression models to draw conclusions about their research questions. From their survey, they collected data on adults across 35 countries. Given the small number of responses from people outside of the United States, Canada, and Europe, only responses from people in these three locations were included in the regression analysis.\nLet’s consider their results for the model looking at the effect on perceived threat of Covid-19. The model can be found on page 6 of the paper. The perceived threat of Covid was quantified using the responses to the following survey question:\n\nHow threatened do you feel by Coronavirus? [Users select on a 10-point visual analogue scale (Not at all threatened to Extremely Threatened)]\n\nAs stated on page 5 of the paper “To ease interpretation, continuous variables were z-standardized and categorical variables were dummy-coded in all models.”\nClick here to access a PDF of the paper.",
+    "section": "Perceived threat of COVID-19",
+    "text": "Perceived threat of COVID-19\n\n\n\n\n\n\nImportant\n\n\n\nUse the following paper for Exercises 8 and 9.\n\n\nGarbe, Rau, and Toppe (2020) aimed to examine the relationship between personality traits, perceived threat of Covid-19 and stockpiling toilet paper. For this study, researchers conducted an online survey March 23 - 29, 2020 and used the results to fit multiple linear regression models to draw conclusions about their research questions. From their survey, they collected data on adults across 35 countries. Given the small number of responses from people outside of the United States, Canada, and Europe, only responses from people in these three locations were included in the regression analysis.\nLet’s consider their results for the model looking at the effect on perceived threat of Covid-19. The model can be found on page 6 of the paper. The perceived threat of Covid was quantified using the responses to the following survey question:\n\nHow threatened do you feel by Coronavirus? [Users select on a 10-point visual analogue scale (Not at all threatened to Extremely Threatened)]\n\nAs stated on page 5 of the paper “To ease interpretation, continuous variables were z-standardized and categorical variables were dummy-coded in all models.”\nClick here to access a PDF of the paper.",
     "crumbs": [
       "Homework",
       "HW 02"

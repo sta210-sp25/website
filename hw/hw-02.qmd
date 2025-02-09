@@ -141,7 +141,7 @@ a.  Compute RMSE for the model in Exercise 5. Interpret this value in the contex
 
 b.  Compute $R^2$ for the model in Exercise 5. Interpret this value in the context of the data.
 
-## Perceived thread of COVID-19
+## Perceived threat of COVID-19
 
 ::: callout-important
 Use the following paper for Exercises 8 and 9.
