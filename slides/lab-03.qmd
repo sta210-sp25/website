@@ -29,7 +29,7 @@ bibliography: references.bib
 
 ## Goals
 
--   Project
+-   Start final project
 -   Lab 03: Model comparison
 
 ## Final project
@@ -62,7 +62,7 @@ bibliography: references.bib
 
 ## Today's lab
 
-Today's lab focuses on using model comparsion to choose a model that can be used to describe what makes a good candy.
+Today's lab focuses on using model comparison to choose a model that can be used to describe what makes the best candy.
 
 <br>
 
