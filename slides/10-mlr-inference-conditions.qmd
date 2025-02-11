@@ -54,9 +54,22 @@ knitr::opts_chunk$set(
 
     -   take-home: 10 - 15 points
 -   In-class (35 -40 pts): 75 minutes during February 18 lecture
-    -   Will be randomly assigned to exam room
 -   Take-home (10 -15 pts): released after class on Tuesday
 -   If you miss any part of the exam for an excused absence (with academic dean’s note or other official documentation), your Exam 02 score will be counted twice
+
+## Tips for studying 
+
+-   Review exercises in AEs and assignments, asking “why” as you review your process and reasoning
+
+    -   e.g., Why do we include “holding all else constant” in interpretations?
+
+-   Focus on understanding not memorization
+
+-   Explain concepts / process to others
+
+-   Ask questions in office hours
+
+-   Review lecture recordings as needed
 
 ## Topics
 
@@ -150,7 +163,7 @@ where
 ```{r}
 #| echo: false
 rail_trail <- read_csv(here::here("slides", "data/rail_trail.csv"))
-rail_trail
+rail_trail |> slice(1:8)
 ```
 
 Source: [Pioneer Valley Planning Commission](http://www.fvgreenway.org/pdfs/Northampton-Bikepath-Volume-Counts%20_05_LTA.pdf) via the **mosaicData** package.
@@ -234,7 +247,7 @@ $$y_i = \beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + \dots + \beta_p x_{ip} + \ep
 
 ------------------------------------------------------------------------
 
-## Estimating $\sigma_\epsilon$
+## Estimating $\sigma_\epsilon$ {.midi}
 
 For a given observation $(x_{i1}, x_{i2}, \ldots,x_{ip}, y_i)$ the residual is $$e_i = y_{i} - (\hat{\beta}_0 + \hat{\beta}_1 x_{i1} + \hat{\beta}_{2} x_{i2} + \dots + \hat{\beta}_p x_{ip})$$
 
@@ -252,7 +265,7 @@ As with SLR, we use $\hat{\sigma}_{\epsilon}$ to calculate $SE(\hat{\beta}_j)$, 
 
 ## MLR hypothesis test: hightemp {.midi}
 
-1.  **Set hypotheses:** $H_0: \beta_{hightemp} = 0$ vs. $H_A: \beta_{hightemp} \ne 0$, given `season` is in the model
+1.  **Set hypotheses:** $H_0: \beta_{hightemp} = 0$ vs. $H_a: \beta_{hightemp} \ne 0$, given `season` is in the model
 
 . . .
 
@@ -262,75 +275,7 @@ As with SLR, we use $\hat{\sigma}_{\epsilon}$ to calculate $SE(\hat{\beta}_j)$, 
 
 3.  **State the conclusion:** The p-value is small, so we reject $H_0$. The data provide strong evidence that high temperature for the day is a useful predictor in a model that already contains the season as a predictor for number of daily riders.
 
-## Model for `season = Spring` 
-
-```{r}
-#| echo: false
-
-tidy(rt_mlr_main_fit) |> kable(digits = 2)
-```
-
-<br>
-
-. . .
-
-$$
-\begin{aligned}
-\widehat{volume} &= -125.23 + 7.54 \times \texttt{hightemp} + 5.13 \times \texttt{seasonSpring} - 76.84 \times \texttt{seasonSummer} \\
-&= -125.23 + 7.54 \times \texttt{hightemp} + 5.13 \times 1 - 76.84 \times 0 \\
-&= -120.10 + 7.54 \times \texttt{hightemp}
-\end{aligned}
-$$
-
-## Model for `season = Summer`
-
-```{r}
-#| echo: false
-
-tidy(rt_mlr_main_fit) |> kable(digits = 2)
-```
-
-<br>
-
-. . .
-
-$$
-\begin{aligned}
-\widehat{volume} &= -125.23 + 7.54 \times \texttt{hightemp} + 5.13 \times \texttt{seasonSpring} - 76.84 \times \texttt{seasonSummer} \\
-&= -125.23 + 7.54 \times \texttt{hightemp} + 5.13 \times 0 - 76.84 \times 1 \\
-&= -202.07 + 7.54 \times \texttt{hightemp}
-\end{aligned}
-$$
-
-## The model for `season = Fall` {.smaller}
-
-```{r}
-#| echo: false
-
-tidy(rt_mlr_main_fit) |> kable(digits = 2)
-```
-
-<br>
-
-. . .
-
-$$
-\begin{aligned}
-\widehat{volume} &= -125.23 + 7.54 \times \texttt{hightemp} + 5.13 \times \texttt{seasonSpring} - 76.84 \times \texttt{seasonSummer} \\
-&= -125.23 + 7.54 \times \texttt{hightemp} + 5.13 \times 0 - 76.84 \times 0 \\
-&= -125.23 + 7.54 \times \texttt{hightemp}
-\end{aligned}
-$$
-
-## The models
-
-Same slope, different intercepts
-
--   `season = Spring`: $-120.10 + 7.54 \times \texttt{hightemp}$
--   `season = Summer`: $-202.07 + 7.54 \times \texttt{hightemp}$
--   `season = Fall`: $-125.23 + 7.54 \times \texttt{hightemp}$
-
-## Interaction terms
+## Interaction terms {.midi}
 
 ```{r}
 #| echo: false
@@ -351,20 +296,18 @@ Do the data provide evidence of a significant interaction effect? Comment on the
 
 # Confidence interval for $\beta_j$
 
-## Confidence interval for $\beta_j$
+## Confidence interval for $\beta_j$ {.midi}
 
+::: incremental
 -   The $C\%$ confidence interval for $\beta_j$ $$\hat{\beta}_j \pm t^* SE(\hat{\beta}_j)$$ where $t^*$ follows a $t$ distribution with $n - p - 1$ degrees of freedom.
-
-<br>
-
 -   **Generically**: We are $C\%$ confident that the interval LB to UB contains the population coefficient of $x_j$.
-
--   **In context:** We are $C\%$ confident that for every one unit increase in $x_j$, we expect $y$ to change by LB to UB units, on average, holding all else constant.
+-   **In context:** We are $C\%$ confident that for every one unit increase in $x_j$, $y$ changes by LB to UB units, on average, holding all else constant.
+:::
 
 ## Confidence interval for $\beta_j$
 
 ```{r}
-tidy(rt_mlr_main_fit, conf.int = TRUE) |>
+tidy(rt_mlr_main_fit, conf.int = TRUE, conf.level = 0.95) |>
   kable(digits= 2)
 ```
 
@@ -439,7 +382,7 @@ Including all available predictors
 **Fit:**
 
 ```{r}
-rt_full_fit <- lm(volume ~ ., data = rail_trail)
+rt_full_fit <- lm(volume ~ . , data = rail_trail)
 ```
 
 . . .
@@ -450,7 +393,7 @@ rt_full_fit <- lm(volume ~ ., data = rail_trail)
 tidy(rt_full_fit) |> kable(digits = 2)
 ```
 
-. . .
+## Full model
 
 **Augment:**
 
@@ -528,12 +471,27 @@ p6 <- ggplot(data = rt_full_aug, aes(x = day_type, y = .resid)) +
 
 -   The plots of residuals vs. `hightemp` and `avgtemp` appear to have a parabolic pattern.
 
--   The linearity condition does not appear to be satisfied given these plots.
+-   Potential violation in the linearity condition.
 
 . . .
 
 ::: question
 Given this conclusion, what might be a next step in the analysis?
+:::
+
+## Consider adding quadratic terms  {.smaller}
+
+```{r}
+rt_full_fit_2 <- lm(volume ~ . + I(hightemp^2) + I(avgtemp^2), data = rail_trail)
+```
+
+```{r}
+#| echo: false
+tidy(rt_full_fit_2, conf.int = TRUE) |> kable(digits = 2)
+```
+
+::: question
+Is there evidence of a statistically significant quadratic effect?
 :::
 
 ## Checking constant variance
@@ -556,7 +514,7 @@ Does the constant variance condition appear to be satisfied?
 . . .
 
 ::: question
-We will talk about to address this in an upcoming class.
+What are the implications for our analysis results? We will talk about how to address this in an upcoming class.
 :::
 
 ## Checking normality
@@ -600,8 +558,12 @@ ggplot(rt_full_aug, aes(y = .resid, x = 1:nrow(rt_full_aug))) +
 
 -   Independence condition appears to be satisfied, as far as we can evaluate it.
 
-## Recap 
+## Recap
 
 -   Reviewed model comparison
 -   Introduced inference for multiple linear regression
 -   Checked model conditions for linear regression
+
+## Next class
+
+-   Exam 01 review

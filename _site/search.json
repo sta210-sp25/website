@@ -4978,7 +4978,14 @@
     "href": "slides/10-mlr-inference-conditions-notes.html#exam-01",
     "title": "MLR: Inference + Model conditions",
     "section": "Exam 01",
-    "text": "Exam 01\n\n50 points total\n\nin-class: 35-40 points\ntake-home: 10 - 15 points\n\nIn-class (35 -40 pts): 75 minutes during February 18 lecture\n\nWill be randomly assigned to exam room\n\nTake-home (10 -15 pts): released after class on Tuesday\nIf you miss any part of the exam for an excused absence (with academic dean’s note or other official documentation), your Exam 02 score will be counted twice"
+    "text": "Exam 01\n\n50 points total\n\nin-class: 35-40 points\ntake-home: 10 - 15 points\n\nIn-class (35 -40 pts): 75 minutes during February 18 lecture\nTake-home (10 -15 pts): released after class on Tuesday\nIf you miss any part of the exam for an excused absence (with academic dean’s note or other official documentation), your Exam 02 score will be counted twice"
+  },
+  {
+    "objectID": "slides/10-mlr-inference-conditions-notes.html#tips-for-studying",
+    "href": "slides/10-mlr-inference-conditions-notes.html#tips-for-studying",
+    "title": "MLR: Inference + Model conditions",
+    "section": "Tips for studying",
+    "text": "Tips for studying\n\nReview exercises in AEs and assignments, asking “why” as you review your process and reasoning\n\ne.g., Why do we include “holding all else constant” in interpretations?\n\nFocus on understanding not memorization\nExplain concepts / process to others\nAsk questions in office hours\nReview lecture recordings as needed"
   },
   {
     "objectID": "slides/10-mlr-inference-conditions-notes.html#topics",
@@ -5020,7 +5027,7 @@
     "href": "slides/10-mlr-inference-conditions-notes.html#data-rail_trail",
     "title": "MLR: Inference + Model conditions",
     "section": "Data: rail_trail",
-    "text": "Data: rail_trail\n\n\nThe Pioneer Valley Planning Commission (PVPC) collected data for ninety days from April 5, 2005 to November 15, 2005.\nData collectors set up a laser sensor, with breaks in the laser beam recording when a rail-trail user passed the data collection station.\n\n\n\n\n# A tibble: 90 × 7\n   volume hightemp avgtemp season cloudcover precip day_type\n    &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;   \n 1    501       83    66.5 Summer       7.60 0      Weekday \n 2    419       73    61   Summer       6.30 0.290  Weekday \n 3    397       74    63   Spring       7.5  0.320  Weekday \n 4    385       95    78   Summer       2.60 0      Weekend \n 5    200       44    48   Spring      10    0.140  Weekday \n 6    375       69    61.5 Spring       6.60 0.0200 Weekday \n 7    417       66    52.5 Spring       2.40 0      Weekday \n 8    629       66    52   Spring       0    0      Weekend \n 9    533       80    67.5 Summer       3.80 0      Weekend \n10    547       79    62   Summer       4.10 0      Weekday \n# ℹ 80 more rows\n\n\nSource: Pioneer Valley Planning Commission via the mosaicData package."
+    "text": "Data: rail_trail\n\n\nThe Pioneer Valley Planning Commission (PVPC) collected data for ninety days from April 5, 2005 to November 15, 2005.\nData collectors set up a laser sensor, with breaks in the laser beam recording when a rail-trail user passed the data collection station.\n\n\n\n\n# A tibble: 8 × 7\n  volume hightemp avgtemp season cloudcover precip day_type\n   &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;   \n1    501       83    66.5 Summer       7.60 0      Weekday \n2    419       73    61   Summer       6.30 0.290  Weekday \n3    397       74    63   Spring       7.5  0.320  Weekday \n4    385       95    78   Summer       2.60 0      Weekend \n5    200       44    48   Spring      10    0.140  Weekday \n6    375       69    61.5 Spring       6.60 0.0200 Weekday \n7    417       66    52.5 Spring       2.40 0      Weekday \n8    629       66    52   Spring       0    0      Weekend \n\n\nSource: Pioneer Valley Planning Commission via the mosaicData package."
   },
   {
     "objectID": "slides/10-mlr-inference-conditions-notes.html#variables",
@@ -5076,35 +5083,7 @@
     "href": "slides/10-mlr-inference-conditions-notes.html#mlr-hypothesis-test-hightemp",
     "title": "MLR: Inference + Model conditions",
     "section": "MLR hypothesis test: hightemp",
-    "text": "MLR hypothesis test: hightemp\n\nSet hypotheses: \\(H_0: \\beta_{hightemp} = 0\\) vs. \\(H_A: \\beta_{hightemp} \\ne 0\\), given season is in the model\n\n. . .\n\nCalculate test statistic and p-value: The test statistic is \\(t = 6.43\\). The p-value is calculated using a \\(t\\) distribution with 86 \\((n - p - 1)\\) degrees of freedom. The p-value is \\(\\approx 0\\).\n\n. . .\n\nState the conclusion: The p-value is small, so we reject \\(H_0\\). The data provide strong evidence that high temperature for the day is a useful predictor in a model that already contains the season as a predictor for number of daily riders."
-  },
-  {
-    "objectID": "slides/10-mlr-inference-conditions-notes.html#model-for-season-spring",
-    "href": "slides/10-mlr-inference-conditions-notes.html#model-for-season-spring",
-    "title": "MLR: Inference + Model conditions",
-    "section": "Model for season = Spring",
-    "text": "Model for season = Spring\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-125.23\n71.66\n-1.75\n0.08\n\n\nhightemp\n7.54\n1.17\n6.43\n0.00\n\n\nseasonSpring\n5.13\n34.32\n0.15\n0.88\n\n\nseasonSummer\n-76.84\n47.71\n-1.61\n0.11\n\n\n\n\n\n\n. . .\n\\[\n\\begin{aligned}\n\\widehat{volume} &= -125.23 + 7.54 \\times \\texttt{hightemp} + 5.13 \\times \\texttt{seasonSpring} - 76.84 \\times \\texttt{seasonSummer} \\\\\n&= -125.23 + 7.54 \\times \\texttt{hightemp} + 5.13 \\times 1 - 76.84 \\times 0 \\\\\n&= -120.10 + 7.54 \\times \\texttt{hightemp}\n\\end{aligned}\n\\]"
-  },
-  {
-    "objectID": "slides/10-mlr-inference-conditions-notes.html#model-for-season-summer",
-    "href": "slides/10-mlr-inference-conditions-notes.html#model-for-season-summer",
-    "title": "MLR: Inference + Model conditions",
-    "section": "Model for season = Summer",
-    "text": "Model for season = Summer\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-125.23\n71.66\n-1.75\n0.08\n\n\nhightemp\n7.54\n1.17\n6.43\n0.00\n\n\nseasonSpring\n5.13\n34.32\n0.15\n0.88\n\n\nseasonSummer\n-76.84\n47.71\n-1.61\n0.11\n\n\n\n\n\n\n. . .\n\\[\n\\begin{aligned}\n\\widehat{volume} &= -125.23 + 7.54 \\times \\texttt{hightemp} + 5.13 \\times \\texttt{seasonSpring} - 76.84 \\times \\texttt{seasonSummer} \\\\\n&= -125.23 + 7.54 \\times \\texttt{hightemp} + 5.13 \\times 0 - 76.84 \\times 1 \\\\\n&= -202.07 + 7.54 \\times \\texttt{hightemp}\n\\end{aligned}\n\\]"
-  },
-  {
-    "objectID": "slides/10-mlr-inference-conditions-notes.html#the-model-for-season-fall",
-    "href": "slides/10-mlr-inference-conditions-notes.html#the-model-for-season-fall",
-    "title": "MLR: Inference + Model conditions",
-    "section": "The model for season = Fall",
-    "text": "The model for season = Fall\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-125.23\n71.66\n-1.75\n0.08\n\n\nhightemp\n7.54\n1.17\n6.43\n0.00\n\n\nseasonSpring\n5.13\n34.32\n0.15\n0.88\n\n\nseasonSummer\n-76.84\n47.71\n-1.61\n0.11\n\n\n\n\n\n\n. . .\n\\[\n\\begin{aligned}\n\\widehat{volume} &= -125.23 + 7.54 \\times \\texttt{hightemp} + 5.13 \\times \\texttt{seasonSpring} - 76.84 \\times \\texttt{seasonSummer} \\\\\n&= -125.23 + 7.54 \\times \\texttt{hightemp} + 5.13 \\times 0 - 76.84 \\times 0 \\\\\n&= -125.23 + 7.54 \\times \\texttt{hightemp}\n\\end{aligned}\n\\]"
-  },
-  {
-    "objectID": "slides/10-mlr-inference-conditions-notes.html#the-models",
-    "href": "slides/10-mlr-inference-conditions-notes.html#the-models",
-    "title": "MLR: Inference + Model conditions",
-    "section": "The models",
-    "text": "The models\nSame slope, different intercepts\n\nseason = Spring: \\(-120.10 + 7.54 \\times \\texttt{hightemp}\\)\nseason = Summer: \\(-202.07 + 7.54 \\times \\texttt{hightemp}\\)\nseason = Fall: \\(-125.23 + 7.54 \\times \\texttt{hightemp}\\)"
+    "text": "MLR hypothesis test: hightemp\n\nSet hypotheses: \\(H_0: \\beta_{hightemp} = 0\\) vs. \\(H_a: \\beta_{hightemp} \\ne 0\\), given season is in the model\n\n. . .\n\nCalculate test statistic and p-value: The test statistic is \\(t = 6.43\\). The p-value is calculated using a \\(t\\) distribution with 86 \\((n - p - 1)\\) degrees of freedom. The p-value is \\(\\approx 0\\).\n\n. . .\n\nState the conclusion: The p-value is small, so we reject \\(H_0\\). The data provide strong evidence that high temperature for the day is a useful predictor in a model that already contains the season as a predictor for number of daily riders."
   },
   {
     "objectID": "slides/10-mlr-inference-conditions-notes.html#interaction-terms",
@@ -5118,14 +5097,14 @@
     "href": "slides/10-mlr-inference-conditions-notes.html#confidence-interval-for-beta_j-1",
     "title": "MLR: Inference + Model conditions",
     "section": "Confidence interval for \\(\\beta_j\\)",
-    "text": "Confidence interval for \\(\\beta_j\\)\n\nThe \\(C\\%\\) confidence interval for \\(\\beta_j\\) \\[\\hat{\\beta}_j \\pm t^* SE(\\hat{\\beta}_j)\\] where \\(t^*\\) follows a \\(t\\) distribution with \\(n - p - 1\\) degrees of freedom.\n\n\n\nGenerically: We are \\(C\\%\\) confident that the interval LB to UB contains the population coefficient of \\(x_j\\).\nIn context: We are \\(C\\%\\) confident that for every one unit increase in \\(x_j\\), we expect \\(y\\) to change by LB to UB units, on average, holding all else constant."
+    "text": "Confidence interval for \\(\\beta_j\\)\n\n\nThe \\(C\\%\\) confidence interval for \\(\\beta_j\\) \\[\\hat{\\beta}_j \\pm t^* SE(\\hat{\\beta}_j)\\] where \\(t^*\\) follows a \\(t\\) distribution with \\(n - p - 1\\) degrees of freedom.\nGenerically: We are \\(C\\%\\) confident that the interval LB to UB contains the population coefficient of \\(x_j\\).\nIn context: We are \\(C\\%\\) confident that for every one unit increase in \\(x_j\\), \\(y\\) changes by LB to UB units, on average, holding all else constant."
   },
   {
     "objectID": "slides/10-mlr-inference-conditions-notes.html#confidence-interval-for-beta_j-2",
     "href": "slides/10-mlr-inference-conditions-notes.html#confidence-interval-for-beta_j-2",
     "title": "MLR: Inference + Model conditions",
     "section": "Confidence interval for \\(\\beta_j\\)",
-    "text": "Confidence interval for \\(\\beta_j\\)\n\ntidy(rt_mlr_main_fit, conf.int = TRUE) |&gt;\n  kable(digits= 2)\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n-125.23\n71.66\n-1.75\n0.08\n-267.68\n17.22\n\n\nhightemp\n7.54\n1.17\n6.43\n0.00\n5.21\n9.87\n\n\nseasonSpring\n5.13\n34.32\n0.15\n0.88\n-63.10\n73.36\n\n\nseasonSummer\n-76.84\n47.71\n-1.61\n0.11\n-171.68\n18.00"
+    "text": "Confidence interval for \\(\\beta_j\\)\n\ntidy(rt_mlr_main_fit, conf.int = TRUE, conf.level = 0.95) |&gt;\n  kable(digits= 2)\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n-125.23\n71.66\n-1.75\n0.08\n-267.68\n17.22\n\n\nhightemp\n7.54\n1.17\n6.43\n0.00\n5.21\n9.87\n\n\nseasonSpring\n5.13\n34.32\n0.15\n0.88\n-63.10\n73.36\n\n\nseasonSummer\n-76.84\n47.71\n-1.61\n0.11\n-171.68\n18.00"
   },
   {
     "objectID": "slides/10-mlr-inference-conditions-notes.html#ci-for-hightemp",
@@ -5160,7 +5139,14 @@
     "href": "slides/10-mlr-inference-conditions-notes.html#full-model",
     "title": "MLR: Inference + Model conditions",
     "section": "Full model",
-    "text": "Full model\nIncluding all available predictors\nFit:\n\nrt_full_fit &lt;- lm(volume ~ ., data = rail_trail)\n\n. . .\nSummarize:\n\ntidy(rt_full_fit) |&gt; kable(digits = 2)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n17.62\n76.58\n0.23\n0.82\n\n\nhightemp\n7.07\n2.42\n2.92\n0.00\n\n\navgtemp\n-2.04\n3.14\n-0.65\n0.52\n\n\nseasonSpring\n35.91\n32.99\n1.09\n0.28\n\n\nseasonSummer\n24.15\n52.81\n0.46\n0.65\n\n\ncloudcover\n-7.25\n3.84\n-1.89\n0.06\n\n\nprecip\n-95.70\n42.57\n-2.25\n0.03\n\n\nday_typeWeekend\n35.90\n22.43\n1.60\n0.11\n\n\n\n\n\n. . .\nAugment:\n\nrt_full_aug &lt;- augment(rt_full_fit)"
+    "text": "Full model\nIncluding all available predictors\nFit:\n\nrt_full_fit &lt;- lm(volume ~ . , data = rail_trail)\n\n. . .\nSummarize:\n\ntidy(rt_full_fit) |&gt; kable(digits = 2)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n17.62\n76.58\n0.23\n0.82\n\n\nhightemp\n7.07\n2.42\n2.92\n0.00\n\n\navgtemp\n-2.04\n3.14\n-0.65\n0.52\n\n\nseasonSpring\n35.91\n32.99\n1.09\n0.28\n\n\nseasonSummer\n24.15\n52.81\n0.46\n0.65\n\n\ncloudcover\n-7.25\n3.84\n-1.89\n0.06\n\n\nprecip\n-95.70\n42.57\n-2.25\n0.03\n\n\nday_typeWeekend\n35.90\n22.43\n1.60\n0.11"
+  },
+  {
+    "objectID": "slides/10-mlr-inference-conditions-notes.html#full-model-1",
+    "href": "slides/10-mlr-inference-conditions-notes.html#full-model-1",
+    "title": "MLR: Inference + Model conditions",
+    "section": "Full model",
+    "text": "Full model\nAugment:\n\nrt_full_aug &lt;- augment(rt_full_fit)"
   },
   {
     "objectID": "slides/10-mlr-inference-conditions-notes.html#model-conditions",
@@ -5195,7 +5181,14 @@
     "href": "slides/10-mlr-inference-conditions-notes.html#checking-linearity-1",
     "title": "MLR: Inference + Model conditions",
     "section": "Checking linearity",
-    "text": "Checking linearity\n\nThe plot of the residuals vs. predicted values looked OK\nThe plots of residuals vs. hightemp and avgtemp appear to have a parabolic pattern.\nThe linearity condition does not appear to be satisfied given these plots.\n\n. . .\n\nGiven this conclusion, what might be a next step in the analysis?"
+    "text": "Checking linearity\n\nThe plot of the residuals vs. predicted values looked OK\nThe plots of residuals vs. hightemp and avgtemp appear to have a parabolic pattern.\nPotential violation in the linearity condition.\n\n. . .\n\nGiven this conclusion, what might be a next step in the analysis?"
+  },
+  {
+    "objectID": "slides/10-mlr-inference-conditions-notes.html#consider-adding-quadratic-terms",
+    "href": "slides/10-mlr-inference-conditions-notes.html#consider-adding-quadratic-terms",
+    "title": "MLR: Inference + Model conditions",
+    "section": "Consider adding quadratic terms",
+    "text": "Consider adding quadratic terms\n\nrt_full_fit_2 &lt;- lm(volume ~ . + I(hightemp^2) + I(avgtemp^2), data = rail_trail)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n-733.08\n249.83\n-2.93\n0.00\n-1230.26\n-235.90\n\n\nhightemp\n13.33\n10.86\n1.23\n0.22\n-8.29\n34.94\n\n\navgtemp\n18.49\n13.77\n1.34\n0.18\n-8.92\n45.90\n\n\nseasonSpring\n1.31\n33.87\n0.04\n0.97\n-66.10\n68.73\n\n\nseasonSummer\n24.51\n50.49\n0.49\n0.63\n-75.97\n124.99\n\n\ncloudcover\n-8.06\n3.68\n-2.19\n0.03\n-15.39\n-0.74\n\n\nprecip\n-86.13\n42.71\n-2.02\n0.05\n-171.12\n-1.13\n\n\nday_typeWeekend\n43.46\n21.58\n2.01\n0.05\n0.51\n86.41\n\n\nI(hightemp^2)\n-0.05\n0.08\n-0.65\n0.52\n-0.22\n0.11\n\n\nI(avgtemp^2)\n-0.17\n0.12\n-1.37\n0.17\n-0.41\n0.07\n\n\n\n\n\n\nIs there evidence of a statistically significant quadratic effect?"
   },
   {
     "objectID": "slides/10-mlr-inference-conditions-notes.html#checking-constant-variance",
@@ -5209,7 +5202,7 @@
     "href": "slides/10-mlr-inference-conditions-notes.html#checking-constant-variance-1",
     "title": "MLR: Inference + Model conditions",
     "section": "Checking constant variance",
-    "text": "Checking constant variance\n\nThe vertical spread of the residuals is not constant across the plot.\nThe constant variance condition is not satisfied.\n\n. . .\n\nWe will talk about to address this in an upcoming class."
+    "text": "Checking constant variance\n\nThe vertical spread of the residuals is not constant across the plot.\nThe constant variance condition is not satisfied.\n\n. . .\n\nWhat are the implications for our analysis results? We will talk about how to address this in an upcoming class."
   },
   {
     "objectID": "slides/10-mlr-inference-conditions-notes.html#checking-normality",
@@ -5247,6 +5240,13 @@
     "text": "Recap\n\nReviewed model comparison\nIntroduced inference for multiple linear regression\nChecked model conditions for linear regression"
   },
   {
+    "objectID": "slides/10-mlr-inference-conditions-notes.html#next-class",
+    "href": "slides/10-mlr-inference-conditions-notes.html#next-class",
+    "title": "MLR: Inference + Model conditions",
+    "section": "Next class",
+    "text": "Next class\n\nExam 01 review"
+  },
+  {
     "objectID": "slides/10-mlr-inference-conditions.html#announcements",
     "href": "slides/10-mlr-inference-conditions.html#announcements",
     "title": "MLR: Inference + Model conditions",
@@ -5258,7 +5258,14 @@
     "href": "slides/10-mlr-inference-conditions.html#exam-01",
     "title": "MLR: Inference + Model conditions",
     "section": "Exam 01",
-    "text": "Exam 01\n\n50 points total\n\nin-class: 35-40 points\ntake-home: 10 - 15 points\n\nIn-class (35 -40 pts): 75 minutes during February 18 lecture\n\nWill be randomly assigned to exam room\n\nTake-home (10 -15 pts): released after class on Tuesday\nIf you miss any part of the exam for an excused absence (with academic dean’s note or other official documentation), your Exam 02 score will be counted twice"
+    "text": "Exam 01\n\n50 points total\n\nin-class: 35-40 points\ntake-home: 10 - 15 points\n\nIn-class (35 -40 pts): 75 minutes during February 18 lecture\nTake-home (10 -15 pts): released after class on Tuesday\nIf you miss any part of the exam for an excused absence (with academic dean’s note or other official documentation), your Exam 02 score will be counted twice"
+  },
+  {
+    "objectID": "slides/10-mlr-inference-conditions.html#tips-for-studying",
+    "href": "slides/10-mlr-inference-conditions.html#tips-for-studying",
+    "title": "MLR: Inference + Model conditions",
+    "section": "Tips for studying",
+    "text": "Tips for studying\n\nReview exercises in AEs and assignments, asking “why” as you review your process and reasoning\n\ne.g., Why do we include “holding all else constant” in interpretations?\n\nFocus on understanding not memorization\nExplain concepts / process to others\nAsk questions in office hours\nReview lecture recordings as needed"
   },
   {
     "objectID": "slides/10-mlr-inference-conditions.html#topics",
@@ -5300,7 +5307,7 @@
     "href": "slides/10-mlr-inference-conditions.html#data-rail_trail",
     "title": "MLR: Inference + Model conditions",
     "section": "Data: rail_trail",
-    "text": "Data: rail_trail\n\n\nThe Pioneer Valley Planning Commission (PVPC) collected data for ninety days from April 5, 2005 to November 15, 2005.\nData collectors set up a laser sensor, with breaks in the laser beam recording when a rail-trail user passed the data collection station.\n\n\n\n\n# A tibble: 90 × 7\n   volume hightemp avgtemp season cloudcover precip day_type\n    &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;   \n 1    501       83    66.5 Summer       7.60 0      Weekday \n 2    419       73    61   Summer       6.30 0.290  Weekday \n 3    397       74    63   Spring       7.5  0.320  Weekday \n 4    385       95    78   Summer       2.60 0      Weekend \n 5    200       44    48   Spring      10    0.140  Weekday \n 6    375       69    61.5 Spring       6.60 0.0200 Weekday \n 7    417       66    52.5 Spring       2.40 0      Weekday \n 8    629       66    52   Spring       0    0      Weekend \n 9    533       80    67.5 Summer       3.80 0      Weekend \n10    547       79    62   Summer       4.10 0      Weekday \n# ℹ 80 more rows\n\n\nSource: Pioneer Valley Planning Commission via the mosaicData package."
+    "text": "Data: rail_trail\n\n\nThe Pioneer Valley Planning Commission (PVPC) collected data for ninety days from April 5, 2005 to November 15, 2005.\nData collectors set up a laser sensor, with breaks in the laser beam recording when a rail-trail user passed the data collection station.\n\n\n\n\n# A tibble: 8 × 7\n  volume hightemp avgtemp season cloudcover precip day_type\n   &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;   \n1    501       83    66.5 Summer       7.60 0      Weekday \n2    419       73    61   Summer       6.30 0.290  Weekday \n3    397       74    63   Spring       7.5  0.320  Weekday \n4    385       95    78   Summer       2.60 0      Weekend \n5    200       44    48   Spring      10    0.140  Weekday \n6    375       69    61.5 Spring       6.60 0.0200 Weekday \n7    417       66    52.5 Spring       2.40 0      Weekday \n8    629       66    52   Spring       0    0      Weekend \n\n\nSource: Pioneer Valley Planning Commission via the mosaicData package."
   },
   {
     "objectID": "slides/10-mlr-inference-conditions.html#variables",
@@ -5356,35 +5363,7 @@
     "href": "slides/10-mlr-inference-conditions.html#mlr-hypothesis-test-hightemp",
     "title": "MLR: Inference + Model conditions",
     "section": "MLR hypothesis test: hightemp",
-    "text": "MLR hypothesis test: hightemp\n\nSet hypotheses: \\(H_0: \\beta_{hightemp} = 0\\) vs. \\(H_A: \\beta_{hightemp} \\ne 0\\), given season is in the model\n\n\n\nCalculate test statistic and p-value: The test statistic is \\(t = 6.43\\). The p-value is calculated using a \\(t\\) distribution with 86 \\((n - p - 1)\\) degrees of freedom. The p-value is \\(\\approx 0\\).\n\n\n\n\nState the conclusion: The p-value is small, so we reject \\(H_0\\). The data provide strong evidence that high temperature for the day is a useful predictor in a model that already contains the season as a predictor for number of daily riders."
-  },
-  {
-    "objectID": "slides/10-mlr-inference-conditions.html#model-for-season-spring",
-    "href": "slides/10-mlr-inference-conditions.html#model-for-season-spring",
-    "title": "MLR: Inference + Model conditions",
-    "section": "Model for season = Spring",
-    "text": "Model for season = Spring\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-125.23\n71.66\n-1.75\n0.08\n\n\nhightemp\n7.54\n1.17\n6.43\n0.00\n\n\nseasonSpring\n5.13\n34.32\n0.15\n0.88\n\n\nseasonSummer\n-76.84\n47.71\n-1.61\n0.11\n\n\n\n\n\n\n\n\\[\n\\begin{aligned}\n\\widehat{volume} &= -125.23 + 7.54 \\times \\texttt{hightemp} + 5.13 \\times \\texttt{seasonSpring} - 76.84 \\times \\texttt{seasonSummer} \\\\\n&= -125.23 + 7.54 \\times \\texttt{hightemp} + 5.13 \\times 1 - 76.84 \\times 0 \\\\\n&= -120.10 + 7.54 \\times \\texttt{hightemp}\n\\end{aligned}\n\\]"
-  },
-  {
-    "objectID": "slides/10-mlr-inference-conditions.html#model-for-season-summer",
-    "href": "slides/10-mlr-inference-conditions.html#model-for-season-summer",
-    "title": "MLR: Inference + Model conditions",
-    "section": "Model for season = Summer",
-    "text": "Model for season = Summer\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-125.23\n71.66\n-1.75\n0.08\n\n\nhightemp\n7.54\n1.17\n6.43\n0.00\n\n\nseasonSpring\n5.13\n34.32\n0.15\n0.88\n\n\nseasonSummer\n-76.84\n47.71\n-1.61\n0.11\n\n\n\n\n\n\n\n\\[\n\\begin{aligned}\n\\widehat{volume} &= -125.23 + 7.54 \\times \\texttt{hightemp} + 5.13 \\times \\texttt{seasonSpring} - 76.84 \\times \\texttt{seasonSummer} \\\\\n&= -125.23 + 7.54 \\times \\texttt{hightemp} + 5.13 \\times 0 - 76.84 \\times 1 \\\\\n&= -202.07 + 7.54 \\times \\texttt{hightemp}\n\\end{aligned}\n\\]"
-  },
-  {
-    "objectID": "slides/10-mlr-inference-conditions.html#the-model-for-season-fall",
-    "href": "slides/10-mlr-inference-conditions.html#the-model-for-season-fall",
-    "title": "MLR: Inference + Model conditions",
-    "section": "The model for season = Fall",
-    "text": "The model for season = Fall\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-125.23\n71.66\n-1.75\n0.08\n\n\nhightemp\n7.54\n1.17\n6.43\n0.00\n\n\nseasonSpring\n5.13\n34.32\n0.15\n0.88\n\n\nseasonSummer\n-76.84\n47.71\n-1.61\n0.11\n\n\n\n\n\n\n\n\\[\n\\begin{aligned}\n\\widehat{volume} &= -125.23 + 7.54 \\times \\texttt{hightemp} + 5.13 \\times \\texttt{seasonSpring} - 76.84 \\times \\texttt{seasonSummer} \\\\\n&= -125.23 + 7.54 \\times \\texttt{hightemp} + 5.13 \\times 0 - 76.84 \\times 0 \\\\\n&= -125.23 + 7.54 \\times \\texttt{hightemp}\n\\end{aligned}\n\\]"
-  },
-  {
-    "objectID": "slides/10-mlr-inference-conditions.html#the-models",
-    "href": "slides/10-mlr-inference-conditions.html#the-models",
-    "title": "MLR: Inference + Model conditions",
-    "section": "The models",
-    "text": "The models\nSame slope, different intercepts\n\nseason = Spring: \\(-120.10 + 7.54 \\times \\texttt{hightemp}\\)\nseason = Summer: \\(-202.07 + 7.54 \\times \\texttt{hightemp}\\)\nseason = Fall: \\(-125.23 + 7.54 \\times \\texttt{hightemp}\\)"
+    "text": "MLR hypothesis test: hightemp\n\nSet hypotheses: \\(H_0: \\beta_{hightemp} = 0\\) vs. \\(H_a: \\beta_{hightemp} \\ne 0\\), given season is in the model\n\n\n\nCalculate test statistic and p-value: The test statistic is \\(t = 6.43\\). The p-value is calculated using a \\(t\\) distribution with 86 \\((n - p - 1)\\) degrees of freedom. The p-value is \\(\\approx 0\\).\n\n\n\n\nState the conclusion: The p-value is small, so we reject \\(H_0\\). The data provide strong evidence that high temperature for the day is a useful predictor in a model that already contains the season as a predictor for number of daily riders."
   },
   {
     "objectID": "slides/10-mlr-inference-conditions.html#interaction-terms",
@@ -5398,14 +5377,14 @@
     "href": "slides/10-mlr-inference-conditions.html#confidence-interval-for-beta_j-1",
     "title": "MLR: Inference + Model conditions",
     "section": "Confidence interval for \\(\\beta_j\\)",
-    "text": "Confidence interval for \\(\\beta_j\\)\n\nThe \\(C\\%\\) confidence interval for \\(\\beta_j\\) \\[\\hat{\\beta}_j \\pm t^* SE(\\hat{\\beta}_j)\\] where \\(t^*\\) follows a \\(t\\) distribution with \\(n - p - 1\\) degrees of freedom.\n\n\n\nGenerically: We are \\(C\\%\\) confident that the interval LB to UB contains the population coefficient of \\(x_j\\).\nIn context: We are \\(C\\%\\) confident that for every one unit increase in \\(x_j\\), we expect \\(y\\) to change by LB to UB units, on average, holding all else constant."
+    "text": "Confidence interval for \\(\\beta_j\\)\n\n\nThe \\(C\\%\\) confidence interval for \\(\\beta_j\\) \\[\\hat{\\beta}_j \\pm t^* SE(\\hat{\\beta}_j)\\] where \\(t^*\\) follows a \\(t\\) distribution with \\(n - p - 1\\) degrees of freedom.\nGenerically: We are \\(C\\%\\) confident that the interval LB to UB contains the population coefficient of \\(x_j\\).\nIn context: We are \\(C\\%\\) confident that for every one unit increase in \\(x_j\\), \\(y\\) changes by LB to UB units, on average, holding all else constant."
   },
   {
     "objectID": "slides/10-mlr-inference-conditions.html#confidence-interval-for-beta_j-2",
     "href": "slides/10-mlr-inference-conditions.html#confidence-interval-for-beta_j-2",
     "title": "MLR: Inference + Model conditions",
     "section": "Confidence interval for \\(\\beta_j\\)",
-    "text": "Confidence interval for \\(\\beta_j\\)\n\ntidy(rt_mlr_main_fit, conf.int = TRUE) |&gt;\n  kable(digits= 2)\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n-125.23\n71.66\n-1.75\n0.08\n-267.68\n17.22\n\n\nhightemp\n7.54\n1.17\n6.43\n0.00\n5.21\n9.87\n\n\nseasonSpring\n5.13\n34.32\n0.15\n0.88\n-63.10\n73.36\n\n\nseasonSummer\n-76.84\n47.71\n-1.61\n0.11\n-171.68\n18.00"
+    "text": "Confidence interval for \\(\\beta_j\\)\n\ntidy(rt_mlr_main_fit, conf.int = TRUE, conf.level = 0.95) |&gt;\n  kable(digits= 2)\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n-125.23\n71.66\n-1.75\n0.08\n-267.68\n17.22\n\n\nhightemp\n7.54\n1.17\n6.43\n0.00\n5.21\n9.87\n\n\nseasonSpring\n5.13\n34.32\n0.15\n0.88\n-63.10\n73.36\n\n\nseasonSummer\n-76.84\n47.71\n-1.61\n0.11\n-171.68\n18.00"
   },
   {
     "objectID": "slides/10-mlr-inference-conditions.html#ci-for-hightemp",
@@ -5440,7 +5419,14 @@
     "href": "slides/10-mlr-inference-conditions.html#full-model",
     "title": "MLR: Inference + Model conditions",
     "section": "Full model",
-    "text": "Full model\nIncluding all available predictors\nFit:\n\nrt_full_fit &lt;- lm(volume ~ ., data = rail_trail)\n\n\nSummarize:\n\ntidy(rt_full_fit) |&gt; kable(digits = 2)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n17.62\n76.58\n0.23\n0.82\n\n\nhightemp\n7.07\n2.42\n2.92\n0.00\n\n\navgtemp\n-2.04\n3.14\n-0.65\n0.52\n\n\nseasonSpring\n35.91\n32.99\n1.09\n0.28\n\n\nseasonSummer\n24.15\n52.81\n0.46\n0.65\n\n\ncloudcover\n-7.25\n3.84\n-1.89\n0.06\n\n\nprecip\n-95.70\n42.57\n-2.25\n0.03\n\n\nday_typeWeekend\n35.90\n22.43\n1.60\n0.11\n\n\n\n\n\n\n\nAugment:\n\nrt_full_aug &lt;- augment(rt_full_fit)"
+    "text": "Full model\nIncluding all available predictors\nFit:\n\nrt_full_fit &lt;- lm(volume ~ . , data = rail_trail)\n\n\nSummarize:\n\ntidy(rt_full_fit) |&gt; kable(digits = 2)\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n17.62\n76.58\n0.23\n0.82\n\n\nhightemp\n7.07\n2.42\n2.92\n0.00\n\n\navgtemp\n-2.04\n3.14\n-0.65\n0.52\n\n\nseasonSpring\n35.91\n32.99\n1.09\n0.28\n\n\nseasonSummer\n24.15\n52.81\n0.46\n0.65\n\n\ncloudcover\n-7.25\n3.84\n-1.89\n0.06\n\n\nprecip\n-95.70\n42.57\n-2.25\n0.03\n\n\nday_typeWeekend\n35.90\n22.43\n1.60\n0.11"
+  },
+  {
+    "objectID": "slides/10-mlr-inference-conditions.html#full-model-1",
+    "href": "slides/10-mlr-inference-conditions.html#full-model-1",
+    "title": "MLR: Inference + Model conditions",
+    "section": "Full model",
+    "text": "Full model\nAugment:\n\nrt_full_aug &lt;- augment(rt_full_fit)"
   },
   {
     "objectID": "slides/10-mlr-inference-conditions.html#model-conditions",
@@ -5475,7 +5461,14 @@
     "href": "slides/10-mlr-inference-conditions.html#checking-linearity-1",
     "title": "MLR: Inference + Model conditions",
     "section": "Checking linearity",
-    "text": "Checking linearity\n\nThe plot of the residuals vs. predicted values looked OK\nThe plots of residuals vs. hightemp and avgtemp appear to have a parabolic pattern.\nThe linearity condition does not appear to be satisfied given these plots.\n\n\n\nGiven this conclusion, what might be a next step in the analysis?"
+    "text": "Checking linearity\n\nThe plot of the residuals vs. predicted values looked OK\nThe plots of residuals vs. hightemp and avgtemp appear to have a parabolic pattern.\nPotential violation in the linearity condition.\n\n\n\nGiven this conclusion, what might be a next step in the analysis?"
+  },
+  {
+    "objectID": "slides/10-mlr-inference-conditions.html#consider-adding-quadratic-terms",
+    "href": "slides/10-mlr-inference-conditions.html#consider-adding-quadratic-terms",
+    "title": "MLR: Inference + Model conditions",
+    "section": "Consider adding quadratic terms",
+    "text": "Consider adding quadratic terms\n\nrt_full_fit_2 &lt;- lm(volume ~ . + I(hightemp^2) + I(avgtemp^2), data = rail_trail)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n-733.08\n249.83\n-2.93\n0.00\n-1230.26\n-235.90\n\n\nhightemp\n13.33\n10.86\n1.23\n0.22\n-8.29\n34.94\n\n\navgtemp\n18.49\n13.77\n1.34\n0.18\n-8.92\n45.90\n\n\nseasonSpring\n1.31\n33.87\n0.04\n0.97\n-66.10\n68.73\n\n\nseasonSummer\n24.51\n50.49\n0.49\n0.63\n-75.97\n124.99\n\n\ncloudcover\n-8.06\n3.68\n-2.19\n0.03\n-15.39\n-0.74\n\n\nprecip\n-86.13\n42.71\n-2.02\n0.05\n-171.12\n-1.13\n\n\nday_typeWeekend\n43.46\n21.58\n2.01\n0.05\n0.51\n86.41\n\n\nI(hightemp^2)\n-0.05\n0.08\n-0.65\n0.52\n-0.22\n0.11\n\n\nI(avgtemp^2)\n-0.17\n0.12\n-1.37\n0.17\n-0.41\n0.07\n\n\n\n\n\n\nIs there evidence of a statistically significant quadratic effect?"
   },
   {
     "objectID": "slides/10-mlr-inference-conditions.html#checking-constant-variance",
@@ -5489,7 +5482,7 @@
     "href": "slides/10-mlr-inference-conditions.html#checking-constant-variance-1",
     "title": "MLR: Inference + Model conditions",
     "section": "Checking constant variance",
-    "text": "Checking constant variance\n\nThe vertical spread of the residuals is not constant across the plot.\nThe constant variance condition is not satisfied.\n\n\n\nWe will talk about to address this in an upcoming class."
+    "text": "Checking constant variance\n\nThe vertical spread of the residuals is not constant across the plot.\nThe constant variance condition is not satisfied.\n\n\n\nWhat are the implications for our analysis results? We will talk about how to address this in an upcoming class."
   },
   {
     "objectID": "slides/10-mlr-inference-conditions.html#checking-normality",
@@ -5525,6 +5518,13 @@
     "title": "MLR: Inference + Model conditions",
     "section": "Recap",
     "text": "Recap\n\nReviewed model comparison\nIntroduced inference for multiple linear regression\nChecked model conditions for linear regression"
+  },
+  {
+    "objectID": "slides/10-mlr-inference-conditions.html#next-class",
+    "href": "slides/10-mlr-inference-conditions.html#next-class",
+    "title": "MLR: Inference + Model conditions",
+    "section": "Next class",
+    "text": "Next class\n\nExam 01 review"
   },
   {
     "objectID": "slides/07-mlr-notes.html",

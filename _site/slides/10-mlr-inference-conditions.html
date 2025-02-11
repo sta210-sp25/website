@@ -223,12 +223,22 @@ Prof.&nbsp;Maria Tackett
 <li><p>in-class: 35-40 points</p></li>
 <li><p>take-home: 10 - 15 points</p></li>
 </ul></li>
-<li>In-class (35 -40 pts): 75 minutes during February 18 lecture
-<ul>
-<li>Will be randomly assigned to exam room</li>
-</ul></li>
+<li>In-class (35 -40 pts): 75 minutes during February 18 lecture</li>
 <li>Take-home (10 -15 pts): released after class on Tuesday</li>
 <li>If you miss any part of the exam for an excused absence (with academic dean’s note or other official documentation), your Exam 02 score will be counted twice</li>
+</ul>
+</section>
+<section id="tips-for-studying" class="slide level2">
+<h2>Tips for studying</h2>
+<ul>
+<li><p>Review exercises in AEs and assignments, asking “why” as you review your process and reasoning</p>
+<ul>
+<li>e.g., Why do we include “holding all else constant” in interpretations?</li>
+</ul></li>
+<li><p>Focus on understanding not memorization</p></li>
+<li><p>Explain concepts / process to others</p></li>
+<li><p>Ask questions in office hours</p></li>
+<li><p>Review lecture recordings as needed</p></li>
 </ul>
 </section>
 <section id="topics" class="slide level2">
@@ -324,20 +334,17 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 90 × 7
-   volume hightemp avgtemp season cloudcover precip day_type
-    &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;   
- 1    501       83    66.5 Summer       7.60 0      Weekday 
- 2    419       73    61   Summer       6.30 0.290  Weekday 
- 3    397       74    63   Spring       7.5  0.320  Weekday 
- 4    385       95    78   Summer       2.60 0      Weekend 
- 5    200       44    48   Spring      10    0.140  Weekday 
- 6    375       69    61.5 Spring       6.60 0.0200 Weekday 
- 7    417       66    52.5 Spring       2.40 0      Weekday 
- 8    629       66    52   Spring       0    0      Weekend 
- 9    533       80    67.5 Summer       3.80 0      Weekend 
-10    547       79    62   Summer       4.10 0      Weekday 
-# ℹ 80 more rows</code></pre>
+<pre><code># A tibble: 8 × 7
+  volume hightemp avgtemp season cloudcover precip day_type
+   &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;   
+1    501       83    66.5 Summer       7.60 0      Weekday 
+2    419       73    61   Summer       6.30 0.290  Weekday 
+3    397       74    63   Spring       7.5  0.320  Weekday 
+4    385       95    78   Summer       2.60 0      Weekend 
+5    200       44    48   Spring      10    0.140  Weekday 
+6    375       69    61.5 Spring       6.60 0.0200 Weekday 
+7    417       66    52.5 Spring       2.40 0      Weekday 
+8    629       66    52   Spring       0    0      Weekend </code></pre>
 </div>
 </div>
 <p>Source: <a href="http://www.fvgreenway.org/pdfs/Northampton-Bikepath-Volume-Counts%20_05_LTA.pdf">Pioneer Valley Planning Commission</a> via the <strong>mosaicData</strong> package.</p>
@@ -513,7 +520,7 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 <p><span class="math display">\[y_i = \beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + \dots + \beta_p x_{ip} + \epsilon_{i} \hspace{10mm} \epsilon_i \sim N(0,\sigma_{\epsilon}^2)\]</span></p>
 </div>
 </section>
-<section id="estimating-sigma_epsilon" class="slide level2">
+<section id="estimating-sigma_epsilon" class="slide level2 midi">
 <h2>Estimating <span class="math inline">\(\sigma_\epsilon\)</span></h2>
 <p>For a given observation <span class="math inline">\((x_{i1}, x_{i2}, \ldots,x_{ip}, y_i)\)</span> the residual is <span class="math display">\[e_i = y_{i} - (\hat{\beta}_0 + \hat{\beta}_1 x_{i1} + \hat{\beta}_{2} x_{i2} + \dots + \hat{\beta}_p x_{ip})\]</span></p>
 <p><br></p>
@@ -528,7 +535,7 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 <section id="mlr-hypothesis-test-hightemp" class="slide level2 midi">
 <h2>MLR hypothesis test: hightemp</h2>
 <ol type="1">
-<li><strong>Set hypotheses:</strong> <span class="math inline">\(H_0: \beta_{hightemp} = 0\)</span> vs.&nbsp;<span class="math inline">\(H_A: \beta_{hightemp} \ne 0\)</span>, given <code>season</code> is in the model</li>
+<li><strong>Set hypotheses:</strong> <span class="math inline">\(H_0: \beta_{hightemp} = 0\)</span> vs.&nbsp;<span class="math inline">\(H_a: \beta_{hightemp} \ne 0\)</span>, given <code>season</code> is in the model</li>
 </ol>
 <div class="fragment">
 <ol start="2" type="1">
@@ -541,190 +548,7 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 </ol>
 </div>
 </section>
-<section id="model-for-season-spring" class="slide level2">
-<h2>Model for <code>season = Spring</code></h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: left;">term</th>
-<th style="text-align: right;">estimate</th>
-<th style="text-align: right;">std.error</th>
-<th style="text-align: right;">statistic</th>
-<th style="text-align: right;">p.value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">-125.23</td>
-<td style="text-align: right;">71.66</td>
-<td style="text-align: right;">-1.75</td>
-<td style="text-align: right;">0.08</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">hightemp</td>
-<td style="text-align: right;">7.54</td>
-<td style="text-align: right;">1.17</td>
-<td style="text-align: right;">6.43</td>
-<td style="text-align: right;">0.00</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">seasonSpring</td>
-<td style="text-align: right;">5.13</td>
-<td style="text-align: right;">34.32</td>
-<td style="text-align: right;">0.15</td>
-<td style="text-align: right;">0.88</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">seasonSummer</td>
-<td style="text-align: right;">-76.84</td>
-<td style="text-align: right;">47.71</td>
-<td style="text-align: right;">-1.61</td>
-<td style="text-align: right;">0.11</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><br></p>
-<div class="fragment">
-<p><span class="math display">\[
-\begin{aligned}
-\widehat{volume} &amp;= -125.23 + 7.54 \times \texttt{hightemp} + 5.13 \times \texttt{seasonSpring} - 76.84 \times \texttt{seasonSummer} \\
-&amp;= -125.23 + 7.54 \times \texttt{hightemp} + 5.13 \times 1 - 76.84 \times 0 \\
-&amp;= -120.10 + 7.54 \times \texttt{hightemp}
-\end{aligned}
-\]</span></p>
-</div>
-</section>
-<section id="model-for-season-summer" class="slide level2">
-<h2>Model for <code>season = Summer</code></h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: left;">term</th>
-<th style="text-align: right;">estimate</th>
-<th style="text-align: right;">std.error</th>
-<th style="text-align: right;">statistic</th>
-<th style="text-align: right;">p.value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">-125.23</td>
-<td style="text-align: right;">71.66</td>
-<td style="text-align: right;">-1.75</td>
-<td style="text-align: right;">0.08</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">hightemp</td>
-<td style="text-align: right;">7.54</td>
-<td style="text-align: right;">1.17</td>
-<td style="text-align: right;">6.43</td>
-<td style="text-align: right;">0.00</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">seasonSpring</td>
-<td style="text-align: right;">5.13</td>
-<td style="text-align: right;">34.32</td>
-<td style="text-align: right;">0.15</td>
-<td style="text-align: right;">0.88</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">seasonSummer</td>
-<td style="text-align: right;">-76.84</td>
-<td style="text-align: right;">47.71</td>
-<td style="text-align: right;">-1.61</td>
-<td style="text-align: right;">0.11</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><br></p>
-<div class="fragment">
-<p><span class="math display">\[
-\begin{aligned}
-\widehat{volume} &amp;= -125.23 + 7.54 \times \texttt{hightemp} + 5.13 \times \texttt{seasonSpring} - 76.84 \times \texttt{seasonSummer} \\
-&amp;= -125.23 + 7.54 \times \texttt{hightemp} + 5.13 \times 0 - 76.84 \times 1 \\
-&amp;= -202.07 + 7.54 \times \texttt{hightemp}
-\end{aligned}
-\]</span></p>
-</div>
-</section>
-<section id="the-model-for-season-fall" class="slide level2 smaller">
-<h2>The model for <code>season = Fall</code></h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: left;">term</th>
-<th style="text-align: right;">estimate</th>
-<th style="text-align: right;">std.error</th>
-<th style="text-align: right;">statistic</th>
-<th style="text-align: right;">p.value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">-125.23</td>
-<td style="text-align: right;">71.66</td>
-<td style="text-align: right;">-1.75</td>
-<td style="text-align: right;">0.08</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">hightemp</td>
-<td style="text-align: right;">7.54</td>
-<td style="text-align: right;">1.17</td>
-<td style="text-align: right;">6.43</td>
-<td style="text-align: right;">0.00</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">seasonSpring</td>
-<td style="text-align: right;">5.13</td>
-<td style="text-align: right;">34.32</td>
-<td style="text-align: right;">0.15</td>
-<td style="text-align: right;">0.88</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">seasonSummer</td>
-<td style="text-align: right;">-76.84</td>
-<td style="text-align: right;">47.71</td>
-<td style="text-align: right;">-1.61</td>
-<td style="text-align: right;">0.11</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><br></p>
-<div class="fragment">
-<p><span class="math display">\[
-\begin{aligned}
-\widehat{volume} &amp;= -125.23 + 7.54 \times \texttt{hightemp} + 5.13 \times \texttt{seasonSpring} - 76.84 \times \texttt{seasonSummer} \\
-&amp;= -125.23 + 7.54 \times \texttt{hightemp} + 5.13 \times 0 - 76.84 \times 0 \\
-&amp;= -125.23 + 7.54 \times \texttt{hightemp}
-\end{aligned}
-\]</span></p>
-</div>
-</section>
-<section id="the-models" class="slide level2">
-<h2>The models</h2>
-<p>Same slope, different intercepts</p>
-<ul>
-<li><code>season = Spring</code>: <span class="math inline">\(-120.10 + 7.54 \times \texttt{hightemp}\)</span></li>
-<li><code>season = Summer</code>: <span class="math inline">\(-202.07 + 7.54 \times \texttt{hightemp}\)</span></li>
-<li><code>season = Fall</code>: <span class="math inline">\(-125.23 + 7.54 \times \texttt{hightemp}\)</span></li>
-</ul>
-</section>
-<section id="interaction-terms" class="slide level2">
+<section id="interaction-terms" class="slide level2 midi">
 <h2>Interaction terms</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -795,21 +619,20 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 <h1>Confidence interval for <span class="math inline">\(\beta_j\)</span></h1>
 
 </section>
-<section id="confidence-interval-for-beta_j-1" class="slide level2">
+<section id="confidence-interval-for-beta_j-1" class="slide level2 midi">
 <h2>Confidence interval for <span class="math inline">\(\beta_j\)</span></h2>
+<div>
 <ul>
-<li>The <span class="math inline">\(C\%\)</span> confidence interval for <span class="math inline">\(\beta_j\)</span> <span class="math display">\[\hat{\beta}_j \pm t^* SE(\hat{\beta}_j)\]</span> where <span class="math inline">\(t^*\)</span> follows a <span class="math inline">\(t\)</span> distribution with <span class="math inline">\(n - p - 1\)</span> degrees of freedom.</li>
+<li class="fragment">The <span class="math inline">\(C\%\)</span> confidence interval for <span class="math inline">\(\beta_j\)</span> <span class="math display">\[\hat{\beta}_j \pm t^* SE(\hat{\beta}_j)\]</span> where <span class="math inline">\(t^*\)</span> follows a <span class="math inline">\(t\)</span> distribution with <span class="math inline">\(n - p - 1\)</span> degrees of freedom.</li>
+<li class="fragment"><strong>Generically</strong>: We are <span class="math inline">\(C\%\)</span> confident that the interval LB to UB contains the population coefficient of <span class="math inline">\(x_j\)</span>.</li>
+<li class="fragment"><strong>In context:</strong> We are <span class="math inline">\(C\%\)</span> confident that for every one unit increase in <span class="math inline">\(x_j\)</span>, <span class="math inline">\(y\)</span> changes by LB to UB units, on average, holding all else constant.</li>
 </ul>
-<p><br></p>
-<ul>
-<li><p><strong>Generically</strong>: We are <span class="math inline">\(C\%\)</span> confident that the interval LB to UB contains the population coefficient of <span class="math inline">\(x_j\)</span>.</p></li>
-<li><p><strong>In context:</strong> We are <span class="math inline">\(C\%\)</span> confident that for every one unit increase in <span class="math inline">\(x_j\)</span>, we expect <span class="math inline">\(y\)</span> to change by LB to UB units, on average, holding all else constant.</p></li>
-</ul>
+</div>
 </section>
 <section id="confidence-interval-for-beta_j-2" class="slide level2">
 <h2>Confidence interval for <span class="math inline">\(\beta_j\)</span></h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">tidy</span>(rt_mlr_main_fit, <span class="at">conf.int =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">tidy</span>(rt_mlr_main_fit, <span class="at">conf.int =</span> <span class="cn">TRUE</span>, <span class="at">conf.level =</span> <span class="fl">0.95</span>) <span class="sc">|&gt;</span></span>
 <span id="cb5-2"><a></a>  <span class="fu">kable</span>(<span class="at">digits=</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top" style="width:100%;">
@@ -1079,7 +902,7 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 <p>Including all available predictors</p>
 <p><strong>Fit:</strong></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>rt_full_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(volume <span class="sc">~</span> ., <span class="at">data =</span> rail_trail)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>rt_full_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(volume <span class="sc">~</span> . , <span class="at">data =</span> rail_trail)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <p><strong>Summarize:</strong></p>
@@ -1158,11 +981,12 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 </div>
 </div>
 </div>
-<div class="fragment">
+</section>
+<section id="full-model-1" class="slide level2">
+<h2>Full model</h2>
 <p><strong>Augment:</strong></p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>rt_full_aug <span class="ot">&lt;-</span> <span class="fu">augment</span>(rt_full_fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </div>
 </section>
 <section id="model-conditions" class="slide level2">
@@ -1198,18 +1022,145 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 <section id="residuals-vs.-each-predictor" class="slide level2">
 <h2>Residuals vs.&nbsp;each predictor</h2>
 
-<img data-src="10-mlr-inference-conditions_files/figure-revealjs/unnamed-chunk-19-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
+<img data-src="10-mlr-inference-conditions_files/figure-revealjs/unnamed-chunk-16-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
 <section id="checking-linearity-1" class="slide level2">
 <h2>Checking linearity</h2>
 <ul>
 <li><p>The plot of the residuals vs.&nbsp;predicted values looked OK</p></li>
 <li><p>The plots of residuals vs.&nbsp;<code>hightemp</code> and <code>avgtemp</code> appear to have a parabolic pattern.</p></li>
-<li><p>The linearity condition does not appear to be satisfied given these plots.</p></li>
+<li><p>Potential violation in the linearity condition.</p></li>
 </ul>
 <div class="fragment">
 <div class="question">
 <p>Given this conclusion, what might be a next step in the analysis?</p>
 </div>
+</div>
+</section>
+<section id="consider-adding-quadratic-terms" class="slide level2 smaller">
+<h2>Consider adding quadratic terms</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>rt_full_fit_2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(volume <span class="sc">~</span> . <span class="sc">+</span> <span class="fu">I</span>(hightemp<span class="sc">^</span><span class="dv">2</span>) <span class="sc">+</span> <span class="fu">I</span>(avgtemp<span class="sc">^</span><span class="dv">2</span>), <span class="at">data =</span> rail_trail)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="caption-top">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 12%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 11%">
+<col style="width: 12%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+<th style="text-align: right;">conf.low</th>
+<th style="text-align: right;">conf.high</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">-733.08</td>
+<td style="text-align: right;">249.83</td>
+<td style="text-align: right;">-2.93</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">-1230.26</td>
+<td style="text-align: right;">-235.90</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">hightemp</td>
+<td style="text-align: right;">13.33</td>
+<td style="text-align: right;">10.86</td>
+<td style="text-align: right;">1.23</td>
+<td style="text-align: right;">0.22</td>
+<td style="text-align: right;">-8.29</td>
+<td style="text-align: right;">34.94</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">avgtemp</td>
+<td style="text-align: right;">18.49</td>
+<td style="text-align: right;">13.77</td>
+<td style="text-align: right;">1.34</td>
+<td style="text-align: right;">0.18</td>
+<td style="text-align: right;">-8.92</td>
+<td style="text-align: right;">45.90</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">seasonSpring</td>
+<td style="text-align: right;">1.31</td>
+<td style="text-align: right;">33.87</td>
+<td style="text-align: right;">0.04</td>
+<td style="text-align: right;">0.97</td>
+<td style="text-align: right;">-66.10</td>
+<td style="text-align: right;">68.73</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">seasonSummer</td>
+<td style="text-align: right;">24.51</td>
+<td style="text-align: right;">50.49</td>
+<td style="text-align: right;">0.49</td>
+<td style="text-align: right;">0.63</td>
+<td style="text-align: right;">-75.97</td>
+<td style="text-align: right;">124.99</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">cloudcover</td>
+<td style="text-align: right;">-8.06</td>
+<td style="text-align: right;">3.68</td>
+<td style="text-align: right;">-2.19</td>
+<td style="text-align: right;">0.03</td>
+<td style="text-align: right;">-15.39</td>
+<td style="text-align: right;">-0.74</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">precip</td>
+<td style="text-align: right;">-86.13</td>
+<td style="text-align: right;">42.71</td>
+<td style="text-align: right;">-2.02</td>
+<td style="text-align: right;">0.05</td>
+<td style="text-align: right;">-171.12</td>
+<td style="text-align: right;">-1.13</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">day_typeWeekend</td>
+<td style="text-align: right;">43.46</td>
+<td style="text-align: right;">21.58</td>
+<td style="text-align: right;">2.01</td>
+<td style="text-align: right;">0.05</td>
+<td style="text-align: right;">0.51</td>
+<td style="text-align: right;">86.41</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">I(hightemp^2)</td>
+<td style="text-align: right;">-0.05</td>
+<td style="text-align: right;">0.08</td>
+<td style="text-align: right;">-0.65</td>
+<td style="text-align: right;">0.52</td>
+<td style="text-align: right;">-0.22</td>
+<td style="text-align: right;">0.11</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">I(avgtemp^2)</td>
+<td style="text-align: right;">-0.17</td>
+<td style="text-align: right;">0.12</td>
+<td style="text-align: right;">-1.37</td>
+<td style="text-align: right;">0.17</td>
+<td style="text-align: right;">-0.41</td>
+<td style="text-align: right;">0.07</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="question">
+<p>Is there evidence of a statistically significant quadratic effect?</p>
 </div>
 </section>
 <section id="checking-constant-variance" class="slide level2">
@@ -1218,7 +1169,7 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 <p>Does the constant variance condition appear to be satisfied?</p>
 </div>
 
-<img data-src="10-mlr-inference-conditions_files/figure-revealjs/unnamed-chunk-20-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
+<img data-src="10-mlr-inference-conditions_files/figure-revealjs/unnamed-chunk-19-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
 <section id="checking-constant-variance-1" class="slide level2">
 <h2>Checking constant variance</h2>
 <ul>
@@ -1227,14 +1178,14 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 </ul>
 <div class="fragment">
 <div class="question">
-<p>We will talk about to address this in an upcoming class.</p>
+<p>What are the implications for our analysis results? We will talk about how to address this in an upcoming class.</p>
 </div>
 </div>
 </section>
 <section id="checking-normality" class="slide level2">
 <h2>Checking normality</h2>
 
-<img data-src="10-mlr-inference-conditions_files/figure-revealjs/unnamed-chunk-21-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"><p>The distribution of the residuals is approximately unimodal and symmetric, so the normality condition is satisfied. The sample size 90 is sufficiently large to relax this condition if it was not satisfied.</p>
+<img data-src="10-mlr-inference-conditions_files/figure-revealjs/unnamed-chunk-20-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"><p>The distribution of the residuals is approximately unimodal and symmetric, so the normality condition is satisfied. The sample size 90 is sufficiently large to relax this condition if it was not satisfied.</p>
 </section>
 <section id="checking-independence" class="slide level2">
 <h2>Checking independence</h2>
@@ -1248,14 +1199,14 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 <h2>Checking independence</h2>
 <p>Residuals vs.&nbsp;order of data collection:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">ggplot</span>(rt_full_aug, <span class="fu">aes</span>(<span class="at">y =</span> .resid, <span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(rt_full_aug))) <span class="sc">+</span></span>
-<span id="cb10-2"><a></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb10-3"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb10-4"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
-<span id="cb10-5"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Order of data collection"</span>, <span class="at">y =</span> <span class="st">"Residuals"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">ggplot</span>(rt_full_aug, <span class="fu">aes</span>(<span class="at">y =</span> .resid, <span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(rt_full_aug))) <span class="sc">+</span></span>
+<span id="cb11-2"><a></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb11-3"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb11-4"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb11-5"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Order of data collection"</span>, <span class="at">y =</span> <span class="st">"Residuals"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="10-mlr-inference-conditions_files/figure-revealjs/unnamed-chunk-22-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
+<img data-src="10-mlr-inference-conditions_files/figure-revealjs/unnamed-chunk-21-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
 <section id="checking-independence-2" class="slide level2">
 <h2>Checking independence</h2>
 <ul>
@@ -1269,6 +1220,12 @@ RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}
 <li>Reviewed model comparison</li>
 <li>Introduced inference for multiple linear regression</li>
 <li>Checked model conditions for linear regression</li>
+</ul>
+</section>
+<section id="next-class" class="slide level2">
+<h2>Next class</h2>
+<ul>
+<li>Exam 01 review</li>
 </ul>
 
 
