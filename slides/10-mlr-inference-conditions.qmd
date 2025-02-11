@@ -1,0 +1,607 @@
+---
+title: "MLR: Inference + Model conditions"
+author: "Prof. Maria Tackett"
+footer: "[🔗 STA 210 - Spring 2025](https://sta210-sp25.netlify.app)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: true
+    incremental: false 
+    chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+  html: 
+    output-file: 10-mlr-inference-conditions-notes.html
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+execute:
+  freeze: auto
+  echo: true
+knitr:
+  opts_chunk: 
+    R.options:      
+    width: 200
+bibliography: references.bib
+---
+
+```{r}
+#| include: false
+
+# figure options
+knitr::opts_chunk$set(
+  fig.width = 10, fig.asp = 0.618,
+  fig.retina = 3, dpi = 300, fig.align = "center"
+)
+```
+
+## Announcements
+
+-   HW 02 due TODAY at 11:59pm
+
+-   Lab 03 due Thursday, February 13 at 11:59pm
+
+-   Project topics due Sunday, February 16 at 11:59pm
+
+-   [Statistics experience](../hw/stats-experience.html) due Tuesday, April 15
+
+## Exam 01
+
+-   50 points total
+    -   in-class: 35-40 points
+
+    -   take-home: 10 - 15 points
+-   In-class (35 -40 pts): 75 minutes during February 18 lecture
+    -   Will be randomly assigned to exam room
+-   Take-home (10 -15 pts): released after class on Tuesday
+-   If you miss any part of the exam for an excused absence (with academic dean’s note or other official documentation), your Exam 02 score will be counted twice
+
+## Topics
+
+::: nonincremental
+-   Model comparison AE
+-   Inference for multiple linear regression
+-   Checking model conditions
+:::
+
+## Computational setup
+
+```{r}
+#| echo: true
+
+# load packages
+library(tidyverse)
+library(tidymodels)
+library(patchwork)
+library(knitr)
+library(kableExtra)
+library(countdown)
+library(rms)
+
+# set default theme and larger font size for ggplot2
+ggplot2::theme_set(ggplot2::theme_bw(base_size = 20))
+```
+
+# Model comparison
+
+## RMSE
+
+$$
+RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}^ne_i^2}{n}}
+$$
+
+::: incremental
+-   Ranges between 0 (perfect predictor) and infinity (terrible predictor)
+
+-   Same units as the response variable
+
+-   The value of RMSE is more useful for comparing across models than evaluating a single model
+:::
+
+## $R^2$ and Adjusted $R^2$
+
+$$R^2 = \frac{SSM}{SST} = 1 - \frac{SSR}{SST}$$
+
+<br>
+
+. . .
+
+$$Adj. R^2 = 1 - \frac{SSR/(n-p-1)}{SST/(n-1)}$$
+
+where
+
+-   $n$ is the number of observations used to fit the model
+
+-   $p$ is the number of terms (not including the intercept) in the model
+
+# Application exercise
+
+::: appex
+📋 [sta210-sp25.netlify.app/ae/ae-06-model-compare](../ae/ae-06-model-compare.html)
+:::
+
+<br>
+
+[Click here](https://docs.google.com/presentation/d/16rXxcbXq2ycI7LpxMNmyclBwkdxbhQY_GS4GYX316bE/edit?usp=sharing) to share your group's response.
+
+# Inference for multiple linear regression
+
+## Modeling workflow
+
+-   Split data into training and test sets.
+
+-   Fit, evaluate, and compare candidate models. Choose a final model based on summary of cross validation results.
+
+-   Refit the model using the entire training set and do "final" evaluation on the test set (make sure you have not overfit the model).
+
+    -   Adjust as needed if there is evidence of overfit.
+
+-   Use model fit on training set for inference and prediction.
+
+## Data: `rail_trail` {.midi}
+
+::: nonincremental
+-   The Pioneer Valley Planning Commission (PVPC) collected data for ninety days from April 5, 2005 to November 15, 2005.
+-   Data collectors set up a laser sensor, with breaks in the laser beam recording when a rail-trail user passed the data collection station.
+:::
+
+```{r}
+#| echo: false
+rail_trail <- read_csv(here::here("slides", "data/rail_trail.csv"))
+rail_trail
+```
+
+Source: [Pioneer Valley Planning Commission](http://www.fvgreenway.org/pdfs/Northampton-Bikepath-Volume-Counts%20_05_LTA.pdf) via the **mosaicData** package.
+
+## Variables {.midi}
+
+**Response**:
+
+`volume` estimated number of trail users that day (number of breaks recorded)
+
+. . .
+
+**Predictors**
+
+::: nonincremental
+-   `hightemp` daily high temperature (in degrees Fahrenheit)
+-   `avgtemp` average of daily low and daily high temperature (in degrees Fahrenheit)
+-   `season` one of "Fall", "Spring", or "Summer"
+-   `cloudcover` measure of cloud cover (in oktas)
+-   `precip` measure of precipitation (in inches)
+-   `day_type` one of "weekday" or "weekend"
+:::
+
+# Conduct a hypothesis test for $\beta_j$
+
+## Review: Simple linear regression (SLR)
+
+```{r}
+#| echo: false
+ggplot(rail_trail, aes(x = hightemp, y = volume)) + 
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "High temp (F)", y = "Number of riders")
+```
+
+## SLR model summary
+
+```{r}
+rt_slr_fit <- lm(volume ~ hightemp, data = rail_trail)
+
+tidy(rt_slr_fit) |> kable(digits = 2)
+```
+
+## SLR hypothesis test {.midi}
+
+```{r}
+#| echo: false
+
+tidy(rt_slr_fit) |> kable(digits = 2)
+```
+
+1.  **Set hypotheses:** $H_0: \beta_1 = 0$ vs. $H_a: \beta_1 \ne 0$
+
+. . .
+
+2.  **Calculate test statistic and p-value:** The test statistic is $t= 6.72$ . The p-value is calculated using a $t$ distribution with 88 degrees of freedom. The p-value is $\approx 0$ .
+
+. . .
+
+3.  **State the conclusion:** The p-value is small, so we reject $H_0$. The data provide strong evidence that high temperature is a helpful predictor for the number of daily riders, i.e. there is a linear relationship between high temperature and number of daily riders.
+
+## Multiple linear regression
+
+```{r}
+rt_mlr_main_fit <- lm(volume ~ hightemp + season, data = rail_trail)
+
+tidy(rt_mlr_main_fit) |> kable(digits = 2)
+```
+
+## Multiple linear regression
+
+The multiple linear regression model assumes $$Y|X_1, X_2,  \ldots, X_p \sim N(\beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_p X_p, \sigma_\epsilon^2)$$
+
+<br>
+
+. . .
+
+For a given observation $(x_{i1}, x_{i2}, \ldots, x_{ip}, y_i)$, we can rewrite the previous statement as
+
+$$y_i = \beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + \dots + \beta_p x_{ip} + \epsilon_{i} \hspace{10mm} \epsilon_i \sim N(0,\sigma_{\epsilon}^2)$$
+
+------------------------------------------------------------------------
+
+## Estimating $\sigma_\epsilon$
+
+For a given observation $(x_{i1}, x_{i2}, \ldots,x_{ip}, y_i)$ the residual is $$e_i = y_{i} - (\hat{\beta}_0 + \hat{\beta}_1 x_{i1} + \hat{\beta}_{2} x_{i2} + \dots + \hat{\beta}_p x_{ip})$$
+
+<br>
+
+. . .
+
+The estimated value of the regression standard error , $\sigma_{\epsilon}$, is
+
+$$\hat{\sigma}_\epsilon  = \sqrt{\frac{\sum_{i=1}^ne_i^2}{n-p-1}}$$
+
+. . .
+
+As with SLR, we use $\hat{\sigma}_{\epsilon}$ to calculate $SE(\hat{\beta}_j)$, the standard error of the coefficient for predictor $x_j$. See [Matrix Form of Linear Regression](https://github.com/STA210-Sp19/supplemental-notes/blob/master/regression-basics-matrix.pdf) for more detail.
+
+## MLR hypothesis test: hightemp {.midi}
+
+1.  **Set hypotheses:** $H_0: \beta_{hightemp} = 0$ vs. $H_A: \beta_{hightemp} \ne 0$, given `season` is in the model
+
+. . .
+
+2.  **Calculate test statistic and p-value:** The test statistic is $t = 6.43$. The p-value is calculated using a $t$ distribution with 86 $(n - p - 1)$ degrees of freedom. The p-value is $\approx 0$.
+
+. . .
+
+3.  **State the conclusion:** The p-value is small, so we reject $H_0$. The data provide strong evidence that high temperature for the day is a useful predictor in a model that already contains the season as a predictor for number of daily riders.
+
+## Model for `season = Spring` 
+
+```{r}
+#| echo: false
+
+tidy(rt_mlr_main_fit) |> kable(digits = 2)
+```
+
+<br>
+
+. . .
+
+$$
+\begin{aligned}
+\widehat{volume} &= -125.23 + 7.54 \times \texttt{hightemp} + 5.13 \times \texttt{seasonSpring} - 76.84 \times \texttt{seasonSummer} \\
+&= -125.23 + 7.54 \times \texttt{hightemp} + 5.13 \times 1 - 76.84 \times 0 \\
+&= -120.10 + 7.54 \times \texttt{hightemp}
+\end{aligned}
+$$
+
+## Model for `season = Summer`
+
+```{r}
+#| echo: false
+
+tidy(rt_mlr_main_fit) |> kable(digits = 2)
+```
+
+<br>
+
+. . .
+
+$$
+\begin{aligned}
+\widehat{volume} &= -125.23 + 7.54 \times \texttt{hightemp} + 5.13 \times \texttt{seasonSpring} - 76.84 \times \texttt{seasonSummer} \\
+&= -125.23 + 7.54 \times \texttt{hightemp} + 5.13 \times 0 - 76.84 \times 1 \\
+&= -202.07 + 7.54 \times \texttt{hightemp}
+\end{aligned}
+$$
+
+## The model for `season = Fall` {.smaller}
+
+```{r}
+#| echo: false
+
+tidy(rt_mlr_main_fit) |> kable(digits = 2)
+```
+
+<br>
+
+. . .
+
+$$
+\begin{aligned}
+\widehat{volume} &= -125.23 + 7.54 \times \texttt{hightemp} + 5.13 \times \texttt{seasonSpring} - 76.84 \times \texttt{seasonSummer} \\
+&= -125.23 + 7.54 \times \texttt{hightemp} + 5.13 \times 0 - 76.84 \times 0 \\
+&= -125.23 + 7.54 \times \texttt{hightemp}
+\end{aligned}
+$$
+
+## The models
+
+Same slope, different intercepts
+
+-   `season = Spring`: $-120.10 + 7.54 \times \texttt{hightemp}$
+-   `season = Summer`: $-202.07 + 7.54 \times \texttt{hightemp}$
+-   `season = Fall`: $-125.23 + 7.54 \times \texttt{hightemp}$
+
+## Interaction terms
+
+```{r}
+#| echo: false
+
+rt_mlr_int_fit <- linear_reg() |>
+  set_engine("lm") |>
+  fit(volume ~ hightemp + season + hightemp * season, data = rail_trail)
+
+tidy(rt_mlr_int_fit) |> kable(digits = 2)
+
+```
+
+<br>
+
+::: question
+Do the data provide evidence of a significant interaction effect? Comment on the significance of the interaction terms.
+:::
+
+# Confidence interval for $\beta_j$
+
+## Confidence interval for $\beta_j$
+
+-   The $C\%$ confidence interval for $\beta_j$ $$\hat{\beta}_j \pm t^* SE(\hat{\beta}_j)$$ where $t^*$ follows a $t$ distribution with $n - p - 1$ degrees of freedom.
+
+<br>
+
+-   **Generically**: We are $C\%$ confident that the interval LB to UB contains the population coefficient of $x_j$.
+
+-   **In context:** We are $C\%$ confident that for every one unit increase in $x_j$, we expect $y$ to change by LB to UB units, on average, holding all else constant.
+
+## Confidence interval for $\beta_j$
+
+```{r}
+tidy(rt_mlr_main_fit, conf.int = TRUE) |>
+  kable(digits= 2)
+```
+
+## CI for `hightemp` {.midi}
+
+```{r}
+#| echo: false
+
+tidy(rt_mlr_main_fit, conf.int = TRUE) |>
+  kable(digits = 2)
+```
+
+<br>
+
+We are 95% confident that for every degree Fahrenheit the day is warmer, the number of riders increases by 5.21 to 9.87, on average, holding season constant.
+
+## CI for `seasonSpring` {.midi}
+
+```{r}
+#| echo: false
+
+tidy(rt_mlr_main_fit, conf.int = TRUE) |>
+  kable(digits = 2)
+```
+
+<br>
+
+We are 95% confident that the number of riders on a Spring day is lower by 63.1 to higher by 73.4 compared to a Fall day, on average, holding high temperature for the day constant.
+
+. . .
+
+::: question
+Is `season` a significant predictor of the number of riders, after accounting for high temperature?
+:::
+
+# Inference pitfalls
+
+## Large sample sizes
+
+<br>
+
+:::: callout-caution
+If the sample size is large enough, the test will likely result in rejecting $H_0: \beta_j = 0$ even $x_j$ has a very small effect on $y$.
+
+::: nonincremental
+-   Consider the **practical significance** of the result not just the statistical significance.
+
+-   Use the confidence interval to draw conclusions instead of relying only p-values.
+:::
+::::
+
+## Small sample sizes
+
+<br>
+
+:::: callout-caution
+If the sample size is small, there may not be enough evidence to reject $H_0: \beta_j=0$.
+
+::: nonincremental
+-   When you fail to reject the null hypothesis, **DON'T** immediately conclude that the variable has no association with the response.
+
+-   There may be a linear association that is just not strong enough to detect given your data, or there may be a non-linear association.
+:::
+::::
+
+# Conditions for inference
+
+## Full model {.smaller}
+
+Including all available predictors
+
+**Fit:**
+
+```{r}
+rt_full_fit <- lm(volume ~ ., data = rail_trail)
+```
+
+. . .
+
+**Summarize:**
+
+```{r}
+tidy(rt_full_fit) |> kable(digits = 2)
+```
+
+. . .
+
+**Augment:**
+
+```{r}
+rt_full_aug <- augment(rt_full_fit)
+```
+
+## Model conditions
+
+1.  **Linearity:** There is a linear relationship between the response and predictor variables.
+
+2.  **Constant Variance:** The variability about the least squares line is generally constant.
+
+3.  **Normality:** The distribution of the residuals is approximately normal.
+
+4.  **Independence:** The residuals are independent from each other.
+
+## Checking Linearity
+
+-   Look at a plot of the residuals vs. predicted values
+
+-   Look at a plot of the residuals vs. each predictor
+
+-   Linearity is met if there is no discernible pattern in each of these plots
+
+    -   e.g., you cannot confidently say if the model under or over predicts for a given fitted value (or range of fitted values)
+
+## Residuals vs. predicted values
+
+```{r}
+#| label: main_res_pred
+
+ggplot(data = rt_full_aug, aes(x = .fitted, y = .resid)) +
+  geom_point(alpha = 0.7) +
+  geom_hline(yintercept = 0, color = "red", linetype = "dashed") +
+  labs(x = "Predicted values", y = "Residuals")
+```
+
+## Residuals vs. each predictor
+
+```{r}
+#| fig.asp: 0.5
+#| echo: false
+
+p1 <- ggplot(data = rt_full_aug, aes(x = hightemp, y = .resid)) +
+  geom_point(alpha = 0.7) + 
+  geom_hline(yintercept = 0, color = "red", linetype = "dashed")
+
+p2 <- ggplot(data = rt_full_aug, aes(x = avgtemp, y = .resid)) +
+  geom_point(alpha = 0.7) + 
+  geom_hline(yintercept = 0, color = "red", linetype = "dashed")
+
+p3 <- ggplot(data = rt_full_aug, aes(x = season, y = .resid)) +
+  geom_point(alpha = 0.7) + 
+  geom_hline(yintercept = 0, color = "red", linetype = "dashed")
+
+p4 <- ggplot(data = rt_full_aug, aes(x = cloudcover, y = .resid)) +
+  geom_point(alpha = 0.7) + 
+  geom_hline(yintercept = 0, color = "red", linetype = "dashed")
+
+p5 <- ggplot(data = rt_full_aug, aes(x = precip, y = .resid)) +
+  geom_point(alpha = 0.7) + 
+  geom_hline(yintercept = 0, color = "red", linetype = "dashed")
+
+p6 <- ggplot(data = rt_full_aug, aes(x = day_type, y = .resid)) +
+  geom_point(alpha = 0.7) + 
+  geom_hline(yintercept = 0, color = "red", linetype = "dashed")
+
+(p1 + p2 + p3) / (p4 + p5 + p6)
+```
+
+## Checking linearity
+
+-   The plot of the residuals vs. predicted values looked OK
+
+-   The plots of residuals vs. `hightemp` and `avgtemp` appear to have a parabolic pattern.
+
+-   The linearity condition does not appear to be satisfied given these plots.
+
+. . .
+
+::: question
+Given this conclusion, what might be a next step in the analysis?
+:::
+
+## Checking constant variance
+
+::: question
+Does the constant variance condition appear to be satisfied?
+:::
+
+```{r}
+#| ref.label: main_res_pred
+#| echo: false
+```
+
+## Checking constant variance
+
+-   The vertical spread of the residuals is not constant across the plot.
+
+-   The constant variance condition is not satisfied.
+
+. . .
+
+::: question
+We will talk about to address this in an upcoming class.
+:::
+
+## Checking normality
+
+```{r}
+#| fig.asp: 0.8
+#| echo: false
+
+resid_hist <- ggplot(rt_full_aug, aes(x = .resid)) +
+  geom_histogram(binwidth = 25) +
+  labs(x = "Residuals")  
+
+resid_hist
+```
+
+The distribution of the residuals is approximately unimodal and symmetric, so the normality condition is satisfied. The sample size 90 is sufficiently large to relax this condition if it was not satisfied.
+
+## Checking independence
+
+-   We can often check the independence condition based on the context of the data and how the observations were collected.
+
+-   If the data were collected in a particular order, examine a scatterplot of the residuals versus order in which the data were collected.
+
+-   If there is a grouping variable lurking in the background, check the residuals based on that grouping variable.
+
+## Checking independence {.midi}
+
+Residuals vs. order of data collection:
+
+```{r}
+ggplot(rt_full_aug, aes(y = .resid, x = 1:nrow(rt_full_aug))) +
+  geom_line() +
+  geom_point() +
+  geom_hline(yintercept = 0, color = "red", linetype = "dashed") +
+  labs(x = "Order of data collection", y = "Residuals")
+```
+
+## Checking independence
+
+-   No clear pattern in the residuals vs. order of data collection plot.
+
+-   Independence condition appears to be satisfied, as far as we can evaluate it.
+
+## Recap 
+
+-   Reviewed model comparison
+-   Introduced inference for multiple linear regression
+-   Checked model conditions for linear regression
