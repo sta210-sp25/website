@@ -51,18 +51,15 @@ Split the data into training (80%) and testing (20%) sets. Use seed `2025`.
 
 Use the training data to fit a model using `Party`, `Age`, and `Meal` to predict tips. Compute the $R^2$ and $Adj. R^2$ for this model.
 
-
 ## Exercise 3
 
 Now fit a model predicting tips using `Party`, `Age`, and `Meal`, such that the effect of party can differ by `Meal`. Compute $R^2$ and $Adj. R^2$ for this model.
-
 
 ## Exercise 4
 
 -   Which model do you choose - the model from Exercise 2 or Exercise 3? Why?
 
 -   Compute RMSE for the selected model.
-
 
 ## Exercise 5
 

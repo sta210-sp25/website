@@ -1,0 +1,130 @@
+---
+title: "Exam 01 review"
+author: "Prof. Maria Tackett"
+date: "2024-02-13"
+date-format: "MMM DD, YYYY"
+footer: "[🔗 STA 210 - Spring 2025](https://sta210-sp25.netlify.app)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: true
+    incremental: false 
+    chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+  html: 
+    output-file: 11-exam-01-review-notes.html
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+execute:
+  freeze: auto
+  echo: true
+knitr:
+  opts_chunk: 
+    R.options:      
+    width: 200
+bibliography: references.bib
+---
+
+## Announcements {.midi}
+
+-   Lab 03 due TODAY at 11:59pm
+
+-   Project topics due Sunday, February 16 at 11:59pm
+
+-   Monday's lab: Exam 01 office hours
+
+-   No office hours February 19 - 20
+
+## Exam 01
+
+-   50 points total
+
+    -   in-class: 35 points
+
+    -   take-home: 15 points
+
+-   In-class: 75 minutes during February 18 lecture
+
+-   Take-home: due February 20 at 9pm (no lecture on Thursday)
+
+-   If you miss any part of the exam for an excused absence (with academic dean’s note), your Exam 02 score will be counted twice
+
+## Outline of in-class portion {.midi}
+
+-   Closed-book, closed-note.
+
+-   Potential question types:
+
+    -   Multiple choice
+    -   Short answer (no more than 3 sentences)
+    -   True/ False.
+        -   If false, write 1 - 2 sentence justification about why it is false.
+    -   Evaluate a response.
+
+-   Analysis output included in the exam
+
+-   Just need a pen or pencil. No calculator permitted on exam.
+
+## Outline of take-home portion
+
+-   Released: Tuesday, February 18 right after class
+
+-   Due: Thursday, February 20 at 9pm (no lecture February 20)
+
+-   Similar in format to a lab/ HW
+
+    -   Will receive Exam questions in README of GitHub repo
+
+    -   Formatting + using a reproducible workflow will be part of grade
+
+-   Submit a PDF of responses to GitHub
+
+## Tips for studying
+
+-   Review exercises in AEs and assignments, asking “why” as you review your process and reasoning
+
+    -   e.g., Why do we include “holding all else constant” in interpretations?
+
+-   Focus on understanding not memorization
+
+-   Explain concepts / process to others
+
+-   Ask questions in office hours
+
+-   Review lecture recordings as needed
+
+## Content: Weeks 1 - 6
+
+::::: columns
+::: {.column width="50%"}
+-   Exploratory data analysis
+
+-   Fitting and interpreting simple linear regression models
+
+-   Statistical models and regression equations
+
+-   Simulation-based inference
+
+-   Mathematical models for inference
+:::
+
+::: {.column width="50%"}
+-   Fitting and interpreting multiple linear regression
+
+-   Prediction
+
+-   Different types of predictors
+
+-   Model evaluation and comparison
+:::
+:::::
+
+# Application exercise
+
+::: appex
+📋 [sta210-sp25.netlify.app/ae/ae-07-exam-01-review.html](../ae/ae-07-exam-01-review.html)
+:::
