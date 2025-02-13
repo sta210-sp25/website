@@ -4332,7 +4332,7 @@
     "href": "ae/ae-07-exam-01-review.html#inference-for-prediction",
     "title": "AE 07: Exam 01 review",
     "section": "Inference for prediction",
-    "text": "Inference for prediction\n\nExercise 10\nBased on your model, predict the volume for a weekday with high temperature of this 65 degrees.\n\n\nExercise 11\nSuppose you’re asked to construct a confidence and a prediction interval for your finding in the previous exercise. Which one would you expect to be wider and why? In your answer clearly state the difference between these intervals.\n\n\nExercise 12\nNow construct the intervals and comment on whether your guess is confirmed."
+    "text": "Inference for prediction\n\nExercise 10\nBased on your model, predict the volume for a weekday with high temperature of degrees.\n\n\nExercise 11\nSuppose you’re asked to construct a confidence and a prediction interval for your finding in the previous exercise. Which one would you expect to be wider and why? In your answer clearly state the difference between these intervals.\n\n\nExercise 12\nNow construct the intervals and comment on whether your guess is confirmed."
   },
   {
     "objectID": "ae/ae-07-exam-01-review.html#interaction-terms",

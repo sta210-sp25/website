@@ -114,7 +114,7 @@ Now repeat Exercises 7 and 8 using approaches based on mathematical models. You 
 
 ### Exercise 10
 
-Based on your model, predict the volume for a weekday with high temperature of this 65 degrees.
+Based on your model, predict the volume for a weekday with high temperature of degrees.
 
 ### Exercise 11
 
