@@ -1,0 +1,50 @@
+---
+title: "Exam 01 review"
+subtitle: ""
+date: "2025-02-17"
+date-format: "MMM DD, YYYY"
+footer: "[🔗 STA 210 - Spring 2025](https://sta210-sp25.netlify.app)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: true
+    incremental: false 
+    chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+execute:
+  freeze: auto
+  echo: true
+knitr:
+  opts_chunk: 
+    R.options:      
+    width: 200
+bibliography: references.bib
+---
+
+## Today's lab
+
+-   Work through Exercises 8 - 16 on
+
+-   You can push your work to your AE 07 repo.
+
+    -   There is no lab assignment for this week.
+
+## Formulas you're expected to know
+
+-   Sum of Square Residuals: $SSR = \sum_{i=1}^{n}(y_i - \hat{y}_i)^2$
+
+-   Regression standard error: $\hat{\sigma}_{\epsilon} = \sqrt{\frac{SSR}{n - p - 1}}$
+
+-   Root Mean Square Error: $RMSE = \sqrt{\frac{SSR}{n}}$
+
+-   Test statistic for $\beta_j$: $= \frac{\hat{\beta}_j - Null}{SE(\hat{\beta}_j)}$
+
+-   Confidence interval for coefficient: $\hat{\beta}_j \pm t^* \times SE(\hat{\beta}_j)$
+
+-   $R^2 = \frac{SSM}{SST} = 1 - \frac{SSR}{SST}$
