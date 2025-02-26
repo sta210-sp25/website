@@ -1779,11 +1779,11 @@
     "text": "Linearity\n\nLook at plot of residuals versus fitted (predicted) values.\nLinearity is satisfied if there is no discernible pattern in the plot (i.e., points randomly scattered around \\(residuals = 0\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLinearity is satisfied"
   },
   {
-    "objectID": "slides/12-conditions-diagnostics.html#linearity-not-satisfied",
-    "href": "slides/12-conditions-diagnostics.html#linearity-not-satisfied",
+    "objectID": "slides/12-conditions-diagnostics.html#example-linearity-not-satisfied",
+    "href": "slides/12-conditions-diagnostics.html#example-linearity-not-satisfied",
     "title": "Model conditions + diagnostics",
-    "section": "Linearity not satisfied",
-    "text": "Linearity not satisfied\n\n\n\nIf linearity is not satisfied, examine the plots of residuals versus each predictor.\nAdd higher order term(s), as needed."
+    "section": "Example: Linearity not satisfied",
+    "text": "Example: Linearity not satisfied\n\n\n\nIf linearity is not satisfied, examine the plots of residuals versus each predictor.\nAdd higher order term(s), as needed."
   },
   {
     "objectID": "slides/12-conditions-diagnostics.html#constant-variance",
@@ -1793,11 +1793,11 @@
     "text": "Constant variance\n\nLook at plot of residuals versus fitted (predicted) values.\nConstant variance is satisfied if the vertical spread of the points is approximately equal for all fitted values\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConstant variance is satisfied"
   },
   {
-    "objectID": "slides/12-conditions-diagnostics.html#constant-variance-1",
-    "href": "slides/12-conditions-diagnostics.html#constant-variance-1",
+    "objectID": "slides/12-conditions-diagnostics.html#example-constant-variance-not-satisfied",
+    "href": "slides/12-conditions-diagnostics.html#example-constant-variance-not-satisfied",
     "title": "Model conditions + diagnostics",
-    "section": "Constant variance",
-    "text": "Constant variance\n\n\n\nCondition is critical for inference\nAddress violations by applying transformation on the response"
+    "section": "Example: Constant variance not satisfied",
+    "text": "Example: Constant variance not satisfied\n\n\n\nCondition is critical for inference\nAddress violations by applying transformation on the response"
   },
   {
     "objectID": "slides/12-conditions-diagnostics.html#normality",
@@ -2052,11 +2052,11 @@
     "text": "Linearity\n\nLook at plot of residuals versus fitted (predicted) values.\nLinearity is satisfied if there is no discernible pattern in the plot (i.e., points randomly scattered around \\(residuals = 0\\)\n\n. . .\n\n\n\n\n\n\n\n\n\n. . .\n\nLinearity is satisfied"
   },
   {
-    "objectID": "slides/12-conditions-diagnostics-notes.html#linearity-not-satisfied",
-    "href": "slides/12-conditions-diagnostics-notes.html#linearity-not-satisfied",
+    "objectID": "slides/12-conditions-diagnostics-notes.html#example-linearity-not-satisfied",
+    "href": "slides/12-conditions-diagnostics-notes.html#example-linearity-not-satisfied",
     "title": "Model conditions + diagnostics",
-    "section": "Linearity not satisfied",
-    "text": "Linearity not satisfied\n\n\n\n\n\n\n\n\n\n. . .\n\nIf linearity is not satisfied, examine the plots of residuals versus each predictor.\nAdd higher order term(s), as needed."
+    "section": "Example: Linearity not satisfied",
+    "text": "Example: Linearity not satisfied\n\n\n\n\n\n\n\n\n\n. . .\n\nIf linearity is not satisfied, examine the plots of residuals versus each predictor.\nAdd higher order term(s), as needed."
   },
   {
     "objectID": "slides/12-conditions-diagnostics-notes.html#constant-variance",
@@ -2066,11 +2066,11 @@
     "text": "Constant variance\n\nLook at plot of residuals versus fitted (predicted) values.\nConstant variance is satisfied if the vertical spread of the points is approximately equal for all fitted values\n\n. . .\n\n\n\n\n\n\n\n\n\n. . .\n\nConstant variance is satisfied"
   },
   {
-    "objectID": "slides/12-conditions-diagnostics-notes.html#constant-variance-1",
-    "href": "slides/12-conditions-diagnostics-notes.html#constant-variance-1",
+    "objectID": "slides/12-conditions-diagnostics-notes.html#example-constant-variance-not-satisfied",
+    "href": "slides/12-conditions-diagnostics-notes.html#example-constant-variance-not-satisfied",
     "title": "Model conditions + diagnostics",
-    "section": "Constant variance",
-    "text": "Constant variance\n\n\n\n\n\n\n\n\n\n. . .\n\nCondition is critical for inference\nAddress violations by applying transformation on the response"
+    "section": "Example: Constant variance not satisfied",
+    "text": "Example: Constant variance not satisfied\n\n\n\n\n\n\n\n\n\n. . .\n\nCondition is critical for inference\nAddress violations by applying transformation on the response"
   },
   {
     "objectID": "slides/12-conditions-diagnostics-notes.html#normality",

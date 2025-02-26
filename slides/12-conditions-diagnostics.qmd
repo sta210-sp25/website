@@ -169,7 +169,7 @@ ggplot(data = lemurs_aug, aes(x = .fitted, y = .resid)) +
 
 <center>**Linearity is** **satisfied**</center>
 
-## Linearity not satisfied
+## Example: Linearity not satisfied
 
 ```{r}
 #| echo: false
@@ -236,7 +236,7 @@ ggplot(data = lemurs_aug, aes(x = .fitted, y = .resid)) +
 
 <center>**Constant variance is** **satisfied**</center>
 
-## Constant variance
+## Example: Constant variance not satisfied
 
 ```{r}
 #| echo: false
