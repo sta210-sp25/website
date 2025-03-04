@@ -274,7 +274,7 @@ Prof.&nbsp;Maria Tackett
 <ul>
 <li>Education index: <em>Average of mean years of schooling (of adults) and expected years of school (of children), both expressed as an index obtained by scaling wit the corresponding maxima.</em></li>
 </ul></li>
-<li><p><code>health_expend</code>: Per capita current spending on on healthcare good sand services, expressed in respective currency - international Purchasing Power Parity (PPP) dollar (<a href="https://www.who.int/data/gho/indicator-metadata-registry/imr-details/4952">from the World Health Organization</a>)</p></li>
+<li><p><code>health_expend</code>: Per capita current spending on on healthcare goods and services, expressed in respective currency - international Purchasing Power Parity (PPP) dollar (<a href="https://www.who.int/data/gho/indicator-metadata-registry/imr-details/4952">from the World Health Organization</a>)</p></li>
 </ul>
 </section>
 <section id="exploratory-data-analysis" class="slide level2">
@@ -393,7 +393,18 @@ Prof.&nbsp;Maria Tackett
 \end{aligned}
 \]</span></p>
 </section>
-<section id="model-interpretation" class="slide level2 midi">
+<section id="math-rules" class="slide level2" data-background-color="#ccddeb">
+<h2>Math rules</h2>
+<p><span class="math display">\[
+\begin{aligned}
+\log(ab) &amp;= \log(a) + \log(b) \\[8pt]
+\log\big(\frac{a}{b}\big) &amp;= \log(a) - \log(b)\\[15pt]
+e^{a + b + c} &amp;= e^ae^be^c \\[8pt]
+e^{a - b} &amp;= \frac{e^a}{e^b}
+\end{aligned}
+\]</span></p>
+</section>
+<section id="model-interpretation" class="slide level2">
 <h2>Model interpretation</h2>
 <p><span class="math display">\[\begin{align}\hat{y_i} &amp;= e^{(\hat{\beta}_0 + \hat{\beta}_1 x_{i1} + \dots + \hat{\beta}_Px_{ip})} \\
 &amp;= e^{\hat{\beta}_0}e^{\hat{\beta}_1x_{i1}}\dots e^{\hat{\beta}_px_{ip}}\end{align}\]</span></p>
