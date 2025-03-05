@@ -279,18 +279,23 @@ Prof.&nbsp;Maria Tackett
 </section>
 <section id="exploratory-data-analysis" class="slide level2">
 <h2>Exploratory data analysis</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
 
-<img data-src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+</div>
+<img data-src="14-variable-transformations_files/figure-html/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" width="672"></section>
 <section id="exploratory-data-analysis-1" class="slide level2">
 <h2>Exploratory data analysis</h2>
 <p><strong>The goal is to use income inequality and education to understand variability in health expenditure</strong></p>
 
-<img data-src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="14-variable-transformations_files/figure-html/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="672"></section>
 <section id="original-model" class="slide level2">
 <h2>Original model</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>health_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(health_expenditure <span class="sc">~</span> income_inequality <span class="sc">+</span> education, </span>
-<span id="cb2-2"><a></a>                     <span class="at">data =</span> health_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>health_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(health_expenditure <span class="sc">~</span> income_inequality <span class="sc">+</span> education, </span>
+<span id="cb3-2"><a></a>                     <span class="at">data =</span> health_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -333,15 +338,29 @@ Prof.&nbsp;Maria Tackett
 </section>
 <section id="original-model-residuals-vs.-fitted" class="slide level2">
 <h2>Original model: Residuals vs.&nbsp;fitted</h2>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in geom_hline(yintercept = 0, color = "red", linetype. = 2): Ignoring
+unknown parameters: `linetype.`</code></pre>
+</div>
 
-<img data-src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"><div class="question">
+</div>
+<img data-src="14-variable-transformations_files/figure-html/unnamed-chunk-7-1.png" width="672" class="r-stretch"><div class="question">
 <p>What model assumption(s) appear to be violated?</p>
 </div>
 </section>
 <section id="consider-different-transformations" class="slide level2">
 <h2>Consider different transformations…</h2>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
 
-<img data-src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section></section>
+</div>
+<img data-src="14-variable-transformations_files/figure-html/unnamed-chunk-8-1.png" width="672" class="r-stretch"></section></section>
 <section>
 <section id="transformation-on-y" class="title-slide slide level1 center">
 <h1>Transformation on <span class="math inline">\(Y\)</span></h1>
@@ -468,11 +487,11 @@ e^{a - b} &amp;= \frac{e^a}{e^b}
 <section id="model-with-logy-residuals" class="slide level2">
 <h2>Model with log(Y): Residuals</h2>
 
-<img data-src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section>
+<img data-src="14-variable-transformations_files/figure-html/unnamed-chunk-10-1.png" width="672" class="r-stretch"></section>
 <section id="compare-residual-plots" class="slide level2">
 <h2>Compare residual plots</h2>
 
-<img data-src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section></section>
+<img data-src="14-variable-transformations_files/figure-html/unnamed-chunk-11-1.png" width="672" class="r-stretch"></section></section>
 <section>
 <section id="log-transformation-on-a-predictor-variable" class="title-slide slide level1 center">
 <h1>Log transformation on a predictor variable</h1>
@@ -482,12 +501,12 @@ e^{a - b} &amp;= \frac{e^a}{e^b}
 <h2>Variability in life expectancy</h2>
 <p>Now let’s consider a model using a country’s healthcare expenditure, income inequality, and education to predict its life expectancy</p>
 
-<img data-src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-12-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="14-variable-transformations_files/figure-html/unnamed-chunk-12-1.png" class="quarto-figure quarto-figure-center r-stretch" width="672"></section>
 <section id="original-model-1" class="slide level2">
 <h2>Original model</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>life_exp_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(life_exp <span class="sc">~</span> health_expenditure <span class="sc">+</span> income_inequality <span class="sc">+</span> education, </span>
-<span id="cb3-2"><a></a>                   <span class="at">data =</span> health_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>life_exp_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(life_exp <span class="sc">~</span> health_expenditure <span class="sc">+</span> income_inequality <span class="sc">+</span> education, </span>
+<span id="cb6-2"><a></a>                   <span class="at">data =</span> health_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -538,11 +557,11 @@ e^{a - b} &amp;= \frac{e^a}{e^b}
 <section id="original-model-residuals" class="slide level2">
 <h2>Original model: Residuals</h2>
 
-<img data-src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"></section>
+<img data-src="14-variable-transformations_files/figure-html/unnamed-chunk-15-1.png" width="672" class="r-stretch"></section>
 <section id="residuals-vs.-predictors" class="slide level2">
 <h2>Residuals vs.&nbsp;predictors</h2>
 
-<img data-src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-16-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><div class="fragment">
+<img data-src="14-variable-transformations_files/figure-html/unnamed-chunk-16-1.png" class="quarto-figure quarto-figure-center r-stretch" width="672"><div class="fragment">
 <div class="question">
 <p>The non-linear relationship is between health expenditure and life expectancy.</p>
 </div>
@@ -552,13 +571,12 @@ e^{a - b} &amp;= \frac{e^a}{e^b}
 <h2>Log Transformation on <span class="math inline">\(X\)</span></h2>
 <p>Try a transformation on <span class="math inline">\(X\)</span> if the scatterplot in EDA shows non-linear relationship and residuals vs.&nbsp;predictor make parabola</p>
 
-<img data-src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-17-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="14-variable-transformations_files/figure-html/unnamed-chunk-17-1.png" class="quarto-figure quarto-figure-center r-stretch" width="672"></section>
 <section id="model-with-transformation-on-x_j" class="slide level2 midi">
 <h2>Model with Transformation on <span class="math inline">\(X_j\)</span></h2>
 <p>If we fit a model with predictor <span class="math inline">\(\log(X_j)\)</span>, We fit a model of the form:</p>
 <p><span class="math display">\[
 Y = \beta_0 + \beta_1X_1 + \dots + \beta_j\log(X_j) + \dots \beta_pX_p + \epsilon, \quad \epsilon \sim N(0, \sigma^2_{\epsilon})\]</span></p>
-<p>such that <span class="math inline">\(\mathbf{X}\)</span> has a column for <span class="math inline">\(\log(X_j)\)</span> .</p>
 <div class="fragment">
 <p>The estimated regression model is</p>
 <p><span class="math display">\[
@@ -590,8 +608,8 @@ Y = \beta_0 + \beta_1X_1 + \dots + \beta_j\log(X_j) + \dots \beta_pX_p + \epsilo
 <section id="model-with-logx" class="slide level2 midi">
 <h2>Model with log(X)</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>life_exp_logx_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(life_exp <span class="sc">~</span> <span class="fu">log</span>(health_expenditure) <span class="sc">+</span> income_inequality <span class="sc">+</span> education, </span>
-<span id="cb4-2"><a></a>                        <span class="at">data =</span> health_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>life_exp_logx_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(life_exp <span class="sc">~</span> <span class="fu">log</span>(health_expenditure) <span class="sc">+</span> income_inequality <span class="sc">+</span> education, </span>
+<span id="cb7-2"><a></a>                        <span class="at">data =</span> health_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -650,7 +668,7 @@ Y = \beta_0 + \beta_1X_1 + \dots + \beta_j\log(X_j) + \dots \beta_pX_p + \epsilo
 <section id="model-with-logx-residuals" class="slide level2">
 <h2>Model with log(X): Residuals</h2>
 
-<img data-src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-20-1.png" width="960" class="r-stretch"></section>
+<img data-src="14-variable-transformations_files/figure-html/unnamed-chunk-20-1.png" width="672" class="r-stretch"></section>
 <section id="learn-more" class="slide level2">
 <h2>Learn more</h2>
 <p>See <a href="https://github.com/sta210-sp20/supplemental-notes/blob/master/log-transformations.pdf">Log Transformations in Linear Regression</a> for more details about interpreting regression models with log-transformed variables.</p>
@@ -890,44 +908,6 @@ Zarulli, Virginia, Elizaveta Sopina, Veronica Toffolutti, and Adam Lenart. 2021.
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

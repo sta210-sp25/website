@@ -532,10 +532,13 @@ window.Quarto = {
 <section id="exploratory-data-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="exploratory-data-analysis">Exploratory data analysis</h2>
 <div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-3-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="960"></p>
+<p><img src="14-variable-transformations_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -548,7 +551,7 @@ window.Quarto = {
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-4-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="960"></p>
+<p><img src="14-variable-transformations_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -557,8 +560,8 @@ window.Quarto = {
 <section id="original-model" class="level2">
 <h2 class="anchored" data-anchor-id="original-model">Original model</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>health_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(health_expenditure <span class="sc">~</span> income_inequality <span class="sc">+</span> education, </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">data =</span> health_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>health_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(health_expenditure <span class="sc">~</span> income_inequality <span class="sc">+</span> education, </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">data =</span> health_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -602,10 +605,14 @@ window.Quarto = {
 <section id="original-model-residuals-vs.-fitted" class="level2">
 <h2 class="anchored" data-anchor-id="original-model-residuals-vs.-fitted">Original model: Residuals vs.&nbsp;fitted</h2>
 <div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in geom_hline(yintercept = 0, color = "red", linetype. = 2): Ignoring
+unknown parameters: `linetype.`</code></pre>
+</div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="960"></p>
+<p><img src="14-variable-transformations_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -617,10 +624,16 @@ window.Quarto = {
 <section id="consider-different-transformations" class="level2">
 <h2 class="anchored" data-anchor-id="consider-different-transformations">Consider different transformations…</h2>
 <div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="960"></p>
+<p><img src="14-variable-transformations_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -752,7 +765,7 @@ e^{a - b} &amp;= \frac{e^a}{e^b}
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="960"></p>
+<p><img src="14-variable-transformations_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -764,7 +777,7 @@ e^{a - b} &amp;= \frac{e^a}{e^b}
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="960"></p>
+<p><img src="14-variable-transformations_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -780,7 +793,7 @@ e^{a - b} &amp;= \frac{e^a}{e^b}
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-12-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="960"></p>
+<p><img src="14-variable-transformations_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -789,8 +802,8 @@ e^{a - b} &amp;= \frac{e^a}{e^b}
 <section id="original-model-1" class="level2">
 <h2 class="anchored" data-anchor-id="original-model-1">Original model</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>life_exp_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(life_exp <span class="sc">~</span> health_expenditure <span class="sc">+</span> income_inequality <span class="sc">+</span> education, </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">data =</span> health_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>life_exp_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(life_exp <span class="sc">~</span> health_expenditure <span class="sc">+</span> income_inequality <span class="sc">+</span> education, </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">data =</span> health_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -844,7 +857,7 @@ e^{a - b} &amp;= \frac{e^a}{e^b}
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="960"></p>
+<p><img src="14-variable-transformations_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -856,7 +869,7 @@ e^{a - b} &amp;= \frac{e^a}{e^b}
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-16-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="960"></p>
+<p><img src="14-variable-transformations_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -873,7 +886,7 @@ e^{a - b} &amp;= \frac{e^a}{e^b}
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-17-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="960"></p>
+<p><img src="14-variable-transformations_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -884,7 +897,6 @@ e^{a - b} &amp;= \frac{e^a}{e^b}
 <p>If we fit a model with predictor <span class="math inline">\(\log(X_j)\)</span>, We fit a model of the form:</p>
 <p><span class="math display">\[
 Y = \beta_0 + \beta_1X_1 + \dots + \beta_j\log(X_j) + \dots \beta_pX_p + \epsilon, \quad \epsilon \sim N(0, \sigma^2_{\epsilon})\]</span></p>
-<p>such that <span class="math inline">\(\mathbf{X}\)</span> has a column for <span class="math inline">\(\log(X_j)\)</span> .</p>
 <p>. . .</p>
 <p>The estimated regression model is</p>
 <p><span class="math display">\[
@@ -915,8 +927,8 @@ Y = \beta_0 + \beta_1X_1 + \dots + \beta_j\log(X_j) + \dots \beta_pX_p + \epsilo
 <section id="model-with-logx" class="level2 midi">
 <h2 class="midi anchored" data-anchor-id="model-with-logx">Model with log(X)</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>life_exp_logx_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(life_exp <span class="sc">~</span> <span class="fu">log</span>(health_expenditure) <span class="sc">+</span> income_inequality <span class="sc">+</span> education, </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                        <span class="at">data =</span> health_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>life_exp_logx_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(life_exp <span class="sc">~</span> <span class="fu">log</span>(health_expenditure) <span class="sc">+</span> income_inequality <span class="sc">+</span> education, </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>                        <span class="at">data =</span> health_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -978,7 +990,7 @@ Y = \beta_0 + \beta_1X_1 + \dots + \beta_j\log(X_j) + \dots \beta_pX_p + \epsilo
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="960"></p>
+<p><img src="14-variable-transformations_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1008,44 +1020,6 @@ Y = \beta_0 + \beta_1X_1 + \dots + \beta_j\log(X_j) + \dots \beta_pX_p + \epsilo
 Zarulli, Virginia, Elizaveta Sopina, Veronica Toffolutti, and Adam Lenart. 2021. <span>“Health Care System Efficiency and Life Expectancy: A 140-Country Study.”</span> Edited by Srinivas Goli. <em>PLOS ONE</em> 16 (7): e0253450. <a href="https://doi.org/10.1371/journal.pone.0253450">https://doi.org/10.1371/journal.pone.0253450</a>.
 </div>
 </div></section></div></main> <!-- /main -->
-
-<script>
-  // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-  // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-  // slide changes (different for each slide format).
-  (function () {
-    // dispatch for htmlwidgets
-    function fireSlideEnter() {
-      const event = window.document.createEvent("Event");
-      event.initEvent("slideenter", true, true);
-      window.document.dispatchEvent(event);
-    }
-
-    function fireSlideChanged(previousSlide, currentSlide) {
-      fireSlideEnter();
-
-      // dispatch for shiny
-      if (window.jQuery) {
-        if (previousSlide) {
-          window.jQuery(previousSlide).trigger("hidden");
-        }
-        if (currentSlide) {
-          window.jQuery(currentSlide).trigger("shown");
-        }
-      }
-    }
-
-    // hookup for slidy
-    if (window.w3c_slidy) {
-      window.w3c_slidy.add_observer(function (slide_num) {
-        // slide_num starts at position 1
-        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-      });
-    }
-
-  })();
-</script>
-
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

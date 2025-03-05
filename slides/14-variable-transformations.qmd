@@ -425,8 +425,6 @@ If we fit a model with predictor $\log(X_j)$, We fit a model of the form:
 $$
 Y = \beta_0 + \beta_1X_1 + \dots + \beta_j\log(X_j) + \dots \beta_pX_p + \epsilon, \quad \epsilon \sim N(0, \sigma^2_{\epsilon})$$
 
-such that $\mathbf{X}$ has a column for $\log(X_j)$ .
-
 . . .
 
 The estimated regression model is
