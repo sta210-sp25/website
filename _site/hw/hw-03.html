@@ -388,7 +388,7 @@ div.csl-indent {
   <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
   <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
   <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
-  <li><a href="#data-2000-u.s.-presidential-election1" id="toc-data-2000-u.s.-presidential-election1" class="nav-link" data-scroll-target="#data-2000-u.s.-presidential-election1">Data: <strong>2000 U.S. Presidential Election</strong></a></li>
+  <li><a href="#data-2000-u.s.-presidential-election1" id="toc-data-2000-u.s.-presidential-election1" class="nav-link" data-scroll-target="#data-2000-u.s.-presidential-election1">Data: 2000 U.S. Presidential Election</a></li>
   <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
   <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
   <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
@@ -487,8 +487,9 @@ Important
 </div>
 <section id="data-age-of-abalones" class="level2">
 <h2 class="anchored" data-anchor-id="data-age-of-abalones">Data: Age of abalones</h2>
-<p>The data for this analysis contains measurements for abalones, a type of marine snail. These measurements were collected and analyzed by researchers in <span class="citation" data-cites="warwick1994population">Warwick et al. (<a href="#ref-warwick1994population" role="doc-biblioref">1994</a>)</span>. <a href="https://www.researchgate.net/profile/Warwick-Nash/publication/287546509_7he_Population_Biology_of_Abalone_Haliotis_species_in_Tasmania_I_Blacklip_Abalone_H_rubra_from_the_North_Coast_and_Islands_of_Bass_Strait/links/5d949460458515202b7bf592/7he-Population-Biology-of-Abalone-Haliotis-species-in-Tasmania-I-Blacklip-Abalone-H-rubra-from-the-North-Coast-and-Islands-of-Bass-Strait.pdf">Click here</a> for the publication. The <code>nrow(abalone)</code> in this study can be reasonably treated as a random sample.</p>
-<p>This analysis will focus on the following variables:</p>
+<p>The data for this analysis contains measurements for abalones, a type of marine snail. These measurements were collected and analyzed by researchers in <span class="citation" data-cites="warwick1994population">Warwick et al. (<a href="#ref-warwick1994population" role="doc-biblioref">1994</a>)</span>. <a href="https://www.researchgate.net/profile/Warwick-Nash/publication/287546509_7he_Population_Biology_of_Abalone_Haliotis_species_in_Tasmania_I_Blacklip_Abalone_H_rubra_from_the_North_Coast_and_Islands_of_Bass_Strait/links/5d949460458515202b7bf592/7he-Population-Biology-of-Abalone-Haliotis-species-in-Tasmania-I-Blacklip-Abalone-H-rubra-from-the-North-Coast-and-Islands-of-Bass-Strait.pdf">Click here</a> for the publication.</p>
+<p>The 4177 abalones in this study can be reasonably treated as a random sample.</p>
+<p>The data are available in the file <code>abalone.csv</code> in the <code>data</code> folder. This analysis will focus on the following variables:</p>
 <ul>
 <li><p><code>Sex</code>: Male (M), Female (F), Infant (I)</p></li>
 <li><p><code>Length</code>: Longest shell measurement (in millimeters)</p></li>
@@ -520,9 +521,9 @@ Important
 <p>Now let’s look at the relationship between predictors.</p>
 <ol type="a">
 <li>Compute the Variance Inflation Factors (VIF) for the model from Exercise 1. Display the results.</li>
-<li>Write code to use the equation for VIF and “manually” compute the VIF for <code>Whole_Weight</code> .</li>
+<li>Use the equation for VIF to “manually” compute the VIF for <code>Whole_Weight</code>.</li>
 <li>What predictors appear to be collinear?</li>
-<li>If multicollinearity is present, select a strategy to fit a model that does not have an issue with multicollinearity.
+<li>Select a strategy to fit a model that does not have an issue with multicollinearity.
 <ul>
 <li>Briefly describe your strategy.</li>
 <li>Select a final model.</li>
@@ -531,7 +532,7 @@ Important
 </ol>
 </section>
 <section id="data-2000-u.s.-presidential-election1" class="level2">
-<h2 class="anchored" data-anchor-id="data-2000-u.s.-presidential-election1">Data: <strong>2000 U.S. Presidential Election</strong><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></h2>
+<h2 class="anchored" data-anchor-id="data-2000-u.s.-presidential-election1">Data: 2000 U.S. Presidential Election<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></h2>
 <!--# motivated by Statistical Sleuth-->
 <p>We will examine data about the <a href="https://en.wikipedia.org/wiki/2000_United_States_presidential_election">2000 U.S. presidential election</a> between George W. Bush and Al Gore. It was one of the closest elections in history that ultimately came down to the state of Florida. One county in particular, Palm Beach County, was at the center of the controversy due to the design of their ballots - the infamous <a href="http://news.bbc.co.uk/2/hi/in_depth/americas/2000/us_elections/glossary/a-b/1037172.stm">butterfly ballots</a>. It is believed that many people who intended to vote for Al Gore accidentally voted for Pat Buchanan due to how the spots to mark the candidate were arranged next to the names.</p>
 <p>The variables in the data are</p>

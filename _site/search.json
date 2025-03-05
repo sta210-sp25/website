@@ -3762,7 +3762,7 @@
     "href": "hw/hw-03.html#data-age-of-abalones",
     "title": "HW 03: Multiple linear regression",
     "section": "Data: Age of abalones",
-    "text": "Data: Age of abalones\nThe data for this analysis contains measurements for abalones, a type of marine snail. These measurements were collected and analyzed by researchers in Warwick et al. (1994). Click here for the publication. The nrow(abalone) in this study can be reasonably treated as a random sample.\nThis analysis will focus on the following variables:\n\nSex: Male (M), Female (F), Infant (I)\nLength: Longest shell measurement (in millimeters)\nDiameter: Measured perpendicular to length (in millimeters)\nHeight : Measured with meat in shell (in millimeters)\nWhole_Weight: Total weight of abalone (in grams)\nAge: Age (in year)\n\nThe goal of the analysis is to use a variety of measurements from abalones to explain variability in the age.",
+    "text": "Data: Age of abalones\nThe data for this analysis contains measurements for abalones, a type of marine snail. These measurements were collected and analyzed by researchers in Warwick et al. (1994). Click here for the publication.\nThe 4177 abalones in this study can be reasonably treated as a random sample.\nThe data are available in the file abalone.csv in the data folder. This analysis will focus on the following variables:\n\nSex: Male (M), Female (F), Infant (I)\nLength: Longest shell measurement (in millimeters)\nDiameter: Measured perpendicular to length (in millimeters)\nHeight : Measured with meat in shell (in millimeters)\nWhole_Weight: Total weight of abalone (in grams)\nAge: Age (in year)\n\nThe goal of the analysis is to use a variety of measurements from abalones to explain variability in the age.",
     "crumbs": [
       "Homework",
       "HW 03"
@@ -3795,7 +3795,7 @@
     "href": "hw/hw-03.html#exercise-3",
     "title": "HW 03: Multiple linear regression",
     "section": "Exercise 3",
-    "text": "Exercise 3\nNow let’s look at the relationship between predictors.\n\nCompute the Variance Inflation Factors (VIF) for the model from Exercise 1. Display the results.\nWrite code to use the equation for VIF and “manually” compute the VIF for Whole_Weight .\nWhat predictors appear to be collinear?\nIf multicollinearity is present, select a strategy to fit a model that does not have an issue with multicollinearity.\n\nBriefly describe your strategy.\nSelect a final model.\nBriefly explain your selection, showing the work and statistics used to choose a final model.",
+    "text": "Exercise 3\nNow let’s look at the relationship between predictors.\n\nCompute the Variance Inflation Factors (VIF) for the model from Exercise 1. Display the results.\nUse the equation for VIF to “manually” compute the VIF for Whole_Weight.\nWhat predictors appear to be collinear?\nSelect a strategy to fit a model that does not have an issue with multicollinearity.\n\nBriefly describe your strategy.\nSelect a final model.\nBriefly explain your selection, showing the work and statistics used to choose a final model.",
     "crumbs": [
       "Homework",
       "HW 03"
