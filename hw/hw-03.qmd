@@ -72,7 +72,7 @@ library(tidyverse)
 abalone <- read_csv("data/abalone_clean.csv")
 ```
 
-The data for this analysis contains measurements for abalones, a type of marine snail. These measurements were collected and analyzed by researchers in @warwick1994population. [Click here](https://www.researchgate.net/profile/Warwick-Nash/publication/287546509_7he_Population_Biology_of_Abalone_Haliotis_species_in_Tasmania_I_Blacklip_Abalone_H_rubra_from_the_North_Coast_and_Islands_of_Bass_Strait/links/5d949460458515202b7bf592/7he-Population-Biology-of-Abalone-Haliotis-species-in-Tasmania-I-Blacklip-Abalone-H-rubra-from-the-North-Coast-and-Islands-of-Bass-Strait.pdf) for the publication. 
+The data for this analysis contains measurements for abalones, a type of marine snail. These measurements were collected and analyzed by researchers in @warwick1994population. [Click here](https://www.researchgate.net/profile/Warwick-Nash/publication/287546509_7he_Population_Biology_of_Abalone_Haliotis_species_in_Tasmania_I_Blacklip_Abalone_H_rubra_from_the_North_Coast_and_Islands_of_Bass_Strait/links/5d949460458515202b7bf592/7he-Population-Biology-of-Abalone-Haliotis-species-in-Tasmania-I-Blacklip-Abalone-H-rubra-from-the-North-Coast-and-Islands-of-Bass-Strait.pdf) for the publication.
 
 The `r nrow(abalone)` abalones in this study can be reasonably treated as a random sample.
 

@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.6.39">
 
   <meta name="author" content="Prof.&nbsp;Maria Tackett">
-  <title>STA 210 - Spring 2025 – Variable transformations</title>
+  <title>STA 210 - Spring 2025 – Variable transformations cont’d</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -215,7 +215,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Variable transformations</h1>
+  <h1 class="title">Variable transformations cont’d</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -225,7 +225,22 @@ Prof.&nbsp;Maria Tackett
 </div>
 </div>
 
-  <p class="date">Mar 04, 2025</p>
+  <p class="date">Mar 06, 2025</p>
+</section>
+<section id="announcements" class="slide level2">
+<h2>Announcements</h2>
+<ul>
+<li><p>Lab 04 due TODAY at 11:59pm</p></li>
+<li><p>HW 03 due Tuesday March 18 at 11:59pm</p></li>
+<li><p>Next project milestone: Exploratory data analysis due March 20</p>
+<ul>
+<li>Work on it in lab March 17</li>
+</ul></li>
+</ul>
+<p><br></p>
+<center>
+Have a good spring break! 😎
+</center>
 </section>
 <section id="computing-set-up" class="slide level2">
 <h2>Computing set up</h2>
@@ -243,14 +258,19 @@ Prof.&nbsp;Maria Tackett
 <section id="topics" class="slide level2">
 <h2>Topics</h2>
 <ul>
-<li>Log-transformation on the response</li>
 <li>Log-transformation on the predictor</li>
 </ul>
 </section>
-<section>
-<section id="variable-transformations" class="title-slide slide level1 center">
-<h1>Variable transformations</h1>
-
+<section id="math-rules" class="slide level2" data-background-color="#ccddeb">
+<h2>Math rules</h2>
+<p><span class="math display">\[
+\begin{aligned}
+\log(ab) &amp;= \log(a) + \log(b) \\[8pt]
+\log\big(\frac{a}{b}\big) &amp;= \log(a) - \log(b)\\[15pt]
+e^{a + b + c} &amp;= e^ae^be^c \\[8pt]
+e^{a - b} &amp;= \frac{e^a}{e^b}
+\end{aligned}
+\]</span></p>
 </section>
 <section id="data-life-expectancy-in-140-countries" class="slide level2">
 <h2>Data: Life expectancy in 140 countries</h2>
@@ -277,146 +297,8 @@ Prof.&nbsp;Maria Tackett
 <li><p><code>health_expend</code>: Per capita current spending on on healthcare goods and services, expressed in respective currency - international Purchasing Power Parity (PPP) dollar (<a href="https://www.who.int/data/gho/indicator-metadata-registry/imr-details/4952">from the World Health Organization</a>)</p></li>
 </ul>
 </section>
-<section id="exploratory-data-analysis" class="slide level2">
-<h2>Exploratory data analysis</h2>
-
-<img data-src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-<section id="exploratory-data-analysis-1" class="slide level2">
-<h2>Exploratory data analysis</h2>
-<p><strong>The goal is to use income inequality and education to understand variability in health expenditure</strong></p>
-
-<img data-src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-<section id="original-model" class="slide level2">
-<h2>Original model</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>health_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(health_expenditure <span class="sc">~</span> income_inequality <span class="sc">+</span> education, </span>
-<span id="cb2-2"><a></a>                     <span class="at">data =</span> health_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: left;">term</th>
-<th style="text-align: right;">estimate</th>
-<th style="text-align: right;">std.error</th>
-<th style="text-align: right;">statistic</th>
-<th style="text-align: right;">p.value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">2070.599</td>
-<td style="text-align: right;">534.653</td>
-<td style="text-align: right;">3.873</td>
-<td style="text-align: right;">0.000</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">income_inequality</td>
-<td style="text-align: right;">-64.346</td>
-<td style="text-align: right;">18.626</td>
-<td style="text-align: right;">-3.455</td>
-<td style="text-align: right;">0.001</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">educationHigh</td>
-<td style="text-align: right;">1039.298</td>
-<td style="text-align: right;">359.736</td>
-<td style="text-align: right;">2.889</td>
-<td style="text-align: right;">0.004</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-<section id="original-model-residuals-vs.-fitted" class="slide level2">
-<h2>Original model: Residuals vs.&nbsp;fitted</h2>
-
-<img data-src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"><div class="question">
-<p>What model assumption(s) appear to be violated?</p>
-</div>
-</section>
-<section id="consider-different-transformations" class="slide level2">
-<h2>Consider different transformations…</h2>
-
-<img data-src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section></section>
-<section>
-<section id="transformation-on-y" class="title-slide slide level1 center">
-<h1>Transformation on <span class="math inline">\(Y\)</span></h1>
-
-</section>
-<section id="identifying-a-need-to-transform-y" class="slide level2 midi">
-<h2>Identifying a need to transform Y</h2>
-<div>
-<ul>
-<li class="fragment"><p>Typically, a “fan-shaped” residual plot indicates the need for a transformation of the response variable Y</p>
-<ul>
-<li class="fragment"><p>There are multiple ways to transform a variable, e.g., <span class="math inline">\(Y\)</span>, <span class="math inline">\(1/Y\)</span>, <span class="math inline">\(\log(Y)\)</span> . These are called <strong>variance stabilizing transformations</strong></p></li>
-<li class="fragment"><p><span class="math inline">\(\log(Y)\)</span> the most straightforward to interpret, so we use that transformation when possible</p></li>
-</ul></li>
-</ul>
-<!-- -->
-<ul>
-<li class="fragment"><p>When building a model:</p>
-<ul>
-<li class="fragment"><p>Choose a transformation and build the model on the transformed data</p></li>
-<li class="fragment"><p>Reassess the residual plots</p></li>
-<li class="fragment"><p>If the residuals plots did not sufficiently improve, try a new transformation!</p></li>
-</ul></li>
-</ul>
-</div>
-</section>
-<section id="log-transformation-on-y" class="slide level2">
-<h2>Log transformation on <span class="math inline">\(Y\)</span></h2>
-<ul>
-<li>If we apply a log transformation to the response variable, we want to estimate the parameters for the statistical model</li>
-</ul>
-<p><span class="math display">\[
-\log(Y) = \beta_0 + \beta_1X_1 + \beta_2X_2 + \dots + \beta_pX_p + \epsilon, \quad \epsilon \sim N(0, \sigma^2_{\epsilon})
-\]</span></p>
-<ul>
-<li>The regression equation is</li>
-</ul>
-<p><span class="math display">\[\widehat{\log(Y)} = \hat{\beta}_0 + \hat{\beta}_1X_1 + \hat{\beta}_2X_2 + \dots + \hat{\beta}_pX_p
-\]</span></p>
-</section>
-<section id="log-transformation-on-y-1" class="slide level2">
-<h2>Log transformation on <span class="math inline">\(Y\)</span></h2>
-<p>We fit the model in terms of <span class="math inline">\(\log(\mathbf{Y})\)</span> but want to interpret the model in terms of the original variable <span class="math inline">\(Y\)</span> , so we need to write the regression equation in terms of <span class="math inline">\(Y\)</span></p>
-<p><span class="math display">\[
-\begin{aligned}
-&amp;\widehat{\log(Y)} = \hat{\beta}_0 + \hat{\beta}_1X_1 + \hat{\beta}_2X_2 + \dots + \hat{\beta}_pX_p
-\\[8pt]
-\Rightarrow \quad &amp;\hat{Y} = e^{(\hat{\beta}_0 + \hat{\beta}_1X_1 + \hat{\beta}_2X_2 + \dots + \hat{\beta}_pX_p)}
-\end{aligned}
-\]</span></p>
-</section>
-<section id="math-rules" class="slide level2" data-background-color="#ccddeb">
-<h2>Math rules</h2>
-<p><span class="math display">\[
-\begin{aligned}
-\log(ab) &amp;= \log(a) + \log(b) \\[8pt]
-\log\big(\frac{a}{b}\big) &amp;= \log(a) - \log(b)\\[15pt]
-e^{a + b + c} &amp;= e^ae^be^c \\[8pt]
-e^{a - b} &amp;= \frac{e^a}{e^b}
-\end{aligned}
-\]</span></p>
-</section>
-<section id="model-interpretation" class="slide level2">
-<h2>Model interpretation</h2>
-<p><span class="math display">\[\begin{align}\hat{y_i} &amp;= e^{(\hat{\beta}_0 + \hat{\beta}_1 x_{i1} + \dots + \hat{\beta}_Px_{ip})} \\
-&amp;= e^{\hat{\beta}_0}e^{\hat{\beta}_1x_{i1}}\dots e^{\hat{\beta}_px_{ip}}\end{align}\]</span></p>
-<div class="fragment">
-<ul>
-<li><p><strong>Intercept</strong>: When <span class="math inline">\(x_{i1} = \dots = x_{ip} =0\)</span>, <span class="math inline">\(y_i\)</span> is expected to be <span class="math inline">\(e^{\hat{\beta}_0}\)</span></p></li>
-<li><p><strong>Coefficient of</strong> <span class="math inline">\(X_j\)</span>: For every one unit increase in <span class="math inline">\(x_{ij}\)</span>, <span class="math inline">\(y_{i}\)</span> is expected to multiply by a factor of <span class="math inline">\(e^{\hat{\beta}_j}\)</span>, holding all else constant.</p></li>
-</ul>
-</div>
-</section>
-<section id="model-with-logy" class="slide level2">
-<h2>Model with log(Y)</h2>
+<section id="review-model-with-logy" class="slide level2">
+<h2>Review: Model with log(Y)</h2>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top">
@@ -456,23 +338,12 @@ e^{a - b} &amp;= \frac{e^a}{e^b}
 </div>
 </div>
 <p><br></p>
-<div class="question">
-<p>Interpret each of the following in terms of health expenditure</p>
-<ul>
-<li><p>Intercept</p></li>
-<li><p><code>income_inequality</code></p></li>
-<li><p><code>education</code></p></li>
-</ul>
-</div>
+<p>For each additional point in the income inequality index, a country’s health expenditures are expected to multiply by 0.937 <span class="math inline">\((e^{-0.065})\)</span>, holding education constant.</p>
 </section>
-<section id="model-with-logy-residuals" class="slide level2">
-<h2>Model with log(Y): Residuals</h2>
-
-<img data-src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section>
 <section id="compare-residual-plots" class="slide level2">
 <h2>Compare residual plots</h2>
 
-<img data-src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section></section>
+<img data-src="15-transformations-contd_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
 <section>
 <section id="log-transformation-on-a-predictor-variable" class="title-slide slide level1 center">
 <h1>Log transformation on a predictor variable</h1>
@@ -480,14 +351,14 @@ e^{a - b} &amp;= \frac{e^a}{e^b}
 </section>
 <section id="variability-in-life-expectancy" class="slide level2">
 <h2>Variability in life expectancy</h2>
-<p>Now let’s consider a model using a country’s healthcare expenditure, income inequality, and education to predict its life expectancy</p>
+<p>Let’s consider a model using a country’s healthcare expenditure, income inequality, and education to predict its life expectancy</p>
 
-<img data-src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-12-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-<section id="original-model-1" class="slide level2">
+<img data-src="15-transformations-contd_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="original-model" class="slide level2">
 <h2>Original model</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>life_exp_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(life_exp <span class="sc">~</span> health_expenditure <span class="sc">+</span> income_inequality <span class="sc">+</span> education, </span>
-<span id="cb3-2"><a></a>                   <span class="at">data =</span> health_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>life_exp_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(life_exp <span class="sc">~</span> health_expenditure <span class="sc">+</span> income_inequality <span class="sc">+</span> education, </span>
+<span id="cb2-2"><a></a>                   <span class="at">data =</span> health_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -538,11 +409,11 @@ e^{a - b} &amp;= \frac{e^a}{e^b}
 <section id="original-model-residuals" class="slide level2">
 <h2>Original model: Residuals</h2>
 
-<img data-src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"></section>
+<img data-src="15-transformations-contd_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
 <section id="residuals-vs.-predictors" class="slide level2">
 <h2>Residuals vs.&nbsp;predictors</h2>
 
-<img data-src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-16-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><div class="fragment">
+<img data-src="15-transformations-contd_files/figure-revealjs/unnamed-chunk-9-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><div class="fragment">
 <div class="question">
 <p>There is a non-linear relationship is between health expenditure and life expectancy.</p>
 </div>
@@ -550,25 +421,25 @@ e^{a - b} &amp;= \frac{e^a}{e^b}
 </section>
 <section id="log-transformation-on-x" class="slide level2">
 <h2>Log Transformation on <span class="math inline">\(X\)</span></h2>
-<p>Try a transformation on <span class="math inline">\(X\)</span> if the scatterplot in EDA shows non-linear relationship and residuals vs.&nbsp;predictor make parabola</p>
+<p>Try a transformation on <span class="math inline">\(X\)</span> if the scatterplot in EDA shows non-linear relationship and residuals vs.&nbsp;fitted looks parabolic</p>
 
-<img data-src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-17-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="15-transformations-contd_files/figure-revealjs/unnamed-chunk-10-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="eda" class="slide level2">
+<h2>EDA</h2>
+
+<img data-src="15-transformations-contd_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
 <section id="model-with-transformation-on-x_j" class="slide level2 midi">
 <h2>Model with Transformation on <span class="math inline">\(X_j\)</span></h2>
-<p>If we fit a model with predictor <span class="math inline">\(\log(X_j)\)</span>, we fit a model of the form</p>
+<p>When we fit a model with predictor <span class="math inline">\(\log(X_j)\)</span>, we fit a model of the form</p>
 <p><span class="math display">\[
-Y = \beta_0 + \beta_1X_1 + \dots + \beta_j\log(X_j) + \dots \beta_pX_p + \epsilon, \quad \epsilon \sim N(0, \sigma^2_{\epsilon})\]</span></p>
-<div class="fragment">
+Y = \beta_0 + \beta_1X_1 + \dots + \beta_j\log(X_j) + \dots \beta_pX_p + \epsilon, \quad \epsilon \sim N(0, \sigma^2_{\epsilon})
+\]</span></p>
 <p>The estimated regression model is</p>
 <p><span class="math display">\[
-\begin{aligned}
-&amp;\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1X_1 + \dots + \hat{\beta}_j\log(X_j) + \dots \hat{\beta}_pX_p \\[8pt]
-\Rightarrow \quad &amp;\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1x_{i1} + \ldots + \hat{\beta}_j\log(x_{ij}) + \dots + \hat{\beta}_px_{ip}
-\end{aligned}
+\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1x_{i1} + \ldots + \hat{\beta}_j\log(x_{ij}) + \dots + \hat{\beta}_px_{ip}
 \]</span></p>
-</div>
 </section>
-<section id="model-interpretation-1" class="slide level2 midi">
+<section id="model-interpretation" class="slide level2 midi">
 <h2>Model interpretation</h2>
 <p><span class="math display">\[
 \hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1x_{i1} + \ldots + \hat{\beta}_j\log(x_{ij}) + \dots + \hat{\beta}_px_{ip}
@@ -589,8 +460,8 @@ Y = \beta_0 + \beta_1X_1 + \dots + \beta_j\log(X_j) + \dots \beta_pX_p + \epsilo
 <section id="model-with-logx" class="slide level2 midi">
 <h2>Model with log(X)</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>life_exp_logx_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(life_exp <span class="sc">~</span> <span class="fu">log</span>(health_expenditure) <span class="sc">+</span> income_inequality <span class="sc">+</span> education, </span>
-<span id="cb4-2"><a></a>                        <span class="at">data =</span> health_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>life_exp_logx_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(life_exp <span class="sc">~</span> <span class="fu">log</span>(health_expenditure) <span class="sc">+</span> income_inequality </span>
+<span id="cb3-2"><a></a>                        <span class="sc">+</span> education, <span class="at">data =</span> health_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -649,7 +520,11 @@ Y = \beta_0 + \beta_1X_1 + \dots + \beta_j\log(X_j) + \dots \beta_pX_p + \epsilo
 <section id="model-with-logx-residuals" class="slide level2">
 <h2>Model with log(X): Residuals</h2>
 
-<img data-src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-20-1.png" width="960" class="r-stretch"></section>
+<img data-src="15-transformations-contd_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch"></section>
+<section id="comparing-residual-plots" class="slide level2">
+<h2>Comparing residual plots</h2>
+
+<img data-src="15-transformations-contd_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"></section>
 <section id="learn-more" class="slide level2">
 <h2>Learn more</h2>
 <p>See <a href="https://github.com/sta210-sp20/supplemental-notes/blob/master/log-transformations.pdf">Log Transformations in Linear Regression</a> for more details about interpreting regression models with log-transformed variables.</p>
@@ -657,8 +532,8 @@ Y = \beta_0 + \beta_1X_1 + \dots + \beta_j\log(X_j) + \dots \beta_pX_p + \epsilo
 <section id="recap" class="slide level2">
 <h2>Recap</h2>
 <ul>
-<li>Log-transformation on the response</li>
-<li>Log-transformation on the predictor</li>
+<li>Introduced log-transformation on the predictor</li>
+<li>Identified linear models</li>
 </ul>
 </section>
 <section id="references" class="slide level2 smaller scrollable">

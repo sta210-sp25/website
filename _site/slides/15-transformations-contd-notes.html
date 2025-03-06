@@ -8,7 +8,7 @@
 
 <meta name="author" content="Prof.&nbsp;Maria Tackett">
 
-<title>Variable transformations – STA 210 - Spring 2025</title>
+<title>Variable transformations cont’d – STA 210 - Spring 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -163,7 +163,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Variable transformations</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Variable transformations cont’d</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -406,54 +406,41 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#computing-set-up" id="toc-computing-set-up" class="nav-link active" data-scroll-target="#computing-set-up">Computing set up</a></li>
+  <li><a href="#announcements" id="toc-announcements" class="nav-link active" data-scroll-target="#announcements">Announcements</a></li>
+  <li><a href="#computing-set-up" id="toc-computing-set-up" class="nav-link" data-scroll-target="#computing-set-up">Computing set up</a></li>
   <li><a href="#topics" id="toc-topics" class="nav-link" data-scroll-target="#topics">Topics</a></li>
-  <li><a href="#variable-transformations" id="toc-variable-transformations" class="nav-link" data-scroll-target="#variable-transformations">Variable transformations</a>
-  <ul class="collapse">
+  <li><a href="#math-rules" id="toc-math-rules" class="nav-link" data-scroll-target="#math-rules">Math rules</a></li>
   <li><a href="#data-life-expectancy-in-140-countries" id="toc-data-life-expectancy-in-140-countries" class="nav-link" data-scroll-target="#data-life-expectancy-in-140-countries">Data: Life expectancy in 140 countries</a></li>
   <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables">Variables</a></li>
   <li><a href="#variables-1" id="toc-variables-1" class="nav-link" data-scroll-target="#variables-1">Variables</a></li>
-  <li><a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link" data-scroll-target="#exploratory-data-analysis">Exploratory data analysis</a></li>
-  <li><a href="#exploratory-data-analysis-1" id="toc-exploratory-data-analysis-1" class="nav-link" data-scroll-target="#exploratory-data-analysis-1">Exploratory data analysis</a></li>
-  <li><a href="#original-model" id="toc-original-model" class="nav-link" data-scroll-target="#original-model">Original model</a></li>
-  <li><a href="#original-model-residuals-vs.-fitted" id="toc-original-model-residuals-vs.-fitted" class="nav-link" data-scroll-target="#original-model-residuals-vs.-fitted">Original model: Residuals vs.&nbsp;fitted</a></li>
-  <li><a href="#consider-different-transformations" id="toc-consider-different-transformations" class="nav-link" data-scroll-target="#consider-different-transformations">Consider different transformations…</a></li>
-  </ul></li>
-  <li><a href="#transformation-on-y" id="toc-transformation-on-y" class="nav-link" data-scroll-target="#transformation-on-y">Transformation on <span class="math inline">\(Y\)</span></a>
-  <ul class="collapse">
-  <li><a href="#identifying-a-need-to-transform-y" id="toc-identifying-a-need-to-transform-y" class="nav-link" data-scroll-target="#identifying-a-need-to-transform-y">Identifying a need to transform Y</a></li>
-  <li><a href="#log-transformation-on-y" id="toc-log-transformation-on-y" class="nav-link" data-scroll-target="#log-transformation-on-y">Log transformation on <span class="math inline">\(Y\)</span></a></li>
-  <li><a href="#log-transformation-on-y-1" id="toc-log-transformation-on-y-1" class="nav-link" data-scroll-target="#log-transformation-on-y-1">Log transformation on <span class="math inline">\(Y\)</span></a></li>
-  <li><a href="#math-rules" id="toc-math-rules" class="nav-link" data-scroll-target="#math-rules">Math rules</a></li>
-  <li><a href="#model-interpretation" id="toc-model-interpretation" class="nav-link" data-scroll-target="#model-interpretation">Model interpretation</a></li>
-  <li><a href="#model-with-logy" id="toc-model-with-logy" class="nav-link" data-scroll-target="#model-with-logy">Model with log(Y)</a></li>
-  <li><a href="#model-with-logy-residuals" id="toc-model-with-logy-residuals" class="nav-link" data-scroll-target="#model-with-logy-residuals">Model with log(Y): Residuals</a></li>
+  <li><a href="#review-model-with-logy" id="toc-review-model-with-logy" class="nav-link" data-scroll-target="#review-model-with-logy">Review: Model with log(Y)</a></li>
   <li><a href="#compare-residual-plots" id="toc-compare-residual-plots" class="nav-link" data-scroll-target="#compare-residual-plots">Compare residual plots</a></li>
-  </ul></li>
   <li><a href="#log-transformation-on-a-predictor-variable" id="toc-log-transformation-on-a-predictor-variable" class="nav-link" data-scroll-target="#log-transformation-on-a-predictor-variable">Log transformation on a predictor variable</a>
   <ul class="collapse">
   <li><a href="#variability-in-life-expectancy" id="toc-variability-in-life-expectancy" class="nav-link" data-scroll-target="#variability-in-life-expectancy">Variability in life expectancy</a></li>
-  <li><a href="#original-model-1" id="toc-original-model-1" class="nav-link" data-scroll-target="#original-model-1">Original model</a></li>
+  <li><a href="#original-model" id="toc-original-model" class="nav-link" data-scroll-target="#original-model">Original model</a></li>
   <li><a href="#original-model-residuals" id="toc-original-model-residuals" class="nav-link" data-scroll-target="#original-model-residuals">Original model: Residuals</a></li>
   <li><a href="#residuals-vs.-predictors" id="toc-residuals-vs.-predictors" class="nav-link" data-scroll-target="#residuals-vs.-predictors">Residuals vs.&nbsp;predictors</a></li>
   <li><a href="#log-transformation-on-x" id="toc-log-transformation-on-x" class="nav-link" data-scroll-target="#log-transformation-on-x">Log Transformation on <span class="math inline">\(X\)</span></a></li>
+  <li><a href="#eda" id="toc-eda" class="nav-link" data-scroll-target="#eda">EDA</a></li>
   <li><a href="#model-with-transformation-on-x_j" id="toc-model-with-transformation-on-x_j" class="nav-link" data-scroll-target="#model-with-transformation-on-x_j">Model with Transformation on <span class="math inline">\(X_j\)</span></a></li>
-  <li><a href="#model-interpretation-1" id="toc-model-interpretation-1" class="nav-link" data-scroll-target="#model-interpretation-1">Model interpretation</a></li>
+  <li><a href="#model-interpretation" id="toc-model-interpretation" class="nav-link" data-scroll-target="#model-interpretation">Model interpretation</a></li>
   <li><a href="#model-with-logx" id="toc-model-with-logx" class="nav-link" data-scroll-target="#model-with-logx">Model with log(X)</a></li>
   <li><a href="#model-with-logx-residuals" id="toc-model-with-logx-residuals" class="nav-link" data-scroll-target="#model-with-logx-residuals">Model with log(X): Residuals</a></li>
+  <li><a href="#comparing-residual-plots" id="toc-comparing-residual-plots" class="nav-link" data-scroll-target="#comparing-residual-plots">Comparing residual plots</a></li>
   <li><a href="#learn-more" id="toc-learn-more" class="nav-link" data-scroll-target="#learn-more">Learn more</a></li>
   <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/sta210-sp25/website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="14-variable-transformations.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/sta210-sp25/website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="15-transformations-contd.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Variable transformations</h1>
+<h1 class="title">Variable transformations cont’d</h1>
 </div>
 
 
@@ -470,7 +457,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Mar 04, 2025</p>
+      <p class="date">Mar 06, 2025</p>
     </div>
   </div>
   
@@ -482,6 +469,21 @@ window.Quarto = {
 </header>
 
 
+<section id="announcements" class="level2">
+<h2 class="anchored" data-anchor-id="announcements">Announcements</h2>
+<ul>
+<li><p>Lab 04 due TODAY at 11:59pm</p></li>
+<li><p>HW 03 due Tuesday March 18 at 11:59pm</p></li>
+<li><p>Next project milestone: Exploratory data analysis due March 20</p>
+<ul>
+<li>Work on it in lab March 17</li>
+</ul></li>
+</ul>
+<p><br></p>
+<center>
+Have a good spring break! 😎
+</center>
+</section>
 <section id="computing-set-up" class="level2">
 <h2 class="anchored" data-anchor-id="computing-set-up">Computing set up</h2>
 <div class="cell">
@@ -498,12 +500,20 @@ window.Quarto = {
 <section id="topics" class="level2">
 <h2 class="anchored" data-anchor-id="topics">Topics</h2>
 <ul>
-<li>Log-transformation on the response</li>
 <li>Log-transformation on the predictor</li>
 </ul>
 </section>
-<section id="variable-transformations" class="level1 page-columns page-full">
-<h1>Variable transformations</h1>
+<section id="math-rules" class="level2" data-background-color="#ccddeb">
+<h2 data-background-color="#ccddeb" class="anchored" data-anchor-id="math-rules">Math rules</h2>
+<p><span class="math display">\[
+\begin{aligned}
+\log(ab) &amp;= \log(a) + \log(b) \\[8pt]
+\log\big(\frac{a}{b}\big) &amp;= \log(a) - \log(b)\\[15pt]
+e^{a + b + c} &amp;= e^ae^be^c \\[8pt]
+e^{a - b} &amp;= \frac{e^a}{e^b}
+\end{aligned}
+\]</span></p>
+</section>
 <section id="data-life-expectancy-in-140-countries" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="data-life-expectancy-in-140-countries">Data: Life expectancy in 140 countries</h2>
 <p>The data set comes from <span class="citation" data-cites="zarulli2021">Zarulli et al. (<a href="#ref-zarulli2021" role="doc-biblioref">2021</a>)</span> who analyze the effects of a country’s healthcare expenditures and other factors on the country’s life expectancy. The data are originally from the <a href="http://hdr.undp.org/en/data">Human Development Database</a> and <a href="https://apps.who.int/nha/database/">World Health Organization</a>.</p>
@@ -529,175 +539,8 @@ window.Quarto = {
 <li><p><code>health_expend</code>: Per capita current spending on on healthcare goods and services, expressed in respective currency - international Purchasing Power Parity (PPP) dollar (<a href="https://www.who.int/data/gho/indicator-metadata-registry/imr-details/4952">from the World Health Organization</a>)</p></li>
 </ul>
 </section>
-<section id="exploratory-data-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="exploratory-data-analysis">Exploratory data analysis</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-3-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="exploratory-data-analysis-1" class="level2">
-<h2 class="anchored" data-anchor-id="exploratory-data-analysis-1">Exploratory data analysis</h2>
-<p><strong>The goal is to use income inequality and education to understand variability in health expenditure</strong></p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-4-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="original-model" class="level2">
-<h2 class="anchored" data-anchor-id="original-model">Original model</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>health_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(health_expenditure <span class="sc">~</span> income_inequality <span class="sc">+</span> education, </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">data =</span> health_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: left;">term</th>
-<th style="text-align: right;">estimate</th>
-<th style="text-align: right;">std.error</th>
-<th style="text-align: right;">statistic</th>
-<th style="text-align: right;">p.value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">2070.599</td>
-<td style="text-align: right;">534.653</td>
-<td style="text-align: right;">3.873</td>
-<td style="text-align: right;">0.000</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">income_inequality</td>
-<td style="text-align: right;">-64.346</td>
-<td style="text-align: right;">18.626</td>
-<td style="text-align: right;">-3.455</td>
-<td style="text-align: right;">0.001</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">educationHigh</td>
-<td style="text-align: right;">1039.298</td>
-<td style="text-align: right;">359.736</td>
-<td style="text-align: right;">2.889</td>
-<td style="text-align: right;">0.004</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-<section id="original-model-residuals-vs.-fitted" class="level2">
-<h2 class="anchored" data-anchor-id="original-model-residuals-vs.-fitted">Original model: Residuals vs.&nbsp;fitted</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="question">
-<p>What model assumption(s) appear to be violated?</p>
-</div>
-</section>
-<section id="consider-different-transformations" class="level2">
-<h2 class="anchored" data-anchor-id="consider-different-transformations">Consider different transformations…</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="transformation-on-y" class="level1">
-<h1>Transformation on <span class="math inline">\(Y\)</span></h1>
-<section id="identifying-a-need-to-transform-y" class="level2 midi">
-<h2 class="midi anchored" data-anchor-id="identifying-a-need-to-transform-y">Identifying a need to transform Y</h2>
-<div class="incremental">
-<ul class="incremental">
-<li><p>Typically, a “fan-shaped” residual plot indicates the need for a transformation of the response variable Y</p>
-<ul class="incremental">
-<li><p>There are multiple ways to transform a variable, e.g., <span class="math inline">\(Y\)</span>, <span class="math inline">\(1/Y\)</span>, <span class="math inline">\(\log(Y)\)</span> . These are called <strong>variance stabilizing transformations</strong></p></li>
-<li><p><span class="math inline">\(\log(Y)\)</span> the most straightforward to interpret, so we use that transformation when possible</p></li>
-</ul></li>
-</ul>
-<!-- -->
-<ul class="incremental">
-<li><p>When building a model:</p>
-<ul class="incremental">
-<li><p>Choose a transformation and build the model on the transformed data</p></li>
-<li><p>Reassess the residual plots</p></li>
-<li><p>If the residuals plots did not sufficiently improve, try a new transformation!</p></li>
-</ul></li>
-</ul>
-</div>
-</section>
-<section id="log-transformation-on-y" class="level2">
-<h2 class="anchored" data-anchor-id="log-transformation-on-y">Log transformation on <span class="math inline">\(Y\)</span></h2>
-<ul>
-<li>If we apply a log transformation to the response variable, we want to estimate the parameters for the statistical model</li>
-</ul>
-<p><span class="math display">\[
-\log(Y) = \beta_0 + \beta_1X_1 + \beta_2X_2 + \dots + \beta_pX_p + \epsilon, \quad \epsilon \sim N(0, \sigma^2_{\epsilon})
-\]</span></p>
-<ul>
-<li>The regression equation is</li>
-</ul>
-<p><span class="math display">\[\widehat{\log(Y)} = \hat{\beta}_0 + \hat{\beta}_1X_1 + \hat{\beta}_2X_2 + \dots + \hat{\beta}_pX_p
-\]</span></p>
-</section>
-<section id="log-transformation-on-y-1" class="level2">
-<h2 class="anchored" data-anchor-id="log-transformation-on-y-1">Log transformation on <span class="math inline">\(Y\)</span></h2>
-<p>We fit the model in terms of <span class="math inline">\(\log(\mathbf{Y})\)</span> but want to interpret the model in terms of the original variable <span class="math inline">\(Y\)</span> , so we need to write the regression equation in terms of <span class="math inline">\(Y\)</span></p>
-<p><span class="math display">\[
-\begin{aligned}
-&amp;\widehat{\log(Y)} = \hat{\beta}_0 + \hat{\beta}_1X_1 + \hat{\beta}_2X_2 + \dots + \hat{\beta}_pX_p
-\\[8pt]
-\Rightarrow \quad &amp;\hat{Y} = e^{(\hat{\beta}_0 + \hat{\beta}_1X_1 + \hat{\beta}_2X_2 + \dots + \hat{\beta}_pX_p)}
-\end{aligned}
-\]</span></p>
-</section>
-<section id="math-rules" class="level2" data-background-color="#ccddeb">
-<h2 data-background-color="#ccddeb" class="anchored" data-anchor-id="math-rules">Math rules</h2>
-<p><span class="math display">\[
-\begin{aligned}
-\log(ab) &amp;= \log(a) + \log(b) \\[8pt]
-\log\big(\frac{a}{b}\big) &amp;= \log(a) - \log(b)\\[15pt]
-e^{a + b + c} &amp;= e^ae^be^c \\[8pt]
-e^{a - b} &amp;= \frac{e^a}{e^b}
-\end{aligned}
-\]</span></p>
-</section>
-<section id="model-interpretation" class="level2">
-<h2 class="anchored" data-anchor-id="model-interpretation">Model interpretation</h2>
-<p><span class="math display">\[\begin{align}\hat{y_i} &amp;= e^{(\hat{\beta}_0 + \hat{\beta}_1 x_{i1} + \dots + \hat{\beta}_Px_{ip})} \\
-&amp;= e^{\hat{\beta}_0}e^{\hat{\beta}_1x_{i1}}\dots e^{\hat{\beta}_px_{ip}}\end{align}\]</span></p>
-<p>. . .</p>
-<ul>
-<li><p><strong>Intercept</strong>: When <span class="math inline">\(x_{i1} = \dots = x_{ip} =0\)</span>, <span class="math inline">\(y_i\)</span> is expected to be <span class="math inline">\(e^{\hat{\beta}_0}\)</span></p></li>
-<li><p><strong>Coefficient of</strong> <span class="math inline">\(X_j\)</span>: For every one unit increase in <span class="math inline">\(x_{ij}\)</span>, <span class="math inline">\(y_{i}\)</span> is expected to multiply by a factor of <span class="math inline">\(e^{\hat{\beta}_j}\)</span>, holding all else constant.</p></li>
-</ul>
-</section>
-<section id="model-with-logy" class="level2">
-<h2 class="anchored" data-anchor-id="model-with-logy">Model with log(Y)</h2>
+<section id="review-model-with-logy" class="level2">
+<h2 class="anchored" data-anchor-id="review-model-with-logy">Review: Model with log(Y)</h2>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -737,26 +580,7 @@ e^{a - b} &amp;= \frac{e^a}{e^b}
 </div>
 </div>
 <p><br></p>
-<div class="question">
-<p>Interpret each of the following in terms of health expenditure</p>
-<ul>
-<li><p>Intercept</p></li>
-<li><p><code>income_inequality</code></p></li>
-<li><p><code>education</code></p></li>
-</ul>
-</div>
-</section>
-<section id="model-with-logy-residuals" class="level2">
-<h2 class="anchored" data-anchor-id="model-with-logy-residuals">Model with log(Y): Residuals</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
+<p>For each additional point in the income inequality index, a country’s health expenditures are expected to multiply by 0.937 <span class="math inline">\((e^{-0.065})\)</span>, holding education constant.</p>
 </section>
 <section id="compare-residual-plots" class="level2">
 <h2 class="anchored" data-anchor-id="compare-residual-plots">Compare residual plots</h2>
@@ -764,33 +588,32 @@ e^{a - b} &amp;= \frac{e^a}{e^b}
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="960"></p>
+<p><img src="15-transformations-contd_files/figure-revealjs/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
 </section>
 <section id="log-transformation-on-a-predictor-variable" class="level1">
 <h1>Log transformation on a predictor variable</h1>
 <section id="variability-in-life-expectancy" class="level2">
 <h2 class="anchored" data-anchor-id="variability-in-life-expectancy">Variability in life expectancy</h2>
-<p>Now let’s consider a model using a country’s healthcare expenditure, income inequality, and education to predict its life expectancy</p>
+<p>Let’s consider a model using a country’s healthcare expenditure, income inequality, and education to predict its life expectancy</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-12-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="960"></p>
+<p><img src="15-transformations-contd_files/figure-revealjs/unnamed-chunk-5-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="original-model-1" class="level2">
-<h2 class="anchored" data-anchor-id="original-model-1">Original model</h2>
+<section id="original-model" class="level2">
+<h2 class="anchored" data-anchor-id="original-model">Original model</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>life_exp_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(life_exp <span class="sc">~</span> health_expenditure <span class="sc">+</span> income_inequality <span class="sc">+</span> education, </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">data =</span> health_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>life_exp_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(life_exp <span class="sc">~</span> health_expenditure <span class="sc">+</span> income_inequality <span class="sc">+</span> education, </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">data =</span> health_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -844,7 +667,7 @@ e^{a - b} &amp;= \frac{e^a}{e^b}
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="960"></p>
+<p><img src="15-transformations-contd_files/figure-revealjs/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
 </div>
@@ -856,7 +679,7 @@ e^{a - b} &amp;= \frac{e^a}{e^b}
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-16-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="960"></p>
+<p><img src="15-transformations-contd_files/figure-revealjs/unnamed-chunk-9-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="960"></p>
 </figure>
 </div>
 </div>
@@ -868,12 +691,24 @@ e^{a - b} &amp;= \frac{e^a}{e^b}
 </section>
 <section id="log-transformation-on-x" class="level2">
 <h2 class="anchored" data-anchor-id="log-transformation-on-x">Log Transformation on <span class="math inline">\(X\)</span></h2>
-<p>Try a transformation on <span class="math inline">\(X\)</span> if the scatterplot in EDA shows non-linear relationship and residuals vs.&nbsp;predictor make parabola</p>
+<p>Try a transformation on <span class="math inline">\(X\)</span> if the scatterplot in EDA shows non-linear relationship and residuals vs.&nbsp;fitted looks parabolic</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-17-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="960"></p>
+<p><img src="15-transformations-contd_files/figure-revealjs/unnamed-chunk-10-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="eda" class="level2">
+<h2 class="anchored" data-anchor-id="eda">EDA</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="15-transformations-contd_files/figure-revealjs/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
 </div>
@@ -881,20 +716,17 @@ e^{a - b} &amp;= \frac{e^a}{e^b}
 </section>
 <section id="model-with-transformation-on-x_j" class="level2 midi">
 <h2 class="midi anchored" data-anchor-id="model-with-transformation-on-x_j">Model with Transformation on <span class="math inline">\(X_j\)</span></h2>
-<p>If we fit a model with predictor <span class="math inline">\(\log(X_j)\)</span>, we fit a model of the form</p>
+<p>When we fit a model with predictor <span class="math inline">\(\log(X_j)\)</span>, we fit a model of the form</p>
 <p><span class="math display">\[
-Y = \beta_0 + \beta_1X_1 + \dots + \beta_j\log(X_j) + \dots \beta_pX_p + \epsilon, \quad \epsilon \sim N(0, \sigma^2_{\epsilon})\]</span></p>
-<p>. . .</p>
+Y = \beta_0 + \beta_1X_1 + \dots + \beta_j\log(X_j) + \dots \beta_pX_p + \epsilon, \quad \epsilon \sim N(0, \sigma^2_{\epsilon})
+\]</span></p>
 <p>The estimated regression model is</p>
 <p><span class="math display">\[
-\begin{aligned}
-&amp;\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1X_1 + \dots + \hat{\beta}_j\log(X_j) + \dots \hat{\beta}_pX_p \\[8pt]
-\Rightarrow \quad &amp;\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1x_{i1} + \ldots + \hat{\beta}_j\log(x_{ij}) + \dots + \hat{\beta}_px_{ip}
-\end{aligned}
+\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1x_{i1} + \ldots + \hat{\beta}_j\log(x_{ij}) + \dots + \hat{\beta}_px_{ip}
 \]</span></p>
 </section>
-<section id="model-interpretation-1" class="level2 midi">
-<h2 class="midi anchored" data-anchor-id="model-interpretation-1">Model interpretation</h2>
+<section id="model-interpretation" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="model-interpretation">Model interpretation</h2>
 <p><span class="math display">\[
 \hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1x_{i1} + \ldots + \hat{\beta}_j\log(x_{ij}) + \dots + \hat{\beta}_px_{ip}
 \]</span></p>
@@ -914,8 +746,8 @@ Y = \beta_0 + \beta_1X_1 + \dots + \beta_j\log(X_j) + \dots \beta_pX_p + \epsilo
 <section id="model-with-logx" class="level2 midi">
 <h2 class="midi anchored" data-anchor-id="model-with-logx">Model with log(X)</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>life_exp_logx_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(life_exp <span class="sc">~</span> <span class="fu">log</span>(health_expenditure) <span class="sc">+</span> income_inequality <span class="sc">+</span> education, </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                        <span class="at">data =</span> health_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>life_exp_logx_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(life_exp <span class="sc">~</span> <span class="fu">log</span>(health_expenditure) <span class="sc">+</span> income_inequality </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                        <span class="sc">+</span> education, <span class="at">data =</span> health_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -977,7 +809,19 @@ Y = \beta_0 + \beta_1X_1 + \dots + \beta_j\log(X_j) + \dots \beta_pX_p + \epsilo
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="14-variable-transformations_files/figure-revealjs/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="960"></p>
+<p><img src="15-transformations-contd_files/figure-revealjs/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="comparing-residual-plots" class="level2">
+<h2 class="anchored" data-anchor-id="comparing-residual-plots">Comparing residual plots</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="15-transformations-contd_files/figure-revealjs/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
 </div>
@@ -990,8 +834,8 @@ Y = \beta_0 + \beta_1X_1 + \dots + \beta_j\log(X_j) + \dots \beta_pX_p + \epsilo
 <section id="recap" class="level2">
 <h2 class="anchored" data-anchor-id="recap">Recap</h2>
 <ul>
-<li>Log-transformation on the response</li>
-<li>Log-transformation on the predictor</li>
+<li>Introduced log-transformation on the predictor</li>
+<li>Identified linear models</li>
 </ul>
 </section>
 <section id="references" class="level2">

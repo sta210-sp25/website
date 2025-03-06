@@ -1,7 +1,7 @@
 ---
-title: " Variable transformations"
+title: " Variable transformations cont'd"
 author: "Prof. Maria Tackett"
-date: "2025-03-04"
+date: "2025-03-06"
 date-format: "MMM DD, YYYY"
 footer: "[🔗 STA 210 - Spring 2025](https://sta210-sp25.netlify.app)"
 logo: "../images/logo.png"
@@ -15,7 +15,7 @@ format:
     chalkboard: true
     include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
   html: 
-    output-file: 14-variable-transformations-notes.html
+    output-file: 15-transformations-contd-notes.html
 html-math-method:
   method: mathjax
   url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
@@ -28,6 +28,20 @@ knitr:
     width: 200
 bibliography: references.bib
 ---
+
+## Announcements
+
+-   Lab 04 due TODAY at 11:59pm
+
+-   HW 03 due Tuesday March 18 at 11:59pm
+
+-   Next project milestone: Exploratory data analysis due March 20
+
+    -   Work on it in lab March 17
+
+<br>
+
+<center>Have a good spring break! 😎</center>
 
 ## Computing set up
 
@@ -47,10 +61,18 @@ ggplot2::theme_set(ggplot2::theme_bw())
 
 ## Topics
 
--   Log-transformation on the response
 -   Log-transformation on the predictor
 
-# Variable transformations
+## Math rules {background-color="#ccddeb"}
+
+$$
+\begin{aligned}
+\log(ab) &= \log(a) + \log(b) \\[8pt]
+\log\big(\frac{a}{b}\big) &= \log(a) - \log(b)\\[15pt]
+e^{a + b + c} &= e^ae^be^c \\[8pt]
+e^{a - b} &= \frac{e^a}{e^b}
+\end{aligned}
+$$
 
 ## Data: Life expectancy in 140 countries
 
@@ -90,173 +112,7 @@ There are `r nrow(health_data)` countries (observations) in the data set.
 
 -   `health_expend`: Per capita current spending on on healthcare goods and services, expressed in respective currency - international Purchasing Power Parity (PPP) dollar ([from the World Health Organization](https://www.who.int/data/gho/indicator-metadata-registry/imr-details/4952))
 
-## Exploratory data analysis
-
-```{r}
-#| echo: false
-#| fig-align: center
-
-ggplot(data = health_data, aes(x = health_expenditure)) + 
-  geom_histogram(fill = "steelblue", color = "black") + 
-  labs(x = "",
-       title = "Healthcare expenditure")
-```
-
-## Exploratory data analysis
-
-**The goal is to use income inequality and education to understand variability in health expenditure**
-
-```{r}
-#| echo: false
-#| fig-align: center
-
-p1 <- ggplot(data = health_data, aes(x = income_inequality, y = health_expenditure)) + 
-  geom_point() + 
-  labs(x = "Income inequality",
-       y = "Healthcare expenditure")
-
-p2 <- ggplot(data = health_data, aes(x = education, y = health_expenditure)) + 
-  geom_boxplot(fill = "steelblue", color = "black") + 
-  labs(x = "Education",
-       y = "Healthcare expenditure")
-
-p1 + p2 + plot_annotation(
-  title = 'Healthcare expenditure vs. predictors')
-```
-
-## Original model
-
-```{r}
-health_fit <- lm(health_expenditure ~ income_inequality + education, 
-                     data = health_data)
-```
-
-```{r}
-#| echo: false
-
-tidy(health_fit) |>
-  kable(digits = 3)
-```
-
-## Original model: Residuals vs. fitted
-
-```{r echo=FALSE}
-health_aug <- augment(health_fit)
-
-resid_orig <- ggplot(data = health_aug, aes(x = .fitted, y = .resid)) +
-  geom_point(alpha = 0.7) + 
-  geom_hline(yintercept = 0,color = "red", linetype. = 2) + 
-  labs(x = "Predicted", y = "Residuals", 
-       title = "Original model: Residuals vs. Predicted")
-
-resid_orig
-```
-
-::: question
-What model assumption(s) appear to be violated?
-:::
-
-## Consider different transformations...
-
-```{r}
-#| echo: false
-
-p1 <- ggplot(data=health_data, aes(x=income_inequality, y=health_expenditure)) +
-  geom_point(alpha = 0.7) + 
-  geom_smooth(method = "lm") +
-  labs(x = "Original")
-
-p2 <- ggplot(data=health_data, aes(x=income_inequality, y=log(health_expenditure))) +
-  geom_point(alpha = 0.7) + 
-  geom_smooth(method = "lm") + 
-    labs(y = "log(health_expenditure)",
-         title = "Log-transformed response",
-         
-    )
-p3 <- ggplot(data=health_data, aes(x=log(income_inequality), y=health_expenditure)) +
-  geom_point(alpha = 0.7) + 
-  geom_smooth(method = "lm") + 
-    labs(x = "log(income_inequality)",
-        title = "Log-transformed predictor")
-  
-p4 <- ggplot(data=health_data, aes(x=log(income_inequality), y=log(health_expenditure))) +
-  geom_point(alpha = 0.7) + 
-  geom_smooth(method = "lm") + 
-    labs(x = "log(income_inequality)", y = "log(health_expenditure)")
-  
-(p1 + p2) / (p3 + p4)
-```
-
-# Transformation on $Y$
-
-## Identifying a need to transform Y {.midi}
-
-::: incremental
--   Typically, a “fan-shaped” residual plot indicates the need for a transformation of the response variable Y
-
-    -   There are multiple ways to transform a variable, e.g., $Y$, $1/Y$, $\log(Y)$ . These are called **variance stabilizing transformations**
-
-    -   $\log(Y)$ the most straightforward to interpret, so we use that transformation when possible
-
-<!-- -->
-
--   When building a model:
-
-    -   Choose a transformation and build the model on the transformed data
-
-    -   Reassess the residual plots
-
-    -   If the residuals plots did not sufficiently improve, try a new transformation!
-:::
-
-## Log transformation on $Y$
-
--   If we apply a log transformation to the response variable, we want to estimate the parameters for the statistical model
-
-$$
-\log(Y) = \beta_0 + \beta_1X_1 + \beta_2X_2 + \dots + \beta_pX_p + \epsilon, \quad \epsilon \sim N(0, \sigma^2_{\epsilon})
-$$
-
--   The regression equation is
-
-$$\widehat{\log(Y)} = \hat{\beta}_0 + \hat{\beta}_1X_1 + \hat{\beta}_2X_2 + \dots + \hat{\beta}_pX_p 
-$$
-
-## Log transformation on $Y$
-
-We fit the model in terms of $\log(\mathbf{Y})$ but want to interpret the model in terms of the original variable $Y$ , so we need to write the regression equation in terms of $Y$
-
-$$
-\begin{aligned}
-&\widehat{\log(Y)} = \hat{\beta}_0 + \hat{\beta}_1X_1 + \hat{\beta}_2X_2 + \dots + \hat{\beta}_pX_p 
- \\[8pt]
-\Rightarrow \quad &\hat{Y} = e^{(\hat{\beta}_0 + \hat{\beta}_1X_1 + \hat{\beta}_2X_2 + \dots + \hat{\beta}_pX_p)}
-\end{aligned}
-$$
-
-## Math rules {background-color="#ccddeb"}
-
-$$
-\begin{aligned}
-\log(ab) &= \log(a) + \log(b) \\[8pt]
-\log\big(\frac{a}{b}\big) &= \log(a) - \log(b)\\[15pt]
-e^{a + b + c} &= e^ae^be^c \\[8pt]
-e^{a - b} &= \frac{e^a}{e^b}
-\end{aligned}
-$$
-
-## Model interpretation
-
-$$\begin{align}\hat{y_i} &= e^{(\hat{\beta}_0 + \hat{\beta}_1 x_{i1} + \dots + \hat{\beta}_Px_{ip})} \\ 
-&= e^{\hat{\beta}_0}e^{\hat{\beta}_1x_{i1}}\dots e^{\hat{\beta}_px_{ip}}\end{align}$$
-
-. . .
-
--   **Intercept**: When $x_{i1} = \dots = x_{ip} =0$, $y_i$ is expected to be $e^{\hat{\beta}_0}$
-
--   **Coefficient of** $X_j$: For every one unit increase in $x_{ij}$, $y_{i}$ is expected to multiply by a factor of $e^{\hat{\beta}_j}$, holding all else constant.
-
-## Model with log(Y)
+## Review: Model with log(Y)
 
 ```{r}
 #| echo: false
@@ -270,34 +126,31 @@ tidy(health_logy_fit) |>
 
 <br>
 
-::: question
-Interpret each of the following in terms of health expenditure
+For each additional point in the income inequality index, a country's health expenditures are expected to multiply by `r round(exp(-0.065), 3)` $(e^{-0.065})$, holding education constant.
 
--   Intercept
+## Compare residual plots 
 
--   `income_inequality`
+```{r}
+#| echo: false
 
--   `education`
-:::
+health_fit <- lm(health_expenditure ~ income_inequality + education, 
+                     data = health_data)
 
-## Model with log(Y): Residuals
+health_aug <- augment(health_fit)
 
-```{r echo=F}
+resid_orig <- ggplot(data = health_aug, aes(x = .fitted, y = .resid)) +
+  geom_point(alpha = 0.7) + 
+  geom_hline(yintercept = 0,color = "red", linetype. = 2) + 
+  labs(x = "Predicted", y = "Residuals", 
+       title = "Original model: Residuals vs. Predicted")
+
 health_logy_aug <- augment(health_logy_fit)
 
 resid_logy <- ggplot(data = health_logy_aug, aes(x = .fitted, y = .resid)) +
   geom_point(alpha = 0.7) + 
   geom_hline(yintercept=0, color="red") +
   labs(x="Predicted", y="Residuals",
-       title="Model 2: Residuals vs. Predicted")
-
-resid_logy
-```
-
-## Compare residual plots
-
-```{r}
-#| echo: false
+       title="Log-transformed Y: Residuals vs. Predicted")
 
 resid_orig + resid_logy
 ```
@@ -306,7 +159,7 @@ resid_orig + resid_logy
 
 ## Variability in life expectancy
 
-Now let's consider a model using a country's healthcare expenditure, income inequality, and education to predict its life expectancy
+Let's consider a model using a country's healthcare expenditure, income inequality, and education to predict its life expectancy
 
 ```{r}
 #| echo: false
@@ -396,7 +249,7 @@ There is a non-linear relationship is between health expenditure and life expect
 
 ## Log Transformation on $X$
 
-Try a transformation on $X$ if the scatterplot in EDA shows non-linear relationship and residuals vs. predictor make parabola
+Try a transformation on $X$ if the scatterplot in EDA shows non-linear relationship and residuals vs. fitted looks parabolic
 
 ```{r}
 #| echo: false
@@ -418,22 +271,29 @@ resid1 <-  ggplot(data = life_exp_aug, aes(x = health_expenditure, y = .resid)) 
 p1 + resid1 + plot_annotation(title = "Health expenditure ")
 ```
 
+## EDA
+
+```{r}
+#| echo: false
+ggplot(data = health_data, aes(x = log(health_expenditure), y = life_exp)) + 
+  geom_point() + 
+  labs(x = "Log-transformed healthcare expenditure",
+       y = "Life expectancy",
+       title = "Life expectancy vs. Log-transformed health expenditure")
+```
+
 ## Model with Transformation on $X_j$ {.midi}
 
-If we fit a model with predictor $\log(X_j)$, we fit a model of the form
+When we fit a model with predictor $\log(X_j)$, we fit a model of the form
 
 $$
-Y = \beta_0 + \beta_1X_1 + \dots + \beta_j\log(X_j) + \dots \beta_pX_p + \epsilon, \quad \epsilon \sim N(0, \sigma^2_{\epsilon})$$
-
-. . .
+Y = \beta_0 + \beta_1X_1 + \dots + \beta_j\log(X_j) + \dots \beta_pX_p + \epsilon, \quad \epsilon \sim N(0, \sigma^2_{\epsilon})
+$$
 
 The estimated regression model is
 
 $$
-\begin{aligned}
-&\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1X_1 + \dots + \hat{\beta}_j\log(X_j) + \dots \hat{\beta}_pX_p \\[8pt]
-\Rightarrow \quad &\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1x_{i1} + \ldots + \hat{\beta}_j\log(x_{ij}) + \dots + \hat{\beta}_px_{ip} 
-\end{aligned}
+\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1x_{i1} + \ldots + \hat{\beta}_j\log(x_{ij}) + \dots + \hat{\beta}_px_{ip} 
 $$
 
 ## Model interpretation {.midi}
@@ -455,8 +315,8 @@ $$
 ## Model with log(X) {.midi}
 
 ```{r}
-life_exp_logx_fit <- lm(life_exp ~ log(health_expenditure) + income_inequality + education, 
-                        data = health_data)
+life_exp_logx_fit <- lm(life_exp ~ log(health_expenditure) + income_inequality 
+                        + education, data = health_data)
 
 ```
 
@@ -487,9 +347,28 @@ resid_logx <- ggplot(data = life_exp_logx_aug, aes(x = .fitted, y = .resid)) +
   geom_point(alpha = 0.7) + 
   geom_hline(yintercept=0, color="red") +
   labs(x="Predicted", y="Residuals",
-       title="Model 3: Residuals vs. Predicted")
+       title="Residuals vs. Predicted")
 
 resid_logx
+```
+
+## Comparing residual plots
+
+```{r}
+#| echo: false
+orig_resid <- ggplot(data = life_exp_aug, aes(x = .fitted, y = .resid)) +
+  geom_point(alpha = 0.7) + 
+  geom_hline(yintercept=0, color="red") +
+  labs(x="Predicted", y="Residuals",
+       title="Original Model: Residuals vs. Predicted")
+
+logx_resid <- resid_logx <- ggplot(data = life_exp_logx_aug, aes(x = .fitted, y = .resid)) +
+  geom_point(alpha = 0.7) + 
+  geom_hline(yintercept=0, color="red") +
+  labs(x="Predicted", y="Residuals",
+       title="Log-transformed X: Residuals vs. Predicted")
+
+orig_resid + logx_resid
 ```
 
 ## Learn more
@@ -498,7 +377,7 @@ See [Log Transformations in Linear Regression](https://github.com/sta210-sp20/su
 
 ## Recap
 
--   Log-transformation on the response
--   Log-transformation on the predictor
+-   Introduced log-transformation on the predictor
+-   Identified linear models
 
 ## References
