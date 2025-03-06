@@ -5075,7 +5075,7 @@
     "href": "slides/15-transformations-contd-notes.html#model-interpretation",
     "title": "Variable transformations cont’d",
     "section": "Model interpretation",
-    "text": "Model interpretation\n\\[\n\\hat{y}_i = \\hat{\\beta}_0 + \\hat{\\beta}_1x_{i1} + \\ldots + \\hat{\\beta}_j\\log(x_{ij}) + \\dots + \\hat{\\beta}_px_{ip}\n\\]\n\n\nIntercept: When \\(x_{i1} = \\dots = \\log(x_{ij}) = \\dots = x_{ip} = 0\\) , \\(y_i\\) is expected to be \\(\\hat{\\beta}_0\\), on average, holding all else constant.\n\n\\(\\log(x_{ij}) = 0\\) when \\(x_{ij} = 1\\)\n\nCoefficient of \\(X_j\\): When \\(x_{ij}\\) is multiplied by a factor of \\(C\\), \\(y_i\\) is expected to change by \\(\\hat{\\beta}_1\\log(C)\\) units, on average, holding all else constant.\n\nExample: When \\(x_{ij}\\) is multiplied by a factor of 2, \\(y_i\\) is expected to increase by \\(\\hat{\\beta}_1\\log(2)\\) units, on average, holding all else constant."
+    "text": "Model interpretation\n\\[\n\\hat{y}_i = \\hat{\\beta}_0 + \\hat{\\beta}_1x_{i1} + \\ldots + \\hat{\\beta}_j\\log(x_{ij}) + \\dots + \\hat{\\beta}_px_{ip}\n\\]\n\n\nIntercept: When \\(x_{i1} = \\dots = \\log(x_{ij}) = \\dots = x_{ip} = 0\\) , \\(y_i\\) is expected to be \\(\\hat{\\beta}_0\\), on average.\n\n\\(\\log(x_{ij}) = 0\\) when \\(x_{ij} = 1\\)\n\nCoefficient of \\(X_j\\): When \\(x_{ij}\\) is multiplied by a factor of \\(C\\), \\(y_i\\) is expected to change by \\(\\hat{\\beta}_j\\log(C)\\) units, on average, holding all else constant.\n\nExample: When \\(x_{ij}\\) is multiplied by a factor of 2, \\(y_i\\) is expected to increase by \\(\\hat{\\beta}_j\\log(2)\\) units, on average, holding all else constant."
   },
   {
     "objectID": "slides/15-transformations-contd-notes.html#model-with-logx",
@@ -5229,7 +5229,7 @@
     "href": "slides/15-transformations-contd.html#model-interpretation",
     "title": "Variable transformations cont’d",
     "section": "Model interpretation",
-    "text": "Model interpretation\n\\[\n\\hat{y}_i = \\hat{\\beta}_0 + \\hat{\\beta}_1x_{i1} + \\ldots + \\hat{\\beta}_j\\log(x_{ij}) + \\dots + \\hat{\\beta}_px_{ip}\n\\]\n\n\nIntercept: When \\(x_{i1} = \\dots = \\log(x_{ij}) = \\dots = x_{ip} = 0\\) , \\(y_i\\) is expected to be \\(\\hat{\\beta}_0\\), on average, holding all else constant.\n\n\\(\\log(x_{ij}) = 0\\) when \\(x_{ij} = 1\\)\n\nCoefficient of \\(X_j\\): When \\(x_{ij}\\) is multiplied by a factor of \\(C\\), \\(y_i\\) is expected to change by \\(\\hat{\\beta}_1\\log(C)\\) units, on average, holding all else constant.\n\nExample: When \\(x_{ij}\\) is multiplied by a factor of 2, \\(y_i\\) is expected to increase by \\(\\hat{\\beta}_1\\log(2)\\) units, on average, holding all else constant."
+    "text": "Model interpretation\n\\[\n\\hat{y}_i = \\hat{\\beta}_0 + \\hat{\\beta}_1x_{i1} + \\ldots + \\hat{\\beta}_j\\log(x_{ij}) + \\dots + \\hat{\\beta}_px_{ip}\n\\]\n\n\nIntercept: When \\(x_{i1} = \\dots = \\log(x_{ij}) = \\dots = x_{ip} = 0\\) , \\(y_i\\) is expected to be \\(\\hat{\\beta}_0\\), on average.\n\n\\(\\log(x_{ij}) = 0\\) when \\(x_{ij} = 1\\)\n\nCoefficient of \\(X_j\\): When \\(x_{ij}\\) is multiplied by a factor of \\(C\\), \\(y_i\\) is expected to change by \\(\\hat{\\beta}_j\\log(C)\\) units, on average, holding all else constant.\n\nExample: When \\(x_{ij}\\) is multiplied by a factor of 2, \\(y_i\\) is expected to increase by \\(\\hat{\\beta}_j\\log(2)\\) units, on average, holding all else constant."
   },
   {
     "objectID": "slides/15-transformations-contd.html#model-with-logx",
@@ -6580,7 +6580,7 @@
     "href": "slides/14-variable-transformations-notes.html#identifying-a-need-to-transform-y",
     "title": "Variable transformations",
     "section": "Identifying a need to transform Y",
-    "text": "Identifying a need to transform Y\n\n\nTypically, a “fan-shaped” residual plot indicates the need for a transformation of the response variable Y\n\nThere are multiple ways to transform a variable, e.g., \\(Y\\), \\(1/Y\\), \\(\\log(Y)\\) . These are called variance stabilizing transformations\n\\(\\log(Y)\\) the most straightforward to interpret, so we use that transformation when possible\n\n\n\n\nWhen building a model:\n\nChoose a transformation and build the model on the transformed data\nReassess the residual plots\nIf the residuals plots did not sufficiently improve, try a new transformation!"
+    "text": "Identifying a need to transform Y\n\n\nTypically, a “fan-shaped” residual plot indicates the need for a transformation of the response variable Y\n\nThere are multiple ways to transform a variable, e.g., \\(Y^{1/2}\\), \\(1/Y\\), \\(\\log(Y)\\) . These are called variance stabilizing transformations\n\\(\\log(Y)\\) the most straightforward to interpret, so we use that transformation when possible\n\n\n\n\nWhen building a model:\n\nChoose a transformation and build the model on the transformed data\nReassess the residual plots\nIf the residuals plots did not sufficiently improve, try a new transformation!"
   },
   {
     "objectID": "slides/14-variable-transformations-notes.html#log-transformation-on-y",
@@ -6783,7 +6783,7 @@
     "href": "slides/14-variable-transformations.html#identifying-a-need-to-transform-y",
     "title": "Variable transformations",
     "section": "Identifying a need to transform Y",
-    "text": "Identifying a need to transform Y\n\n\nTypically, a “fan-shaped” residual plot indicates the need for a transformation of the response variable Y\n\nThere are multiple ways to transform a variable, e.g., \\(Y\\), \\(1/Y\\), \\(\\log(Y)\\) . These are called variance stabilizing transformations\n\\(\\log(Y)\\) the most straightforward to interpret, so we use that transformation when possible\n\n\n\n\nWhen building a model:\n\nChoose a transformation and build the model on the transformed data\nReassess the residual plots\nIf the residuals plots did not sufficiently improve, try a new transformation!"
+    "text": "Identifying a need to transform Y\n\n\nTypically, a “fan-shaped” residual plot indicates the need for a transformation of the response variable Y\n\nThere are multiple ways to transform a variable, e.g., \\(Y^{1/2}\\), \\(1/Y\\), \\(\\log(Y)\\) . These are called variance stabilizing transformations\n\\(\\log(Y)\\) the most straightforward to interpret, so we use that transformation when possible\n\n\n\n\nWhen building a model:\n\nChoose a transformation and build the model on the transformed data\nReassess the residual plots\nIf the residuals plots did not sufficiently improve, try a new transformation!"
   },
   {
     "objectID": "slides/14-variable-transformations.html#log-transformation-on-y",
