@@ -45,60 +45,68 @@
     <lastmod>2025-01-03T17:43:14.545Z</lastmod>
   </url>
   <url>
-    <loc>https://sta210-sp25.netlify.app/slides/12-conditions-diagnostics.html</loc>
-    <lastmod>2025-02-25T17:10:04.360Z</lastmod>
+    <loc>https://sta210-sp25.netlify.app/slides/14-variable-transformations.html</loc>
+    <lastmod>2025-03-06T17:25:14.183Z</lastmod>
   </url>
   <url>
-    <loc>https://sta210-sp25.netlify.app/slides/12-conditions-diagnostics-notes.html</loc>
-    <lastmod>2025-02-25T17:10:04.360Z</lastmod>
+    <loc>https://sta210-sp25.netlify.app/slides/14-variable-transformations-notes.html</loc>
+    <lastmod>2025-03-06T17:25:14.183Z</lastmod>
   </url>
   <url>
-    <loc>https://sta210-sp25.netlify.app/slides/01-welcome.html</loc>
-    <lastmod>2025-01-11T15:11:52.984Z</lastmod>
+    <loc>https://sta210-sp25.netlify.app/slides/02-big-picture.html</loc>
+    <lastmod>2025-01-14T18:14:39.483Z</lastmod>
   </url>
   <url>
-    <loc>https://sta210-sp25.netlify.app/slides/01-welcome-notes.html</loc>
-    <lastmod>2025-01-11T15:11:52.984Z</lastmod>
+    <loc>https://sta210-sp25.netlify.app/slides/02-big-picture-notes.html</loc>
+    <lastmod>2025-01-14T18:14:39.483Z</lastmod>
   </url>
   <url>
-    <loc>https://sta210-sp25.netlify.app/slides/03-slr-intro.html</loc>
-    <lastmod>2025-01-16T19:51:21.816Z</lastmod>
+    <loc>https://sta210-sp25.netlify.app/slides/06-slr-math-models.html</loc>
+    <lastmod>2025-01-28T03:31:59.829Z</lastmod>
   </url>
   <url>
-    <loc>https://sta210-sp25.netlify.app/slides/03-slr-intro-notes.html</loc>
-    <lastmod>2025-01-16T19:51:21.816Z</lastmod>
+    <loc>https://sta210-sp25.netlify.app/slides/06-slr-math-models-notes.html</loc>
+    <lastmod>2025-01-28T03:31:59.829Z</lastmod>
   </url>
   <url>
-    <loc>https://sta210-sp25.netlify.app/slides/exam-01-review.html</loc>
-    <lastmod>2025-02-17T01:32:24.469Z</lastmod>
+    <loc>https://sta210-sp25.netlify.app/slides/lab-04.html</loc>
+    <lastmod>2025-03-02T19:16:08.951Z</lastmod>
   </url>
   <url>
-    <loc>https://sta210-sp25.netlify.app/slides/lab-01.html</loc>
-    <lastmod>2025-01-27T02:05:39.788Z</lastmod>
+    <loc>https://sta210-sp25.netlify.app/slides/lab-00.html</loc>
+    <lastmod>2025-01-13T00:44:15.882Z</lastmod>
   </url>
   <url>
-    <loc>https://sta210-sp25.netlify.app/slides/04-slr-bootstrap.html</loc>
-    <lastmod>2025-01-21T19:45:15.571Z</lastmod>
+    <loc>https://sta210-sp25.netlify.app/slides/13-multicollinearity.html</loc>
+    <lastmod>2025-02-27T17:13:47.440Z</lastmod>
   </url>
   <url>
-    <loc>https://sta210-sp25.netlify.app/slides/04-slr-bootstrap-notes.html</loc>
-    <lastmod>2025-01-21T19:45:15.571Z</lastmod>
+    <loc>https://sta210-sp25.netlify.app/slides/13-multicollinearity-notes.html</loc>
+    <lastmod>2025-02-27T17:13:47.440Z</lastmod>
   </url>
   <url>
-    <loc>https://sta210-sp25.netlify.app/slides/lab-03.html</loc>
-    <lastmod>2025-02-10T02:52:58.578Z</lastmod>
+    <loc>https://sta210-sp25.netlify.app/slides/15-transformations-contd.html</loc>
+    <lastmod>2025-03-06T17:25:14.135Z</lastmod>
   </url>
   <url>
-    <loc>https://sta210-sp25.netlify.app/index.html</loc>
-    <lastmod>2025-01-07T18:45:37.742Z</lastmod>
+    <loc>https://sta210-sp25.netlify.app/slides/15-transformations-contd-notes.html</loc>
+    <lastmod>2025-03-06T17:25:14.135Z</lastmod>
   </url>
   <url>
-    <loc>https://sta210-sp25.netlify.app/computing-r-resources.html</loc>
+    <loc>https://sta210-sp25.netlify.app/slides/lab-02.html</loc>
+    <lastmod>2025-02-02T15:23:32.873Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta210-sp25.netlify.app/computing-access.html</loc>
     <lastmod>2025-01-03T17:43:14.456Z</lastmod>
   </url>
   <url>
-    <loc>https://sta210-sp25.netlify.app/ae/ae-01-movies.html</loc>
-    <lastmod>2025-01-09T19:49:01.612Z</lastmod>
+    <loc>https://sta210-sp25.netlify.app/support.html</loc>
+    <lastmod>2025-01-08T14:53:55.708Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta210-sp25.netlify.app/ae/ae-09-prob-odds.html</loc>
+    <lastmod>2025-03-16T00:37:21.209Z</lastmod>
   </url>
   <url>
     <loc>https://sta210-sp25.netlify.app/ae/ae-06-model-compare.html</loc>
@@ -106,7 +114,7 @@
   </url>
   <url>
     <loc>https://sta210-sp25.netlify.app/ae/ae-08-multicollinearity.html</loc>
-    <lastmod>2025-02-27T17:20:48.434Z</lastmod>
+    <lastmod>2025-03-16T00:17:08.035Z</lastmod>
   </url>
   <url>
     <loc>https://sta210-sp25.netlify.app/ae/ae-04-bootstrap.html</loc>
@@ -213,64 +221,68 @@
     <lastmod>2025-01-16T17:34:16.012Z</lastmod>
   </url>
   <url>
-    <loc>https://sta210-sp25.netlify.app/support.html</loc>
-    <lastmod>2025-01-08T14:53:55.708Z</lastmod>
+    <loc>https://sta210-sp25.netlify.app/ae/ae-01-movies.html</loc>
+    <lastmod>2025-01-09T19:49:01.612Z</lastmod>
   </url>
   <url>
-    <loc>https://sta210-sp25.netlify.app/computing-access.html</loc>
+    <loc>https://sta210-sp25.netlify.app/computing-r-resources.html</loc>
     <lastmod>2025-01-03T17:43:14.456Z</lastmod>
   </url>
   <url>
-    <loc>https://sta210-sp25.netlify.app/slides/lab-02.html</loc>
-    <lastmod>2025-02-02T15:23:32.873Z</lastmod>
+    <loc>https://sta210-sp25.netlify.app/index.html</loc>
+    <lastmod>2025-01-07T18:45:37.742Z</lastmod>
   </url>
   <url>
-    <loc>https://sta210-sp25.netlify.app/slides/15-transformations-contd-notes.html</loc>
-    <lastmod>2025-03-06T17:25:14.135Z</lastmod>
+    <loc>https://sta210-sp25.netlify.app/slides/lab-03.html</loc>
+    <lastmod>2025-02-10T02:52:58.578Z</lastmod>
   </url>
   <url>
-    <loc>https://sta210-sp25.netlify.app/slides/15-transformations-contd.html</loc>
-    <lastmod>2025-03-06T17:25:14.135Z</lastmod>
+    <loc>https://sta210-sp25.netlify.app/slides/04-slr-bootstrap-notes.html</loc>
+    <lastmod>2025-01-21T19:45:15.571Z</lastmod>
   </url>
   <url>
-    <loc>https://sta210-sp25.netlify.app/slides/13-multicollinearity-notes.html</loc>
-    <lastmod>2025-02-27T17:13:47.440Z</lastmod>
+    <loc>https://sta210-sp25.netlify.app/slides/04-slr-bootstrap.html</loc>
+    <lastmod>2025-01-21T19:45:15.571Z</lastmod>
   </url>
   <url>
-    <loc>https://sta210-sp25.netlify.app/slides/13-multicollinearity.html</loc>
-    <lastmod>2025-02-27T17:13:47.440Z</lastmod>
+    <loc>https://sta210-sp25.netlify.app/slides/lab-01.html</loc>
+    <lastmod>2025-01-27T02:05:39.788Z</lastmod>
   </url>
   <url>
-    <loc>https://sta210-sp25.netlify.app/slides/lab-00.html</loc>
-    <lastmod>2025-01-13T00:44:15.882Z</lastmod>
+    <loc>https://sta210-sp25.netlify.app/slides/exam-01-review.html</loc>
+    <lastmod>2025-02-17T01:32:24.469Z</lastmod>
   </url>
   <url>
-    <loc>https://sta210-sp25.netlify.app/slides/lab-04.html</loc>
-    <lastmod>2025-03-02T19:16:08.951Z</lastmod>
+    <loc>https://sta210-sp25.netlify.app/slides/03-slr-intro-notes.html</loc>
+    <lastmod>2025-01-16T19:51:21.816Z</lastmod>
   </url>
   <url>
-    <loc>https://sta210-sp25.netlify.app/slides/06-slr-math-models-notes.html</loc>
-    <lastmod>2025-01-28T03:31:59.829Z</lastmod>
+    <loc>https://sta210-sp25.netlify.app/slides/03-slr-intro.html</loc>
+    <lastmod>2025-01-16T19:51:21.816Z</lastmod>
   </url>
   <url>
-    <loc>https://sta210-sp25.netlify.app/slides/06-slr-math-models.html</loc>
-    <lastmod>2025-01-28T03:31:59.829Z</lastmod>
+    <loc>https://sta210-sp25.netlify.app/slides/01-welcome-notes.html</loc>
+    <lastmod>2025-01-11T15:11:52.984Z</lastmod>
   </url>
   <url>
-    <loc>https://sta210-sp25.netlify.app/slides/02-big-picture-notes.html</loc>
-    <lastmod>2025-01-14T18:14:39.483Z</lastmod>
+    <loc>https://sta210-sp25.netlify.app/slides/01-welcome.html</loc>
+    <lastmod>2025-01-11T15:11:52.984Z</lastmod>
   </url>
   <url>
-    <loc>https://sta210-sp25.netlify.app/slides/02-big-picture.html</loc>
-    <lastmod>2025-01-14T18:14:39.483Z</lastmod>
+    <loc>https://sta210-sp25.netlify.app/slides/12-conditions-diagnostics-notes.html</loc>
+    <lastmod>2025-02-25T17:10:04.360Z</lastmod>
   </url>
   <url>
-    <loc>https://sta210-sp25.netlify.app/slides/14-variable-transformations-notes.html</loc>
-    <lastmod>2025-03-06T17:25:14.183Z</lastmod>
+    <loc>https://sta210-sp25.netlify.app/slides/12-conditions-diagnostics.html</loc>
+    <lastmod>2025-02-25T17:10:04.360Z</lastmod>
   </url>
   <url>
-    <loc>https://sta210-sp25.netlify.app/slides/14-variable-transformations.html</loc>
-    <lastmod>2025-03-06T17:25:14.183Z</lastmod>
+    <loc>https://sta210-sp25.netlify.app/slides/16-prob-odds-notes.html</loc>
+    <lastmod>2025-03-16T00:37:40.653Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta210-sp25.netlify.app/slides/16-prob-odds.html</loc>
+    <lastmod>2025-03-16T00:37:40.653Z</lastmod>
   </url>
   <url>
     <loc>https://sta210-sp25.netlify.app/slides/10-mlr-inference-conditions-notes.html</loc>

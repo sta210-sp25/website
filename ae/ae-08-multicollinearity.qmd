@@ -5,7 +5,7 @@ editor: visual
 ---
 
 ::: callout-important
-Go to the course GitHub organization and locate your ae-04 repo to get started.
+Go to the course GitHub organization and locate your ae-08 repo to get started.
 
 Render, commit, and push your responses to GitHub by the end of class to submit your AE.
 :::
