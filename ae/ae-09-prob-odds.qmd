@@ -61,67 +61,33 @@ pew_data <- pew_data |>
 # Make factors and  relevel 
 pew_data <- pew_data |>
   mutate(ai_concern = factor(ai_concern),
-         ai_heard = factor(ai_heard, levels = c("A lot", "A little", "Nothing at all", "Refused"))
+         ai_heard = factor(ai_heard, levels = c("A lot", "A little",
+                                                "Nothing at all", "Refused"))
   )
 ```
 
-::: {.callout-note icon="false"}
 ## Exercise 1
 
 -   What is the probability a randomly selected respondent has heard a lot about AI?
 
 -   What are the odds a randomly selected respondent has heard a lot about AI?
-:::
 
-```{r}
-#| label: ex-1
-
-# add code here
-```
-
-::: {.callout-note icon="false"}
 ## Exercise 2
 
 -   What is the probability a randomly selected respondent who is concerned about increased use of AI in daily life has heard a lot about AI?
 
 -   What are the odds a randomly selected respondent who is concerned about increased use of AI in daily life has heard a lot about AI?
-:::
 
-```{r}
-#| label: ex-2
-
-# add code here
-
-```
-
-::: {.callout-note icon="false"}
 ## Exercise 3
 
 Make a plot to visualize the relationship between how much a respondent has heard about AI and being concerned with increased use of AI in daily life. Use the plot to describe the relationship between the two variables.
-:::
 
-```{r}
-#| label: ex-3
-
-# add code here
-```
-
-::: {.callout-note icon="false"}
 ## Exercise 4
 
 -   How do the odds of being concerned about increased use of AI in daily life for a randomly selected respondent who has heard nothing about AI compare to the odds for a randomly selected respondent who has heard a lot about AI?
 
 -   How do the odds of being concerned about increased use of AI in daily life for a randomly selected respondent who has heard a little about AI compare to the odds for a randomly selected respondent who has heard a lot about AI?
-:::
 
-```{r}
-#| label: ex-4
-
-# add code here
-
-```
-
-::: {.callout-note icon="false"}
 ## Exercise 5
 
 We can use a logistic regression model to understand the relationship between how much someone has heard about AI and whether they are concerned about increased use of AI in daily life. (We will discuss this in detail next class, but will get a preview for now.)
@@ -137,7 +103,8 @@ $$
 The code and output to fit this model is shown below:
 
 ```{r}
-ai_concern_fit <- glm(ai_concern ~ ai_heard, data = pew_data, family = "binomial")
+ai_concern_fit <- glm(ai_concern ~ ai_heard, data = pew_data,
+                      family = "binomial")
 tidy(ai_concern_fit) |> 
   kable(digits = 3)
 ```
@@ -147,9 +114,6 @@ tidy(ai_concern_fit) |>
 -   Interpret the coefficient of `ai_heardA little` in the context of the data in terms of the log-odds of being concerned about increased use of AI in daily life.
 
 -   Interpret the coefficient of `ai_heardNothing at all` in the context of the data in terms of the odds of being concerned about the increased use of AI in daily life. How does this compare to your response to Exercise 4?
-:::
-
-\[add response here\]
 
 ::: callout-important
 # Submission
