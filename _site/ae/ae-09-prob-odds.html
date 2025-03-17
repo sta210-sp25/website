@@ -439,7 +439,7 @@ Important
 </div>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>This data comes from the 2023 <a href="https://www.pewresearch.org/the-american-trends-panel/">Pew Research Center’s American Trends Panel</a>. The survey aims to capture public opinion about a variety of topics including politics, religion, and technology, among others. We will use data from 11201 respondents in Wave 132 of the survey conducted July 31 - August 6.</p>
+<p>This data comes from the 2023 <a href="https://www.pewresearch.org/the-american-trends-panel/">Pew Research Center’s American Trends Panel</a>. The survey aims to capture public opinion about a variety of topics including politics, religion, and technology, among others. We will use data from 11201 respondents in Wave 132 of the survey conducted July 31 - August 6, 2023.</p>
 <p>A more complete analysis on this topic can be found in the Pew Research Center article <a href="https://www.pewresearch.org/short-reads/2023/08/28/growing-public-concern-about-the-role-of-artificial-intelligence-in-daily-life/"><em>Growing public concern about the role of artificial intelligence in daily life</em></a> by Alec Tyson and Emma Kikuchi.</p>
 <p><strong>The goal of this analysis is to understand the relationship between how much an respondent has heard about artificial intelligence (AI) and how concerned they are about increased use of AI in daily life.</strong></p>
 <p>You will use the following variables:</p>
@@ -516,7 +516,7 @@ Exercise 3
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Make a plot to visualize the relationship between how much an respondent has heard about AI and being concerned with increased use of AI in daily life. Use the plot to describe the relationship between the two variables.</p>
+<p>Make a plot to visualize the relationship between how much a respondent has heard about AI and being concerned with increased use of AI in daily life. Use the plot to describe the relationship between the two variables.</p>
 </div>
 </div>
 <div class="cell">
@@ -561,7 +561,8 @@ Exercise 5
 <p>The code and output to fit this model is shown below:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ai_concern_fit <span class="ot">&lt;-</span> <span class="fu">glm</span>(ai_concern <span class="sc">~</span> ai_heard, <span class="at">data =</span> pew_data, <span class="at">family =</span> <span class="st">"binomial"</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(ai_concern_fit) <span class="sc">|&gt;</span> <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(ai_concern_fit) <span class="sc">|&gt;</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <thead>
@@ -609,7 +610,7 @@ Exercise 5
 <ul>
 <li><p>Interpret the intercept in the context of the data in terms of the log-odds of being concerned about increased use of AI in daily life.</p></li>
 <li><p>Interpret the coefficient of <code>ai_heardA little</code> in the context of the data in terms of the log-odds of being concerned about increased use of AI in daily life.</p></li>
-<li><p>Interpret the coefficient of <code>ai_heardNothing at all</code> in the context of the data in terms of the odds of being concerned about the increased use of AI in daily life. How does this compare to your response to Exercise 4.</p></li>
+<li><p>Interpret the coefficient of <code>ai_heardNothing at all</code> in the context of the data in terms of the odds of being concerned about the increased use of AI in daily life. How does this compare to your response to Exercise 4?</p></li>
 </ul>
 </div>
 </div>

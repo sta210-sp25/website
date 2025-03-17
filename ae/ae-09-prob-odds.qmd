@@ -30,7 +30,7 @@ library(tidymodels)
 pew_data <- read_csv("data/pew-atp-w132.csv")
 ```
 
-This data comes from the 2023 [Pew Research Center's American Trends Panel](https://www.pewresearch.org/the-american-trends-panel/). The survey aims to capture public opinion about a variety of topics including politics, religion, and technology, among others. We will use data from 11201 respondents in Wave 132 of the survey conducted July 31 - August 6.
+This data comes from the 2023 [Pew Research Center's American Trends Panel](https://www.pewresearch.org/the-american-trends-panel/). The survey aims to capture public opinion about a variety of topics including politics, religion, and technology, among others. We will use data from 11201 respondents in Wave 132 of the survey conducted July 31 - August 6, 2023.
 
 A more complete analysis on this topic can be found in the Pew Research Center article [*Growing public concern about the role of artificial intelligence in daily life*](https://www.pewresearch.org/short-reads/2023/08/28/growing-public-concern-about-the-role-of-artificial-intelligence-in-daily-life/) by Alec Tyson and Emma Kikuchi.
 
@@ -97,7 +97,7 @@ pew_data <- pew_data |>
 ::: {.callout-note icon="false"}
 ## Exercise 3
 
-Make a plot to visualize the relationship between how much an respondent has heard about AI and being concerned with increased use of AI in daily life. Use the plot to describe the relationship between the two variables.
+Make a plot to visualize the relationship between how much a respondent has heard about AI and being concerned with increased use of AI in daily life. Use the plot to describe the relationship between the two variables.
 :::
 
 ```{r}
@@ -138,14 +138,15 @@ The code and output to fit this model is shown below:
 
 ```{r}
 ai_concern_fit <- glm(ai_concern ~ ai_heard, data = pew_data, family = "binomial")
-tidy(ai_concern_fit) |> kable(digits = 3)
+tidy(ai_concern_fit) |> 
+  kable(digits = 3)
 ```
 
 -   Interpret the intercept in the context of the data in terms of the log-odds of being concerned about increased use of AI in daily life.
 
 -   Interpret the coefficient of `ai_heardA little` in the context of the data in terms of the log-odds of being concerned about increased use of AI in daily life.
 
--   Interpret the coefficient of `ai_heardNothing at all` in the context of the data in terms of the odds of being concerned about the increased use of AI in daily life. How does this compare to your response to Exercise 4.
+-   Interpret the coefficient of `ai_heardNothing at all` in the context of the data in terms of the odds of being concerned about the increased use of AI in daily life. How does this compare to your response to Exercise 4?
 :::
 
 \[add response here\]
