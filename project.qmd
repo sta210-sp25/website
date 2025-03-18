@@ -73,7 +73,7 @@ Write your responses in `research-topics.qmd` in your team's project GitHub repo
 The purpose of the project proposal is for your team to identify the data set you're interested in analyzing to investigate one of your potential research topics. You will also do some preliminary exploration of the response variable and begin thinking about the modeling strategy. If you're unsure where to find data, you can use the list of potential data sources on the [Tips + resources](https://sta210-sp25.netlify.app/project-tips) page as a starting point.
 
 ::: callout-important
-You must the data set(s) in the proposal for the final project, unless instructed otherwise when given feedback.
+You must use the data set(s) in the proposal for the final project, unless instructed otherwise when given feedback.
 :::
 
 The data set must meet the following criteria:
@@ -200,8 +200,7 @@ Write your draft introduction and exploratory data analysis in the `written-repo
 
 The anticipated length, including all graphs, tables, narrative, etc. with code, warnings, and messages suppressed is about 4 - 6 pages (It is OK to be over this page limit at this stage in the project.)
 
-::: callout-tip 
-
+::: callout-tip
 You can save space by suppressing code, warnings, and messages by including the following in the YAML:
 
 ``` r
@@ -210,7 +209,6 @@ execute:
   message: false
   warning: false
 ```
-
 :::
 
 The exploratory data analysis is worth 10 points and will be graded based on accurately and comprehensively addressing the criteria stated above, along with incorporating the feedback from the proposal. Points will be assigned based on a holistic review of the exploratory data analysis.
@@ -249,7 +247,7 @@ The slide deck should have no more than 6 content slides + 1 title slide to ensu
 
 -   Slide 3 - 4: Highlights from the EDA (be sure to include EDA for the response variable!)
 
--   Slide 5: Initial modeling strategies / results
+-   Slide 5: Initial modeling strategies / results (if applicable)
 
 -   Slide 6: Next steps and any questions you'd like to get feedback on
 

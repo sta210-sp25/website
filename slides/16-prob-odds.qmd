@@ -113,7 +113,7 @@ ggplot2::theme_set(ggplot2::theme_bw())
 
 ## Example: Win probability
 
-![[ESPN Analytics win probability for Duke vs. Louisville (March 15, 2025)](https://www.espn.com/mens-college-basketball/game/_/gameId/401743776/louisville-duke)](images/16/duke-win-probability.png)
+![[ESPN Analytics win probability for Duke vs. Louisville (March 15, 2025)](https://www.espn.com/mens-college-basketball/game/_/gameId/401743776/louisville-duke)](images/16/duke-win-probability.png){fig-align="center" width="80%"}
 
 ## Do teenagers get 7+ hours of sleep? {.smaller}
 
@@ -227,7 +227,7 @@ ggplot(sleep_age, aes(x = Age, y = prop)) +
 ## Different types of models
 
 | Method | Outcome | Model |
-|-------------------|-------------------|-----------------------------------|
+|-------------------|-------------------|----------------------------------|
 | Linear regression | Quantitative | $y_i = \beta_0 + \beta_1~ x_i$ |
 | Linear regression (transform Y) | Quantitative | $\log(y_i) = \beta_0 + \beta_1~ x_i$ |
 | Logistic regression | Binary | $\log\big(\frac{p_i}{1-p_i}\big) = \beta_0 + \beta_1 ~ x_i$ |
@@ -253,7 +253,7 @@ State whether a linear regression model or logistic regression model is more app
 pew_data <- read_csv("data/pew-atp-w132.csv")
 ```
 
-This data comes from the 2023 [Pew Research Center's American Trends Panel](https://www.pewresearch.org/the-american-trends-panel/). The survey aims to capture public opinion about a variety of topics including politics, religion, and technology, among others. We will use data from `r nrow(pew_data)` respondents in Wave 132 of the survey conducted July 31 - August 6, 2024.
+This data comes from the 2023 [Pew Research Center's American Trends Panel](https://www.pewresearch.org/the-american-trends-panel/). The survey aims to capture public opinion about a variety of topics including politics, religion, and technology, among others. We will use data from `r nrow(pew_data)` respondents in Wave 132 of the survey conducted July 31 - August 6, 2023.
 
 <br>
 
@@ -319,7 +319,7 @@ pew_data <- pew_data |>
 p1 <- ggplot(data = pew_data, aes(x = ai_concern)) + 
   geom_bar(fill = "darkcyan", color = "black") +
   labs(x = "", 
-       title = "Concerned about AI in daily life?")
+       title = "Concerned about increased use of AI in daily life?")
 
 p2 <- ggplot(data = pew_data, aes(x = age_cat)) + 
   geom_bar(fill = "darkcyan", color = "black") +

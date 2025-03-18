@@ -276,7 +276,7 @@ Prof.&nbsp;Maria Tackett
 <section id="example-win-probability" class="slide level2">
 <h2>Example: Win probability</h2>
 
-<img data-src="images/16/duke-win-probability.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401743776/louisville-duke">ESPN Analytics win probability for Duke vs.&nbsp;Louisville (March 15, 2025)</a></p></section>
+<img data-src="images/16/duke-win-probability.png" style="width:80.0%" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://www.espn.com/mens-college-basketball/game/_/gameId/401743776/louisville-duke">ESPN Analytics win probability for Duke vs.&nbsp;Louisville (March 15, 2025)</a></p></section>
 <section id="do-teenagers-get-7-hours-of-sleep" class="slide level2 smaller">
 <h2>Do teenagers get 7+ hours of sleep?</h2>
 <div class="columns">
@@ -314,68 +314,39 @@ Prof.&nbsp;Maria Tackett
 <span id="cb3-3"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Getting 7+ hours of sleep"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="16-prob-odds_files/figure-html/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"></section>
+<img data-src="16-prob-odds_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"></section>
 <section id="lets-fit-a-linear-regression-model" class="slide level2">
 <h2>Let’s fit a linear regression model</h2>
 <p><strong>Outcome:</strong> <span class="math inline">\(Y\)</span> = 1: yes, 0: no</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
-</div>
 
-</div>
-<img data-src="16-prob-odds_files/figure-html/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"></section>
+<img data-src="16-prob-odds_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"></section>
 <section id="lets-use-proportions" class="slide level2">
 <h2>Let’s use proportions</h2>
 <p><strong>Outcome:</strong> Probability of getting 7+ hours of sleep</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
-</div>
 
-</div>
-<img data-src="16-prob-odds_files/figure-html/unnamed-chunk-6-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"></section>
+<img data-src="16-prob-odds_files/figure-revealjs/unnamed-chunk-6-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"></section>
 <section id="what-happens-if-we-zoom-out" class="slide level2">
 <h2>What happens if we zoom out?</h2>
 <p><strong>Outcome:</strong> Probability of getting 7+ hours of sleep</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
-</div>
 
-</div>
-<img data-src="16-prob-odds_files/figure-html/unnamed-chunk-7-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"><p>🛑 <em>This model produces predictions outside of 0 and 1.</em></p>
+<img data-src="16-prob-odds_files/figure-revealjs/unnamed-chunk-7-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"><p>🛑 <em>This model produces predictions outside of 0 and 1.</em></p>
 </section>
 <section id="lets-try-another-model" class="slide level2">
 <h2>Let’s try another model</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in eval(family$initialize): non-integer #successes in a binomial glm!</code></pre>
-</div>
 
-</div>
-<img data-src="16-prob-odds_files/figure-html/logistic-model-plot-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"><p><em>✅ This model (called a <strong>logistic regression model</strong>) only produces predictions between 0 and 1.</em></p>
+<img data-src="16-prob-odds_files/figure-revealjs/logistic-model-plot-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"><p><em>✅ This model (called a <strong>logistic regression model</strong>) only produces predictions between 0 and 1.</em></p>
 </section>
 <section id="the-code" class="slide level2">
 <h2>The code</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">ggplot</span>(sleep_age, <span class="fu">aes</span>(<span class="at">x =</span> Age, <span class="at">y =</span> prop)) <span class="sc">+</span></span>
-<span id="cb9-2"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb9-3"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">lty =</span> <span class="dv">2</span>) <span class="sc">+</span> </span>
-<span id="cb9-4"><a></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span><span class="st">"glm"</span>, <span class="at">method.args =</span> <span class="fu">list</span>(<span class="at">family =</span> <span class="st">"binomial"</span>), </span>
-<span id="cb9-5"><a></a>              <span class="at">fullrange =</span> <span class="cn">TRUE</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb9-6"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"P(7+ hours of sleep)"</span>) <span class="sc">+</span></span>
-<span id="cb9-7"><a></a>  <span class="fu">xlim</span>(<span class="dv">1</span>, <span class="dv">40</span>) <span class="sc">+</span></span>
-<span id="cb9-8"><a></a>  <span class="fu">ylim</span>(<span class="sc">-</span><span class="fl">0.5</span>, <span class="fl">1.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in eval(family$initialize): non-integer #successes in a binomial glm!</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">ggplot</span>(sleep_age, <span class="fu">aes</span>(<span class="at">x =</span> Age, <span class="at">y =</span> prop)) <span class="sc">+</span></span>
+<span id="cb4-2"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb4-3"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">lty =</span> <span class="dv">2</span>) <span class="sc">+</span> </span>
+<span id="cb4-4"><a></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span><span class="st">"glm"</span>, <span class="at">method.args =</span> <span class="fu">list</span>(<span class="at">family =</span> <span class="st">"binomial"</span>), </span>
+<span id="cb4-5"><a></a>              <span class="at">fullrange =</span> <span class="cn">TRUE</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb4-6"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"P(7+ hours of sleep)"</span>) <span class="sc">+</span></span>
+<span id="cb4-7"><a></a>  <span class="fu">xlim</span>(<span class="dv">1</span>, <span class="dv">40</span>) <span class="sc">+</span></span>
+<span id="cb4-8"><a></a>  <span class="fu">ylim</span>(<span class="sc">-</span><span class="fl">0.5</span>, <span class="fl">1.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="different-types-of-models" class="slide level2">
@@ -430,19 +401,7 @@ Prof.&nbsp;Maria Tackett
 </section>
 <section id="data-concern-about-rising-ai" class="slide level2 midi">
 <h2>Data: Concern about rising AI</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 11201 Columns: 140
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-dbl  (138): QKEY, DEVICE_TYPE_W132, LANG_W132, FORM_W132, XDENOM_W132, IMPWO...
-dttm   (2): INTERVIEW_START_W132, INTERVIEW_END_W132
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
-</div>
-<p>This data comes from the 2023 <a href="https://www.pewresearch.org/the-american-trends-panel/">Pew Research Center’s American Trends Panel</a>. The survey aims to capture public opinion about a variety of topics including politics, religion, and technology, among others. We will use data from 11201 respondents in Wave 132 of the survey conducted July 31 - August 6, 2024.</p>
+<p>This data comes from the 2023 <a href="https://www.pewresearch.org/the-american-trends-panel/">Pew Research Center’s American Trends Panel</a>. The survey aims to capture public opinion about a variety of topics including politics, religion, and technology, among others. We will use data from 11201 respondents in Wave 132 of the survey conducted July 31 - August 6, 2023.</p>
 <p><br></p>
 <p><strong>The goal of this analysis is to understand the relationship between age, how much someone has heard about artificial intelligence (AI), and concern about the increased use of AI in daily life.</strong></p>
 <p><br></p>
@@ -477,32 +436,32 @@ dttm   (2): INTERVIEW_START_W132, INTERVIEW_END_W132
 <section id="data-prep" class="slide level2">
 <h2>Data prep</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="co"># change variable names and recode categories</span></span>
-<span id="cb13-2"><a></a>pew_data <span class="ot">&lt;-</span> pew_data <span class="sc">|&gt;</span></span>
-<span id="cb13-3"><a></a>  <span class="fu">mutate</span>(<span class="at">ai_concern =</span> <span class="fu">if_else</span>(CNCEXC_W132 <span class="sc">==</span> <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
-<span id="cb13-4"><a></a>         <span class="at">age_cat =</span> <span class="fu">case_when</span>(F_AGECAT <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"18-29"</span>,</span>
-<span id="cb13-5"><a></a>                             F_AGECAT <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">"30-49"</span>,</span>
-<span id="cb13-6"><a></a>                             F_AGECAT <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="st">"50-64"</span>,</span>
-<span id="cb13-7"><a></a>                             F_AGECAT <span class="sc">==</span> <span class="dv">4</span> <span class="sc">~</span> <span class="st">"65+"</span>,</span>
-<span id="cb13-8"><a></a>                             <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Refused"</span>), </span>
-<span id="cb13-9"><a></a>         <span class="at">ai_heard =</span> <span class="fu">case_when</span>(AI_HEARD_W132 <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"A lot"</span>,</span>
-<span id="cb13-10"><a></a>                              AI_HEARD_W132 <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">"A little"</span>,</span>
-<span id="cb13-11"><a></a>                              AI_HEARD_W132 <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="st">"Nothing at all"</span>,</span>
-<span id="cb13-12"><a></a>                              <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Refused"</span></span>
-<span id="cb13-13"><a></a>                              ))</span>
-<span id="cb13-14"><a></a></span>
-<span id="cb13-15"><a></a><span class="co"># Make factors and  relevel </span></span>
-<span id="cb13-16"><a></a>pew_data <span class="ot">&lt;-</span> pew_data <span class="sc">|&gt;</span></span>
-<span id="cb13-17"><a></a>  <span class="fu">mutate</span>(<span class="at">ai_concern =</span> <span class="fu">factor</span>(ai_concern),</span>
-<span id="cb13-18"><a></a>         <span class="at">age_cat =</span> <span class="fu">factor</span>(age_cat), </span>
-<span id="cb13-19"><a></a>         <span class="at">ai_heard =</span> <span class="fu">factor</span>(ai_heard, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"A lot"</span>, <span class="st">"A little"</span>, <span class="st">"Nothing at all"</span>, <span class="st">"Refused"</span>))</span>
-<span id="cb13-20"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="co"># change variable names and recode categories</span></span>
+<span id="cb5-2"><a></a>pew_data <span class="ot">&lt;-</span> pew_data <span class="sc">|&gt;</span></span>
+<span id="cb5-3"><a></a>  <span class="fu">mutate</span>(<span class="at">ai_concern =</span> <span class="fu">if_else</span>(CNCEXC_W132 <span class="sc">==</span> <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb5-4"><a></a>         <span class="at">age_cat =</span> <span class="fu">case_when</span>(F_AGECAT <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"18-29"</span>,</span>
+<span id="cb5-5"><a></a>                             F_AGECAT <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">"30-49"</span>,</span>
+<span id="cb5-6"><a></a>                             F_AGECAT <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="st">"50-64"</span>,</span>
+<span id="cb5-7"><a></a>                             F_AGECAT <span class="sc">==</span> <span class="dv">4</span> <span class="sc">~</span> <span class="st">"65+"</span>,</span>
+<span id="cb5-8"><a></a>                             <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Refused"</span>), </span>
+<span id="cb5-9"><a></a>         <span class="at">ai_heard =</span> <span class="fu">case_when</span>(AI_HEARD_W132 <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"A lot"</span>,</span>
+<span id="cb5-10"><a></a>                              AI_HEARD_W132 <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">"A little"</span>,</span>
+<span id="cb5-11"><a></a>                              AI_HEARD_W132 <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="st">"Nothing at all"</span>,</span>
+<span id="cb5-12"><a></a>                              <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Refused"</span></span>
+<span id="cb5-13"><a></a>                              ))</span>
+<span id="cb5-14"><a></a></span>
+<span id="cb5-15"><a></a><span class="co"># Make factors and  relevel </span></span>
+<span id="cb5-16"><a></a>pew_data <span class="ot">&lt;-</span> pew_data <span class="sc">|&gt;</span></span>
+<span id="cb5-17"><a></a>  <span class="fu">mutate</span>(<span class="at">ai_concern =</span> <span class="fu">factor</span>(ai_concern),</span>
+<span id="cb5-18"><a></a>         <span class="at">age_cat =</span> <span class="fu">factor</span>(age_cat), </span>
+<span id="cb5-19"><a></a>         <span class="at">ai_heard =</span> <span class="fu">factor</span>(ai_heard, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"A lot"</span>, <span class="st">"A little"</span>, <span class="st">"Nothing at all"</span>, <span class="st">"Refused"</span>))</span>
+<span id="cb5-20"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="univariate-eda" class="slide level2">
 <h2>Univariate EDA</h2>
 
-<img data-src="16-prob-odds_files/figure-html/unnamed-chunk-12-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"></section>
+<img data-src="16-prob-odds_files/figure-revealjs/unnamed-chunk-12-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"></section>
 <section id="binary-response-variable" class="slide level2">
 <h2>Binary response variable</h2>
 <div>
@@ -529,9 +488,9 @@ dttm   (2): INTERVIEW_START_W132, INTERVIEW_END_W132
 <section id="concerned-about-ai-in-daily-life" class="slide level2">
 <h2>Concerned about AI in daily life?</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>pew_data <span class="sc">|&gt;</span></span>
-<span id="cb14-2"><a></a>  <span class="fu">count</span>(ai_concern) <span class="sc">|&gt;</span></span>
-<span id="cb14-3"><a></a>  <span class="fu">mutate</span>(<span class="at">p =</span> <span class="fu">round</span>(n <span class="sc">/</span> <span class="fu">sum</span>(n), <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>pew_data <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a></a>  <span class="fu">count</span>(ai_concern) <span class="sc">|&gt;</span></span>
+<span id="cb6-3"><a></a>  <span class="fu">mutate</span>(<span class="at">p =</span> <span class="fu">round</span>(n <span class="sc">/</span> <span class="fu">sum</span>(n), <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 3
   ai_concern     n     p
@@ -857,8 +816,8 @@ OR = \frac{\text{odds}_1}{\text{odds}_2}
 <section id="code-to-make-table" class="slide level2">
 <h2>Code to make table</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>pew_data <span class="sc">|&gt;</span></span>
-<span id="cb16-2"><a></a>  <span class="fu">count</span>(age_cat, ai_concern)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>pew_data <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a></a>  <span class="fu">count</span>(age_cat, ai_concern)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 3
    age_cat ai_concern     n
@@ -879,9 +838,9 @@ OR = \frac{\text{odds}_1}{\text{odds}_2}
 <section id="code-to-make-table-1" class="slide level2">
 <h2>Code to make table</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb18" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>pew_data <span class="sc">|&gt;</span></span>
-<span id="cb18-2"><a></a>  <span class="fu">count</span>(age_cat, ai_concern) <span class="sc">|&gt;</span></span>
-<span id="cb18-3"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> ai_concern, <span class="at">values_from =</span> n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>pew_data <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a></a>  <span class="fu">count</span>(age_cat, ai_concern) <span class="sc">|&gt;</span></span>
+<span id="cb10-3"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> ai_concern, <span class="at">values_from =</span> n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 3
   age_cat   `0`   `1`
@@ -897,10 +856,10 @@ OR = \frac{\text{odds}_1}{\text{odds}_2}
 <section id="code-to-make-table-2" class="slide level2">
 <h2>Code to make table</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb20" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>pew_data <span class="sc">|&gt;</span></span>
-<span id="cb20-2"><a></a>  <span class="fu">count</span>(age_cat, ai_concern) <span class="sc">|&gt;</span></span>
-<span id="cb20-3"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> ai_concern, <span class="at">values_from =</span> n) <span class="sc">|&gt;</span></span>
-<span id="cb20-4"><a></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>pew_data <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a></a>  <span class="fu">count</span>(age_cat, ai_concern) <span class="sc">|&gt;</span></span>
+<span id="cb12-3"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> ai_concern, <span class="at">values_from =</span> n) <span class="sc">|&gt;</span></span>
+<span id="cb12-4"><a></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <thead>
@@ -944,10 +903,10 @@ OR = \frac{\text{odds}_1}{\text{odds}_2}
 <section id="code-to-make-table-3" class="slide level2">
 <h2>Code to make table</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb21" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>pew_data <span class="sc">|&gt;</span></span>
-<span id="cb21-2"><a></a>  <span class="fu">count</span>(age_cat, ai_concern) <span class="sc">|&gt;</span></span>
-<span id="cb21-3"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> ai_concern, <span class="at">values_from =</span> n) <span class="sc">|&gt;</span></span>
-<span id="cb21-4"><a></a>  <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Age"</span>, <span class="st">"Not concerned"</span>, <span class="st">"Concerned"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>pew_data <span class="sc">|&gt;</span></span>
+<span id="cb13-2"><a></a>  <span class="fu">count</span>(age_cat, ai_concern) <span class="sc">|&gt;</span></span>
+<span id="cb13-3"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> ai_concern, <span class="at">values_from =</span> n) <span class="sc">|&gt;</span></span>
+<span id="cb13-4"><a></a>  <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Age"</span>, <span class="st">"Not concerned"</span>, <span class="st">"Concerned"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <thead>
@@ -1224,6 +1183,44 @@ OR = \frac{\text{odds}_1}{\text{odds}_2}
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
