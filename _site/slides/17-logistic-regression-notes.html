@@ -8,7 +8,7 @@
 
 <meta name="author" content="Prof.&nbsp;Maria Tackett">
 
-<title>Variable transformations cont’d – STA 210 - Spring 2025</title>
+<title>Logistic regression – STA 210 - Spring 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -154,7 +154,7 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar docked slimcontent">
+<body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -163,7 +163,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Variable transformations cont’d</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Logistic regression</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -407,40 +407,48 @@ window.Quarto = {
    
   <ul>
   <li><a href="#announcements" id="toc-announcements" class="nav-link active" data-scroll-target="#announcements">Announcements</a></li>
-  <li><a href="#computing-set-up" id="toc-computing-set-up" class="nav-link" data-scroll-target="#computing-set-up">Computing set up</a></li>
   <li><a href="#topics" id="toc-topics" class="nav-link" data-scroll-target="#topics">Topics</a></li>
-  <li><a href="#math-rules" id="toc-math-rules" class="nav-link" data-scroll-target="#math-rules">Math rules</a></li>
-  <li><a href="#data-life-expectancy-in-140-countries" id="toc-data-life-expectancy-in-140-countries" class="nav-link" data-scroll-target="#data-life-expectancy-in-140-countries">Data: Life expectancy in 140 countries</a></li>
+  <li><a href="#computational-setup" id="toc-computational-setup" class="nav-link" data-scroll-target="#computational-setup">Computational setup</a></li>
+  <li><a href="#probabilities-vs.-odds1" id="toc-probabilities-vs.-odds1" class="nav-link" data-scroll-target="#probabilities-vs.-odds1">Probabilities vs.&nbsp;odds</a></li>
+  <li><a href="#logistic-regression" id="toc-logistic-regression" class="nav-link" data-scroll-target="#logistic-regression">Logistic regression</a>
+  <ul class="collapse">
+  <li><a href="#from-odds-to-probabilities" id="toc-from-odds-to-probabilities" class="nav-link" data-scroll-target="#from-odds-to-probabilities">From odds to probabilities</a></li>
+  <li><a href="#from-odds-to-probabilities-1" id="toc-from-odds-to-probabilities-1" class="nav-link" data-scroll-target="#from-odds-to-probabilities-1">From odds to probabilities</a></li>
+  <li><a href="#logistic-regression-model" id="toc-logistic-regression-model" class="nav-link" data-scroll-target="#logistic-regression-model">Logistic regression model</a></li>
+  <li><a href="#data-concern-about-rising-ai" id="toc-data-concern-about-rising-ai" class="nav-link" data-scroll-target="#data-concern-about-rising-ai">Data: Concern about rising AI</a></li>
   <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables">Variables</a></li>
   <li><a href="#variables-1" id="toc-variables-1" class="nav-link" data-scroll-target="#variables-1">Variables</a></li>
-  <li><a href="#review-model-with-logy" id="toc-review-model-with-logy" class="nav-link" data-scroll-target="#review-model-with-logy">Review: Model with log(Y)</a></li>
-  <li><a href="#compare-residual-plots" id="toc-compare-residual-plots" class="nav-link" data-scroll-target="#compare-residual-plots">Compare residual plots</a></li>
-  <li><a href="#log-transformation-on-a-predictor-variable" id="toc-log-transformation-on-a-predictor-variable" class="nav-link" data-scroll-target="#log-transformation-on-a-predictor-variable">Log transformation on a predictor variable</a>
+  <li><a href="#odds-ratios-concern-about-ai-vs.-age" id="toc-odds-ratios-concern-about-ai-vs.-age" class="nav-link" data-scroll-target="#odds-ratios-concern-about-ai-vs.-age">Odds ratios: Concern about AI vs.&nbsp;age</a></li>
+  <li><a href="#lets-fit-the-model" id="toc-lets-fit-the-model" class="nav-link" data-scroll-target="#lets-fit-the-model">Let’s fit the model</a></li>
+  <li><a href="#the-model" id="toc-the-model" class="nav-link" data-scroll-target="#the-model">The model</a></li>
+  <li><a href="#interpreting-age_cat30-49-log-odds" id="toc-interpreting-age_cat30-49-log-odds" class="nav-link" data-scroll-target="#interpreting-age_cat30-49-log-odds">Interpreting <code>age_cat30-49</code>: log-odds</a></li>
+  <li><a href="#interpreting-age_cat30-49-odds" id="toc-interpreting-age_cat30-49-odds" class="nav-link" data-scroll-target="#interpreting-age_cat30-49-odds">Interpreting <code>age_cat30-49</code>: odds</a></li>
+  <li><a href="#coefficients-odds-ratios" id="toc-coefficients-odds-ratios" class="nav-link" data-scroll-target="#coefficients-odds-ratios">Coefficients &amp; odds ratios</a></li>
+  <li><a href="#interpret-in-terms-of-percent-change" id="toc-interpret-in-terms-of-percent-change" class="nav-link" data-scroll-target="#interpret-in-terms-of-percent-change">Interpret in terms of percent change</a></li>
+  <li><a href="#quantitative-predictor" id="toc-quantitative-predictor" class="nav-link" data-scroll-target="#quantitative-predictor">Quantitative predictor</a></li>
+  <li><a href="#multiple-predictors" id="toc-multiple-predictors" class="nav-link" data-scroll-target="#multiple-predictors">Multiple predictors</a></li>
+  <li><a href="#multiple-predictors-1" id="toc-multiple-predictors-1" class="nav-link" data-scroll-target="#multiple-predictors-1">Multiple predictors</a></li>
+  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation">Interpretation</a></li>
+  </ul></li>
+  <li><a href="#prediction" id="toc-prediction" class="nav-link" data-scroll-target="#prediction">Prediction</a>
   <ul class="collapse">
-  <li><a href="#variability-in-life-expectancy" id="toc-variability-in-life-expectancy" class="nav-link" data-scroll-target="#variability-in-life-expectancy">Variability in life expectancy</a></li>
-  <li><a href="#original-model" id="toc-original-model" class="nav-link" data-scroll-target="#original-model">Original model</a></li>
-  <li><a href="#original-model-residuals" id="toc-original-model-residuals" class="nav-link" data-scroll-target="#original-model-residuals">Original model: Residuals</a></li>
-  <li><a href="#residuals-vs.-predictors" id="toc-residuals-vs.-predictors" class="nav-link" data-scroll-target="#residuals-vs.-predictors">Residuals vs.&nbsp;predictors</a></li>
-  <li><a href="#log-transformation-on-x" id="toc-log-transformation-on-x" class="nav-link" data-scroll-target="#log-transformation-on-x">Log Transformation on <span class="math inline">\(X\)</span></a></li>
-  <li><a href="#eda" id="toc-eda" class="nav-link" data-scroll-target="#eda">EDA</a></li>
-  <li><a href="#model-with-transformation-on-x_j" id="toc-model-with-transformation-on-x_j" class="nav-link" data-scroll-target="#model-with-transformation-on-x_j">Model with Transformation on <span class="math inline">\(X_j\)</span></a></li>
-  <li><a href="#model-interpretation" id="toc-model-interpretation" class="nav-link" data-scroll-target="#model-interpretation">Model interpretation</a></li>
-  <li><a href="#model-with-logx" id="toc-model-with-logx" class="nav-link" data-scroll-target="#model-with-logx">Model with log(X)</a></li>
-  <li><a href="#model-with-logx-residuals" id="toc-model-with-logx-residuals" class="nav-link" data-scroll-target="#model-with-logx-residuals">Model with log(X): Residuals</a></li>
-  <li><a href="#comparing-residual-plots" id="toc-comparing-residual-plots" class="nav-link" data-scroll-target="#comparing-residual-plots">Comparing residual plots</a></li>
-  <li><a href="#learn-more" id="toc-learn-more" class="nav-link" data-scroll-target="#learn-more">Learn more</a></li>
+  <li><a href="#predicted-log-odds" id="toc-predicted-log-odds" class="nav-link" data-scroll-target="#predicted-log-odds">Predicted log odds</a></li>
+  <li><a href="#predicted-probabilities" id="toc-predicted-probabilities" class="nav-link" data-scroll-target="#predicted-probabilities">Predicted probabilities</a></li>
+  <li><a href="#predicted-probabilities-1" id="toc-predicted-probabilities-1" class="nav-link" data-scroll-target="#predicted-probabilities-1">Predicted probabilities</a></li>
+  <li><a href="#predicted-probability-for-new-observation" id="toc-predicted-probability-for-new-observation" class="nav-link" data-scroll-target="#predicted-probability-for-new-observation">Predicted probability for new observation</a></li>
+  <li><a href="#predicted-probability-for-new-observation-1" id="toc-predicted-probability-for-new-observation-1" class="nav-link" data-scroll-target="#predicted-probability-for-new-observation-1">Predicted probability for new observation</a></li>
   <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/sta210-sp25/website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="15-transformations-contd.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/sta210-sp25/website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="17-logistic-regression.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Variable transformations cont’d</h1>
+<h1 class="title">Logistic regression</h1>
 </div>
 
 
@@ -457,7 +465,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Mar 06, 2025</p>
+      <p class="date">Mar 20, 2025</p>
     </div>
   </div>
   
@@ -472,76 +480,166 @@ window.Quarto = {
 <section id="announcements" class="level2">
 <h2 class="anchored" data-anchor-id="announcements">Announcements</h2>
 <ul>
-<li><p>Lab 04 due TODAY at 11:59pm</p></li>
-<li><p>HW 03 due Tuesday March 18 at 11:59pm</p></li>
-<li><p>Next project milestone: Exploratory data analysis due March 20</p>
+<li><p>Exploratory data analysis due TODAY at 11:59pm</p>
 <ul>
-<li>Work on it in lab March 17</li>
+<li>Next milestone: Project presentations March 31 in lab</li>
 </ul></li>
+<li><p>Statistics experience due April 15</p></li>
 </ul>
-<p><br></p>
-<center>
-Have a good spring break! 😎
-</center>
-</section>
-<section id="computing-set-up" class="level2">
-<h2 class="anchored" data-anchor-id="computing-set-up">Computing set up</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load packages</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)  </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)  </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)       </span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># set default theme in ggplot2</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_bw</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </section>
 <section id="topics" class="level2">
 <h2 class="anchored" data-anchor-id="topics">Topics</h2>
+<div class="nonincremental">
 <ul>
-<li>Log-transformation on the predictor</li>
+<li><p>Odds and probabilities</p></li>
+<li><p>Interpret the coefficients of a logistic regression model with</p>
+<ul>
+<li>a single categorical predictor</li>
+<li>a single quantitative predictor</li>
+<li>multiple predictors</li>
+</ul></li>
 </ul>
+</div>
 </section>
-<section id="math-rules" class="level2" data-background-color="#ccddeb">
-<h2 data-background-color="#ccddeb" class="anchored" data-anchor-id="math-rules">Math rules</h2>
+<section id="computational-setup" class="level2">
+<h2 class="anchored" data-anchor-id="computational-setup">Computational setup</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load packages</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># set default theme and larger font size for ggplot2</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">20</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="probabilities-vs.-odds1" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="probabilities-vs.-odds1">Probabilities vs.&nbsp;odds<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></h2>
+<p><strong>Scenario 1</strong>: Suppose the probability of a disease among a population of unvaccinated individuals is 0.00369, and the probability of the disease is 0.001 among a population of vaccinated individuals.</p>
+<p><strong>Scenario 2</strong>: Suppose the probability of a disease among a population of unvaccinated individuals is 0.48052 and the probability of the disease is 0.2 among a population of vaccinated individuals.</p>
+<div class="question">
+<ul>
+<li><p>What is the difference in the probability of disease for these two populations?</p></li>
+<li><p>What are the odds of disease without vaccine relative to the odds of disease with vaccine?</p></li>
+</ul>
+</div>
+</section>
+<section id="logistic-regression" class="level1">
+<h1>Logistic regression</h1>
+<section id="from-odds-to-probabilities" class="level2">
+<h2 class="anchored" data-anchor-id="from-odds-to-probabilities">From odds to probabilities</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>odds</strong></p>
+<p><span class="math display">\[\text{odds} = \frac{p}{1-p}\]</span></p>
+</div><div class="column" style="width:50%;">
+<p><strong>probability</strong></p>
+<p><span class="math display">\[p = \frac{\text{odds}}{1 + \text{odds}}\]</span></p>
+</div>
+</div>
+</section>
+<section id="from-odds-to-probabilities-1" class="level2 incremental">
+<h2 class="incremental anchored" data-anchor-id="from-odds-to-probabilities-1">From odds to probabilities</h2>
+<div class="incremental">
+<ol class="incremental" type="1">
+<li><p><strong>Logistic model</strong>: <span class="math inline">\(\log\big(\frac{p}{1-p}\big) = \beta_0 + \beta_1~X_1 + \dots + \beta_pX_p\)</span></p></li>
+<li><p><strong>Odds =</strong> <span class="math inline">\(\exp\big\{\log\big(\frac{p}{1-p}\big)\big\} = \frac{p}{1-p}\)</span></p></li>
+<li><p>Combining (1) and (2) with what we saw earlier</p></li>
+</ol>
+</div>
+<p>. . .</p>
+<p><span class="math display">\[p = \frac{\exp\{\beta_0 + \beta_1~X_1 + \dots + \beta_pX_p\}}{1 + \exp\{\beta_0 + \beta_1~X_1 + \dots + \beta_pX_p\}}\]</span></p>
+</section>
+<section id="logistic-regression-model" class="level2">
+<h2 class="anchored" data-anchor-id="logistic-regression-model">Logistic regression model</h2>
+<p><strong>Logit form</strong>: <span class="math display">\[\log\Big(\frac{p}{1-p}\Big) = \beta_0 + \beta_1~X_1 + \dots + \beta_pX_p\]</span></p>
+<p>. . .</p>
+<p><strong>Probability form</strong>:</p>
 <p><span class="math display">\[
-\begin{aligned}
-\log(ab) &amp;= \log(a) + \log(b) \\[8pt]
-\log\big(\frac{a}{b}\big) &amp;= \log(a) - \log(b)\\[15pt]
-e^{a + b + c} &amp;= e^ae^be^c \\[8pt]
-e^{a - b} &amp;= \frac{e^a}{e^b}
-\end{aligned}
+\text{probability} = p = \frac{\exp\{\beta_0 + \beta_1~X_1 + \dots + \beta_pX_p\}}{1 + \exp\{\beta_0 + \beta_1~X_1 + \dots + \beta_pX_p\}}
 \]</span></p>
+<div class="question">
+<p>Why is there no error term <span class="math inline">\(\epsilon\)</span> when writing the statistical model for logistic regression?</p>
+</div>
 </section>
-<section id="data-life-expectancy-in-140-countries" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="data-life-expectancy-in-140-countries">Data: Life expectancy in 140 countries</h2>
-<p>The data set comes from <span class="citation" data-cites="zarulli2021">Zarulli et al. (<a href="#ref-zarulli2021" role="doc-biblioref">2021</a>)</span> who analyze the effects of a country’s healthcare expenditures and other factors on the country’s life expectancy. The data are originally from the <a href="http://hdr.undp.org/en/data">Human Development Database</a> and <a href="https://apps.who.int/nha/database/">World Health Organization</a>.</p>
-<p>There are 140 countries (observations) in the data set.</p>
-
-<div class="no-row-height column-margin column-container"><div class="margin-aside">
-<p><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0253450">Click here</a> for the original research paper.</p>
-</div></div></section>
+<section id="data-concern-about-rising-ai" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="data-concern-about-rising-ai">Data: Concern about rising AI</h2>
+<p>This data comes from the 2023 <a href="https://www.pewresearch.org/the-american-trends-panel/">Pew Research Center’s American Trends Panel</a>. The survey aims to capture public opinion about a variety of topics including politics, religion, and technology, among others. We will use data from respondents in Wave 132 of the survey conducted July 31 - August 6, 2023 <em>who completed the survey in 70 minutes or less.</em></p>
+<p><br></p>
+<p><strong>The goal of this analysis is to understand the relationship between age, how much someone has heard about artificial intelligence (AI), and concern about the increased use of AI in daily life.</strong></p>
+<p><br></p>
+<p>A more complete analysis on this topic can be found in the Pew Research Center article <a href="https://www.pewresearch.org/short-reads/2023/08/28/growing-public-concern-about-the-role-of-artificial-intelligence-in-daily-life/"><em>Growing public concern about the role of artificial intelligence in daily life</em></a> by Alec Tyson and Emma Kikuchi.</p>
+</section>
 <section id="variables" class="level2">
 <h2 class="anchored" data-anchor-id="variables">Variables</h2>
 <ul>
-<li><p><code>life_exp</code>: The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic income_inequality. ( from the <a href="https://www.who.int/data/gho/indicator-metadata-registry/imr-details/65#:~:text=Definition%3A,%2C%20territory%2C%20or%20geographic%20area.">World Health Organization</a>)</p></li>
-<li><p><code>income_inequality</code>: Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (based on Gini coefficient). (from <span class="citation" data-cites="zarulli2021">Zarulli et al. (<a href="#ref-zarulli2021" role="doc-biblioref">2021</a>)</span>)</p></li>
+<li><code>ai_concern</code>: Whether a respondent said they are “more concerned than excited” about in the increased use of AI in daily life (1: yes, 0: no)</li>
 </ul>
 </section>
 <section id="variables-1" class="level2">
 <h2 class="anchored" data-anchor-id="variables-1">Variables</h2>
 <ul>
-<li><p><code>education</code>: Indicator of whether a country’s education index is above (<code>High</code>) or below (<code>Low</code>) the median index for the 140 countries in the data set.</p>
+<li><p><code>survey_time</code>: Time to complete the survey (in minutes)</p></li>
+<li><p><code>age_cat</code>: Age category</p>
 <ul>
-<li>Education index: <em>Average of mean years of schooling (of adults) and expected years of school (of children), both expressed as an index obtained by scaling wit the corresponding maxima.</em></li>
+<li>18-29</li>
+<li>30-49</li>
+<li>50-64</li>
+<li>65+</li>
+<li>Refused</li>
 </ul></li>
-<li><p><code>health_expend</code>: Per capita current spending on on healthcare goods and services, expressed in respective currency - international Purchasing Power Parity (PPP) dollar (<a href="https://www.who.int/data/gho/indicator-metadata-registry/imr-details/4952">from the World Health Organization</a>)</p></li>
 </ul>
 </section>
-<section id="review-model-with-logy" class="level2">
-<h2 class="anchored" data-anchor-id="review-model-with-logy">Review: Model with log(Y)</h2>
-<div class="cell">
+<section id="odds-ratios-concern-about-ai-vs.-age" class="level2">
+<h2 class="anchored" data-anchor-id="odds-ratios-concern-about-ai-vs.-age">Odds ratios: Concern about AI vs.&nbsp;age</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Age</th>
+<th style="text-align: right;">Not Concerned</th>
+<th style="text-align: right;">Concerned</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">18-29</td>
+<td style="text-align: right;">487</td>
+<td style="text-align: right;">380</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">30-49</td>
+<td style="text-align: right;">1661</td>
+<td style="text-align: right;">1470</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">50-64</td>
+<td style="text-align: right;">1257</td>
+<td style="text-align: right;">1680</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">65+</td>
+<td style="text-align: right;">1252</td>
+<td style="text-align: right;">1858</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Refused</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">23</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="lets-fit-the-model" class="level2">
+<h2 class="anchored" data-anchor-id="lets-fit-the-model">Let’s fit the model</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>ai_concern_fit <span class="ot">&lt;-</span> <span class="fu">glm</span>(ai_concern <span class="sc">~</span> age_cat, <span class="at">data =</span> pew_data, </span>
+<span id="cb2-2"><a href="#cb2-2"></a>                      <span class="at">family =</span> <span class="st">"binomial"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3"></a></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="fu">tidy</span>(ai_concern_fit) <span class="sc">|&gt;</span> <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <thead>
@@ -556,66 +654,212 @@ e^{a - b} &amp;= \frac{e^a}{e^b}
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">7.096</td>
-<td style="text-align: right;">0.324</td>
-<td style="text-align: right;">21.895</td>
-<td style="text-align: right;">0</td>
+<td style="text-align: right;">-0.248</td>
+<td style="text-align: right;">0.068</td>
+<td style="text-align: right;">-3.625</td>
+<td style="text-align: right;">0.000</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">income_inequality</td>
-<td style="text-align: right;">-0.065</td>
-<td style="text-align: right;">0.011</td>
-<td style="text-align: right;">-5.714</td>
-<td style="text-align: right;">0</td>
+<td style="text-align: left;">age_cat30-49</td>
+<td style="text-align: right;">0.126</td>
+<td style="text-align: right;">0.077</td>
+<td style="text-align: right;">1.630</td>
+<td style="text-align: right;">0.103</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">educationHigh</td>
-<td style="text-align: right;">1.117</td>
-<td style="text-align: right;">0.218</td>
-<td style="text-align: right;">5.121</td>
-<td style="text-align: right;">0</td>
+<td style="text-align: left;">age_cat50-64</td>
+<td style="text-align: right;">0.538</td>
+<td style="text-align: right;">0.078</td>
+<td style="text-align: right;">6.904</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">age_cat65+</td>
+<td style="text-align: right;">0.643</td>
+<td style="text-align: right;">0.078</td>
+<td style="text-align: right;">8.284</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">age_catRefused</td>
+<td style="text-align: right;">0.493</td>
+<td style="text-align: right;">0.322</td>
+<td style="text-align: right;">1.531</td>
+<td style="text-align: right;">0.126</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
+</section>
+<section id="the-model" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="the-model">The model</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">-0.248</td>
+<td style="text-align: right;">0.068</td>
+<td style="text-align: right;">-3.625</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">age_cat30-49</td>
+<td style="text-align: right;">0.126</td>
+<td style="text-align: right;">0.077</td>
+<td style="text-align: right;">1.630</td>
+<td style="text-align: right;">0.103</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">age_cat50-64</td>
+<td style="text-align: right;">0.538</td>
+<td style="text-align: right;">0.078</td>
+<td style="text-align: right;">6.904</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">age_cat65+</td>
+<td style="text-align: right;">0.643</td>
+<td style="text-align: right;">0.078</td>
+<td style="text-align: right;">8.284</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">age_catRefused</td>
+<td style="text-align: right;">0.493</td>
+<td style="text-align: right;">0.322</td>
+<td style="text-align: right;">1.531</td>
+<td style="text-align: right;">0.126</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><br>
+<span class="math display">\[\begin{aligned}\log\Big(\frac{\hat{p}}{1-\hat{p}}\Big) =&amp; -0.248 + 0.126\times\text{age_cat30-49} + 0.538 \times \text{age_cat50-64}\\
+&amp;+ 0.643 \times \text{age_cat65+} + 0.493\times \text{age_catRefused} \end{aligned}\]</span></p>
+<p>where <span class="math inline">\(\hat{p}\)</span> is the predicted probability of being concerned about increased use of AI in daily life</p>
+</section>
+<section id="interpreting-age_cat30-49-log-odds" class="level2">
+<h2 class="anchored" data-anchor-id="interpreting-age_cat30-49-log-odds">Interpreting <code>age_cat30-49</code>: log-odds</h2>
+<div class="small">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">-0.248</td>
+<td style="text-align: right;">0.068</td>
+<td style="text-align: right;">-3.625</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">age_cat30-49</td>
+<td style="text-align: right;">0.126</td>
+<td style="text-align: right;">0.077</td>
+<td style="text-align: right;">1.630</td>
+<td style="text-align: right;">0.103</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">age_cat50-64</td>
+<td style="text-align: right;">0.538</td>
+<td style="text-align: right;">0.078</td>
+<td style="text-align: right;">6.904</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">age_cat65+</td>
+<td style="text-align: right;">0.643</td>
+<td style="text-align: right;">0.078</td>
+<td style="text-align: right;">8.284</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">age_catRefused</td>
+<td style="text-align: right;">0.493</td>
+<td style="text-align: right;">0.322</td>
+<td style="text-align: right;">1.531</td>
+<td style="text-align: right;">0.126</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>The <strong>log-odds</strong> of being concerned about increased use of AI in daily life are expected to be 0.126 higher for individuals 30 - 49 years old compared to 18-29 year-olds (the baseline group).</p>
+<p>. . .</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We would not use the interpretation in terms of log-odds in practice.</p>
+</div>
+</div>
+</section>
+<section id="interpreting-age_cat30-49-odds" class="level2">
+<h2 class="anchored" data-anchor-id="interpreting-age_cat30-49-odds">Interpreting <code>age_cat30-49</code>: odds</h2>
+<div class="small">
+
+</div>
+<p>The <strong>odds</strong> of being concerned about increased use of AI in daily life for 30 - 49 year olds are expected to be 1.134 ( <span class="math inline">\(e^{0.126}\)</span> ) times the odds for 18-29 year olds.</p>
+<p>. . .</p>
+<p><strong>More natural interpretation</strong></p>
+<p>The odds 18-29 year olds are concerned about increase use of AI in daily life are expected to be 0 ( 1 / <span class="math inline">\(e^{0.126}\)</span>) times the odds of 30 - 49 year olds.</p>
+</section>
+<section id="coefficients-odds-ratios" class="level2">
+<h2 class="anchored" data-anchor-id="coefficients-odds-ratios">Coefficients &amp; odds ratios</h2>
+<p>The model coefficient, 0.126, is the expected change in the log-odds when comparing 30 - 49 year olds to 18 - 29 year olds.</p>
+<p>. . .</p>
+<p>Therefore, <span class="math inline">\(e^{0.126}\)</span> = 1.134 is the expected difference in the <strong>odds</strong> when comparing 30 - 49 year olds to 18-29 year olds.</p>
+<p>. . .</p>
+<p><span class="math display">\[
+OR  = e^{\hat{\beta}_j} = \exp\{\hat{\beta}_j\}
+\]</span></p>
+</section>
+<section id="interpret-in-terms-of-percent-change" class="level2">
+<h2 class="anchored" data-anchor-id="interpret-in-terms-of-percent-change">Interpret in terms of percent change</h2>
+<p>You can also interpret the change in the odds in terms of a percentage change. The percent change in the odds can be computed as the following</p>
+<p><span class="math display">\[\% \text{ change } = (e^{\hat{\beta}_j} - 1) \times 100\]</span></p>
 <p><br></p>
-<p>For each additional point in the income inequality index, a country’s health expenditures are expected to multiply by 0.937 <span class="math inline">\((e^{-0.065})\)</span>, holding education constant.</p>
-</section>
-<section id="compare-residual-plots" class="level2">
-<h2 class="anchored" data-anchor-id="compare-residual-plots">Compare residual plots</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="15-transformations-contd_files/figure-revealjs/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="960"></p>
-</figure>
-</div>
-</div>
+<div class="question">
+<p>Interpret the coefficient of <code>age_cat30-49</code> in terms of the percent change in the odds.</p>
 </div>
 </section>
-<section id="log-transformation-on-a-predictor-variable" class="level1">
-<h1>Log transformation on a predictor variable</h1>
-<section id="variability-in-life-expectancy" class="level2">
-<h2 class="anchored" data-anchor-id="variability-in-life-expectancy">Variability in life expectancy</h2>
-<p>Let’s consider a model using a country’s healthcare expenditure, income inequality, and education to predict its life expectancy</p>
+<section id="quantitative-predictor" class="level2">
+<h2 class="anchored" data-anchor-id="quantitative-predictor">Quantitative predictor</h2>
+<p>Now let’s look at the relationship between <code>survey_time</code> and <code>ai_concern</code></p>
 <div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="15-transformations-contd_files/figure-revealjs/unnamed-chunk-5-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="960"></p>
-</figure>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ai_time_fit <span class="ot">&lt;-</span> <span class="fu">glm</span>(ai_concern <span class="sc">~</span> survey_time, <span class="at">data =</span> pew_data,</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">family =</span> <span class="st">"binomial"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
-</section>
-<section id="original-model" class="level2">
-<h2 class="anchored" data-anchor-id="original-model">Original model</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>life_exp_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(life_exp <span class="sc">~</span> health_expenditure <span class="sc">+</span> income_inequality <span class="sc">+</span> education, </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">data =</span> health_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <thead>
@@ -630,126 +874,36 @@ e^{a - b} &amp;= \frac{e^a}{e^b}
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">78.575</td>
-<td style="text-align: right;">1.775</td>
-<td style="text-align: right;">44.274</td>
-<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.069</td>
+<td style="text-align: right;">0.037</td>
+<td style="text-align: right;">1.853</td>
+<td style="text-align: right;">0.064</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">health_expenditure</td>
-<td style="text-align: right;">0.001</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">4.522</td>
-<td style="text-align: right;">0.000</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">income_inequality</td>
-<td style="text-align: right;">-0.484</td>
-<td style="text-align: right;">0.061</td>
-<td style="text-align: right;">-7.900</td>
-<td style="text-align: right;">0.000</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">educationHigh</td>
-<td style="text-align: right;">2.020</td>
-<td style="text-align: right;">1.168</td>
-<td style="text-align: right;">1.730</td>
-<td style="text-align: right;">0.086</td>
+<td style="text-align: left;">survey_time</td>
+<td style="text-align: right;">0.005</td>
+<td style="text-align: right;">0.002</td>
+<td style="text-align: right;">2.434</td>
+<td style="text-align: right;">0.015</td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-</section>
-<section id="original-model-residuals" class="level2">
-<h2 class="anchored" data-anchor-id="original-model-residuals">Original model: Residuals</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="15-transformations-contd_files/figure-revealjs/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="residuals-vs.-predictors" class="level2">
-<h2 class="anchored" data-anchor-id="residuals-vs.-predictors">Residuals vs.&nbsp;predictors</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="15-transformations-contd_files/figure-revealjs/unnamed-chunk-9-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="960"></p>
-</figure>
-</div>
 </div>
 </div>
 <p>. . .</p>
-<div class="question">
-<p>There is a non-linear relationship is between health expenditure and life expectancy.</p>
-</div>
+<p>For each additional minute of taking the survey, the odds of being concerned about increased AI in daily life are expected to multiply by a factor of 1.005 ( <span class="math inline">\(e^{0.005}\)</span>).</p>
 </section>
-<section id="log-transformation-on-x" class="level2">
-<h2 class="anchored" data-anchor-id="log-transformation-on-x">Log Transformation on <span class="math inline">\(X\)</span></h2>
-<p>Try a transformation on <span class="math inline">\(X\)</span> if the scatterplot in EDA shows non-linear relationship and residuals vs.&nbsp;fitted looks parabolic</p>
+<section id="multiple-predictors" class="level2">
+<h2 class="anchored" data-anchor-id="multiple-predictors">Multiple predictors</h2>
+<p>Now let’s consider a model that takes into account <code>age</code> , <code>ai_heard</code> and <code>survey_time</code></p>
 <div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="15-transformations-contd_files/figure-revealjs/unnamed-chunk-10-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="960"></p>
-</figure>
-</div>
-</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ai_concern_full_fit <span class="ot">&lt;-</span> <span class="fu">glm</span>(ai_concern <span class="sc">~</span> age_cat <span class="sc">+</span> ai_heard <span class="sc">+</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                             survey_time, <span class="at">data =</span> pew_data, <span class="at">family =</span> <span class="st">"binomial"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="eda" class="level2">
-<h2 class="anchored" data-anchor-id="eda">EDA</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="15-transformations-contd_files/figure-revealjs/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="model-with-transformation-on-x_j" class="level2 midi">
-<h2 class="midi anchored" data-anchor-id="model-with-transformation-on-x_j">Model with Transformation on <span class="math inline">\(X_j\)</span></h2>
-<p>When we fit a model with predictor <span class="math inline">\(\log(X_j)\)</span>, we fit a model of the form</p>
-<p><span class="math display">\[
-Y = \beta_0 + \beta_1X_1 + \dots + \beta_j\log(X_j) + \dots \beta_pX_p + \epsilon, \quad \epsilon \sim N(0, \sigma^2_{\epsilon})
-\]</span></p>
-<p>The estimated regression model is</p>
-<p><span class="math display">\[
-\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1x_{i1} + \ldots + \hat{\beta}_j\log(x_{ij}) + \dots + \hat{\beta}_px_{ip}
-\]</span></p>
-</section>
-<section id="model-interpretation" class="level2 midi">
-<h2 class="midi anchored" data-anchor-id="model-interpretation">Model interpretation</h2>
-<p><span class="math display">\[
-\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1x_{i1} + \ldots + \hat{\beta}_j\log(x_{ij}) + \dots + \hat{\beta}_px_{ip}
-\]</span></p>
-<div class="incremental">
-<ul class="incremental">
-<li><p><strong>Intercept:</strong> When <span class="math inline">\(x_{i1} = \dots = \log(x_{ij}) = \dots = x_{ip} = 0\)</span> , <span class="math inline">\(y_i\)</span> is expected to be <span class="math inline">\(\hat{\beta}_0\)</span>, on average.</p>
-<ul class="incremental">
-<li><span class="math inline">\(\log(x_{ij}) = 0\)</span> when <span class="math inline">\(x_{ij} = 1\)</span></li>
-</ul></li>
-<li><p><strong>Coefficient of</strong> <span class="math inline">\(X_j\)</span><strong>:</strong> When <span class="math inline">\(x_{ij}\)</span> is multiplied by a factor of <span class="math inline">\(C\)</span>, <span class="math inline">\(y_i\)</span> is expected to change by <span class="math inline">\(\hat{\beta}_j\log(C)\)</span> units, on average, holding all else constant.</p>
-<ul class="incremental">
-<li><strong>Example</strong>: When <span class="math inline">\(x_{ij}\)</span> is multiplied by a factor of 2, <span class="math inline">\(y_i\)</span> is expected to increase by <span class="math inline">\(\hat{\beta}_j\log(2)\)</span> units, on average, holding all else constant.</li>
-</ul></li>
-</ul>
-</div>
-</section>
-<section id="model-with-logx" class="level2 midi">
-<h2 class="midi anchored" data-anchor-id="model-with-logx">Model with log(X)</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>life_exp_logx_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(life_exp <span class="sc">~</span> <span class="fu">log</span>(health_expenditure) <span class="sc">+</span> income_inequality </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                        <span class="sc">+</span> education, <span class="at">data =</span> health_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
+<section id="multiple-predictors-1" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="multiple-predictors-1">Multiple predictors</h2>
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <thead>
@@ -764,78 +918,176 @@ Y = \beta_0 + \beta_1X_1 + \dots + \beta_j\log(X_j) + \dots \beta_pX_p + \epsilo
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">59.151</td>
-<td style="text-align: right;">3.184</td>
-<td style="text-align: right;">18.576</td>
+<td style="text-align: right;">-0.405</td>
+<td style="text-align: right;">0.077</td>
+<td style="text-align: right;">-5.230</td>
 <td style="text-align: right;">0.000</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">log(health_expenditure)</td>
-<td style="text-align: right;">3.092</td>
-<td style="text-align: right;">0.396</td>
-<td style="text-align: right;">7.814</td>
+<td style="text-align: left;">age_cat30-49</td>
+<td style="text-align: right;">0.117</td>
+<td style="text-align: right;">0.078</td>
+<td style="text-align: right;">1.504</td>
+<td style="text-align: right;">0.132</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">age_cat50-64</td>
+<td style="text-align: right;">0.519</td>
+<td style="text-align: right;">0.079</td>
+<td style="text-align: right;">6.587</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">age_cat65+</td>
+<td style="text-align: right;">0.604</td>
+<td style="text-align: right;">0.079</td>
+<td style="text-align: right;">7.611</td>
 <td style="text-align: right;">0.000</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">income_inequality</td>
-<td style="text-align: right;">-0.362</td>
-<td style="text-align: right;">0.058</td>
-<td style="text-align: right;">-6.225</td>
-<td style="text-align: right;">0.000</td>
+<td style="text-align: left;">age_catRefused</td>
+<td style="text-align: right;">0.557</td>
+<td style="text-align: right;">0.325</td>
+<td style="text-align: right;">1.716</td>
+<td style="text-align: right;">0.086</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">educationHigh</td>
-<td style="text-align: right;">-0.168</td>
-<td style="text-align: right;">1.103</td>
-<td style="text-align: right;">-0.152</td>
-<td style="text-align: right;">0.879</td>
+<td style="text-align: left;">ai_heardA little</td>
+<td style="text-align: right;">0.371</td>
+<td style="text-align: right;">0.043</td>
+<td style="text-align: right;">8.654</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ai_heardNothing at all</td>
+<td style="text-align: right;">-0.243</td>
+<td style="text-align: right;">0.085</td>
+<td style="text-align: right;">-2.876</td>
+<td style="text-align: right;">0.004</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ai_heardRefused</td>
+<td style="text-align: right;">-0.571</td>
+<td style="text-align: right;">0.505</td>
+<td style="text-align: right;">-1.131</td>
+<td style="text-align: right;">0.258</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">survey_time</td>
+<td style="text-align: right;">-0.001</td>
+<td style="text-align: right;">0.002</td>
+<td style="text-align: right;">-0.369</td>
+<td style="text-align: right;">0.712</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In logistic regression with 2+ predictors, <span class="math inline">\(e^{\hat{\beta}_j}\)</span> is often called the <strong>adjusted odds ratio (AOR).</strong></p>
+</div>
+</div>
+</section>
+<section id="interpretation" class="level2">
+<h2 class="anchored" data-anchor-id="interpretation">Interpretation</h2>
 <p><br></p>
 <div class="question">
+<p>Use the model on the previous slide.</p>
 <ul>
-<li><p>Interpret the intercept in the context of the data.</p></li>
-<li><p>Interpret the effect of health expenditure in the context of the data.</p></li>
-<li><p>Interpret the effect of education in the context of the data.</p></li>
+<li>Describe the type of respondent represented by the intercept.</li>
+<li>Interpret the effect of <code>ai_heardNothing at all</code> in terms of the odds of being concerned by increased use of AI in daily life.</li>
 </ul>
 </div>
 </section>
-<section id="model-with-logx-residuals" class="level2">
-<h2 class="anchored" data-anchor-id="model-with-logx-residuals">Model with log(X): Residuals</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="15-transformations-contd_files/figure-revealjs/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="960"></p>
-</figure>
+</section>
+<section id="prediction" class="level1">
+<h1>Prediction</h1>
+<section id="predicted-log-odds" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="predicted-log-odds">Predicted log odds</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">augment</span>(ai_concern_full_fit) <span class="sc">|&gt;</span> <span class="fu">select</span>(.fitted)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 1
+  .fitted
+    &lt;dbl&gt;
+1 -0.0608
+2  0.0756
+3  0.473 
+4  0.560 
+5  0.563 </code></pre>
+</div>
+</div>
+<p>. . .</p>
+<p><strong>For observation 1</strong></p>
+<p><span class="math display">\[\text{predicted odds} = \hat{\text{odds}} = \frac{\hat{p}}{1-\hat{p}} = e^{-0.0608} = 0.941\]</span></p>
+</section>
+<section id="predicted-probabilities" class="level2">
+<h2 class="anchored" data-anchor-id="predicted-probabilities">Predicted probabilities</h2>
+<p><br></p>
+<div class="question">
+<p>The predicted log-odds for observation 1 is -0.0608. What is the probability this respondent is concerned about increased use of AI in daily life?</p>
+</div>
+</section>
+<section id="predicted-probabilities-1" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="predicted-probabilities-1">Predicted probabilities</h2>
+<p>We can calculate predicted probabilities using the argument <code>type = "response"</code> in <code>predict.glm()</code><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict.glm</span>(ai_concern_full_fit, <span class="at">type =</span> <span class="st">"response"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>        1         2         3         4         5 
+0.4848067 0.5188941 0.6161912 0.6364755 0.6371220 </code></pre>
 </div>
 </div>
 </section>
-<section id="comparing-residual-plots" class="level2">
-<h2 class="anchored" data-anchor-id="comparing-residual-plots">Comparing residual plots</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="15-transformations-contd_files/figure-revealjs/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="960"></p>
-</figure>
-</div>
-</div>
+<section id="predicted-probability-for-new-observation" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="predicted-probability-for-new-observation">Predicted probability for new observation</h2>
+<p><br></p>
+<div class="question">
+<p>Recall them model that includes predictors <code>age_cat</code>, <code>ai_heard</code>, and <code>survey_time</code>.</p>
+<ul>
+<li>What are the predicted odds for a 70-year-old respondent who has heard nothing about AI and took 60 minutes to complete the survey?</li>
+<li>What is the predicted probability this respondent is <strong>not</strong> concerned about increased use of AI in daily life?</li>
+<li>Would you classify this person as someone who is concerned or someone who is not? Why?</li>
+</ul>
 </div>
 </section>
-<section id="learn-more" class="level2">
-<h2 class="anchored" data-anchor-id="learn-more">Learn more</h2>
-<p>See <a href="https://github.com/sta210-sp20/supplemental-notes/blob/master/log-transformations.pdf">Log Transformations in Linear Regression</a> for more details about interpreting regression models with log-transformed variables.</p>
+<section id="predicted-probability-for-new-observation-1" class="level2">
+<h2 class="anchored" data-anchor-id="predicted-probability-for-new-observation-1">Predicted probability for new observation</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>new_obs <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">age_cat =</span> <span class="st">"65+"</span>, <span class="at">ai_heard =</span> <span class="st">"Nothing at all"</span>,  </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">survey_time =</span> <span class="dv">60</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">predict.glm</span>(ai_concern_full_fit, <span class="at">newdata =</span> new_obs, </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">type =</span> <span class="st">"response"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        1 
+0.4780527 </code></pre>
+</div>
+</div>
 </section>
 <section id="recap" class="level2">
 <h2 class="anchored" data-anchor-id="recap">Recap</h2>
 <ul>
-<li>Introduced log-transformation on the predictor</li>
-<li>Identified linear models</li>
+<li><p>Use the odds ratio to compare the odds of two groups</p></li>
+<li><p>Interpret the coefficients of a logistic regression model with</p>
+<ul>
+<li>a single categorical predictor</li>
+<li>a single quantitative predictor</li>
+<li>multiple predictors</li>
+</ul></li>
 </ul>
 </section>
 <section id="references" class="level2">
@@ -846,11 +1098,21 @@ Y = \beta_0 + \beta_1X_1 + \dots + \beta_j\log(X_j) + \dots \beta_pX_p + \epsilo
 </section>
 </section>
 
+
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-zarulli2021" class="csl-entry" role="listitem">
-Zarulli, Virginia, Elizaveta Sopina, Veronica Toffolutti, and Adam Lenart. 2021. <span>“Health Care System Efficiency and Life Expectancy: A 140-Country Study.”</span> Edited by Srinivas Goli. <em>PLOS ONE</em> 16 (7): e0253450. <a href="https://doi.org/10.1371/journal.pone.0253450">https://doi.org/10.1371/journal.pone.0253450</a>.
+<div id="ref-ledolter2003statistical" class="csl-entry" role="listitem">
+Ledolter, Johannes. 2003. <span>“The Statistical Sleuth.”</span> Taylor &amp; Francis.
 </div>
-</div></section></div></main> <!-- /main -->
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><div class="small">
+<p>This example is from <span class="citation" data-cites="ledolter2003statistical">Ledolter (<a href="#ref-ledolter2003statistical" role="doc-biblioref">2003</a>)</span> .</p>
+</div>
+<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></li>
+<li id="fn2"><p>The default is <code>type = "link"</code>, which produces the predicted log-odds.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 
 <script>
   // htmlwidgets need to know to resize themselves when slides are shown/hidden.
