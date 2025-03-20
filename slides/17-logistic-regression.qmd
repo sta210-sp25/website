@@ -89,7 +89,7 @@ ggplot2::theme_set(ggplot2::theme_bw(base_size = 20))
 ::: question
 -   What is the difference in the probability of disease for these two populations?
 
--   What are the odds of disease without vaccine relative to the odds of disease with vaccine?
+-   What are the odds of disease in the population without a vaccine relative to the odds of disease in the with vaccine?
 :::
 
 # Logistic regression
@@ -157,11 +157,11 @@ This data comes from the 2023 [Pew Research Center's American Trends Panel](http
 
 A more complete analysis on this topic can be found in the Pew Research Center article [*Growing public concern about the role of artificial intelligence in daily life*](https://www.pewresearch.org/short-reads/2023/08/28/growing-public-concern-about-the-role-of-artificial-intelligence-in-daily-life/) by Alec Tyson and Emma Kikuchi.
 
-## Variables 
+## Variables
 
 -   `ai_concern`: Whether a respondent said they are "more concerned than excited" about in the increased use of AI in daily life (1: yes, 0: no)
 
-## Variables 
+## Variables
 
 -   `survey_time`: Time to complete the survey (in minutes)
 
@@ -275,19 +275,13 @@ We would not use the interpretation in terms of log-odds in practice.
 
 The **odds** of being concerned about increased use of AI in daily life for 30 - 49 year olds are expected to be `r round(exp(0.126), 3)` ( $e^{0.126}$ ) times the odds for 18-29 year olds.
 
-. . .
+## Coefficients & odds ratios
 
-**More natural interpretation**
-
-The odds 18-29 year olds are concerned about increase use of AI in daily life are expected to be `r round(1/exp(1/0.126), 3)` ( 1 / $e^{0.126}$) times the odds of 30 - 49 year olds.
-
-## Coefficients & odds ratios 
-
-The model coefficient, 0.126, is the expected change in the log-odds when comparing 30 - 49 year olds to 18 - 29 year olds.
+The model coefficient, 0.126, is the expected difference in the log-odds when comparing 30 - 49 year olds to 18 - 29 year olds.
 
 . . .
 
-Therefore, $e^{0.126}$ = `r round(exp(0.126),3)` is the expected difference in the **odds** when comparing 30 - 49 year olds to 18-29 year olds.
+Therefore, $e^{0.126}$ = `r round(exp(0.126),3)` is the expected change in the **odds** when comparing 30 - 49 year olds to 18-29 year olds.
 
 . . .
 
@@ -297,14 +291,14 @@ $$
 
 ## Interpret in terms of percent change
 
-You can also interpret the change in the odds in terms of a percentage change. The percent change in the odds can be computed as the following
+You can also interpret the change in the odds in terms of a percent change. The percent change in the odds can be computed as the following
 
 $$\% \text{ change } = (e^{\hat{\beta}_j} - 1) \times 100$$
 
 <br>
 
 ::: question
-Interpret the coefficient of `age_cat30-49` in terms of the percent change in the odds.
+Interpret the coefficient of `age_cat30-49` (0.126) in terms of the percent change in the odds.
 :::
 
 ## Quantitative predictor
@@ -344,11 +338,7 @@ ai_concern_full_fit <- glm(ai_concern ~ age_cat + ai_heard +
 tidy(ai_concern_full_fit) |> kable(digits = 3)
 ```
 
-::: callout-note
-In logistic regression with 2+ predictors, $e^{\hat{\beta}_j}$ is often called the **adjusted odds ratio (AOR).**
-:::
-
-## Interpretation 
+## Interpretation
 
 <br>
 
@@ -387,7 +377,7 @@ $$\text{predicted odds} = \hat{\text{odds}} = \frac{\hat{p}}{1-\hat{p}} = e^{-0.
 <br>
 
 ::: question
-The predicted log-odds for observation 1 is -0.0608. What is the probability this respondent is concerned about increased use of AI in daily life?
+The predicted log-odds for observation 1 is -0.0608. What is the predicted probability this respondent is concerned about increased use of AI in daily life?
 :::
 
 ## Predicted probabilities {.midi}
@@ -401,9 +391,11 @@ We can calculate predicted probabilities using the argument `type = "response"` 
 predict.glm(ai_concern_full_fit, type = "response")
 ```
 
+Showing the predictions for the first 10 observations
+
 ```{r}
 #| echo: false
-predict.glm(ai_concern_full_fit, type = "response")[1:5]
+predict.glm(ai_concern_full_fit, type = "response")[1:10]
 ```
 
 ## Predicted probability for new observation {.midi}
@@ -411,7 +403,7 @@ predict.glm(ai_concern_full_fit, type = "response")[1:5]
 <br>
 
 ::: question
-Recall them model that includes predictors `age_cat`, `ai_heard`, and `survey_time`.
+Recall the model that includes predictors `age_cat`, `ai_heard`, and `survey_time`.
 
 -   What are the predicted odds for a 70-year-old respondent who has heard nothing about AI and took 60 minutes to complete the survey?
 -   What is the predicted probability this respondent is **not** concerned about increased use of AI in daily life?

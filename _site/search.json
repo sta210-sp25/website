@@ -1538,7 +1538,7 @@
     "href": "slides/17-logistic-regression.html#probabilities-vs.-odds1",
     "title": "Logistic regression",
     "section": "Probabilities vs. odds1",
-    "text": "Probabilities vs. odds1\nScenario 1: Suppose the probability of a disease among a population of unvaccinated individuals is 0.00369, and the probability of the disease is 0.001 among a population of vaccinated individuals.\nScenario 2: Suppose the probability of a disease among a population of unvaccinated individuals is 0.48052 and the probability of the disease is 0.2 among a population of vaccinated individuals.\n\n\nWhat is the difference in the probability of disease for these two populations?\nWhat are the odds of disease without vaccine relative to the odds of disease with vaccine?\n\n\n\nThis example is from Ledolter (2003) ."
+    "text": "Probabilities vs. odds1\nScenario 1: Suppose the probability of a disease among a population of unvaccinated individuals is 0.00369, and the probability of the disease is 0.001 among a population of vaccinated individuals.\nScenario 2: Suppose the probability of a disease among a population of unvaccinated individuals is 0.48052 and the probability of the disease is 0.2 among a population of vaccinated individuals.\n\n\nWhat is the difference in the probability of disease for these two populations?\nWhat are the odds of disease in the population without a vaccine relative to the odds of disease in the with vaccine?\n\n\n\nThis example is from Ledolter (2003) ."
   },
   {
     "objectID": "slides/17-logistic-regression.html#from-odds-to-probabilities",
@@ -1615,21 +1615,21 @@
     "href": "slides/17-logistic-regression.html#interpreting-age_cat30-49-odds",
     "title": "Logistic regression",
     "section": "Interpreting age_cat30-49: odds",
-    "text": "Interpreting age_cat30-49: odds\n\n\n\nThe odds of being concerned about increased use of AI in daily life for 30 - 49 year olds are expected to be 1.134 ( \\(e^{0.126}\\) ) times the odds for 18-29 year olds.\n\nMore natural interpretation\nThe odds 18-29 year olds are concerned about increase use of AI in daily life are expected to be 0 ( 1 / \\(e^{0.126}\\)) times the odds of 30 - 49 year olds."
+    "text": "Interpreting age_cat30-49: odds\n\n\n\nThe odds of being concerned about increased use of AI in daily life for 30 - 49 year olds are expected to be 1.134 ( \\(e^{0.126}\\) ) times the odds for 18-29 year olds."
   },
   {
     "objectID": "slides/17-logistic-regression.html#coefficients-odds-ratios",
     "href": "slides/17-logistic-regression.html#coefficients-odds-ratios",
     "title": "Logistic regression",
     "section": "Coefficients & odds ratios",
-    "text": "Coefficients & odds ratios\nThe model coefficient, 0.126, is the expected change in the log-odds when comparing 30 - 49 year olds to 18 - 29 year olds.\n\nTherefore, \\(e^{0.126}\\) = 1.134 is the expected difference in the odds when comparing 30 - 49 year olds to 18-29 year olds.\n\n\n\\[\nOR  = e^{\\hat{\\beta}_j} = \\exp\\{\\hat{\\beta}_j\\}\n\\]"
+    "text": "Coefficients & odds ratios\nThe model coefficient, 0.126, is the expected difference in the log-odds when comparing 30 - 49 year olds to 18 - 29 year olds.\n\nTherefore, \\(e^{0.126}\\) = 1.134 is the expected change in the odds when comparing 30 - 49 year olds to 18-29 year olds.\n\n\n\\[\nOR  = e^{\\hat{\\beta}_j} = \\exp\\{\\hat{\\beta}_j\\}\n\\]"
   },
   {
     "objectID": "slides/17-logistic-regression.html#interpret-in-terms-of-percent-change",
     "href": "slides/17-logistic-regression.html#interpret-in-terms-of-percent-change",
     "title": "Logistic regression",
     "section": "Interpret in terms of percent change",
-    "text": "Interpret in terms of percent change\nYou can also interpret the change in the odds in terms of a percentage change. The percent change in the odds can be computed as the following\n\\[\\% \\text{ change } = (e^{\\hat{\\beta}_j} - 1) \\times 100\\]\n\n\nInterpret the coefficient of age_cat30-49 in terms of the percent change in the odds."
+    "text": "Interpret in terms of percent change\nYou can also interpret the change in the odds in terms of a percent change. The percent change in the odds can be computed as the following\n\\[\\% \\text{ change } = (e^{\\hat{\\beta}_j} - 1) \\times 100\\]\n\n\nInterpret the coefficient of age_cat30-49 (0.126) in terms of the percent change in the odds."
   },
   {
     "objectID": "slides/17-logistic-regression.html#quantitative-predictor",
@@ -1650,7 +1650,7 @@
     "href": "slides/17-logistic-regression.html#multiple-predictors-1",
     "title": "Logistic regression",
     "section": "Multiple predictors",
-    "text": "Multiple predictors\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-0.405\n0.077\n-5.230\n0.000\n\n\nage_cat30-49\n0.117\n0.078\n1.504\n0.132\n\n\nage_cat50-64\n0.519\n0.079\n6.587\n0.000\n\n\nage_cat65+\n0.604\n0.079\n7.611\n0.000\n\n\nage_catRefused\n0.557\n0.325\n1.716\n0.086\n\n\nai_heardA little\n0.371\n0.043\n8.654\n0.000\n\n\nai_heardNothing at all\n-0.243\n0.085\n-2.876\n0.004\n\n\nai_heardRefused\n-0.571\n0.505\n-1.131\n0.258\n\n\nsurvey_time\n-0.001\n0.002\n-0.369\n0.712\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nIn logistic regression with 2+ predictors, \\(e^{\\hat{\\beta}_j}\\) is often called the adjusted odds ratio (AOR)."
+    "text": "Multiple predictors\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-0.405\n0.077\n-5.230\n0.000\n\n\nage_cat30-49\n0.117\n0.078\n1.504\n0.132\n\n\nage_cat50-64\n0.519\n0.079\n6.587\n0.000\n\n\nage_cat65+\n0.604\n0.079\n7.611\n0.000\n\n\nage_catRefused\n0.557\n0.325\n1.716\n0.086\n\n\nai_heardA little\n0.371\n0.043\n8.654\n0.000\n\n\nai_heardNothing at all\n-0.243\n0.085\n-2.876\n0.004\n\n\nai_heardRefused\n-0.571\n0.505\n-1.131\n0.258\n\n\nsurvey_time\n-0.001\n0.002\n-0.369\n0.712"
   },
   {
     "objectID": "slides/17-logistic-regression.html#interpretation",
@@ -1671,21 +1671,21 @@
     "href": "slides/17-logistic-regression.html#predicted-probabilities",
     "title": "Logistic regression",
     "section": "Predicted probabilities",
-    "text": "Predicted probabilities\n\n\nThe predicted log-odds for observation 1 is -0.0608. What is the probability this respondent is concerned about increased use of AI in daily life?"
+    "text": "Predicted probabilities\n\n\nThe predicted log-odds for observation 1 is -0.0608. What is the predicted probability this respondent is concerned about increased use of AI in daily life?"
   },
   {
     "objectID": "slides/17-logistic-regression.html#predicted-probabilities-1",
     "href": "slides/17-logistic-regression.html#predicted-probabilities-1",
     "title": "Logistic regression",
     "section": "Predicted probabilities",
-    "text": "Predicted probabilities\nWe can calculate predicted probabilities using the argument type = \"response\" in predict.glm()1\n\npredict.glm(ai_concern_full_fit, type = \"response\")\n\n\n\n        1         2         3         4         5 \n0.4848067 0.5188941 0.6161912 0.6364755 0.6371220 \n\n\nThe default is type = \"link\", which produces the predicted log-odds."
+    "text": "Predicted probabilities\nWe can calculate predicted probabilities using the argument type = \"response\" in predict.glm()1\n\npredict.glm(ai_concern_full_fit, type = \"response\")\n\nShowing the predictions for the first 10 observations\n\n\n        1         2         3         4         5         6         7         8 \n0.4848067 0.5188941 0.6161912 0.6364755 0.6371220 0.6366698 0.6159500 0.5257991 \n        9        10 \n0.4898898 0.6329262 \n\n\nThe default is type = \"link\", which produces the predicted log-odds."
   },
   {
     "objectID": "slides/17-logistic-regression.html#predicted-probability-for-new-observation",
     "href": "slides/17-logistic-regression.html#predicted-probability-for-new-observation",
     "title": "Logistic regression",
     "section": "Predicted probability for new observation",
-    "text": "Predicted probability for new observation\n\n\nRecall them model that includes predictors age_cat, ai_heard, and survey_time.\n\nWhat are the predicted odds for a 70-year-old respondent who has heard nothing about AI and took 60 minutes to complete the survey?\nWhat is the predicted probability this respondent is not concerned about increased use of AI in daily life?\nWould you classify this person as someone who is concerned or someone who is not? Why?"
+    "text": "Predicted probability for new observation\n\n\nRecall the model that includes predictors age_cat, ai_heard, and survey_time.\n\nWhat are the predicted odds for a 70-year-old respondent who has heard nothing about AI and took 60 minutes to complete the survey?\nWhat is the predicted probability this respondent is not concerned about increased use of AI in daily life?\nWould you classify this person as someone who is concerned or someone who is not? Why?"
   },
   {
     "objectID": "slides/17-logistic-regression.html#predicted-probability-for-new-observation-1",
@@ -1741,7 +1741,7 @@
     "href": "slides/17-logistic-regression-notes.html#probabilities-vs.-odds1",
     "title": "Logistic regression",
     "section": "Probabilities vs. odds1",
-    "text": "Probabilities vs. odds1\nScenario 1: Suppose the probability of a disease among a population of unvaccinated individuals is 0.00369, and the probability of the disease is 0.001 among a population of vaccinated individuals.\nScenario 2: Suppose the probability of a disease among a population of unvaccinated individuals is 0.48052 and the probability of the disease is 0.2 among a population of vaccinated individuals.\n\n\nWhat is the difference in the probability of disease for these two populations?\nWhat are the odds of disease without vaccine relative to the odds of disease with vaccine?"
+    "text": "Probabilities vs. odds1\nScenario 1: Suppose the probability of a disease among a population of unvaccinated individuals is 0.00369, and the probability of the disease is 0.001 among a population of vaccinated individuals.\nScenario 2: Suppose the probability of a disease among a population of unvaccinated individuals is 0.48052 and the probability of the disease is 0.2 among a population of vaccinated individuals.\n\n\nWhat is the difference in the probability of disease for these two populations?\nWhat are the odds of disease in the population without a vaccine relative to the odds of disease in the with vaccine?"
   },
   {
     "objectID": "slides/17-logistic-regression-notes.html#from-odds-to-probabilities",
@@ -1818,21 +1818,21 @@
     "href": "slides/17-logistic-regression-notes.html#interpreting-age_cat30-49-odds",
     "title": "Logistic regression",
     "section": "Interpreting age_cat30-49: odds",
-    "text": "Interpreting age_cat30-49: odds\n\n\n\nThe odds of being concerned about increased use of AI in daily life for 30 - 49 year olds are expected to be 1.134 ( \\(e^{0.126}\\) ) times the odds for 18-29 year olds.\n. . .\nMore natural interpretation\nThe odds 18-29 year olds are concerned about increase use of AI in daily life are expected to be 0 ( 1 / \\(e^{0.126}\\)) times the odds of 30 - 49 year olds."
+    "text": "Interpreting age_cat30-49: odds\n\n\n\nThe odds of being concerned about increased use of AI in daily life for 30 - 49 year olds are expected to be 1.134 ( \\(e^{0.126}\\) ) times the odds for 18-29 year olds."
   },
   {
     "objectID": "slides/17-logistic-regression-notes.html#coefficients-odds-ratios",
     "href": "slides/17-logistic-regression-notes.html#coefficients-odds-ratios",
     "title": "Logistic regression",
     "section": "Coefficients & odds ratios",
-    "text": "Coefficients & odds ratios\nThe model coefficient, 0.126, is the expected change in the log-odds when comparing 30 - 49 year olds to 18 - 29 year olds.\n. . .\nTherefore, \\(e^{0.126}\\) = 1.134 is the expected difference in the odds when comparing 30 - 49 year olds to 18-29 year olds.\n. . .\n\\[\nOR  = e^{\\hat{\\beta}_j} = \\exp\\{\\hat{\\beta}_j\\}\n\\]"
+    "text": "Coefficients & odds ratios\nThe model coefficient, 0.126, is the expected difference in the log-odds when comparing 30 - 49 year olds to 18 - 29 year olds.\n. . .\nTherefore, \\(e^{0.126}\\) = 1.134 is the expected change in the odds when comparing 30 - 49 year olds to 18-29 year olds.\n. . .\n\\[\nOR  = e^{\\hat{\\beta}_j} = \\exp\\{\\hat{\\beta}_j\\}\n\\]"
   },
   {
     "objectID": "slides/17-logistic-regression-notes.html#interpret-in-terms-of-percent-change",
     "href": "slides/17-logistic-regression-notes.html#interpret-in-terms-of-percent-change",
     "title": "Logistic regression",
     "section": "Interpret in terms of percent change",
-    "text": "Interpret in terms of percent change\nYou can also interpret the change in the odds in terms of a percentage change. The percent change in the odds can be computed as the following\n\\[\\% \\text{ change } = (e^{\\hat{\\beta}_j} - 1) \\times 100\\]\n\n\nInterpret the coefficient of age_cat30-49 in terms of the percent change in the odds."
+    "text": "Interpret in terms of percent change\nYou can also interpret the change in the odds in terms of a percent change. The percent change in the odds can be computed as the following\n\\[\\% \\text{ change } = (e^{\\hat{\\beta}_j} - 1) \\times 100\\]\n\n\nInterpret the coefficient of age_cat30-49 (0.126) in terms of the percent change in the odds."
   },
   {
     "objectID": "slides/17-logistic-regression-notes.html#quantitative-predictor",
@@ -1853,7 +1853,7 @@
     "href": "slides/17-logistic-regression-notes.html#multiple-predictors-1",
     "title": "Logistic regression",
     "section": "Multiple predictors",
-    "text": "Multiple predictors\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-0.405\n0.077\n-5.230\n0.000\n\n\nage_cat30-49\n0.117\n0.078\n1.504\n0.132\n\n\nage_cat50-64\n0.519\n0.079\n6.587\n0.000\n\n\nage_cat65+\n0.604\n0.079\n7.611\n0.000\n\n\nage_catRefused\n0.557\n0.325\n1.716\n0.086\n\n\nai_heardA little\n0.371\n0.043\n8.654\n0.000\n\n\nai_heardNothing at all\n-0.243\n0.085\n-2.876\n0.004\n\n\nai_heardRefused\n-0.571\n0.505\n-1.131\n0.258\n\n\nsurvey_time\n-0.001\n0.002\n-0.369\n0.712\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nIn logistic regression with 2+ predictors, \\(e^{\\hat{\\beta}_j}\\) is often called the adjusted odds ratio (AOR)."
+    "text": "Multiple predictors\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-0.405\n0.077\n-5.230\n0.000\n\n\nage_cat30-49\n0.117\n0.078\n1.504\n0.132\n\n\nage_cat50-64\n0.519\n0.079\n6.587\n0.000\n\n\nage_cat65+\n0.604\n0.079\n7.611\n0.000\n\n\nage_catRefused\n0.557\n0.325\n1.716\n0.086\n\n\nai_heardA little\n0.371\n0.043\n8.654\n0.000\n\n\nai_heardNothing at all\n-0.243\n0.085\n-2.876\n0.004\n\n\nai_heardRefused\n-0.571\n0.505\n-1.131\n0.258\n\n\nsurvey_time\n-0.001\n0.002\n-0.369\n0.712"
   },
   {
     "objectID": "slides/17-logistic-regression-notes.html#interpretation",
@@ -1874,21 +1874,21 @@
     "href": "slides/17-logistic-regression-notes.html#predicted-probabilities",
     "title": "Logistic regression",
     "section": "Predicted probabilities",
-    "text": "Predicted probabilities\n\n\nThe predicted log-odds for observation 1 is -0.0608. What is the probability this respondent is concerned about increased use of AI in daily life?"
+    "text": "Predicted probabilities\n\n\nThe predicted log-odds for observation 1 is -0.0608. What is the predicted probability this respondent is concerned about increased use of AI in daily life?"
   },
   {
     "objectID": "slides/17-logistic-regression-notes.html#predicted-probabilities-1",
     "href": "slides/17-logistic-regression-notes.html#predicted-probabilities-1",
     "title": "Logistic regression",
     "section": "Predicted probabilities",
-    "text": "Predicted probabilities\nWe can calculate predicted probabilities using the argument type = \"response\" in predict.glm()2\n\npredict.glm(ai_concern_full_fit, type = \"response\")\n\n\n\n        1         2         3         4         5 \n0.4848067 0.5188941 0.6161912 0.6364755 0.6371220"
+    "text": "Predicted probabilities\nWe can calculate predicted probabilities using the argument type = \"response\" in predict.glm()2\n\npredict.glm(ai_concern_full_fit, type = \"response\")\n\nShowing the predictions for the first 10 observations\n\n\n        1         2         3         4         5         6         7         8 \n0.4848067 0.5188941 0.6161912 0.6364755 0.6371220 0.6366698 0.6159500 0.5257991 \n        9        10 \n0.4898898 0.6329262"
   },
   {
     "objectID": "slides/17-logistic-regression-notes.html#predicted-probability-for-new-observation",
     "href": "slides/17-logistic-regression-notes.html#predicted-probability-for-new-observation",
     "title": "Logistic regression",
     "section": "Predicted probability for new observation",
-    "text": "Predicted probability for new observation\n\n\nRecall them model that includes predictors age_cat, ai_heard, and survey_time.\n\nWhat are the predicted odds for a 70-year-old respondent who has heard nothing about AI and took 60 minutes to complete the survey?\nWhat is the predicted probability this respondent is not concerned about increased use of AI in daily life?\nWould you classify this person as someone who is concerned or someone who is not? Why?"
+    "text": "Predicted probability for new observation\n\n\nRecall the model that includes predictors age_cat, ai_heard, and survey_time.\n\nWhat are the predicted odds for a 70-year-old respondent who has heard nothing about AI and took 60 minutes to complete the survey?\nWhat is the predicted probability this respondent is not concerned about increased use of AI in daily life?\nWould you classify this person as someone who is concerned or someone who is not? Why?"
   },
   {
     "objectID": "slides/17-logistic-regression-notes.html#predicted-probability-for-new-observation-1",
