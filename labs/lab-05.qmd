@@ -103,7 +103,6 @@ You will use the following packages in today’s lab. Add other packages as need
 library(tidyverse)
 library(tidymodels)
 library(knitr)
-library(pROC)
 ```
 
 # Data

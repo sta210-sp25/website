@@ -557,8 +557,7 @@ Important
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pROC)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="data" class="level1">
@@ -580,34 +579,30 @@ Important
 <p><strong>Goal</strong>: The goal of the analysis is to use Area and Eccentricity to identify grains from the Cammeo variety versus those from the Osmancik variety.</p>
 <section id="exercise-1" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
-<p>We’ll begin by exploring the data. Create a scatterplot of <code>Area</code> versus <code>Eccentricity</code> with the color and shape of the points by <code>Class</code>.</p>
+<p>Create a scatterplot of <code>Area</code> versus <code>Eccentricity</code>, such that the color and shape of the points are based on <code>Class</code>.</p>
 </section>
 <section id="exercise-2" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
-<p>Based on the plot from the previous exercise, do you think the two types of rice can be distinguished based on <code>Area</code> and <code>Eccentricity</code>. Briefly explain.</p>
+<p>Based on the plot from the previous exercise, do you think the two rice types can be distinguished based on <code>Area</code> and <code>Eccentricity</code>. Briefly explain.</p>
 </section>
 <section id="exercise-3" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
-<p>With this type of classification problem, it is common to test the performance of a logistic regression model by splitting the data into a <em>training</em> and a <em>test</em> set. This means that we will choose a random subset of the data to estimate the regression coefficient, and we will then test the predictions on the remaining observations.</p>
-<ul>
-<li><p>Randomly select 75% of the rows of the data to create the training set <code>rice_train</code> . Use <code>set.seed(221)</code>.</p></li>
-<li><p>Put the remaining 25% of the observations in the test set called <code>rice_test</code>.</p></li>
-</ul>
+<p>Split the data into training (75%) and testing sets (25%). Use a seed of <code>210</code> for reproducibility.</p>
 </section>
 <section id="exercise-4" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
-<p>In a logistic regression model, the <em>log-odds</em> of the response being “1” (or a “success”) is given by <span class="math display">\[\log\Big(\frac{p_i}{1-p_i}\Big) = \beta_0 + \beta_1X_1 + \dots + \beta_pX_p\]</span></p>
-<p>In this analysis a “success” is the Class “Osmancik”.</p>
+<p>In a logistic regression model, the <em>log-odds</em> of the response being “1” (a “success”) is given by <span class="math display">\[\log\Big(\frac{p_i}{1-p_i}\Big) = \beta_0 + \beta_1X_1 + \dots + \beta_pX_p\]</span></p>
+<p>In this analysis, a “success” means the Class is “Osmancik”.</p>
 <ol type="a">
 <li><p>What does each <span class="math inline">\(p_i\)</span> represent in the context of this analysis?</p></li>
-<li><p>How is the probability of the response variable being “1” calculated from the log-odds? Show or explain the mathematical steps to go from the log-odds to the probability in your response.</p></li>
+<li><p>How is the probability of the response variable being “1” calculated from the log-odds? Show or explain the mathematical steps to go from the log-odds to the probability.</p></li>
 </ol>
 </section>
 <section id="exercise-5" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
 <ol type="a">
-<li><p>Use <code>rice_train</code> to fit the logistic regression model for the response variable <code>Class</code> on the predictors <code>Area</code> and <code>Eccentricity</code> Neatly display the output using 3 digits.</p></li>
-<li><p>Does the intercept have any reasonable interpretation? If so, interpret the intercept. Otherwise explain why not.</p></li>
+<li><p>Use the training data to fit the logistic regression model for the response variable <code>Class</code> using the predictors <code>Area</code> and <code>Eccentricity</code>. Neatly display the output using 3 decimal places.</p></li>
+<li><p>Does the intercept have any meaningful interpretation? If so, interpret the intercept. If not, explain why.</p></li>
 </ol>
 </section>
 <section id="exercise-6" class="level2">
@@ -617,26 +612,26 @@ Important
 <section id="exercise-7" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-7">Exercise 7</h2>
 <ol type="a">
-<li><p>How would you expect the log-odds of the rice grain being of the Osmancik variety to change if the measures eccentricity changes from 0.85 to 0.9?</p></li>
-<li><p>How would you expect the odds of the rice grain being of the Osmancik variety to change if the measures eccentricity changes from 0.85 to 0.9?</p></li>
+<li><p>How would you expect the log-odds of the rice grain being of the Osmancik variety to change if the eccentricity changes from 0.85 to 0.9?</p></li>
+<li><p>How would you expect the odds of the rice grain being of the Osmancik variety to change if the eccentricity changes from 0.85 to 0.9?</p></li>
 </ol>
 </section>
 <section id="exercise-8" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-8">Exercise 8</h2>
-<p>Now let’s test our model on the test set. Use the <code>predict()</code> function to obtain the predicted probabilities of the rice being Osmancik for the observations in <code>rice_test.</code></p>
+<p>Now let’s evaluate our model on the test set. Use the <code>predict()</code> function to obtain the predicted probabilities of the rice being Osmancik for the observations in the testing data.</p>
 </section>
 <section id="exercise-9" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-9">Exercise 9</h2>
-<p>With these estimated probabilities, we can now try to classify the rice in the test set. Choose a threshold for assigning a class to each observation based on the estimated probability. Briefly explain your reasoning for selecting the threshold, including any analysis used to make your decision.</p>
+<p>With these estimated probabilities, we can now try to classify the rice in the test set. Choose a threshold for assigning a class to each observation based on the estimated probability. Briefly explain your reasoning for selecting the threshold, including any analysis used to make your decision (if applicable).</p>
 </section>
 <section id="exercise-10" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-10">Exercise 10</h2>
-<p>Compare the estimated class assignments you constructed with the actual classes. Comment on the result and thus the model performance.</p>
+<p>Compare the estimated class assignments based on the threshold from the previous exericse with the actual classes. Comment on the result and the model’s performance.</p>
 </section>
 </section>
 <section id="submission" class="level1">
 <h1>Submission</h1>
-<p>You will submit the PDF documents for labs, homework, and exams in to Gradescope as part of your final submission.</p>
+<p>Submit your completed assignment as a <strong>PDF</strong> to Gradescope. Follow the instructions carefully to ensure your submission is complete.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
