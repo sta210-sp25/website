@@ -53,6 +53,22 @@ knitr::opts_chunk$set(
 Drop-in Peer Advising will be happening Wednesday, March 26, from 6:30-8:30 PM in Bostock Lounge for students to stop by with any questions they have around STA/CS/MATH classes, major pathways, or other general advice since shopping carts just opened.
 :::
 
+## Fall 2025 STA classes {.midi}
+
+-   **STA 221:** Regression Analysis - Theory and Applications (Math 216/218/221)
+
+-   **STA 240:** Probability for Statistical Inference, Modeling, and Data Analysis (or STA 230 or STA 231)
+
+-   **STA 322:** Study Design: Design of Surveys and Causal Studies
+
+-   **STA 323:** Statistical Computing
+
+-   **STA 325:** Machine Learning and Data Mining (need STA 230/231/240)
+
+-   **STA 332:** Statistical Inference (need STA 230/231/240 and Math 202/212/219)
+
+-   **STA 344:** Introduction to Statistical Modeling of Spatial and Time Series data (need STA 230/231/240)
+
 ## Computational set up
 
 ```{r}
@@ -66,6 +82,7 @@ library(tidymodels)
 library(pROC)       # make ROC curves
 library(knitr)
 library(kableExtra)
+library(patchwork)
 
 # set default theme in ggplot2
 ggplot2::theme_set(ggplot2::theme_bw())
@@ -96,8 +113,6 @@ This data set is from an ongoing cardiovascular study on residents of the town o
 
 ## Univariate EDA
 
-## Bivariate EDA
-
 ```{r}
 #| echo: false
 heart_disease <- read_csv("data/framingham.csv") |>
@@ -107,13 +122,61 @@ heart_disease <- read_csv("data/framingham.csv") |>
          currentSmoker = as_factor(currentSmoker))
 ```
 
+```{r}
+#| echo: false
+
+p1 <- ggplot(data = heart_disease, aes(x = high_risk)) + 
+  geom_bar(fill = "darkcyan", color = 'black') + 
+  labs(x = "High risk")
+
+p2 <- ggplot(data = heart_disease, aes(x = age)) + 
+  geom_histogram(fill = "darkcyan",color = 'black') + 
+  labs(x = "Age")
+p3 <- ggplot(data = heart_disease, aes(x = totChol)) + 
+  geom_histogram(fill = "darkcyan", color = 'black') + 
+  labs(x = "Total Cholesterol")
+
+p4 <- ggplot(data = heart_disease, aes(x = currentSmoker)) + 
+  geom_bar(fill = "darkcyan", color = 'black') + 
+  labs(x = "Current smoker")
+
+(p1 + p2) / (p3 + p4)
+```
+
+## Bivariate EDA
+
+```{r}
+#| echo: false
+
+p5 <- ggplot(data = heart_disease, aes(x = high_risk, y = age)) + 
+  geom_boxplot(fill = "steelblue") +
+  labs(x = "High risk",
+       y = "Age") + 
+  coord_flip()
+
+p6 <- ggplot(data = heart_disease, aes(x = currentSmoker, fill = high_risk)) + 
+  geom_bar(position = "fill") +
+  labs(x = "Current smoker", 
+       fill = "High risk") + 
+  theme(legend.position = "bottom")
+
+p7 <- ggplot(data = heart_disease, aes(x = high_risk, y = totChol)) + 
+  geom_boxplot(fill = "steelblue") +
+  labs(x = "High risk",
+       y = "Total cholesterol") + 
+  coord_flip()
+
+p6 + (p5 / p7) 
+
+```
+
 ## Modeling risk of coronary heart disease
 
 ```{r}
 heart_disease_fit <- glm(high_risk ~ age + totChol + currentSmoker, 
               data = heart_disease, family = "binomial")
 
-tidy(heart_disease_fit, conf.int = TRUE) |> 
+tidy(heart_disease_fit) |> 
   kable(digits = 3)
 ```
 
@@ -616,7 +679,7 @@ autoplot(roc_curve_data)
 #| echo: false
 
 roc_curve_data |>
-  slice(1:5)
+  slice(1:20)
 
 ```
 :::

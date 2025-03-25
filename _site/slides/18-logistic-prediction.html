@@ -218,6 +218,18 @@ Prof.&nbsp;Maria Tackett
 <p>Drop-in Peer Advising will be happening Wednesday, March 26, from 6:30-8:30 PM in Bostock Lounge for students to stop by with any questions they have around STA/CS/MATH classes, major pathways, or other general advice since shopping carts just opened.</p>
 </div>
 </section>
+<section id="fall-2025-sta-classes" class="slide level2 midi">
+<h2>Fall 2025 STA classes</h2>
+<ul>
+<li><p><strong>STA 221:</strong> Regression Analysis - Theory and Applications (Math 216/218/221)</p></li>
+<li><p><strong>STA 240:</strong> Probability for Statistical Inference, Modeling, and Data Analysis (or STA 230 or STA 231)</p></li>
+<li><p><strong>STA 322:</strong> Study Design: Design of Surveys and Causal Studies</p></li>
+<li><p><strong>STA 323:</strong> Statistical Computing</p></li>
+<li><p><strong>STA 325:</strong> Machine Learning and Data Mining (need STA 230/231/240)</p></li>
+<li><p><strong>STA 332:</strong> Statistical Inference (need STA 230/231/240 and Math 202/212/219)</p></li>
+<li><p><strong>STA 344:</strong> Introduction to Statistical Modeling of Spatial and Time Series data (need STA 230/231/240)</p></li>
+</ul>
+</section>
 <section id="computational-set-up" class="slide level2">
 <h2>Computational set up</h2>
 <div class="cell" data-layout-align="center">
@@ -226,9 +238,10 @@ Prof.&nbsp;Maria Tackett
 <span id="cb1-3"><a></a><span class="fu">library</span>(pROC)       <span class="co"># make ROC curves</span></span>
 <span id="cb1-4"><a></a><span class="fu">library</span>(knitr)</span>
 <span id="cb1-5"><a></a><span class="fu">library</span>(kableExtra)</span>
-<span id="cb1-6"><a></a></span>
-<span id="cb1-7"><a></a><span class="co"># set default theme in ggplot2</span></span>
-<span id="cb1-8"><a></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_bw</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-6"><a></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb1-7"><a></a></span>
+<span id="cb1-8"><a></a><span class="co"># set default theme in ggplot2</span></span>
+<span id="cb1-9"><a></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_bw</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="topics" class="slide level2">
@@ -255,24 +268,17 @@ Prof.&nbsp;Maria Tackett
 </section>
 <section id="univariate-eda" class="slide level2">
 <h2>Univariate EDA</h2>
-</section>
+
+<img data-src="18-logistic-prediction_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
 <section id="bivariate-eda" class="slide level2">
 <h2>Bivariate EDA</h2>
-</section>
+
+<img data-src="18-logistic-prediction_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
 <section id="modeling-risk-of-coronary-heart-disease" class="slide level2">
 <h2>Modeling risk of coronary heart disease</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <table class="caption-top">
-<colgroup>
-<col style="width: 21%">
-<col style="width: 12%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 11%">
-<col style="width: 12%">
-<col style="width: 14%">
-</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">term</th>
@@ -280,8 +286,6 @@ Prof.&nbsp;Maria Tackett
 <th style="text-align: right;">std.error</th>
 <th style="text-align: right;">statistic</th>
 <th style="text-align: right;">p.value</th>
-<th style="text-align: right;">conf.low</th>
-<th style="text-align: right;">conf.high</th>
 </tr>
 </thead>
 <tbody>
@@ -291,8 +295,6 @@ Prof.&nbsp;Maria Tackett
 <td style="text-align: right;">0.372</td>
 <td style="text-align: right;">-17.860</td>
 <td style="text-align: right;">0.000</td>
-<td style="text-align: right;">-7.374</td>
-<td style="text-align: right;">-5.917</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">age</td>
@@ -300,8 +302,6 @@ Prof.&nbsp;Maria Tackett
 <td style="text-align: right;">0.006</td>
 <td style="text-align: right;">14.430</td>
 <td style="text-align: right;">0.000</td>
-<td style="text-align: right;">0.071</td>
-<td style="text-align: right;">0.093</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">totChol</td>
@@ -309,8 +309,6 @@ Prof.&nbsp;Maria Tackett
 <td style="text-align: right;">0.001</td>
 <td style="text-align: right;">2.001</td>
 <td style="text-align: right;">0.045</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">0.004</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">currentSmoker1</td>
@@ -318,8 +316,6 @@ Prof.&nbsp;Maria Tackett
 <td style="text-align: right;">0.092</td>
 <td style="text-align: right;">4.951</td>
 <td style="text-align: right;">0.000</td>
-<td style="text-align: right;">0.277</td>
-<td style="text-align: right;">0.639</td>
 </tr>
 </tbody>
 </table>
@@ -560,7 +556,7 @@ Prediction    0    1
 <span id="cb16-4"><a></a><span class="fu">autoplot</span>(heart_conf_mat, <span class="at">type =</span> <span class="st">"heatmap"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="18-logistic-prediction_files/figure-revealjs/unnamed-chunk-17-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
+<img data-src="18-logistic-prediction_files/figure-revealjs/unnamed-chunk-19-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
 <section id="using-the-confusion-matrix" class="slide level2">
 <h2>Using the confusion matrix</h2>
 <div class="center">
@@ -887,7 +883,7 @@ Prediction    0    1
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="18-logistic-prediction_files/figure-revealjs/unnamed-chunk-22-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
+<p><img data-src="18-logistic-prediction_files/figure-revealjs/unnamed-chunk-24-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
 </figure>
 </div>
 </div>
@@ -904,7 +900,7 @@ Prediction    0    1
 <section id="roc-curve-1" class="slide level2">
 <h2>ROC curve</h2>
 
-<img data-src="18-logistic-prediction_files/figure-revealjs/unnamed-chunk-23-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<img data-src="18-logistic-prediction_files/figure-revealjs/unnamed-chunk-25-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
 <section id="roc-curve-in-r" class="slide level2 midi">
 <h2>ROC curve in R</h2>
 <div class="cell" data-layout-align="center">
@@ -923,14 +919,29 @@ Prediction    0    1
 <div class="column" style="width:40%;">
 <div class="cell" data-layout-align="center">
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 3
-  .threshold specificity sensitivity
-       &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;
-1    -Inf       0                  1
-2      -3.63    0                  1
-3      -3.61    0.000281           1
-4      -3.54    0.000844           1
-5      -3.52    0.00113            1</code></pre>
+<pre><code># A tibble: 20 × 3
+   .threshold specificity sensitivity
+        &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;
+ 1    -Inf       0                  1
+ 2      -3.63    0                  1
+ 3      -3.61    0.000281           1
+ 4      -3.54    0.000844           1
+ 5      -3.52    0.00113            1
+ 6      -3.51    0.00141            1
+ 7      -3.48    0.00169            1
+ 8      -3.47    0.00197            1
+ 9      -3.45    0.00225            1
+10      -3.44    0.00253            1
+11      -3.43    0.00309            1
+12      -3.41    0.00338            1
+13      -3.41    0.00366            1
+14      -3.40    0.00422            1
+15      -3.39    0.00450            1
+16      -3.39    0.00478            1
+17      -3.37    0.00506            1
+18      -3.37    0.00534            1
+19      -3.37    0.00591            1
+20      -3.37    0.00619            1</code></pre>
 </div>
 </div>
 </div><div class="column" style="width:60%;">
@@ -938,7 +949,7 @@ Prediction    0    1
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="18-logistic-prediction_files/figure-revealjs/unnamed-chunk-26-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
+<p><img data-src="18-logistic-prediction_files/figure-revealjs/unnamed-chunk-28-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
 </figure>
 </div>
 </div>

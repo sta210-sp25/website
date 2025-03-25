@@ -9427,11 +9427,18 @@
     "text": "Project presentations in March 31 lab\nStatistics experience due April 15\n\n\n\nDrop-in Peer Advising will be happening Wednesday, March 26, from 6:30-8:30 PM in Bostock Lounge for students to stop by with any questions they have around STA/CS/MATH classes, major pathways, or other general advice since shopping carts just opened."
   },
   {
+    "objectID": "slides/18-logistic-prediction-notes.html#fall-2025-sta-classes",
+    "href": "slides/18-logistic-prediction-notes.html#fall-2025-sta-classes",
+    "title": "Logistic Regression: Prediction",
+    "section": "Fall 2025 STA classes",
+    "text": "Fall 2025 STA classes\n\nSTA 221: Regression Analysis - Theory and Applications (Math 216/218/221)\nSTA 240: Probability for Statistical Inference, Modeling, and Data Analysis (or STA 230 or STA 231)\nSTA 322: Study Design: Design of Surveys and Causal Studies\nSTA 323: Statistical Computing\nSTA 325: Machine Learning and Data Mining (need STA 230/231/240)\nSTA 332: Statistical Inference (need STA 230/231/240 and Math 202/212/219)\nSTA 344: Introduction to Statistical Modeling of Spatial and Time Series data (need STA 230/231/240)"
+  },
+  {
     "objectID": "slides/18-logistic-prediction-notes.html#computational-set-up",
     "href": "slides/18-logistic-prediction-notes.html#computational-set-up",
     "title": "Logistic Regression: Prediction",
     "section": "Computational set up",
-    "text": "Computational set up\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(pROC)       # make ROC curves\nlibrary(knitr)\nlibrary(kableExtra)\n\n# set default theme in ggplot2\nggplot2::theme_set(ggplot2::theme_bw())"
+    "text": "Computational set up\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(pROC)       # make ROC curves\nlibrary(knitr)\nlibrary(kableExtra)\nlibrary(patchwork)\n\n# set default theme in ggplot2\nggplot2::theme_set(ggplot2::theme_bw())"
   },
   {
     "objectID": "slides/18-logistic-prediction-notes.html#topics",
@@ -9466,7 +9473,7 @@
     "href": "slides/18-logistic-prediction-notes.html#modeling-risk-of-coronary-heart-disease",
     "title": "Logistic Regression: Prediction",
     "section": "Modeling risk of coronary heart disease",
-    "text": "Modeling risk of coronary heart disease\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n-6.638\n0.372\n-17.860\n0.000\n-7.374\n-5.917\n\n\nage\n0.082\n0.006\n14.430\n0.000\n0.071\n0.093\n\n\ntotChol\n0.002\n0.001\n2.001\n0.045\n0.000\n0.004\n\n\ncurrentSmoker1\n0.457\n0.092\n4.951\n0.000\n0.277\n0.639\n\n\n\n\n\n\nInterpret the effect of age in terms of the odds of being high risk of heart disease."
+    "text": "Modeling risk of coronary heart disease\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-6.638\n0.372\n-17.860\n0.000\n\n\nage\n0.082\n0.006\n14.430\n0.000\n\n\ntotChol\n0.002\n0.001\n2.001\n0.045\n\n\ncurrentSmoker1\n0.457\n0.092\n4.951\n0.000\n\n\n\n\n\n\nInterpret the effect of age in terms of the odds of being high risk of heart disease."
   },
   {
     "objectID": "slides/18-logistic-prediction-notes.html#prediction-and-classification",
@@ -9655,7 +9662,7 @@
     "href": "slides/18-logistic-prediction-notes.html#roc-curve-in-r-1",
     "title": "Logistic Regression: Prediction",
     "section": "ROC curve in R",
-    "text": "ROC curve in R\n\n\n\n\n# A tibble: 5 × 3\n  .threshold specificity sensitivity\n       &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;\n1    -Inf       0                  1\n2      -3.63    0                  1\n3      -3.61    0.000281           1\n4      -3.54    0.000844           1\n5      -3.52    0.00113            1"
+    "text": "ROC curve in R\n\n\n\n\n# A tibble: 20 × 3\n   .threshold specificity sensitivity\n        &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;\n 1    -Inf       0                  1\n 2      -3.63    0                  1\n 3      -3.61    0.000281           1\n 4      -3.54    0.000844           1\n 5      -3.52    0.00113            1\n 6      -3.51    0.00141            1\n 7      -3.48    0.00169            1\n 8      -3.47    0.00197            1\n 9      -3.45    0.00225            1\n10      -3.44    0.00253            1\n11      -3.43    0.00309            1\n12      -3.41    0.00338            1\n13      -3.41    0.00366            1\n14      -3.40    0.00422            1\n15      -3.39    0.00450            1\n16      -3.39    0.00478            1\n17      -3.37    0.00506            1\n18      -3.37    0.00534            1\n19      -3.37    0.00591            1\n20      -3.37    0.00619            1"
   },
   {
     "objectID": "slides/18-logistic-prediction-notes.html#area-under-the-curve",
@@ -9693,11 +9700,18 @@
     "text": "Announcements\n\nProject presentations in March 31 lab\nStatistics experience due April 15\n\n\n\nDrop-in Peer Advising will be happening Wednesday, March 26, from 6:30-8:30 PM in Bostock Lounge for students to stop by with any questions they have around STA/CS/MATH classes, major pathways, or other general advice since shopping carts just opened."
   },
   {
+    "objectID": "slides/18-logistic-prediction.html#fall-2025-sta-classes",
+    "href": "slides/18-logistic-prediction.html#fall-2025-sta-classes",
+    "title": "Logistic Regression: Prediction",
+    "section": "Fall 2025 STA classes",
+    "text": "Fall 2025 STA classes\n\nSTA 221: Regression Analysis - Theory and Applications (Math 216/218/221)\nSTA 240: Probability for Statistical Inference, Modeling, and Data Analysis (or STA 230 or STA 231)\nSTA 322: Study Design: Design of Surveys and Causal Studies\nSTA 323: Statistical Computing\nSTA 325: Machine Learning and Data Mining (need STA 230/231/240)\nSTA 332: Statistical Inference (need STA 230/231/240 and Math 202/212/219)\nSTA 344: Introduction to Statistical Modeling of Spatial and Time Series data (need STA 230/231/240)"
+  },
+  {
     "objectID": "slides/18-logistic-prediction.html#computational-set-up",
     "href": "slides/18-logistic-prediction.html#computational-set-up",
     "title": "Logistic Regression: Prediction",
     "section": "Computational set up",
-    "text": "Computational set up\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(pROC)       # make ROC curves\nlibrary(knitr)\nlibrary(kableExtra)\n\n# set default theme in ggplot2\nggplot2::theme_set(ggplot2::theme_bw())"
+    "text": "Computational set up\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(pROC)       # make ROC curves\nlibrary(knitr)\nlibrary(kableExtra)\nlibrary(patchwork)\n\n# set default theme in ggplot2\nggplot2::theme_set(ggplot2::theme_bw())"
   },
   {
     "objectID": "slides/18-logistic-prediction.html#topics",
@@ -9732,7 +9746,7 @@
     "href": "slides/18-logistic-prediction.html#modeling-risk-of-coronary-heart-disease",
     "title": "Logistic Regression: Prediction",
     "section": "Modeling risk of coronary heart disease",
-    "text": "Modeling risk of coronary heart disease\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n-6.638\n0.372\n-17.860\n0.000\n-7.374\n-5.917\n\n\nage\n0.082\n0.006\n14.430\n0.000\n0.071\n0.093\n\n\ntotChol\n0.002\n0.001\n2.001\n0.045\n0.000\n0.004\n\n\ncurrentSmoker1\n0.457\n0.092\n4.951\n0.000\n0.277\n0.639\n\n\n\n\n\n\nInterpret the effect of age in terms of the odds of being high risk of heart disease."
+    "text": "Modeling risk of coronary heart disease\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-6.638\n0.372\n-17.860\n0.000\n\n\nage\n0.082\n0.006\n14.430\n0.000\n\n\ntotChol\n0.002\n0.001\n2.001\n0.045\n\n\ncurrentSmoker1\n0.457\n0.092\n4.951\n0.000\n\n\n\n\n\n\nInterpret the effect of age in terms of the odds of being high risk of heart disease."
   },
   {
     "objectID": "slides/18-logistic-prediction.html#prediction-and-classification",
@@ -9921,7 +9935,7 @@
     "href": "slides/18-logistic-prediction.html#roc-curve-in-r-1",
     "title": "Logistic Regression: Prediction",
     "section": "ROC curve in R",
-    "text": "ROC curve in R\n\n\n\n\n# A tibble: 5 × 3\n  .threshold specificity sensitivity\n       &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;\n1    -Inf       0                  1\n2      -3.63    0                  1\n3      -3.61    0.000281           1\n4      -3.54    0.000844           1\n5      -3.52    0.00113            1"
+    "text": "ROC curve in R\n\n\n\n\n# A tibble: 20 × 3\n   .threshold specificity sensitivity\n        &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;\n 1    -Inf       0                  1\n 2      -3.63    0                  1\n 3      -3.61    0.000281           1\n 4      -3.54    0.000844           1\n 5      -3.52    0.00113            1\n 6      -3.51    0.00141            1\n 7      -3.48    0.00169            1\n 8      -3.47    0.00197            1\n 9      -3.45    0.00225            1\n10      -3.44    0.00253            1\n11      -3.43    0.00309            1\n12      -3.41    0.00338            1\n13      -3.41    0.00366            1\n14      -3.40    0.00422            1\n15      -3.39    0.00450            1\n16      -3.39    0.00478            1\n17      -3.37    0.00506            1\n18      -3.37    0.00534            1\n19      -3.37    0.00591            1\n20      -3.37    0.00619            1"
   },
   {
     "objectID": "slides/18-logistic-prediction.html#area-under-the-curve",
