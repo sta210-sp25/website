@@ -47,6 +47,12 @@ knitr::opts_chunk$set(
 
 -   Statistics experience due April 15
 
+<br>
+
+::: question
+Drop-in Peer Advising will be happening Wednesday, March 26, from 6:30-8:30 PM in Bostock Lounge for students to stop by with any questions they have around STA/CS/MATH classes, major pathways, or other general advice since shopping carts just opened.
+:::
+
 ## Computational set up
 
 ```{r}
