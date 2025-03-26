@@ -1,0 +1,424 @@
+---
+title: "Logistic Regression: Model comparison"
+author: "Prof. Maria Tackett"
+date: "2025-03-27"
+date-format: "MMM DD, YYYY"
+footer: "[🔗 STA 221 - Spring 2025](https://sta221-sp25.netlify.app)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: true
+    incremental: false 
+    chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+  html: 
+    output-file: 19-logistic-compare-notes.html
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+execute:
+  freeze: auto
+  echo: true
+knitr:
+  opts_chunk: 
+    R.options:      
+    width: 200
+bibliography: references.bib
+---
+
+```{r}
+#| include: false
+
+# figure options
+knitr::opts_chunk$set(
+  fig.width = 8, fig.asp = 0.618, out.width = "90%",
+  fig.retina = 3, dpi = 300, fig.align = "center"
+)
+
+library(countdown)
+```
+
+## Announcements
+
+-   Project presentations in March 31 lab
+
+-   Statistics experience due April 15
+
+## Topics
+
+Comparing logistic regression models using
+
+-   Drop-in-deviance test
+
+-   AIC
+
+-   BIC
+
+## Computational setup
+
+```{r}
+#| echo: true
+
+# load packages
+library(tidyverse)
+library(tidymodels)
+library(openintro)
+library(knitr)
+library(kableExtra)  # for table embellishments
+library(Stat2Data)   # for empirical logit
+
+# set default theme and larger font size for ggplot2
+ggplot2::theme_set(ggplot2::theme_bw(base_size = 20))
+```
+
+# Data
+
+## Risk of coronary heart disease {.midi}
+
+This data set is from an ongoing cardiovascular study on residents of the town of Framingham, Massachusetts. We want to examine the relationship between various health characteristics and the risk of having heart disease.
+
+-   `high_risk`:
+
+    -   1: High risk of having heart disease in next 10 years
+    -   0: Not high risk of having heart disease in next 10 years
+
+-   `age`: Age at exam time (in years)
+
+-   `education`: 1 = Some High School, 2 = High School or GED, 3 = Some College or Vocational School, 4 = College
+
+-   `currentSmoker`: 0 = nonsmoker, 1 = smoker
+
+-   `totChol`: Total cholesterol (in mg/dL)
+
+```{r}
+#| echo: false
+heart_disease <- read_csv(here::here("slides", "data/framingham.csv")) |>
+  select(age, education, TenYearCHD, totChol, currentSmoker) |>
+  drop_na() |> #consider the limitations of doing this
+  mutate(
+    high_risk = as.factor(TenYearCHD),
+    education = as.factor(education),
+    currentSmoker = as.factor(currentSmoker)
+  )
+
+heart_disease
+```
+
+## Modeling risk of coronary heart disease
+
+Using `age`, `totChol`, and `currentSmoker`
+
+```{r}
+#| echo: false
+high_risk_fit <- glm(high_risk ~ age + totChol + currentSmoker, 
+              data = heart_disease, family = "binomial")
+
+tidy(high_risk_fit, conf.int = TRUE) |> 
+  kable(format = "markdown", digits = 3)
+```
+
+## Review: ROC Curve + Model fit
+
+## Review: Classification
+
+# Drop-in-deviance test
+
+## Which model do we choose? 
+
+```{r}
+#| echo: false
+
+high_risk_fit2 <- glm(high_risk ~ age + totChol + currentSmoker + education, 
+              data = heart_disease, family = "binomial")
+```
+
+::::: columns
+::: {.column width="50%"}
+<center>**Model 1**</center>
+
+```{r}
+#| echo: false
+
+tidy(high_risk_fit) |> 
+  select(term, estimate) |>
+  kable(digits = 3)
+
+```
+:::
+
+::: {.column width="50%"}
+<center>**Model 2** </center>
+
+```{r}
+#| echo: false
+
+tidy(high_risk_fit2) |> 
+  select(term, estimate) |>
+  kable(digits = 3)
+```
+:::
+:::::
+
+## Log likelihood
+
+$$
+\log L = \sum\limits_{i=1}^n[y_i \log(\hat{p}_i) + (1 - y_i)\log(1 - \hat{p}_i)]
+$$
+
+-   Measure of how well the model fits the data
+
+-   Higher values of $\log L$ are better
+
+-   **Deviance** = $-2 \log L$
+
+    -   $-2 \log L$ follows a $\chi^2$ distribution with $n - p - 1$ degrees of freedom
+
+## Comparing nested models
+
+-   Suppose there are two nested models:
+
+    -   Reduced Model includes predictors $x_1, \ldots, x_q$
+    -   Full Model includes predictors $x_1, \ldots, x_q, x_{q+1}, \ldots, x_p$
+
+-   We want to test the hypotheses
+
+    $$
+    \begin{aligned}
+    H_0&: \beta_{q+1} = \dots = \beta_p = 0 \\
+    H_a&: \text{ at least one }\beta_j \text{ is not } 0
+    \end{aligned}
+    $$
+
+-   To do so, we will use the **Drop-in-deviance test**, also known as the Nested Likelihood Ratio test
+
+## Drop-in-deviance test
+
+**Hypotheses:**
+
+$$
+\begin{aligned}
+H_0&: \beta_{q+1} = \dots = \beta_p = 0 \\
+H_a&: \text{ at least one }\beta_j \text{ is not } 0
+\end{aligned}
+$$
+
+. . .
+
+**Test Statistic:** $$\begin{aligned}G &= \text{Deviance}_{reduced} - \text{Deviance}_{full} \\
+&= (-2 \log L_{reduced}) - (-2 \log L_{full})\end{aligned}$$
+
+. . .
+
+**P-value:** $P(\chi^2 > G)$, calculated using a $\chi^2$ distribution with degrees of freedom equal to the difference in the number of parameters in the full and reduced models
+
+## $\chi^2$ distribution
+
+```{r}
+#| echo: false
+#| fig-height: 6
+
+x <- seq(from =0, to = 10, length = 100)
+
+# Evaluate the densities
+y_1 <- dchisq(x, 1)
+y_2 <- dchisq(x,2)
+y_3 <- dchisq(x,3)
+y_4 <- dchisq(x,5)
+
+# Plot the densities
+plot(x, y_1, col = 1, type = "l", ylab="",lwd=3, ylim = c(0, 0.5), 
+     main  = "Chi-square Distribution")
+lines(x,y_2, col = 2,lwd=3)
+lines(x, y_3, col = 3,lwd=3)
+lines(x, y_4, col = 4,lwd=3)
+
+# Add the legend
+legend("topright",
+       c("df = 1", "df = 2 ", "df = 3", "df = 5"), 
+       col = c(1, 2, 3, 4), lty = 1)
+```
+
+## Should we add `education` to the model?
+
+First model, reduced:
+
+```{r}
+
+high_risk_fit_reduced <- glm(high_risk ~ age + totChol +
+                                   currentSmoker,
+                                 data = heart_disease, family = "binomial")
+```
+
+<br>
+
+. . .
+
+Second model, full:
+
+```{r}
+#| code-line-numbers: "3"
+
+high_risk_fit_full <- glm(high_risk ~ age + totChol + currentSmoker + education, 
+              data = heart_disease, family = "binomial")
+```
+
+::: question
+Write the null and alternative hypotheses in words and mathematical notation.
+:::
+
+## Should we add `education` to the model?
+
+Calculate deviance for each model:
+
+```{r}
+(dev_reduced <- glance(high_risk_fit_reduced)$deviance)
+
+(dev_full <- glance(high_risk_fit_full)$deviance)
+```
+
+. . .
+
+Drop-in-deviance test statistic:
+
+```{r}
+(test_stat <- dev_reduced - dev_full)
+```
+
+## Should we add `education` to the model?
+
+Calculate the p-value using a `pchisq()`, with degrees of freedom equal to the number of new model terms in the second model:
+
+```{r}
+pchisq(test_stat, 3, lower.tail = FALSE) 
+```
+
+. . .
+
+::: question
+What is your conclusion?
+:::
+
+## Drop-in-Deviance test in R {.midi}
+
+-   We can use the **`anova`** function to conduct this test
+
+-   Add **`test = "Chisq"`** to conduct the drop-in-deviance test
+
+. . .
+
+```{r}
+anova(high_risk_fit_reduced, high_risk_fit_full, test = "Chisq") |>
+  tidy() |> kable(digits = 3)
+```
+
+# Model selection using AIC and BIC
+
+## AIC & BIC
+
+Estimators of prediction error and *relative* quality of models:
+
+. . .
+
+**Akaike's Information Criterion (AIC)**: $$AIC = -2\log L + 2(p+1)$$ <br>
+
+. . .
+
+**Schwarz's Bayesian Information Criterion (BIC)**: $$ BIC = -2\log L + \log(n)\times(p+1)$$
+
+## AIC & BIC
+
+$$
+\begin{aligned} 
+& AIC = \color{blue}{-2\log L}  \color{black}{+ 2(p+1)} \\
+& BIC = \color{blue}{-2\log L}  + \color{black}{\log(n)\times(p+1)}
+\end{aligned}
+$$
+
+. . .
+
+<br>
+
+First Term: Decreases as *p* increases
+
+## AIC & BIC
+
+$$
+\begin{aligned} & AIC = -2\log L  + \color{blue}{2(p+1)} \\
+& BIC = -2\log L + \color{blue}{\log(n)\times(p+1)} 
+\end{aligned}
+$$
+
+<br>
+
+Second term: Increases as *p* increases
+
+## Using AIC & BIC
+
+$$
+\begin{aligned} & AIC = -2\log L  + \color{red}{2(p+1)} \\
+& BIC = -2 \log L  + \color{red}{\log(n)\times(p+1)} 
+\end{aligned}
+$$
+
+-   Choose model with the smaller value of AIC or BIC
+
+-   If $n \geq 8$, the **penalty** for BIC is larger than that of AIC, so BIC tends to favor *more parsimonious* models (i.e. models with fewer terms)
+
+## AIC from the `glance()` function
+
+Let's look at the AIC for the model that includes `age`, `totChol`, and `currentSmoker`
+
+```{r}
+glance(high_risk_fit)$AIC
+```
+
+<br>
+
+. . .
+
+**Calculating AIC**
+
+```{r}
+- 2 * glance(high_risk_fit)$logLik + 2 * (3 + 1)
+```
+
+## Comparing the models using AIC
+
+Let's compare the full and reduced models using AIC.
+
+```{r}
+glance(high_risk_fit_reduced)$AIC
+glance(high_risk_fit_full)$AIC
+```
+
+<br>
+
+::: question
+Based on AIC, which model would you choose?
+:::
+
+## Comparing the models using BIC
+
+Let's compare the full and reduced models using BIC
+
+```{r echo = T}
+glance(high_risk_fit_reduced)$BIC
+glance(high_risk_fit_full)$BIC
+```
+
+<br>
+
+::: question
+Based on BIC, which model would you choose?
+:::
+
+# Application exercise
+
+::: appex
+📋 [sta210-sp25.netlify.app/ae/ae-10-logistic-compare.html](../ae/ae-10-logistic-compare.html)
+:::
+
+## References

@@ -10303,5 +10303,306 @@
       "Project",
       "Instructions"
     ]
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#announcements",
+    "href": "slides/19-logistic-compare.html#announcements",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Announcements",
+    "text": "Announcements\n\nProject presentations in March 31 lab\nStatistics experience due April 15"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#topics",
+    "href": "slides/19-logistic-compare.html#topics",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Topics",
+    "text": "Topics\nComparing logistic regression models using\n\nDrop-in-deviance test\nAIC\nBIC"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#computational-setup",
+    "href": "slides/19-logistic-compare.html#computational-setup",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Computational setup",
+    "text": "Computational setup\n\n# load packages\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)\nlibrary(knitr)\nlibrary(kableExtra)  # for table embellishments\nlibrary(Stat2Data)   # for empirical logit\n\n# set default theme and larger font size for ggplot2\nggplot2::theme_set(ggplot2::theme_bw(base_size = 20))"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#risk-of-coronary-heart-disease",
+    "href": "slides/19-logistic-compare.html#risk-of-coronary-heart-disease",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Risk of coronary heart disease",
+    "text": "Risk of coronary heart disease\nThis data set is from an ongoing cardiovascular study on residents of the town of Framingham, Massachusetts. We want to examine the relationship between various health characteristics and the risk of having heart disease.\n\nhigh_risk:\n\n1: High risk of having heart disease in next 10 years\n0: Not high risk of having heart disease in next 10 years\n\nage: Age at exam time (in years)\neducation: 1 = Some High School, 2 = High School or GED, 3 = Some College or Vocational School, 4 = College\ncurrentSmoker: 0 = nonsmoker, 1 = smoker\ntotChol: Total cholesterol (in mg/dL)\n\n\n\n# A tibble: 4,086 × 6\n     age education TenYearCHD totChol currentSmoker high_risk\n   &lt;dbl&gt; &lt;fct&gt;          &lt;dbl&gt;   &lt;dbl&gt; &lt;fct&gt;         &lt;fct&gt;    \n 1    39 4                  0     195 0             0        \n 2    46 2                  0     250 0             0        \n 3    48 1                  0     245 1             0        \n 4    61 3                  1     225 1             1        \n 5    46 3                  0     285 1             0        \n 6    43 2                  0     228 0             0        \n 7    63 1                  1     205 0             1        \n 8    45 2                  0     313 1             0        \n 9    52 1                  0     260 0             0        \n10    43 1                  0     225 1             0        \n# ℹ 4,076 more rows"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#data-prep",
+    "href": "slides/19-logistic-compare.html#data-prep",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Data prep",
+    "text": "Data prep\n\nheart_disease &lt;- read_csv(here::here(\"slides\", \"data/framingham.csv\")) |&gt;\n  select(age, education, TenYearCHD, totChol, currentSmoker) |&gt;\n  drop_na() |&gt; #consider the limitations of doing this\n  mutate(\n    high_risk = as.factor(TenYearCHD),\n    education = as.factor(education),\n    currentSmoker = as.factor(currentSmoker)\n  )\n\nheart_disease\n\n# A tibble: 4,086 × 6\n     age education TenYearCHD totChol currentSmoker high_risk\n   &lt;dbl&gt; &lt;fct&gt;          &lt;dbl&gt;   &lt;dbl&gt; &lt;fct&gt;         &lt;fct&gt;    \n 1    39 4                  0     195 0             0        \n 2    46 2                  0     250 0             0        \n 3    48 1                  0     245 1             0        \n 4    61 3                  1     225 1             1        \n 5    46 3                  0     285 1             0        \n 6    43 2                  0     228 0             0        \n 7    63 1                  1     205 0             1        \n 8    45 2                  0     313 1             0        \n 9    52 1                  0     260 0             0        \n10    43 1                  0     225 1             0        \n# ℹ 4,076 more rows"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#modeling-risk-of-coronary-heart-disease",
+    "href": "slides/19-logistic-compare.html#modeling-risk-of-coronary-heart-disease",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Modeling risk of coronary heart disease",
+    "text": "Modeling risk of coronary heart disease\nUsing age, totChol, and currentSmoker\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n-6.673\n0.378\n-17.647\n0.000\n-7.423\n-5.940\n\n\nage\n0.082\n0.006\n14.344\n0.000\n0.071\n0.094\n\n\ntotChol\n0.002\n0.001\n1.940\n0.052\n0.000\n0.004\n\n\ncurrentSmoker1\n0.443\n0.094\n4.733\n0.000\n0.260\n0.627"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#review-classification",
+    "href": "slides/19-logistic-compare.html#review-classification",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Review: Classification",
+    "text": "Review: Classification"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#model-output",
+    "href": "slides/19-logistic-compare.html#model-output",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Model output",
+    "text": "Model output\n\ntidy(heart_disease_fit, conf.int = TRUE) |&gt; \n  kable(format = \"markdown\", digits = 3)\n\n\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n-6.673\n0.378\n-17.647\n0.000\n-7.423\n-5.940\n\n\nage\n0.082\n0.006\n14.344\n0.000\n0.071\n0.094\n\n\ntotChol\n0.002\n0.001\n1.940\n0.052\n0.000\n0.004\n\n\ncurrentSmoker1\n0.443\n0.094\n4.733\n0.000\n0.260\n0.627"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#distribution-of-hatboldsymbolbeta",
+    "href": "slides/19-logistic-compare.html#distribution-of-hatboldsymbolbeta",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Distribution of \\(\\hat{\\boldsymbol{\\beta}}\\)",
+    "text": "Distribution of \\(\\hat{\\boldsymbol{\\beta}}\\)\nWhen \\(n\\) is large, \\(\\hat{\\boldsymbol{\\beta}}\\), the estimated coefficients of the logistic regression model, is approximately normal.\n\n\nHow do we know the distribution of \\(\\hat{\\boldsymbol{\\beta}}\\) is normal for large \\(n\\)?"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#distribution-of-hatboldsymbolbeta-1",
+    "href": "slides/19-logistic-compare.html#distribution-of-hatboldsymbolbeta-1",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Distribution of \\(\\hat{\\boldsymbol{\\beta}}\\)",
+    "text": "Distribution of \\(\\hat{\\boldsymbol{\\beta}}\\)\nThe expected value of \\(\\hat{\\boldsymbol{\\beta}}\\) is the true parameter, \\(\\boldsymbol{\\beta}\\), i.e., \\(E(\\hat{\\boldsymbol{\\beta}}) = \\boldsymbol{\\beta}\\)\n\n\\(Var(\\hat{\\boldsymbol{\\beta}})\\), the matrix of variances and covariances between estimators, is found by taking the second partial derivatives of the log-likelihood function (Hessian matrix)\n\\[\nVar(\\hat{\\boldsymbol{\\beta}}) = (\\mathbf{X}^T\\mathbf{V}\\mathbf{X})^{-1}\n\\]\nwhere \\(\\mathbf{V}\\) is a \\(n\\times n\\) diagonal matrix such that \\(V_{ii}\\) is the estimated variance for the \\(i^{th}\\) observation"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#test-for-a-single-coefficient-1",
+    "href": "slides/19-logistic-compare.html#test-for-a-single-coefficient-1",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Test for a single coefficient",
+    "text": "Test for a single coefficient\nHypotheses: \\(H_0: \\beta_j = 0 \\hspace{2mm} \\text{ vs } \\hspace{2mm} H_a: \\beta_j \\neq 0\\), given the other variables in the model\n\n(Wald) Test Statistic: \\[z = \\frac{\\hat{\\beta}_j - 0}{SE(\\hat{\\beta}_j)}\\]\n\n\nP-value: \\(P(|Z| &gt; |z|)\\), where \\(Z \\sim N(0, 1)\\), the Standard Normal distribution"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#confidence-interval-for-beta_j",
+    "href": "slides/19-logistic-compare.html#confidence-interval-for-beta_j",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Confidence interval for \\(\\beta_j\\)",
+    "text": "Confidence interval for \\(\\beta_j\\)\nWe can calculate the C% confidence interval for \\(\\beta_j\\) as the following:\n\\[\n\\Large{\\hat{\\beta}_j \\pm z^* SE(\\hat{\\beta}_j)}\n\\]\nwhere \\(z^*\\) is calculated from the \\(N(0,1)\\) distribution\n\n\n\n\n\n\n\nNote\n\n\nThis is an interval for the change in the log-odds for every one unit increase in \\(x_j\\)"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#interpretation-in-terms-of-the-odds",
+    "href": "slides/19-logistic-compare.html#interpretation-in-terms-of-the-odds",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Interpretation in terms of the odds",
+    "text": "Interpretation in terms of the odds\nThe change in odds for every one unit increase in \\(x_j\\).\n\\[\n\\Large{\\exp\\{\\hat{\\beta}_j \\pm z^* SE(\\hat{\\beta}_j)\\}}\n\\]\n\nInterpretation: We are \\(C\\%\\) confident that for every one unit increase in \\(x_j\\), the odds multiply by a factor of \\(\\exp\\{\\hat{\\beta}_j - z^* SE(\\hat{\\beta}_j)\\}\\) to \\(\\exp\\{\\hat{\\beta}_j + z^* SE(\\hat{\\beta}_j)\\}\\), holding all else constant."
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#coefficient-for-age",
+    "href": "slides/19-logistic-compare.html#coefficient-for-age",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Coefficient for age",
+    "text": "Coefficient for age\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n-6.673\n0.378\n-17.647\n0.000\n-7.423\n-5.940\n\n\nage\n0.082\n0.006\n14.344\n0.000\n0.071\n0.094\n\n\ntotChol\n0.002\n0.001\n1.940\n0.052\n0.000\n0.004\n\n\ncurrentSmoker1\n0.443\n0.094\n4.733\n0.000\n0.260\n0.627\n\n\n\n\n\n\n\n\nHypotheses:\n\\[\nH_0: \\beta_{age} = 0 \\hspace{2mm} \\text{ vs } \\hspace{2mm} H_a: \\beta_{age} \\neq 0\n\\], given total cholesterol and smoking status are in the model."
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#coefficient-for-age-1",
+    "href": "slides/19-logistic-compare.html#coefficient-for-age-1",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Coefficient for age",
+    "text": "Coefficient for age\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n-6.673\n0.378\n-17.647\n0.000\n-7.423\n-5.940\n\n\nage\n0.082\n0.006\n14.344\n0.000\n0.071\n0.094\n\n\ntotChol\n0.002\n0.001\n1.940\n0.052\n0.000\n0.004\n\n\ncurrentSmoker1\n0.443\n0.094\n4.733\n0.000\n0.260\n0.627\n\n\n\n\n\n\n\nTest statistic:\n\\[z = \\frac{ 0.0825  - 0}{0.00575} = 14.34\n\\]"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#coefficient-for-age-2",
+    "href": "slides/19-logistic-compare.html#coefficient-for-age-2",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Coefficient for age",
+    "text": "Coefficient for age\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n-6.673\n0.378\n-17.647\n0.000\n-7.423\n-5.940\n\n\nage\n0.082\n0.006\n14.344\n0.000\n0.071\n0.094\n\n\ntotChol\n0.002\n0.001\n1.940\n0.052\n0.000\n0.004\n\n\ncurrentSmoker1\n0.443\n0.094\n4.733\n0.000\n0.260\n0.627\n\n\n\n\n\n\n\nP-value:\n\\[P(|Z| &gt; |14.34|) \\approx 0\n\\]\n\n\n2 * pnorm(14.34,lower.tail = FALSE)\n\n[1] 1.230554e-46"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#coefficient-for-age-3",
+    "href": "slides/19-logistic-compare.html#coefficient-for-age-3",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Coefficient for age",
+    "text": "Coefficient for age\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n-6.673\n0.378\n-17.647\n0.000\n-7.423\n-5.940\n\n\nage\n0.082\n0.006\n14.344\n0.000\n0.071\n0.094\n\n\ntotChol\n0.002\n0.001\n1.940\n0.052\n0.000\n0.004\n\n\ncurrentSmoker1\n0.443\n0.094\n4.733\n0.000\n0.260\n0.627\n\n\n\n\n\n\n\nConclusion:\nThe p-value is very small, so we reject \\(H_0\\). The data provide sufficient evidence that age is a statistically significant predictor of whether someone is high risk of having heart disease, after accounting for total cholesterol and smoking status."
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#ci-for-age",
+    "href": "slides/19-logistic-compare.html#ci-for-age",
+    "title": "Logistic Regression: Model comparison",
+    "section": "CI for age",
+    "text": "CI for age\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n-6.673\n0.378\n-17.647\n0.000\n-7.423\n-5.940\n\n\nage\n0.082\n0.006\n14.344\n0.000\n0.071\n0.094\n\n\ntotChol\n0.002\n0.001\n1.940\n0.052\n0.000\n0.004\n\n\ncurrentSmoker1\n0.443\n0.094\n4.733\n0.000\n0.260\n0.627\n\n\n\n\n\n\n\n\nInterpret the 95% confidence interval for age in terms of the odds of being high risk for heart disease."
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#log-likelihood",
+    "href": "slides/19-logistic-compare.html#log-likelihood",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Log likelihood",
+    "text": "Log likelihood\n\\[\n\\log L = \\sum\\limits_{i=1}^n[y_i \\log(\\hat{p}_i) + (1 - y_i)\\log(1 - \\hat{p}_i)]\n\\]\n\nMeasure of how well the model fits the data\nHigher values of \\(\\log L\\) are better\nDeviance = \\(-2 \\log L\\)\n\n\\(-2 \\log L\\) follows a \\(\\chi^2\\) distribution with \\(n - p - 1\\) degrees of freedom"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#comparing-nested-models",
+    "href": "slides/19-logistic-compare.html#comparing-nested-models",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Comparing nested models",
+    "text": "Comparing nested models\n\nSuppose there are two nested models:\n\nReduced Model includes predictors \\(x_1, \\ldots, x_q\\)\nFull Model includes predictors \\(x_1, \\ldots, x_q, x_{q+1}, \\ldots, x_p\\)\n\nWe want to test the hypotheses\n\\[\n\\begin{aligned}\nH_0&: \\beta_{q+1} = \\dots = \\beta_p = 0 \\\\\nH_a&: \\text{ at least one }\\beta_j \\text{ is not } 0\n\\end{aligned}\n\\]\nTo do so, we will use the Drop-in-deviance test, also known as the Nested Likelihood Ratio test"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#drop-in-deviance-test",
+    "href": "slides/19-logistic-compare.html#drop-in-deviance-test",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Drop-in-deviance test",
+    "text": "Drop-in-deviance test\nHypotheses:\n\\[\n\\begin{aligned}\nH_0&: \\beta_{q+1} = \\dots = \\beta_p = 0 \\\\\nH_a&: \\text{ at least 1 }\\beta_j \\text{ is not } 0\n\\end{aligned}\n\\]\n\nTest Statistic: \\[\\begin{aligned}G &= \\text{Deviance}_{reduced} - \\text{Deviance}_{full} \\\\\n&= (-2 \\log L_{reduced}) - (-2 \\log L_{full})\\end{aligned}\\]\n\n\nP-value: \\(P(\\chi^2 &gt; G)\\), calculated using a \\(\\chi^2\\) distribution with degrees of freedom equal to the difference in the number of parameters in the full and reduced models"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#chi2-distribution",
+    "href": "slides/19-logistic-compare.html#chi2-distribution",
+    "title": "Logistic Regression: Model comparison",
+    "section": "\\(\\chi^2\\) distribution",
+    "text": "\\(\\chi^2\\) distribution"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#should-we-add-currentsmoker-to-the-model",
+    "href": "slides/19-logistic-compare.html#should-we-add-currentsmoker-to-the-model",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Should we add currentSmoker to the model?",
+    "text": "Should we add currentSmoker to the model?\nFirst model, reduced:\n\nrisk_fit_reduced &lt;- logistic_reg() |&gt;\n  set_engine(\"glm\") |&gt;\n  fit(high_risk ~ age + education, \n      data = heart_disease, family = \"binomial\")\n\n\n\nSecond model, full:\n\nrisk_fit_full &lt;- logistic_reg() |&gt;\n  set_engine(\"glm\") |&gt;\n  fit(high_risk ~ age + education + currentSmoker, \n      data = heart_disease, family = \"binomial\")"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#should-we-add-currentsmoker-to-the-model-1",
+    "href": "slides/19-logistic-compare.html#should-we-add-currentsmoker-to-the-model-1",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Should we add currentSmoker to the model?",
+    "text": "Should we add currentSmoker to the model?\nCalculate deviance for each model:\n\n(dev_reduced &lt;- glance(risk_fit_reduced)$deviance)\n\n[1] 3244.187\n\n(dev_full &lt;- glance(risk_fit_full)$deviance)\n\n[1] 3221.901\n\n\n\nDrop-in-deviance test statistic:\n\n(test_stat &lt;- dev_reduced - dev_full)\n\n[1] 22.2863"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#should-we-add-currentsmoker-to-the-model-2",
+    "href": "slides/19-logistic-compare.html#should-we-add-currentsmoker-to-the-model-2",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Should we add currentSmoker to the model?",
+    "text": "Should we add currentSmoker to the model?\nCalculate the p-value using a pchisq(), with degrees of freedom equal to the number of new model terms in the second model:\n\npchisq(test_stat, 1, lower.tail = FALSE) \n\n[1] 2.348761e-06\n\n\n\nConclusion: The p-value is very small, so we reject \\(H_0\\). The data provide sufficient evidence that the coefficient of currentSmoker is not equal to 0. Therefore, we should add it to the model."
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#drop-in-deviance-test-in-r",
+    "href": "slides/19-logistic-compare.html#drop-in-deviance-test-in-r",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Drop-in-Deviance test in R",
+    "text": "Drop-in-Deviance test in R\n\nWe can use the anova function to conduct this test\nAdd test = \"Chisq\" to conduct the drop-in-deviance test\n\n\n\nanova(high_risk_fit_reduced, high_risk_fit_full, test = \"Chisq\") |&gt;\n  tidy() |&gt; kable(digits = 3)\n\n\n\n\n\n\n\n\n\n\n\n\nterm\ndf.residual\nresidual.deviance\ndf\ndeviance\np.value\n\n\n\n\nhigh_risk ~ age + totChol + currentSmoker\n4082\n3224.812\nNA\nNA\nNA\n\n\nhigh_risk ~ age + totChol + currentSmoker + education\n4079\n3217.600\n3\n7.212\n0.065"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#model-selection",
+    "href": "slides/19-logistic-compare.html#model-selection",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Model selection",
+    "text": "Model selection\nUse AIC or BIC for model selection\n\\[\n\\begin{align}\n&AIC = - 2 * \\log L - {\\color{purple}n\\log(n)}+ 2(p +1)\\\\[5pt]\n&BIC =- 2 * \\log L - {\\color{purple}n\\log(n)} + log(n)\\times(p+1)\n\\end{align}\n\\]"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#aic-from-the-glance-function",
+    "href": "slides/19-logistic-compare.html#aic-from-the-glance-function",
+    "title": "Logistic Regression: Model comparison",
+    "section": "AIC from the glance() function",
+    "text": "AIC from the glance() function\nLet’s look at the AIC for the model that includes age, totChol, and currentSmoker\n\nglance(high_risk_fit)$AIC\n\n[1] 3232.812\n\n\n\n\nCalculating AIC\n\n- 2 * glance(high_risk_fit)$logLik + 2 * (3 + 1)\n\n[1] 3232.812"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#comparing-the-models-using-aic",
+    "href": "slides/19-logistic-compare.html#comparing-the-models-using-aic",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Comparing the models using AIC",
+    "text": "Comparing the models using AIC\nLet’s compare the full and reduced models using AIC.\n\nglance(high_risk_fit_reduced)$AIC\n\n[1] 3232.812\n\nglance(high_risk_fit_full)$AIC\n\n[1] 3231.6\n\n\n\n\nBased on AIC, which model would you choose?"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#comparing-the-models-using-bic",
+    "href": "slides/19-logistic-compare.html#comparing-the-models-using-bic",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Comparing the models using BIC",
+    "text": "Comparing the models using BIC\nLet’s compare the full and reduced models using BIC\n\nglance(high_risk_fit_reduced)$BIC\n\n[1] 3258.074\n\nglance(high_risk_fit_full)$BIC\n\n[1] 3275.807\n\n\n\n\nBased on BIC, which model would you choose?"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#application-exercise",
+    "href": "slides/19-logistic-compare.html#application-exercise",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Application exercise",
+    "text": "Application exercise\n\n📋 sta210-sp25.netlify.app/ae/ae-10-logistic-compare.html"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#distribution-of-hatbeta_j",
+    "href": "slides/19-logistic-compare.html#distribution-of-hatbeta_j",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Distribution of \\(\\hat{\\beta}_j\\)",
+    "text": "Distribution of \\(\\hat{\\beta}_j\\)\nWhen \\(n\\) is large, theory tells us the estimated model coefficients are normally distributed and centered at the true coefficients\n\\[\n\\hat{\\beta}_j \\sim N(\\beta_j,\nSE(\\hat{\\beta}_j)\n\\]\nwhere \\(SE(\\hat{\\beta}_j)\\) is the standard error for the \\(j^{th}\\) coefficient, \\(\\hat{\\beta}_j\\)"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#which-model-do-we-choose",
+    "href": "slides/19-logistic-compare.html#which-model-do-we-choose",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Which model do we choose?",
+    "text": "Which model do we choose?\n\n\n\nModel 1\n\n\n\n\n\n\nterm\nestimate\n\n\n\n\n(Intercept)\n-6.673\n\n\nage\n0.082\n\n\ntotChol\n0.002\n\n\ncurrentSmoker1\n0.443\n\n\n\n\n\n\n\nModel 2\n\n\n\n\n\n\nterm\nestimate\n\n\n\n\n(Intercept)\n-6.456\n\n\nage\n0.080\n\n\ntotChol\n0.002\n\n\ncurrentSmoker1\n0.445\n\n\neducation2\n-0.270\n\n\neducation3\n-0.232\n\n\neducation4\n-0.035"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#should-we-add-education-to-the-model",
+    "href": "slides/19-logistic-compare.html#should-we-add-education-to-the-model",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Should we add education to the model?",
+    "text": "Should we add education to the model?\nFirst model, reduced:\n\nhigh_risk_fit_reduced &lt;- glm(high_risk ~ age + totChol +\n                                   currentSmoker,\n                                 data = heart_disease, family = \"binomial\")\n\n\n\nSecond model, full:\n\nhigh_risk_fit_full &lt;- glm(high_risk ~ age + totChol + currentSmoker + education, \n              data = heart_disease, family = \"binomial\")\n\n\nWrite the null and alternative hypotheses in words and mathematical notation."
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#should-we-add-education-to-the-model-1",
+    "href": "slides/19-logistic-compare.html#should-we-add-education-to-the-model-1",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Should we add education to the model?",
+    "text": "Should we add education to the model?\nCalculate deviance for each model:\n\n(dev_reduced &lt;- glance(high_risk_fit_reduced)$deviance)\n\n[1] 3224.812\n\n(dev_full &lt;- glance(high_risk_fit_full)$deviance)\n\n[1] 3217.6\n\n\n\nDrop-in-deviance test statistic:\n\n(test_stat &lt;- dev_reduced - dev_full)\n\n[1] 7.212113"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#should-we-add-education-to-the-model-2",
+    "href": "slides/19-logistic-compare.html#should-we-add-education-to-the-model-2",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Should we add education to the model?",
+    "text": "Should we add education to the model?\nCalculate the p-value using a pchisq(), with degrees of freedom equal to the number of new model terms in the second model:\n\npchisq(test_stat, 3, lower.tail = FALSE) \n\n[1] 0.06543567\n\n\n\n\nWhat is your conclusion?"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#aic-bic",
+    "href": "slides/19-logistic-compare.html#aic-bic",
+    "title": "Logistic Regression: Model comparison",
+    "section": "AIC & BIC",
+    "text": "AIC & BIC\nEstimators of prediction error and relative quality of models:\n\nAkaike’s Information Criterion (AIC): \\[AIC = -2\\log L + 2(p+1)\\] \n\n\nSchwarz’s Bayesian Information Criterion (BIC): \\[ BIC = -2\\log L + \\log(n)\\times(p+1)\\]"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#aic-bic-1",
+    "href": "slides/19-logistic-compare.html#aic-bic-1",
+    "title": "Logistic Regression: Model comparison",
+    "section": "AIC & BIC",
+    "text": "AIC & BIC\n\\[\n\\begin{aligned}\n& AIC = \\color{blue}{-2\\log L}  \\color{black}{+ 2(p+1)} \\\\\n& BIC = \\color{blue}{-2\\log L}  + \\color{black}{\\log(n)\\times(p+1)}\n\\end{aligned}\n\\]\n\n\nFirst Term: Decreases as p increases"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#aic-bic-2",
+    "href": "slides/19-logistic-compare.html#aic-bic-2",
+    "title": "Logistic Regression: Model comparison",
+    "section": "AIC & BIC",
+    "text": "AIC & BIC\n\\[\n\\begin{aligned} & AIC = -2\\log L  + \\color{blue}{2(p+1)} \\\\\n& BIC = -2\\log L + \\color{blue}{\\log(n)\\times(p+1)}\n\\end{aligned}\n\\]\n\nSecond term: Increases as p increases"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#using-aic-bic",
+    "href": "slides/19-logistic-compare.html#using-aic-bic",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Using AIC & BIC",
+    "text": "Using AIC & BIC\n\\[\n\\begin{aligned} & AIC = -2\\log L  + \\color{red}{2(p+1)} \\\\\n& BIC = -2 \\log L  + \\color{red}{\\log(n)\\times(p+1)}\n\\end{aligned}\n\\]\n\nChoose model with the smaller value of AIC or BIC\nIf \\(n \\geq 8\\), the penalty for BIC is larger than that of AIC, so BIC tends to favor more parsimonious models (i.e. models with fewer terms)"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#review-roc-curve-model-fit",
+    "href": "slides/19-logistic-compare.html#review-roc-curve-model-fit",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Review: ROC Curve + Model fit",
+    "text": "Review: ROC Curve + Model fit"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#drop-in-deviance-test-1",
+    "href": "slides/19-logistic-compare.html#drop-in-deviance-test-1",
+    "title": "Logistic Regression: Model comparison",
+    "section": "Drop-in-deviance test",
+    "text": "Drop-in-deviance test\nHypotheses:\n\\[\n\\begin{aligned}\nH_0&: \\beta_{q+1} = \\dots = \\beta_p = 0 \\\\\nH_a&: \\text{ at least one }\\beta_j \\text{ is not } 0\n\\end{aligned}\n\\]\n\nTest Statistic: \\[\\begin{aligned}G &= \\text{Deviance}_{reduced} - \\text{Deviance}_{full} \\\\\n&= (-2 \\log L_{reduced}) - (-2 \\log L_{full})\\end{aligned}\\]\n\n\nP-value: \\(P(\\chi^2 &gt; G)\\), calculated using a \\(\\chi^2\\) distribution with degrees of freedom equal to the difference in the number of parameters in the full and reduced models"
+  },
+  {
+    "objectID": "slides/19-logistic-compare.html#references",
+    "href": "slides/19-logistic-compare.html#references",
+    "title": "Logistic Regression: Model comparison",
+    "section": "References",
+    "text": "References"
   }
 ]
