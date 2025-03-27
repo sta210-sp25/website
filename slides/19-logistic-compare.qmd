@@ -45,6 +45,8 @@ library(countdown)
 
 -   Project presentations in March 31 lab
 
+    -   Will email presentation order and feedback assignments
+
 -   Statistics experience due April 15
 
 ## Topics
@@ -130,9 +132,6 @@ high_risk_aug <- augment(high_risk_fit)
 roc_curve_data <- high_risk_aug |>
   roc_curve(high_risk, .fitted, event_level = "second")
 
-# plot roc curve
-autoplot(roc_curve_data)
-
 #calculate AUC
 high_risk_aug |>
   roc_auc(high_risk, .fitted, event_level = "second")
@@ -143,6 +142,7 @@ high_risk_aug |>
 We will use a threshold of 0.2 to classify observations
 
 ```{r}
+#| echo: false
 #compute predicted probabilities
 pred_prob <- predict.glm(high_risk_fit, type = "response")
 high_risk_aug <- high_risk_aug |> 
@@ -155,7 +155,7 @@ high_risk_aug |>
   autoplot(type = "heatmap")
 ```
 
-## Review: Classification  {.midi}
+## Review: Classification {.midi}
 
 ```{r}
 #| echo: false
@@ -168,14 +168,14 @@ high_risk_aug |>
 ::: question
 1.  Compute the misclassification rate.
 
-2.  Compute sensitivity and explain what it means in the context of this data.
+2.  Compute sensitivity and explain what it means in the context of the data.
 
-3.  Compute specificity and explain what it means in the context of this data.
+3.  Compute specificity and explain what it means in the context of the data.
 :::
 
 # Drop-in-deviance test
 
-## Which model do we choose? 
+## Which model do we choose?
 
 ```{r}
 #| echo: false
@@ -199,7 +199,7 @@ tidy(high_risk_fit) |>
 :::
 
 ::: {.column width="50%"}
-<center>**Model 2** </center>
+<center>**Model 2**</center>
 
 ```{r}
 #| echo: false
@@ -214,7 +214,10 @@ tidy(high_risk_fit2) |>
 ## Log likelihood
 
 $$
-\log L = \sum\limits_{i=1}^n[y_i \log(\hat{p}_i) + (1 - y_i)\log(1 - \hat{p}_i)]
+\begin{aligned}
+\log L&(\hat{p}_i|x_1, \ldots, x_n, y_1, \dots, y_n) \\
+&= \sum\limits_{i=1}^n[y_i \log(\hat{p}_i) + (1 - y_i)\log(1 - \hat{p}_i)]
+\end{aligned}
 $$
 
 -   Measure of how well the model fits the data
@@ -307,7 +310,7 @@ high_risk_fit_reduced <- glm(high_risk ~ age + totChol + currentSmoker,
 Second model, full:
 
 ```{r}
-#| code-line-numbers: "3"
+#| code-line-numbers: "2"
 
 high_risk_fit_full <- glm(high_risk ~ age + totChol +
                             currentSmoker + education, 

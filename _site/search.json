@@ -1111,7 +1111,7 @@
     "href": "slides/19-logistic-compare.html#announcements",
     "title": "Logistic Regression: Model comparison",
     "section": "Announcements",
-    "text": "Announcements\n\nProject presentations in March 31 lab\nStatistics experience due April 15"
+    "text": "Announcements\n\nProject presentations in March 31 lab\n\nWill email presentation order and feedback assignments\n\nStatistics experience due April 15"
   },
   {
     "objectID": "slides/19-logistic-compare.html#topics",
@@ -1153,21 +1153,21 @@
     "href": "slides/19-logistic-compare.html#review-roc-curve-model-fit",
     "title": "Logistic Regression: Model comparison",
     "section": "Review: ROC Curve + Model fit",
-    "text": "Review: ROC Curve + Model fit\n\nhigh_risk_aug &lt;- augment(high_risk_fit)\n\nroc_curve_data &lt;- high_risk_aug |&gt;\n  roc_curve(high_risk, .fitted, event_level = \"second\")\n\n# plot roc curve\nautoplot(roc_curve_data)\n\n#calculate AUC\nhigh_risk_aug |&gt;\n  roc_auc(high_risk, .fitted, event_level = \"second\")\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 roc_auc binary         0.697"
+    "text": "Review: ROC Curve + Model fit\n\nhigh_risk_aug &lt;- augment(high_risk_fit)\n\nroc_curve_data &lt;- high_risk_aug |&gt;\n  roc_curve(high_risk, .fitted, event_level = \"second\")\n\n#calculate AUC\nhigh_risk_aug |&gt;\n  roc_auc(high_risk, .fitted, event_level = \"second\")\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 roc_auc binary         0.697"
   },
   {
     "objectID": "slides/19-logistic-compare.html#review-classification",
     "href": "slides/19-logistic-compare.html#review-classification",
     "title": "Logistic Regression: Model comparison",
     "section": "Review: Classification",
-    "text": "Review: Classification\nWe will use a threshold of 0.2 to classify observations\n\n#compute predicted probabilities\npred_prob &lt;- predict.glm(high_risk_fit, type = \"response\")\nhigh_risk_aug &lt;- high_risk_aug |&gt; \n  bind_cols(pred_prob = pred_prob) |&gt;\n  mutate(pred_class = factor(if_else(pred_prob &gt; 0.2, 1, 0)))\n\n# compute confusion matrix\nhigh_risk_aug |&gt;\n  conf_mat(high_risk, pred_class) |&gt;\n  autoplot(type = \"heatmap\")"
+    "text": "Review: Classification\nWe will use a threshold of 0.2 to classify observations"
   },
   {
     "objectID": "slides/19-logistic-compare.html#review-classification-1",
     "href": "slides/19-logistic-compare.html#review-classification-1",
     "title": "Logistic Regression: Model comparison",
     "section": "Review: Classification",
-    "text": "Review: Classification\n\n\n\nCompute the misclassification rate.\nCompute sensitivity and explain what it means in the context of this data.\nCompute specificity and explain what it means in the context of this data."
+    "text": "Review: Classification\n\n\n\nCompute the misclassification rate.\nCompute sensitivity and explain what it means in the context of the data.\nCompute specificity and explain what it means in the context of the data."
   },
   {
     "objectID": "slides/19-logistic-compare.html#which-model-do-we-choose",
@@ -1181,7 +1181,7 @@
     "href": "slides/19-logistic-compare.html#log-likelihood",
     "title": "Logistic Regression: Model comparison",
     "section": "Log likelihood",
-    "text": "Log likelihood\n\\[\n\\log L = \\sum\\limits_{i=1}^n[y_i \\log(\\hat{p}_i) + (1 - y_i)\\log(1 - \\hat{p}_i)]\n\\]\n\nMeasure of how well the model fits the data\nHigher values of \\(\\log L\\) are better\nDeviance = \\(-2 \\log L\\)\n\n\\(-2 \\log L\\) follows a \\(\\chi^2\\) distribution with \\(n - p - 1\\) degrees of freedom"
+    "text": "Log likelihood\n\\[\n\\begin{aligned}\n\\log L&(\\hat{p}_i|x_1, \\ldots, x_n, y_1, \\dots, y_n) \\\\\n&= \\sum\\limits_{i=1}^n[y_i \\log(\\hat{p}_i) + (1 - y_i)\\log(1 - \\hat{p}_i)]\n\\end{aligned}\n\\]\n\nMeasure of how well the model fits the data\nHigher values of \\(\\log L\\) are better\nDeviance = \\(-2 \\log L\\)\n\n\\(-2 \\log L\\) follows a \\(\\chi^2\\) distribution with \\(n - p - 1\\) degrees of freedom"
   },
   {
     "objectID": "slides/19-logistic-compare.html#comparing-nested-models",
@@ -1286,14 +1286,14 @@
     "href": "slides/19-logistic-compare-notes.html",
     "title": "Logistic Regression: Model comparison",
     "section": "",
-    "text": "Project presentations in March 31 lab\nStatistics experience due April 15"
+    "text": "Project presentations in March 31 lab\n\nWill email presentation order and feedback assignments\n\nStatistics experience due April 15"
   },
   {
     "objectID": "slides/19-logistic-compare-notes.html#announcements",
     "href": "slides/19-logistic-compare-notes.html#announcements",
     "title": "Logistic Regression: Model comparison",
     "section": "",
-    "text": "Project presentations in March 31 lab\nStatistics experience due April 15"
+    "text": "Project presentations in March 31 lab\n\nWill email presentation order and feedback assignments\n\nStatistics experience due April 15"
   },
   {
     "objectID": "slides/19-logistic-compare-notes.html#topics",
@@ -1335,21 +1335,21 @@
     "href": "slides/19-logistic-compare-notes.html#review-roc-curve-model-fit",
     "title": "Logistic Regression: Model comparison",
     "section": "Review: ROC Curve + Model fit",
-    "text": "Review: ROC Curve + Model fit\n\nhigh_risk_aug &lt;- augment(high_risk_fit)\n\nroc_curve_data &lt;- high_risk_aug |&gt;\n  roc_curve(high_risk, .fitted, event_level = \"second\")\n\n# plot roc curve\nautoplot(roc_curve_data)\n\n\n\n\n\n\n\n#calculate AUC\nhigh_risk_aug |&gt;\n  roc_auc(high_risk, .fitted, event_level = \"second\")\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 roc_auc binary         0.697"
+    "text": "Review: ROC Curve + Model fit\n\nhigh_risk_aug &lt;- augment(high_risk_fit)\n\nroc_curve_data &lt;- high_risk_aug |&gt;\n  roc_curve(high_risk, .fitted, event_level = \"second\")\n\n#calculate AUC\nhigh_risk_aug |&gt;\n  roc_auc(high_risk, .fitted, event_level = \"second\")\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 roc_auc binary         0.697"
   },
   {
     "objectID": "slides/19-logistic-compare-notes.html#review-classification",
     "href": "slides/19-logistic-compare-notes.html#review-classification",
     "title": "Logistic Regression: Model comparison",
     "section": "Review: Classification",
-    "text": "Review: Classification\nWe will use a threshold of 0.2 to classify observations\n\n#compute predicted probabilities\npred_prob &lt;- predict.glm(high_risk_fit, type = \"response\")\nhigh_risk_aug &lt;- high_risk_aug |&gt; \n  bind_cols(pred_prob = pred_prob) |&gt;\n  mutate(pred_class = factor(if_else(pred_prob &gt; 0.2, 1, 0)))\n\n# compute confusion matrix\nhigh_risk_aug |&gt;\n  conf_mat(high_risk, pred_class) |&gt;\n  autoplot(type = \"heatmap\")"
+    "text": "Review: Classification\nWe will use a threshold of 0.2 to classify observations"
   },
   {
     "objectID": "slides/19-logistic-compare-notes.html#review-classification-1",
     "href": "slides/19-logistic-compare-notes.html#review-classification-1",
     "title": "Logistic Regression: Model comparison",
     "section": "Review: Classification",
-    "text": "Review: Classification\n\n\n\n\n\n\n\n\n\n\n\nCompute the misclassification rate.\nCompute sensitivity and explain what it means in the context of this data.\nCompute specificity and explain what it means in the context of this data."
+    "text": "Review: Classification\n\n\n\n\n\n\n\n\n\n\n\nCompute the misclassification rate.\nCompute sensitivity and explain what it means in the context of the data.\nCompute specificity and explain what it means in the context of the data."
   },
   {
     "objectID": "slides/19-logistic-compare-notes.html#which-model-do-we-choose",
@@ -1363,7 +1363,7 @@
     "href": "slides/19-logistic-compare-notes.html#log-likelihood",
     "title": "Logistic Regression: Model comparison",
     "section": "Log likelihood",
-    "text": "Log likelihood\n\\[\n\\log L = \\sum\\limits_{i=1}^n[y_i \\log(\\hat{p}_i) + (1 - y_i)\\log(1 - \\hat{p}_i)]\n\\]\n\nMeasure of how well the model fits the data\nHigher values of \\(\\log L\\) are better\nDeviance = \\(-2 \\log L\\)\n\n\\(-2 \\log L\\) follows a \\(\\chi^2\\) distribution with \\(n - p - 1\\) degrees of freedom"
+    "text": "Log likelihood\n\\[\n\\begin{aligned}\n\\log L&(\\hat{p}_i|x_1, \\ldots, x_n, y_1, \\dots, y_n) \\\\\n&= \\sum\\limits_{i=1}^n[y_i \\log(\\hat{p}_i) + (1 - y_i)\\log(1 - \\hat{p}_i)]\n\\end{aligned}\n\\]\n\nMeasure of how well the model fits the data\nHigher values of \\(\\log L\\) are better\nDeviance = \\(-2 \\log L\\)\n\n\\(-2 \\log L\\) follows a \\(\\chi^2\\) distribution with \\(n - p - 1\\) degrees of freedom"
   },
   {
     "objectID": "slides/19-logistic-compare-notes.html#comparing-nested-models",
