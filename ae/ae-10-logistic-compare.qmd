@@ -89,6 +89,7 @@ leukemia <- read_csv("data/leukemia.csv") |>
 ::: callout-important
 To submit the AE:
 
--   Render the document to produce the PDF with all of your work from today's class.
--   Push all your work to your `ae-14` repo on GitHub. (You do not submit AEs on Gradescope).
+Render the document to produce the PDF with all of your work from today's class.
+
+Push all your work to your AE repo on GitHub. You're done! 🎉
 :::

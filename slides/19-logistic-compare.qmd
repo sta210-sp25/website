@@ -93,6 +93,8 @@ This data set is from an ongoing cardiovascular study on residents of the town o
 
 -   `totChol`: Total cholesterol (in mg/dL)
 
+## Data
+
 ```{r}
 #| echo: false
 heart_disease <- read_csv(here::here("slides", "data/framingham.csv")) |>
@@ -122,7 +124,54 @@ tidy(high_risk_fit, conf.int = TRUE) |>
 
 ## Review: ROC Curve + Model fit
 
+```{r}
+high_risk_aug <- augment(high_risk_fit)
+
+roc_curve_data <- high_risk_aug |>
+  roc_curve(high_risk, .fitted, event_level = "second")
+
+# plot roc curve
+autoplot(roc_curve_data)
+
+#calculate AUC
+high_risk_aug |>
+  roc_auc(high_risk, .fitted, event_level = "second")
+```
+
 ## Review: Classification
+
+We will use a threshold of 0.2 to classify observations
+
+```{r}
+#compute predicted probabilities
+pred_prob <- predict.glm(high_risk_fit, type = "response")
+high_risk_aug <- high_risk_aug |> 
+  bind_cols(pred_prob = pred_prob) |>
+  mutate(pred_class = factor(if_else(pred_prob > 0.2, 1, 0)))
+
+# compute confusion matrix
+high_risk_aug |>
+  conf_mat(high_risk, pred_class) |>
+  autoplot(type = "heatmap")
+```
+
+## Review: Classification  {.midi}
+
+```{r}
+#| echo: false
+
+high_risk_aug |>
+  conf_mat(high_risk, pred_class) |>
+  autoplot(type = "heatmap")
+```
+
+::: question
+1.  Compute the misclassification rate.
+
+2.  Compute sensitivity and explain what it means in the context of this data.
+
+3.  Compute specificity and explain what it means in the context of this data.
+:::
 
 # Drop-in-deviance test
 
@@ -247,9 +296,8 @@ First model, reduced:
 
 ```{r}
 
-high_risk_fit_reduced <- glm(high_risk ~ age + totChol +
-                                   currentSmoker,
-                                 data = heart_disease, family = "binomial")
+high_risk_fit_reduced <- glm(high_risk ~ age + totChol + currentSmoker,
+                             data = heart_disease, family = "binomial")
 ```
 
 <br>
@@ -261,7 +309,8 @@ Second model, full:
 ```{r}
 #| code-line-numbers: "3"
 
-high_risk_fit_full <- glm(high_risk ~ age + totChol + currentSmoker + education, 
+high_risk_fit_full <- glm(high_risk ~ age + totChol +
+                            currentSmoker + education, 
               data = heart_disease, family = "binomial")
 ```
 
@@ -295,6 +344,8 @@ Calculate the p-value using a `pchisq()`, with degrees of freedom equal to the n
 pchisq(test_stat, 3, lower.tail = FALSE) 
 ```
 
+<br>
+
 . . .
 
 ::: question
@@ -322,11 +373,15 @@ Estimators of prediction error and *relative* quality of models:
 
 . . .
 
-**Akaike's Information Criterion (AIC)**: $$AIC = -2\log L + 2(p+1)$$ <br>
+**Akaike's Information Criterion (AIC)**[^1]: $$AIC = -2\log L + 2(p+1)$$
+
+[^1]: Akaike, Hirotugu. ["A new look at the statistical model identification."](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=1100705) *IEEE transactions on automatic control* 19.6 (1974): 716-723.
 
 . . .
 
-**Schwarz's Bayesian Information Criterion (BIC)**: $$ BIC = -2\log L + \log(n)\times(p+1)$$
+**Schwarz's Bayesian Information Criterion (BIC)**[^2]: $$ BIC = -2\log L + \log(n)\times(p+1)$$
+
+[^2]: Schwarz, Gideon. ["Estimating the dimension of a model."](https://projecteuclid.org/journalArticle/Download?urlId=10.1214%2Faos%2F1176344136) *The annals of statistics* (1978): 461-464.
 
 ## AIC & BIC
 
@@ -420,5 +475,3 @@ Based on BIC, which model would you choose?
 ::: appex
 📋 [sta210-sp25.netlify.app/ae/ae-10-logistic-compare.html](../ae/ae-10-logistic-compare.html)
 :::
-
-## References
