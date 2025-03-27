@@ -3,7 +3,7 @@ title: "Logistic Regression: Model comparison"
 author: "Prof. Maria Tackett"
 date: "2025-03-27"
 date-format: "MMM DD, YYYY"
-footer: "[🔗 STA 221 - Spring 2025](https://sta221-sp25.netlify.app)"
+footer: "[🔗 STA 210 - Spring 2025](https://sta210-sp25.netlify.app)"
 logo: "../images/logo.png"
 format: 
   revealjs: 
