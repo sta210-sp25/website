@@ -47,6 +47,8 @@ library(countdown)
 
 -   Team Feedback (email from TEAMMATES) due Tuesday, April 8 at 11:59pm (check email)
 
+-   HW 04 due Tuesday, April 8 - released after class
+
 -   Statistics experience due April 15
 
 ## Topics
@@ -504,7 +506,7 @@ tidy(high_risk_fit, conf.int = TRUE) |>
 Interpret the 95% confidence interval for `age` in terms of the **odds** of being high risk for heart disease.
 :::
 
-## Recap 
+## Recap
 
 -   Comparing logistic regression models using
 

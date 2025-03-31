@@ -2259,7 +2259,7 @@
     "href": "slides/20-logistic-inference.html#announcements",
     "title": "Logistic Regression: Model comparison + inference",
     "section": "Announcements",
-    "text": "Announcements\n\nNext project milestone: Analysis and draft in April 14 lab\nTeam Feedback (email from TEAMMATES) due Tuesday, April 8 at 11:59pm (check email)\nStatistics experience due April 15"
+    "text": "Announcements\n\nNext project milestone: Analysis and draft in April 14 lab\nTeam Feedback (email from TEAMMATES) due Tuesday, April 8 at 11:59pm (check email)\nHW 04 due Tuesday, April 8 - released after class\nStatistics experience due April 15"
   },
   {
     "objectID": "slides/20-logistic-inference.html#topics",
@@ -2448,14 +2448,14 @@
     "href": "slides/20-logistic-inference-notes.html",
     "title": "Logistic Regression: Model comparison + inference",
     "section": "",
-    "text": "Next project milestone: Analysis and draft in April 14 lab\nTeam Feedback (email from TEAMMATES) due Tuesday, April 8 at 11:59pm (check email)\nStatistics experience due April 15"
+    "text": "Next project milestone: Analysis and draft in April 14 lab\nTeam Feedback (email from TEAMMATES) due Tuesday, April 8 at 11:59pm (check email)\nHW 04 due Tuesday, April 8 - released after class\nStatistics experience due April 15"
   },
   {
     "objectID": "slides/20-logistic-inference-notes.html#announcements",
     "href": "slides/20-logistic-inference-notes.html#announcements",
     "title": "Logistic Regression: Model comparison + inference",
     "section": "",
-    "text": "Next project milestone: Analysis and draft in April 14 lab\nTeam Feedback (email from TEAMMATES) due Tuesday, April 8 at 11:59pm (check email)\nStatistics experience due April 15"
+    "text": "Next project milestone: Analysis and draft in April 14 lab\nTeam Feedback (email from TEAMMATES) due Tuesday, April 8 at 11:59pm (check email)\nHW 04 due Tuesday, April 8 - released after class\nStatistics experience due April 15"
   },
   {
     "objectID": "slides/20-logistic-inference-notes.html#topics",
@@ -5047,451 +5047,454 @@
     "text": "📖 Classification module in Google Machine Learning Crash Course"
   },
   {
-    "objectID": "hw/hw-02.html",
-    "href": "hw/hw-02.html",
-    "title": "HW 02: Multiple linear regression",
+    "objectID": "hw/stats-experience.html",
+    "href": "hw/stats-experience.html",
+    "title": "Statistics Experience",
     "section": "",
-    "text": "Important\n\n\n\nThis assignment is due on Tuesday, February 11 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your GitHub repo\nFinal .pdf file submitted on Gradescope",
+    "text": "Important\n\n\n\nThis assignment is due on Tuesday, April 15 at 11:59pm.\nThe world of statistics and data science is vast and continually growing! The goal of the statistics experience assignments is to help you engage with the statistics and data science communities outside of the classroom.\nYou may submit the statistics experience assignment anytime between now and the deadline.\nEach experience has two parts:\n1️⃣ Have a statistics experience.\n2️⃣ Make a slide reflecting on your experience.\nYou must complete both parts to receive credit. The statistics experience will count as a homework grade.",
     "crumbs": [
       "Homework",
-      "HW 02"
+      "Statistics experience"
     ]
   },
   {
-    "objectID": "hw/hw-02.html#exercise-1",
-    "href": "hw/hw-02.html#exercise-1",
-    "title": "HW 02: Multiple linear regression",
+    "objectID": "hw/stats-experience.html#part-1-experience-statistics-outside-of-the-classroom",
+    "href": "hw/stats-experience.html#part-1-experience-statistics-outside-of-the-classroom",
+    "title": "Statistics Experience",
+    "section": "Part 1: Experience statistics outside of the classroom",
+    "text": "Part 1: Experience statistics outside of the classroom\nComplete an activity in one of the categories below. Under each category are suggested activities. You do not have to do one these suggested activities. You are welcome to find other activities as long as they are related to statistics/data science and they fit in one of the six categories. If there is an activity you’d like to do but you’re not sure if it qualifies for the statistics experience, just ask!\n\nCategory 1: Attend a talk or conference\nAttend an talk, panel, or conference related to statistics or data science. If you are attending a single talk or panel, it must be at least 30 minutes to count towards the statistics experience. The event can be in-person or online.\n\n\nCategory 2: Talk with a statistician/ data scientist\nTalk with someone who uses statistics in their daily work. This could include a professor, professional in industry, graduate student, etc.\n\n\nCategory 3: Listen to a podcast / watch video\nListen to a podcast or watch a video about statistics and data science. The podcasts / videos must be (1) one podcast or video that is at least 30 minutes or (2) multiple podcasts and/or videos that are at least 30 minutes combined.\nA few suggestions are below:\n\nStats + Stories Podcast\nCausal Inference Podcast\nposit::conf talks (formally called rstudio::conf)\n\n2024 conference\n2023 conference\n2022 conference\n2021 conference\n\n\nThis list is not exhaustive. You may listen to other podcasts or watch other statistics/data science videos not included on this list. Ask Professor Tackett if you are unsure whether a particular podcast or video will count towards the statistics experience.\n\n\nCategory 4: Participate in a data science competition or challenge\nParticipate in a statistics or data science competition. You can participate individually or with a team.\nNote: DataFest will be April 4 - 6 in Penn Pavilion. Click here to learn more.\n\n\nCategory 5: Read a book on statistics/data science\nThere are a lot of books about statistics, data science, and related topics. A few suggestions are below. If you decide to read a book that isn’t on this list, ask Professor Tackett to make sure it counts toward the experience. Many of these books are available through Duke library.\n\nWeapons of Math Destruction by Cathy O’Neil\nHow Charts Lie: Getting Smarter about Visual Information by Alberto Cairo\nThe Theory that Would Not Die by Sharon Bertsch McGrayne\nThe Art of Statistics: How to learn from data by David Spiegelhalter\nThe Lady Tasting Tea by David Salsburg\nList of books about data science ethics\n\nThis list is not exhaustive.\n\n\nCategory 6: TidyTuesday\nYou may also participate in a TidyTuesday challenge. New data sets are announced on Monday afternoons.You can find more information about TidyTuesday and see the data in the TidyTuesday GitHub repo.\nA few guidelines:\n✅ Create a GitHub repo for your TidyTuesday submission. Your repo should include\n\nThe R Markdown file with all the code needed to reproduce your visualization.\nA README that includes an image of your final visualization and a short summary (~ 1 paragraph) about your visualization.\n\n✅ The visualization should include features or customization that are beyond what we’ve done in class .\n✅ Include the link to your GitHub repo in the slide summarizing your experience.\n\n\nCategory 7: CURV - connecting, uplifting, and recognizing voices\nCURV is a project by Dr. Jo Hardin at Pomona College to highlight statisticians and data scientists from groups who have been historically marginalized in the discipline.\n\n\n\n\n\n\nFor this statistics experience, you can contribute to the CURV data base. If there is a scholar you would like to suggest for the data base, submit your suggestion as an issue or pull request on the CURV GitHub repo and create a sample CURV page.\nA few guidelines:\n✅ Create a draft of the CURV page for your suggested scholar. For reference, click here for the CURV page for W.E.B. Du Bois. The page must be created in a Quarto document.\n\n\n\n\n\n\nTip\n\n\n\nYou can find the Quarto documents for current scholars in the data base in the CURV GitHub repo. You can use one of these as a template to format your page.\n\n\n✅ Make a pull request to the CURV GitHub repo to add the .qmd file for your suggested scholar, OR open an issue with a link to the .qmd file for your suggested scholar. You can ask a member of the teaching team if you have questions about how to do this.\n✅ Include the URL to your pull request or issue in your one-slide reflection.",
+    "crumbs": [
+      "Homework",
+      "Statistics experience"
+    ]
+  },
+  {
+    "objectID": "hw/stats-experience.html#part-2-reflect-on-your-experience",
+    "href": "hw/stats-experience.html#part-2-reflect-on-your-experience",
+    "title": "Statistics Experience",
+    "section": "Part 2: Reflect on your experience",
+    "text": "Part 2: Reflect on your experience\nMake one slide summarizing and reflecting on your experience. Submit the slide as a PDF on Gradescope.\nInclude the following on your slide:\n\nDescription of the experience\n\nName and brief description of the event/podcast/competition/etc.\n\nSomething you learned\n\nWrite 2 - 4 sentences about something you learned or found particularly interesting or unexpected.\n\nConnection to STA 221\n\nWrite 2 - 4 sentences about how the experience connects to what we’ve done in the course.\n\nCitation or link to web page for event/competition/etc.\n\nNo citation needed if you do an interview.\n\n\nMake sure the slide includes the information mentioned above and is easily readable (i.e. use a reasonable font size!). Creativity on the experience and slide design is encouraged!",
+    "crumbs": [
+      "Homework",
+      "Statistics experience"
+    ]
+  },
+  {
+    "objectID": "hw/stats-experience.html#submission",
+    "href": "hw/stats-experience.html#submission",
+    "title": "Statistics Experience",
+    "section": "Submission",
+    "text": "Submission\nThis assignment is due on Tuesday, April 15. Standard homework late policy applies. More submission instructions to come.",
+    "crumbs": [
+      "Homework",
+      "Statistics experience"
+    ]
+  },
+  {
+    "objectID": "hw/hw-03.html",
+    "href": "hw/hw-03.html",
+    "title": "HW 03: Multiple linear regression",
+    "section": "",
+    "text": "Due date\n\n\n\nThis assignment is due on Tuesday, March 18 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your GitHub repo\nFinal .pdf file submitted on Gradescope",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/hw-03.html#data-age-of-abalones",
+    "href": "hw/hw-03.html#data-age-of-abalones",
+    "title": "HW 03: Multiple linear regression",
+    "section": "Data: Age of abalones",
+    "text": "Data: Age of abalones\nThe data for this analysis contains measurements for abalones, a type of marine snail. These measurements were collected and analyzed by researchers in Warwick et al. (1994). Click here for the publication.\nThe 4177 abalones in this study can be reasonably treated as a random sample.\nThe data are available in the file abalone.csv in the data folder. This analysis will focus on the following variables:\n\nSex: Male (M), Female (F), Infant (I)\nLength: Longest shell measurement (in millimeters)\nDiameter: Measured perpendicular to length (in millimeters)\nHeight : Measured with meat in shell (in millimeters)\nWhole_Weight: Total weight of abalone (in grams)\nAge: Age (in year)\n\nThe goal of the analysis is to use a variety of measurements from abalones to explain variability in the age.",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/hw-03.html#exercise-1",
+    "href": "hw/hw-03.html#exercise-1",
+    "title": "HW 03: Multiple linear regression",
     "section": "Exercise 1",
-    "text": "Exercise 1\nThere are some observations that have missing data for any of the variables of interest .\n\nRemove observations that have missing data for any of the variables of interest - Size, Theme, Pages, and Amazon_Price. Your updated data set will have 374 observations.\nWhat is a disadvantage of dropping observations that have missing values, instead of using a method to impute, i.e., fill in, the missing data? How might dropping these observations impact the generalizability of conclusions?",
+    "text": "Exercise 1\n\nFit a model using Sex, Length, Diameter, Height and Whole_Weight to understand variability in Age. Neatly display the model using 3 digits.\nCheck the four model conditions - Linearity, Constant Variance, Normality, and Independence. For each condition: (1) state whether or not it is satisfied; (2) explain your response showing any visualizations and/or statistics used to make your assessment.",
     "crumbs": [
       "Homework",
-      "HW 02"
+      "HW 03"
     ]
   },
   {
-    "objectID": "hw/hw-02.html#exercise-2",
-    "href": "hw/hw-02.html#exercise-2",
-    "title": "HW 02: Multiple linear regression",
+    "objectID": "hw/hw-03.html#exercise-2",
+    "href": "hw/hw-03.html#exercise-2",
+    "title": "HW 03: Multiple linear regression",
     "section": "Exercise 2",
-    "text": "Exercise 2\n\nVisualize the distributions of the predictor variables Size and Pages. Neatly arrange the plots using the patchwork package.\nUse the plots in part (a) to write an observation about each distribution.",
+    "text": "Exercise 2\nNow let’s take a look at the model diagnostics.\n\nAre there any influential observations in the data set? Briefly explain, showing any work or output used to make the determination.\nConsider the observation with the highest value for Cook’s distance. What is the value of leverage for this observation? Does this observation have large leverage? Briefly explain, showing any work or output used to make the determination.\nAgain consider the observation with the highest value for Cook’s distance. What is the standardized residual for this observation? Is this observation an outlier? Briefly explain showing any work or output used to make the determination.",
     "crumbs": [
       "Homework",
-      "HW 02"
+      "HW 03"
     ]
   },
   {
-    "objectID": "hw/hw-02.html#exercise-3",
-    "href": "hw/hw-02.html#exercise-3",
-    "title": "HW 02: Multiple linear regression",
+    "objectID": "hw/hw-03.html#exercise-3",
+    "href": "hw/hw-03.html#exercise-3",
+    "title": "HW 03: Multiple linear regression",
     "section": "Exercise 3",
-    "text": "Exercise 3\nThe distribution of Theme is shown below. The bars are ordered by the frequency they occur in the data set.\n\nlegos |&gt;\n  count(Theme) |&gt;\nggplot(aes(x = fct_reorder(Theme, n), y = n)) +\n  geom_col() + \n    labs(title = \"Lego Set Theme\", \n         x = \"Theme\", \n         y = \"Number of LEGO sets\") + \n  coord_flip()\n\n\n\n\n\n\n\n\n\nWhat is one reason we may want to avoid putting the variable Theme in a model as is?\nWe will create a new variable that collapses some of the levels of Theme. Make a new variable called Theme_Col that has levels for the top four most frequent themes, then the category Other for all other themes.\nHow many observations are in each level for the new variable created in part (b)?\n\n\n\n\n\n\n\nNote\n\n\n\nYou will use Theme_Col, the collapsed Theme variable, for the remainder of the assignment.",
+    "text": "Exercise 3\nNow let’s look at the relationship between predictors.\n\nCompute the Variance Inflation Factors (VIF) for the model from Exercise 1. Display the results.\nUse the equation for VIF to “manually” compute the VIF for Whole_Weight.\nWhat predictors appear to be collinear?\nSelect a strategy to fit a model that does not have an issue with multicollinearity.\n\nBriefly describe your strategy.\nSelect a final model.\nBriefly explain your selection, showing the work and statistics used to choose a final model.",
     "crumbs": [
       "Homework",
-      "HW 02"
+      "HW 03"
     ]
   },
   {
-    "objectID": "hw/hw-02.html#exercise-4",
-    "href": "hw/hw-02.html#exercise-4",
-    "title": "HW 02: Multiple linear regression",
+    "objectID": "hw/hw-03.html#data-2000-u.s.-presidential-election1",
+    "href": "hw/hw-03.html#data-2000-u.s.-presidential-election1",
+    "title": "HW 03: Multiple linear regression",
+    "section": "Data: 2000 U.S. Presidential Election1",
+    "text": "Data: 2000 U.S. Presidential Election1\n\nWe will examine data about the 2000 U.S. presidential election between George W. Bush and Al Gore. It was one of the closest elections in history that ultimately came down to the state of Florida. One county in particular, Palm Beach County, was at the center of the controversy due to the design of their ballots - the infamous butterfly ballots. It is believed that many people who intended to vote for Al Gore accidentally voted for Pat Buchanan due to how the spots to mark the candidate were arranged next to the names.\nThe variables in the data are\n\nCounty: County name\nBush2000: Number of votes for George W. Bush\nBuchanan2000: Number of votes for Pat Buchanan\n\nThe data are available in the file florida-votes-2000.csv in the data folder of your repo.",
+    "crumbs": [
+      "Homework",
+      "HW 03"
+    ]
+  },
+  {
+    "objectID": "hw/hw-03.html#exercise-4",
+    "href": "hw/hw-03.html#exercise-4",
+    "title": "HW 03: Multiple linear regression",
     "section": "Exercise 4",
-    "text": "Exercise 4\n\nFit a model using Size, Pages, and Theme_Col to predict Amazon_Price. Fit the model such that the intercept has a meaningful interpretation. Neatly display the model using three digits.\nInterpret the intercept in the context of the data.\nThe model output suggests that as the number of pages in the instruction booklet increases, the price of the set on Amazon is expected to increase. On the surface, it does not seem that the number of pages in the booklet would be a major predictor of the price on Amazon. What do you think this variable is actually measuring or is actually representing?",
+    "text": "Exercise 4\nThe goal is to fit a model that uses the number of votes for Bush to predict the number of votes for Buchanan. Using this model, we’ll investigate whether the data support the claim that votes for Gore may have accidentally gone to Buchanan.\n\nVisualize the relationship between the number of votes for Buchanan versus the number of votes for Bush. Describe what you observe in the visualization, including a description of the relationship between the votes for Buchanan and votes for Bush.\nWhat is the county with the extreme outlier number of votes for Buchanan? Create a new data frame that doesn’t include the outlying county. You will use this updated data frame for the remainder of this exercise and Exercise 5.\nFit a model to predict the number of votes for Buchanan based on the number of votes for Bush in the county.\n\nMake a plot of the standardized residuals versus the fitted values.\nIs the constant variance condition satisfied? Briefly explain.",
     "crumbs": [
       "Homework",
-      "HW 02"
+      "HW 03"
     ]
   },
   {
-    "objectID": "hw/hw-02.html#exercise-5",
-    "href": "hw/hw-02.html#exercise-5",
-    "title": "HW 02: Multiple linear regression",
+    "objectID": "hw/hw-03.html#exercise-5",
+    "href": "hw/hw-03.html#exercise-5",
+    "title": "HW 03: Multiple linear regression",
     "section": "Exercise 5",
-    "text": "Exercise 5\nNow let’s consider a model that allows for different effects of pages based on theme.\n\nMake a plot that can be used to visualize the effect of pages on the Amazon.com price based on the theme.\nBased on the plot in part (a), does the effect of the number of pages appear to differ based on theme? Briefly explain why or why not.\nModify the model from Exercise 4 such that the effect of the number of pages differs based on the theme. The intercept should still have a meaningful interpretation. Neatly display the model using three digits.",
+    "text": "Exercise 5\nNow let’s consider potential models with transformations on the response and/or predictor variables. The four candidate models are the following:\n\n\n\nModel\nResponse variable\nPredictor variable\n\n\n\n\n1 (from previous exercise)\nBuchanan2000\nBush2000\n\n\n2\nlog(Buchanan2000)\nBush2000\n\n\n3\nBuchanan2000\nlog(Bush2000)\n\n\n4\nlog(Buchanan2000)\nlog(Bush2000)\n\n\n\nWhich model best fits the data? Briefly explain, showing any work and output used to determine the response. (Note: Use the data set without the outlying county to find the candidate models.)",
     "crumbs": [
       "Homework",
-      "HW 02"
+      "HW 03"
     ]
   },
   {
-    "objectID": "hw/hw-02.html#exercise-6",
-    "href": "hw/hw-02.html#exercise-6",
-    "title": "HW 02: Multiple linear regression",
+    "objectID": "hw/hw-03.html#exercise-6",
+    "href": "hw/hw-03.html#exercise-6",
+    "title": "HW 03: Multiple linear regression",
     "section": "Exercise 6",
-    "text": "Exercise 6\n\nDescribe the effect of pages for the baseline level in the context of the data.\nDescribe the effect of pages for LEGOS in the Star Wars theme in the context of the data.\nBased on the p-values, do the data provide evidence that the effect of pages differs based on theme? Briefly explain. You can use a threshold of 0.05 for your assessment.",
+    "text": "Exercise 6\n\nUse the model you chose in the previous exercise to compute the predicted number of votes for Buchanan in the outlying county identified in Exercise 4. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).\nCompute the 95% prediction interval for this county. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).\nIt is assumed that some of the votes for Buchanan in that county were actually intended to be for Gore. Based on your results in the previous question, does your model support this claim?\n\nIf no, briefly explain.\nIf yes, about how many votes were possibly intended for Gore? Show any calculations and output used to determine your answer. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).",
     "crumbs": [
       "Homework",
-      "HW 02"
+      "HW 03"
     ]
   },
   {
-    "objectID": "hw/hw-02.html#exercise-7",
-    "href": "hw/hw-02.html#exercise-7",
-    "title": "HW 02: Multiple linear regression",
-    "section": "Exercise 7",
-    "text": "Exercise 7\n\nCompute RMSE for the model in Exercise 5. Interpret this value in the context of the data.\nCompute \\(R^2\\) for the model in Exercise 5. Interpret this value in the context of the data.",
-    "crumbs": [
-      "Homework",
-      "HW 02"
-    ]
-  },
-  {
-    "objectID": "hw/hw-02.html#perceived-threat-of-covid-19",
-    "href": "hw/hw-02.html#perceived-threat-of-covid-19",
-    "title": "HW 02: Multiple linear regression",
-    "section": "Perceived threat of COVID-19",
-    "text": "Perceived threat of COVID-19\n\n\n\n\n\n\nImportant\n\n\n\nUse the following paper for Exercises 8 and 9.\n\n\nGarbe, Rau, and Toppe (2020) aimed to examine the relationship between personality traits, perceived threat of Covid-19 and stockpiling toilet paper. For this study, researchers conducted an online survey March 23 - 29, 2020 and used the results to fit multiple linear regression models to draw conclusions about their research questions. From their survey, they collected data on adults across 35 countries. Given the small number of responses from people outside of the United States, Canada, and Europe, only responses from people in these three locations were included in the regression analysis.\nLet’s consider their results for the model looking at the effect on perceived threat of Covid-19. The model can be found on page 6 of the paper. The perceived threat of Covid was quantified using the responses to the following survey question:\n\nHow threatened do you feel by Coronavirus? [Users select on a 10-point visual analogue scale (Not at all threatened to Extremely Threatened)]\n\nAs stated on page 5 of the paper “To ease interpretation, continuous variables were z-standardized and categorical variables were dummy-coded in all models.”\nClick here to access a PDF of the paper.",
-    "crumbs": [
-      "Homework",
-      "HW 02"
-    ]
-  },
-  {
-    "objectID": "hw/hw-02.html#exercise-8",
-    "href": "hw/hw-02.html#exercise-8",
-    "title": "HW 02: Multiple linear regression",
-    "section": "Exercise 8",
-    "text": "Exercise 8\n\nInterpret the coefficient of Age (0.072) in the context of the analysis.\nInterpret the coefficient of Place of residence in the context of the analysis. You can assume Emotionality = 0 in the interpretation.\nThe model includes an interaction between Place of residence and Emotionality. The authors describe Emotionality as a measure of “fearfulness, anxiety, dependence, sentimentality”. What does the coefficient for the interaction (0.101) mean in the context of the data?\n\n\n\n\n\n\n\nImportant\n\n\n\nThe following are general questions about linear regression. They are not specific to any of the previous analyses.",
-    "crumbs": [
-      "Homework",
-      "HW 02"
-    ]
-  },
-  {
-    "objectID": "hw/hw-02.html#exercise-9",
-    "href": "hw/hw-02.html#exercise-9",
-    "title": "HW 02: Multiple linear regression",
-    "section": "Exercise 9",
-    "text": "Exercise 9\nProve that the maximum value of \\(R^2\\) must be less than 1 if the data set contains observations such that there are different observed values of the response for the same value of the predictor (e.g., the data set contains observations \\((x_i, y_i)\\) and \\((x_j, y_j)\\) such that \\(x_i = x_j\\) and \\(y_i \\neq y_j\\) .",
-    "crumbs": [
-      "Homework",
-      "HW 02"
-    ]
-  },
-  {
-    "objectID": "hw/hw-02.html#exercise-10",
-    "href": "hw/hw-02.html#exercise-10",
-    "title": "HW 02: Multiple linear regression",
-    "section": "Exercise 10",
-    "text": "Exercise 10\nIn lecture we discussed how the distribution of the error terms (and thus the distribution of the response variable \\(Y\\)) for a given value of the predictor \\(X\\) has a variance of \\(\\sigma^2_{\\epsilon}\\). Therefore, we are assuming this variance is the same for all values of the predictor when we conduct inference.\nBriefly explain why this assumption is important when we conduct inference based on mathematical models but is not necessary for conducting simulation-based inference.",
-    "crumbs": [
-      "Homework",
-      "HW 02"
-    ]
-  },
-  {
-    "objectID": "hw/hw-02.html#footnotes",
-    "href": "hw/hw-02.html#footnotes",
-    "title": "HW 02: Multiple linear regression",
+    "objectID": "hw/hw-03.html#footnotes",
+    "href": "hw/hw-03.html#footnotes",
+    "title": "HW 03: Multiple linear regression",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nExercise 9 is based on an exercise in Montgomery, Peck, and Vining (2021) .↩︎",
+    "text": "Footnotes\n\n\nThis analysis was motivated by exercises in Ledolter (2003).↩︎",
     "crumbs": [
       "Homework",
-      "HW 02"
+      "HW 03"
     ]
   },
   {
-    "objectID": "hw/hw-01.html",
-    "href": "hw/hw-01.html",
-    "title": "HW 01: Simple linear regression",
+    "objectID": "hw/hw-04.html",
+    "href": "hw/hw-04.html",
+    "title": "HW 04",
     "section": "",
-    "text": "Important\n\n\n\nThis assignment is due on Tuesday, January 28 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your GitHub repo\nFinal .pdf file submitted on Gradescope",
+    "text": "To be posted.",
     "crumbs": [
       "Homework",
-      "HW 01"
+      "HW 04"
     ]
   },
   {
-    "objectID": "hw/hw-01.html#instructions",
-    "href": "hw/hw-01.html#instructions",
-    "title": "HW 01: Simple linear regression",
-    "section": "Instructions",
-    "text": "Instructions\nType your responses to each question in your Quarto document. Write all narrative using complete sentences and include informative axis labels and titles on visualizations. Use a reproducible workflow by periodically rendering the Quarto document, writing an informative commit message, and pushing the updated .qmd and .pdf files to GitHub.",
-    "crumbs": [
-      "Homework",
-      "HW 01"
-    ]
-  },
-  {
-    "objectID": "hw/hw-01.html#part-1-exploratory-data-analysis",
-    "href": "hw/hw-01.html#part-1-exploratory-data-analysis",
-    "title": "HW 01: Simple linear regression",
-    "section": "Part 1: Exploratory data analysis",
-    "text": "Part 1: Exploratory data analysis\n\nExercise 1\nCreate a histogram of the distribution of the predictor variable bachelors and calculate appropriate summary statistics. Use the visualization and summary statistics to describe the distribution. Include an informative title and axis labels on the plot.\n\n\nExercise 2\nLet’s view the data in another way. Use the code below to make a map of the United States with the color of the counties filled in based on the percent of residents 25 years old and older who have a Bachelor’s degree. Fill in title and axis labels.\nThen use the plot answer the following:\n\nWhat are 2 observations you have from the map?\nWhat is a feature that is apparent in the map that wasn’t as easily apparent from the histogram in the previous exercise? What is a feature that is apparent in the histogram that is not as easily apparent from the map?\n\n\n\n#| fig.show: hide \n#| message: false \n\ncounty_map_data &lt;- left_join(county_data_sample, map_data_sample) \n\nggplot(data = map_data_all) + \n  geom_polygon(aes(x = long, y = lat, group = group), \n    fill = \"lightgray\", color = \"white\" \n    ) + \n  geom_polygon(data = county_map_data, aes(x = long, y = lat, group = group, \n    fill = bachelors) \n    ) + \n  labs( \n    x = \"Longitude\", \n    y = \"Latitude\", \n    fill = \"_____\", \n    title = \"_____\" \n  ) + \n  scale_fill_viridis_c(labels = label_percent(scale = 1)) + \n  coord_quickmap() \n\n\n\nExercise 3\nCreate a visualization of the relationship between bachelors and median_household_income and calculate the correlation. Use the visualization and correlation to describe the relationship between the two variables.\n\nThis is a good place to render, commit, and push changes to your hw-01 repo on GitHub. Write an informative commit message (e.g. “Completed exercises 1 - 3”), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.",
-    "crumbs": [
-      "Homework",
-      "HW 01"
-    ]
-  },
-  {
-    "objectID": "hw/hw-01.html#part-2-modeling",
-    "href": "hw/hw-01.html#part-2-modeling",
-    "title": "HW 01: Simple linear regression",
-    "section": "Part 2: Modeling",
-    "text": "Part 2: Modeling\n\nExercise 4\nWe will use a linear regression model to describe the relationship between bachelors and median_household_income.\nWrite the form of the statistical (theoretical) model we will use for this task using mathematical notation. Use variable names (bachelors and median_household_income) in the equation for your model1.\n\n\n\n\n\n\nTip\n\n\n\nWrite median household income in LaTex as\n\\text{median\\_household\\_income}\nto make it properly render in the .pdf document.\n\n\n\n\nExercise 5\n\nFit the regression line corresponding to the statistical model in the previous exercise. Neatly display the model output using 3 digits.\nWrite the equation of the fitted model using mathematical notation. Use variable names (bachelors and median_household_income) in the equation.\n\n\n\nExercise 6\n\nInterpret the slope in the context of the data.\nIs it useful to interpret the intercept for this data? If so, write the interpretation in the context of the data. Otherwise, briefly explain why not.\n\n\nThis is a good place to render, commit, and push changes to your hw-01 repo on GitHub. Write an informative commit message (e.g. “Completed exercises 4 -6”), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.",
-    "crumbs": [
-      "Homework",
-      "HW 01"
-    ]
-  },
-  {
-    "objectID": "hw/hw-01.html#part-3-inference-for-the-u.s.",
-    "href": "hw/hw-01.html#part-3-inference-for-the-u.s.",
-    "title": "HW 01: Simple linear regression",
-    "section": "Part 3: Inference for the U.S.",
-    "text": "Part 3: Inference for the U.S.\nWe will use the data from these 600 randomly selected counties to draw conclusions about the relationship between the percent of adults age 25 and older with a bachelor’s degree and median household income for the over 3,000 counties in the United States.\n\nExercise 7\n\nWhat is the population in this analysis? What is the sample?\nIs it reasonable to treat the sample in this analysis as representative of the population? Briefly explain why or why not.\n\n\n\nExercise 8\nNext, compute a 98% bootstrap confidence interval for the slope. Use set.seed(2025) and 1000 iterations. Show all relevant code and output used to compute the interval.\nWrite the 98% confidence interval using 3 digits.\n\n\nExercise 9\n\nInterpret the interval from the previous exercise in the context of the data.\nSuppose you wanted to evaluate the claim that there is no linear relationship between the percent of adults age 25 and older with a bachelor’s degree and median household income for counties in the United States. In other words, you want to evaluate the claim that \\(\\beta_1 = 0\\) in the model written in Exercise 4.\nDoes the confidence interval from the previous exercise support this claim? Briefly explain why or why not.\n\n\nNow is a good time to render your document again if you haven’t done so recently, commit (with an informative commit message), and push all updates.",
-    "crumbs": [
-      "Homework",
-      "HW 01"
-    ]
-  },
-  {
-    "objectID": "hw/hw-01.html#footnotes",
-    "href": "hw/hw-01.html#footnotes",
-    "title": "HW 01: Simple linear regression",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nClick here for a guide on writing mathematical symbols using LaTex.↩︎",
-    "crumbs": [
-      "Homework",
-      "HW 01"
-    ]
-  },
-  {
-    "objectID": "overview.html",
-    "href": "overview.html",
-    "title": "STA 210 - Regression Analysis",
+    "objectID": "labs/lab-06.html",
+    "href": "labs/lab-06.html",
+    "title": "Lab 06",
     "section": "",
-    "text": "In STA 210, students will learn how linear and logistic regression models are used to explore multivariable relationships and apply these methods to answer relevant and engaging questions using a data-driven approach. Students will develop computing skills to implement a reproducible data analysis workflow and gain experience communicating statistical results. Throughout the semester, students will work on a team project where they will develop a research question, answer it using methods learned in the course, and share results through a written report and presentation.\nTopics include applications of linear and logistic regression, interpretation, diagnostics, model selection, and model assessment. Students will gain experience using the computing tools R and GitHub to analyze real-world data from a variety of fields. This class emphasizes data analysis over mathematical theory.\n\n\n100-level Statistical Science course or Statistical Science 230, 231, or 240L",
-    "crumbs": [
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "overview.html#pre-requisites",
-    "href": "overview.html#pre-requisites",
-    "title": "STA 210 - Regression Analysis",
-    "section": "",
-    "text": "100-level Statistical Science course or Statistical Science 230, 231, or 240L",
-    "crumbs": [
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "overview.html#teaching-assistants",
-    "href": "overview.html#teaching-assistants",
-    "title": "STA 210 - Regression Analysis",
-    "section": "Teaching assistants",
-    "text": "Teaching assistants\n\n\n\n\n\n\n\nName\nRole\n\n\nSylvia Vincent\nHead TA\nLab 01L leader\nLab 02L leader\n\n\nIshrit Gupta\nLab 02L leader\n\n\nKareena Legare\nLab 01L helper\n\n\n\nSee Canvas for office hours times and locations.",
-    "crumbs": [
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "labs/lab-05.html",
-    "href": "labs/lab-05.html",
-    "title": "Lab 05: Logistic Regression",
-    "section": "",
-    "text": "Due date\n\n\n\nThis lab is due on Thursday, March at 27 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your team’s GitHub repo\nFinal .pdf file submitted on Gradescope",
+    "text": "To be posted.",
     "crumbs": [
       "Labs",
-      "Lab 05"
+      "Lab 06"
     ]
   },
   {
-    "objectID": "labs/lab-05.html#merge-conflicts-uh-oh",
-    "href": "labs/lab-05.html#merge-conflicts-uh-oh",
-    "title": "Lab 05: Logistic Regression",
-    "section": "Merge Conflicts (uh oh)",
-    "text": "Merge Conflicts (uh oh)\n\n\n\nCollaboration with no merge conflict\n\n\n\n\n\nCollaboration with a merge conflict\n\n\nYou may have seen something like the image above through the course of your collaboration. When two collaborators make changes to a file and push the file to their repository, git merges these two files.\nIf these two files have conflicting content on the same line, git will produce a merge conflict. Merge conflicts need to be resolved manually, as they require a human intervention:\n\n\n\nMerge conflict identifiers\n\n\nTo resolve the merge conflict, decide if you want to keep only your text, the text on GitHub, or incorporate changes from both texts. Delete the conflict markers &lt;&lt;&lt;&lt;&lt;&lt;&lt;, =======, &gt;&gt;&gt;&gt;&gt;&gt;&gt; and make the changes you want in the final merge.\nAssign numbers 1, 2, 3, and 4 to each of your team members (if only 3 team members, just number 1 through 3). Go through the following steps in detail, which simulate a merge conflict. Completing this exercise will be part of the lab grade.\n\nResolving a merge conflict\nStep 1: Everyone clone the merge-conflict assignment repo in RStudio and open file merge-conflict.qmd.\nMember 4 should look at the group’s repo on GitHub.com to ensure that the other members’ files are pushed to GitHub after every step.\nStep 2: Member 1 Change the team name to your team name. Render, commit, and push.\nStep 3: Member 2 Change the team name to something different (i.e., not your team name). Render, commit, and push.\nYou should get an error.\nPull and review the document with the merge conflict. Read the error to your teammates. You can also show them the error by sharing your screen. A merge conflict occurred because you edited the same part of the document as Member 1. Resolve the conflict with whichever name you want to keep, then render, commit and push again.\nStep 4: Member 3 Write some narrative in the space provided. You should get an error.\nThis time, no merge conflicts should occur, since you edited a different part of the document from Members 1 and 2. Read the error to your teammates. You can also show them the error by sharing your screen.\nClick to pull. Then render, commit, and push.\nYou have successfully completed the merge conflict activity! There is nothing to submit on Gradescope for this activity. Please ask your TA if you have any questions about merge conflicts and collaborating in GitHub.",
+    "objectID": "labs/lab-04.html",
+    "href": "labs/lab-04.html",
+    "title": "Lab 04: Expanding Multiple Linear Regression",
+    "section": "",
+    "text": "Due date\n\n\n\nThis lab is due on Thursday, March 6 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your team’s GitHub repo\nFinal .pdf file submitted on Gradescope",
     "crumbs": [
       "Labs",
-      "Lab 05"
+      "Lab 04"
     ]
   },
   {
-    "objectID": "labs/lab-05.html#exercise-1",
-    "href": "labs/lab-05.html#exercise-1",
-    "title": "Lab 05: Logistic Regression",
+    "objectID": "labs/lab-04.html#exercise-1",
+    "href": "labs/lab-04.html#exercise-1",
+    "title": "Lab 04: Expanding Multiple Linear Regression",
     "section": "Exercise 1",
-    "text": "Exercise 1\nCreate a scatterplot of Area versus Eccentricity, such that the color and shape of the points are based on Class.",
+    "text": "Exercise 1\nWe’ll begin by rescaling the response and some of the predictor variables.\n\nRescale the response variable total_rev_menwomen and the primary predictor variable total_exp_menwomen, so that they are in terms of $100K (100 thousand dollars). Name the new variables rev100k and exp100k, respectively.\nRescale the predictor variable ef_total_count , so it is in terms of thousands of students. Name the new variable students_1k.\nBriefly explain why we might we rescale these variables instead of using them in the original units.",
     "crumbs": [
       "Labs",
-      "Lab 05"
+      "Lab 04"
     ]
   },
   {
-    "objectID": "labs/lab-05.html#exercise-2",
-    "href": "labs/lab-05.html#exercise-2",
-    "title": "Lab 05: Logistic Regression",
+    "objectID": "labs/lab-04.html#exercise-2",
+    "href": "labs/lab-04.html#exercise-2",
+    "title": "Lab 04: Expanding Multiple Linear Regression",
     "section": "Exercise 2",
-    "text": "Exercise 2\nBased on the plot from the previous exercise, do you think the two rice types can be distinguished based on Area and Eccentricity. Briefly explain.",
+    "text": "Exercise 2\nBefore modeling, let’s do some exploratory data analysis.\n\nMake a visualization of the relationship between revenue and expenditures. Use the plot to describe the relationship between the two variables.\nHigher values of both expenditures and revenues are associated with greater variability. Transform both variables using a log transformation, to deal with the potential violation of an assumption of linear regression. Name the variables log_exp and log_rev, respectively.\nLarger values of expenditures and revenues seem to follow a slightly different trend and are associated with two sports - football and basketball. Create an indicator variable that takes value 1 if the sport is basketball or football and 0 otherwise. Name the variable bball_football.",
     "crumbs": [
       "Labs",
-      "Lab 05"
+      "Lab 04"
     ]
   },
   {
-    "objectID": "labs/lab-05.html#exercise-3",
-    "href": "labs/lab-05.html#exercise-3",
-    "title": "Lab 05: Logistic Regression",
+    "objectID": "labs/lab-04.html#exercise-3",
+    "href": "labs/lab-04.html#exercise-3",
+    "title": "Lab 04: Expanding Multiple Linear Regression",
     "section": "Exercise 3",
-    "text": "Exercise 3\nSplit the data into training (75%) and testing sets (25%). Use a seed of 210 for reproducibility.",
+    "text": "Exercise 3\n\nVisualize the relationship between log_rev and log_exp.\nFrom the visualization, you may notice a lot of observations form a straight diagonal line, indicating a perfect one-to-one relationship between expenses and revenues. Provide a possible interpretation of this phenomenon.\nDo you think it is reasonable to include observations displaying this exact relationship? Briefly explain.\nCreate a new data frame filtering out the observations for which expenditures and revenues are exactly equal. Call the new data frame sports_nolinear.\n\nYou will use sports_nolinear for the remainder of the assignment.",
     "crumbs": [
       "Labs",
-      "Lab 05"
+      "Lab 04"
     ]
   },
   {
-    "objectID": "labs/lab-05.html#exercise-4",
-    "href": "labs/lab-05.html#exercise-4",
-    "title": "Lab 05: Logistic Regression",
+    "objectID": "labs/lab-04.html#exercise-4",
+    "href": "labs/lab-04.html#exercise-4",
+    "title": "Lab 04: Expanding Multiple Linear Regression",
     "section": "Exercise 4",
-    "text": "Exercise 4\nIn a logistic regression model, the log-odds of the response being “1” (a “success”) is given by \\[\\log\\Big(\\frac{p_i}{1-p_i}\\Big) = \\beta_0 + \\beta_1X_1 + \\dots + \\beta_pX_p\\]\nIn this analysis, a “success” means the Class is “Osmancik”.\n\nWhat does each \\(p_i\\) represent in the context of this analysis?\nHow is the probability of the response variable being “1” calculated from the log-odds? Show or explain the mathematical steps to go from the log-odds to the probability.",
+    "text": "Exercise 4\nUse sports_nolinear to fit a regression model with the log-transformed revenue as the response variable and the following predictors: log-transformed expenditures, student enrollment, institution type, sports type, participation in athletics for men, participation in athletics for women, the basketball/football indicator you created in a previous exercise, and the interaction between the log-transformed expenditures and the basketball/football indicator.\nNeatly display the model using 3 digits.",
     "crumbs": [
       "Labs",
-      "Lab 05"
+      "Lab 04"
     ]
   },
   {
-    "objectID": "labs/lab-05.html#exercise-5",
-    "href": "labs/lab-05.html#exercise-5",
-    "title": "Lab 05: Logistic Regression",
+    "objectID": "labs/lab-04.html#exercise-5",
+    "href": "labs/lab-04.html#exercise-5",
+    "title": "Lab 04: Expanding Multiple Linear Regression",
     "section": "Exercise 5",
-    "text": "Exercise 5\n\nUse the training data to fit the logistic regression model for the response variable Class using the predictors Area and Eccentricity. Neatly display the output using 3 decimal places.\nDoes the intercept have any meaningful interpretation? If so, interpret the intercept. If not, explain why.",
+    "text": "Exercise 5\nConsider the regression model from the previous exercise.\n\nWhat type of institution and sport correspond to the intercept?\nYou’ll notice that one coefficient has a missing value. Why is the coefficient missing? What is the technical name of this phenomenon?",
     "crumbs": [
       "Labs",
-      "Lab 05"
+      "Lab 04"
     ]
   },
   {
-    "objectID": "labs/lab-05.html#exercise-6",
-    "href": "labs/lab-05.html#exercise-6",
-    "title": "Lab 05: Logistic Regression",
+    "objectID": "labs/lab-04.html#exercise-6",
+    "href": "labs/lab-04.html#exercise-6",
+    "title": "Lab 04: Expanding Multiple Linear Regression",
     "section": "Exercise 6",
-    "text": "Exercise 6\nInterpret the coefficients on Area and Eccentricity in the context of the data in terms of the odds.",
+    "text": "Exercise 6\nFor the sake of interpretability, it is useful to have a regression model in which no coefficients are missing, and the coefficients for each sport indicator represent the baseline level for such sport. To address this issue, use the code below to fit another regression model that uses the same predictors as before, making sure to drop the unnecessary variables and the intercept (by the the -1 in the formula) to achieve this.\n\nsports_fit_2 &lt;- lm(log_rev ~ -1 + sports + students_1k + sector_name +\n             sum_partic_men + sum_partic_women + log_exp + \n             log_exp*bball_football - bball_football,\n          data = sports_nolinear)\n\nWhich type of institution was chosen to be the baseline in this model?",
     "crumbs": [
       "Labs",
-      "Lab 05"
+      "Lab 04"
     ]
   },
   {
-    "objectID": "labs/lab-05.html#exercise-7",
-    "href": "labs/lab-05.html#exercise-7",
-    "title": "Lab 05: Logistic Regression",
+    "objectID": "labs/lab-04.html#exercise-7",
+    "href": "labs/lab-04.html#exercise-7",
+    "title": "Lab 04: Expanding Multiple Linear Regression",
     "section": "Exercise 7",
-    "text": "Exercise 7\n\nHow would you expect the log-odds of the rice grain being of the Osmancik variety to change if the eccentricity changes from 0.85 to 0.9?\nHow would you expect the odds of the rice grain being of the Osmancik variety to change if the eccentricity changes from 0.85 to 0.9?",
+    "text": "Exercise 7\nNow that we have an interpretable model, let us assess the model fit and perform diagnostics to verify whether our linear regression assumptions are reasonable for this data.\nAs a first step, provide some overall measures of model fit and comment on whether it seems to have an acceptable predictive power on the response of interest.",
     "crumbs": [
       "Labs",
-      "Lab 05"
+      "Lab 04"
     ]
   },
   {
-    "objectID": "labs/lab-05.html#exercise-8",
-    "href": "labs/lab-05.html#exercise-8",
-    "title": "Lab 05: Logistic Regression",
+    "objectID": "labs/lab-04.html#exercise-8",
+    "href": "labs/lab-04.html#exercise-8",
+    "title": "Lab 04: Expanding Multiple Linear Regression",
     "section": "Exercise 8",
-    "text": "Exercise 8\nNow let’s evaluate our model on the test set. Use the predict() function to obtain the predicted probabilities of the rice being Osmancik for the observations in the testing data.",
+    "text": "Exercise 8\nNext, let’s take a look at the residuals for the model.\nBecause there are multiple sports at every institution, we may be concerned the residuals within an institution are correlated with each other (thus violating the independence assumption).\nDue to the large number of institutions, we will look at randomly selected subset of 20 institutions to evaluate this.\n\nTake a random sample of 20 institutions. Use set.seed(210) to make your results reproducible.\nPlot the residuals versus fitted values, faceted by institution.\nBased on the faceted plot, do the errors appear to be correlated within institutions? Briefly explain your response.\n\n\n\n\n\n\n\nTip\n\n\n\nClick here for more detail, code, and examples of faceting in ggplot2.\nYou may need to change the size of the figure so that the faceted lot is fully visible. You can do so using the options #| fig-width and #| fig-height in the code chunk.",
     "crumbs": [
       "Labs",
-      "Lab 05"
+      "Lab 04"
     ]
   },
   {
-    "objectID": "labs/lab-05.html#exercise-9",
-    "href": "labs/lab-05.html#exercise-9",
-    "title": "Lab 05: Logistic Regression",
+    "objectID": "labs/lab-04.html#exercise-9",
+    "href": "labs/lab-04.html#exercise-9",
+    "title": "Lab 04: Expanding Multiple Linear Regression",
     "section": "Exercise 9",
-    "text": "Exercise 9\nWith these estimated probabilities, we can now try to classify the rice in the test set. Choose a threshold for assigning a class to each observation based on the estimated probability. Briefly explain your reasoning for selecting the threshold, including any analysis used to make your decision (if applicable).",
+    "text": "Exercise 9\nAfter an examination of all the residuals, we notice a few things:\n\nThere seems to be two groups of observations.\nInstitutions with larger fitted values correspond to lower variance in the residuals compared to the others.\nThere are institutions with lower fitted values that have large negative residuals, potentially indicating outliers and/or influential points.\n\nWe are concerned that these observations may indicate some model misspecification (i.e., the model does not accurately reflect the trends in the data). Therefore, we take a look at the residuals a different way. We plot the standardized residual versus the fitted values, color the points based Cook’s distance, and use shape to indicate whether the sport is basketball or football.\n\nDescribe what you observe from the plot and how your observations compare to the list above.\nDo you think this model is an appropriate fit for the data or is the model misspecified? Briefly explain.",
     "crumbs": [
       "Labs",
-      "Lab 05"
+      "Lab 04"
     ]
   },
   {
-    "objectID": "labs/lab-05.html#exercise-10",
-    "href": "labs/lab-05.html#exercise-10",
-    "title": "Lab 05: Logistic Regression",
+    "objectID": "labs/lab-04.html#exercise-10",
+    "href": "labs/lab-04.html#exercise-10",
+    "title": "Lab 04: Expanding Multiple Linear Regression",
     "section": "Exercise 10",
-    "text": "Exercise 10\nCompare the estimated class assignments based on the threshold from the previous exericse with the actual classes. Comment on the result and the model’s performance.",
+    "text": "Exercise 10\n\nBased on this model (regardless of your answer to the previous exercise), which variables seem to be useful in explaining the variability in the revenue from collegiate sports?\nInterpret the coefficient for one useful quantitative predictor in terms of the log-transformed revenue.\nInterpret the coefficient for one useful categorical predictor in terms of the log-transformed revenue.",
     "crumbs": [
       "Labs",
-      "Lab 05"
+      "Lab 04"
     ]
   },
   {
-    "objectID": "labs/lab-00.html",
-    "href": "labs/lab-00.html",
-    "title": "Lab 00: Getting Started",
+    "objectID": "labs/lab-01.html",
+    "href": "labs/lab-01.html",
+    "title": "Lab 01: Linear regression",
     "section": "",
-    "text": "Important\n\n\n\nPlease complete all today’s lab tasks before leaving lab today.",
+    "text": "Important\n\n\n\nThis lab is due on Thursday, January 30 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your GitHub repo\nFinal .pdf file submitted on Gradescope",
     "crumbs": [
       "Labs",
-      "Lab 00"
+      "Lab 01"
     ]
   },
   {
-    "objectID": "labs/lab-00.html#rstudio",
-    "href": "labs/lab-00.html#rstudio",
-    "title": "Lab 00: Getting Started",
-    "section": "RStudio",
-    "text": "RStudio\n\n\n\n\n\n\nNote\n\n\n\nR is the name of the programming language itself and RStudio is a convenient interface.\n\n\n\nReserve RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers. You will log in using your NetID credentials.\nClick “Reserve STA 210” to reserve an RStudio container. Be sure you reserve the container labeled STA 210 to ensure you have the computing set up you need for the class.\n\nYou only need to reserve a container once per semester.\n\n\nOpen RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers and log in with your Duke NetID and Password.\nClick STA210 to log into the Docker container. You should now see the RStudio environment.",
+    "objectID": "labs/lab-01.html#learning-goals",
+    "href": "labs/lab-01.html#learning-goals",
+    "title": "Lab 01: Linear regression",
+    "section": "Learning goals",
+    "text": "Learning goals\nBy the end of the lab you will…\n\nFit and interpret a linear regression models in R.\nUse simulation-based inference to draw conclusions about the slope.\nContinue developing a workflow for reproducible data analysis.",
     "crumbs": [
       "Labs",
-      "Lab 00"
+      "Lab 01"
     ]
   },
   {
-    "objectID": "labs/lab-00.html#git-and-github",
-    "href": "labs/lab-00.html#git-and-github",
-    "title": "Lab 00: Getting Started",
-    "section": "Git and GitHub",
-    "text": "Git and GitHub\nIn addition to R and RStudio, we will use git and GitHub for version control and collaboration.\n\n\n\n\n\n\nNote\n\n\n\nGit is a version control system (like “Track Changes” features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).\n\n\n\nSign up for GitHub account\nYou will need a GitHub account to access the assignments, project, and in-class exercises for the course.\n\nIf you do not have a GitHub account, go to https://github.com and sign up for an account.\n\n\n\n\n\n\n\nTip\n\n\n\nClick here for advice on choosing a username.\n\n\n\nIf you already have a GitHub account, you can move on to the next step.",
+    "objectID": "labs/lab-02.html",
+    "href": "labs/lab-02.html",
+    "title": "Lab 02: Inference for regression using mathematical models",
+    "section": "",
+    "text": "Important\n\n\n\nThis lab is due on Thursday, February 6 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your GitHub repo\nFinal .pdf file submitted on Gradescope",
     "crumbs": [
       "Labs",
-      "Lab 00"
+      "Lab 02"
     ]
   },
   {
-    "objectID": "labs/lab-00.html#connect-rstudio-and-github",
-    "href": "labs/lab-00.html#connect-rstudio-and-github",
-    "title": "Lab 00: Getting Started",
-    "section": "Connect RStudio and GitHub",
-    "text": "Connect RStudio and GitHub\nNow that you have RStudio and a GitHub account, we will configure git so that RStudio and GitHub communicate with one another.\n\nSet up your SSH Key\nYou will authenticate GitHub using SSH. An outline of the authentication steps is below; you are encouraged to follow along as your TA demonstrates the steps.\n\n\n\n\n\n\nNote\n\n\n\nYou only need to do this authentication process one time on a single system.\n\n\n\nStep 0: Open your STA 210 RStudio container.\nStep 1: Type credentials::ssh_setup_github() into the console on the bottom left of the RStudio environment.\nStep 2: R will ask “No SSH key found. Generate one now?” Click 1 for yes.\nStep 3: You will generate a key. It will begin with “ssh-rsa….” R will then ask “Would you like to open a browser now?” Click 1 for yes.\nStep 4: You may be asked to provide your username and password to log into GitHub. This would be the ones associated with your account that you set up. After entering this information, paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., sta210)\n\n\n\nConfigure git\nThe last thing we need to do is configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.\nTo do so, you will use the use_git_config() function from the usethis package.\nType the following lines of code in the console in RStudio filling in your name and the email address associated with your GitHub account.\n\nusethis::use_git_config(\n  user.name = \"Your name\", \n  user.email = \"Email associated with your GitHub account\")\n\nFor example, mine would be\n\nusethis::use_git_config(\n  user.name = \"Maria Tackett\",\n  user.email = \"maria.tackett@duke.edu\")\n\nIt may look like nothing happened but you are now ready interact between GitHub and RStudio!",
+    "objectID": "labs/lab-02.html#learning-goals",
+    "href": "labs/lab-02.html#learning-goals",
+    "title": "Lab 02: Inference for regression using mathematical models",
+    "section": "Learning goals",
+    "text": "Learning goals\nBy the end of the lab you will…\n\nuse mathematical models to conduct inference for the slope.\nassess conditions for linear regression.\ndevelop a collaborative workflow in GitHub.",
     "crumbs": [
       "Labs",
-      "Lab 00"
+      "Lab 02"
     ]
   },
   {
-    "objectID": "labs/lab-00.html#getting-started",
-    "href": "labs/lab-00.html#getting-started",
-    "title": "Lab 00: Getting Started",
-    "section": "Getting started",
-    "text": "Getting started\n\nClick here to create your individual lab-00 repo: https://classroom.github.com/a/h6Hs0ztf\nClick to open your lab-00 repo.\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File → New Project → Version Control → Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick lab-00.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab.",
+    "objectID": "labs/lab-02.html#exercise-1",
+    "href": "labs/lab-02.html#exercise-1",
+    "title": "Lab 02: Inference for regression using mathematical models",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nVisualize the relationship between the aftertaste grade and total cup points. Write two observations from the plot.",
     "crumbs": [
       "Labs",
-      "Lab 00"
+      "Lab 02"
     ]
   },
   {
-    "objectID": "labs/lab-00.html#update-the-quarto-document",
-    "href": "labs/lab-00.html#update-the-quarto-document",
-    "title": "Lab 00: Getting Started",
-    "section": "Update the Quarto document",
-    "text": "Update the Quarto document\n\nTask 1: Change the author name at the top of the document to your name. Render the document. You will see your name at the top of the rendered PDF.\nTask 2: The plot shows the relationship between the daily temperature and number of bike rentals in Washington, D.C.’s Capital Bikeshare in 2012.\n\n\n\n\n\n\n\n\n\n\nWrite 1 - 2 observations from the plot. Render the document. You will see your response in the rendered PDF.",
+    "objectID": "labs/lab-02.html#exercise-2",
+    "href": "labs/lab-02.html#exercise-2",
+    "title": "Lab 02: Inference for regression using mathematical models",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nFit the linear model using the aftertaste grade to understand variability in the total cup points. Neatly display the model using three digits and include the 98% confidence interval for the model coefficients in the output.\n\nTeam Member 1: Knit, commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.\n\n\nAll other team members: Pull to get the updated documents from GitHub. Click on the .qmd file, and you should see the responses to exercises 1- 2.\nTeam Member 2: It’s your turn! Type the team’s response to exercises 3 - 5.",
     "crumbs": [
       "Labs",
-      "Lab 00"
+      "Lab 02"
     ]
   },
   {
-    "objectID": "labs/lab-00.html#commit-and-push-changes-to-github",
-    "href": "labs/lab-00.html#commit-and-push-changes-to-github",
-    "title": "Lab 00: Getting Started",
-    "section": "Commit and push changes to GitHub",
-    "text": "Commit and push changes to GitHub\n\nOnce you have made your final updates, go to the Git pane in your RStudio instance. This is a tab in the top right corner of the RStudio window.\nCheck the appropriate boxes on every file in the Git pane. All checked files will be sent to GitHub.\nNext, write a meaningful commit message (for instance, “updated author name”) in the Commit message box.\nClick Commit. Note that every commit needs to have a commit message associated with it.\nNow that you have made an update and committed this change, click Push to send the changes to GitHub.\nGo to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you’re good to go!",
+    "objectID": "labs/lab-02.html#exercise-3",
+    "href": "labs/lab-02.html#exercise-3",
+    "title": "Lab 02: Inference for regression using mathematical models",
+    "section": "Exercise 3",
+    "text": "Exercise 3\n\nInterpret the slope in the context of the data.\nAssume you are a coffee drinker. Would you drink a coffee represented by the intercept? Why or why not?",
     "crumbs": [
       "Labs",
-      "Lab 00"
+      "Lab 02"
+    ]
+  },
+  {
+    "objectID": "labs/lab-02.html#exercise-4",
+    "href": "labs/lab-02.html#exercise-4",
+    "title": "Lab 02: Inference for regression using mathematical models",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nYou can obtain the predicted values and other observation-level statistics from the model using the augment() function. Create a data frame called coffee_aug by putting the name of your model in the code below.\n\n#|eval: false\ncoffee_aug &lt;- augment(_____)\n\n\nWrite code to “manually” compute the residuals. The predicted values are in the column .fitted of coffee_aug. Save the residuals but do not print them out.\nWrite code to compute the regression standard error, \\(\\hat{\\sigma}_\\epsilon\\) using the residuals from part (a).\nState the definition of the regression standard error in the context of the data.\n\n\n\n\n\n\n\nTip\n\n\n\nYou can check your answer to part (b) by using the code below to obtain \\(\\hat{\\sigma}_\\epsilon\\)\n\nglance(model_name)$sigma\n\n\n\n\nExercise 5\nDo the data provide evidence of a statistically significant linear relationship between aftertaste grade and total cup points? Conduct a hypothesis test using mathematical models to answer this question.\n\nState the null and alternative hypotheses in words and in mathematical notation.\nWhat is the test statistic? State what the test statistic means in the context of this problem.\nWhat distribution was used to calculate the p-value? Be specific.\nState the conclusion in the context of the data using a threshold of \\(\\alpha = 0.02\\) to make your decision.\n\n\nTeam Member 2: Knit, commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.\n\n\nAll other team members: Pull to get the updated documents from GitHub. Click on the .qmd file, and you should see the responses to exercises 3 - 5.\nTeam Member 3: It’s your turn! Type the team’s response to exercises 6 - 8.",
+    "crumbs": [
+      "Labs",
+      "Lab 02"
+    ]
+  },
+  {
+    "objectID": "labs/lab-02.html#exercise-6",
+    "href": "labs/lab-02.html#exercise-6",
+    "title": "Lab 02: Inference for regression using mathematical models",
+    "section": "Exercise 6",
+    "text": "Exercise 6\n\nWhat is the critical value used to calculate the confidence interval displayed in Exercise 2? Show the code and output used to get your response.\nIs the confidence interval consistent with the conclusions from the hypothesis test? Briefly explain why or why not.",
+    "crumbs": [
+      "Labs",
+      "Lab 02"
+    ]
+  },
+  {
+    "objectID": "labs/lab-02.html#exercise-7",
+    "href": "labs/lab-02.html#exercise-7",
+    "title": "Lab 02: Inference for regression using mathematical models",
+    "section": "Exercise 7",
+    "text": "Exercise 7\n\nCalculate the 98% confidence interval for the mean total cup points grade for coffees with aftertaste grade of 8.25. Interpret this value in the context of the data.\nOne coffee produced by the Ethiopia Commodity Exchange has an aftertaste of 8.25. Calculate the the 98% prediction interval for the total cup points grade for this coffee. Interpret this value in the context of the data.\nHow do the intervals in parts (a) and (b) compare? If there are differences in the predictions and/or intervals, briefly explain why.",
+    "crumbs": [
+      "Labs",
+      "Lab 02"
+    ]
+  },
+  {
+    "objectID": "labs/lab-02.html#exercise-8",
+    "href": "labs/lab-02.html#exercise-8",
+    "title": "Lab 02: Inference for regression using mathematical models",
+    "section": "Exercise 8",
+    "text": "Exercise 8\nWe have conducted the inference in the previous exercises making some inherent assumptions about the data. Therefore, we will check some model conditions to assess whether the assumptions and hold and the reliability of the inferential results. To do so, we will use the data frame coffee_aug from Exercise 4 that includes the residuals, predicted values, and other observation-level statistics from the model.\n\nMake a scatterplot of the residuals (.resid) vs. fitted values (.fitted). Use geom_hline() to add a horizontal dotted line at \\(residuals = 0\\).\n\n\n\n\n\n\n\nNote\n\n\n\nThe linearity condition is satisfied if there is random scatter of the residuals (no distinguishable pattern or structure) in the plot of residuals vs. fitted values.\n\nThe constant variance condition is satisfied if the vertical spread of the residuals is relatively equal across the plot.\n\n\n\nIs the linearity condition satisfied? Briefly explain why or why not.\nIs the constant variance condition satisfied? Briefly explain why or why not.\n\n\nTeam Member 3: Knit, commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.\n\n\nAll other team members: Pull to get the updated documents from GitHub. Click on the .qmd file, and you should see the responses to exercises 6 - 8.\nTeam Member 4: It’s your turn! Type the team’s response to exercises 9 - 10.",
+    "crumbs": [
+      "Labs",
+      "Lab 02"
+    ]
+  },
+  {
+    "objectID": "labs/lab-02.html#exercise-9",
+    "href": "labs/lab-02.html#exercise-9",
+    "title": "Lab 02: Inference for regression using mathematical models",
+    "section": "Exercise 9",
+    "text": "Exercise 9\n\n\n\n\n\n\nNote\n\n\n\nThe normality condition is satisfied if the distribution of the residuals is approximately normal. This condition can be relaxed if the sample size is sufficiently large \\((n &gt; 30)\\).\n\n\n\nMake a histogram or density plot of the residuals (.resid).\nIs the normality condition satisfied? Briefly explain why or why not. If not, can it be relaxed for this data set? Briefly explain.",
+    "crumbs": [
+      "Labs",
+      "Lab 02"
+    ]
+  },
+  {
+    "objectID": "labs/lab-02.html#exercise-10",
+    "href": "labs/lab-02.html#exercise-10",
+    "title": "Lab 02: Inference for regression using mathematical models",
+    "section": "Exercise 10",
+    "text": "Exercise 10\n\n\n\n\n\n\nNote\n\n\n\nThe independence condition means that knowing one residual will not provide information about another. We often check this by assessing whether the observations are independent based on what we know about the subject matter and how the data were collected.\nThis condition is sometimes difficult to fully assess, so we just want to consider whether it is reasonably satisfied based on the information and data available.\n\n\nIs the independence condition satisfied for these data? Briefly explain why or why not.\n\nTeam Member 4: Render, commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards and the rest of the team can see the completed lab.\n\n\nAll other team members: Pull to get the updated documents from GitHub. Click on the .qmd file, and you should see the team’s completed lab!",
+    "crumbs": [
+      "Labs",
+      "Lab 02"
+    ]
+  },
+  {
+    "objectID": "labs/lab-02.html#footnotes",
+    "href": "labs/lab-02.html#footnotes",
+    "title": "Lab 02: Inference for regression using mathematical models",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nDon’t trust yourself to keep your hands off the keyboard? Put them in your pocket or cross your arms. No matter how silly it might feel, resist the urge to touch your keyboard until otherwise instructed!↩︎",
+    "crumbs": [
+      "Labs",
+      "Lab 02"
     ]
   },
   {
@@ -5638,455 +5641,550 @@
     ]
   },
   {
-    "objectID": "labs/lab-02.html",
-    "href": "labs/lab-02.html",
-    "title": "Lab 02: Inference for regression using mathematical models",
+    "objectID": "labs/lab-00.html",
+    "href": "labs/lab-00.html",
+    "title": "Lab 00: Getting Started",
     "section": "",
-    "text": "Important\n\n\n\nThis lab is due on Thursday, February 6 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your GitHub repo\nFinal .pdf file submitted on Gradescope",
+    "text": "Important\n\n\n\nPlease complete all today’s lab tasks before leaving lab today.",
     "crumbs": [
       "Labs",
-      "Lab 02"
+      "Lab 00"
     ]
   },
   {
-    "objectID": "labs/lab-02.html#learning-goals",
-    "href": "labs/lab-02.html#learning-goals",
-    "title": "Lab 02: Inference for regression using mathematical models",
-    "section": "Learning goals",
-    "text": "Learning goals\nBy the end of the lab you will…\n\nuse mathematical models to conduct inference for the slope.\nassess conditions for linear regression.\ndevelop a collaborative workflow in GitHub.",
+    "objectID": "labs/lab-00.html#rstudio",
+    "href": "labs/lab-00.html#rstudio",
+    "title": "Lab 00: Getting Started",
+    "section": "RStudio",
+    "text": "RStudio\n\n\n\n\n\n\nNote\n\n\n\nR is the name of the programming language itself and RStudio is a convenient interface.\n\n\n\nReserve RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers. You will log in using your NetID credentials.\nClick “Reserve STA 210” to reserve an RStudio container. Be sure you reserve the container labeled STA 210 to ensure you have the computing set up you need for the class.\n\nYou only need to reserve a container once per semester.\n\n\nOpen RStudio container\n\nGo to https://cmgr.oit.duke.edu/containers and log in with your Duke NetID and Password.\nClick STA210 to log into the Docker container. You should now see the RStudio environment.",
     "crumbs": [
       "Labs",
-      "Lab 02"
+      "Lab 00"
     ]
   },
   {
-    "objectID": "labs/lab-02.html#exercise-1",
-    "href": "labs/lab-02.html#exercise-1",
-    "title": "Lab 02: Inference for regression using mathematical models",
+    "objectID": "labs/lab-00.html#git-and-github",
+    "href": "labs/lab-00.html#git-and-github",
+    "title": "Lab 00: Getting Started",
+    "section": "Git and GitHub",
+    "text": "Git and GitHub\nIn addition to R and RStudio, we will use git and GitHub for version control and collaboration.\n\n\n\n\n\n\nNote\n\n\n\nGit is a version control system (like “Track Changes” features from Microsoft Word but more powerful) and GitHub is the home for your Git-based projects on the internet (like DropBox but much better).\n\n\n\nSign up for GitHub account\nYou will need a GitHub account to access the assignments, project, and in-class exercises for the course.\n\nIf you do not have a GitHub account, go to https://github.com and sign up for an account.\n\n\n\n\n\n\n\nTip\n\n\n\nClick here for advice on choosing a username.\n\n\n\nIf you already have a GitHub account, you can move on to the next step.",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
+  },
+  {
+    "objectID": "labs/lab-00.html#connect-rstudio-and-github",
+    "href": "labs/lab-00.html#connect-rstudio-and-github",
+    "title": "Lab 00: Getting Started",
+    "section": "Connect RStudio and GitHub",
+    "text": "Connect RStudio and GitHub\nNow that you have RStudio and a GitHub account, we will configure git so that RStudio and GitHub communicate with one another.\n\nSet up your SSH Key\nYou will authenticate GitHub using SSH. An outline of the authentication steps is below; you are encouraged to follow along as your TA demonstrates the steps.\n\n\n\n\n\n\nNote\n\n\n\nYou only need to do this authentication process one time on a single system.\n\n\n\nStep 0: Open your STA 210 RStudio container.\nStep 1: Type credentials::ssh_setup_github() into the console on the bottom left of the RStudio environment.\nStep 2: R will ask “No SSH key found. Generate one now?” Click 1 for yes.\nStep 3: You will generate a key. It will begin with “ssh-rsa….” R will then ask “Would you like to open a browser now?” Click 1 for yes.\nStep 4: You may be asked to provide your username and password to log into GitHub. This would be the ones associated with your account that you set up. After entering this information, paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., sta210)\n\n\n\nConfigure git\nThe last thing we need to do is configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.\nTo do so, you will use the use_git_config() function from the usethis package.\nType the following lines of code in the console in RStudio filling in your name and the email address associated with your GitHub account.\n\nusethis::use_git_config(\n  user.name = \"Your name\", \n  user.email = \"Email associated with your GitHub account\")\n\nFor example, mine would be\n\nusethis::use_git_config(\n  user.name = \"Maria Tackett\",\n  user.email = \"maria.tackett@duke.edu\")\n\nIt may look like nothing happened but you are now ready interact between GitHub and RStudio!",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
+  },
+  {
+    "objectID": "labs/lab-00.html#getting-started",
+    "href": "labs/lab-00.html#getting-started",
+    "title": "Lab 00: Getting Started",
+    "section": "Getting started",
+    "text": "Getting started\n\nClick here to create your individual lab-00 repo: https://classroom.github.com/a/h6Hs0ztf\nClick to open your lab-00 repo.\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to File → New Project → Version Control → Git.\nCopy and paste the URL of your assignment repo into the dialog box Repository URL. Again, please make sure to have SSH highlighted under Clone when you copy the address.\nClick Create Project, and the files from your GitHub repo will be displayed in the Files pane in RStudio.\nClick lab-00.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab.",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
+  },
+  {
+    "objectID": "labs/lab-00.html#update-the-quarto-document",
+    "href": "labs/lab-00.html#update-the-quarto-document",
+    "title": "Lab 00: Getting Started",
+    "section": "Update the Quarto document",
+    "text": "Update the Quarto document\n\nTask 1: Change the author name at the top of the document to your name. Render the document. You will see your name at the top of the rendered PDF.\nTask 2: The plot shows the relationship between the daily temperature and number of bike rentals in Washington, D.C.’s Capital Bikeshare in 2012.\n\n\n\n\n\n\n\n\n\n\nWrite 1 - 2 observations from the plot. Render the document. You will see your response in the rendered PDF.",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
+  },
+  {
+    "objectID": "labs/lab-00.html#commit-and-push-changes-to-github",
+    "href": "labs/lab-00.html#commit-and-push-changes-to-github",
+    "title": "Lab 00: Getting Started",
+    "section": "Commit and push changes to GitHub",
+    "text": "Commit and push changes to GitHub\n\nOnce you have made your final updates, go to the Git pane in your RStudio instance. This is a tab in the top right corner of the RStudio window.\nCheck the appropriate boxes on every file in the Git pane. All checked files will be sent to GitHub.\nNext, write a meaningful commit message (for instance, “updated author name”) in the Commit message box.\nClick Commit. Note that every commit needs to have a commit message associated with it.\nNow that you have made an update and committed this change, click Push to send the changes to GitHub.\nGo to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you’re good to go!",
+    "crumbs": [
+      "Labs",
+      "Lab 00"
+    ]
+  },
+  {
+    "objectID": "labs/lab-05.html",
+    "href": "labs/lab-05.html",
+    "title": "Lab 05: Logistic Regression",
+    "section": "",
+    "text": "Due date\n\n\n\nThis lab is due on Thursday, March at 27 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your team’s GitHub repo\nFinal .pdf file submitted on Gradescope",
+    "crumbs": [
+      "Labs",
+      "Lab 05"
+    ]
+  },
+  {
+    "objectID": "labs/lab-05.html#merge-conflicts-uh-oh",
+    "href": "labs/lab-05.html#merge-conflicts-uh-oh",
+    "title": "Lab 05: Logistic Regression",
+    "section": "Merge Conflicts (uh oh)",
+    "text": "Merge Conflicts (uh oh)\n\n\n\nCollaboration with no merge conflict\n\n\n\n\n\nCollaboration with a merge conflict\n\n\nYou may have seen something like the image above through the course of your collaboration. When two collaborators make changes to a file and push the file to their repository, git merges these two files.\nIf these two files have conflicting content on the same line, git will produce a merge conflict. Merge conflicts need to be resolved manually, as they require a human intervention:\n\n\n\nMerge conflict identifiers\n\n\nTo resolve the merge conflict, decide if you want to keep only your text, the text on GitHub, or incorporate changes from both texts. Delete the conflict markers &lt;&lt;&lt;&lt;&lt;&lt;&lt;, =======, &gt;&gt;&gt;&gt;&gt;&gt;&gt; and make the changes you want in the final merge.\nAssign numbers 1, 2, 3, and 4 to each of your team members (if only 3 team members, just number 1 through 3). Go through the following steps in detail, which simulate a merge conflict. Completing this exercise will be part of the lab grade.\n\nResolving a merge conflict\nStep 1: Everyone clone the merge-conflict assignment repo in RStudio and open file merge-conflict.qmd.\nMember 4 should look at the group’s repo on GitHub.com to ensure that the other members’ files are pushed to GitHub after every step.\nStep 2: Member 1 Change the team name to your team name. Render, commit, and push.\nStep 3: Member 2 Change the team name to something different (i.e., not your team name). Render, commit, and push.\nYou should get an error.\nPull and review the document with the merge conflict. Read the error to your teammates. You can also show them the error by sharing your screen. A merge conflict occurred because you edited the same part of the document as Member 1. Resolve the conflict with whichever name you want to keep, then render, commit and push again.\nStep 4: Member 3 Write some narrative in the space provided. You should get an error.\nThis time, no merge conflicts should occur, since you edited a different part of the document from Members 1 and 2. Read the error to your teammates. You can also show them the error by sharing your screen.\nClick to pull. Then render, commit, and push.\nYou have successfully completed the merge conflict activity! There is nothing to submit on Gradescope for this activity. Please ask your TA if you have any questions about merge conflicts and collaborating in GitHub.",
+    "crumbs": [
+      "Labs",
+      "Lab 05"
+    ]
+  },
+  {
+    "objectID": "labs/lab-05.html#exercise-1",
+    "href": "labs/lab-05.html#exercise-1",
+    "title": "Lab 05: Logistic Regression",
     "section": "Exercise 1",
-    "text": "Exercise 1\nVisualize the relationship between the aftertaste grade and total cup points. Write two observations from the plot.",
+    "text": "Exercise 1\nCreate a scatterplot of Area versus Eccentricity, such that the color and shape of the points are based on Class.",
     "crumbs": [
       "Labs",
-      "Lab 02"
+      "Lab 05"
     ]
   },
   {
-    "objectID": "labs/lab-02.html#exercise-2",
-    "href": "labs/lab-02.html#exercise-2",
-    "title": "Lab 02: Inference for regression using mathematical models",
+    "objectID": "labs/lab-05.html#exercise-2",
+    "href": "labs/lab-05.html#exercise-2",
+    "title": "Lab 05: Logistic Regression",
     "section": "Exercise 2",
-    "text": "Exercise 2\nFit the linear model using the aftertaste grade to understand variability in the total cup points. Neatly display the model using three digits and include the 98% confidence interval for the model coefficients in the output.\n\nTeam Member 1: Knit, commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.\n\n\nAll other team members: Pull to get the updated documents from GitHub. Click on the .qmd file, and you should see the responses to exercises 1- 2.\nTeam Member 2: It’s your turn! Type the team’s response to exercises 3 - 5.",
+    "text": "Exercise 2\nBased on the plot from the previous exercise, do you think the two rice types can be distinguished based on Area and Eccentricity. Briefly explain.",
     "crumbs": [
       "Labs",
-      "Lab 02"
+      "Lab 05"
     ]
   },
   {
-    "objectID": "labs/lab-02.html#exercise-3",
-    "href": "labs/lab-02.html#exercise-3",
-    "title": "Lab 02: Inference for regression using mathematical models",
+    "objectID": "labs/lab-05.html#exercise-3",
+    "href": "labs/lab-05.html#exercise-3",
+    "title": "Lab 05: Logistic Regression",
     "section": "Exercise 3",
-    "text": "Exercise 3\n\nInterpret the slope in the context of the data.\nAssume you are a coffee drinker. Would you drink a coffee represented by the intercept? Why or why not?",
+    "text": "Exercise 3\nSplit the data into training (75%) and testing sets (25%). Use a seed of 210 for reproducibility.",
     "crumbs": [
       "Labs",
-      "Lab 02"
+      "Lab 05"
     ]
   },
   {
-    "objectID": "labs/lab-02.html#exercise-4",
-    "href": "labs/lab-02.html#exercise-4",
-    "title": "Lab 02: Inference for regression using mathematical models",
+    "objectID": "labs/lab-05.html#exercise-4",
+    "href": "labs/lab-05.html#exercise-4",
+    "title": "Lab 05: Logistic Regression",
     "section": "Exercise 4",
-    "text": "Exercise 4\nYou can obtain the predicted values and other observation-level statistics from the model using the augment() function. Create a data frame called coffee_aug by putting the name of your model in the code below.\n\n#|eval: false\ncoffee_aug &lt;- augment(_____)\n\n\nWrite code to “manually” compute the residuals. The predicted values are in the column .fitted of coffee_aug. Save the residuals but do not print them out.\nWrite code to compute the regression standard error, \\(\\hat{\\sigma}_\\epsilon\\) using the residuals from part (a).\nState the definition of the regression standard error in the context of the data.\n\n\n\n\n\n\n\nTip\n\n\n\nYou can check your answer to part (b) by using the code below to obtain \\(\\hat{\\sigma}_\\epsilon\\)\n\nglance(model_name)$sigma\n\n\n\n\nExercise 5\nDo the data provide evidence of a statistically significant linear relationship between aftertaste grade and total cup points? Conduct a hypothesis test using mathematical models to answer this question.\n\nState the null and alternative hypotheses in words and in mathematical notation.\nWhat is the test statistic? State what the test statistic means in the context of this problem.\nWhat distribution was used to calculate the p-value? Be specific.\nState the conclusion in the context of the data using a threshold of \\(\\alpha = 0.02\\) to make your decision.\n\n\nTeam Member 2: Knit, commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.\n\n\nAll other team members: Pull to get the updated documents from GitHub. Click on the .qmd file, and you should see the responses to exercises 3 - 5.\nTeam Member 3: It’s your turn! Type the team’s response to exercises 6 - 8.",
+    "text": "Exercise 4\nIn a logistic regression model, the log-odds of the response being “1” (a “success”) is given by \\[\\log\\Big(\\frac{p_i}{1-p_i}\\Big) = \\beta_0 + \\beta_1X_1 + \\dots + \\beta_pX_p\\]\nIn this analysis, a “success” means the Class is “Osmancik”.\n\nWhat does each \\(p_i\\) represent in the context of this analysis?\nHow is the probability of the response variable being “1” calculated from the log-odds? Show or explain the mathematical steps to go from the log-odds to the probability.",
     "crumbs": [
       "Labs",
-      "Lab 02"
+      "Lab 05"
     ]
   },
   {
-    "objectID": "labs/lab-02.html#exercise-6",
-    "href": "labs/lab-02.html#exercise-6",
-    "title": "Lab 02: Inference for regression using mathematical models",
-    "section": "Exercise 6",
-    "text": "Exercise 6\n\nWhat is the critical value used to calculate the confidence interval displayed in Exercise 2? Show the code and output used to get your response.\nIs the confidence interval consistent with the conclusions from the hypothesis test? Briefly explain why or why not.",
-    "crumbs": [
-      "Labs",
-      "Lab 02"
-    ]
-  },
-  {
-    "objectID": "labs/lab-02.html#exercise-7",
-    "href": "labs/lab-02.html#exercise-7",
-    "title": "Lab 02: Inference for regression using mathematical models",
-    "section": "Exercise 7",
-    "text": "Exercise 7\n\nCalculate the 98% confidence interval for the mean total cup points grade for coffees with aftertaste grade of 8.25. Interpret this value in the context of the data.\nOne coffee produced by the Ethiopia Commodity Exchange has an aftertaste of 8.25. Calculate the the 98% prediction interval for the total cup points grade for this coffee. Interpret this value in the context of the data.\nHow do the intervals in parts (a) and (b) compare? If there are differences in the predictions and/or intervals, briefly explain why.",
-    "crumbs": [
-      "Labs",
-      "Lab 02"
-    ]
-  },
-  {
-    "objectID": "labs/lab-02.html#exercise-8",
-    "href": "labs/lab-02.html#exercise-8",
-    "title": "Lab 02: Inference for regression using mathematical models",
-    "section": "Exercise 8",
-    "text": "Exercise 8\nWe have conducted the inference in the previous exercises making some inherent assumptions about the data. Therefore, we will check some model conditions to assess whether the assumptions and hold and the reliability of the inferential results. To do so, we will use the data frame coffee_aug from Exercise 4 that includes the residuals, predicted values, and other observation-level statistics from the model.\n\nMake a scatterplot of the residuals (.resid) vs. fitted values (.fitted). Use geom_hline() to add a horizontal dotted line at \\(residuals = 0\\).\n\n\n\n\n\n\n\nNote\n\n\n\nThe linearity condition is satisfied if there is random scatter of the residuals (no distinguishable pattern or structure) in the plot of residuals vs. fitted values.\n\nThe constant variance condition is satisfied if the vertical spread of the residuals is relatively equal across the plot.\n\n\n\nIs the linearity condition satisfied? Briefly explain why or why not.\nIs the constant variance condition satisfied? Briefly explain why or why not.\n\n\nTeam Member 3: Knit, commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.\n\n\nAll other team members: Pull to get the updated documents from GitHub. Click on the .qmd file, and you should see the responses to exercises 6 - 8.\nTeam Member 4: It’s your turn! Type the team’s response to exercises 9 - 10.",
-    "crumbs": [
-      "Labs",
-      "Lab 02"
-    ]
-  },
-  {
-    "objectID": "labs/lab-02.html#exercise-9",
-    "href": "labs/lab-02.html#exercise-9",
-    "title": "Lab 02: Inference for regression using mathematical models",
-    "section": "Exercise 9",
-    "text": "Exercise 9\n\n\n\n\n\n\nNote\n\n\n\nThe normality condition is satisfied if the distribution of the residuals is approximately normal. This condition can be relaxed if the sample size is sufficiently large \\((n &gt; 30)\\).\n\n\n\nMake a histogram or density plot of the residuals (.resid).\nIs the normality condition satisfied? Briefly explain why or why not. If not, can it be relaxed for this data set? Briefly explain.",
-    "crumbs": [
-      "Labs",
-      "Lab 02"
-    ]
-  },
-  {
-    "objectID": "labs/lab-02.html#exercise-10",
-    "href": "labs/lab-02.html#exercise-10",
-    "title": "Lab 02: Inference for regression using mathematical models",
-    "section": "Exercise 10",
-    "text": "Exercise 10\n\n\n\n\n\n\nNote\n\n\n\nThe independence condition means that knowing one residual will not provide information about another. We often check this by assessing whether the observations are independent based on what we know about the subject matter and how the data were collected.\nThis condition is sometimes difficult to fully assess, so we just want to consider whether it is reasonably satisfied based on the information and data available.\n\n\nIs the independence condition satisfied for these data? Briefly explain why or why not.\n\nTeam Member 4: Render, commit and push your changes to GitHub with an appropriate commit message again. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards and the rest of the team can see the completed lab.\n\n\nAll other team members: Pull to get the updated documents from GitHub. Click on the .qmd file, and you should see the team’s completed lab!",
-    "crumbs": [
-      "Labs",
-      "Lab 02"
-    ]
-  },
-  {
-    "objectID": "labs/lab-02.html#footnotes",
-    "href": "labs/lab-02.html#footnotes",
-    "title": "Lab 02: Inference for regression using mathematical models",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nDon’t trust yourself to keep your hands off the keyboard? Put them in your pocket or cross your arms. No matter how silly it might feel, resist the urge to touch your keyboard until otherwise instructed!↩︎",
-    "crumbs": [
-      "Labs",
-      "Lab 02"
-    ]
-  },
-  {
-    "objectID": "labs/lab-01.html",
-    "href": "labs/lab-01.html",
-    "title": "Lab 01: Linear regression",
-    "section": "",
-    "text": "Important\n\n\n\nThis lab is due on Thursday, January 30 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your GitHub repo\nFinal .pdf file submitted on Gradescope",
-    "crumbs": [
-      "Labs",
-      "Lab 01"
-    ]
-  },
-  {
-    "objectID": "labs/lab-01.html#learning-goals",
-    "href": "labs/lab-01.html#learning-goals",
-    "title": "Lab 01: Linear regression",
-    "section": "Learning goals",
-    "text": "Learning goals\nBy the end of the lab you will…\n\nFit and interpret a linear regression models in R.\nUse simulation-based inference to draw conclusions about the slope.\nContinue developing a workflow for reproducible data analysis.",
-    "crumbs": [
-      "Labs",
-      "Lab 01"
-    ]
-  },
-  {
-    "objectID": "labs/lab-04.html",
-    "href": "labs/lab-04.html",
-    "title": "Lab 04: Expanding Multiple Linear Regression",
-    "section": "",
-    "text": "Due date\n\n\n\nThis lab is due on Thursday, March 6 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your team’s GitHub repo\nFinal .pdf file submitted on Gradescope",
-    "crumbs": [
-      "Labs",
-      "Lab 04"
-    ]
-  },
-  {
-    "objectID": "labs/lab-04.html#exercise-1",
-    "href": "labs/lab-04.html#exercise-1",
-    "title": "Lab 04: Expanding Multiple Linear Regression",
-    "section": "Exercise 1",
-    "text": "Exercise 1\nWe’ll begin by rescaling the response and some of the predictor variables.\n\nRescale the response variable total_rev_menwomen and the primary predictor variable total_exp_menwomen, so that they are in terms of $100K (100 thousand dollars). Name the new variables rev100k and exp100k, respectively.\nRescale the predictor variable ef_total_count , so it is in terms of thousands of students. Name the new variable students_1k.\nBriefly explain why we might we rescale these variables instead of using them in the original units.",
-    "crumbs": [
-      "Labs",
-      "Lab 04"
-    ]
-  },
-  {
-    "objectID": "labs/lab-04.html#exercise-2",
-    "href": "labs/lab-04.html#exercise-2",
-    "title": "Lab 04: Expanding Multiple Linear Regression",
-    "section": "Exercise 2",
-    "text": "Exercise 2\nBefore modeling, let’s do some exploratory data analysis.\n\nMake a visualization of the relationship between revenue and expenditures. Use the plot to describe the relationship between the two variables.\nHigher values of both expenditures and revenues are associated with greater variability. Transform both variables using a log transformation, to deal with the potential violation of an assumption of linear regression. Name the variables log_exp and log_rev, respectively.\nLarger values of expenditures and revenues seem to follow a slightly different trend and are associated with two sports - football and basketball. Create an indicator variable that takes value 1 if the sport is basketball or football and 0 otherwise. Name the variable bball_football.",
-    "crumbs": [
-      "Labs",
-      "Lab 04"
-    ]
-  },
-  {
-    "objectID": "labs/lab-04.html#exercise-3",
-    "href": "labs/lab-04.html#exercise-3",
-    "title": "Lab 04: Expanding Multiple Linear Regression",
-    "section": "Exercise 3",
-    "text": "Exercise 3\n\nVisualize the relationship between log_rev and log_exp.\nFrom the visualization, you may notice a lot of observations form a straight diagonal line, indicating a perfect one-to-one relationship between expenses and revenues. Provide a possible interpretation of this phenomenon.\nDo you think it is reasonable to include observations displaying this exact relationship? Briefly explain.\nCreate a new data frame filtering out the observations for which expenditures and revenues are exactly equal. Call the new data frame sports_nolinear.\n\nYou will use sports_nolinear for the remainder of the assignment.",
-    "crumbs": [
-      "Labs",
-      "Lab 04"
-    ]
-  },
-  {
-    "objectID": "labs/lab-04.html#exercise-4",
-    "href": "labs/lab-04.html#exercise-4",
-    "title": "Lab 04: Expanding Multiple Linear Regression",
-    "section": "Exercise 4",
-    "text": "Exercise 4\nUse sports_nolinear to fit a regression model with the log-transformed revenue as the response variable and the following predictors: log-transformed expenditures, student enrollment, institution type, sports type, participation in athletics for men, participation in athletics for women, the basketball/football indicator you created in a previous exercise, and the interaction between the log-transformed expenditures and the basketball/football indicator.\nNeatly display the model using 3 digits.",
-    "crumbs": [
-      "Labs",
-      "Lab 04"
-    ]
-  },
-  {
-    "objectID": "labs/lab-04.html#exercise-5",
-    "href": "labs/lab-04.html#exercise-5",
-    "title": "Lab 04: Expanding Multiple Linear Regression",
+    "objectID": "labs/lab-05.html#exercise-5",
+    "href": "labs/lab-05.html#exercise-5",
+    "title": "Lab 05: Logistic Regression",
     "section": "Exercise 5",
-    "text": "Exercise 5\nConsider the regression model from the previous exercise.\n\nWhat type of institution and sport correspond to the intercept?\nYou’ll notice that one coefficient has a missing value. Why is the coefficient missing? What is the technical name of this phenomenon?",
+    "text": "Exercise 5\n\nUse the training data to fit the logistic regression model for the response variable Class using the predictors Area and Eccentricity. Neatly display the output using 3 decimal places.\nDoes the intercept have any meaningful interpretation? If so, interpret the intercept. If not, explain why.",
     "crumbs": [
       "Labs",
-      "Lab 04"
+      "Lab 05"
     ]
   },
   {
-    "objectID": "labs/lab-04.html#exercise-6",
-    "href": "labs/lab-04.html#exercise-6",
-    "title": "Lab 04: Expanding Multiple Linear Regression",
+    "objectID": "labs/lab-05.html#exercise-6",
+    "href": "labs/lab-05.html#exercise-6",
+    "title": "Lab 05: Logistic Regression",
     "section": "Exercise 6",
-    "text": "Exercise 6\nFor the sake of interpretability, it is useful to have a regression model in which no coefficients are missing, and the coefficients for each sport indicator represent the baseline level for such sport. To address this issue, use the code below to fit another regression model that uses the same predictors as before, making sure to drop the unnecessary variables and the intercept (by the the -1 in the formula) to achieve this.\n\nsports_fit_2 &lt;- lm(log_rev ~ -1 + sports + students_1k + sector_name +\n             sum_partic_men + sum_partic_women + log_exp + \n             log_exp*bball_football - bball_football,\n          data = sports_nolinear)\n\nWhich type of institution was chosen to be the baseline in this model?",
+    "text": "Exercise 6\nInterpret the coefficients on Area and Eccentricity in the context of the data in terms of the odds.",
     "crumbs": [
       "Labs",
-      "Lab 04"
+      "Lab 05"
     ]
   },
   {
-    "objectID": "labs/lab-04.html#exercise-7",
-    "href": "labs/lab-04.html#exercise-7",
-    "title": "Lab 04: Expanding Multiple Linear Regression",
+    "objectID": "labs/lab-05.html#exercise-7",
+    "href": "labs/lab-05.html#exercise-7",
+    "title": "Lab 05: Logistic Regression",
     "section": "Exercise 7",
-    "text": "Exercise 7\nNow that we have an interpretable model, let us assess the model fit and perform diagnostics to verify whether our linear regression assumptions are reasonable for this data.\nAs a first step, provide some overall measures of model fit and comment on whether it seems to have an acceptable predictive power on the response of interest.",
+    "text": "Exercise 7\n\nHow would you expect the log-odds of the rice grain being of the Osmancik variety to change if the eccentricity changes from 0.85 to 0.9?\nHow would you expect the odds of the rice grain being of the Osmancik variety to change if the eccentricity changes from 0.85 to 0.9?",
     "crumbs": [
       "Labs",
-      "Lab 04"
+      "Lab 05"
     ]
   },
   {
-    "objectID": "labs/lab-04.html#exercise-8",
-    "href": "labs/lab-04.html#exercise-8",
-    "title": "Lab 04: Expanding Multiple Linear Regression",
+    "objectID": "labs/lab-05.html#exercise-8",
+    "href": "labs/lab-05.html#exercise-8",
+    "title": "Lab 05: Logistic Regression",
     "section": "Exercise 8",
-    "text": "Exercise 8\nNext, let’s take a look at the residuals for the model.\nBecause there are multiple sports at every institution, we may be concerned the residuals within an institution are correlated with each other (thus violating the independence assumption).\nDue to the large number of institutions, we will look at randomly selected subset of 20 institutions to evaluate this.\n\nTake a random sample of 20 institutions. Use set.seed(210) to make your results reproducible.\nPlot the residuals versus fitted values, faceted by institution.\nBased on the faceted plot, do the errors appear to be correlated within institutions? Briefly explain your response.\n\n\n\n\n\n\n\nTip\n\n\n\nClick here for more detail, code, and examples of faceting in ggplot2.\nYou may need to change the size of the figure so that the faceted lot is fully visible. You can do so using the options #| fig-width and #| fig-height in the code chunk.",
+    "text": "Exercise 8\nNow let’s evaluate our model on the test set. Use the predict() function to obtain the predicted probabilities of the rice being Osmancik for the observations in the testing data.",
     "crumbs": [
       "Labs",
-      "Lab 04"
+      "Lab 05"
     ]
   },
   {
-    "objectID": "labs/lab-04.html#exercise-9",
-    "href": "labs/lab-04.html#exercise-9",
-    "title": "Lab 04: Expanding Multiple Linear Regression",
+    "objectID": "labs/lab-05.html#exercise-9",
+    "href": "labs/lab-05.html#exercise-9",
+    "title": "Lab 05: Logistic Regression",
     "section": "Exercise 9",
-    "text": "Exercise 9\nAfter an examination of all the residuals, we notice a few things:\n\nThere seems to be two groups of observations.\nInstitutions with larger fitted values correspond to lower variance in the residuals compared to the others.\nThere are institutions with lower fitted values that have large negative residuals, potentially indicating outliers and/or influential points.\n\nWe are concerned that these observations may indicate some model misspecification (i.e., the model does not accurately reflect the trends in the data). Therefore, we take a look at the residuals a different way. We plot the standardized residual versus the fitted values, color the points based Cook’s distance, and use shape to indicate whether the sport is basketball or football.\n\nDescribe what you observe from the plot and how your observations compare to the list above.\nDo you think this model is an appropriate fit for the data or is the model misspecified? Briefly explain.",
+    "text": "Exercise 9\nWith these estimated probabilities, we can now try to classify the rice in the test set. Choose a threshold for assigning a class to each observation based on the estimated probability. Briefly explain your reasoning for selecting the threshold, including any analysis used to make your decision (if applicable).",
     "crumbs": [
       "Labs",
-      "Lab 04"
+      "Lab 05"
     ]
   },
   {
-    "objectID": "labs/lab-04.html#exercise-10",
-    "href": "labs/lab-04.html#exercise-10",
-    "title": "Lab 04: Expanding Multiple Linear Regression",
+    "objectID": "labs/lab-05.html#exercise-10",
+    "href": "labs/lab-05.html#exercise-10",
+    "title": "Lab 05: Logistic Regression",
     "section": "Exercise 10",
-    "text": "Exercise 10\n\nBased on this model (regardless of your answer to the previous exercise), which variables seem to be useful in explaining the variability in the revenue from collegiate sports?\nInterpret the coefficient for one useful quantitative predictor in terms of the log-transformed revenue.\nInterpret the coefficient for one useful categorical predictor in terms of the log-transformed revenue.",
+    "text": "Exercise 10\nCompare the estimated class assignments based on the threshold from the previous exericse with the actual classes. Comment on the result and the model’s performance.",
     "crumbs": [
       "Labs",
-      "Lab 04"
+      "Lab 05"
     ]
   },
   {
-    "objectID": "labs/lab-06.html",
-    "href": "labs/lab-06.html",
-    "title": "Lab 06",
+    "objectID": "overview.html",
+    "href": "overview.html",
+    "title": "STA 210 - Regression Analysis",
     "section": "",
-    "text": "To be posted.",
+    "text": "In STA 210, students will learn how linear and logistic regression models are used to explore multivariable relationships and apply these methods to answer relevant and engaging questions using a data-driven approach. Students will develop computing skills to implement a reproducible data analysis workflow and gain experience communicating statistical results. Throughout the semester, students will work on a team project where they will develop a research question, answer it using methods learned in the course, and share results through a written report and presentation.\nTopics include applications of linear and logistic regression, interpretation, diagnostics, model selection, and model assessment. Students will gain experience using the computing tools R and GitHub to analyze real-world data from a variety of fields. This class emphasizes data analysis over mathematical theory.\n\n\n100-level Statistical Science course or Statistical Science 230, 231, or 240L",
     "crumbs": [
-      "Labs",
-      "Lab 06"
+      "Overview"
     ]
   },
   {
-    "objectID": "hw/hw-04.html",
-    "href": "hw/hw-04.html",
-    "title": "HW 04",
+    "objectID": "overview.html#pre-requisites",
+    "href": "overview.html#pre-requisites",
+    "title": "STA 210 - Regression Analysis",
     "section": "",
-    "text": "To be posted.",
+    "text": "100-level Statistical Science course or Statistical Science 230, 231, or 240L",
     "crumbs": [
-      "Homework",
-      "HW 04"
+      "Overview"
     ]
   },
   {
-    "objectID": "hw/hw-03.html",
-    "href": "hw/hw-03.html",
-    "title": "HW 03: Multiple linear regression",
+    "objectID": "overview.html#teaching-assistants",
+    "href": "overview.html#teaching-assistants",
+    "title": "STA 210 - Regression Analysis",
+    "section": "Teaching assistants",
+    "text": "Teaching assistants\n\n\n\n\n\n\n\nName\nRole\n\n\nSylvia Vincent\nHead TA\nLab 01L leader\nLab 02L leader\n\n\nIshrit Gupta\nLab 02L leader\n\n\nKareena Legare\nLab 01L helper\n\n\n\nSee Canvas for office hours times and locations.",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "hw/hw-01.html",
+    "href": "hw/hw-01.html",
+    "title": "HW 01: Simple linear regression",
     "section": "",
-    "text": "Due date\n\n\n\nThis assignment is due on Tuesday, March 18 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your GitHub repo\nFinal .pdf file submitted on Gradescope",
+    "text": "Important\n\n\n\nThis assignment is due on Tuesday, January 28 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your GitHub repo\nFinal .pdf file submitted on Gradescope",
     "crumbs": [
       "Homework",
-      "HW 03"
+      "HW 01"
     ]
   },
   {
-    "objectID": "hw/hw-03.html#data-age-of-abalones",
-    "href": "hw/hw-03.html#data-age-of-abalones",
-    "title": "HW 03: Multiple linear regression",
-    "section": "Data: Age of abalones",
-    "text": "Data: Age of abalones\nThe data for this analysis contains measurements for abalones, a type of marine snail. These measurements were collected and analyzed by researchers in Warwick et al. (1994). Click here for the publication.\nThe 4177 abalones in this study can be reasonably treated as a random sample.\nThe data are available in the file abalone.csv in the data folder. This analysis will focus on the following variables:\n\nSex: Male (M), Female (F), Infant (I)\nLength: Longest shell measurement (in millimeters)\nDiameter: Measured perpendicular to length (in millimeters)\nHeight : Measured with meat in shell (in millimeters)\nWhole_Weight: Total weight of abalone (in grams)\nAge: Age (in year)\n\nThe goal of the analysis is to use a variety of measurements from abalones to explain variability in the age.",
+    "objectID": "hw/hw-01.html#instructions",
+    "href": "hw/hw-01.html#instructions",
+    "title": "HW 01: Simple linear regression",
+    "section": "Instructions",
+    "text": "Instructions\nType your responses to each question in your Quarto document. Write all narrative using complete sentences and include informative axis labels and titles on visualizations. Use a reproducible workflow by periodically rendering the Quarto document, writing an informative commit message, and pushing the updated .qmd and .pdf files to GitHub.",
     "crumbs": [
       "Homework",
-      "HW 03"
+      "HW 01"
     ]
   },
   {
-    "objectID": "hw/hw-03.html#exercise-1",
-    "href": "hw/hw-03.html#exercise-1",
-    "title": "HW 03: Multiple linear regression",
-    "section": "Exercise 1",
-    "text": "Exercise 1\n\nFit a model using Sex, Length, Diameter, Height and Whole_Weight to understand variability in Age. Neatly display the model using 3 digits.\nCheck the four model conditions - Linearity, Constant Variance, Normality, and Independence. For each condition: (1) state whether or not it is satisfied; (2) explain your response showing any visualizations and/or statistics used to make your assessment.",
+    "objectID": "hw/hw-01.html#part-1-exploratory-data-analysis",
+    "href": "hw/hw-01.html#part-1-exploratory-data-analysis",
+    "title": "HW 01: Simple linear regression",
+    "section": "Part 1: Exploratory data analysis",
+    "text": "Part 1: Exploratory data analysis\n\nExercise 1\nCreate a histogram of the distribution of the predictor variable bachelors and calculate appropriate summary statistics. Use the visualization and summary statistics to describe the distribution. Include an informative title and axis labels on the plot.\n\n\nExercise 2\nLet’s view the data in another way. Use the code below to make a map of the United States with the color of the counties filled in based on the percent of residents 25 years old and older who have a Bachelor’s degree. Fill in title and axis labels.\nThen use the plot answer the following:\n\nWhat are 2 observations you have from the map?\nWhat is a feature that is apparent in the map that wasn’t as easily apparent from the histogram in the previous exercise? What is a feature that is apparent in the histogram that is not as easily apparent from the map?\n\n\n\n#| fig.show: hide \n#| message: false \n\ncounty_map_data &lt;- left_join(county_data_sample, map_data_sample) \n\nggplot(data = map_data_all) + \n  geom_polygon(aes(x = long, y = lat, group = group), \n    fill = \"lightgray\", color = \"white\" \n    ) + \n  geom_polygon(data = county_map_data, aes(x = long, y = lat, group = group, \n    fill = bachelors) \n    ) + \n  labs( \n    x = \"Longitude\", \n    y = \"Latitude\", \n    fill = \"_____\", \n    title = \"_____\" \n  ) + \n  scale_fill_viridis_c(labels = label_percent(scale = 1)) + \n  coord_quickmap() \n\n\n\nExercise 3\nCreate a visualization of the relationship between bachelors and median_household_income and calculate the correlation. Use the visualization and correlation to describe the relationship between the two variables.\n\nThis is a good place to render, commit, and push changes to your hw-01 repo on GitHub. Write an informative commit message (e.g. “Completed exercises 1 - 3”), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.",
     "crumbs": [
       "Homework",
-      "HW 03"
+      "HW 01"
     ]
   },
   {
-    "objectID": "hw/hw-03.html#exercise-2",
-    "href": "hw/hw-03.html#exercise-2",
-    "title": "HW 03: Multiple linear regression",
-    "section": "Exercise 2",
-    "text": "Exercise 2\nNow let’s take a look at the model diagnostics.\n\nAre there any influential observations in the data set? Briefly explain, showing any work or output used to make the determination.\nConsider the observation with the highest value for Cook’s distance. What is the value of leverage for this observation? Does this observation have large leverage? Briefly explain, showing any work or output used to make the determination.\nAgain consider the observation with the highest value for Cook’s distance. What is the standardized residual for this observation? Is this observation an outlier? Briefly explain showing any work or output used to make the determination.",
+    "objectID": "hw/hw-01.html#part-2-modeling",
+    "href": "hw/hw-01.html#part-2-modeling",
+    "title": "HW 01: Simple linear regression",
+    "section": "Part 2: Modeling",
+    "text": "Part 2: Modeling\n\nExercise 4\nWe will use a linear regression model to describe the relationship between bachelors and median_household_income.\nWrite the form of the statistical (theoretical) model we will use for this task using mathematical notation. Use variable names (bachelors and median_household_income) in the equation for your model1.\n\n\n\n\n\n\nTip\n\n\n\nWrite median household income in LaTex as\n\\text{median\\_household\\_income}\nto make it properly render in the .pdf document.\n\n\n\n\nExercise 5\n\nFit the regression line corresponding to the statistical model in the previous exercise. Neatly display the model output using 3 digits.\nWrite the equation of the fitted model using mathematical notation. Use variable names (bachelors and median_household_income) in the equation.\n\n\n\nExercise 6\n\nInterpret the slope in the context of the data.\nIs it useful to interpret the intercept for this data? If so, write the interpretation in the context of the data. Otherwise, briefly explain why not.\n\n\nThis is a good place to render, commit, and push changes to your hw-01 repo on GitHub. Write an informative commit message (e.g. “Completed exercises 4 -6”), and push every file to GitHub by clicking the check box next to each file in the Git pane. After you push the changes, the Git pane in RStudio should be empty.",
     "crumbs": [
       "Homework",
-      "HW 03"
+      "HW 01"
     ]
   },
   {
-    "objectID": "hw/hw-03.html#exercise-3",
-    "href": "hw/hw-03.html#exercise-3",
-    "title": "HW 03: Multiple linear regression",
-    "section": "Exercise 3",
-    "text": "Exercise 3\nNow let’s look at the relationship between predictors.\n\nCompute the Variance Inflation Factors (VIF) for the model from Exercise 1. Display the results.\nUse the equation for VIF to “manually” compute the VIF for Whole_Weight.\nWhat predictors appear to be collinear?\nSelect a strategy to fit a model that does not have an issue with multicollinearity.\n\nBriefly describe your strategy.\nSelect a final model.\nBriefly explain your selection, showing the work and statistics used to choose a final model.",
+    "objectID": "hw/hw-01.html#part-3-inference-for-the-u.s.",
+    "href": "hw/hw-01.html#part-3-inference-for-the-u.s.",
+    "title": "HW 01: Simple linear regression",
+    "section": "Part 3: Inference for the U.S.",
+    "text": "Part 3: Inference for the U.S.\nWe will use the data from these 600 randomly selected counties to draw conclusions about the relationship between the percent of adults age 25 and older with a bachelor’s degree and median household income for the over 3,000 counties in the United States.\n\nExercise 7\n\nWhat is the population in this analysis? What is the sample?\nIs it reasonable to treat the sample in this analysis as representative of the population? Briefly explain why or why not.\n\n\n\nExercise 8\nNext, compute a 98% bootstrap confidence interval for the slope. Use set.seed(2025) and 1000 iterations. Show all relevant code and output used to compute the interval.\nWrite the 98% confidence interval using 3 digits.\n\n\nExercise 9\n\nInterpret the interval from the previous exercise in the context of the data.\nSuppose you wanted to evaluate the claim that there is no linear relationship between the percent of adults age 25 and older with a bachelor’s degree and median household income for counties in the United States. In other words, you want to evaluate the claim that \\(\\beta_1 = 0\\) in the model written in Exercise 4.\nDoes the confidence interval from the previous exercise support this claim? Briefly explain why or why not.\n\n\nNow is a good time to render your document again if you haven’t done so recently, commit (with an informative commit message), and push all updates.",
     "crumbs": [
       "Homework",
-      "HW 03"
+      "HW 01"
     ]
   },
   {
-    "objectID": "hw/hw-03.html#data-2000-u.s.-presidential-election1",
-    "href": "hw/hw-03.html#data-2000-u.s.-presidential-election1",
-    "title": "HW 03: Multiple linear regression",
-    "section": "Data: 2000 U.S. Presidential Election1",
-    "text": "Data: 2000 U.S. Presidential Election1\n\nWe will examine data about the 2000 U.S. presidential election between George W. Bush and Al Gore. It was one of the closest elections in history that ultimately came down to the state of Florida. One county in particular, Palm Beach County, was at the center of the controversy due to the design of their ballots - the infamous butterfly ballots. It is believed that many people who intended to vote for Al Gore accidentally voted for Pat Buchanan due to how the spots to mark the candidate were arranged next to the names.\nThe variables in the data are\n\nCounty: County name\nBush2000: Number of votes for George W. Bush\nBuchanan2000: Number of votes for Pat Buchanan\n\nThe data are available in the file florida-votes-2000.csv in the data folder of your repo.",
-    "crumbs": [
-      "Homework",
-      "HW 03"
-    ]
-  },
-  {
-    "objectID": "hw/hw-03.html#exercise-4",
-    "href": "hw/hw-03.html#exercise-4",
-    "title": "HW 03: Multiple linear regression",
-    "section": "Exercise 4",
-    "text": "Exercise 4\nThe goal is to fit a model that uses the number of votes for Bush to predict the number of votes for Buchanan. Using this model, we’ll investigate whether the data support the claim that votes for Gore may have accidentally gone to Buchanan.\n\nVisualize the relationship between the number of votes for Buchanan versus the number of votes for Bush. Describe what you observe in the visualization, including a description of the relationship between the votes for Buchanan and votes for Bush.\nWhat is the county with the extreme outlier number of votes for Buchanan? Create a new data frame that doesn’t include the outlying county. You will use this updated data frame for the remainder of this exercise and Exercise 5.\nFit a model to predict the number of votes for Buchanan based on the number of votes for Bush in the county.\n\nMake a plot of the standardized residuals versus the fitted values.\nIs the constant variance condition satisfied? Briefly explain.",
-    "crumbs": [
-      "Homework",
-      "HW 03"
-    ]
-  },
-  {
-    "objectID": "hw/hw-03.html#exercise-5",
-    "href": "hw/hw-03.html#exercise-5",
-    "title": "HW 03: Multiple linear regression",
-    "section": "Exercise 5",
-    "text": "Exercise 5\nNow let’s consider potential models with transformations on the response and/or predictor variables. The four candidate models are the following:\n\n\n\nModel\nResponse variable\nPredictor variable\n\n\n\n\n1 (from previous exercise)\nBuchanan2000\nBush2000\n\n\n2\nlog(Buchanan2000)\nBush2000\n\n\n3\nBuchanan2000\nlog(Bush2000)\n\n\n4\nlog(Buchanan2000)\nlog(Bush2000)\n\n\n\nWhich model best fits the data? Briefly explain, showing any work and output used to determine the response. (Note: Use the data set without the outlying county to find the candidate models.)",
-    "crumbs": [
-      "Homework",
-      "HW 03"
-    ]
-  },
-  {
-    "objectID": "hw/hw-03.html#exercise-6",
-    "href": "hw/hw-03.html#exercise-6",
-    "title": "HW 03: Multiple linear regression",
-    "section": "Exercise 6",
-    "text": "Exercise 6\n\nUse the model you chose in the previous exercise to compute the predicted number of votes for Buchanan in the outlying county identified in Exercise 4. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).\nCompute the 95% prediction interval for this county. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).\nIt is assumed that some of the votes for Buchanan in that county were actually intended to be for Gore. Based on your results in the previous question, does your model support this claim?\n\nIf no, briefly explain.\nIf yes, about how many votes were possibly intended for Gore? Show any calculations and output used to determine your answer. If you selected a model with a transformation, be sure to report your answer in terms of votes, not log(votes).",
-    "crumbs": [
-      "Homework",
-      "HW 03"
-    ]
-  },
-  {
-    "objectID": "hw/hw-03.html#footnotes",
-    "href": "hw/hw-03.html#footnotes",
-    "title": "HW 03: Multiple linear regression",
+    "objectID": "hw/hw-01.html#footnotes",
+    "href": "hw/hw-01.html#footnotes",
+    "title": "HW 01: Simple linear regression",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nThis analysis was motivated by exercises in Ledolter (2003).↩︎",
+    "text": "Footnotes\n\n\nClick here for a guide on writing mathematical symbols using LaTex.↩︎",
     "crumbs": [
       "Homework",
-      "HW 03"
+      "HW 01"
     ]
   },
   {
-    "objectID": "hw/stats-experience.html",
-    "href": "hw/stats-experience.html",
-    "title": "Statistics Experience",
+    "objectID": "hw/hw-02.html",
+    "href": "hw/hw-02.html",
+    "title": "HW 02: Multiple linear regression",
     "section": "",
-    "text": "Important\n\n\n\nThis assignment is due on Tuesday, April 15 at 11:59pm.\nThe world of statistics and data science is vast and continually growing! The goal of the statistics experience assignments is to help you engage with the statistics and data science communities outside of the classroom.\nYou may submit the statistics experience assignment anytime between now and the deadline.\nEach experience has two parts:\n1️⃣ Have a statistics experience.\n2️⃣ Make a slide reflecting on your experience.\nYou must complete both parts to receive credit. The statistics experience will count as a homework grade.",
+    "text": "Important\n\n\n\nThis assignment is due on Tuesday, February 11 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your GitHub repo\nFinal .pdf file submitted on Gradescope",
     "crumbs": [
       "Homework",
-      "Statistics experience"
+      "HW 02"
     ]
   },
   {
-    "objectID": "hw/stats-experience.html#part-1-experience-statistics-outside-of-the-classroom",
-    "href": "hw/stats-experience.html#part-1-experience-statistics-outside-of-the-classroom",
-    "title": "Statistics Experience",
-    "section": "Part 1: Experience statistics outside of the classroom",
-    "text": "Part 1: Experience statistics outside of the classroom\nComplete an activity in one of the categories below. Under each category are suggested activities. You do not have to do one these suggested activities. You are welcome to find other activities as long as they are related to statistics/data science and they fit in one of the six categories. If there is an activity you’d like to do but you’re not sure if it qualifies for the statistics experience, just ask!\n\nCategory 1: Attend a talk or conference\nAttend an talk, panel, or conference related to statistics or data science. If you are attending a single talk or panel, it must be at least 30 minutes to count towards the statistics experience. The event can be in-person or online.\n\n\nCategory 2: Talk with a statistician/ data scientist\nTalk with someone who uses statistics in their daily work. This could include a professor, professional in industry, graduate student, etc.\n\n\nCategory 3: Listen to a podcast / watch video\nListen to a podcast or watch a video about statistics and data science. The podcasts / videos must be (1) one podcast or video that is at least 30 minutes or (2) multiple podcasts and/or videos that are at least 30 minutes combined.\nA few suggestions are below:\n\nStats + Stories Podcast\nCausal Inference Podcast\nposit::conf talks (formally called rstudio::conf)\n\n2024 conference\n2023 conference\n2022 conference\n2021 conference\n\n\nThis list is not exhaustive. You may listen to other podcasts or watch other statistics/data science videos not included on this list. Ask Professor Tackett if you are unsure whether a particular podcast or video will count towards the statistics experience.\n\n\nCategory 4: Participate in a data science competition or challenge\nParticipate in a statistics or data science competition. You can participate individually or with a team.\nNote: DataFest will be April 4 - 6 in Penn Pavilion. Click here to learn more.\n\n\nCategory 5: Read a book on statistics/data science\nThere are a lot of books about statistics, data science, and related topics. A few suggestions are below. If you decide to read a book that isn’t on this list, ask Professor Tackett to make sure it counts toward the experience. Many of these books are available through Duke library.\n\nWeapons of Math Destruction by Cathy O’Neil\nHow Charts Lie: Getting Smarter about Visual Information by Alberto Cairo\nThe Theory that Would Not Die by Sharon Bertsch McGrayne\nThe Art of Statistics: How to learn from data by David Spiegelhalter\nThe Lady Tasting Tea by David Salsburg\nList of books about data science ethics\n\nThis list is not exhaustive.\n\n\nCategory 6: TidyTuesday\nYou may also participate in a TidyTuesday challenge. New data sets are announced on Monday afternoons.You can find more information about TidyTuesday and see the data in the TidyTuesday GitHub repo.\nA few guidelines:\n✅ Create a GitHub repo for your TidyTuesday submission. Your repo should include\n\nThe R Markdown file with all the code needed to reproduce your visualization.\nA README that includes an image of your final visualization and a short summary (~ 1 paragraph) about your visualization.\n\n✅ The visualization should include features or customization that are beyond what we’ve done in class .\n✅ Include the link to your GitHub repo in the slide summarizing your experience.\n\n\nCategory 7: CURV - connecting, uplifting, and recognizing voices\nCURV is a project by Dr. Jo Hardin at Pomona College to highlight statisticians and data scientists from groups who have been historically marginalized in the discipline.\n\n\n\n\n\n\nFor this statistics experience, you can contribute to the CURV data base. If there is a scholar you would like to suggest for the data base, submit your suggestion as an issue or pull request on the CURV GitHub repo and create a sample CURV page.\nA few guidelines:\n✅ Create a draft of the CURV page for your suggested scholar. For reference, click here for the CURV page for W.E.B. Du Bois. The page must be created in a Quarto document.\n\n\n\n\n\n\nTip\n\n\n\nYou can find the Quarto documents for current scholars in the data base in the CURV GitHub repo. You can use one of these as a template to format your page.\n\n\n✅ Make a pull request to the CURV GitHub repo to add the .qmd file for your suggested scholar, OR open an issue with a link to the .qmd file for your suggested scholar. You can ask a member of the teaching team if you have questions about how to do this.\n✅ Include the URL to your pull request or issue in your one-slide reflection.",
+    "objectID": "hw/hw-02.html#exercise-1",
+    "href": "hw/hw-02.html#exercise-1",
+    "title": "HW 02: Multiple linear regression",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nThere are some observations that have missing data for any of the variables of interest .\n\nRemove observations that have missing data for any of the variables of interest - Size, Theme, Pages, and Amazon_Price. Your updated data set will have 374 observations.\nWhat is a disadvantage of dropping observations that have missing values, instead of using a method to impute, i.e., fill in, the missing data? How might dropping these observations impact the generalizability of conclusions?",
     "crumbs": [
       "Homework",
-      "Statistics experience"
+      "HW 02"
     ]
   },
   {
-    "objectID": "hw/stats-experience.html#part-2-reflect-on-your-experience",
-    "href": "hw/stats-experience.html#part-2-reflect-on-your-experience",
-    "title": "Statistics Experience",
-    "section": "Part 2: Reflect on your experience",
-    "text": "Part 2: Reflect on your experience\nMake one slide summarizing and reflecting on your experience. Submit the slide as a PDF on Gradescope.\nInclude the following on your slide:\n\nDescription of the experience\n\nName and brief description of the event/podcast/competition/etc.\n\nSomething you learned\n\nWrite 2 - 4 sentences about something you learned or found particularly interesting or unexpected.\n\nConnection to STA 221\n\nWrite 2 - 4 sentences about how the experience connects to what we’ve done in the course.\n\nCitation or link to web page for event/competition/etc.\n\nNo citation needed if you do an interview.\n\n\nMake sure the slide includes the information mentioned above and is easily readable (i.e. use a reasonable font size!). Creativity on the experience and slide design is encouraged!",
+    "objectID": "hw/hw-02.html#exercise-2",
+    "href": "hw/hw-02.html#exercise-2",
+    "title": "HW 02: Multiple linear regression",
+    "section": "Exercise 2",
+    "text": "Exercise 2\n\nVisualize the distributions of the predictor variables Size and Pages. Neatly arrange the plots using the patchwork package.\nUse the plots in part (a) to write an observation about each distribution.",
     "crumbs": [
       "Homework",
-      "Statistics experience"
+      "HW 02"
     ]
   },
   {
-    "objectID": "hw/stats-experience.html#submission",
-    "href": "hw/stats-experience.html#submission",
-    "title": "Statistics Experience",
-    "section": "Submission",
-    "text": "Submission\nThis assignment is due on Tuesday, April 15. Standard homework late policy applies. More submission instructions to come.",
+    "objectID": "hw/hw-02.html#exercise-3",
+    "href": "hw/hw-02.html#exercise-3",
+    "title": "HW 02: Multiple linear regression",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nThe distribution of Theme is shown below. The bars are ordered by the frequency they occur in the data set.\n\nlegos |&gt;\n  count(Theme) |&gt;\nggplot(aes(x = fct_reorder(Theme, n), y = n)) +\n  geom_col() + \n    labs(title = \"Lego Set Theme\", \n         x = \"Theme\", \n         y = \"Number of LEGO sets\") + \n  coord_flip()\n\n\n\n\n\n\n\n\n\nWhat is one reason we may want to avoid putting the variable Theme in a model as is?\nWe will create a new variable that collapses some of the levels of Theme. Make a new variable called Theme_Col that has levels for the top four most frequent themes, then the category Other for all other themes.\nHow many observations are in each level for the new variable created in part (b)?\n\n\n\n\n\n\n\nNote\n\n\n\nYou will use Theme_Col, the collapsed Theme variable, for the remainder of the assignment.",
     "crumbs": [
       "Homework",
-      "Statistics experience"
+      "HW 02"
     ]
+  },
+  {
+    "objectID": "hw/hw-02.html#exercise-4",
+    "href": "hw/hw-02.html#exercise-4",
+    "title": "HW 02: Multiple linear regression",
+    "section": "Exercise 4",
+    "text": "Exercise 4\n\nFit a model using Size, Pages, and Theme_Col to predict Amazon_Price. Fit the model such that the intercept has a meaningful interpretation. Neatly display the model using three digits.\nInterpret the intercept in the context of the data.\nThe model output suggests that as the number of pages in the instruction booklet increases, the price of the set on Amazon is expected to increase. On the surface, it does not seem that the number of pages in the booklet would be a major predictor of the price on Amazon. What do you think this variable is actually measuring or is actually representing?",
+    "crumbs": [
+      "Homework",
+      "HW 02"
+    ]
+  },
+  {
+    "objectID": "hw/hw-02.html#exercise-5",
+    "href": "hw/hw-02.html#exercise-5",
+    "title": "HW 02: Multiple linear regression",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nNow let’s consider a model that allows for different effects of pages based on theme.\n\nMake a plot that can be used to visualize the effect of pages on the Amazon.com price based on the theme.\nBased on the plot in part (a), does the effect of the number of pages appear to differ based on theme? Briefly explain why or why not.\nModify the model from Exercise 4 such that the effect of the number of pages differs based on the theme. The intercept should still have a meaningful interpretation. Neatly display the model using three digits.",
+    "crumbs": [
+      "Homework",
+      "HW 02"
+    ]
+  },
+  {
+    "objectID": "hw/hw-02.html#exercise-6",
+    "href": "hw/hw-02.html#exercise-6",
+    "title": "HW 02: Multiple linear regression",
+    "section": "Exercise 6",
+    "text": "Exercise 6\n\nDescribe the effect of pages for the baseline level in the context of the data.\nDescribe the effect of pages for LEGOS in the Star Wars theme in the context of the data.\nBased on the p-values, do the data provide evidence that the effect of pages differs based on theme? Briefly explain. You can use a threshold of 0.05 for your assessment.",
+    "crumbs": [
+      "Homework",
+      "HW 02"
+    ]
+  },
+  {
+    "objectID": "hw/hw-02.html#exercise-7",
+    "href": "hw/hw-02.html#exercise-7",
+    "title": "HW 02: Multiple linear regression",
+    "section": "Exercise 7",
+    "text": "Exercise 7\n\nCompute RMSE for the model in Exercise 5. Interpret this value in the context of the data.\nCompute \\(R^2\\) for the model in Exercise 5. Interpret this value in the context of the data.",
+    "crumbs": [
+      "Homework",
+      "HW 02"
+    ]
+  },
+  {
+    "objectID": "hw/hw-02.html#perceived-threat-of-covid-19",
+    "href": "hw/hw-02.html#perceived-threat-of-covid-19",
+    "title": "HW 02: Multiple linear regression",
+    "section": "Perceived threat of COVID-19",
+    "text": "Perceived threat of COVID-19\n\n\n\n\n\n\nImportant\n\n\n\nUse the following paper for Exercises 8 and 9.\n\n\nGarbe, Rau, and Toppe (2020) aimed to examine the relationship between personality traits, perceived threat of Covid-19 and stockpiling toilet paper. For this study, researchers conducted an online survey March 23 - 29, 2020 and used the results to fit multiple linear regression models to draw conclusions about their research questions. From their survey, they collected data on adults across 35 countries. Given the small number of responses from people outside of the United States, Canada, and Europe, only responses from people in these three locations were included in the regression analysis.\nLet’s consider their results for the model looking at the effect on perceived threat of Covid-19. The model can be found on page 6 of the paper. The perceived threat of Covid was quantified using the responses to the following survey question:\n\nHow threatened do you feel by Coronavirus? [Users select on a 10-point visual analogue scale (Not at all threatened to Extremely Threatened)]\n\nAs stated on page 5 of the paper “To ease interpretation, continuous variables were z-standardized and categorical variables were dummy-coded in all models.”\nClick here to access a PDF of the paper.",
+    "crumbs": [
+      "Homework",
+      "HW 02"
+    ]
+  },
+  {
+    "objectID": "hw/hw-02.html#exercise-8",
+    "href": "hw/hw-02.html#exercise-8",
+    "title": "HW 02: Multiple linear regression",
+    "section": "Exercise 8",
+    "text": "Exercise 8\n\nInterpret the coefficient of Age (0.072) in the context of the analysis.\nInterpret the coefficient of Place of residence in the context of the analysis. You can assume Emotionality = 0 in the interpretation.\nThe model includes an interaction between Place of residence and Emotionality. The authors describe Emotionality as a measure of “fearfulness, anxiety, dependence, sentimentality”. What does the coefficient for the interaction (0.101) mean in the context of the data?\n\n\n\n\n\n\n\nImportant\n\n\n\nThe following are general questions about linear regression. They are not specific to any of the previous analyses.",
+    "crumbs": [
+      "Homework",
+      "HW 02"
+    ]
+  },
+  {
+    "objectID": "hw/hw-02.html#exercise-9",
+    "href": "hw/hw-02.html#exercise-9",
+    "title": "HW 02: Multiple linear regression",
+    "section": "Exercise 9",
+    "text": "Exercise 9\nProve that the maximum value of \\(R^2\\) must be less than 1 if the data set contains observations such that there are different observed values of the response for the same value of the predictor (e.g., the data set contains observations \\((x_i, y_i)\\) and \\((x_j, y_j)\\) such that \\(x_i = x_j\\) and \\(y_i \\neq y_j\\) .",
+    "crumbs": [
+      "Homework",
+      "HW 02"
+    ]
+  },
+  {
+    "objectID": "hw/hw-02.html#exercise-10",
+    "href": "hw/hw-02.html#exercise-10",
+    "title": "HW 02: Multiple linear regression",
+    "section": "Exercise 10",
+    "text": "Exercise 10\nIn lecture we discussed how the distribution of the error terms (and thus the distribution of the response variable \\(Y\\)) for a given value of the predictor \\(X\\) has a variance of \\(\\sigma^2_{\\epsilon}\\). Therefore, we are assuming this variance is the same for all values of the predictor when we conduct inference.\nBriefly explain why this assumption is important when we conduct inference based on mathematical models but is not necessary for conducting simulation-based inference.",
+    "crumbs": [
+      "Homework",
+      "HW 02"
+    ]
+  },
+  {
+    "objectID": "hw/hw-02.html#footnotes",
+    "href": "hw/hw-02.html#footnotes",
+    "title": "HW 02: Multiple linear regression",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nExercise 9 is based on an exercise in Montgomery, Peck, and Vining (2021) .↩︎",
+    "crumbs": [
+      "Homework",
+      "HW 02"
+    ]
+  },
+  {
+    "objectID": "hw/hw-04-draft.html",
+    "href": "hw/hw-04-draft.html",
+    "title": "HW 04: Logistic regression",
+    "section": "",
+    "text": "Due date\n\n\n\nThis assignment is due on Tuesday, April 8 at 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your GitHub repo\nFinal .pdf file submitted on Gradescope"
+  },
+  {
+    "objectID": "hw/hw-04-draft.html#learning-goals",
+    "href": "hw/hw-04-draft.html#learning-goals",
+    "title": "HW 04: Logistic regression",
+    "section": "Learning goals",
+    "text": "Learning goals\nBy the end of the assignment you will be able to…\n\nUse logistic regression to explore the relationship between a binary response variable and multiple predictor variables\nConduct exploratory data analysis for logistic regression\nInterpret coefficients of logistic regression model\nUse statistics to help choose the best fit model\nUse the logistic regression model for prediction and classification"
+  },
+  {
+    "objectID": "hw/hw-04-draft.html#getting-started",
+    "href": "hw/hw-04-draft.html#getting-started",
+    "title": "HW 04: Logistic regression",
+    "section": "Getting started",
+    "text": "Getting started\n\nGo to the sta210-sp25 organization on GitHub. Click on the repo with the prefix hw-04. It contains the starter documents you need to complete the lab.\nClone the repo and start a new project in RStudio. See the Lab 00 for details on cloning a repo and starting a new project in R."
+  },
+  {
+    "objectID": "hw/hw-04-draft.html#packages",
+    "href": "hw/hw-04-draft.html#packages",
+    "title": "HW 04: Logistic regression",
+    "section": "Packages",
+    "text": "Packages\nThe following packages will be used for this assignment.\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(knitr)\n\n# add other packages as needed"
+  },
+  {
+    "objectID": "hw/hw-04-draft.html#exercise-1",
+    "href": "hw/hw-04-draft.html#exercise-1",
+    "title": "HW 04: Logistic regression",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nWhy do you think the authors chose to only include data from people who were eligible to vote for at least four election cycles?"
+  },
+  {
+    "objectID": "hw/hw-04-draft.html#exercise-2",
+    "href": "hw/hw-04-draft.html#exercise-2",
+    "title": "HW 04: Logistic regression",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nLet’s prepare the data for analysis and modeling.\n\nCreate a new variable called frequent_voter that takes the value 1 if the voter_category is “always” and 0 otherwise.\nMake a table of the distribution of frequent_voter.\nWhat percentage of the respondents in the data say they voted “in all or all-but-one of the elections they were eligible in”?"
+  },
+  {
+    "objectID": "hw/hw-04-draft.html#exercise-3",
+    "href": "hw/hw-04-draft.html#exercise-3",
+    "title": "HW 04: Logistic regression",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nThe variable Q30 contains the respondent’s political party identification. Make a new variable, party_id, that simplifies Q30 into three categories: “Democrat”, “Republican”, “Independent/Neither”, The category “Independent/Neither” will also include respondents who did not answer the question. Make party_id a factor and relevel it so that it is consistent with the ordering of the responses in Question 30 of the survey.\n\nMake a plot of the distribution of party_id.\nWhich category of party_id occurs most frequently in this data set?"
+  },
+  {
+    "objectID": "hw/hw-04-draft.html#exercise-4",
+    "href": "hw/hw-04-draft.html#exercise-4",
+    "title": "HW 04: Logistic regression",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nIn the FiveThirtyEight article, the authors include visualizations of the relationship between the voter category and demographic variables such as race, age, education, etc.\n\nMake a segmented barplot (also known as a stacked barplot) displaying the distribution of frequent_voter for each category of party_id. Make the plot such that the percentages (instead of counts) are displayed.\nUse the plot to describe the relationship between these two variables.\n\n\n\n\n\n\n\nTip\n\n\n\nSee the plots of demographic information by voting history in the FiveThirtyEight article for examples of segmented bar plots."
+  },
+  {
+    "objectID": "hw/hw-04-draft.html#exercise-5",
+    "href": "hw/hw-04-draft.html#exercise-5",
+    "title": "HW 04: Logistic regression",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nLet’s start by fitting a model using the demographic factors - ppage, educ, race, gender, income_cat - to predict the odds a person is a frequent voter.\n\nSplit the data into training (75%) and testing sets (25%). Use a seed of 29.\nFit the model on the training data. Display the model using 3 digits.\nConsider the relationship between ppage and one’s voting behavior. Interpret the coefficient of ppage in the context of the data in terms of the odds a person is a frequent voter."
+  },
+  {
+    "objectID": "hw/hw-04-draft.html#exercise-6",
+    "href": "hw/hw-04-draft.html#exercise-6",
+    "title": "HW 04: Logistic regression",
+    "section": "Exercise 6",
+    "text": "Exercise 6\nShould party identification be added to the model? Use a drop-in-deviance test to determine if party identification should be added to the model fit in the previous exercise. Include the hypotheses in mathematical notation, the output from the test, and the conclusion in the context of the data."
+  },
+  {
+    "objectID": "hw/hw-04-draft.html#exercise-7",
+    "href": "hw/hw-04-draft.html#exercise-7",
+    "title": "HW 04: Logistic regression",
+    "section": "Exercise 7",
+    "text": "Exercise 7\nDisplay the model chosen from the previous exercise using 3 digits.\nThen use the model selected to write a short paragraph (2 - 5 sentences) describing the effect (or lack of effect) of political party on the odds a person is a frequent voter. The paragraph should include an indication of which levels (if any) are statistically significant along with specifics about the differences in the odds between the political parties, as appropriate."
+  },
+  {
+    "objectID": "hw/hw-04-draft.html#exercise-8",
+    "href": "hw/hw-04-draft.html#exercise-8",
+    "title": "HW 04: Logistic regression",
+    "section": "Exercise 8",
+    "text": "Exercise 8\nIn the article, the authors write\n\n“Nonvoters were more likely to have lower incomes; to be young; to have lower levels of education; and to say they don’t belong to either political party, which are all traits that square with what we know about people less likely to engage with the political system.”\n\nConsider the model you selected in Exercise 6. Is it consistent with this statement? Briefly explain why or why not."
+  },
+  {
+    "objectID": "hw/hw-04-draft.html#exercise-9",
+    "href": "hw/hw-04-draft.html#exercise-9",
+    "title": "HW 04: Logistic regression",
+    "section": "Exercise 9",
+    "text": "Exercise 9\nUse the testing data to produce the ROC curve and calculate the area under curve (AUC) for the model selected in Exercise 6. Write 1 - 2 sentences describing how well the model fits the data."
+  },
+  {
+    "objectID": "hw/hw-04-draft.html#exercise-10",
+    "href": "hw/hw-04-draft.html#exercise-10",
+    "title": "HW 04: Logistic regression",
+    "section": "Exercise 10",
+    "text": "Exercise 10\nYou have been tasked by a local political organization to identify adults in the community who are frequent voters. These adults will receive targeted political mailings that will be different from the mailings sent to adults who are not frequent voters. You will use the model selected in Exercise 6 to identify the frequent voters.\nMake a confusion matrix based on the cut-off probability of 0.25. Use the confusion matrix to calculate the following:\n\nSensitivity\nSpecificity\nFalse negative rate\nFalse positive rate"
   },
   {
     "objectID": "prepare/prepare-lec10.html",
