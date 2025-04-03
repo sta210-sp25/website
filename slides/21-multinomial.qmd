@@ -1,26 +1,27 @@
 ---
 title: "Multinomial Logistic Regression"
 author: "Prof. Maria Tackett"
-date: "2023-11-13"
+date: "2025-04-03"
 date-format: "MMM DD, YYYY"
-footer: "[🔗 STA 210 - Fall 2023 -  Schedule](https://sta210-fa23.netlify.app/schedule)"
+footer: "[🔗 STA 210 - Spring 2025](https://sta210-sp25.netlify.app)"
 logo: "../images/logo.png"
 format: 
-  revealjs:
+  revealjs: 
     theme: slides.scss
     multiplex: false
     transition: fade
-    slide-number: false
+    slide-number: true
     incremental: false 
     chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+  html: 
+    output-file: 21-multinomial-notes.html
 html-math-method:
   method: mathjax
   url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
 execute:
   freeze: auto
   echo: true
-  warning: false
-  message: false
 knitr:
   opts_chunk: 
     R.options:      
@@ -40,23 +41,6 @@ knitr::opts_chunk$set(
 library(countdown)
 ```
 
-## Announcements {.midi}
-
--   Due dates
-
-    -   Draft report due in GitHub repo on 9am on your lab day
-    -   HW 04 due TODAY at 11:59pm
-    -   Statistics experience due Mon, Nov 20 at 11:59pm
-
--   Next week:
-
-    -   (Optional) Project meetings Nov 20 & 21. [Click here](https://docs.google.com/spreadsheets/d/1EpTge-O1hBDnNy5KW7Y1FoNzIhpLoz4_Xx_nf_FbPgI/edit?usp=sharing) to sign up. Must sign up by Fri, Nov 17
-    -   No class meetings next week
-
--   [Click here](https://docs.google.com/spreadsheets/d/1dUD4SOpM79BL2kdvue9I2TP-ibcdxfpOIkHkMreYx64/edit?usp=sharing) to access lecture recordings. Available until Mon, Dec 04 at 9am
-
-<center>🍂 Have a good Thanksgiving break! 🍂</center>
-
 ## Topics
 
 ::: nonincremental
@@ -67,12 +51,6 @@ library(countdown)
 -   Interpret model coefficients
 
 -   Inference for a coefficient $\beta_{jk}$
-:::
-
-# Application exercise
-
-::: appex
-📋 [AE 16: Conditions for logistic regression](../ae/ae-16-logistic-conditions.html)
 :::
 
 ## Computational setup
@@ -98,6 +76,7 @@ ggplot2::theme_set(ggplot2::theme_minimal(base_size = 20))
 -   In practice, there are many different types of outcome variables:
 
     ::: nonincremental
+    -   **Continuous:** Price of house
     -   **Binary**: Win or Lose
     -   **Nominal**: Democrat, Republican or Third Party candidate
     -   **Ordered**: Movie rating (1 - 5 stars)
@@ -112,16 +91,16 @@ Recommended reading for more details about GLMs: [*Generalized Linear Models: A 
 
 ## Binary outcome (Logistic)
 
--   Given $P(y_i=1|x_i)= \hat{\pi}_i\hspace{5mm} \text{ and } \hspace{5mm}P(y_i=0|x_i) = 1-\hat{\pi}_i$
+-   Given $P(y_i=1|x_i)= \hat{p}_i\hspace{5mm} \text{ and } \hspace{5mm}P(y_i=0|x_i) = 1-\hat{p}_i$
 
     $$
-    \log\Big(\frac{\hat{\pi}_i}{1-\hat{\pi}_i}\Big) = \hat{\beta}_0 + \hat{\beta}_1 x_{i}
+    \log\Big(\frac{\hat{p}_i}{1-\hat{p}_i}\Big) = \hat{\beta}_0 + \hat{\beta}_1 x_{i} + \dots \hat{\beta}_px_p
     $$
 
--   We can calculate $\hat{\pi}_i$ by solving the logit equation:
+-   We can calculate $\hat{p}_i$ by solving the logit equation:
 
     $$
-    \hat{\pi}_i = \frac{\exp\{\hat{\beta}_0 + \hat{\beta}_1 x_{i}\}}{1 + \exp\{\hat{\beta}_0 + \hat{\beta}_1 x_{i}\}}
+    \hat{p}_i = \frac{\exp\{\hat{\beta}_0 + \hat{\beta}_1 x_{i} + \dots \hat{\beta}_px_p\}}{1 + \exp\{\hat{\beta}_0 + \hat{\beta}_1 x_{i} + \dots \hat{\beta}_px_p\}}
     $$
 
 ## Binary outcome (Logistic) {.smaller}
@@ -130,16 +109,16 @@ Recommended reading for more details about GLMs: [*Generalized Linear Models: A 
 -   Suppose we consider $y=0$ the **baseline category** such that
 
     $$
-    P(y_i=1|x_i) = \hat{\pi}_{i1} \hspace{2mm}  \text{ and } \hspace{2mm} P(y_i=0|x_i) = \hat{\pi}_{i0}
+    P(y_i=1|x_i) = \hat{p}_{i1} \hspace{2mm}  \text{ and } \hspace{2mm} P(y_i=0|x_i) = \hat{p}_{i0}
     $$
 
 -   Then the logistic regression model is
 
     $$
-    \log\bigg(\frac{\hat{\pi}_{i1}}{1- \hat{\pi}_{i1}}\bigg) = \log\bigg(\frac{\hat{\pi}_{i1}}{\hat{\pi}_{i0}}\bigg) = \hat{\beta}_0 + \hat{\beta}_1 x_i
+    \log\bigg(\frac{\hat{p}_{i1}}{1- \hat{p}_{i1}}\bigg) = \log\bigg(\frac{\hat{p}_{i1}}{\hat{p}_{i0}}\bigg) = \hat{\beta}_0 + \hat{\beta}_1 x_i + \dots \hat{\beta}_px_p
     $$
 
--   **Slope**, $\hat{\beta}_1$: When $x$ increases by one unit, the odds of $y=1$ versus the baseline $y=0$ are expected to multiply by a factor of $\exp\{\hat{\beta}_1\}$
+-   **Slope**, $\hat{\beta}_j$: When $x$ increases by one unit, the odds of $y=1$ versus the baseline $y=0$ are expected to multiply by a factor of $\exp\{\hat{\beta}_k\}$
 
 -   **Intercept**, $\hat{\beta}_0$: When $x=0$, the predicted odds of $y=1$ versus the baseline $y=0$ are $\exp\{\hat{\beta}_0\}$
 :::
@@ -151,20 +130,20 @@ Recommended reading for more details about GLMs: [*Generalized Linear Models: A 
 -   **Multinomial Distribution:**
 
     $$
-    P(y=1) = \pi_1, P(y=2) = \pi_2, \ldots, P(y=K) = \pi_K
+    P(y=1) = p_1, P(y=2) = p_2, \ldots, P(y=K) = p_K
     $$
 
-    such that $\sum\limits_{k=1}^{K} \pi_k = 1$
+    such that $\sum\limits_{k=1}^{K} p_k = 1$
 
 ## Multinomial Logistic Regression {.small}
 
 ::: incremental
--   If we have an explanatory variable $x$, then we want to fit a model such that $P(y = k) = \pi_k$ is a function of $x$
+-   If we have an predictor variables $x_1, \ldots, x_p$, then we want to fit a model such that $P(y = k) = p_k$ is a function of $x_1, \ldots,x_p$
 
 -   Choose a baseline category. Let's choose $y=1$. Then,
 
     $$
-    \log\bigg(\frac{\pi_{ik}}{\pi_{i1}}\bigg) = \beta_{0k} + \beta_{1k} x_i
+    \log\bigg(\frac{p_{ik}}{p_{i1}}\bigg) = \beta_{0k} + \beta_{1k} x_{i1} + \dots + \beta_{pk}x_{ip}
     $$
 
 -   In the multinomial logistic model, we have a separate equation for each category of the outcome relative to the baseline category
@@ -180,8 +159,8 @@ Recommended reading for more details about GLMs: [*Generalized Linear Models: A 
 
     $$
     \begin{aligned}
-    \log\bigg(\frac{\pi_{iB}}{\pi_{iA}}\bigg) &= \beta_{0B} + \beta_{1B}x_i \\[10pt]
-    \log\bigg(\frac{\pi_{iC}}{\pi_{iA}}\bigg) &= \beta_{0C} + \beta_{1C} x_i
+    \log\bigg(\frac{p_{iB}}{p_{iA}}\bigg) &= \beta_{0B} + \beta_{1B}x_{i1} + \dots \beta_{pB}x_{ip} \\[10pt]
+    \log\bigg(\frac{p_{iC}}{p_{iA}}\bigg) &= \beta_{0C} + \beta_{1C} x_{i1} + \beta_{pC}x_{ip}
     \end{aligned}
     $$
 
@@ -189,7 +168,7 @@ Recommended reading for more details about GLMs: [*Generalized Linear Models: A 
 
 ## NHANES Data
 
--   [National Health and Nutrition Examination Survey](https://www.cdc.gov/nchs/nhanes/index.htm) is conducted by the National Center for Health Statistics (NCHS)
+-   [National Health and Nutrition Examination Survey](https://www.cdc.gov/nchs/nhanes/?CDC_AAref_Val=https://www.cdc.gov/nchs/nhanes/index.htm) is conducted by the National Center for Health Statistics (NCHS)
 
 -   The goal is to *"assess the health and nutritional status of adults and children in the United States"*
 
@@ -242,15 +221,15 @@ glimpse(nhanes_adult)
 #| fig-width: 12
 
 p1 <- ggplot(data = nhanes_adult, aes(x = Age)) + 
-  geom_histogram(binwidth = 2) +
+  geom_histogram(binwidth = 2, fill = "steelblue", color = "black") +
   labs(title = "Distribution of Age")
 
 p2 <- ggplot(data = nhanes_adult, aes(x = PhysActive)) + 
-  geom_bar() +
+  geom_bar(color = "black", fill = "steelblue") +
   labs(title = "Moderate or vigorous\nsport or exercise")
 
 p3 <- ggplot(data = nhanes_adult, aes(y = HealthGen)) + 
-  geom_bar() +
+  geom_bar(fill = "darkcyan", color = "black") +
   labs(title = "Self-reported rating\nof overall health")
 
 p3 + (p1 / p2)
@@ -281,13 +260,18 @@ p1 + p2
 
 ## Model in R
 
-Use the `multinom_reg()` function with the `"nnet"` engine:
+Use the `multinom` function from the **nnet** R package
 
 ```{r}
-health_fit <- multinom_reg() |>
-  set_engine("nnet") |>
-  fit(HealthGen ~ Age + PhysActive, data = nhanes_adult)
+#| results: hide
+library(nnet)
+health_fit <- multinom(HealthGen ~ Age + PhysActive, 
+                     data = nhanes_adult)
 ```
+
+<br>
+
+Use code chunk option `#| results: hide` to suppress convergence output
 
 ## Model result
 
@@ -295,13 +279,7 @@ health_fit <- multinom_reg() |>
 health_fit
 ```
 
-## Model output
-
-::: question
-What function do we use to get the model summary, i.e., coefficient estimates.
-:::
-
-. . .
+## Tidy model output
 
 ```{r}
 #| error: true
@@ -309,13 +287,13 @@ What function do we use to get the model summary, i.e., coefficient estimates.
 tidy(health_fit)
 ```
 
-## Model output, with CI
+## Tidy model output, with CI
 
 ```{r}
 tidy(health_fit, conf.int = TRUE)
 ```
 
-## Model output, with CI {.smaller}
+## Neatly display model output {.smaller}
 
 ```{r}
 #| echo: false
@@ -332,13 +310,13 @@ The baseline category for the model is `Excellent`.
 The model equation for the log-odds a person rates themselves as having "Fair" health vs. "Excellent" is
 
 $$
-\log\Big(\frac{\hat{\pi}_{Fair}}{\hat{\pi}_{Excellent}}\Big) = 0.915  + 0.003 ~ \text{age} - 1.645 ~ \text{PhysActive}
+\log\Big(\frac{\hat{p}_{Fair}}{\hat{p}_{Excellent}}\Big) = 0.915  + 0.003 ~ \text{age} - 1.645 ~ \text{PhysActive}
 $$
 
 ## Interpretations {.midi}
 
 $$
-\log\Big(\frac{\hat{\pi}_{Fair}}{\hat{\pi}_{Excellent}}\Big) = 0.915  + 0.003 ~ \text{age} - 1.645 ~ \text{PhysActive}
+\log\Big(\frac{\hat{p}_{Fair}}{\hat{p}_{Excellent}}\Big) = 0.915  + 0.003 ~ \text{age} - 1.645 ~ \text{PhysActive}
 $$
 
 For each additional year in age, the odds a person rates themselves as having fair health versus excellent health are expected to multiply by `r round(exp(0.003), 3)` (exp(0.003)), holding physical activity constant.
@@ -352,7 +330,7 @@ The odds a person who does physical activity will rate themselves as having fair
 ## Interpretations
 
 $$
-\log\Big(\frac{\hat{\pi}_{Fair}}{\hat{\pi}_{Excellent}}\Big) = 0.915  + 0.003 ~ \text{age} - 1.645 ~ \text{PhysActive}
+\log\Big(\frac{\hat{p}_{Fair}}{\hat{p}_{Excellent}}\Big) = 0.915  + 0.003 ~ \text{age} - 1.645 ~ \text{PhysActive}
 $$
 
 The odds a 0 year old person who doesn't do physical activity rates themselves as having fair health vs. excellent health are `r round(exp(0.915),3)` (exp(0.915)).
@@ -363,13 +341,37 @@ The odds a 0 year old person who doesn't do physical activity rates themselves a
 **Need to mean-center age for the intercept to have a meaningful interpretation!**
 :::
 
+## Practice
+
+:::::: columns
+::: {.column width="50%"}
+```{r}
+#| echo: false
+
+tidy(health_fit) |>
+  select(y.level, term, estimate)|>
+  kable(digits = 3)
+```
+:::
+
+:::: {.column width="50%"}
+::: question
+-   Write the equation for Very good (`Vgood`) versus Excellent.
+
+-   Interpret `Age` in the context of the data.
+
+-   Interpret `PhysActiveYes` in the context of the data.
+:::
+::::
+::::::
+
 ## Hypothesis test for $\beta_{jk}$
 
 The test of significance for the coefficient $\beta_{jk}$ is
 
 **Hypotheses**: $H_0: \beta_{jk} = 0 \hspace{2mm} \text{ vs } \hspace{2mm} H_a: \beta_{jk} \neq 0$
 
-**Test Statistic**: $$z = \frac{\hat{\beta}_{jk} - 0}{SE(\hat{\beta_{jk}})}$$
+**Test Statistic**: $$z = \frac{\hat{\beta}_{jk} - 0}{SE(\hat{\beta}_{jk})}$$
 
 **P-value**: $P(|Z| > |z|)$,
 
@@ -378,9 +380,9 @@ where $Z \sim N(0, 1)$, the Standard Normal distribution
 ## Confidence interval for $\beta_{jk}$
 
 ::: incremental
--   We can calculate the **C% confidence interval** for $\beta_{jk}$ using $\hat{\beta}_{jk} \pm z^* SE(\hat{\beta}_{jk})$, where $z^*$ is calculated from the $N(0,1)$ distribution.
+-   We can calculate the **C% confidence interval** for $\beta_{jk}$ using $\hat{\beta}_{jk} \pm z^* \times SE(\hat{\beta}_{jk})$, where $z^*$ is calculated from the $N(0,1)$ distribution.
 
--   **Interpretation:** We are $C\%$ confident that for every one unit change in $x_{j}$, the odds of $y = k$ versus the baseline will multiply by a factor of $\exp\{\hat{\beta}_{jk} - z^* SE(\hat{\beta}_{jk})\}$ to $\exp\{\hat{\beta}_{jk} + z^* SE(\hat{\beta}_{jk})\}$, holding all else constant.
+-   **Interpretation:** We are $C\%$ confident that for every one unit change in $x_{j}$, the odds of $y = k$ versus the baseline will multiply by a factor of $\exp\{\hat{\beta}_{jk} - z^* \times SE(\hat{\beta}_{jk})\}$ to $\exp\{\hat{\beta}_{jk} + z^* \times SE(\hat{\beta}_{jk})\}$, holding all else constant.
 :::
 
 ## Interpreting CIs for $\beta_{jk}$ {.midi}
@@ -407,7 +409,9 @@ tidy(health_fit, conf.int = TRUE) |>
 
 <br>
 
-We are 95% confident that the odds a person who does physical activity will rate themselves as having fair health versus excellent health are `r round(exp(-1.856   ),3)` (exp(-1.856 )) to `r round(exp(-1.435),3)` (exp(-1.435)) times the odds for a person who doesn't do physical activity, holding age constant.
+::: question
+Interpret the 95% confidence interval for `PhysActiveYes` in the context of the data.
+:::
 
 ## Recap
 
