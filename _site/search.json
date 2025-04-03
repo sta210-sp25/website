@@ -11240,5 +11240,124 @@
       "Project",
       "Instructions"
     ]
+  },
+  {
+    "objectID": "slides/21-logistic-assumptions.html#announcements",
+    "href": "slides/21-logistic-assumptions.html#announcements",
+    "title": "LR: Inference + conditions",
+    "section": "Announcements",
+    "text": "Announcements\n\nNext project milestone: Analysis and draft in April 14 lab\nTeam Feedback (email from TEAMMATES) due Tuesday, April 8 at 11:59pm (check email)\nHW 04 due Tuesday, April 8 at 11:59pm\nStatistics experience due April 15"
+  },
+  {
+    "objectID": "slides/21-logistic-assumptions.html#topics",
+    "href": "slides/21-logistic-assumptions.html#topics",
+    "title": "LR: Inference + conditions",
+    "section": "Topics",
+    "text": "Topics\n\n\nReview inference for logistic regression\nInference for coefficients in logistic regression\nChecking model conditions for logistic regression"
+  },
+  {
+    "objectID": "slides/21-logistic-assumptions.html#computational-setup",
+    "href": "slides/21-logistic-assumptions.html#computational-setup",
+    "title": "LR: Inference + conditions",
+    "section": "Computational setup",
+    "text": "Computational setup\n\n# load packages\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(openintro)\nlibrary(knitr)\nlibrary(kableExtra)  # for table embellishments\nlibrary(Stat2Data)   # for empirical logit\n\n# set default theme and larger font size for ggplot2\nggplot2::theme_set(ggplot2::theme_bw(base_size = 20))"
+  },
+  {
+    "objectID": "slides/21-logistic-assumptions.html#risk-of-coronary-heart-disease",
+    "href": "slides/21-logistic-assumptions.html#risk-of-coronary-heart-disease",
+    "title": "LR: Inference + conditions",
+    "section": "Risk of coronary heart disease",
+    "text": "Risk of coronary heart disease\nThis data set is from an ongoing cardiovascular study on residents of the town of Framingham, Massachusetts. We want to examine the relationship between various health characteristics and the risk of having heart disease.\n\nhigh_risk:\n\n1: High risk of having heart disease in next 10 years\n0: Not high risk of having heart disease in next 10 years\n\nage: Age at exam time (in years)\neducation: 1 = Some High School, 2 = High School or GED, 3 = Some College or Vocational School, 4 = College\ncurrentSmoker: 0 = nonsmoker, 1 = smoker\ntotChol: Total cholesterol (in mg/dL)\n\n\n\n# A tibble: 4,086 × 6\n     age education TenYearCHD totChol currentSmoker high_risk\n   &lt;dbl&gt; &lt;fct&gt;          &lt;dbl&gt;   &lt;dbl&gt; &lt;fct&gt;         &lt;fct&gt;    \n 1    39 4                  0     195 0             0        \n 2    46 2                  0     250 0             0        \n 3    48 1                  0     245 1             0        \n 4    61 3                  1     225 1             1        \n 5    46 3                  0     285 1             0        \n 6    43 2                  0     228 0             0        \n 7    63 1                  1     205 0             1        \n 8    45 2                  0     313 1             0        \n 9    52 1                  0     260 0             0        \n10    43 1                  0     225 1             0        \n# ℹ 4,076 more rows"
+  },
+  {
+    "objectID": "slides/21-logistic-assumptions.html#inference-for-coefficients",
+    "href": "slides/21-logistic-assumptions.html#inference-for-coefficients",
+    "title": "LR: Inference + conditions",
+    "section": "Inference for coefficients",
+    "text": "Inference for coefficients\nThere are two approaches for testing coefficients in logistic regression\n\nDrop-in-deviance test. Use to test…\n\na single coefficient\na categorical predictor with 3+ levels\na group of predictor variables\n\n(Wald) hypothesis test. Use to test\n\na single coefficient"
+  },
+  {
+    "objectID": "slides/21-logistic-assumptions.html#review-test-coefficient-for-currentsmoker",
+    "href": "slides/21-logistic-assumptions.html#review-test-coefficient-for-currentsmoker",
+    "title": "LR: Inference + conditions",
+    "section": "Review: Test coefficient for currentSmoker",
+    "text": "Review: Test coefficient for currentSmoker\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\nconf.low\nconf.high\n\n\n\n\n(Intercept)\n-6.673\n0.378\n-17.647\n0.000\n-7.423\n-5.940\n\n\nage\n0.082\n0.006\n14.344\n0.000\n0.071\n0.094\n\n\ntotChol\n0.002\n0.001\n1.940\n0.052\n0.000\n0.004\n\n\ncurrentSmoker1\n0.443\n0.094\n4.733\n0.000\n0.260\n0.627\n\n\n\n\n\n\n\n\n\n\nInterpret the value for currentSmoker in each column of the model output.\nThe 95% confidence interval for currentSmoker is [0.260, 0.627]. Interpret this value in the context of the data."
+  },
+  {
+    "objectID": "slides/21-logistic-assumptions.html#conditions-for-logistic-regression",
+    "href": "slides/21-logistic-assumptions.html#conditions-for-logistic-regression",
+    "title": "LR: Inference + conditions",
+    "section": "Conditions for logistic regression",
+    "text": "Conditions for logistic regression\n\nLinearity: The log-odds have a linear relationship with the predictors.\nRandomness: The data were obtained from a random process\nIndependence: The observations are independent from one another."
+  },
+  {
+    "objectID": "slides/21-logistic-assumptions.html#empirical-logit",
+    "href": "slides/21-logistic-assumptions.html#empirical-logit",
+    "title": "LR: Inference + conditions",
+    "section": "Empirical logit",
+    "text": "Empirical logit\nThe empirical logit is the log of the observed odds:\n\\[\n\\text{logit}(\\hat{p}) = \\log\\Big(\\frac{\\hat{p}}{1 - \\hat{p}}\\Big) = \\log\\Big(\\frac{\\# \\text{Yes}}{\\# \\text{No}}\\Big)\n\\]"
+  },
+  {
+    "objectID": "slides/21-logistic-assumptions.html#calculating-empirical-logit-categorical-predictor",
+    "href": "slides/21-logistic-assumptions.html#calculating-empirical-logit-categorical-predictor",
+    "title": "LR: Inference + conditions",
+    "section": "Calculating empirical logit (categorical predictor)",
+    "text": "Calculating empirical logit (categorical predictor)\nIf the predictor is categorical, we can calculate the empirical logit for each level of the predictor.\n\nheart_disease |&gt;\n  count(currentSmoker, high_risk) |&gt;\n  group_by(currentSmoker) |&gt;\n  mutate(prop = n/sum(n)) |&gt;\n  filter(high_risk == \"1\") |&gt;\n  mutate(emp_logit = log(prop/(1-prop)))\n\n# A tibble: 2 × 5\n# Groups:   currentSmoker [2]\n  currentSmoker high_risk     n  prop emp_logit\n  &lt;fct&gt;         &lt;fct&gt;     &lt;int&gt; &lt;dbl&gt;     &lt;dbl&gt;\n1 0             1           301 0.145     -1.77\n2 1             1           318 0.158     -1.67"
+  },
+  {
+    "objectID": "slides/21-logistic-assumptions.html#calculating-empirical-logit-quantitative-predictor",
+    "href": "slides/21-logistic-assumptions.html#calculating-empirical-logit-quantitative-predictor",
+    "title": "LR: Inference + conditions",
+    "section": "Calculating empirical logit (quantitative predictor)",
+    "text": "Calculating empirical logit (quantitative predictor)\n\nDivide the range of the predictor into intervals with approximately equal number of cases. (If you have enough observations, use 5 - 10 intervals.)\nCompute the empirical logit for each interval\n\n\nYou can then calculate the mean value of the predictor in each interval and create a plot of the empirical logit versus the mean value of the predictor in each interval."
+  },
+  {
+    "objectID": "slides/21-logistic-assumptions.html#empirical-logit-plot-in-r-quantitative-predictor",
+    "href": "slides/21-logistic-assumptions.html#empirical-logit-plot-in-r-quantitative-predictor",
+    "title": "LR: Inference + conditions",
+    "section": "Empirical logit plot in R (quantitative predictor)",
+    "text": "Empirical logit plot in R (quantitative predictor)\nCreated using dplyr and ggplot functions."
+  },
+  {
+    "objectID": "slides/21-logistic-assumptions.html#empirical-logit-plot-in-r-quantitative-predictor-1",
+    "href": "slides/21-logistic-assumptions.html#empirical-logit-plot-in-r-quantitative-predictor-1",
+    "title": "LR: Inference + conditions",
+    "section": "Empirical logit plot in R (quantitative predictor)",
+    "text": "Empirical logit plot in R (quantitative predictor)\nCreated using dplyr and ggplot functions.\n\nheart_disease |&gt; \n  mutate(age_bin = cut_interval(age, n = 10)) |&gt;\n  group_by(age_bin) |&gt;\n  mutate(mean_age = mean(age)) |&gt;\n  count(mean_age, high_risk) |&gt;\n  mutate(prop = n/sum(n)) |&gt;\n  filter(high_risk == \"1\") |&gt;\n  mutate(emp_logit = log(prop/(1-prop))) |&gt;\n  ggplot(aes(x = mean_age, y = emp_logit)) + \n  geom_point() + \n  geom_smooth(method = \"lm\", se = FALSE) +\n  labs(x = \"Mean Age\", \n       y = \"Empirical logit\")"
+  },
+  {
+    "objectID": "slides/21-logistic-assumptions.html#empirical-logit-plot-in-r-quantitative-predictor-2",
+    "href": "slides/21-logistic-assumptions.html#empirical-logit-plot-in-r-quantitative-predictor-2",
+    "title": "LR: Inference + conditions",
+    "section": "Empirical logit plot in R (quantitative predictor)",
+    "text": "Empirical logit plot in R (quantitative predictor)\nUsing the emplogitplot1 function from the Stat2Data R package\n\nemplogitplot1(high_risk ~ age, \n              data = heart_disease, \n              ngroups = 10)"
+  },
+  {
+    "objectID": "slides/21-logistic-assumptions.html#empirical-logit-plot-in-r-interactions",
+    "href": "slides/21-logistic-assumptions.html#empirical-logit-plot-in-r-interactions",
+    "title": "LR: Inference + conditions",
+    "section": "Empirical logit plot in R (interactions)",
+    "text": "Empirical logit plot in R (interactions)\nUsing the emplogitplot2 function from the Stat2Data R package\n\nemplogitplot2(high_risk ~ age + currentSmoker, data = heart_disease, \n              ngroups = 10, \n              putlegend = \"bottomright\")"
+  },
+  {
+    "objectID": "slides/21-logistic-assumptions.html#checking-linearity",
+    "href": "slides/21-logistic-assumptions.html#checking-linearity",
+    "title": "LR: Inference + conditions",
+    "section": "Checking linearity",
+    "text": "Checking linearity\n\n\n\nemplogitplot1(high_risk ~ age, \n              data = heart_disease, \n              ngroups = 10)\n\n\n\n\n\n\n\n\n\n\nemplogitplot1(high_risk ~ totChol, \n              data = heart_disease, \n              ngroups = 10)\n\n\n\n\n\n\n\n\n\n\n✅ The linearity condition is satisfied. There is a linear relationship between the empirical logit and the predictor variables."
+  },
+  {
+    "objectID": "slides/21-logistic-assumptions.html#checking-randomness",
+    "href": "slides/21-logistic-assumptions.html#checking-randomness",
+    "title": "LR: Inference + conditions",
+    "section": "Checking randomness",
+    "text": "Checking randomness\nWe can check the randomness condition based on the context of the data and how the observations were collected.\n\nWas the sample randomly selected?\nIf the sample was not randomly selected, ask whether there is reason to believe the observations in the sample differ systematically from the population of interest.\n\n\n✅ The randomness condition is satisfied. We do not have reason to believe that the participants in this study differ systematically from adults in the U.S. in regards to health characteristics and risk of heart disease."
+  },
+  {
+    "objectID": "slides/21-logistic-assumptions.html#checking-independence",
+    "href": "slides/21-logistic-assumptions.html#checking-independence",
+    "title": "LR: Inference + conditions",
+    "section": "Checking independence",
+    "text": "Checking independence\n\nWe can check the independence condition based on the context of the data and how the observations were collected.\nIndependence is most often violated if the data were collected over time or there is a strong spatial relationship between the observations.\n\n\n✅ The independence condition is satisfied. It is reasonable to conclude that the participants’ health characteristics are independent of one another."
   }
 ]

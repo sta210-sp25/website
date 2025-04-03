@@ -1,0 +1,293 @@
+---
+title: "LR: Inference + conditions"
+author: "Prof. Maria Tackett"
+date: "2025-04-03"
+date-format: "MMM DD, YYYY"
+footer: "[🔗 STA 210 - Spring 2025](https://sta210-sp25.netlify.app)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: false
+    transition: fade
+    slide-number: true
+    incremental: false 
+    chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+  html: 
+    output-file: 20-logistic-inference-notes.html
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+execute:
+  freeze: auto
+  echo: true
+knitr:
+  opts_chunk: 
+    R.options:      
+    width: 200
+bibliography: references.bib
+---
+
+```{r}
+#| include: false
+
+# figure options
+knitr::opts_chunk$set(
+  fig.width = 8, fig.asp = 0.618, out.width = "90%",
+  fig.retina = 3, dpi = 300, fig.align = "center"
+)
+
+library(countdown)
+```
+
+## Announcements {.midi}
+
+-   Next project milestone: Analysis and draft in April 14 lab
+
+-   Team Feedback (email from TEAMMATES) due Tuesday, April 8 at 11:59pm (check email)
+
+-   HW 04 due Tuesday, April 8 at 11:59pm
+
+-   Statistics experience due April 15
+
+## Topics
+
+::: nonincremental
+-   Review inference for logistic regression
+-   Inference for coefficients in logistic regression
+-   Checking model conditions for logistic regression
+:::
+
+## Computational setup
+
+```{r}
+#| echo: true
+
+# load packages
+library(tidyverse)
+library(tidymodels)
+library(openintro)
+library(knitr)
+library(kableExtra)  # for table embellishments
+library(Stat2Data)   # for empirical logit
+
+# set default theme and larger font size for ggplot2
+ggplot2::theme_set(ggplot2::theme_bw(base_size = 20))
+```
+
+# Data
+
+## Risk of coronary heart disease {.midi}
+
+This data set is from an ongoing cardiovascular study on residents of the town of Framingham, Massachusetts. We want to examine the relationship between various health characteristics and the risk of having heart disease.
+
+-   `high_risk`:
+
+    -   1: High risk of having heart disease in next 10 years
+    -   0: Not high risk of having heart disease in next 10 years
+
+-   `age`: Age at exam time (in years)
+
+-   `education`: 1 = Some High School, 2 = High School or GED, 3 = Some College or Vocational School, 4 = College
+
+-   `currentSmoker`: 0 = nonsmoker, 1 = smoker
+
+-   `totChol`: Total cholesterol (in mg/dL)
+
+```{r}
+#| echo: false
+heart_disease <- read_csv(here::here("slides", "data/framingham.csv")) |>
+  select(age, education, TenYearCHD, totChol, currentSmoker) |>
+  drop_na() |>
+  mutate(
+    high_risk = as.factor(TenYearCHD),
+    education = as.factor(education),
+    currentSmoker = as.factor(currentSmoker)
+  )
+
+heart_disease
+```
+
+## Inference for coefficients
+
+There are two approaches for testing coefficients in logistic regression
+
+-   **Drop-in-deviance test**. Use to test...
+
+    -   a single coefficient
+    -   a categorical predictor with 3+ levels
+    -   a group of predictor variables
+
+-   **(Wald) hypothesis test.** Use to test
+
+    -   a single coefficient
+
+## Review: Test coefficient for `currentSmoker` {.midi}
+
+```{r}
+#| label: risk-model-age-highlight
+#| echo: false
+
+risk_fit <- glm(high_risk ~ age + totChol + currentSmoker, data  = heart_disease, family = "binomial")
+
+tidy(risk_fit, conf.int = TRUE) |> 
+  kable(digits = 3) |>
+  row_spec(4, background = "#D9E3E4")
+```
+
+<br>
+
+::: question
+-   Interpret the value for `currentSmoker` in each column of the model output.
+
+-   The 95% confidence interval for `currentSmoker` is \[0.260, 0.627\]. Interpret this value in the context of the data.
+:::
+
+# Conditions
+
+## Conditions for logistic regression
+
+1.  **Linearity:** The log-odds have a linear relationship with the predictors.
+
+2.  **Randomness:** The data were obtained from a random process
+
+3.  **Independence:** The observations are independent from one another.
+
+## Empirical logit
+
+The **empirical logit** is the log of the observed odds:
+
+$$
+\text{logit}(\hat{p}) = \log\Big(\frac{\hat{p}}{1 - \hat{p}}\Big) = \log\Big(\frac{\# \text{Yes}}{\# \text{No}}\Big)
+$$
+
+## Calculating empirical logit (categorical predictor)
+
+If the predictor is categorical, we can calculate the empirical logit for each level of the predictor.
+
+```{r}
+heart_disease |>
+  count(currentSmoker, high_risk) |>
+  group_by(currentSmoker) |>
+  mutate(prop = n/sum(n)) |>
+  filter(high_risk == "1") |>
+  mutate(emp_logit = log(prop/(1-prop)))
+```
+
+## Calculating empirical logit (quantitative predictor)
+
+1.  Divide the range of the predictor into intervals with approximately equal number of cases. (If you have enough observations, use 5 - 10 intervals.)
+
+2.  Compute the empirical logit for each interval
+
+. . .
+
+You can then calculate the mean value of the predictor in each interval and create a plot of the empirical logit versus the mean value of the predictor in each interval.
+
+## Empirical logit plot in R (quantitative predictor)
+
+Created using `dplyr` and `ggplot` functions.
+
+```{r}
+#| echo: false
+heart_disease |> 
+  mutate(age_bin = cut_interval(age, n = 10)) |>
+  group_by(age_bin) |>
+  mutate(mean_age = mean(age)) |>
+  count(mean_age, high_risk) |>
+  mutate(prop = n/sum(n)) |>
+  filter(high_risk == "1") |>
+  mutate(emp_logit = log(prop/(1-prop))) |>
+  ggplot(aes(x = mean_age, y = emp_logit)) + 
+  geom_point() + 
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Mean Age", 
+       y = "Empirical logit")
+```
+
+## Empirical logit plot in R (quantitative predictor)
+
+Created using `dplyr` and `ggplot` functions.
+
+```{r}
+#| eval: false
+#| 
+heart_disease |> 
+  mutate(age_bin = cut_interval(age, n = 10)) |>
+  group_by(age_bin) |>
+  mutate(mean_age = mean(age)) |>
+  count(mean_age, high_risk) |>
+  mutate(prop = n/sum(n)) |>
+  filter(high_risk == "1") |>
+  mutate(emp_logit = log(prop/(1-prop))) |>
+  ggplot(aes(x = mean_age, y = emp_logit)) + 
+  geom_point() + 
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Mean Age", 
+       y = "Empirical logit")
+```
+
+## Empirical logit plot in R (quantitative predictor)
+
+Using the `emplogitplot1` function from the **Stat2Data** R package
+
+```{r}
+emplogitplot1(high_risk ~ age, 
+              data = heart_disease, 
+              ngroups = 10)
+```
+
+## Empirical logit plot in R (interactions)
+
+Using the `emplogitplot2` function from the **Stat2Data** R package
+
+```{r}
+emplogitplot2(high_risk ~ age + currentSmoker, data = heart_disease, 
+              ngroups = 10, 
+              putlegend = "bottomright")
+```
+
+## Checking linearity
+
+::::: columns
+::: {.column width="50%"}
+```{r}
+emplogitplot1(high_risk ~ age, 
+              data = heart_disease, 
+              ngroups = 10)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+emplogitplot1(high_risk ~ totChol, 
+              data = heart_disease, 
+              ngroups = 10)
+```
+:::
+:::::
+
+. . .
+
+✅ The linearity condition is satisfied. There is a linear relationship between the empirical logit and the predictor variables.
+
+## Checking randomness
+
+We can check the randomness condition based on the context of the data and how the observations were collected.
+
+-   Was the sample randomly selected?
+-   If the sample was not randomly selected, ask whether there is reason to believe the observations in the sample differ systematically from the population of interest.
+
+. . .
+
+✅ The randomness condition is satisfied. We do not have reason to believe that the participants in this study differ systematically from adults in the U.S. in regards to health characteristics and risk of heart disease.
+
+## Checking independence
+
+-   We can check the independence condition based on the context of the data and how the observations were collected.
+-   Independence is most often violated if the data were collected over time or there is a strong spatial relationship between the observations.
+
+. . .
+
+✅ The independence condition is satisfied. It is reasonable to conclude that the participants' health characteristics are independent of one another.
