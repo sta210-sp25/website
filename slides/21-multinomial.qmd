@@ -100,7 +100,7 @@ Recommended reading for more details about GLMs: [*Generalized Linear Models: A 
 -   We can calculate $\hat{p}_i$ by solving the logit equation:
 
     $$
-    \hat{p}_i = \frac{\exp\{\hat{\beta}_0 + \hat{\beta}_1 x_{i} + \dots \hat{\beta}_px_p\}}{1 + \exp\{\hat{\beta}_0 + \hat{\beta}_1 x_{i} + \dots \hat{\beta}_px_p\}}
+    \hat{p}_i = \frac{\exp\{\hat{\beta}_0 + \hat{\beta}_1 x_{i} + \dots +\hat{\beta}_px_p\}}{1 + \exp\{\hat{\beta}_0 + \hat{\beta}_1 x_{i} + \dots +\hat{\beta}_px_p\}}
     $$
 
 ## Binary outcome (Logistic) {.smaller}
@@ -115,10 +115,10 @@ Recommended reading for more details about GLMs: [*Generalized Linear Models: A 
 -   Then the logistic regression model is
 
     $$
-    \log\bigg(\frac{\hat{p}_{i1}}{1- \hat{p}_{i1}}\bigg) = \log\bigg(\frac{\hat{p}_{i1}}{\hat{p}_{i0}}\bigg) = \hat{\beta}_0 + \hat{\beta}_1 x_i + \dots \hat{\beta}_px_p
+    \log\bigg(\frac{\hat{p}_{i1}}{1- \hat{p}_{i1}}\bigg) = \log\bigg(\frac{\hat{p}_{i1}}{\hat{p}_{i0}}\bigg) = \hat{\beta}_0 + \hat{\beta}_1 x_{i1} + \dots \hat{\beta}_px_{ip}
     $$
 
--   **Slope**, $\hat{\beta}_j$: When $x$ increases by one unit, the odds of $y=1$ versus the baseline $y=0$ are expected to multiply by a factor of $\exp\{\hat{\beta}_k\}$
+-   **Slope**, $\hat{\beta}_j$: When $x$ increases by one unit, the odds of $y=1$ versus the baseline $y=0$ are expected to multiply by a factor of $\exp\{\hat{\beta}_j\}$
 
 -   **Intercept**, $\hat{\beta}_0$: When $x=0$, the predicted odds of $y=1$ versus the baseline $y=0$ are $\exp\{\hat{\beta}_0\}$
 :::
@@ -160,7 +160,7 @@ Recommended reading for more details about GLMs: [*Generalized Linear Models: A 
     $$
     \begin{aligned}
     \log\bigg(\frac{p_{iB}}{p_{iA}}\bigg) &= \beta_{0B} + \beta_{1B}x_{i1} + \dots \beta_{pB}x_{ip} \\[10pt]
-    \log\bigg(\frac{p_{iC}}{p_{iA}}\bigg) &= \beta_{0C} + \beta_{1C} x_{i1} + \beta_{pC}x_{ip}
+    \log\bigg(\frac{p_{iC}}{p_{iA}}\bigg) &= \beta_{0C} + \beta_{1C} x_{i1} + \dots +\beta_{pC}x_{ip}
     \end{aligned}
     $$
 
@@ -365,58 +365,8 @@ tidy(health_fit) |>
 ::::
 ::::::
 
-## Hypothesis test for $\beta_{jk}$
-
-The test of significance for the coefficient $\beta_{jk}$ is
-
-**Hypotheses**: $H_0: \beta_{jk} = 0 \hspace{2mm} \text{ vs } \hspace{2mm} H_a: \beta_{jk} \neq 0$
-
-**Test Statistic**: $$z = \frac{\hat{\beta}_{jk} - 0}{SE(\hat{\beta}_{jk})}$$
-
-**P-value**: $P(|Z| > |z|)$,
-
-where $Z \sim N(0, 1)$, the Standard Normal distribution
-
-## Confidence interval for $\beta_{jk}$
-
-::: incremental
--   We can calculate the **C% confidence interval** for $\beta_{jk}$ using $\hat{\beta}_{jk} \pm z^* \times SE(\hat{\beta}_{jk})$, where $z^*$ is calculated from the $N(0,1)$ distribution.
-
--   **Interpretation:** We are $C\%$ confident that for every one unit change in $x_{j}$, the odds of $y = k$ versus the baseline will multiply by a factor of $\exp\{\hat{\beta}_{jk} - z^* \times SE(\hat{\beta}_{jk})\}$ to $\exp\{\hat{\beta}_{jk} + z^* \times SE(\hat{\beta}_{jk})\}$, holding all else constant.
-:::
-
-## Interpreting CIs for $\beta_{jk}$ {.midi}
-
-```{r}
-tidy(health_fit, conf.int = TRUE) |>
-  filter(y.level == "Fair") |>
-  kable(digits = 3)
-```
-
-<br>
-
-. . .
-
-We are 95% confident, that for each additional year in age, the odds a person rates themselves as having fair health versus excellent health will multiply by `r round(exp(-0.003), 3)` (exp(-0.003)) to `r round(exp(0.009), 3)` (exp(0.009)) , holding physical activity constant.
-
-## Interpreting CIs for $\beta_{jk}$ {.midi}
-
-```{r}
-tidy(health_fit, conf.int = TRUE) |>
-  filter(y.level == "Fair") |>
-  kable(digits = 3)
-```
-
-<br>
-
-::: question
-Interpret the 95% confidence interval for `PhysActiveYes` in the context of the data.
-:::
-
 ## Recap
 
 -   Introduce multinomial logistic regression
 
 -   Interpret model coefficients
-
--   Inference for a coefficient $\beta_{jk}$
