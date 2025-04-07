@@ -18,7 +18,7 @@ library(broom)
 
 [Presentation](#presentation) + [Presentation comments](#presentation-comments) due Monday, March 31 (in lab)
 
-[Analysis draft + peer review](#draft-report-peer-review) due Monday, April 14 (peer review in lab)
+[Analysis draft + peer review](#draft-report-peer-review) due Monday, 21 (peer review in lab)
 
 [Written report](#written-report) due Wednesday, April 30
 
