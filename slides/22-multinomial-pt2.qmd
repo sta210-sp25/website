@@ -62,6 +62,8 @@ library(countdown)
 
 -   Exam 02 - April 17
 
+    -   Lecture videos available
+
 -   Next project milestone: Draft and peer review in April 21 lab
 
 -   Statistics experience due April 15
@@ -159,7 +161,7 @@ tidy(health_fit) |> kable(digits = 3)
     \hat{\pi}_{i1} = 1- \sum\limits_{k=2}^K \hat{\pi}_{ik}
     $$
 
-## Predicted probability 
+## Predicted probability
 
 ```{r}
 # compute predicted probabilities 
@@ -239,6 +241,20 @@ nhanes_adult |>
     Excellent:Poor
   ) |> 
   autoplot()
+```
+
+## ROC curves
+
+```{r}
+#| echo: false
+
+nhanes_adult |> 
+  roc_curve(
+    truth = HealthGen, 
+    Excellent:Poor
+  ) |> 
+  autoplot()
+
 ```
 
 ## Area Under the Curve (AUC)

@@ -396,6 +396,7 @@ window.Quarto = {
   <li><a href="#confusion-matrix" id="toc-confusion-matrix" class="nav-link" data-scroll-target="#confusion-matrix">Confusion matrix</a></li>
   <li><a href="#actual-vs.-predicted-health-rating-1" id="toc-actual-vs.-predicted-health-rating-1" class="nav-link" data-scroll-target="#actual-vs.-predicted-health-rating-1">Actual vs.&nbsp;predicted health rating</a></li>
   <li><a href="#roc-curves" id="toc-roc-curves" class="nav-link" data-scroll-target="#roc-curves">ROC curves</a></li>
+  <li><a href="#roc-curves-1" id="toc-roc-curves-1" class="nav-link" data-scroll-target="#roc-curves-1">ROC curves</a></li>
   <li><a href="#area-under-the-curve-auc" id="toc-area-under-the-curve-auc" class="nav-link" data-scroll-target="#area-under-the-curve-auc">Area Under the Curve (AUC)</a></li>
   </ul></li>
   <li><a href="#application-exercise" id="toc-application-exercise" class="nav-link" data-scroll-target="#application-exercise">Application exercise</a></li>
@@ -454,7 +455,10 @@ window.Quarto = {
 <ul>
 <li><p>HW 04 due TODAY at 11:59pm</p></li>
 <li><p>Team Feedback (email from TEAMMATES) due Tuesday, April 8 at 11:59pm (check email)</p></li>
-<li><p>Exam 02 - April 17</p></li>
+<li><p>Exam 02 - April 17</p>
+<ul>
+<li>Lecture videos available</li>
+</ul></li>
 <li><p>Next project milestone: Draft and peer review in April 21 lab</p></li>
 <li><p>Statistics experience due April 15</p></li>
 </ul>
@@ -736,7 +740,7 @@ $ obs_num    &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 
 <div>
 
 </div>
-<div class="cell quarto-layout-panel" data-layout-ncol="2" data-layout-align="center">
+<div class="cell quarto-layout-panel" data-layout-align="center" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
@@ -765,6 +769,18 @@ $ obs_num    &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    Excellent<span class="sc">:</span>Poor</span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">autoplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="roc-curves-1" class="level2">
+<h2 class="anchored" data-anchor-id="roc-curves-1">ROC curves</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="22-multinomial-pt2_files/figure-revealjs/unnamed-chunk-14-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
 </div>
 </section>
 <section id="area-under-the-curve-auc" class="level2">
@@ -847,32 +863,7 @@ $ obs_num    &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">ngroups =</span> <span class="dv">10</span>, <span class="at">main =</span> <span class="st">"Excellent vs. Age"</span>)</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">emplogitplot1</span>(Vgood <span class="sc">~</span> Age, <span class="at">data =</span> nhanes_adult, </span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">ngroups =</span> <span class="dv">10</span>, <span class="at">main =</span> <span class="st">"Vgood vs. Age"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell quarto-layout-panel" data-layout-ncol="2" data-layout-align="center">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="22-multinomial-pt2_files/figure-revealjs/unnamed-chunk-17-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="22-multinomial-pt2_files/figure-revealjs/unnamed-chunk-17-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="checking-linearity-2" class="level2">
-<h2 class="anchored" data-anchor-id="checking-linearity-2">Checking linearity</h2>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">emplogitplot1</span>(Good <span class="sc">~</span> Age, <span class="at">data =</span> nhanes_adult, </span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">ngroups =</span> <span class="dv">10</span>, <span class="at">main =</span> <span class="st">"Good vs. Age"</span>)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">emplogitplot1</span>(Fair <span class="sc">~</span> Age, <span class="at">data =</span> nhanes_adult, </span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">ngroups =</span> <span class="dv">10</span>, <span class="at">main =</span> <span class="st">"Fair vs. Age"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell quarto-layout-panel" data-layout-ncol="2" data-layout-align="center">
+<div class="cell quarto-layout-panel" data-layout-align="center" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
@@ -891,6 +882,31 @@ $ obs_num    &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 
 </div>
 </div>
 </section>
+<section id="checking-linearity-2" class="level2">
+<h2 class="anchored" data-anchor-id="checking-linearity-2">Checking linearity</h2>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">emplogitplot1</span>(Good <span class="sc">~</span> Age, <span class="at">data =</span> nhanes_adult, </span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">ngroups =</span> <span class="dv">10</span>, <span class="at">main =</span> <span class="st">"Good vs. Age"</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">emplogitplot1</span>(Fair <span class="sc">~</span> Age, <span class="at">data =</span> nhanes_adult, </span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">ngroups =</span> <span class="dv">10</span>, <span class="at">main =</span> <span class="st">"Fair vs. Age"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel" data-layout-align="center" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="22-multinomial-pt2_files/figure-revealjs/unnamed-chunk-19-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="22-multinomial-pt2_files/figure-revealjs/unnamed-chunk-19-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section id="checking-linearity-3" class="level2">
 <h2 class="anchored" data-anchor-id="checking-linearity-3">Checking linearity</h2>
 <div class="cell" data-layout-align="center">
@@ -899,7 +915,7 @@ $ obs_num    &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="22-multinomial-pt2_files/figure-revealjs/unnamed-chunk-19-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+<p><img src="22-multinomial-pt2_files/figure-revealjs/unnamed-chunk-20-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
 </figure>
 </div>
 </div>
