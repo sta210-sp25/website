@@ -92,10 +92,10 @@ website:
           text: Tips + resources
       - href: links.qmd
         text: Useful links
-      - href: https://forms.office.com/r/RPkWfBB4vf
-        text: Lecture recording request
-     # - href: https://duke.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=347eba5e-3c22-4926-8731-b25e0125ae4f
-      #  text: Lecture recordings
+    #  - href: https://forms.office.com/r/RPkWfBB4vf
+     #   text: Lecture recording request
+      - href: https://duke.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx?folderID=347eba5e-3c22-4926-8731-b25e0125ae4f
+        text: Lecture recordings
         
 
 format:
