@@ -8,7 +8,7 @@
 
 <meta name="author" content="Prof.&nbsp;Maria Tackett">
 
-<title>Multinomial Logistic Regression – STA 210 - Spring 2025</title>
+<title>Multinomial logistic regression – STA 210 - Spring 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -143,7 +143,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Multinomial Logistic Regression</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Multinomial logistic regression</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -380,48 +380,47 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#topics" id="toc-topics" class="nav-link active" data-scroll-target="#topics">Topics</a></li>
+  <li><a href="#announcements" id="toc-announcements" class="nav-link active" data-scroll-target="#announcements">Announcements</a></li>
+  <li><a href="#topics" id="toc-topics" class="nav-link" data-scroll-target="#topics">Topics</a></li>
   <li><a href="#computational-setup" id="toc-computational-setup" class="nav-link" data-scroll-target="#computational-setup">Computational setup</a></li>
-  <li><a href="#generalized-linear-models" id="toc-generalized-linear-models" class="nav-link" data-scroll-target="#generalized-linear-models">Generalized Linear Models</a>
-  <ul class="collapse">
-  <li><a href="#generalized-linear-models-glms" id="toc-generalized-linear-models-glms" class="nav-link" data-scroll-target="#generalized-linear-models-glms">Generalized Linear Models (GLMs)</a></li>
-  <li><a href="#binary-outcome-logistic" id="toc-binary-outcome-logistic" class="nav-link" data-scroll-target="#binary-outcome-logistic">Binary outcome (Logistic)</a></li>
-  <li><a href="#binary-outcome-logistic-1" id="toc-binary-outcome-logistic-1" class="nav-link" data-scroll-target="#binary-outcome-logistic-1">Binary outcome (Logistic)</a></li>
-  <li><a href="#multinomial-outcome-variable" id="toc-multinomial-outcome-variable" class="nav-link" data-scroll-target="#multinomial-outcome-variable">Multinomial outcome variable</a></li>
-  <li><a href="#multinomial-logistic-regression" id="toc-multinomial-logistic-regression" class="nav-link" data-scroll-target="#multinomial-logistic-regression">Multinomial Logistic Regression</a></li>
-  <li><a href="#multinomial-logistic-regression-1" id="toc-multinomial-logistic-regression-1" class="nav-link" data-scroll-target="#multinomial-logistic-regression-1">Multinomial Logistic Regression</a></li>
-  </ul></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a>
-  <ul class="collapse">
   <li><a href="#nhanes-data" id="toc-nhanes-data" class="nav-link" data-scroll-target="#nhanes-data">NHANES Data</a></li>
-  <li><a href="#nhanes-data-1" id="toc-nhanes-data-1" class="nav-link" data-scroll-target="#nhanes-data-1">NHANES Data</a></li>
   <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables">Variables</a></li>
   <li><a href="#the-data" id="toc-the-data" class="nav-link" data-scroll-target="#the-data">The data</a></li>
-  <li><a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link" data-scroll-target="#exploratory-data-analysis">Exploratory data analysis</a></li>
-  <li><a href="#exploratory-data-analysis-1" id="toc-exploratory-data-analysis-1" class="nav-link" data-scroll-target="#exploratory-data-analysis-1">Exploratory data analysis</a></li>
-  </ul></li>
-  <li><a href="#fitting-a-multinomial-logistic-regression-model" id="toc-fitting-a-multinomial-logistic-regression-model" class="nav-link" data-scroll-target="#fitting-a-multinomial-logistic-regression-model">Fitting a multinomial logistic regression model</a>
-  <ul class="collapse">
   <li><a href="#model-in-r" id="toc-model-in-r" class="nav-link" data-scroll-target="#model-in-r">Model in R</a></li>
-  <li><a href="#model-result" id="toc-model-result" class="nav-link" data-scroll-target="#model-result">Model result</a></li>
-  <li><a href="#tidy-model-output" id="toc-tidy-model-output" class="nav-link" data-scroll-target="#tidy-model-output">Tidy model output</a></li>
-  <li><a href="#tidy-model-output-with-ci" id="toc-tidy-model-output-with-ci" class="nav-link" data-scroll-target="#tidy-model-output-with-ci">Tidy model output, with CI</a></li>
-  <li><a href="#neatly-display-model-output" id="toc-neatly-display-model-output" class="nav-link" data-scroll-target="#neatly-display-model-output">Neatly display model output</a></li>
-  <li><a href="#fair-vs.-excellent-health" id="toc-fair-vs.-excellent-health" class="nav-link" data-scroll-target="#fair-vs.-excellent-health">Fair vs.&nbsp;Excellent Health</a></li>
-  <li><a href="#interpretations" id="toc-interpretations" class="nav-link" data-scroll-target="#interpretations">Interpretations</a></li>
-  <li><a href="#interpretations-1" id="toc-interpretations-1" class="nav-link" data-scroll-target="#interpretations-1">Interpretations</a></li>
-  <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
+  <li><a href="#model-summary" id="toc-model-summary" class="nav-link" data-scroll-target="#model-summary">Model summary</a></li>
+  <li><a href="#predictions" id="toc-predictions" class="nav-link" data-scroll-target="#predictions">Predictions</a>
+  <ul class="collapse">
+  <li><a href="#calculating-probabilities" id="toc-calculating-probabilities" class="nav-link" data-scroll-target="#calculating-probabilities">Calculating probabilities</a></li>
+  <li><a href="#predicted-probability" id="toc-predicted-probability" class="nav-link" data-scroll-target="#predicted-probability">Predicted probability</a></li>
+  <li><a href="#actual-vs.-predicted-health-rating" id="toc-actual-vs.-predicted-health-rating" class="nav-link" data-scroll-target="#actual-vs.-predicted-health-rating">Actual vs.&nbsp;predicted health rating</a></li>
+  <li><a href="#confusion-matrix" id="toc-confusion-matrix" class="nav-link" data-scroll-target="#confusion-matrix">Confusion matrix</a></li>
+  <li><a href="#actual-vs.-predicted-health-rating-1" id="toc-actual-vs.-predicted-health-rating-1" class="nav-link" data-scroll-target="#actual-vs.-predicted-health-rating-1">Actual vs.&nbsp;predicted health rating</a></li>
+  <li><a href="#roc-curves" id="toc-roc-curves" class="nav-link" data-scroll-target="#roc-curves">ROC curves</a></li>
+  <li><a href="#area-under-the-curve-auc" id="toc-area-under-the-curve-auc" class="nav-link" data-scroll-target="#area-under-the-curve-auc">Area Under the Curve (AUC)</a></li>
+  </ul></li>
+  <li><a href="#application-exercise" id="toc-application-exercise" class="nav-link" data-scroll-target="#application-exercise">Application exercise</a></li>
+  <li><a href="#checking-conditions-for-inference" id="toc-checking-conditions-for-inference" class="nav-link" data-scroll-target="#checking-conditions-for-inference">Checking conditions for inference</a>
+  <ul class="collapse">
+  <li><a href="#conditions-for-inference" id="toc-conditions-for-inference" class="nav-link" data-scroll-target="#conditions-for-inference">Conditions for inference</a></li>
+  <li><a href="#checking-linearity" id="toc-checking-linearity" class="nav-link" data-scroll-target="#checking-linearity">Checking linearity</a></li>
+  <li><a href="#checking-linearity-1" id="toc-checking-linearity-1" class="nav-link" data-scroll-target="#checking-linearity-1">Checking linearity</a></li>
+  <li><a href="#checking-linearity-2" id="toc-checking-linearity-2" class="nav-link" data-scroll-target="#checking-linearity-2">Checking linearity</a></li>
+  <li><a href="#checking-linearity-3" id="toc-checking-linearity-3" class="nav-link" data-scroll-target="#checking-linearity-3">Checking linearity</a></li>
+  <li><a href="#checking-randomness" id="toc-checking-randomness" class="nav-link" data-scroll-target="#checking-randomness">Checking randomness</a></li>
+  <li><a href="#checking-independence" id="toc-checking-independence" class="nav-link" data-scroll-target="#checking-independence">Checking independence</a></li>
   <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
+  <li><a href="#full-multinomial-modeling-workflow" id="toc-full-multinomial-modeling-workflow" class="nav-link" data-scroll-target="#full-multinomial-modeling-workflow">Full multinomial modeling workflow</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/sta210-sp25/website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="21-multinomial.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/sta210-sp25/website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="22-multinomial-pt2.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Multinomial Logistic Regression</h1>
+<h1 class="title">Multinomial logistic regression</h1>
+<p class="subtitle lead">Part 2</p>
 </div>
 
 
@@ -438,7 +437,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Apr 03, 2025</p>
+      <p class="date">Apr 08, 2025</p>
     </div>
   </div>
   
@@ -450,14 +449,23 @@ window.Quarto = {
 </header>
 
 
+<section id="announcements" class="level2 midi">
+<h2 class="midi anchored" data-anchor-id="announcements">Announcements</h2>
+<ul>
+<li><p>HW 04 due TODAY at 11:59pm</p></li>
+<li><p>Team Feedback (email from TEAMMATES) due Tuesday, April 8 at 11:59pm (check email)</p></li>
+<li><p>Exam 02 - April 17</p></li>
+<li><p>Next project milestone: Draft and peer review in April 21 lab</p></li>
+<li><p>Statistics experience due April 15</p></li>
+</ul>
+</section>
 <section id="topics" class="level2">
 <h2 class="anchored" data-anchor-id="topics">Topics</h2>
 <div class="nonincremental">
 <ul>
-<li><p>Conditions for logistic regression AE</p></li>
-<li><p>Multinomial logistic regression</p></li>
-<li><p>Interpret model coefficients</p></li>
-<li><p>Inference for a coefficient <span class="math inline">\(\beta_{jk}\)</span></p></li>
+<li>Predictions</li>
+<li>Model selection</li>
+<li>Checking conditions</li>
 </ul>
 </div>
 </section>
@@ -467,144 +475,33 @@ window.Quarto = {
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load packages</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(NHANES) <span class="co">#data set</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(NHANES)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># set default theme and larger font size for ggplot2</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">20</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(colorblindr)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pROC)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nnet)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># set default theme and larger font size for ggplot2</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">20</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="generalized-linear-models" class="level1">
-<h1>Generalized Linear Models</h1>
-<section id="generalized-linear-models-glms" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="generalized-linear-models-glms">Generalized Linear Models (GLMs)</h2>
-<ul>
-<li><p>In practice, there are many different types of outcome variables:</p>
-<div class="nonincremental">
-<ul>
-<li><strong>Continuous:</strong> Price of house</li>
-<li><strong>Binary</strong>: Win or Lose</li>
-<li><strong>Nominal</strong>: Democrat, Republican or Third Party candidate</li>
-<li><strong>Ordered</strong>: Movie rating (1 - 5 stars)</li>
-<li>and others…</li>
-</ul>
-</div></li>
-<li><p>Predicting each of these outcomes requires a <strong>generalized linear model</strong>, a broader class of models that <em>generalize</em> the multiple linear regression model</p></li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Recommended reading for more details about GLMs: <a href="https://bookdown.org/roback/bookdown-bysh/ch-glms.html"><em>Generalized Linear Models: A Unifying Theory</em></a>.</p>
-</div>
-</div>
-</section>
-<section id="binary-outcome-logistic" class="level2">
-<h2 class="anchored" data-anchor-id="binary-outcome-logistic">Binary outcome (Logistic)</h2>
-<ul>
-<li><p>Given <span class="math inline">\(P(y_i=1|x_i)= \hat{p}_i\hspace{5mm} \text{ and } \hspace{5mm}P(y_i=0|x_i) = 1-\hat{p}_i\)</span></p>
-<p><span class="math display">\[
-\log\Big(\frac{\hat{p}_i}{1-\hat{p}_i}\Big) = \hat{\beta}_0 + \hat{\beta}_1 x_{i} + \dots \hat{\beta}_px_p
-\]</span></p></li>
-<li><p>We can calculate <span class="math inline">\(\hat{p}_i\)</span> by solving the logit equation:</p>
-<p><span class="math display">\[
-\hat{p}_i = \frac{\exp\{\hat{\beta}_0 + \hat{\beta}_1 x_{i} + \dots +\hat{\beta}_px_p\}}{1 + \exp\{\hat{\beta}_0 + \hat{\beta}_1 x_{i} + \dots +\hat{\beta}_px_p\}}
-\]</span></p></li>
-</ul>
-</section>
-<section id="binary-outcome-logistic-1" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="binary-outcome-logistic-1">Binary outcome (Logistic)</h2>
-<div class="incremental">
-<ul class="incremental">
-<li><p>Suppose we consider <span class="math inline">\(y=0\)</span> the <strong>baseline category</strong> such that</p>
-<p><span class="math display">\[
-P(y_i=1|x_i) = \hat{p}_{i1} \hspace{2mm}  \text{ and } \hspace{2mm} P(y_i=0|x_i) = \hat{p}_{i0}
-\]</span></p></li>
-<li><p>Then the logistic regression model is</p>
-<p><span class="math display">\[
-\log\bigg(\frac{\hat{p}_{i1}}{1- \hat{p}_{i1}}\bigg) = \log\bigg(\frac{\hat{p}_{i1}}{\hat{p}_{i0}}\bigg) = \hat{\beta}_0 + \hat{\beta}_1 x_{i1} + \dots \hat{\beta}_px_{ip}
-\]</span></p></li>
-<li><p><strong>Slope</strong>, <span class="math inline">\(\hat{\beta}_j\)</span>: When <span class="math inline">\(x\)</span> increases by one unit, the odds of <span class="math inline">\(y=1\)</span> versus the baseline <span class="math inline">\(y=0\)</span> are expected to multiply by a factor of <span class="math inline">\(\exp\{\hat{\beta}_j\}\)</span></p></li>
-<li><p><strong>Intercept</strong>, <span class="math inline">\(\hat{\beta}_0\)</span>: When <span class="math inline">\(x=0\)</span>, the predicted odds of <span class="math inline">\(y=1\)</span> versus the baseline <span class="math inline">\(y=0\)</span> are <span class="math inline">\(\exp\{\hat{\beta}_0\}\)</span></p></li>
-</ul>
-</div>
-</section>
-<section id="multinomial-outcome-variable" class="level2">
-<h2 class="anchored" data-anchor-id="multinomial-outcome-variable">Multinomial outcome variable</h2>
-<ul>
-<li><p>Suppose the outcome variable <span class="math inline">\(y\)</span> is categorical and can take values <span class="math inline">\(1, 2, \ldots, K\)</span> such that <span class="math inline">\((K &gt; 2)\)</span></p></li>
-<li><p><strong>Multinomial Distribution:</strong></p>
-<p><span class="math display">\[
-P(y=1) = p_1, P(y=2) = p_2, \ldots, P(y=K) = p_K
-\]</span></p>
-<p>such that <span class="math inline">\(\sum\limits_{k=1}^{K} p_k = 1\)</span></p></li>
-</ul>
-</section>
-<section id="multinomial-logistic-regression" class="level2 small">
-<h2 class="small anchored" data-anchor-id="multinomial-logistic-regression">Multinomial Logistic Regression</h2>
-<div class="incremental">
-<ul class="incremental">
-<li><p>If we have an predictor variables <span class="math inline">\(x_1, \ldots, x_p\)</span>, then we want to fit a model such that <span class="math inline">\(P(y = k) = p_k\)</span> is a function of <span class="math inline">\(x_1, \ldots,x_p\)</span></p></li>
-<li><p>Choose a baseline category. Let’s choose <span class="math inline">\(y=1\)</span>. Then,</p>
-<p><span class="math display">\[
-\log\bigg(\frac{p_{ik}}{p_{i1}}\bigg) = \beta_{0k} + \beta_{1k} x_{i1} + \dots + \beta_{pk}x_{ip}
-\]</span></p></li>
-<li><p>In the multinomial logistic model, we have a separate equation for each category of the outcome relative to the baseline category</p>
-<ul class="incremental">
-<li>If the outcome has <span class="math inline">\(K\)</span> possible categories, there will be <span class="math inline">\(K-1\)</span> equations as part of the multinomial logistic model</li>
-</ul></li>
-</ul>
-</div>
-</section>
-<section id="multinomial-logistic-regression-1" class="level2">
-<h2 class="anchored" data-anchor-id="multinomial-logistic-regression-1">Multinomial Logistic Regression</h2>
-<ul>
-<li><p>Suppose we have a outcome variable <span class="math inline">\(y\)</span> that can take three possible outcomes that are coded as “A”, “B”, “C”</p></li>
-<li><p>Let “A” be the baseline category. Then</p>
-<p><span class="math display">\[
-\begin{aligned}
-\log\bigg(\frac{p_{iB}}{p_{iA}}\bigg) &amp;= \beta_{0B} + \beta_{1B}x_{i1} + \dots \beta_{pB}x_{ip} \\[10pt]
-\log\bigg(\frac{p_{iC}}{p_{iA}}\bigg) &amp;= \beta_{0C} + \beta_{1C} x_{i1} + \dots +\beta_{pC}x_{ip}
-\end{aligned}
-\]</span></p></li>
-</ul>
-</section>
-</section>
-<section id="data" class="level1">
-<h1>Data</h1>
 <section id="nhanes-data" class="level2">
 <h2 class="anchored" data-anchor-id="nhanes-data">NHANES Data</h2>
+<div class="nonincremental">
 <ul>
-<li><p><a href="https://www.cdc.gov/nchs/nhanes/?CDC_AAref_Val=https://www.cdc.gov/nchs/nhanes/index.htm">National Health and</a><a href="https://www.cdc.gov/nchs/nhanes/?CDC_AAref_Val=https://www.cdc.gov/nchs/nhanes/index.htm">Nutrition</a><a href="https://www.cdc.gov/nchs/nhanes/?CDC_AAref_Val=https://www.cdc.gov/nchs/nhanes/index.htm">Examination Survey</a> is conducted by the National Center for Health Statistics (NCHS)</p></li>
-<li><p>The goal is to <em>“assess the health and nutritional status of adults and children in the United States”</em></p></li>
-<li><p>This survey includes an interview and a physical examination</p></li>
+<li><a href="https://www.cdc.gov/nchs/nhanes/?CDC_AAref_Val=https://www.cdc.gov/nchs/nhanes/index.htm">National Health and Nutrition Examination Survey</a> is conducted by the National Center for Health Statistics (NCHS).</li>
+<li>The goal is to <em>“assess the health and nutritional status of adults and children in the United States”.</em></li>
+<li>This survey includes an interview and a physical examination.</li>
 </ul>
+</div>
 </section>
-<section id="nhanes-data-1" class="level2">
-<h2 class="anchored" data-anchor-id="nhanes-data-1">NHANES Data</h2>
-<ul>
-<li><p>We will use the data from the <code>NHANES</code> R package</p></li>
-<li><p>Contains 75 variables for the 2009 - 2010 and 2011 - 2012 sample years</p></li>
-<li><p>The data in this package is modified for educational purposes and should <strong>not</strong> be used for research</p></li>
-<li><p>Original data can be obtained from the <a href="https://www.cdc.gov/nchs/data_access/index.htm">NCHS website</a> for research purposes</p></li>
-<li><p>Type <code>?NHANES</code> in console to see list of variables and definitions</p></li>
-</ul>
-</section>
-<section id="variables" class="level2 midi">
-<h2 class="midi anchored" data-anchor-id="variables">Variables</h2>
+<section id="variables" class="level2">
+<h2 class="anchored" data-anchor-id="variables">Variables</h2>
 <p><strong>Goal:</strong> Use a person’s age and whether they do regular physical activity to predict their self-reported health rating.</p>
 <ul>
-<li><p>Outcome:</p>
-<ul>
-<li><code>HealthGen</code>: Self-reported rating of participant’s health in general. Excellent, Vgood, Good, Fair, or Poor.</li>
-</ul></li>
+<li><p>Outcome: <code>HealthGen</code>: Self-reported rating of participant’s health in general. Excellent, Vgood, Good, Fair, or Poor.</p></li>
 <li><p>Predictors:</p>
 <ul>
 <li><code>Age</code>: Age at time of screening (in years). Participants 80 or older were recorded as 80.</li>
@@ -617,141 +514,37 @@ P(y=1) = p_1, P(y=2) = p_2, \ldots, P(y=K) = p_K
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>nhanes_adult <span class="ot">&lt;-</span> NHANES <span class="sc">|&gt;</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Age <span class="sc">&gt;=</span> <span class="dv">18</span>) <span class="sc">|&gt;</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(HealthGen, Age, PhysActive) <span class="sc">|&gt;</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>(<span class="fu">is.na</span>(HealthGen))) <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(HealthGen, Age, PhysActive, Education) <span class="sc">|&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">obs_num =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(nhanes_adult)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Rows: 6,710
-Columns: 4
+<pre><code>Rows: 6,465
+Columns: 5
 $ HealthGen  &lt;fct&gt; Good, Good, Good, Good, Vgood, Vgood, Vgood, Vgood, Vgood, …
 $ Age        &lt;int&gt; 34, 34, 34, 49, 45, 45, 45, 66, 58, 54, 50, 33, 60, 56, 56,…
 $ PhysActive &lt;fct&gt; No, No, No, No, Yes, Yes, Yes, Yes, Yes, Yes, Yes, No, No, …
+$ Education  &lt;fct&gt; High School, High School, High School, Some College, Colleg…
 $ obs_num    &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, …</code></pre>
 </div>
 </div>
 </section>
-<section id="exploratory-data-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="exploratory-data-analysis">Exploratory data analysis</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="21-multinomial_files/figure-revealjs/unnamed-chunk-5-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="exploratory-data-analysis-1" class="level2">
-<h2 class="anchored" data-anchor-id="exploratory-data-analysis-1">Exploratory data analysis</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="21-multinomial_files/figure-revealjs/unnamed-chunk-6-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="fitting-a-multinomial-logistic-regression-model" class="level1">
-<h1>Fitting a multinomial logistic regression model</h1>
 <section id="model-in-r" class="level2">
 <h2 class="anchored" data-anchor-id="model-in-r">Model in R</h2>
-<p>Use the <code>multinom</code> function from the <strong>nnet</strong> R package</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nnet)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>health_fit <span class="ot">&lt;-</span> <span class="fu">multinom</span>(HealthGen <span class="sc">~</span> Age <span class="sc">+</span> PhysActive, </span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">data =</span> nhanes_adult)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><br></p>
-<p>Use code chunk option <code>#| results: hide</code> to suppress convergence output</p>
 </section>
-<section id="model-result" class="level2">
-<h2 class="anchored" data-anchor-id="model-result">Model result</h2>
+<section id="model-summary" class="level2 small">
+<h2 class="small anchored" data-anchor-id="model-summary">Model summary</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>health_fit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Call:
-multinom(formula = HealthGen ~ Age + PhysActive, data = nhanes_adult)
-
-Coefficients:
-      (Intercept)           Age PhysActiveYes
-Vgood   1.2053460  0.0009101848    -0.3209047
-Good    1.9476261 -0.0023686122    -1.0014925
-Fair    0.9145492  0.0030462534    -1.6454297
-Poor   -1.5211414  0.0221905681    -2.6556343
-
-Residual Deviance: 17588.88 
-AIC: 17612.88 </code></pre>
-</div>
-</div>
-</section>
-<section id="tidy-model-output" class="level2">
-<h2 class="anchored" data-anchor-id="tidy-model-output">Tidy model output</h2>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(health_fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 12 × 6
-   y.level term           estimate std.error statistic  p.value
-   &lt;chr&gt;   &lt;chr&gt;             &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
- 1 Vgood   (Intercept)    1.21       0.145       8.33  8.42e-17
- 2 Vgood   Age            0.000910   0.00246     0.369 7.12e- 1
- 3 Vgood   PhysActiveYes -0.321      0.0929     -3.45  5.51e- 4
- 4 Good    (Intercept)    1.95       0.141      13.8   1.39e-43
- 5 Good    Age           -0.00237    0.00242    -0.977 3.29e- 1
- 6 Good    PhysActiveYes -1.00       0.0901    -11.1   1.00e-28
- 7 Fair    (Intercept)    0.915      0.164       5.57  2.61e- 8
- 8 Fair    Age            0.00305    0.00288     1.06  2.90e- 1
- 9 Fair    PhysActiveYes -1.65       0.107     -15.3   5.69e-53
-10 Poor    (Intercept)   -1.52       0.290      -5.24  1.62e- 7
-11 Poor    Age            0.0222     0.00491     4.52  6.11e- 6
-12 Poor    PhysActiveYes -2.66       0.236     -11.3   1.75e-29</code></pre>
-</div>
-</div>
-</section>
-<section id="tidy-model-output-with-ci" class="level2">
-<h2 class="anchored" data-anchor-id="tidy-model-output-with-ci">Tidy model output, with CI</h2>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(health_fit, <span class="at">conf.int =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 12 × 8
-   y.level term         estimate std.error statistic  p.value conf.low conf.high
-   &lt;chr&gt;   &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
- 1 Vgood   (Intercept)   1.21e+0   0.145       8.33  8.42e-17  0.922     1.49   
- 2 Vgood   Age           9.10e-4   0.00246     0.369 7.12e- 1 -0.00392   0.00574
- 3 Vgood   PhysActiveY… -3.21e-1   0.0929     -3.45  5.51e- 4 -0.503    -0.139  
- 4 Good    (Intercept)   1.95e+0   0.141      13.8   1.39e-43  1.67      2.22   
- 5 Good    Age          -2.37e-3   0.00242    -0.977 3.29e- 1 -0.00712   0.00238
- 6 Good    PhysActiveY… -1.00e+0   0.0901    -11.1   1.00e-28 -1.18     -0.825  
- 7 Fair    (Intercept)   9.15e-1   0.164       5.57  2.61e- 8  0.592     1.24   
- 8 Fair    Age           3.05e-3   0.00288     1.06  2.90e- 1 -0.00260   0.00869
- 9 Fair    PhysActiveY… -1.65e+0   0.107     -15.3   5.69e-53 -1.86     -1.43   
-10 Poor    (Intercept)  -1.52e+0   0.290      -5.24  1.62e- 7 -2.09     -0.952  
-11 Poor    Age           2.22e-2   0.00491     4.52  6.11e- 6  0.0126    0.0318 
-12 Poor    PhysActiveY… -2.66e+0   0.236     -11.3   1.75e-29 -3.12     -2.19   </code></pre>
-</div>
-</div>
-</section>
-<section id="neatly-display-model-output" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="neatly-display-model-output">Neatly display model output</h2>
-<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(health_fit) <span class="sc">|&gt;</span> <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
-<colgroup>
-<col style="width: 10%">
-<col style="width: 17%">
-<col style="width: 11%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 10%">
-<col style="width: 11%">
-<col style="width: 12%">
-</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">y.level</th>
@@ -760,271 +553,390 @@ AIC: 17612.88 </code></pre>
 <th style="text-align: right;">std.error</th>
 <th style="text-align: right;">statistic</th>
 <th style="text-align: right;">p.value</th>
-<th style="text-align: right;">conf.low</th>
-<th style="text-align: right;">conf.high</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Vgood</td>
 <td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">1.205</td>
-<td style="text-align: right;">0.145</td>
-<td style="text-align: right;">8.325</td>
+<td style="text-align: right;">1.265</td>
+<td style="text-align: right;">0.154</td>
+<td style="text-align: right;">8.235</td>
 <td style="text-align: right;">0.000</td>
-<td style="text-align: right;">0.922</td>
-<td style="text-align: right;">1.489</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Vgood</td>
 <td style="text-align: left;">Age</td>
-<td style="text-align: right;">0.001</td>
-<td style="text-align: right;">0.002</td>
-<td style="text-align: right;">0.369</td>
-<td style="text-align: right;">0.712</td>
-<td style="text-align: right;">-0.004</td>
-<td style="text-align: right;">0.006</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.003</td>
+<td style="text-align: right;">-0.014</td>
+<td style="text-align: right;">0.989</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Vgood</td>
 <td style="text-align: left;">PhysActiveYes</td>
-<td style="text-align: right;">-0.321</td>
-<td style="text-align: right;">0.093</td>
-<td style="text-align: right;">-3.454</td>
-<td style="text-align: right;">0.001</td>
-<td style="text-align: right;">-0.503</td>
-<td style="text-align: right;">-0.139</td>
+<td style="text-align: right;">-0.332</td>
+<td style="text-align: right;">0.095</td>
+<td style="text-align: right;">-3.496</td>
+<td style="text-align: right;">0.000</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Good</td>
 <td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">1.948</td>
-<td style="text-align: right;">0.141</td>
-<td style="text-align: right;">13.844</td>
+<td style="text-align: right;">1.989</td>
+<td style="text-align: right;">0.150</td>
+<td style="text-align: right;">13.285</td>
 <td style="text-align: right;">0.000</td>
-<td style="text-align: right;">1.672</td>
-<td style="text-align: right;">2.223</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Good</td>
 <td style="text-align: left;">Age</td>
-<td style="text-align: right;">-0.002</td>
-<td style="text-align: right;">0.002</td>
-<td style="text-align: right;">-0.977</td>
-<td style="text-align: right;">0.329</td>
-<td style="text-align: right;">-0.007</td>
-<td style="text-align: right;">0.002</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Good</td>
-<td style="text-align: left;">PhysActiveYes</td>
-<td style="text-align: right;">-1.001</td>
-<td style="text-align: right;">0.090</td>
-<td style="text-align: right;">-11.120</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">-1.178</td>
-<td style="text-align: right;">-0.825</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Fair</td>
-<td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">0.915</td>
-<td style="text-align: right;">0.164</td>
-<td style="text-align: right;">5.566</td>
-<td style="text-align: right;">0.000</td>
-<td style="text-align: right;">0.592</td>
-<td style="text-align: right;">1.237</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Fair</td>
-<td style="text-align: left;">Age</td>
-<td style="text-align: right;">0.003</td>
-<td style="text-align: right;">0.003</td>
-<td style="text-align: right;">1.058</td>
-<td style="text-align: right;">0.290</td>
 <td style="text-align: right;">-0.003</td>
-<td style="text-align: right;">0.009</td>
+<td style="text-align: right;">0.003</td>
+<td style="text-align: right;">-1.187</td>
+<td style="text-align: right;">0.235</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Good</td>
+<td style="text-align: left;">PhysActiveYes</td>
+<td style="text-align: right;">-1.011</td>
+<td style="text-align: right;">0.092</td>
+<td style="text-align: right;">-10.979</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Fair</td>
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">1.033</td>
+<td style="text-align: right;">0.174</td>
+<td style="text-align: right;">5.938</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fair</td>
+<td style="text-align: left;">Age</td>
+<td style="text-align: right;">0.001</td>
+<td style="text-align: right;">0.003</td>
+<td style="text-align: right;">0.373</td>
+<td style="text-align: right;">0.709</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Fair</td>
 <td style="text-align: left;">PhysActiveYes</td>
-<td style="text-align: right;">-1.645</td>
-<td style="text-align: right;">0.107</td>
-<td style="text-align: right;">-15.319</td>
+<td style="text-align: right;">-1.662</td>
+<td style="text-align: right;">0.109</td>
+<td style="text-align: right;">-15.190</td>
 <td style="text-align: right;">0.000</td>
-<td style="text-align: right;">-1.856</td>
-<td style="text-align: right;">-1.435</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Poor</td>
 <td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">-1.521</td>
-<td style="text-align: right;">0.290</td>
-<td style="text-align: right;">-5.238</td>
+<td style="text-align: right;">-1.338</td>
+<td style="text-align: right;">0.299</td>
+<td style="text-align: right;">-4.475</td>
 <td style="text-align: right;">0.000</td>
-<td style="text-align: right;">-2.090</td>
-<td style="text-align: right;">-0.952</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Poor</td>
 <td style="text-align: left;">Age</td>
-<td style="text-align: right;">0.022</td>
+<td style="text-align: right;">0.019</td>
 <td style="text-align: right;">0.005</td>
-<td style="text-align: right;">4.522</td>
+<td style="text-align: right;">3.827</td>
 <td style="text-align: right;">0.000</td>
-<td style="text-align: right;">0.013</td>
-<td style="text-align: right;">0.032</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Poor</td>
 <td style="text-align: left;">PhysActiveYes</td>
-<td style="text-align: right;">-2.656</td>
+<td style="text-align: right;">-2.670</td>
 <td style="text-align: right;">0.236</td>
-<td style="text-align: right;">-11.275</td>
+<td style="text-align: right;">-11.308</td>
 <td style="text-align: right;">0.000</td>
-<td style="text-align: right;">-3.117</td>
-<td style="text-align: right;">-2.194</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </section>
-<section id="fair-vs.-excellent-health" class="level2">
-<h2 class="anchored" data-anchor-id="fair-vs.-excellent-health">Fair vs.&nbsp;Excellent Health</h2>
-<p>The baseline category for the model is <code>Excellent</code>.</p>
-<p>. . .</p>
-<p>The model equation for the log-odds a person rates themselves as having “Fair” health vs.&nbsp;“Excellent” is</p>
+<section id="predictions" class="level1">
+<h1>Predictions</h1>
+<section id="calculating-probabilities" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="calculating-probabilities">Calculating probabilities</h2>
+<ul>
+<li><p>Suppose the response variable has <span class="math inline">\(K\)</span> categories and <span class="math inline">\(k = 1\)</span> is the baseline category. For categories <span class="math inline">\(2,\ldots,K\)</span>, the probability that the <span class="math inline">\(i^{th}\)</span> observation is in the <span class="math inline">\(j^{th}\)</span> category is</p>
 <p><span class="math display">\[
-\log\Big(\frac{\hat{p}_{Fair}}{\hat{p}_{Excellent}}\Big) = 0.915  + 0.003 ~ \text{age} - 1.645 ~ \text{PhysActive}
-\]</span></p>
-</section>
-<section id="interpretations" class="level2 midi">
-<h2 class="midi anchored" data-anchor-id="interpretations">Interpretations</h2>
+\hat{\pi}_{ij} = \frac{\exp\{\hat{\beta}_{0j} + \hat{\beta}_{1j}x_{i1} + \dots + \hat{\beta}_{pj}x_{ip}\}}{1 + \sum\limits_{k=2}^K \exp\{\hat{\beta}_{0k} + \hat{\beta}_{1k}x_{i1} + \dots \hat{\beta}_{pk}x_{ip}\}}
+\]</span></p></li>
+<li><p>For the baseline category, <span class="math inline">\(k=1\)</span>, we calculate the probability <span class="math inline">\(\hat{\pi}_{i1}\)</span> as</p>
 <p><span class="math display">\[
-\log\Big(\frac{\hat{p}_{Fair}}{\hat{p}_{Excellent}}\Big) = 0.915  + 0.003 ~ \text{age} - 1.645 ~ \text{PhysActive}
-\]</span></p>
-<p>For each additional year in age, the odds a person rates themselves as having fair health versus excellent health are expected to multiply by 1.003 (exp(0.003)), holding physical activity constant.</p>
-<p><br></p>
-<p>. . .</p>
-<p>The odds a person who does physical activity will rate themselves as having fair health versus excellent health are expected to be 0.193 (exp(-1.645)) times the odds for a person who doesn’t do physical activity, holding age constant.</p>
+\hat{\pi}_{i1} = 1- \sum\limits_{k=2}^K \hat{\pi}_{ik}
+\]</span></p></li>
+</ul>
 </section>
-<section id="interpretations-1" class="level2">
-<h2 class="anchored" data-anchor-id="interpretations-1">Interpretations</h2>
-<p><span class="math display">\[
-\log\Big(\frac{\hat{p}_{Fair}}{\hat{p}_{Excellent}}\Big) = 0.915  + 0.003 ~ \text{age} - 1.645 ~ \text{PhysActive}
-\]</span></p>
-<p>The odds a 0 year old person who doesn’t do physical activity rates themselves as having fair health vs.&nbsp;excellent health are 2.497 (exp(0.915)).</p>
+<section id="predicted-probability" class="level2">
+<h2 class="anchored" data-anchor-id="predicted-probability">Predicted probability</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># compute predicted probabilities </span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>pred_probs <span class="ot">&lt;-</span> <span class="fu">predict</span>(health_fit, <span class="at">type =</span> <span class="st">"probs"</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># add to original data </span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>nhanes_adult <span class="ot">&lt;-</span> nhanes_adult <span class="sc">|&gt;</span> </span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_cols</span>(pred_probs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>. . .</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Need to mean-center age for the intercept to have a meaningful interpretation!</strong></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 7
+     Age PhysActive Excellent Vgood  Good   Fair    Poor
+   &lt;int&gt; &lt;fct&gt;          &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;
+ 1    20 Yes           0.151  0.384 0.378 0.0824 0.00404
+ 2    26 No            0.0684 0.242 0.462 0.198  0.0297 
+ 3    57 No            0.0691 0.244 0.425 0.207  0.0546 
+ 4    56 Yes           0.156  0.397 0.350 0.0887 0.00837
+ 5    38 Yes           0.154  0.391 0.364 0.0855 0.00582
+ 6    52 Yes           0.156  0.395 0.353 0.0880 0.00773
+ 7    22 Yes           0.151  0.385 0.377 0.0827 0.00421
+ 8    52 Yes           0.156  0.395 0.353 0.0880 0.00773
+ 9    22 No            0.0682 0.242 0.466 0.196  0.0274 
+10    32 Yes           0.153  0.389 0.369 0.0845 0.00516</code></pre>
 </div>
 </div>
 </section>
-<section id="practice" class="level2">
-<h2 class="anchored" data-anchor-id="practice">Practice</h2>
+<section id="actual-vs.-predicted-health-rating" class="level2">
+<h2 class="anchored" data-anchor-id="actual-vs.-predicted-health-rating">Actual vs.&nbsp;predicted health rating</h2>
+<p>For each observation, the predicted perceived health rating is the category with the highest predicted probability.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get predicted classes</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>pred_class <span class="ot">&lt;-</span> <span class="fu">predict</span>(health_fit, <span class="at">type =</span> <span class="st">"class"</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># add to original data </span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>nhanes_adult <span class="ot">&lt;-</span> nhanes_adult <span class="sc">|&gt;</span> </span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_cols</span>(<span class="at">pred_class =</span> pred_class) <span class="co">#save as column named pred_class</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="confusion-matrix" class="level2">
+<h2 class="anchored" data-anchor-id="confusion-matrix">Confusion matrix</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>nhanes_adult <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">conf_mat</span>(HealthGen, pred_class)  <span class="sc">|&gt;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">autoplot</span>(<span class="at">type =</span> <span class="st">"heatmap"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="22-multinomial-pt2_files/figure-revealjs/unnamed-chunk-11-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="actual-vs.-predicted-health-rating-1" class="level2">
+<h2 class="anchored" data-anchor-id="actual-vs.-predicted-health-rating-1">Actual vs.&nbsp;predicted health rating</h2>
+<div class="question">
+<p>Why do you think no observations were predicted to have a rating of “Excellent”, “Fair”, or “Poor”?</p>
+</div>
+<div>
+
+</div>
+<div class="cell quarto-layout-panel" data-layout-ncol="2" data-layout-align="center">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="22-multinomial-pt2_files/figure-revealjs/unnamed-chunk-12-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="22-multinomial-pt2_files/figure-revealjs/unnamed-chunk-12-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="roc-curves" class="level2">
+<h2 class="anchored" data-anchor-id="roc-curves">ROC curves</h2>
+<p>ROC curves for multiclass outcomes use a one-vs-all approach: calculate multiple curves, one per level vs.&nbsp;all other levels.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>nhanes_adult <span class="sc">|&gt;</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">roc_curve</span>(</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">truth =</span> HealthGen, </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    Excellent<span class="sc">:</span>Poor</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">autoplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="area-under-the-curve-auc" class="level2">
+<h2 class="anchored" data-anchor-id="area-under-the-curve-auc">Area Under the Curve (AUC)</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
+<center>
+<strong>Average AUC</strong>
+</center>
 <div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: left;">y.level</th>
-<th style="text-align: left;">term</th>
-<th style="text-align: right;">estimate</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Vgood</td>
-<td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">1.205</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Vgood</td>
-<td style="text-align: left;">Age</td>
-<td style="text-align: right;">0.001</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Vgood</td>
-<td style="text-align: left;">PhysActiveYes</td>
-<td style="text-align: right;">-0.321</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Good</td>
-<td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">1.948</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Good</td>
-<td style="text-align: left;">Age</td>
-<td style="text-align: right;">-0.002</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Good</td>
-<td style="text-align: left;">PhysActiveYes</td>
-<td style="text-align: right;">-1.001</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Fair</td>
-<td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">0.915</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Fair</td>
-<td style="text-align: left;">Age</td>
-<td style="text-align: right;">0.003</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Fair</td>
-<td style="text-align: left;">PhysActiveYes</td>
-<td style="text-align: right;">-1.645</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Poor</td>
-<td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">-1.521</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Poor</td>
-<td style="text-align: left;">Age</td>
-<td style="text-align: right;">0.022</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Poor</td>
-<td style="text-align: left;">PhysActiveYes</td>
-<td style="text-align: right;">-2.656</td>
-</tr>
-</tbody>
-</table>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>nhanes_adult <span class="sc">|&gt;</span> </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">roc_auc</span>(</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">truth =</span> HealthGen, </span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    Excellent<span class="sc">:</span>Poor,</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">estimator =</span> <span class="st">"macro"</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 3
+  .metric .estimator .estimate
+  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;
+1 roc_auc macro          0.622</code></pre>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
-<div class="question">
+<center>
+<strong>Average AUC weighted by # of observations</strong>
+</center>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>nhanes_adult <span class="sc">|&gt;</span> </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">roc_auc</span>(</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">truth =</span> HealthGen, </span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    Excellent<span class="sc">:</span>Poor,</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">estimator =</span> <span class="st">"macro_weighted"</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 3
+  .metric .estimator     .estimate
+  &lt;chr&gt;   &lt;chr&gt;              &lt;dbl&gt;
+1 roc_auc macro_weighted     0.583</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="application-exercise" class="level1">
+<h1>Application exercise</h1>
+<div class="appex">
+<p>📋 <a href="https://sta210-sp25.netlify.app/ae/ae-11-multinomial.html" class="uri">https://sta210-sp25.netlify.app/ae/ae-11-multinomial.html</a></p>
+</div>
+</section>
+<section id="checking-conditions-for-inference" class="level1">
+<h1>Checking conditions for inference</h1>
+<section id="conditions-for-inference" class="level2">
+<h2 class="anchored" data-anchor-id="conditions-for-inference">Conditions for inference</h2>
+<p>We want to check the following conditions for inference for the multinomial logistic regression model:</p>
+<ol type="1">
+<li><p>Linearity: Is there a linear relationship between the log-odds and the predictor variables?</p></li>
+<li><p>Randomness: Was the sample randomly selected? Or can we reasonably treat it as random?</p></li>
+<li><p>Independence: Are the observations independent?</p></li>
+</ol>
+</section>
+<section id="checking-linearity" class="level2">
+<h2 class="anchored" data-anchor-id="checking-linearity">Checking linearity</h2>
+<p>Similar to logistic regression, we will check linearity by examining empirical logit plots between each level of the response and the quantitative predictor variables.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>nhanes_adult <span class="ot">&lt;-</span> nhanes_adult <span class="sc">|&gt;</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">Excellent =</span> <span class="fu">factor</span>(<span class="fu">if_else</span>(HealthGen <span class="sc">==</span> <span class="st">"Excellent"</span>, <span class="st">"1"</span>, <span class="st">"0"</span>)),</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Vgood =</span> <span class="fu">factor</span>(<span class="fu">if_else</span>(HealthGen <span class="sc">==</span> <span class="st">"Vgood"</span>, <span class="st">"1"</span>, <span class="st">"0"</span>)),</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Good =</span> <span class="fu">factor</span>(<span class="fu">if_else</span>(HealthGen <span class="sc">==</span> <span class="st">"Good"</span>, <span class="st">"1"</span>, <span class="st">"0"</span>)),</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">Fair =</span> <span class="fu">factor</span>(<span class="fu">if_else</span>(HealthGen <span class="sc">==</span> <span class="st">"Fair"</span>, <span class="st">"1"</span>, <span class="st">"0"</span>)),</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">Poor =</span> <span class="fu">factor</span>(<span class="fu">if_else</span>(HealthGen <span class="sc">==</span> <span class="st">"Poor"</span>, <span class="st">"1"</span>, <span class="st">"0"</span>))</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="checking-linearity-1" class="level2">
+<h2 class="anchored" data-anchor-id="checking-linearity-1">Checking linearity</h2>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">emplogitplot1</span>(Excellent <span class="sc">~</span> Age, <span class="at">data =</span> nhanes_adult, </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">ngroups =</span> <span class="dv">10</span>, <span class="at">main =</span> <span class="st">"Excellent vs. Age"</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">emplogitplot1</span>(Vgood <span class="sc">~</span> Age, <span class="at">data =</span> nhanes_adult, </span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">ngroups =</span> <span class="dv">10</span>, <span class="at">main =</span> <span class="st">"Vgood vs. Age"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel" data-layout-ncol="2" data-layout-align="center">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="22-multinomial-pt2_files/figure-revealjs/unnamed-chunk-17-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="22-multinomial-pt2_files/figure-revealjs/unnamed-chunk-17-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="checking-linearity-2" class="level2">
+<h2 class="anchored" data-anchor-id="checking-linearity-2">Checking linearity</h2>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">emplogitplot1</span>(Good <span class="sc">~</span> Age, <span class="at">data =</span> nhanes_adult, </span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">ngroups =</span> <span class="dv">10</span>, <span class="at">main =</span> <span class="st">"Good vs. Age"</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">emplogitplot1</span>(Fair <span class="sc">~</span> Age, <span class="at">data =</span> nhanes_adult, </span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">ngroups =</span> <span class="dv">10</span>, <span class="at">main =</span> <span class="st">"Fair vs. Age"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel" data-layout-ncol="2" data-layout-align="center">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="22-multinomial-pt2_files/figure-revealjs/unnamed-chunk-18-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="22-multinomial-pt2_files/figure-revealjs/unnamed-chunk-18-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="checking-linearity-3" class="level2">
+<h2 class="anchored" data-anchor-id="checking-linearity-3">Checking linearity</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">emplogitplot1</span>(Poor <span class="sc">~</span> Age, <span class="at">data =</span> nhanes_adult, </span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">ngroups =</span> <span class="dv">10</span>, <span class="at">main =</span> <span class="st">"Poor vs. Age"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="22-multinomial-pt2_files/figure-revealjs/unnamed-chunk-19-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>. . .</p>
+<p>✅ The linearity condition is satisfied. There is generally a linear relationship between the empirical logit and the quantitative predictor variable, Age, for each level of the response.</p>
+</section>
+<section id="checking-randomness" class="level2">
+<h2 class="anchored" data-anchor-id="checking-randomness">Checking randomness</h2>
+<p>We can check the randomness condition based on the context of the data and how the observations were collected.</p>
 <ul>
-<li><p>Write the equation for Very good (<code>Vgood</code>) versus Excellent.</p></li>
-<li><p>Interpret <code>Age</code> in the context of the data.</p></li>
-<li><p>Interpret <code>PhysActiveYes</code> in the context of the data.</p></li>
+<li><p>Was the sample randomly selected?</p></li>
+<li><p>If the sample was not randomly selected, ask whether there is reason to believe the observations in the sample differ systematically from the population of interest.</p></li>
 </ul>
-</div>
-</div>
-</div>
+<p>. . .</p>
+<p>✅ The randomness condition is satisfied. The participants were randomly selected, and thus we do not have reason to believe that the participants in this study differ systematically from adults in the U.S.</p>
+</section>
+<section id="checking-independence" class="level2">
+<h2 class="anchored" data-anchor-id="checking-independence">Checking independence</h2>
+<p>We can check the independence condition based on the context of the data and how the observations were collected.</p>
+<p>Independence is most often violated if the data were collected over time or there is a strong spatial relationship between the observations.</p>
+<p>. . .</p>
+<p>✅ The independence condition is satisfied. The participants were randomly selected, so it is reasonable to conclude that the participants’ health and behavior characteristics are independent of one another.</p>
 </section>
 <section id="recap" class="level2">
 <h2 class="anchored" data-anchor-id="recap">Recap</h2>
 <ul>
-<li><p>Introduce multinomial logistic regression</p></li>
-<li><p>Interpret model coefficients</p></li>
+<li>Predictions</li>
+<li>Model selection for inference</li>
+<li>Checking conditions for inference</li>
+</ul>
+</section>
+<section id="full-multinomial-modeling-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="full-multinomial-modeling-workflow">Full multinomial modeling workflow</h2>
+<ul>
+<li><p><a href="https://juliasilge.com/blog/multinomial-volcano-eruptions/">juliasilge.com/blog/multinomial-volcano-eruptions</a></p></li>
+<li><p><a href="https://juliasilge.com/blog/nber-papers/">juliasilge.com/blog/nber-papers</a></p></li>
 </ul>
 
 
