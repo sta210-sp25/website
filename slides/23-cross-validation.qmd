@@ -1,18 +1,21 @@
 ---
-title: "Model comparison + cross validation"
+title: "Cross validation"
 author: "Prof. Maria Tackett"
-date: "2023-10-18"
+date: "2025-04-10"
 date-format: "MMM DD, YYYY"
-footer: "[🔗 STA 210 - Fall 2023 -  Schedule](https://sta210-fa23.netlify.app/schedule)"
+footer: "[🔗 STA 210 - Spring 2025](https://sta210-sp25.netlify.app)"
 logo: "../images/logo.png"
 format: 
-  revealjs:
+  revealjs: 
     theme: slides.scss
     multiplex: false
     transition: fade
-    slide-number: false
+    slide-number: true
     incremental: false 
     chalkboard: true
+    include-before: [ '<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>']
+  html: 
+    output-file: 23-cross-validation-notes.html
 html-math-method:
   method: mathjax
   url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
@@ -68,6 +71,29 @@ library(kableExtra)
 ggplot2::theme_set(ggplot2::theme_bw(base_size = 20))
 ```
 
+## Data: Sesame Street
+
+Today's data comes from [an experiment](https://files.eric.ed.gov/fulltext/ED122799.pdf) by the Educational Testing Service to test the effectiveness of the children's program *Sesame Street*. *Sesame Street* is an educational program designed to teach young children basic educational skills such as counting and the alphabet
+
+As part of the experiment, children were assigned to one of two groups: those who were encouraged to watch the program and those who were not.
+
+The show is only effective if children watch it, so we want to understand what effect the encouragement had on the frequency children watched the program.
+
+## Variables
+
+**Response:**
+
+-   `viewcat`
+    -   1: rarely watched show
+    -   2: watched once or twice a week
+    -   3: watched three to five times a week
+    -   4: watched show on average more than five times a week
+
+**Predictors:**
+
+-   `age`: child's age in months
+-   `viewenc`: 1: encouraged to watch, 0: not encouraged
+
 # Application exercise
 
 ::: appex
@@ -87,7 +113,7 @@ ggplot2::theme_set(ggplot2::theme_bw(base_size = 20))
 
 **Resampling is only conducted on the** <u>**training**</u> **set**. The test set is not involved. For each iteration of resampling, the data are partitioned into two subsamples:
 
--   The model is fit with the **analysis set**. Model fit statistics such as $R^2_{Adj}$, AIC, and BIC are calculated based on this fit.
+-   The model is fit with the **analysis set**. Model fit statistics such as $R^2_{Adj}$, AIC, BIC, and AUC are calculated based on this fit.
 -   The model is evaluated with the **assessment set**.
 
 ## Resampling for model assessment
@@ -156,9 +182,21 @@ sesame_test <- testing(sesame_split)
 sesame_spec <- multinom_reg()
 ```
 
-<br> . . .
+<br>
 
-**Note: Use `linear_reg()` or `logistic_reg()` for linear or logistic models, respectively.**
+. . .
+
+```{r}
+sesame_spec
+```
+
+<br>
+
+. . .
+
+**Note:** Use `linear_reg()` or `logistic_reg()` for linear or logistic models, respectively.
+
+## To get started...
 
 **Create workflow**
 
@@ -166,11 +204,13 @@ sesame_spec <- multinom_reg()
 #| echo: true
 sesame_wflow1 <- workflow() |>
   add_model(sesame_spec) |>
-  add_formula(viewcat ~ ageCent + viewenc)
+  add_formula(viewcat ~ ageCent + viewenc + site)
+```
 
+. . .
+
+```{r}
 sesame_wflow1
-
-
 ```
 
 ## Cross validation, step 1
@@ -254,3 +294,23 @@ cv_metrics1 |>
 
 -   This was useful for illustrative purposes, but `v` is often 5 or 10; we generally prefer 10-fold cross-validation as a default
 :::
+
+## Example modeling workflow 
+
+-   Exploratory data analysis
+
+-   Using training data...
+
+    -   Fit and evaluate candidate model using cross validation
+
+    -   Select the best fit model
+
+    -   Check model conditions and diagnostics
+
+    -   Repeat as needed until you've landed on final model
+
+-   Evaluate the final model performance using the test set
+
+## Data analysis workflow
+
+![Source: [*R for Data Science*](https://r4ds.hadley.nz/) with additions from *The Art of Statistics: How to Learn from Data*.](images/02/data-analysis-life-cycle.png){alt="Source: R for Data Science with additions from The Art of Statistics: How to Learn from Data."}

@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.6.42">
 
   <meta name="author" content="Prof.&nbsp;Maria Tackett">
-  <title>STA 210 - Spring 2025 – Model comparison + cross validation</title>
+  <title>STA 210 - Spring 2025 – Cross validation</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -190,11 +190,12 @@
   </style>
 </head>
 <body class="quarto-light">
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Model comparison + cross validation</h1>
+  <h1 class="title">Cross validation</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -204,7 +205,7 @@ Prof.&nbsp;Maria Tackett
 </div>
 </div>
 
-  <p class="date">Oct 18, 2023</p>
+  <p class="date">Apr 10, 2025</p>
 </section>
 <section id="announcements" class="slide level2">
 <h2>Announcements</h2>
@@ -239,6 +240,30 @@ Prof.&nbsp;Maria Tackett
 <span id="cb1-9"><a></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">20</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
+<section id="data-sesame-street" class="slide level2">
+<h2>Data: Sesame Street</h2>
+<p>Today’s data comes from <a href="https://files.eric.ed.gov/fulltext/ED122799.pdf">an experiment</a> by the Educational Testing Service to test the effectiveness of the children’s program <em>Sesame Street</em>. <em>Sesame Street</em> is an educational program designed to teach young children basic educational skills such as counting and the alphabet</p>
+<p>As part of the experiment, children were assigned to one of two groups: those who were encouraged to watch the program and those who were not.</p>
+<p>The show is only effective if children watch it, so we want to understand what effect the encouragement had on the frequency children watched the program.</p>
+</section>
+<section id="variables" class="slide level2">
+<h2>Variables</h2>
+<p><strong>Response:</strong></p>
+<ul>
+<li><code>viewcat</code>
+<ul>
+<li>1: rarely watched show</li>
+<li>2: watched once or twice a week</li>
+<li>3: watched three to five times a week</li>
+<li>4: watched show on average more than five times a week</li>
+</ul></li>
+</ul>
+<p><strong>Predictors:</strong></p>
+<ul>
+<li><code>age</code>: child’s age in months</li>
+<li><code>viewenc</code>: 1: encouraged to watch, 0: not encouraged</li>
+</ul>
+</section>
 <section id="application-exercise" class="title-slide slide level1 center">
 <h1>Application exercise</h1>
 <div class="appex">
@@ -264,7 +289,7 @@ Prof.&nbsp;Maria Tackett
 <h2>Resampling for model assessment</h2>
 <p><strong>Resampling is only conducted on the</strong> <u><strong>training</strong></u> <strong>set</strong>. The test set is not involved. For each iteration of resampling, the data are partitioned into two subsamples:</p>
 <ul>
-<li>The model is fit with the <strong>analysis set</strong>. Model fit statistics such as <span class="math inline">\(R^2_{Adj}\)</span>, AIC, and BIC are calculated based on this fit.</li>
+<li>The model is fit with the <strong>analysis set</strong>. Model fit statistics such as <span class="math inline">\(R^2_{Adj}\)</span>, AIC, BIC, and AUC are calculated based on this fit.</li>
 <li>The model is evaluated with the <strong>assessment set</strong>.</li>
 </ul>
 </section>
@@ -312,27 +337,46 @@ Prof.&nbsp;Maria Tackett
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>sesame_spec <span class="ot">&lt;-</span> <span class="fu">multinom_reg</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><br> . . .</p>
-<p><strong>Note: Use <code>linear_reg()</code> or <code>logistic_reg()</code> for linear or logistic models, respectively.</strong></p>
+<p><br></p>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>sesame_spec</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Multinomial Regression Model Specification (classification)
+
+Computational engine: nnet </code></pre>
+</div>
+</div>
+<p><br></p>
+</div>
+<div class="fragment">
+<p><strong>Note:</strong> Use <code>linear_reg()</code> or <code>logistic_reg()</code> for linear or logistic models, respectively.</p>
+</div>
+</section>
+<section id="to-get-started-2" class="slide level2">
+<h2>To get started…</h2>
 <p><strong>Create workflow</strong></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>sesame_wflow1 <span class="ot">&lt;-</span> <span class="fu">workflow</span>() <span class="sc">|&gt;</span></span>
-<span id="cb4-2"><a></a>  <span class="fu">add_model</span>(sesame_spec) <span class="sc">|&gt;</span></span>
-<span id="cb4-3"><a></a>  <span class="fu">add_formula</span>(viewcat <span class="sc">~</span> ageCent <span class="sc">+</span> viewenc)</span>
-<span id="cb4-4"><a></a></span>
-<span id="cb4-5"><a></a>sesame_wflow1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>sesame_wflow1 <span class="ot">&lt;-</span> <span class="fu">workflow</span>() <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a></a>  <span class="fu">add_model</span>(sesame_spec) <span class="sc">|&gt;</span></span>
+<span id="cb6-3"><a></a>  <span class="fu">add_formula</span>(viewcat <span class="sc">~</span> ageCent <span class="sc">+</span> viewenc <span class="sc">+</span> site)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>sesame_wflow1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>══ Workflow ════════════════════════════════════════════════════════════════════
 Preprocessor: Formula
 Model: multinom_reg()
 
 ── Preprocessor ────────────────────────────────────────────────────────────────
-viewcat ~ ageCent + viewenc
+viewcat ~ ageCent + viewenc + site
 
 ── Model ───────────────────────────────────────────────────────────────────────
 Multinomial Regression Model Specification (classification)
 
 Computational engine: nnet </code></pre>
+</div>
 </div>
 </div>
 </section>
@@ -345,8 +389,8 @@ Computational engine: nnet </code></pre>
 <section id="tips-split-training-data" class="slide level2">
 <h2>Tips: Split training data</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>folds <span class="ot">&lt;-</span> <span class="fu">vfold_cv</span>(sesame_train, <span class="at">v =</span> <span class="dv">3</span>)</span>
-<span id="cb6-2"><a></a>folds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>folds <span class="ot">&lt;-</span> <span class="fu">vfold_cv</span>(sesame_train, <span class="at">v =</span> <span class="dv">3</span>)</span>
+<span id="cb9-2"><a></a>folds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>#  3-fold cross-validation 
 # A tibble: 3 × 2
@@ -371,11 +415,11 @@ Computational engine: nnet </code></pre>
 <section id="sesame-street-fit-resamples" class="slide level2 midi">
 <h2>Sesame Street: Fit resamples</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>sesame_fit_rs1 <span class="ot">&lt;-</span> sesame_wflow1 <span class="sc">|&gt;</span></span>
-<span id="cb8-2"><a></a>  <span class="fu">fit_resamples</span>(<span class="at">resamples =</span> folds,</span>
-<span id="cb8-3"><a></a>               <span class="at">metrics =</span> <span class="fu">metric_set</span>(accuracy, roc_auc))</span>
-<span id="cb8-4"><a></a></span>
-<span id="cb8-5"><a></a>sesame_fit_rs1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>sesame_fit_rs1 <span class="ot">&lt;-</span> sesame_wflow1 <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a></a>  <span class="fu">fit_resamples</span>(<span class="at">resamples =</span> folds,</span>
+<span id="cb11-3"><a></a>               <span class="at">metrics =</span> <span class="fu">metric_set</span>(accuracy, roc_auc))</span>
+<span id="cb11-4"><a></a></span>
+<span id="cb11-5"><a></a>sesame_fit_rs1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># Resampling results
 # 3-fold cross-validation 
@@ -398,14 +442,14 @@ Computational engine: nnet </code></pre>
 <section id="collect-metrics-from-cv" class="slide level2">
 <h2>Collect metrics from CV</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="co"># Produces summary across all CV</span></span>
-<span id="cb10-2"><a></a><span class="fu">collect_metrics</span>(sesame_fit_rs1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="co"># Produces summary across all CV</span></span>
+<span id="cb13-2"><a></a><span class="fu">collect_metrics</span>(sesame_fit_rs1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 6
   .metric  .estimator  mean     n std_err .config             
   &lt;chr&gt;    &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt; &lt;chr&gt;               
-1 accuracy multiclass 0.356     3  0.0547 Preprocessor1_Model1
-2 roc_auc  hand_till  0.597     3  0.0223 Preprocessor1_Model1</code></pre>
+1 accuracy multiclass 0.344     3  0.0641 Preprocessor1_Model1
+2 roc_auc  hand_till  0.624     3  0.0341 Preprocessor1_Model1</code></pre>
 </div>
 </div>
 <p><br></p>
@@ -414,29 +458,29 @@ Computational engine: nnet </code></pre>
 <section id="deeper-look-into-results" class="slide level2">
 <h2>Deeper look into results</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>cv_metrics1 <span class="ot">&lt;-</span> <span class="fu">collect_metrics</span>(sesame_fit_rs1, <span class="at">summarize =</span> <span class="cn">FALSE</span>) </span>
-<span id="cb12-2"><a></a></span>
-<span id="cb12-3"><a></a>cv_metrics1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>cv_metrics1 <span class="ot">&lt;-</span> <span class="fu">collect_metrics</span>(sesame_fit_rs1, <span class="at">summarize =</span> <span class="cn">FALSE</span>) </span>
+<span id="cb15-2"><a></a></span>
+<span id="cb15-3"><a></a>cv_metrics1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 5
   id    .metric  .estimator .estimate .config             
   &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;               
-1 Fold1 accuracy multiclass     0.383 Preprocessor1_Model1
-2 Fold1 roc_auc  hand_till      0.598 Preprocessor1_Model1
-3 Fold2 accuracy multiclass     0.25  Preprocessor1_Model1
-4 Fold2 roc_auc  hand_till      0.558 Preprocessor1_Model1
-5 Fold3 accuracy multiclass     0.433 Preprocessor1_Model1
-6 Fold3 roc_auc  hand_till      0.635 Preprocessor1_Model1</code></pre>
+1 Fold1 accuracy multiclass     0.4   Preprocessor1_Model1
+2 Fold1 roc_auc  hand_till      0.644 Preprocessor1_Model1
+3 Fold2 accuracy multiclass     0.217 Preprocessor1_Model1
+4 Fold2 roc_auc  hand_till      0.557 Preprocessor1_Model1
+5 Fold3 accuracy multiclass     0.417 Preprocessor1_Model1
+6 Fold3 roc_auc  hand_till      0.670 Preprocessor1_Model1</code></pre>
 </div>
 </div>
 </section>
 <section id="better-presentation-of-results" class="slide level2">
 <h2>Better presentation of results</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>cv_metrics1 <span class="sc">|&gt;</span></span>
-<span id="cb14-2"><a></a>  <span class="fu">mutate</span>(<span class="at">.estimate =</span> <span class="fu">round</span>(.estimate, <span class="dv">3</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb14-3"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">id_cols =</span> id, <span class="at">names_from =</span> .metric, <span class="at">values_from =</span> .estimate) <span class="sc">|&gt;</span></span>
-<span id="cb14-4"><a></a>  <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Fold"</span>, <span class="st">"Accuracy"</span>, <span class="st">"AUC"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>cv_metrics1 <span class="sc">|&gt;</span></span>
+<span id="cb17-2"><a></a>  <span class="fu">mutate</span>(<span class="at">.estimate =</span> <span class="fu">round</span>(.estimate, <span class="dv">3</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb17-3"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">id_cols =</span> id, <span class="at">names_from =</span> .metric, <span class="at">values_from =</span> .estimate) <span class="sc">|&gt;</span></span>
+<span id="cb17-4"><a></a>  <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Fold"</span>, <span class="st">"Accuracy"</span>, <span class="st">"AUC"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top">
 <thead>
@@ -449,18 +493,18 @@ Computational engine: nnet </code></pre>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Fold1</td>
-<td style="text-align: right;">0.383</td>
-<td style="text-align: right;">0.598</td>
+<td style="text-align: right;">0.400</td>
+<td style="text-align: right;">0.644</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Fold2</td>
-<td style="text-align: right;">0.250</td>
-<td style="text-align: right;">0.558</td>
+<td style="text-align: right;">0.217</td>
+<td style="text-align: right;">0.557</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Fold3</td>
-<td style="text-align: right;">0.433</td>
-<td style="text-align: right;">0.635</td>
+<td style="text-align: right;">0.417</td>
+<td style="text-align: right;">0.670</td>
 </tr>
 </tbody>
 </table>
@@ -482,14 +526,32 @@ Computational engine: nnet </code></pre>
 <li class="fragment"><p>This was useful for illustrative purposes, but <code>v</code> is often 5 or 10; we generally prefer 10-fold cross-validation as a default</p></li>
 </ul>
 </div>
+</section>
+<section id="example-modeling-workflow" class="slide level2">
+<h2>Example modeling workflow</h2>
+<ul>
+<li><p>Exploratory data analysis</p></li>
+<li><p>Using training data…</p>
+<ul>
+<li><p>Fit and evaluate candidate model using cross validation</p></li>
+<li><p>Select the best fit model</p></li>
+<li><p>Check model conditions and diagnostics</p></li>
+<li><p>Repeat as needed until you’ve landed on final model</p></li>
+</ul></li>
+<li><p>Evaluate the final model performance using the test set</p></li>
+</ul>
+</section>
+<section id="data-analysis-workflow" class="slide level2">
+<h2>Data analysis workflow</h2>
 
 
-</section></section>
+
+<img data-src="images/02/data-analysis-life-cycle.png" class="r-stretch quarto-figure-center"><p class="caption">Source: <a href="https://r4ds.hadley.nz/"><em>R for Data Science</em></a> with additions from <em>The Art of Statistics: How to Learn from Data</em>.</p></section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../images/logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p><a href="https://sta210-fa23.netlify.app/schedule">🔗 STA 210 - Fall 2023 - Schedule</a></p>
+<p><a href="https://sta210-sp25.netlify.app">🔗 STA 210 - Spring 2025</a></p>
 </div>
 </div></div>
 
@@ -544,7 +606,7 @@ Computational engine: nnet </code></pre>
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
