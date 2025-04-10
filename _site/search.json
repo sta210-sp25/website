@@ -12255,5 +12255,138 @@
       "Project",
       "Instructions"
     ]
+  },
+  {
+    "objectID": "slides/23-cross-validation.html#announcements",
+    "href": "slides/23-cross-validation.html#announcements",
+    "title": "Model comparison + cross validation",
+    "section": "Announcements",
+    "text": "Announcements\n\nExam 02 - April 17 (same format as Exam 01)\n\nLecture videos available\n\nNext project milestone: Draft and peer review in April 21 lab\nStatistics experience due April 15"
+  },
+  {
+    "objectID": "slides/23-cross-validation.html#topics",
+    "href": "slides/23-cross-validation.html#topics",
+    "title": "Model comparison + cross validation",
+    "section": "Topics",
+    "text": "Topics\n\n\nCross validation"
+  },
+  {
+    "objectID": "slides/23-cross-validation.html#computational-setup",
+    "href": "slides/23-cross-validation.html#computational-setup",
+    "title": "Model comparison + cross validation",
+    "section": "Computational setup",
+    "text": "Computational setup\n\n# load packages\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(patchwork)\nlibrary(knitr)\nlibrary(kableExtra)\n\n# set default theme and larger font size for ggplot2\nggplot2::theme_set(ggplot2::theme_bw(base_size = 20))"
+  },
+  {
+    "objectID": "slides/23-cross-validation.html#spending-our-data",
+    "href": "slides/23-cross-validation.html#spending-our-data",
+    "title": "Model comparison + cross validation",
+    "section": "Spending our data",
+    "text": "Spending our data\n\nWe have already established that the idea of data spending where the test set was recommended for obtaining an unbiased estimate of performance.\nHowever, we usually need to understand the effectiveness of the model before using the test set.\nTypically we can’t decide on which final model to take to the test set without making model assessments.\nRemedy: Resampling to make model assessments on training data in a way that can generalize to new data."
+  },
+  {
+    "objectID": "slides/23-cross-validation.html#resampling-for-model-assessment",
+    "href": "slides/23-cross-validation.html#resampling-for-model-assessment",
+    "title": "Model comparison + cross validation",
+    "section": "Resampling for model assessment",
+    "text": "Resampling for model assessment\nResampling is only conducted on the training set. The test set is not involved. For each iteration of resampling, the data are partitioned into two subsamples:\n\nThe model is fit with the analysis set. Model fit statistics such as \\(R^2_{Adj}\\), AIC, and BIC are calculated based on this fit.\nThe model is evaluated with the assessment set."
+  },
+  {
+    "objectID": "slides/23-cross-validation.html#resampling-for-model-assessment-1",
+    "href": "slides/23-cross-validation.html#resampling-for-model-assessment-1",
+    "title": "Model comparison + cross validation",
+    "section": "Resampling for model assessment",
+    "text": "Resampling for model assessment\n\n\nImage source: Kuhn and Silge. Tidy modeling with R."
+  },
+  {
+    "objectID": "slides/23-cross-validation.html#analysis-and-assessment-sets",
+    "href": "slides/23-cross-validation.html#analysis-and-assessment-sets",
+    "title": "Model comparison + cross validation",
+    "section": "Analysis and assessment sets",
+    "text": "Analysis and assessment sets\n\nAnalysis set is analogous to training set.\nAssessment set is analogous to test set.\nThe terms analysis and assessment avoids confusion with initial split of the data.\nThese data sets are mutually exclusive."
+  },
+  {
+    "objectID": "slides/23-cross-validation.html#cross-validation-1",
+    "href": "slides/23-cross-validation.html#cross-validation-1",
+    "title": "Model comparison + cross validation",
+    "section": "Cross validation",
+    "text": "Cross validation\nMore specifically, v-fold cross validation – commonly used resampling technique:\n\nRandomly split your training data into v partitions\nUse v-1 partitions for analysis, and the remaining 1 partition for analysis (model fit + model fit statistics)\nRepeat v times, updating which partition is used for assessment each time\n\n\nLet’s give an example where v = 3…"
+  },
+  {
+    "objectID": "slides/23-cross-validation.html#to-get-started",
+    "href": "slides/23-cross-validation.html#to-get-started",
+    "title": "Model comparison + cross validation",
+    "section": "To get started…",
+    "text": "To get started…\nSplit data into training and test sets\n\nset.seed(345)\n\nsesame_split &lt;- initial_split(sesame)\nsesame_train &lt;- training(sesame_split)\nsesame_test &lt;- testing(sesame_split)"
+  },
+  {
+    "objectID": "slides/23-cross-validation.html#to-get-started-1",
+    "href": "slides/23-cross-validation.html#to-get-started-1",
+    "title": "Model comparison + cross validation",
+    "section": "To get started…",
+    "text": "To get started…\nSpecify model\n\nsesame_spec &lt;- multinom_reg()\n\n . . .\nNote: Use linear_reg() or logistic_reg() for linear or logistic models, respectively.\nCreate workflow\n\nsesame_wflow1 &lt;- workflow() |&gt;\n  add_model(sesame_spec) |&gt;\n  add_formula(viewcat ~ ageCent + viewenc)\n\nsesame_wflow1\n\n══ Workflow ════════════════════════════════════════════════════════════════════\nPreprocessor: Formula\nModel: multinom_reg()\n\n── Preprocessor ────────────────────────────────────────────────────────────────\nviewcat ~ ageCent + viewenc\n\n── Model ───────────────────────────────────────────────────────────────────────\nMultinomial Regression Model Specification (classification)\n\nComputational engine: nnet"
+  },
+  {
+    "objectID": "slides/23-cross-validation.html#cross-validation-step-1",
+    "href": "slides/23-cross-validation.html#cross-validation-step-1",
+    "title": "Model comparison + cross validation",
+    "section": "Cross validation, step 1",
+    "text": "Cross validation, step 1\nRandomly split your training data into 3 partitions:"
+  },
+  {
+    "objectID": "slides/23-cross-validation.html#tips-split-training-data",
+    "href": "slides/23-cross-validation.html#tips-split-training-data",
+    "title": "Model comparison + cross validation",
+    "section": "Tips: Split training data",
+    "text": "Tips: Split training data\n\nfolds &lt;- vfold_cv(sesame_train, v = 3)\nfolds\n\n#  3-fold cross-validation \n# A tibble: 3 × 2\n  splits           id   \n  &lt;list&gt;           &lt;chr&gt;\n1 &lt;split [120/60]&gt; Fold1\n2 &lt;split [120/60]&gt; Fold2\n3 &lt;split [120/60]&gt; Fold3"
+  },
+  {
+    "objectID": "slides/23-cross-validation.html#cross-validation-steps-2-and-3",
+    "href": "slides/23-cross-validation.html#cross-validation-steps-2-and-3",
+    "title": "Model comparison + cross validation",
+    "section": "Cross validation, steps 2 and 3",
+    "text": "Cross validation, steps 2 and 3\n\n\nUse v-1 partitions for analysis, and the remaining 1 partition for assessment\nRepeat v times, updating which partition is used for assessment each time"
+  },
+  {
+    "objectID": "slides/23-cross-validation.html#sesame-street-fit-resamples",
+    "href": "slides/23-cross-validation.html#sesame-street-fit-resamples",
+    "title": "Model comparison + cross validation",
+    "section": "Sesame Street: Fit resamples",
+    "text": "Sesame Street: Fit resamples\n\nsesame_fit_rs1 &lt;- sesame_wflow1 |&gt;\n  fit_resamples(resamples = folds,\n               metrics = metric_set(accuracy, roc_auc))\n\nsesame_fit_rs1\n\n# Resampling results\n# 3-fold cross-validation \n# A tibble: 3 × 4\n  splits           id    .metrics         .notes          \n  &lt;list&gt;           &lt;chr&gt; &lt;list&gt;           &lt;list&gt;          \n1 &lt;split [120/60]&gt; Fold1 &lt;tibble [2 × 4]&gt; &lt;tibble [0 × 3]&gt;\n2 &lt;split [120/60]&gt; Fold2 &lt;tibble [2 × 4]&gt; &lt;tibble [0 × 3]&gt;\n3 &lt;split [120/60]&gt; Fold3 &lt;tibble [2 × 4]&gt; &lt;tibble [0 × 3]&gt;"
+  },
+  {
+    "objectID": "slides/23-cross-validation.html#cross-validation-now-what",
+    "href": "slides/23-cross-validation.html#cross-validation-now-what",
+    "title": "Model comparison + cross validation",
+    "section": "Cross validation, now what?",
+    "text": "Cross validation, now what?\n\nWe’ve fit a bunch of models\nNow it’s time to use them to collect metrics (e.g., AUC, ) on each model and use them to evaluate model fit and how it varies across folds"
+  },
+  {
+    "objectID": "slides/23-cross-validation.html#collect-metrics-from-cv",
+    "href": "slides/23-cross-validation.html#collect-metrics-from-cv",
+    "title": "Model comparison + cross validation",
+    "section": "Collect metrics from CV",
+    "text": "Collect metrics from CV\n\n# Produces summary across all CV\ncollect_metrics(sesame_fit_rs1)\n\n# A tibble: 2 × 6\n  .metric  .estimator  mean     n std_err .config             \n  &lt;chr&gt;    &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt; &lt;chr&gt;               \n1 accuracy multiclass 0.356     3  0.0547 Preprocessor1_Model1\n2 roc_auc  hand_till  0.597     3  0.0223 Preprocessor1_Model1\n\n\n\nNote: These are calculated using the assessment data"
+  },
+  {
+    "objectID": "slides/23-cross-validation.html#deeper-look-into-results",
+    "href": "slides/23-cross-validation.html#deeper-look-into-results",
+    "title": "Model comparison + cross validation",
+    "section": "Deeper look into results",
+    "text": "Deeper look into results\n\ncv_metrics1 &lt;- collect_metrics(sesame_fit_rs1, summarize = FALSE) \n\ncv_metrics1\n\n# A tibble: 6 × 5\n  id    .metric  .estimator .estimate .config             \n  &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;               \n1 Fold1 accuracy multiclass     0.383 Preprocessor1_Model1\n2 Fold1 roc_auc  hand_till      0.598 Preprocessor1_Model1\n3 Fold2 accuracy multiclass     0.25  Preprocessor1_Model1\n4 Fold2 roc_auc  hand_till      0.558 Preprocessor1_Model1\n5 Fold3 accuracy multiclass     0.433 Preprocessor1_Model1\n6 Fold3 roc_auc  hand_till      0.635 Preprocessor1_Model1"
+  },
+  {
+    "objectID": "slides/23-cross-validation.html#better-presentation-of-results",
+    "href": "slides/23-cross-validation.html#better-presentation-of-results",
+    "title": "Model comparison + cross validation",
+    "section": "Better presentation of results",
+    "text": "Better presentation of results\n\ncv_metrics1 |&gt;\n  mutate(.estimate = round(.estimate, 3)) |&gt;\n  pivot_wider(id_cols = id, names_from = .metric, values_from = .estimate) |&gt;\n  kable(col.names = c(\"Fold\", \"Accuracy\", \"AUC\"))\n\n\n\n\nFold\nAccuracy\nAUC\n\n\n\n\nFold1\n0.383\n0.598\n\n\nFold2\n0.250\n0.558\n\n\nFold3\n0.433\n0.635"
+  },
+  {
+    "objectID": "slides/23-cross-validation.html#cross-validation-in-practice",
+    "href": "slides/23-cross-validation.html#cross-validation-in-practice",
+    "title": "Model comparison + cross validation",
+    "section": "Cross validation in practice",
+    "text": "Cross validation in practice\n\n\nTo illustrate how CV works, we used v = 3:\n\n\nAnalysis sets are 2/3 of the training set\nEach assessment set is a distinct 1/3\nThe final resampling estimate of performance averages each of the 3 replicates\n\n\nThis was useful for illustrative purposes, but v is often 5 or 10; we generally prefer 10-fold cross-validation as a default"
   }
 ]
