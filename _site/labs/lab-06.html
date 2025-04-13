@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -413,6 +447,14 @@ Due date
 <section id="packages" class="level1">
 <h1>Packages</h1>
 <p>Fill in the packages you need to complete the assignment in your R Markdown document.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nnet)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Include other packages as needed</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="data" class="level1">
 <h1>Data</h1>
@@ -466,7 +508,8 @@ Due date
 </section>
 <section id="exercise-2" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
-<p>Split the data into training (75%) and test (25%) sets. Use seed <code>210</code>.</p>
+<p>Make all the variables factor variable types. Then, split the data into training (75%) and test (25%) sets. Use seed <code>210</code>.</p>
+<p>How many observations are in the training set?</p>
 </section>
 <section id="exercise-3" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
@@ -479,7 +522,7 @@ Due date
 <h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
 <ol type="a">
 <li>What is the baseline category for the response variable?</li>
-<li>Describe the type of participants represented by the intercept.</li>
+<li>What experimental conditions are described by the intercept?</li>
 <li>Interpret the coefficients of <code>lineup</code> for each part of the model in terms of the odds.</li>
 <li>Use the coefficients and inferential statistics to describe the association between <code>lineup</code> and <code>id</code>.</li>
 </ol>
@@ -516,11 +559,8 @@ Tip
 </section>
 <section id="exercise-7" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-7">Exercise 7</h2>
-<p>Use the testing data to evaluate the model selected in the previous exercise.</p>
-<ol type="a">
-<li>Make a confusion matrix of the actual versus predicted classes of <code>id</code>.</li>
-<li>Use the confusion matrix to comment on the model performance.</li>
-</ol>
+<p>If needed, fit the model selected in the previous exercise on the full training data.</p>
+<p>Next, use the testing data to predict the classes of <code>id</code>, and make a confusion matrix of the actual versus predicted classes of <code>id</code>.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -531,7 +571,24 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>See <a href="https://sta210-sp25.netlify.app/slides/22-multinomial-pt2#/title-slide">Multinomial Logistic Regression: Inference + Prediction</a> notes for help with code.</p>
+<p>Below is template code to compute predicted classes on a test set:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pred_class <span class="ot">&lt;-</span> <span class="fu">predict</span>(model_name, test_set, <span class="at">type =</span> <span class="st">"class"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<p>Lastly, use the confusion matrix to comment on the model performance.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>See <a href="https://sta210-sp25.netlify.app/slides/22-multinomial-pt2#/title-slide">Multinomial Logistic Regression: Inference + Prediction</a> notes for additional help with code.</p>
 </div>
 </div>
 </section>

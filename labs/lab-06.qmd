@@ -37,13 +37,13 @@ By the end of the lab you will be able to…
 Fill in the packages you need to complete the assignment in your R Markdown document.
 
 ```{r}
+#| echo: true
 library(tidyverse)
+library(tidymodels)
 library(knitr)
-library(broom)
 library(nnet)
-library(patchwork)
 
-# Include other libraries as needed
+# Include other packages as needed
 ```
 
 # Data
@@ -78,7 +78,7 @@ Let's begin by doing the exploratory data analysis. Univariate and bivariate plo
 
 ```{r echo = F}
 # univariate EDA
-
+library(patchwork)
 
 ew <- read_csv("data/eyewitness.csv")
 p1 <- ggplot(data = ew, aes(x = id)) +
@@ -134,7 +134,9 @@ b.  Write two observations from the bivariate EDA.
 
 ## Exercise 2
 
-Split the data into training (75%) and test (25%) sets. Use seed `210`.
+Make all the variables factor variable types. Then, split the data into training (75%) and test (25%) sets. Use seed `210`.
+
+How many observations are in the training set?
 
 ## Exercise 3
 
@@ -144,7 +146,7 @@ b.  Use the training data to fit a multinomial logistic model using only the mai
 ## Exercise 4
 
 a.  What is the baseline category for the response variable?
-b.  Describe the type of participants represented by the intercept.
+b.  What experimental conditions are described by the intercept?
 c.  Interpret the coefficients of `lineup` for each part of the model in terms of the odds.
 d.  Use the coefficients and inferential statistics to describe the association between `lineup` and `id`.
 
@@ -168,13 +170,26 @@ c.  Based on the cross validation results, do you choose the main effects model 
 
 ## Exercise 7
 
-Use the testing data to evaluate the model selected in the previous exercise.
+If needed, fit the model selected in the previous exercise on the full training data.
 
-a.  Make a confusion matrix of the actual versus predicted classes of `id`.
-b.  Use the confusion matrix to comment on the model performance.
+Next, use the testing data to predict the classes of `id`, and make a confusion matrix of the actual versus predicted classes of `id`.
 
 ::: callout-tip
-See [Multinomial Logistic Regression: Inference + Prediction](https://sta210-sp25.netlify.app/slides/22-multinomial-pt2#/title-slide) notes for help with code.
+Below is template code to compute predicted classes on a test set:
+
+```{r}
+#| eval: false
+#| echo: true
+
+pred_class <- predict(model_name, test_set, type = "class")
+
+```
+:::
+
+Lastly, use the confusion matrix to comment on the model performance.
+
+::: callout-tip
+See [Multinomial Logistic Regression: Inference + Prediction](https://sta210-sp25.netlify.app/slides/22-multinomial-pt2#/title-slide) notes for additional help with code.
 :::
 
 # Submission

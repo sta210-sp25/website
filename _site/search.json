@@ -6297,7 +6297,7 @@
     "href": "labs/lab-06.html#exercise-2",
     "title": "Lab 06: Multinomial logistic regression",
     "section": "Exercise 2",
-    "text": "Exercise 2\nSplit the data into training (75%) and test (25%) sets. Use seed 210.",
+    "text": "Exercise 2\nMake all the variables factor variable types. Then, split the data into training (75%) and test (25%) sets. Use seed 210.\nHow many observations are in the training set?",
     "crumbs": [
       "Labs",
       "Lab 06"
@@ -6319,7 +6319,7 @@
     "href": "labs/lab-06.html#exercise-4",
     "title": "Lab 06: Multinomial logistic regression",
     "section": "Exercise 4",
-    "text": "Exercise 4\n\nWhat is the baseline category for the response variable?\nDescribe the type of participants represented by the intercept.\nInterpret the coefficients of lineup for each part of the model in terms of the odds.\nUse the coefficients and inferential statistics to describe the association between lineup and id.",
+    "text": "Exercise 4\n\nWhat is the baseline category for the response variable?\nWhat experimental conditions are described by the intercept?\nInterpret the coefficients of lineup for each part of the model in terms of the odds.\nUse the coefficients and inferential statistics to describe the association between lineup and id.",
     "crumbs": [
       "Labs",
       "Lab 06"
@@ -6352,7 +6352,7 @@
     "href": "labs/lab-06.html#exercise-7",
     "title": "Lab 06: Multinomial logistic regression",
     "section": "Exercise 7",
-    "text": "Exercise 7\nUse the testing data to evaluate the model selected in the previous exercise.\n\nMake a confusion matrix of the actual versus predicted classes of id.\nUse the confusion matrix to comment on the model performance.\n\n\n\n\n\n\n\nTip\n\n\n\nSee Multinomial Logistic Regression: Inference + Prediction notes for help with code.",
+    "text": "Exercise 7\nIf needed, fit the model selected in the previous exercise on the full training data.\nNext, use the testing data to predict the classes of id, and make a confusion matrix of the actual versus predicted classes of id.\n\n\n\n\n\n\nTip\n\n\n\nBelow is template code to compute predicted classes on a test set:\n\npred_class &lt;- predict(model_name, test_set, type = \"class\")\n\n\n\nLastly, use the confusion matrix to comment on the model performance.\n\n\n\n\n\n\nTip\n\n\n\nSee Multinomial Logistic Regression: Inference + Prediction notes for additional help with code.",
     "crumbs": [
       "Labs",
       "Lab 06"
