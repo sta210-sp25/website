@@ -6273,9 +6273,86 @@
   {
     "objectID": "labs/lab-06.html",
     "href": "labs/lab-06.html",
-    "title": "Lab 06",
+    "title": "Lab 06: Multinomial logistic regression",
     "section": "",
-    "text": "To be posted.",
+    "text": "Due date\n\n\n\nThis lab is due on Tuesday, March 15 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your team’s GitHub repo\nFinal .pdf file submitted on Gradescope",
+    "crumbs": [
+      "Labs",
+      "Lab 06"
+    ]
+  },
+  {
+    "objectID": "labs/lab-06.html#exercise-1",
+    "href": "labs/lab-06.html#exercise-1",
+    "title": "Lab 06: Multinomial logistic regression",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nLet’s begin by doing the exploratory data analysis. Univariate and bivariate plots are shown below.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWrite two observations from the univariate EDA.\nWrite two observations from the bivariate EDA.",
+    "crumbs": [
+      "Labs",
+      "Lab 06"
+    ]
+  },
+  {
+    "objectID": "labs/lab-06.html#exercise-2",
+    "href": "labs/lab-06.html#exercise-2",
+    "title": "Lab 06: Multinomial logistic regression",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nSplit the data into training (75%) and test (25%) sets. Use seed 210.",
+    "crumbs": [
+      "Labs",
+      "Lab 06"
+    ]
+  },
+  {
+    "objectID": "labs/lab-06.html#exercise-3",
+    "href": "labs/lab-06.html#exercise-3",
+    "title": "Lab 06: Multinomial logistic regression",
+    "section": "Exercise 3",
+    "text": "Exercise 3\n\nBriefly explain a multinomial logistic regression model is an appropriate model choice for predicting id using lineup, weapon and feature.\nUse the training data to fit a multinomial logistic model using only the main effects for lineup , weapon, and feature. Neatly display the model using 3 digits.",
+    "crumbs": [
+      "Labs",
+      "Lab 06"
+    ]
+  },
+  {
+    "objectID": "labs/lab-06.html#exercise-4",
+    "href": "labs/lab-06.html#exercise-4",
+    "title": "Lab 06: Multinomial logistic regression",
+    "section": "Exercise 4",
+    "text": "Exercise 4\n\nWhat is the baseline category for the response variable?\nDescribe the type of participants represented by the intercept.\nInterpret the coefficients of lineup for each part of the model in terms of the odds.\nUse the coefficients and inferential statistics to describe the association between lineup and id.",
+    "crumbs": [
+      "Labs",
+      "Lab 06"
+    ]
+  },
+  {
+    "objectID": "labs/lab-06.html#exercise-5",
+    "href": "labs/lab-06.html#exercise-5",
+    "title": "Lab 06: Multinomial logistic regression",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nYou are considering a model that includes all possible interactions between the predictors lineup , weapon, and feature . You will use 5-fold cross validation to choose between the main effects model fit in Exercise 3 and the model with interaction effects.\n\n\n\n\n\n\nTip\n\n\n\nSee Cross Validation notes for relevant code.\n\n\n\nUse the training data and seed 210 to create 5 folds. How many observations are in the assessment set for each fold?\nFit the main effects model on the 5 folds.\nWhat is the average accuracy across all folds? What is the average AUC?",
+    "crumbs": [
+      "Labs",
+      "Lab 06"
+    ]
+  },
+  {
+    "objectID": "labs/lab-06.html#exercise-6",
+    "href": "labs/lab-06.html#exercise-6",
+    "title": "Lab 06: Multinomial logistic regression",
+    "section": "Exercise 6",
+    "text": "Exercise 6\n\nFit the interaction model on the 5 folds from the previous exercise.\nWhat is the average accuracy across all folds? What is the average AUC?\nBased on the cross validation results, do you choose the main effects model or the model with interactions? Briefly explain your response.",
+    "crumbs": [
+      "Labs",
+      "Lab 06"
+    ]
+  },
+  {
+    "objectID": "labs/lab-06.html#exercise-7",
+    "href": "labs/lab-06.html#exercise-7",
+    "title": "Lab 06: Multinomial logistic regression",
+    "section": "Exercise 7",
+    "text": "Exercise 7\nUse the testing data to evaluate the model selected in the previous exercise.\n\nMake a confusion matrix of the actual versus predicted classes of id.\nUse the confusion matrix to comment on the model performance.\n\n\n\n\n\n\n\nTip\n\n\n\nSee Multinomial Logistic Regression: Inference + Prediction notes for help with code.",
     "crumbs": [
       "Labs",
       "Lab 06"
