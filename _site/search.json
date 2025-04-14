@@ -6275,7 +6275,7 @@
     "href": "labs/lab-06.html",
     "title": "Lab 06: Multinomial logistic regression",
     "section": "",
-    "text": "Due date\n\n\n\nThis lab is due on Tuesday, March 15 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your team’s GitHub repo\nFinal .pdf file submitted on Gradescope",
+    "text": "Due date\n\n\n\nThis lab is due on Tuesday, April 15 11:59pm. To be considered on time, the following must be done by the due date:\n\nFinal .qmd and .pdf files pushed to your team’s GitHub repo\nFinal .pdf file submitted on Gradescope",
     "crumbs": [
       "Labs",
       "Lab 06"
@@ -6352,7 +6352,7 @@
     "href": "labs/lab-06.html#exercise-7",
     "title": "Lab 06: Multinomial logistic regression",
     "section": "Exercise 7",
-    "text": "Exercise 7\nIf needed, fit the model selected in the previous exercise on the full training data.\nNext, use the testing data to predict the classes of id, and make a confusion matrix of the actual versus predicted classes of id.\n\n\n\n\n\n\nTip\n\n\n\nBelow is template code to compute predicted classes on a test set:\n\npred_class &lt;- predict(model_name, test_set, type = \"class\")\n\n\n\nLastly, use the confusion matrix to comment on the model performance.\n\n\n\n\n\n\nTip\n\n\n\nSee Multinomial Logistic Regression: Inference + Prediction notes for additional help with code.",
+    "text": "Exercise 7\nIf needed, fit the model selected in the previous exercise on the full training data.\nNext, use the testing data to predict the classes of id, and make a confusion matrix of the actual versus predicted classes of id.\nLastly, use the confusion matrix to comment on the model performance.\n\n\n\n\n\n\nTip\n\n\n\nBelow is template code to compute predicted classes on a test set:\n\npred_class &lt;- predict(model_name, test_set, type = \"class\")\n\nSee Multinomial Logistic Regression: Inference + Prediction notes for additional help with code.",
     "crumbs": [
       "Labs",
       "Lab 06"

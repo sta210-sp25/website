@@ -424,7 +424,7 @@ Due date
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This lab is due on <strong>Tuesday, March 15 11:59pm.</strong> To be considered on time, the following must be done by the due date:</p>
+<p>This lab is due on <strong>Tuesday, April 15 11:59pm.</strong> To be considered on time, the following must be done by the due date:</p>
 <ul>
 <li>Final <code>.qmd</code> and <code>.pdf</code> files pushed to your team’s GitHub repo</li>
 <li>Final <code>.pdf</code> file submitted on Gradescope</li>
@@ -561,6 +561,7 @@ Tip
 <h2 class="anchored" data-anchor-id="exercise-7">Exercise 7</h2>
 <p>If needed, fit the model selected in the previous exercise on the full training data.</p>
 <p>Next, use the testing data to predict the classes of <code>id</code>, and make a confusion matrix of the actual versus predicted classes of <code>id</code>.</p>
+<p>Lastly, use the confusion matrix to comment on the model performance.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -575,19 +576,6 @@ Tip
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pred_class <span class="ot">&lt;-</span> <span class="fu">predict</span>(model_name, test_set, <span class="at">type =</span> <span class="st">"class"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
-<p>Lastly, use the confusion matrix to comment on the model performance.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
 <p>See <a href="https://sta210-sp25.netlify.app/slides/22-multinomial-pt2#/title-slide">Multinomial Logistic Regression: Inference + Prediction</a> notes for additional help with code.</p>
 </div>
 </div>
@@ -624,42 +612,46 @@ Warning
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th><strong>Total</strong></th>
-<th style="text-align: center;"><strong>50</strong></th>
+<th>Component</th>
+<th style="text-align: center;"><strong>Points</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Exercise 1</td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">4</td>
 </tr>
 <tr class="even">
 <td>Exercise 2</td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">4</td>
 </tr>
 <tr class="odd">
 <td>Exercise 3</td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">4</td>
 </tr>
 <tr class="even">
 <td>Exercise 4</td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">10</td>
 </tr>
 <tr class="odd">
 <td>Exercise 5</td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">8</td>
 </tr>
 <tr class="even">
 <td>Exercise 6</td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">6</td>
 </tr>
 <tr class="odd">
 <td>Exercise 7</td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">9</td>
 </tr>
 <tr class="even">
 <td>Workflow &amp; formatting</td>
 <td style="text-align: center;">5</td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td style="text-align: center;"><strong>50</strong></td>
 </tr>
 </tbody>
 </table>
