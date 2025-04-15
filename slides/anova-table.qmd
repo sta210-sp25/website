@@ -61,14 +61,13 @@ We will focus on the sum of squares in this document. The sum of squares are as 
 
 \$\$
 
-```{=tex}
 \begin{aligned}
 &SS_{Party} = 1188.64 \\
 &SS_{Age|Party} = 38.03 \\
 &SS_{Error} = SS_{Residuals} = 686.44 \\
 &SS_{Total} = 1913.11
 \end{aligned}
-```
+
 \$\$
 
 ## Sum of squares in ANOVA table

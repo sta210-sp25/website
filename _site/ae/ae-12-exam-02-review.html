@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Insert your name">
-<meta name="dcterms.date" content="2025-04-14">
+<meta name="dcterms.date" content="2025-04-15">
 
-<title>AE 11: Multinomial logistic regression – STA 210 - Spring 2025</title>
+<title>AE 12: Exam 02 Review – STA 210 - Spring 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -103,6 +102,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -115,7 +143,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">AE 11: Multinomial logistic regression</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">AE 12: Exam 02 Review</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -352,18 +380,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
-  <ul class="collapse">
+  <li><a href="#packages" id="toc-packages" class="nav-link active" data-scroll-target="#packages">Packages</a></li>
   <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
+  <li><a href="#data-credit-cards" id="toc-data-credit-cards" class="nav-link" data-scroll-target="#data-credit-cards">Data: Credit cards</a></li>
   <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
   <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
   <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
   <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
   <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
   <li><a href="#exercise-7" id="toc-exercise-7" class="nav-link" data-scroll-target="#exercise-7">Exercise 7</a></li>
-  <li><a href="#exercise-8" id="toc-exercise-8" class="nav-link" data-scroll-target="#exercise-8">Exercise 8</a></li>
-  </ul></li>
   <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sta210-sp25/website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
@@ -373,25 +398,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">AE 11: Multinomial logistic regression</h1>
-<p class="subtitle lead">Sesame Street</p>
+<h1 class="title">AE 12: Exam 02 Review</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Insert your name </p>
-          </div>
-  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 14, 2025</p>
+      <p class="date">April 15, 2025</p>
     </div>
   </div>
   
@@ -413,105 +431,182 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Render, commit, and push your responses to GitHub by the end of class.</p>
+<p>Go to the course GitHub organization and locate your ae-12 repo to get started.</p>
+<p>Render, commit, and push your responses to GitHub by the end of class to submit your AE.</p>
 </div>
 </div>
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
+<section id="packages" class="level2">
+<h2 class="anchored" data-anchor-id="packages">Packages</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nnet) <span class="co"># for multinomial logistic regression</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Today’s data comes from <a href="https://files.eric.ed.gov/fulltext/ED122799.pdf">an experiment</a> by the Educational Testing Service to test the effectiveness of the children’s program <em>Sesame Street</em>. <em>Sesame Street</em> is an educational program designed to teach young children basic educational skills such as counting and the alphabet</p>
-<p>As part of the experiment, children were assigned to one of two groups: those who were encouraged to watch the program and those who were not.</p>
-<p>The show is only effective if children watch it, so we want to understand what effect the encouragement had on the frequency children watched the program.</p>
-<p><strong>Response:</strong></p>
-<ul>
-<li><code>viewcat</code>
-<ul>
-<li>1: rarely watched show</li>
-<li>2: watched once or twice a week</li>
-<li>3: watched three to five times a week</li>
-<li>4: watched show on average more than five times a week</li>
-</ul></li>
-</ul>
-<p><strong>Predictors:</strong></p>
-<ul>
-<li><code>age</code>: child’s age in months</li>
-<li><code>prenumb</code>: score on numbers pretest (0 to 54)</li>
-<li><code>prelet</code>: score on letters pretest (0 to 58)</li>
-<li><code>viewenc</code>: 1: encouraged to watch, 0: not encouraged</li>
-<li><code>site:</code>
-<ul>
-<li>1: three to five year old from urban area</li>
-<li>2: four year old from suburban area</li>
-<li>3: from rural area with high socioeconomic status</li>
-<li>4: from rural area with low socioeconomic status</li>
-<li>5: from Spanish speaking home</li>
-</ul></li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># read in dataset</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>sesame <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://bit.ly/sesame-street-data"</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># mean-center relevant continuous variables, make categorical variables factors</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>sesame <span class="ot">&lt;-</span> sesame <span class="sc">|&gt;</span> </span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">viewcat =</span> <span class="fu">factor</span>(viewcat), </span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">site =</span> <span class="fu">factor</span>(site), </span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">prenumbCent =</span> prenumb <span class="sc">-</span> <span class="fu">mean</span>(prenumb), </span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">preletCent =</span> prelet <span class="sc">-</span> <span class="fu">mean</span>(prelet), </span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">ageCent =</span> age <span class="sc">-</span> <span class="fu">mean</span>(age),</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">viewenc =</span> <span class="fu">factor</span>(<span class="fu">if_else</span>(viewenc <span class="sc">==</span> <span class="dv">1</span>, <span class="st">"1"</span>, <span class="st">"0"</span>))</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="exercises" class="level1">
-<h1>Exercises</h1>
 <section id="exercise-1" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
-<p>Create a plot to visualize the relationship between the response, <code>viewcat</code> and the primary variable of interest in this analysis, <code>viewenc</code>. What do you observe from the plot?</p>
+<p>Suppose you fit a simple linear regression model.</p>
+<ol type="a">
+<li><p>Draw a scatterplot that contains an observation with large leverage but low Cook’s distance.</p></li>
+<li><p>Draw a scatterplot that contains an observation with large leverage and high Cook’s distance.</p></li>
+<li><p>Draw a scatterplot that contains an observation with a large studentized residual.</p></li>
+</ol>
+</section>
+<section id="data-credit-cards" class="level2">
+<h2 class="anchored" data-anchor-id="data-credit-cards">Data: Credit cards</h2>
+<p>The data for this analysis is about credit card customers. It can be found in the file <code>credit.csv</code>. The following variables are in the data set:</p>
+<ul>
+<li><code>income</code>: Income in $1,000’s</li>
+<li><code>limit</code>: Credit limit</li>
+<li><code>rating</code>: Credit rating</li>
+<li><code>cards</code>: Number of credit cards</li>
+<li><code>age</code>: Age in years</li>
+<li><code>education</code>: Number of years of education</li>
+<li><code>own</code>: A factor with levels <code>No</code> and <code>Yes</code> indicating whether the individual owns their home</li>
+<li><code>student</code>: A factor with levels <code>No</code> and <code>Yes</code> indicating whether the individual was a student</li>
+<li><code>married</code>: A factor with levels <code>No</code> and <code>Yes</code> indicating whether the individual was married</li>
+<li><code>region</code>: A factor with levels <code>South</code>, <code>East</code>, and <code>West</code> indicating the region of the US the individual is from</li>
+<li><code>balance</code>: Average credit card balance in $.</li>
+</ul>
+<p><strong>The objective of this analysis is to predict whether a person has maxed out their credit card, i.e., had $0 average card balance.</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>credit <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/credit.csv"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">maxed =</span> <span class="fu">factor</span>(<span class="fu">if_else</span>(balance <span class="sc">==</span> <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="exercise-2" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
-<p>Create a plot to visualize the relationship between the response, <code>viewcat</code> and <code>age</code>. What do you observe from the plot?</p>
+<ul>
+<li><p>Why is logistic regression the best modeling approach for this analysis?</p></li>
+<li><p>Fill in the blanks. In logistic regression, we</p>
+<ul>
+<li><p>use log-odds to …</p></li>
+<li><p>use odds to …</p></li>
+<li><p>use probabilities to …</p></li>
+</ul></li>
+</ul>
 </section>
 <section id="exercise-3" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
-<p>Fit a model using the <code>ageCent</code> and <code>viewenc</code> to understand the odds a child is in a given category of <code>viewcat</code>. Display the model including 95% confidence intervals for the coefficients.</p>
+<p>We’ll start by splitting the model into training and testing data. Then we’ll using the training data to fit a model for predicting the odds of <code>maxed = 1</code> using <code>income</code>, <code>rating</code>, and <code>region</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># make training and test sets</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">210</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>credit_split <span class="ot">&lt;-</span> <span class="fu">initial_split</span>(credit, <span class="at">prop =</span> <span class="fl">0.8</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>credit_train <span class="ot">&lt;-</span> <span class="fu">training</span>(credit_split)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>credit_test <span class="ot">&lt;-</span> <span class="fu">testing</span>(credit_split)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>credit_fit <span class="ot">&lt;-</span> <span class="fu">glm</span>(maxed <span class="sc">~</span> income <span class="sc">+</span> rating <span class="sc">+</span> region, <span class="at">data =</span> credit_train, </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">family =</span> <span class="st">"binomial"</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(credit_fit) <span class="sc">|&gt;</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">10.097</td>
+<td style="text-align: right;">1.687</td>
+<td style="text-align: right;">5.987</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">income</td>
+<td style="text-align: right;">0.115</td>
+<td style="text-align: right;">0.026</td>
+<td style="text-align: right;">4.444</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rating</td>
+<td style="text-align: right;">-0.058</td>
+<td style="text-align: right;">0.009</td>
+<td style="text-align: right;">-6.428</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">regionSouth</td>
+<td style="text-align: right;">-0.632</td>
+<td style="text-align: right;">0.715</td>
+<td style="text-align: right;">-0.884</td>
+<td style="text-align: right;">0.377</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">regionWest</td>
+<td style="text-align: right;">-0.332</td>
+<td style="text-align: right;">0.724</td>
+<td style="text-align: right;">-0.458</td>
+<td style="text-align: right;">0.647</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>The logistic regression model takes the following form:</p>
+<p><span class="math display">\[
+\log(\frac{\pi_i}{1 - \pi_i}) = \beta_0 + \beta_1 ~ income + \beta_2 ~ rating + \beta_3 ~ regionSouth + \beta_4 ~ regionWest
+\]</span></p>
+<ol type="a">
+<li><p>Write the interpretation of <code>income</code> in terms of the odds of maxing out a credit card.</p></li>
+<li><p>Use the equation above to show the expected change in the odds of maxing out a credit card when the credit rating increases by 10 points. Assume income and region are constant. Write your answer in terms of <span class="math inline">\(\beta_0, \beta_1, \beta_2, \beta_3, \beta_4\)</span>.</p></li>
+<li><p>Suppose there are two individuals. Individual 1 has an income of $64,000, a credit rating of 590, and is from the South region. Individual 2 has an income of $135,000, a credit rating of 695, and is from the East region. Use the equation above to show how the odds of maxing out a credit card differ between Individual 1 and Individual 2. Write your answer in terms of <span class="math inline">\(\beta_0, \beta_1, \beta_2\)</span>, etc.</p></li>
+</ol>
 </section>
 <section id="exercise-4" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
-<ul>
-<li><p>What is the baseline category for <code>viewcat</code>? What is the baseline category for <code>viewenc</code>?</p></li>
-<li><p>Interpret the intercept associated with the odds of a child being in the category <code>viewcat == 2</code> versus the baseline.</p></li>
-<li><p>Interpret the effect of age in terms of the odds of a child being in the category <code>viewcat == 2</code> versus the baseline. Based on the confidence interval for the coefficient, is the numeric predictor a statistically significant predictor of viewership?</p></li>
-</ul>
+<p>We consider adding the interaction between <code>region</code> and <code>income</code> to the current model. We’ll use a drop-in-deviance test to determine whether or not to add the interaction term.</p>
+<ol type="a">
+<li>State the null and alternative hypotheses in words and using mathematical notation.</li>
+<li>Describe what the test statistic <span class="math inline">\(G\)</span> means in the context of the data.</li>
+<li>Show why the degrees of freedom for the test statistic are equal to 2.</li>
+<li>Conduct the drop-in-deviance test and state your conclusion in the context of the data.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="exercise-5" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
-<p>Should the interaction between <code>ageCent</code> and <code>viewenc</code> be included in the model? Show any analysis used to make your conclusion.</p>
+<p>Now let’s evaluate the performance of the selected model using the testing data.</p>
+<p>Create a confusion matrix using a cutoff probability of 0.3.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><p>What is the sensitivity? What does it mean in the context of the data ?</p></li>
+<li><p>What is the specificity? What does it mean in the context of the data?</p></li>
+<li><p>What is the false positive rate? What does it mean in the context of the data?</p></li>
+<li><p>What is the false negative rate? What does it mean in the context of the data?</p></li>
+</ul>
 </section>
 <section id="exercise-6" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
-<p>The primary objective of the experiment was to understand the effect of encouragement on viewership. Does encouragement have a significant effect on viewership after adjusting for age? If so, describe the effect. Otherwise, explain why not.</p>
+<p>Produce the ROC curve.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Describe how you can use this curve to select a cutoff probability (rather than just going with 0.5).</li>
+</ul>
 </section>
 <section id="exercise-7" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-7">Exercise 7</h2>
+<p>Questions about checking conditions for logistic regression:</p>
 <ul>
-<li><p>Use the model selected in Exercise 5 to compute the predicted probabilities and predicted classes for <code>viewcat</code>.</p></li>
-<li><p>Make a confusion matrix.</p></li>
-<li><p>What percentage of observations were correctly classified?</p></li>
+<li><p>Do we assess conditions on the training or testing set?</p></li>
+<li><p>Why do we not consider categorical predictors when checking linearity?</p></li>
+<li><p>Why do we not need to check constant variance for logistic regression?</p></li>
 </ul>
-</section>
-<section id="exercise-8" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-8">Exercise 8</h2>
-<ul>
-<li><p>Assess the overall model performance.</p></li>
-<li><p>Were there particular categories in which the model has a harder time differentiating?</p></li>
-</ul>
-</section>
 </section>
 <section id="submission" class="level1">
 <h1>Submission</h1>

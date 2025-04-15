@@ -9,7 +9,9 @@ execute:
 ---
 
 ::: callout-important
-Render, commit, and push your responses to GitHub by the end of class.
+Go to the course GitHub organization and locate your ae-10 repo to get started.
+
+Render, commit, and push your responses to GitHub by the end of class to submit your AE.
 :::
 
 # Introduction
@@ -73,7 +75,6 @@ sesame <- sesame |>
 
 Create a plot to visualize the relationship between the response, `viewcat` and the primary variable of interest in this analysis, `viewenc`. What do you observe from the plot?
 
-
 ## Exercise 2
 
 Create a plot to visualize the relationship between the response, `viewcat` and `age`. What do you observe from the plot?
@@ -82,7 +83,6 @@ Create a plot to visualize the relationship between the response, `viewcat` and 
 
 Fit a model using the `ageCent` and `viewenc` to understand the odds a child is in a given category of `viewcat`. Display the model including 95% confidence intervals for the coefficients.
 
-
 ## Exercise 4
 
 -   What is the baseline category for `viewcat`? What is the baseline category for `viewenc`?
@@ -90,7 +90,6 @@ Fit a model using the `ageCent` and `viewenc` to understand the odds a child is 
 -   Interpret the intercept associated with the odds of a child being in the category `viewcat == 2` versus the baseline.
 
 -   Interpret the effect of age in terms of the odds of a child being in the category `viewcat == 2` versus the baseline. Based on the confidence interval for the coefficient, is the numeric predictor a statistically significant predictor of viewership?
-
 
 ## Exercise 5
 
@@ -113,7 +112,6 @@ The primary objective of the experiment was to understand the effect of encourag
 -   Assess the overall model performance.
 
 -   Were there particular categories in which the model has a harder time differentiating?
-
 
 # Submission
 
