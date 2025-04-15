@@ -22,17 +22,18 @@ Render, commit, and push your responses to GitHub by the end of class to submit 
 library(tidyverse)
 library(tidymodels)
 library(knitr)
+library(pROC)
 ```
 
 ## Exercise 1
 
 Suppose you fit a simple linear regression model.
 
-a.  Draw a scatterplot that contains an observation with large leverage but low Cook’s distance.
+a.  Draw or describe a scatterplot that contains an observation with large leverage but low Cook’s distance.
 
-b.  Draw a scatterplot that contains an observation with large leverage and high Cook’s distance.
+b.  Draw or describe a scatterplot that contains an observation with large leverage and high Cook’s distance.
 
-c.  Draw a scatterplot that contains an observation with a large studentized residual.
+c.  Draw or describe a scatterplot that contains an observation with a large studentized residual.
 
 ## Data: Credit cards
 
@@ -65,13 +66,13 @@ credit <- read_csv("data/credit.csv") |>
 
 -   Why is logistic regression the best modeling approach for this analysis?
 
--   Fill in the blanks. In logistic regression, we
+-   Describe where each of the following show up in the analysis:
 
-    -   use log-odds to ...
+    -   log-odds ...
 
-    -   use odds to ...
+    -   odds
 
-    -   use probabilities to ...
+    -   probabilities
 
 ## Exercise 3
 

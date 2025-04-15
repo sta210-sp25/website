@@ -5059,7 +5059,7 @@
     "href": "slides/24-exam-02-review.html#exam-02-format",
     "title": "Exam 02 review",
     "section": "Exam 02 format",
-    "text": "Exam 02 format\n\n50 points total\n\nin-class: 35 points\ntake-home: 15 points\n\nIn-class: 75 minutes during April 15 lecture\n\nSee email for classroom assignment\n\nTake-home: due Sunday, April 20 at 11:59pm\nOfficial university documentation or note from your academic dean required to excuse any part of the exam"
+    "text": "Exam 02 format\n\n50 points total\n\nin-class: 35 points\ntake-home: 15 points\n\nIn-class: 75 minutes during April 17 lecture\n\nSee email for classroom assignment\n\nTake-home: due Sunday, April 20 at 11:59pm\nOfficial university documentation (not incapacitation form) or note from your academic dean required to excuse any part of the exam"
   },
   {
     "objectID": "slides/24-exam-02-review.html#exam-02-content",
@@ -5115,7 +5115,7 @@
     "href": "slides/23-exam-02-review-notes.html#exam-02-format",
     "title": "Exam 02 review",
     "section": "Exam 02 format",
-    "text": "Exam 02 format\n\n50 points total\n\nin-class: 35 points\ntake-home: 15 points\n\nIn-class: 75 minutes during April 15 lecture\n\nSee email for classroom assignment\n\nTake-home: due Sunday, April 20 at 11:59pm\nOfficial university documentation or note from your academic dean required to excuse any part of the exam"
+    "text": "Exam 02 format\n\n50 points total\n\nin-class: 35 points\ntake-home: 15 points\n\nIn-class: 75 minutes during April 17 lecture\n\nSee email for classroom assignment\n\nTake-home: due Sunday, April 20 at 11:59pm\nOfficial university documentation (not incapacitation form) or note from your academic dean required to excuse any part of the exam"
   },
   {
     "objectID": "slides/23-exam-02-review-notes.html#exam-02-content",
@@ -7436,14 +7436,14 @@
     "href": "ae/ae-12-exam-02-review.html#packages",
     "title": "AE 12: Exam 02 Review",
     "section": "Packages",
-    "text": "Packages\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(knitr)"
+    "text": "Packages\n\nlibrary(tidyverse)\nlibrary(tidymodels)\nlibrary(knitr)\nlibrary(pROC)"
   },
   {
     "objectID": "ae/ae-12-exam-02-review.html#exercise-1",
     "href": "ae/ae-12-exam-02-review.html#exercise-1",
     "title": "AE 12: Exam 02 Review",
     "section": "Exercise 1",
-    "text": "Exercise 1\nSuppose you fit a simple linear regression model.\n\nDraw a scatterplot that contains an observation with large leverage but low Cook’s distance.\nDraw a scatterplot that contains an observation with large leverage and high Cook’s distance.\nDraw a scatterplot that contains an observation with a large studentized residual."
+    "text": "Exercise 1\nSuppose you fit a simple linear regression model.\n\nDraw or describe a scatterplot that contains an observation with large leverage but low Cook’s distance.\nDraw or describe a scatterplot that contains an observation with large leverage and high Cook’s distance.\nDraw or describe a scatterplot that contains an observation with a large studentized residual."
   },
   {
     "objectID": "ae/ae-12-exam-02-review.html#data-credit-cards",
@@ -7457,7 +7457,7 @@
     "href": "ae/ae-12-exam-02-review.html#exercise-2",
     "title": "AE 12: Exam 02 Review",
     "section": "Exercise 2",
-    "text": "Exercise 2\n\nWhy is logistic regression the best modeling approach for this analysis?\nFill in the blanks. In logistic regression, we\n\nuse log-odds to …\nuse odds to …\nuse probabilities to …"
+    "text": "Exercise 2\n\nWhy is logistic regression the best modeling approach for this analysis?\nDescribe where each of the following show up in the analysis:\n\nlog-odds …\nodds\nprobabilities"
   },
   {
     "objectID": "ae/ae-12-exam-02-review.html#exercise-3",
