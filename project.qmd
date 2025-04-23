@@ -381,8 +381,6 @@ The peer review will be graded on the extent to which each comprehensively and c
 
 ## Written report {#written-report}
 
-## Written report
-
 ::: callout-important
 Your written report must be completed in the `written-report.qmd` file and must be reproducible. All team members should contribute to the GitHub repository, with regular meaningful commits.
 

@@ -9,7 +9,8 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.42">
 
-  <title>STA 210 - Spring 2025 – Lab 01</title>
+  <meta name="author" content="Prof.&nbsp;Maria Tackett">
+  <title>STA 210 - Spring 2025 – LR: Inference + conditions</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -187,6 +188,8 @@
       margin-right: 0; 
     }
   </style>
+  <script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
 <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>
@@ -194,77 +197,324 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Lab 01</h1>
-  <p class="subtitle">Linear regression</p>
+  <h1 class="title">LR: Inference + conditions</h1>
 
 <div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Prof.&nbsp;Maria Tackett 
+</div>
+</div>
 </div>
 
-  <p class="date">Jan 27, 2025</p>
+  <p class="date">Apr 03, 2025</p>
 </section>
-<section id="tips-for-working-on-lab" class="slide level2">
-<h2>Tips for working on lab</h2>
+<section id="announcements" class="slide level2 midi">
+<h2>Announcements</h2>
 <ul>
-<li><p>You do not have to finish the lab in class, they will always be due <strong>Thursday</strong>. One work strategy is to get through portions that you think will be most challenging (which initially might be the coding component) during lab when a TA can help you on the spot and leave the narrative writing until later.</p></li>
-<li><p>Do not pressure each other to finish early (particularly once you start working on teams); use the time wisely to really learn the material and produce a quality report.</p></li>
+<li><p>Next project milestone: Analysis and draft in April 14 lab</p></li>
+<li><p>Team Feedback (email from TEAMMATES) due Tuesday, April 8 at 11:59pm (check email)</p></li>
+<li><p>HW 04 due Tuesday, April 8 at 11:59pm</p></li>
+<li><p>Statistics experience due April 15</p></li>
 </ul>
 </section>
-<section id="tips-axis-labels-and-titles" class="slide level2">
-<h2>Tips: Axis labels and titles</h2>
-<div class="midi">
-<p>Below is a graph of association between flipper length in millimeters and body mass in grams of three species of penguins in Palmer Station, Antarctica. What are informative title and axis labels for this graph?</p>
+<section id="topics" class="slide level2">
+<h2>Topics</h2>
+<div>
+<ul>
+<li>Review inference for logistic regression</li>
+<li>Inference for coefficients in logistic regression</li>
+<li>Checking model conditions for logistic regression</li>
+</ul>
 </div>
+</section>
+<section id="computational-setup" class="slide level2">
+<h2>Computational setup</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># load packages</span></span>
+<span id="cb1-2"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb1-4"><a></a><span class="fu">library</span>(openintro)</span>
+<span id="cb1-5"><a></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-6"><a></a><span class="fu">library</span>(kableExtra)  <span class="co"># for table embellishments</span></span>
+<span id="cb1-7"><a></a><span class="fu">library</span>(Stat2Data)   <span class="co"># for empirical logit</span></span>
+<span id="cb1-8"><a></a></span>
+<span id="cb1-9"><a></a><span class="co"># set default theme and larger font size for ggplot2</span></span>
+<span id="cb1-10"><a></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">20</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section>
+<section id="data" class="title-slide slide level1 center">
+<h1>Data</h1>
 
-<img data-src="lab-01_files/figure-revealjs/unnamed-chunk-1-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:60.0%"></section>
-<section id="tips-code-style" class="slide level2">
-<h2>Tips: Code style</h2>
-<p>Which code chunk would you rather read?</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># code chunk 1</span></span>
-<span id="cb1-2"><a></a>penguins<span class="sc">|&gt;</span><span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(flipper_length_mm))<span class="sc">|&gt;</span><span class="fu">group_by</span>(species)<span class="sc">|&gt;</span><span class="fu">summarise</span>(<span class="at">min=</span><span class="fu">min</span>(flipper_length_mm),<span class="at">mean=</span><span class="fu">mean</span>(flipper_length_mm),<span class="at">sd=</span><span class="fu">sd</span>(flipper_length_mm),<span class="at">max=</span><span class="fu">max</span>(flipper_length_mm),<span class="at">n=</span><span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="risk-of-coronary-heart-disease" class="slide level2 midi">
+<h2>Risk of coronary heart disease</h2>
+<p>This data set is from an ongoing cardiovascular study on residents of the town of Framingham, Massachusetts. We want to examine the relationship between various health characteristics and the risk of having heart disease.</p>
+<ul>
+<li><p><code>high_risk</code>:</p>
+<ul>
+<li>1: High risk of having heart disease in next 10 years</li>
+<li>0: Not high risk of having heart disease in next 10 years</li>
+</ul></li>
+<li><p><code>age</code>: Age at exam time (in years)</p></li>
+<li><p><code>education</code>: 1 = Some High School, 2 = High School or GED, 3 = Some College or Vocational School, 4 = College</p></li>
+<li><p><code>currentSmoker</code>: 0 = nonsmoker, 1 = smoker</p></li>
+<li><p><code>totChol</code>: Total cholesterol (in mg/dL)</p></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4,086 × 6
+     age education TenYearCHD totChol currentSmoker high_risk
+   &lt;dbl&gt; &lt;fct&gt;          &lt;dbl&gt;   &lt;dbl&gt; &lt;fct&gt;         &lt;fct&gt;    
+ 1    39 4                  0     195 0             0        
+ 2    46 2                  0     250 0             0        
+ 3    48 1                  0     245 1             0        
+ 4    61 3                  1     225 1             1        
+ 5    46 3                  0     285 1             0        
+ 6    43 2                  0     228 0             0        
+ 7    63 1                  1     205 0             1        
+ 8    45 2                  0     313 1             0        
+ 9    52 1                  0     260 0             0        
+10    43 1                  0     225 1             0        
+# ℹ 4,076 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="inference-for-coefficients" class="slide level2">
+<h2>Inference for coefficients</h2>
+<p>There are two approaches for testing coefficients in logistic regression</p>
+<ul>
+<li><p><strong>Drop-in-deviance test</strong>. Use to test…</p>
+<ul>
+<li>a single coefficient</li>
+<li>a categorical predictor with 3+ levels</li>
+<li>a group of predictor variables</li>
+</ul></li>
+<li><p><strong>(Wald) hypothesis test.</strong> Use to test</p>
+<ul>
+<li>a single coefficient</li>
+</ul></li>
+</ul>
+</section>
+<section id="review-test-coefficient-for-currentsmoker" class="slide level2 midi">
+<h2>Review: Test coefficient for <code>currentSmoker</code></h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="caption-top" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">estimate</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">std.error</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">statistic</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">p.value</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">conf.low</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">conf.high</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">-6.673</td>
+<td style="text-align: right;">0.378</td>
+<td style="text-align: right;">-17.647</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">-7.423</td>
+<td style="text-align: right;">-5.940</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">age</td>
+<td style="text-align: right;">0.082</td>
+<td style="text-align: right;">0.006</td>
+<td style="text-align: right;">14.344</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.071</td>
+<td style="text-align: right;">0.094</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">totChol</td>
+<td style="text-align: right;">0.002</td>
+<td style="text-align: right;">0.001</td>
+<td style="text-align: right;">1.940</td>
+<td style="text-align: right;">0.052</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.004</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; background-color: rgba(217, 227, 228, 255) !important;">currentSmoker1</td>
+<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">0.443</td>
+<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">0.094</td>
+<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">4.733</td>
+<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">0.000</td>
+<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">0.260</td>
+<td style="text-align: right; background-color: rgba(217, 227, 228, 255) !important;">0.627</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
 </div>
 <p><br></p>
+<div class="question">
+<ul>
+<li><p>Interpret the value for <code>currentSmoker</code> in each column of the model output.</p></li>
+<li><p>The 95% confidence interval for <code>currentSmoker</code> is [0.260, 0.627]. Interpret this value in the context of the data.</p></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="conditions" class="title-slide slide level1 center">
+<h1>Conditions</h1>
+
+</section>
+<section id="conditions-for-logistic-regression" class="slide level2">
+<h2>Conditions for logistic regression</h2>
+<ol type="1">
+<li><p><strong>Linearity:</strong> The log-odds have a linear relationship with the predictors.</p></li>
+<li><p><strong>Randomness:</strong> The data were obtained from a random process</p></li>
+<li><p><strong>Independence:</strong> The observations are independent from one another.</p></li>
+</ol>
+</section>
+<section id="empirical-logit" class="slide level2">
+<h2>Empirical logit</h2>
+<p>The <strong>empirical logit</strong> is the log of the observed odds:</p>
+<p><span class="math display">\[
+\text{logit}(\hat{p}) = \log\Big(\frac{\hat{p}}{1 - \hat{p}}\Big) = \log\Big(\frac{\# \text{Yes}}{\# \text{No}}\Big)
+\]</span></p>
+</section>
+<section id="calculating-empirical-logit-categorical-predictor" class="slide level2">
+<h2>Calculating empirical logit (categorical predictor)</h2>
+<p>If the predictor is categorical, we can calculate the empirical logit for each level of the predictor.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>heart_disease <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a></a>  <span class="fu">count</span>(currentSmoker, high_risk) <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a></a>  <span class="fu">group_by</span>(currentSmoker) <span class="sc">|&gt;</span></span>
+<span id="cb3-4"><a></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)) <span class="sc">|&gt;</span></span>
+<span id="cb3-5"><a></a>  <span class="fu">filter</span>(high_risk <span class="sc">==</span> <span class="st">"1"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-6"><a></a>  <span class="fu">mutate</span>(<span class="at">emp_logit =</span> <span class="fu">log</span>(prop<span class="sc">/</span>(<span class="dv">1</span><span class="sc">-</span>prop)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 5
+# Groups:   currentSmoker [2]
+  currentSmoker high_risk     n  prop emp_logit
+  &lt;fct&gt;         &lt;fct&gt;     &lt;int&gt; &lt;dbl&gt;     &lt;dbl&gt;
+1 0             1           301 0.145     -1.77
+2 1             1           318 0.158     -1.67</code></pre>
+</div>
+</div>
+</section>
+<section id="calculating-empirical-logit-quantitative-predictor" class="slide level2">
+<h2>Calculating empirical logit (quantitative predictor)</h2>
+<ol type="1">
+<li><p>Divide the range of the predictor into intervals with approximately equal number of cases. (If you have enough observations, use 5 - 10 intervals.)</p></li>
+<li><p>Compute the empirical logit for each interval</p></li>
+</ol>
 <div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="co"># code chunk 2</span></span>
-<span id="cb2-2"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb2-3"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(flipper_length_mm)) <span class="sc">|&gt;</span> </span>
-<span id="cb2-4"><a></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span> </span>
-<span id="cb2-5"><a></a>  <span class="fu">summarise</span>(<span class="at">min =</span> <span class="fu">min</span>(flipper_length_mm), </span>
-<span id="cb2-6"><a></a>            <span class="at">mean =</span> <span class="fu">mean</span>(flipper_length_mm), </span>
-<span id="cb2-7"><a></a>            <span class="at">max =</span> <span class="fu">max</span>(flipper_length_mm),</span>
-<span id="cb2-8"><a></a>            <span class="at">n =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<p>You can then calculate the mean value of the predictor in each interval and create a plot of the empirical logit versus the mean value of the predictor in each interval.</p>
 </div>
 </section>
-<section id="tips-code-style-contd" class="slide level2">
-<h2>Tips: Code style cont’d</h2>
-<p>Make code easier to read and debug by</p>
-<ul>
-<li><p>Putting each element on a different line (start a new line after <code>+</code> and <code>|&gt;</code>)</p></li>
-<li><p>Putting spaces before and after operators (<code>+</code>, <code>-</code>, <code>*</code>, <code>=</code>, <code>|&gt;</code> )</p></li>
-<li><p>In general, avoiding long lines of code, i.e.&nbsp;lines longer than 80 characters.</p></li>
-</ul>
-<p>See the <a href="https://style.tidyverse.org/">Tidyverse Style Guide</a> for more tips on code styling.</p>
+<section id="empirical-logit-plot-in-r-quantitative-predictor" class="slide level2">
+<h2>Empirical logit plot in R (quantitative predictor)</h2>
+<p>Created using <code>dplyr</code> and <code>ggplot</code> functions.</p>
+
+<img data-src="21-logistic-conditions_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"></section>
+<section id="empirical-logit-plot-in-r-quantitative-predictor-1" class="slide level2">
+<h2>Empirical logit plot in R (quantitative predictor)</h2>
+<p>Created using <code>dplyr</code> and <code>ggplot</code> functions.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>heart_disease <span class="sc">|&gt;</span> </span>
+<span id="cb5-2"><a></a>  <span class="fu">mutate</span>(<span class="at">age_bin =</span> <span class="fu">cut_interval</span>(age, <span class="at">n =</span> <span class="dv">10</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb5-3"><a></a>  <span class="fu">group_by</span>(age_bin) <span class="sc">|&gt;</span></span>
+<span id="cb5-4"><a></a>  <span class="fu">mutate</span>(<span class="at">mean_age =</span> <span class="fu">mean</span>(age)) <span class="sc">|&gt;</span></span>
+<span id="cb5-5"><a></a>  <span class="fu">count</span>(mean_age, high_risk) <span class="sc">|&gt;</span></span>
+<span id="cb5-6"><a></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)) <span class="sc">|&gt;</span></span>
+<span id="cb5-7"><a></a>  <span class="fu">filter</span>(high_risk <span class="sc">==</span> <span class="st">"1"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb5-8"><a></a>  <span class="fu">mutate</span>(<span class="at">emp_logit =</span> <span class="fu">log</span>(prop<span class="sc">/</span>(<span class="dv">1</span><span class="sc">-</span>prop))) <span class="sc">|&gt;</span></span>
+<span id="cb5-9"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> mean_age, <span class="at">y =</span> emp_logit)) <span class="sc">+</span> </span>
+<span id="cb5-10"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb5-11"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb5-12"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Mean Age"</span>, </span>
+<span id="cb5-13"><a></a>       <span class="at">y =</span> <span class="st">"Empirical logit"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="when-youre-done-with-lab" class="slide level2">
-<h2><strong>When you’re done with lab</strong></h2>
-<ul>
-<li>Make sure all your final changes have been pushed to your GitHub repo</li>
-<li>Submit the PDF of your responses to <a href="https://www.gradescope.com/"><strong>Gradescope</strong></a></li>
-</ul>
+<section id="empirical-logit-plot-in-r-quantitative-predictor-2" class="slide level2">
+<h2>Empirical logit plot in R (quantitative predictor)</h2>
+<p>Using the <code>emplogitplot1</code> function from the <strong>Stat2Data</strong> R package</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">emplogitplot1</span>(high_risk <span class="sc">~</span> age, </span>
+<span id="cb6-2"><a></a>              <span class="at">data =</span> heart_disease, </span>
+<span id="cb6-3"><a></a>              <span class="at">ngroups =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="21-logistic-conditions_files/figure-revealjs/unnamed-chunk-7-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"></section>
+<section id="empirical-logit-plot-in-r-interactions" class="slide level2">
+<h2>Empirical logit plot in R (interactions)</h2>
+<p>Using the <code>emplogitplot2</code> function from the <strong>Stat2Data</strong> R package</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">emplogitplot2</span>(high_risk <span class="sc">~</span> age <span class="sc">+</span> currentSmoker, <span class="at">data =</span> heart_disease, </span>
+<span id="cb7-2"><a></a>              <span class="at">ngroups =</span> <span class="dv">10</span>, </span>
+<span id="cb7-3"><a></a>              <span class="at">putlegend =</span> <span class="st">"bottomright"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="21-logistic-conditions_files/figure-revealjs/unnamed-chunk-8-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"></section>
+<section id="checking-linearity" class="slide level2">
+<h2>Checking linearity</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">emplogitplot1</span>(high_risk <span class="sc">~</span> age, </span>
+<span id="cb8-2"><a></a>              <span class="at">data =</span> heart_disease, </span>
+<span id="cb8-3"><a></a>              <span class="at">ngroups =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="21-logistic-conditions_files/figure-revealjs/unnamed-chunk-9-1.png" class="quarto-figure quarto-figure-center" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">emplogitplot1</span>(high_risk <span class="sc">~</span> totChol, </span>
+<span id="cb9-2"><a></a>              <span class="at">data =</span> heart_disease, </span>
+<span id="cb9-3"><a></a>              <span class="at">ngroups =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="21-logistic-conditions_files/figure-revealjs/unnamed-chunk-10-1.png" class="quarto-figure quarto-figure-center" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+<div class="fragment">
+<p>✅ The linearity condition is satisfied. There is a linear relationship between the empirical logit and the predictor variables.</p>
+</div>
 </section>
-<section id="lab-01-linear-regression" class="slide level2">
-<h2>Lab 01: Linear regression</h2>
+<section id="checking-randomness" class="slide level2">
+<h2>Checking randomness</h2>
+<p>We can check the randomness condition based on the context of the data and how the observations were collected.</p>
 <ul>
-<li><p>Today’s lab focuses on using linear regression to explore the relationship between air temperature and ice duration for two lakes in Wisconsin, along with the change in ice duration over time.</p></li>
-<li><p>There are markers throughout suggesting when to render, commit, and push changes to GitHub. These are to help you start using version control in your workflow.</p></li>
-<li><p>There are points for having a neatly formatted document and implementing a reproducible workflow</p></li>
+<li>Was the sample randomly selected?</li>
+<li>If the sample was not randomly selected, ask whether there is reason to believe the observations in the sample differ systematically from the population of interest.</li>
 </ul>
-<p>🔗 <a href="https://sta210-sp25.netlify.app/labs/lab-01.html">sta210-sp25.netlify.app/labs/lab-01.html</a></p>
+<div class="fragment">
+<p>✅ The randomness condition is satisfied. We do not have reason to believe that the participants in this study differ systematically from adults in the U.S. in regards to health characteristics and risk of heart disease.</p>
+</div>
+</section>
+<section id="checking-independence" class="slide level2">
+<h2>Checking independence</h2>
+<ul>
+<li>We can check the independence condition based on the context of the data and how the observations were collected.</li>
+<li>Independence is most often violated if the data were collected over time or there is a strong spatial relationship between the observations.</li>
+</ul>
+<div class="fragment">
+<p>✅ The independence condition is satisfied. It is reasonable to conclude that the participants’ health characteristics are independent of one another.</p>
 
 
-</section>
+</div>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../images/logo.png" class="slide-logo"></p>

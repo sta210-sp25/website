@@ -9,7 +9,8 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.42">
 
-  <title>STA 210 - Spring 2025 – Lab 02</title>
+  <meta name="author" content="Prof.&nbsp;Maria Tackett">
+  <title>STA 210 - Spring 2025 – The big picture</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -27,7 +28,27 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-2e30c06a808d4935ead2d71e8fb1a1b3.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -122,8 +143,6 @@
       margin-right: 0; 
     }
   </style>
-  <link href="../site_libs/countdown-0.4.0/countdown.css" rel="stylesheet">
-  <script src="../site_libs/countdown-0.4.0/countdown.js"></script>
 </head>
 <body class="quarto-light">
 <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>
@@ -131,98 +150,365 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Lab 02</h1>
-  <p class="subtitle">Inference using mathematical models + Meet your team!</p>
+  <h1 class="title">The big picture</h1>
+  <p class="subtitle">Analyzing multivariable relationships + Reproducibility</p>
 
 <div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Prof.&nbsp;Maria Tackett 
+</div>
+</div>
 </div>
 
-  <p class="date">Feb 03, 2025</p>
+  <p class="date">Jan 14, 2025</p>
 </section>
-<section id="goals" class="slide level2">
-<h2>Goals</h2>
+<section id="announcements" class="slide level2">
+<h2>Announcements</h2>
 <ul>
-<li>Meet your team!</li>
-<li>Team agreement</li>
-<li>Lab 02: Coffee ratings</li>
-</ul>
-</section>
-<section id="meet-your-team" class="slide level2">
-<h2>Meet your team!</h2>
+<li>Office hours start this week
 <ul>
-<li><p><a href="https://prodduke-my.sharepoint.com/:x:/g/personal/mt324_duke_edu/EdLwgl9diOVEvUuObtRMeX0BpuAgYmfPLaomlbZsXEBogw?e=yz2sKZ"><strong>Click here</strong></a> to find your team.</p></li>
-<li><p>Sit with your team.</p></li>
-</ul>
-</section>
-<section id="team-name-agreement" class="slide level2">
-<h2>Team name + agreement</h2>
-<ul>
-<li><p>Come up with a team name. You can’t have the same name as another group in the class, so be creative!</p>
-<ul>
-<li>Your TA will get your team name by the end of lab.</li>
+<li>See office hours schedule on Canvas</li>
 </ul></li>
-<li><p>Fill out the team agreement. The goals of the agreement are to…</p>
+<li>Complete <a href="../labs/lab-00.html">Lab 00 tasks</a></li>
+<li>Introduction to R workshops at Duke library
 <ul>
-<li>Gain a common understanding of the team’s goals and expectations for collaboration</li>
-<li>Make a plan for team communication</li>
-<li>Make a plan for working outside of lab</li>
+<li><a href="https://duke.libcal.com/event/13664829">Data wrangling with dplyr</a> - Thu, Jan 16 at 12pm</li>
+<li><a href="https://duke.libcal.com/event/13660125">Data visualization with ggplot2</a> - Thu, Jan 23 at 12pm</li>
 </ul></li>
 </ul>
 </section>
-<section id="team-workflow" class="slide level2">
-<h2>Team workflow</h2>
+<section>
+<section id="questions-from-last-class" class="title-slide slide level1 center">
+<h1>Questions from last class?</h1>
+
+</section>
+<section id="topics" class="slide level2">
+<h2>Topics</h2>
 <ul>
-<li><p>Only <u><strong>one</strong></u> team member should type at a time. There are markers in today’s lab to help you determine whose turn it is to type.</p>
-<ul>
-<li>Every team member should still be engaged in discussion for all questions, even if it’s not your turn type.</li>
-</ul></li>
-<li><p>Don’t forget to <strong>pull</strong> to get your teammates’ updates before making changes to the <code>.qmd</code> file.</p>
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Important</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>Only one submission per team on Gradescope. Read the submission instructions carefully!</strong></p>
-</div>
-</div>
-</div></li>
+<li>Data analysis life cycle</li>
+<li>Reproducible data analysis</li>
+<li>Analyzing multivariable relationships</li>
 </ul>
 </section>
-<section id="team-workflow-in-action" class="slide level2">
-<h2>Team workflow, in action</h2>
-<ul>
-<li>Complete the “Workflow: Using Git and GitHub as a team” section of the lab in your teams.</li>
-<li>Raise your hand if you have any questions about the workflow.</li>
-</ul>
-<div class="cell">
-<div class="cell-output-display">
-<div class="countdown" id="timer_0a837c49" data-update-every="1" tabindex="0" style="right:0;bottom:0;font-size:2em;">
-<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<section class="slide level2">
+
+
+<img data-src="images/02/data-analysis-life-cycle.png" class="r-stretch quarto-figure-center"><p class="caption">Source: <a href="https://r4ds.hadley.nz/"><em>R for Data Science</em></a> with additions from <em>The Art of Statistics: How to Learn from Data</em>.</p></section>
+<section class="slide level2">
+
+
+<img data-src="images/02/whole-game.png" class="r-stretch quarto-figure-center"><p class="caption">Source:<a href="https://r4ds.hadley.nz/"><em>R for Data Science</em></a></p></section></section>
+<section>
+<section id="reproducibility" class="title-slide slide level1 center">
+<h1>Reproducibility</h1>
+
+</section>
+<section id="reproducibility-checklist" class="slide level2">
+<h2>Reproducibility checklist</h2>
+<div class="question">
+<p>What does it mean for an analysis to be reproducible?</p>
 </div>
+<div class="fragment">
+<p><strong>Near term goals</strong>:</p>
+<p>✔️ Can the tables and figures be exactly reproduced from the code and data?</p>
+<p>✔️ Does the code actually do what you think it does?</p>
+<p>✔️ In addition to what was done, is it clear <em>why</em> it was done?</p>
 </div>
+<div class="fragment">
+<p><strong>Long term goals</strong>:</p>
+<p>✔️ Can the code be used for other data?</p>
+<p>✔️ Can you extend the code to do other things?</p>
 </div>
 </section>
-<section id="tips-for-working-on-a-team" class="slide level2 midi">
-<h2>Tips for working on a team</h2>
+<section id="why-is-reproducibility-important" class="slide level2">
+<h2>Why is reproducibility important?</h2>
 <ul>
-<li><p>Do not pressure each other to finish early; use the time wisely to really learn the material and produce a quality report.</p></li>
-<li><p>The labs are structured to help you learn the steps of a data analysis. Do not split up the lab among the team members; work on it together in its entirety.</p></li>
-<li><p>Everyone has something to contribute! Use the lab groups as an opportunity to share ideas and learn from each other.</p></li>
+<li><p>Results produced are more reliable and trustworthy <span class="citation" data-cites="ostblom2022">(<a href="#/references" role="doc-biblioref" onclick="">Ostblom and Timbers 2022</a>)</span></p></li>
+<li><p>Facilitates more effective collaboration <span class="citation" data-cites="ostblom2022">(<a href="#/references" role="doc-biblioref" onclick="">Ostblom and Timbers 2022</a>)</span></p></li>
+<li><p>Contributing to science, which builds and organizes knowledge in terms of testable hypotheses <span class="citation" data-cites="alexander2023">(<a href="#/references" role="doc-biblioref" onclick="">Alexander 2023</a>)</span></p></li>
+<li><p>Possible to identify and correct errors or biases in the analysis process <span class="citation" data-cites="alexander2023">(<a href="#/references" role="doc-biblioref" onclick="">Alexander 2023</a>)</span></p></li>
 </ul>
 </section>
-<section id="todays-lab" class="slide level2">
-<h2>Today’s lab</h2>
-<p>Today’s lab focuses on using statistical inference based on mathematical models to explore the relationship between coffee’s properties and the overall quality rating.</p>
+<section id="why-is-reproducibility-important-1" class="slide level2 midi">
+<h2>Why is reproducibility important?</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/02/jama-retraction.png" class="quarto-figure quarto-figure-center" style="width:55.0%"></p>
+</figure>
+</div>
+<div>
+<ul>
+<li><p>Originally reported “the intervention, compared with usual care, resulted in a fewer number of mean COPD-related hospitalizations and emergency department visits at 6 months per participant.”</p></li>
+<li><p>There were actually <strong>more</strong> COPD-related hospitalizations and emergency department visits in the intervention group compared to the control group</p></li>
+<li><p>Mixed up the intervention vs.&nbsp;control group using “0/1” coding</p></li>
+</ul>
+</div>
+
+<aside><div>
+<div class="small">
+<p><a href="https://jamanetwork.com/journals/jama/fullarticle/2752474" class="uri">https://jamanetwork.com/journals/jama/fullarticle/2752474</a></p>
+</div>
+</div></aside></section>
+<section id="toolkit" class="slide level2">
+<h2>Toolkit</h2>
+<ul>
+<li><p><strong>Scriptability</strong> <span class="math inline">\(\rightarrow\)</span> R</p></li>
+<li><p><strong>Literate programming</strong> (code, narrative, output in one place) <span class="math inline">\(\rightarrow\)</span> Quarto</p></li>
+<li><p><strong>Version control</strong> <span class="math inline">\(\rightarrow\)</span> Git / GitHub</p></li>
+</ul>
+</section>
+<section id="r-and-rstudio" class="slide level2">
+<h2>R and RStudio</h2>
+<ul>
+<li><p>R is a statistical programming language</p></li>
+<li><p>RStudio is a convenient interface for R (an integrated development environment, IDE)</p></li>
+</ul>
+
+<img data-src="images/02/r_vs_rstudio_1.png" class="r-stretch quarto-figure-center"><p class="caption">Source: <a href="https://moderndive.com/1-getting-started.html">Statistical Inference via Data Science</a></p></section>
+<section id="rstudio-ide" class="slide level2">
+<h2>RStudio IDE</h2>
+
+<img data-src="images/02/rstudio-panes.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="quarto" class="slide level2">
+<h2>Quarto</h2>
+<ul>
+<li><p>Fully reproducible reports – the analysis is run from the beginning each time you render</p></li>
+<li><p>Code goes in chunks and narrative goes outside of chunks</p></li>
+<li><p>Visual editor to make document editing experience similar to a word processor (Google docs, Word, Pages, etc.)</p></li>
+</ul>
+</section>
+<section id="quarto-1" class="slide level2">
+<h2>Quarto</h2>
+
+<img data-src="images/02/quarto.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="how-will-we-use-quarto" class="slide level2">
+<h2>How will we use Quarto?</h2>
+<ul>
+<li><p>Every application exercise and assignment is written in a Quarto document</p></li>
+<li><p>You’ll have a template Quarto document to start with</p></li>
+<li><p>The amount of scaffolding in the template will decrease over the semester</p></li>
+</ul>
+</section></section>
+<section>
+<section id="version-control-with-git-and-github" class="title-slide slide level1 center">
+<h1>Version control with git and GitHub</h1>
+
+</section>
+<section id="what-is-versioning" class="slide level2">
+<h2>What is versioning?</h2>
 <p><br></p>
-<p>🔗 <a href="https://sta210-sp25.netlify.app/labs/lab-02" class="uri">https://sta210-sp25.netlify.app/labs/lab-02</a></p>
 
+<img data-src="images/02/lego-steps.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="what-is-versioning-1" class="slide level2">
+<h2>What is versioning?</h2>
+<p>with human readable messages</p>
+
+<img data-src="images/02/lego-steps-commit-messages.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="why-do-we-need-version-control" class="slide level2">
+<h2>Why do we need version control?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/02/phd_comics_vc.gif" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p>Provides a clear record of how the analysis methods evolved. This makes analysis auditable and thus more trustworthy and reliable. <span class="citation" data-cites="ostblom2022">(<a href="#/references" role="doc-biblioref" onclick="">Ostblom and Timbers 2022</a>)</span></p>
+</div></div>
+</section>
+<section id="git-and-github" class="slide level2">
+<h2>git and GitHub</h2>
+
+<img data-src="images/02/git-github.png" class="quarto-figure quarto-figure-center r-stretch"><ul>
+<li><strong>git</strong> is a version control system – like “Track Changes” features from Microsoft Word.</li>
+<li><strong>GitHub</strong> is the home for your git-based projects on the internet (like DropBox but much better).</li>
+<li>There are a lot of git commands and very few people know them all. 99% of the time you will use git to add, commit, push, and pull.</li>
+</ul>
+</section></section>
+<section>
+<section id="multivariable-relationships" class="title-slide slide level1 center">
+<h1>Multivariable relationships</h1>
 
 </section>
+<section id="education-and-life-expectancy" class="slide level2">
+<h2>Education and life expectancy</h2>
+<p>The data set comes from <span class="citation" data-cites="zarulli2021">Zarulli et al. (<a href="#/references" role="doc-biblioref" onclick="">2021</a>)</span> who analyze the effects of a country’s healthcare expenditures and other factors on the country’s life expectancy. The data are originally from the <a href="http://hdr.undp.org/en/data">Human Development Database</a> and <a href="https://apps.who.int/nha/database/">World Health Organization</a>.</p>
+<p>There are 140 countries (observations) in the data set.</p>
+
+<aside><div>
+<p><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0253450">Click here</a> for the original research paper.</p>
+</div></aside></section>
+<section id="variable-definitions" class="slide level2">
+<h2>Variable definitions</h2>
+<div>
+<ul>
+<li class="fragment"><p><code>life_exp</code>: <em>The average number of years that a newborn could expect to live, if he or she were to pass through life exposed to the sex- and age-specific death rates prevailing at the time of his or her birth, for a specific year, in a given country, territory, or geographic area.</em> ( from the <a href="https://www.who.int/data/gho/indicator-metadata-registry/imr-details/65#:~:text=Definition%3A,%2C%20territory%2C%20or%20geographic%20area.">World Health Organization</a>)</p></li>
+<li class="fragment"><p><code>income_inequality</code>: <em>Measure of the deviation of the distribution of income among individuals or households within a country from a perfectly equal distribution. A value of 0 represents absolute equality, a value of 100 absolute inequality (Gini coefficient).</em></p></li>
+</ul>
+</div>
+</section>
+<section id="variable-definitions-1" class="slide level2">
+<h2>Variable definitions</h2>
+<ul>
+<li><code>education</code>: Indicator of whether a country’s education index is above (<code>High</code>) or below (<code>Low</code>) the median index for the 140 countries in the data set.
+<ul>
+<li>Education index: <em>Average of mean years of schooling (of adults) and expected years of school (of children), both expressed as an index obtained by scaling wit the corresponding maxima.</em></li>
+</ul></li>
+</ul>
+</section>
+<section id="terminology" class="slide level2">
+<h2>Terminology</h2>
+<ul>
+<li><code>life_exp</code> is the <strong>response variable</strong>
+<ul>
+<li>variable whose variation we want to understand / variable we wish to predict</li>
+<li>also known as <em>outcome</em> or <em>dependent</em> variable</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<ul>
+<li><code>income_inequality</code>, <code>education</code> are the <strong>predictor variables</strong>
+<ul>
+<li>variables used to account for variation in the response</li>
+<li>also known as <em>explanatory</em>, <em>independent</em>, or <em>input</em> variables</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="univariate-exploratory-data-analysis" class="slide level2">
+<h2>Univariate exploratory data analysis</h2>
+
+<img data-src="02-big-picture_files/figure-revealjs/univariate-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
+<section id="bivariate-exploratory-data-analysis" class="slide level2">
+<h2>Bivariate exploratory data analysis</h2>
+
+<img data-src="02-big-picture_files/figure-revealjs/bivariate-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
+<section id="function-between-response-and-predictors" class="slide level2">
+<h2>Function between response and predictors</h2>
+<div class="goal">
+<p><span class="math display">\[\text{life_exp} = f(\text{income_inequality}, \text{education}) + \epsilon\]</span></p>
+</div>
+<ul>
+<li><strong>Goal</strong>: Determine <span class="math inline">\(f\)</span></li>
+<li>How do we determine <span class="math inline">\(f\)</span>?
+<ul>
+<li>Make an assumption about the functional form <span class="math inline">\(f\)</span> (parametric model)</li>
+<li>Use the data to fit a model based on that form</li>
+</ul></li>
+</ul>
+</section>
+<section id="determine-f" class="slide level2">
+<h2>Determine <span class="math inline">\(f\)</span></h2>
+<ol type="1">
+<li>Choose the functional form of <span class="math inline">\(f\)</span>, i.e., <strong>choose the appropriate model given the response variable</strong></li>
+</ol>
+<ul>
+<li>Suppose <span class="math inline">\(f\)</span> takes the form of a linear model<br>
+<span class="math display">\[y = f(\mathbf{X}) = \beta_0 + \beta_1 x_1 + \dots + \beta_p x_p + \epsilon\]</span></li>
+</ul>
+<div class="fragment">
+<ol start="2" type="1">
+<li>Use the data to fit (or train) the model, i.e, <strong>compute estimates of the model parameters</strong>, denoted <span class="math inline">\(\hat{\beta}_0, \hat{\beta}_1, \ldots, \hat{\beta}_p\)</span></li>
+</ol>
+</div>
+</section>
+<section id="life_exp-vs.-income_inequality" class="slide level2">
+<h2><code>life_exp</code> vs.&nbsp;<code>income_inequality</code></h2>
+
+<img data-src="02-big-picture_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p><span class="math display">\[\widehat{\text{life_exp}} = \hat{\beta}_0 + \hat{\beta}_1 ~\text{income_inequality}\]</span></p>
+</section>
+<section id="life_exp-vs.-income_inequality-education" class="slide level2 midi">
+<h2><code>life_exp</code> vs.&nbsp;<code>income_inequality</code> + <code>education</code></h2>
+
+<img data-src="02-big-picture_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p><span class="math display">\[\widehat{\text{life_exp}} = \hat{\beta}_0 + \hat{\beta}_1 ~\text{income_inequality} + \hat{\beta}_2 ~\text{education}\]</span></p>
+</section>
+<section id="statistical-model-vs.-regression-equation" class="slide level2 midi">
+<h2>Statistical model vs.&nbsp;regression equation</h2>
+<p><strong>Statistical model (also known as the data-generating model)</strong></p>
+<div class="equation">
+<p><span class="math display">\[{\small \text{life_exp} = \beta_0 + \beta_1 ~\text{income_inequality} + \beta_2 ~\text{education} + \epsilon}\]</span></p>
+</div>
+<p>Models the process for generating values of the response in the population (function + error), i.e., the <u>population-level</u> model.</p>
+<p><br></p>
+<div class="fragment">
+<p><strong>Regression equation (also known as the fitted model)</strong></p>
+<p>Estimate of the function using the sample data</p>
+<div class="equation">
+<p><span class="math display">\[{\small \widehat{\text{life_exp}} = \hat{\beta}_0 + \hat{\beta}_1 ~\text{income_inequality} + \hat{\beta}_2 ~\text{education}}\]</span></p>
+</div>
+</div>
+</section>
+<section id="life_exp-vs.-income_inequality-education-with-interaction" class="slide level2 midi">
+<h2><code>life_exp</code> vs.&nbsp;<code>income_inequality</code> + <code>education</code> (with interaction)</h2>
+
+<img data-src="02-big-picture_files/figure-revealjs/unnamed-chunk-6-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p><span class="math display">\[{\small \widehat{\text{life_exp}} = \hat{\beta}_0 + \hat{\beta}_1 ~\text{income_inequality} + \hat{\beta}_2 ~\text{education} + \hat{\beta}_3 ~ \text{income_inequality} \times \text{education}}\]</span></p>
+</section>
+<section id="why-fit-a-model" class="slide level2">
+<h2>Why fit a model?</h2>
+<ul>
+<li><p><strong>Prediction:</strong> Expected value of the response variable for given values of the predictor variables</p></li>
+<li><p><strong>Inference:</strong> Conclusion about the relationship between the response and predictor variables</p></li>
+</ul>
+<div class="fragment">
+<div class="question">
+<ul>
+<li><p>What is an example of a <strong>prediction</strong> question that can be answered using the model of <code>life_exp</code> vs.&nbsp;<code>income_inequality</code> and <code>education</code>?</p></li>
+<li><p>What is an example of an <strong>inference</strong> question that can be answered using the model of <code>life_exp</code> vs.<code>income_inequality</code> and <code>education</code>?</p></li>
+</ul>
+</div>
+</div>
+</section></section>
+<section>
+<section id="application-exercise" class="title-slide slide level1 center">
+<h1>Application exercise</h1>
+<div class="appex">
+<p>📋 <a href="../ae/ae-02-life-expectancy.html">sta210-sp25.netlify.app/ae/ae-02-life-expectancy</a></p>
+</div>
+</section>
+<section id="recap" class="slide level2 midi">
+<h2>Recap</h2>
+<ul>
+<li><p><strong>Reproducibility</strong></p>
+<ul>
+<li><p>It is best practice conduct all data analysis in a reproducible way</p></li>
+<li><p>We will implement a reproducible workflow using R, Quarto, and git/GitHub</p></li>
+</ul></li>
+</ul>
+<!-- -->
+<ul>
+<li><p><strong>Multivariable relationships</strong></p>
+<ul>
+<li><p>We can use exploratory data analysis to describe the relationship between two variables</p></li>
+<li><p>We make an assumption about the relationship between variables when doing linear regression</p></li>
+<li><p>The two main objectives for fitting a linear regression model are (1) prediction and (2) inference</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="for-next-time" class="slide level2">
+<h2>For next time</h2>
+<ul>
+<li><p>Complete <a href="../prepare/prepare-lec03.html">Lec 03 - Simple linear regression prepare</a></p></li>
+<li><p>Bring fully-charged laptop or device with keyboard for in-class application exercise (AE)</p></li>
+</ul>
+</section>
+<section id="references" class="slide level2 smaller scrollable">
+<h2>References</h2>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-alexander2023" class="csl-entry" role="listitem">
+Alexander, Rohan. 2023. <span>“Telling Stories with Data,”</span> June. <a href="https://doi.org/10.1201/9781003229407">https://doi.org/10.1201/9781003229407</a>.
+</div>
+<div id="ref-ostblom2022" class="csl-entry" role="listitem">
+Ostblom, Joel, and Tiffany Timbers. 2022. <span>“Opinionated Practices for Teaching Reproducibility: Motivation, Guided Instruction and Practice.”</span> <em>Journal of Statistics and Data Science Education</em> 30 (3): 241–50. <a href="https://doi.org/10.1080/26939169.2022.2074922">https://doi.org/10.1080/26939169.2022.2074922</a>.
+</div>
+<div id="ref-zarulli2021" class="csl-entry" role="listitem">
+Zarulli, Virginia, Elizaveta Sopina, Veronica Toffolutti, and Adam Lenart. 2021. <span>“Health Care System Efficiency and Life Expectancy: A 140-Country Study.”</span> Edited by Srinivas Goli. <em>PLOS ONE</em> 16 (7): e0253450. <a href="https://doi.org/10.1371/journal.pone.0253450">https://doi.org/10.1371/journal.pone.0253450</a>.
+</div>
+</div>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../images/logo.png" class="slide-logo"></p>

@@ -9,7 +9,9 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.42">
 
-  <title>STA 210 - Spring 2025 – Lab 01</title>
+  <meta name="author" content="Prof.&nbsp;Maria Tackett">
+  <meta name="dcterms.date" content="2025-02-06">
+  <title>STA 210 - Spring 2025 – Model comparison</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -194,77 +196,427 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Lab 01</h1>
-  <p class="subtitle">Linear regression</p>
+  <h1 class="title">Model comparison</h1>
 
 <div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Prof.&nbsp;Maria Tackett 
+</div>
+</div>
 </div>
 
-  <p class="date">Jan 27, 2025</p>
+  <p class="date">2025-02-06</p>
 </section>
-<section id="tips-for-working-on-lab" class="slide level2">
-<h2>Tips for working on lab</h2>
+<section id="announcements" class="slide level2">
+<h2>Announcements</h2>
 <ul>
-<li><p>You do not have to finish the lab in class, they will always be due <strong>Thursday</strong>. One work strategy is to get through portions that you think will be most challenging (which initially might be the coding component) during lab when a TA can help you on the spot and leave the narrative writing until later.</p></li>
-<li><p>Do not pressure each other to finish early (particularly once you start working on teams); use the time wisely to really learn the material and produce a quality report.</p></li>
+<li><p>Lab 02 due TODAY at 11:59pm</p></li>
+<li><p>HW 02 due Tuesday, February 11 at 11:59pm</p></li>
+<li><p>Lecture recordings available until start of exam on February 18</p>
+<ul>
+<li>See link on menu of course website</li>
+</ul></li>
+<li><p><a href="../hw/stats-experience.html">Statistics experience</a> due Tuesday, April 15</p></li>
 </ul>
 </section>
-<section id="tips-axis-labels-and-titles" class="slide level2">
-<h2>Tips: Axis labels and titles</h2>
-<div class="midi">
-<p>Below is a graph of association between flipper length in millimeters and body mass in grams of three species of penguins in Palmer Station, Antarctica. What are informative title and axis labels for this graph?</p>
+<section id="topics" class="slide level2">
+<h2>Topics</h2>
+<div>
+<ul>
+<li>ANOVA for multiple linear regression and sum of squares</li>
+<li>Comparing models with <span class="math inline">\(Adj. R^2\)</span></li>
+<li>Occam’s razor and parsimony</li>
+<li>Cross validation</li>
+</ul>
 </div>
+</section>
+<section id="computational-setup" class="slide level2">
+<h2>Computational setup</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># load packages</span></span>
+<span id="cb1-2"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb1-4"><a></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb1-5"><a></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-6"><a></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb1-7"><a></a></span>
+<span id="cb1-8"><a></a><span class="co"># set default theme and larger font size for ggplot2</span></span>
+<span id="cb1-9"><a></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">20</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section>
+<section id="introduction" class="title-slide slide level1 center">
+<h1>Introduction</h1>
 
-<img data-src="lab-01_files/figure-revealjs/unnamed-chunk-1-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:60.0%"></section>
-<section id="tips-code-style" class="slide level2">
-<h2>Tips: Code style</h2>
-<p>Which code chunk would you rather read?</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># code chunk 1</span></span>
-<span id="cb1-2"><a></a>penguins<span class="sc">|&gt;</span><span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(flipper_length_mm))<span class="sc">|&gt;</span><span class="fu">group_by</span>(species)<span class="sc">|&gt;</span><span class="fu">summarise</span>(<span class="at">min=</span><span class="fu">min</span>(flipper_length_mm),<span class="at">mean=</span><span class="fu">mean</span>(flipper_length_mm),<span class="at">sd=</span><span class="fu">sd</span>(flipper_length_mm),<span class="at">max=</span><span class="fu">max</span>(flipper_length_mm),<span class="at">n=</span><span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="data-restaurant-tips" class="slide level2">
+<h2>Data: Restaurant tips</h2>
+<p>Which variables help us predict the amount customers tip at a restaurant? To answer this question, we will use data collected in 2011 by a student at St.&nbsp;Olaf who worked at a local restaurant.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 169 × 4
+     Tip Party Meal   Age   
+   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt; 
+ 1  2.99     1 Dinner Yadult
+ 2  2        1 Dinner Yadult
+ 3  5        1 Dinner SenCit
+ 4  4        3 Dinner Middle
+ 5 10.3      2 Dinner SenCit
+ 6  4.85     2 Dinner Middle
+ 7  5        4 Dinner Yadult
+ 8  4        3 Dinner Middle
+ 9  5        2 Dinner Middle
+10  1.58     1 Dinner SenCit
+# ℹ 159 more rows</code></pre>
 </div>
+</div>
+</section>
+<section id="variables" class="slide level2">
+<h2>Variables</h2>
+<p><strong>Predictors</strong>:</p>
+<div>
+<ul>
+<li><code>Party</code>: Number of people in the party</li>
+<li><code>Meal</code>: Time of day (Lunch, Dinner, Late Night)</li>
+<li><code>Age</code>: Age category of person paying the bill (Yadult, Middle, SenCit)</li>
+<li><code>Payment</code>: Payment type (Cash, Credit, Credit/CashTip)</li>
+</ul>
+</div>
+<p><strong>Response</strong>: <code>Tip</code>: Amount of tip</p>
+</section>
+<section id="response-tip" class="slide level2">
+<h2>Response: <code>Tip</code></h2>
+
+<img data-src="09-model-compare_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
+<section id="predictors" class="slide level2">
+<h2>Predictors</h2>
+
+<img data-src="09-model-compare_files/figure-revealjs/unnamed-chunk-6-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
+<section id="relevel-categorical-predictors" class="slide level2">
+<h2>Relevel categorical predictors</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>tips <span class="ot">&lt;-</span> tips <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb3-3"><a></a>    <span class="at">Meal =</span> <span class="fu">fct_relevel</span>(Meal, <span class="st">"Lunch"</span>, <span class="st">"Dinner"</span>, <span class="st">"Late Night"</span>),</span>
+<span id="cb3-4"><a></a>    <span class="at">Age  =</span> <span class="fu">fct_relevel</span>(Age, <span class="st">"Yadult"</span>, <span class="st">"Middle"</span>, <span class="st">"SenCit"</span>)</span>
+<span id="cb3-5"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="predictors-again" class="slide level2">
+<h2>Predictors, again</h2>
+
+<img data-src="09-model-compare_files/figure-revealjs/unnamed-chunk-8-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3000"></section>
+<section id="response-vs.-predictors" class="slide level2">
+<h2>Response vs.&nbsp;predictors</h2>
+
+<img data-src="09-model-compare_files/figure-revealjs/unnamed-chunk-9-1.png" class="quarto-figure quarto-figure-center r-stretch" width="3600"></section>
+<section id="fit-and-summarize-model" class="slide level2 midi">
+<h2>Fit and summarize model</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>tip_fit <span class="ot">&lt;-</span> <span class="fu">linear_reg</span>() <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a></a>  <span class="fu">set_engine</span>(<span class="st">"lm"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb4-3"><a></a>  <span class="fu">fit</span>(Tip <span class="sc">~</span> Party <span class="sc">+</span> Age, <span class="at">data =</span> tips)</span>
+<span id="cb4-4"><a></a></span>
+<span id="cb4-5"><a></a><span class="fu">tidy</span>(tip_fit) <span class="sc">|&gt;</span></span>
+<span id="cb4-6"><a></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">-0.170</td>
+<td style="text-align: right;">0.366</td>
+<td style="text-align: right;">-0.465</td>
+<td style="text-align: right;">0.643</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Party</td>
+<td style="text-align: right;">1.837</td>
+<td style="text-align: right;">0.124</td>
+<td style="text-align: right;">14.758</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">AgeMiddle</td>
+<td style="text-align: right;">1.009</td>
+<td style="text-align: right;">0.408</td>
+<td style="text-align: right;">2.475</td>
+<td style="text-align: right;">0.014</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">AgeSenCit</td>
+<td style="text-align: right;">1.388</td>
+<td style="text-align: right;">0.485</td>
+<td style="text-align: right;">2.862</td>
+<td style="text-align: right;">0.005</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="fragment">
+<p><br></p>
+<div class="question">
+<p>Is this model useful for explaining variation in tips?</p>
+</div>
+</div>
+</section>
+<section id="rmse" class="slide level2">
+<h2>RMSE</h2>
+<p><span class="math display">\[
+RMSE = \sqrt{\frac{\sum_{i=1}^n(y_i - \hat{y}_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}^ne_i^2}{n}}
+\]</span></p>
+<div>
+<ul>
+<li class="fragment"><p>Ranges between 0 (perfect predictor) and infinity (terrible predictor)</p></li>
+<li class="fragment"><p>Same units as the response variable</p></li>
+<li class="fragment"><p>The value of RMSE is more useful for comparing across models than evaluating a single model</p></li>
+</ul>
+</div>
+</section>
+<section id="analysis-of-variance-anova" class="slide level2">
+<h2>Analysis of variance (ANOVA)</h2>
+<p><strong>Analysis of Variance (ANOVA)</strong>: Technique to partition variability in Y by the sources of variability</p>
+
+<img data-src="images/clipboard-3964457409-01.png" class="r-stretch"></section>
+<section id="anova" class="slide level2">
+<h2>ANOVA</h2>
+<ul>
+<li><strong>Main Idea:</strong> Decompose the total variation in the response into
+<ul>
+<li><p>the variation that can be explained by the each of the variables in the model</p></li>
+<li><p>the variation that <strong>can’t</strong> be explained by the model (left in the residuals)</p></li>
+</ul></li>
+<li>If the variation that can be explained by the variables in the model is greater than the variation in the residuals, this signals that the model might be “valuable” (at least one of the <span class="math inline">\(\beta\)</span>’s not equal to 0)</li>
+</ul>
+</section>
+<section id="sum-of-squares" class="slide level2">
+<h2>Sum of Squares</h2>
+<p><br></p>
+<p><span class="math display">\[
+\begin{aligned}
+\color{#407E99}{SST} \hspace{5mm}&amp;= &amp;\color{#993399}{SSM} &amp;\hspace{5mm} +  &amp;\color{#8BB174}{SSR} \\[10pt]
+\color{#407E99}{\sum_{i=1}^n(y_i - \bar{y})^2} \hspace{5mm}&amp;= &amp;\color{#993399}{\sum_{i = 1}^{n}(\hat{y}_i - \bar{y})^2} &amp;\hspace{5mm}+ &amp;\color{#8BB174}{\sum_{i = 1}^{n}(y_i - \hat{y}_i)^2}
+\end{aligned}
+\]</span></p>
+
+<aside><div>
+<p><a href="https://introregression.netlify.app/98-appendix#sum-of-squares">Click here</a> to see why this equality holds.</p>
+</div></aside></section>
+<section id="r2" class="slide level2">
+<h2><span class="math inline">\(R^2\)</span></h2>
+<p>The <strong>coefficient of determination</strong> <span class="math inline">\(R^2\)</span> is the proportion of variation in the response, <span class="math inline">\(Y\)</span>, that is explained by the regression model</p>
+<div class="fragment">
+<p><span class="math display">\[
+R^2 = \frac{SSM}{SST} = 1 - \frac{SSR}{SST} = 1 - \frac{686.44}{1913.11} = 0.641
+\]</span></p>
+</div>
+</section></section>
+<section>
+<section id="model-comparison" class="title-slide slide level1 center">
+<h1>Model comparison</h1>
+
+</section>
+<section id="two-potential-models" class="slide level2">
+<h2>Two potential models</h2>
+<p>Let’s consider two models:</p>
+<ul>
+<li>Model 1: <code>Party</code>, <code>Age</code></li>
+<li>Model 2: <code>Party</code>, <code>Age</code>, <code>Payment</code></li>
+</ul>
+<div class="fragment">
+<center>
+<b> Which model is a better fit for the data? </b>
+</center>
+</div>
+</section>
+<section id="r-squared-r2" class="slide level2">
+<h2>R-squared, <span class="math inline">\(R^2\)</span></h2>
+<ul>
+<li><p><span class="math inline">\(R^2\)</span> will always increase as we add more variables to the model (let’s see why)</p></li>
+<li><p>If we add enough variables, we can always achieve <span class="math inline">\(R^2=100\%\)</span></p></li>
+<li><p>If we only use <span class="math inline">\(R^2\)</span> to choose a best fit model, we will be prone to choose the model with the most predictor variables (assuming we’re comparing nested models)</p></li>
+</ul>
+</section>
+<section id="adjusted-r2" class="slide level2">
+<h2>Adjusted <span class="math inline">\(R^2\)</span></h2>
+<div>
+<ul>
+<li class="fragment"><strong>Adjusted</strong> <span class="math inline">\(R^2\)</span>: measure that includes a penalty for unnecessary predictor variables</li>
+<li class="fragment">Similar to <span class="math inline">\(R^2\)</span>, it is a measure of the amount of variation in the response that is explained by the regression model</li>
+<li class="fragment">Differs from <span class="math inline">\(R^2\)</span> by using the mean squares (sumsq/df) rather than sums of squares and therefore adjusting for the number of predictor variables</li>
+<li class="fragment">The penalty for added model complexity attempts to strike a balance between underfitting (too few predictors in the model) and overfitting (too many predictors in the model)</li>
+<li class="fragment">Goal: <strong>Parsimony</strong></li>
+</ul>
+</div>
+</section>
+<section id="r2-and-adjusted-r2" class="slide level2">
+<h2><span class="math inline">\(R^2\)</span> and Adjusted <span class="math inline">\(R^2\)</span></h2>
+<p><span class="math display">\[R^2 = \frac{SSM}{SST} = 1 - \frac{SSR}{SST}\]</span></p>
 <p><br></p>
 <div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="co"># code chunk 2</span></span>
-<span id="cb2-2"><a></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb2-3"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(flipper_length_mm)) <span class="sc">|&gt;</span> </span>
-<span id="cb2-4"><a></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span> </span>
-<span id="cb2-5"><a></a>  <span class="fu">summarise</span>(<span class="at">min =</span> <span class="fu">min</span>(flipper_length_mm), </span>
-<span id="cb2-6"><a></a>            <span class="at">mean =</span> <span class="fu">mean</span>(flipper_length_mm), </span>
-<span id="cb2-7"><a></a>            <span class="at">max =</span> <span class="fu">max</span>(flipper_length_mm),</span>
-<span id="cb2-8"><a></a>            <span class="at">n =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<p><span class="math display">\[Adj. R^2 = 1 - \frac{SSR/(n-p-1)}{SST/(n-1)}\]</span></p>
+<p>where</p>
+<ul>
+<li><p><span class="math inline">\(n\)</span> is the number of observations used to fit the model</p></li>
+<li><p><span class="math inline">\(p\)</span> is the number of terms (not including the intercept) in the model</p></li>
+</ul>
 </div>
 </section>
-<section id="tips-code-style-contd" class="slide level2">
-<h2>Tips: Code style cont’d</h2>
-<p>Make code easier to read and debug by</p>
+<section id="using-r2-and-adjusted-r2" class="slide level2">
+<h2>Using <span class="math inline">\(R^2\)</span> and Adjusted <span class="math inline">\(R^2\)</span></h2>
 <ul>
-<li><p>Putting each element on a different line (start a new line after <code>+</code> and <code>|&gt;</code>)</p></li>
-<li><p>Putting spaces before and after operators (<code>+</code>, <code>-</code>, <code>*</code>, <code>=</code>, <code>|&gt;</code> )</p></li>
-<li><p>In general, avoiding long lines of code, i.e.&nbsp;lines longer than 80 characters.</p></li>
-</ul>
-<p>See the <a href="https://style.tidyverse.org/">Tidyverse Style Guide</a> for more tips on code styling.</p>
-</section>
-<section id="when-youre-done-with-lab" class="slide level2">
-<h2><strong>When you’re done with lab</strong></h2>
-<ul>
-<li>Make sure all your final changes have been pushed to your GitHub repo</li>
-<li>Submit the PDF of your responses to <a href="https://www.gradescope.com/"><strong>Gradescope</strong></a></li>
+<li>Adjusted <span class="math inline">\(R^2\)</span> can be used as a quick assessment to compare the fit of multiple models; however, it should not be the only assessment!</li>
+<li>Use <span class="math inline">\(R^2\)</span> when describing the relationship between the response and predictor variables</li>
 </ul>
 </section>
-<section id="lab-01-linear-regression" class="slide level2">
-<h2>Lab 01: Linear regression</h2>
+<section id="comparing-models-with-adj.-r2" class="slide level2 smaller">
+<h2>Comparing models with <span class="math inline">\(Adj. R^2\)</span></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>tip_fit_1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Tip <span class="sc">~</span> Party <span class="sc">+</span> Age , </span>
+<span id="cb5-2"><a></a>    <span class="at">data =</span> tips)</span>
+<span id="cb5-3"><a></a></span>
+<span id="cb5-4"><a></a><span class="fu">glance</span>(tip_fit_1) <span class="sc">|&gt;</span> </span>
+<span id="cb5-5"><a></a>  <span class="fu">select</span>(r.squared, adj.r.squared)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  r.squared adj.r.squared
+      &lt;dbl&gt;         &lt;dbl&gt;
+1     0.641         0.635</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>tip_fit_2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Tip <span class="sc">~</span> Party <span class="sc">+</span> Age <span class="sc">+</span> Payment, </span>
+<span id="cb7-2"><a></a>      <span class="at">data =</span> tips)</span>
+<span id="cb7-3"><a></a></span>
+<span id="cb7-4"><a></a><span class="fu">glance</span>(tip_fit_2) <span class="sc">|&gt;</span> </span>
+<span id="cb7-5"><a></a>  <span class="fu">select</span>(r.squared, adj.r.squared)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  r.squared adj.r.squared
+      &lt;dbl&gt;         &lt;dbl&gt;
+1     0.644         0.633</code></pre>
+</div>
+</div>
+</div></div>
+<p><br></p>
+<div class="question">
+<ol start="2" type="1">
+<li>Which model would we choose based on <span class="math inline">\(R^2\)</span>?</li>
+<li>Which model would we choose based on Adjusted <span class="math inline">\(R^2\)</span>?</li>
+</ol>
+</div>
+</section>
+<section id="parsimony-and-occams-razor" class="slide level2 small">
+<h2>Parsimony and Occam’s razor</h2>
 <ul>
-<li><p>Today’s lab focuses on using linear regression to explore the relationship between air temperature and ice duration for two lakes in Wisconsin, along with the change in ice duration over time.</p></li>
-<li><p>There are markers throughout suggesting when to render, commit, and push changes to GitHub. These are to help you start using version control in your workflow.</p></li>
-<li><p>There are points for having a neatly formatted document and implementing a reproducible workflow</p></li>
+<li><p>The principle of <strong>parsimony</strong> is attributed to William of Occam (early 14th-century English nominalist philosopher), who insisted that, given a set of equally good explanations for a given phenomenon, <em>the correct explanation is the simplest explanation</em><sup>1</sup></p></li>
+<li><p>Called <strong>Occam’s razor</strong> because he “shaved” his explanations down to the bare minimum</p></li>
+<li><p>Parsimony in modeling:</p>
+<div>
+<ul>
+<li>models should have as few parameters as possible</li>
+<li>linear models should be preferred to non-linear models</li>
+<li>experiments relying on few assumptions should be preferred to those relying on many</li>
+<li>models should be pared down until they are <em>minimal adequate</em></li>
+<li>simple explanations should be preferred to complex explanations</li>
 </ul>
-<p>🔗 <a href="https://sta210-sp25.netlify.app/labs/lab-01.html">sta210-sp25.netlify.app/labs/lab-01.html</a></p>
+</div></li>
+</ul>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Source: The R Book by Michael J. Crawley.</p></li></ol></aside></section>
+<section id="in-pursuit-of-occams-razor" class="slide level2">
+<h2>In pursuit of Occam’s razor</h2>
+<ul>
+<li><p>Occam’s razor states that among competing hypotheses that predict equally well, the one with the fewest assumptions should be selected</p></li>
+<li><p>Model selection follows this principle</p></li>
+<li><p>We only want to add another variable to the model if the addition of that variable brings something valuable in terms of predictive power to the model</p></li>
+<li><p>In other words, we prefer the simplest best model, i.e.&nbsp;<strong>parsimonious</strong> model</p></li>
+</ul>
+</section>
+<section id="alternate-views" class="slide level2 midi">
+<h2>Alternate views</h2>
+<blockquote>
+<p>Sometimes a simple model will outperform a more complex model . . . Nevertheless, I believe that deliberately limiting the complexity of the model is not fruitful when the problem is evidently complex. Instead, if a simple model is found that outperforms some particular complex model, the appropriate response is to define a different complex model that captures whatever aspect of the problem led to the simple model performing well.</p>
+<p><br></p>
+<p>Radford Neal - Bayesian Learning for Neural Networks<sup>1</sup></p>
+</blockquote>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>Suggested blog post: <a href="https://statmodeling.stat.columbia.edu/2012/06/26/occam-2/">Occam</a> by Andrew Gelman</p></li></ol></aside></section>
+<section id="evaluating-models-training-vs.-testing-sets" class="slide level2 midi">
+<h2>Evaluating models: training vs.&nbsp;testing sets</h2>
+<div>
+<ul>
+<li class="fragment"><p>The training set (i.e., the data used to fit the model) does not have the capacity to be a good arbiter of performance.</p></li>
+<li class="fragment"><p>It is not an independent piece of information; predicting the training set can only reflect what the model already knows.</p></li>
+<li class="fragment"><p>Suppose you give a class a test, then give them the answers, then provide the same test. The student scores on the second test do not accurately reflect what they know about the subject; these scores would probably be higher than their results on the first test.</p></li>
+<li class="fragment"><p>We can reserve some data for a testing set that can be used to evaluate the model performance</p></li>
+</ul>
+</div>
+</section>
+<section id="training-and-testing-sets" class="slide level2 midi">
+<h2>Training and testing sets</h2>
+<p>Create training and testing sets using functions from the <strong>resample</strong> R package (part of <strong>tidymodels</strong>)</p>
+<p><strong>Step 1:</strong> Create an initial split:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">set.seed</span>(<span class="dv">210</span>)</span>
+<span id="cb9-2"><a></a>tips_split <span class="ot">&lt;-</span> <span class="fu">initial_split</span>(tips, <span class="at">prop =</span> <span class="fl">0.75</span>) <span class="co">#prop = 3/4 by default</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p><strong>Step 2:</strong> Save training data</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>tips_train <span class="ot">&lt;-</span> <span class="fu">training</span>(tips_split)</span>
+<span id="cb10-2"><a></a><span class="fu">dim</span>(tips_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 126  13</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p><strong>Step 3:</strong> Save testing data</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>tips_test <span class="ot">&lt;-</span> <span class="fu">testing</span>(tips_split)</span>
+<span id="cb12-2"><a></a><span class="fu">dim</span>(tips_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 43 13</code></pre>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="application-exercise" class="title-slide slide level1 center">
+<h1>Application exercise</h1>
+<div class="appex">
+<p>📋 <a href="../ae/ae-06-model-compare.html">sta210-sp25.netlify.app/ae/ae-06-model-compare</a></p>
+</div>
+</section>
+<section id="recap" class="slide level2">
+<h2>Recap</h2>
+<ul>
+<li>ANOVA for multiple linear regression and sum of squares</li>
+<li>Comparing models with
+<ul>
+<li><span class="math inline">\(R^2\)</span> vs.&nbsp;<span class="math inline">\(Adj. R^2\)</span></li>
+<li>AIC and BIC</li>
+</ul></li>
+<li>Occam’s razor and parsimony</li>
+<li>Training and testing data</li>
+</ul>
 
 
-</section>
+</section></section>
+
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../images/logo.png" class="slide-logo"></p>

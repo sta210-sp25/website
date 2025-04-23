@@ -9,7 +9,8 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.42">
 
-  <title>STA 210 - Spring 2025 – Lab 02</title>
+  <meta name="author" content="Prof.&nbsp;Maria Tackett">
+  <title>STA 210 - Spring 2025 – Welcome to STA 210!</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -122,107 +123,393 @@
       margin-right: 0; 
     }
   </style>
-  <link href="../site_libs/countdown-0.4.0/countdown.css" rel="stylesheet">
-  <script src="../site_libs/countdown-0.4.0/countdown.js"></script>
 </head>
 <body class="quarto-light">
-<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Lab 02</h1>
-  <p class="subtitle">Inference using mathematical models + Meet your team!</p>
+  <h1 class="title">Welcome to STA 210!</h1>
 
 <div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Prof.&nbsp;Maria Tackett 
+</div>
+</div>
 </div>
 
-  <p class="date">Feb 03, 2025</p>
+  <p class="date">Jan 09, 2025</p>
 </section>
-<section id="goals" class="slide level2">
-<h2>Goals</h2>
+<section>
+<section id="welcome" class="title-slide slide level1 center">
+<h1>Welcome!</h1>
+
+</section>
+<section id="meet-prof.-tackett" class="slide level2 midi">
+<h2>Meet Prof.&nbsp;Tackett!</h2>
+<div>
 <ul>
-<li>Meet your team!</li>
-<li>Team agreement</li>
-<li>Lab 02: Coffee ratings</li>
+<li class="fragment">Education and career journey
+<ul>
+<li class="fragment">BS in Math and MS in Statistics from University of Tennessee</li>
+<li class="fragment">Statistician at Capital One</li>
+<li class="fragment">PhD in Statistics from University of Virginia</li>
+<li class="fragment">Assistant Professor of the Practice, Department of Statistical Science at Duke</li>
+</ul></li>
+<li class="fragment">Work focuses on statistics education, curriculum design, and sense of belonging in introductory math and statistics classes</li>
+<li class="fragment">Co-leader of the Bass Connections team Mental Health and the Justice System in Durham County</li>
+<li class="fragment">Mom of 2-year-old twins 🙂</li>
+</ul>
+</div>
+</section>
+<section id="meet-the-teaching-assistants-tas" class="slide level2">
+<h2>Meet the Teaching Assistants (TAs)!</h2>
+<ul>
+<li><p>Sylvia Vincent (PhD): Head TA + Lab leader</p></li>
+<li><p>Ishrit Gupta (UG): Lab 02 helper</p></li>
+<li><p>Kareena Legare (UG): Lab 01 helper</p></li>
 </ul>
 </section>
-<section id="meet-your-team" class="slide level2">
-<h2>Meet your team!</h2>
-<ul>
-<li><p><a href="https://prodduke-my.sharepoint.com/:x:/g/personal/mt324_duke_edu/EdLwgl9diOVEvUuObtRMeX0BpuAgYmfPLaomlbZsXEBogw?e=yz2sKZ"><strong>Click here</strong></a> to find your team.</p></li>
-<li><p>Sit with your team.</p></li>
-</ul>
+<section id="check-in-on-ed-discussion" class="slide level2">
+<h2>Check-in on Ed Discussion!</h2>
+<div class="question">
+<p>Click on the link or scan the QR code to answer the Ed Discussion poll</p>
+<p><a href="https://edstem.org/us/courses/70992/discussion/5951332" class="uri">https://edstem.org/us/courses/70992/discussion/5951332</a></p>
+<center>
+<img data-src="images/clipboard-540043045.png" style="width:35.0%"><br>
+
+</center>
+</div>
 </section>
-<section id="team-name-agreement" class="slide level2">
-<h2>Team name + agreement</h2>
+<section id="topics" class="slide level2">
+<h2>Topics</h2>
 <ul>
-<li><p>Come up with a team name. You can’t have the same name as another group in the class, so be creative!</p>
-<ul>
-<li>Your TA will get your team name by the end of lab.</li>
-</ul></li>
-<li><p>Fill out the team agreement. The goals of the agreement are to…</p>
-<ul>
-<li>Gain a common understanding of the team’s goals and expectations for collaboration</li>
-<li>Make a plan for team communication</li>
-<li>Make a plan for working outside of lab</li>
-</ul></li>
+<li><p>Introduction to the course</p></li>
+<li><p>Syllabus activity</p></li>
+<li><p>Data exploration (time permitting)</p></li>
 </ul>
+</section></section>
+<section>
+<section id="regression-analysis" class="title-slide slide level1 center">
+<h1>Regression Analysis</h1>
+
 </section>
-<section id="team-workflow" class="slide level2">
-<h2>Team workflow</h2>
-<ul>
-<li><p>Only <u><strong>one</strong></u> team member should type at a time. There are markers in today’s lab to help you determine whose turn it is to type.</p>
-<ul>
-<li>Every team member should still be engaged in discussion for all questions, even if it’s not your turn type.</li>
-</ul></li>
-<li><p>Don’t forget to <strong>pull</strong> to get your teammates’ updates before making changes to the <code>.qmd</code> file.</p>
-<div class="callout callout-important callout-titled callout-style-default">
+<section class="slide level2">
+
+
+<img data-src="images/01/data-analysis-life-cycle.png" class="r-stretch quarto-figure-center"><p class="caption">Source: R for Data Science with additions from The Art of Statistics: How to Learn from Data.</p></section>
+<section class="slide level2">
+
+
+<img data-src="images/01/whole-game.png" class="r-stretch quarto-figure-center"><p class="caption">Source:R for Data Science</p></section>
+<section id="what-is-regression-analysis" class="slide level2">
+<h2>What is regression analysis?</h2>
+<div>
+<blockquote>
+<p><em>Regression analysis is a statistical method used to <strong>examine the relationship between a response variable and one or more predictor variables.</strong> It is used for predicting future values, understanding relationships between variables, and identifying key predictors. It also helps in modeling trends, assessing the impact of changes, and detecting outliers in data.</em></p>
+</blockquote>
+<p>Source: ChatGPT (with modification)</p>
+</div>
+</section>
+<section id="regression-in-practice" class="slide level2">
+<h2>Regression in practice</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/01/harry-potter-regression.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
+</figure>
+</div>
+
+<aside><div>
+<p><a href="https://canvas.duke.edu/courses/47067/files/folder/articles?preview=2433433">Rodgers, J. L. (2024). Reading Harry Potter in French: Using Regression to Evaluate Foreign Language Vocabulary Learning by an Old Guy. CHANCE, 37(3), 13–21.</a></p>
+</div></aside></section>
+<section id="regression-in-practice-1" class="slide level2">
+<h2>Regression in practice</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/01/harry-potter-graph.png" class="quarto-figure quarto-figure-center" style="width:65.0%"></p>
+</figure>
+</div>
+<p><span class="math display">\[
+\text{Lookups} = 23.0 - 0.04 \times \text{Page Number}
+\]</span></p>
+
+<aside><div>
+<p><a href="https://canvas.duke.edu/courses/47067/files/folder/articles?preview=2433433">Rodgers, J. L. (2024). Reading Harry Potter in French: Using Regression to Evaluate Foreign Language Vocabulary Learning by an Old Guy. CHANCE, 37(3), 13–21.</a></p>
+</div></aside></section></section>
+<section>
+<section id="sta-210" class="title-slide slide level1 center">
+<h1>STA 210</h1>
+
+</section>
+<section id="what-is-sta-210" class="slide level2">
+<h2>What is STA 210?</h2>
+<p>Learn how to use linear and and logistic regression models to analyze multivariable relationships and answer questions about real-world phenomena using a data-driven approach.</p>
+<p>This course emphasizes application over mathematical theory.</p>
+<p><strong>Pre-requisites</strong></p>
+<p>100-level Statistical Science course or Statistical Science 230, 231, or 240L</p>
+<div class="fragment">
+<div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Important</strong></p>
+<p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p><strong>Only one submission per team on Gradescope. Read the submission instructions carefully!</strong></p>
+<p>If you are interested in the theoretical aspects of regression and/or becoming a statistics major, STA 221 - Regression Analysis: Theory and Applications may be a better fit. Come talk with me after class!</p>
 </div>
 </div>
-</div></li>
-</ul>
+</div>
+</div>
 </section>
-<section id="team-workflow-in-action" class="slide level2">
-<h2>Team workflow, in action</h2>
+<section id="course-learning-objectives" class="slide level2 midi">
+<h2>Course learning objectives</h2>
+<p>By the end of the semester, you will be able to…</p>
 <ul>
-<li>Complete the “Workflow: Using Git and GitHub as a team” section of the lab in your teams.</li>
-<li>Raise your hand if you have any questions about the workflow.</li>
+<li><p>analyze real-world data to answer questions about multivariable relationships.</p></li>
+<li><p>use R to fit and evaluate linear and logistic regression models.</p></li>
+<li><p>assess whether a proposed model is appropriate and describe its limitations.</p></li>
+<li><p>implement a reproducible analysis workflow using R for analysis, Quarto to write reports and GitHub for version control and collaboration.</p></li>
+<li><p>effectively communicate statistical results to a general audience.</p></li>
+<li><p>assess the ethical considerations and implications of analysis decisions.</p></li>
 </ul>
-<div class="cell">
-<div class="cell-output-display">
-<div class="countdown" id="timer_0a837c49" data-update-every="1" tabindex="0" style="right:0;bottom:0;font-size:2em;">
-<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
-</div>
-</div>
 </section>
-<section id="tips-for-working-on-a-team" class="slide level2 midi">
-<h2>Tips for working on a team</h2>
+<section id="course-topics" class="slide level2 midi">
+<h2>Course topics</h2>
+<div class="columns">
+<div class="column" style="width:48%;">
+<div class="fragment" data-fragment-index="1">
+<h3 style="color: #993399" id="linear-regression">Linear regression</h3>
 <ul>
-<li><p>Do not pressure each other to finish early; use the time wisely to really learn the material and produce a quality report.</p></li>
-<li><p>The labs are structured to help you learn the steps of a data analysis. Do not split up the lab among the team members; work on it together in its entirety.</p></li>
-<li><p>Everyone has something to contribute! Use the lab groups as an opportunity to share ideas and learn from each other.</p></li>
+<li>Coefficient estimation and interpretation</li>
+<li>Prediction</li>
+<li>Inference</li>
+<li>Model assessment</li>
+<li>Model assumptions and diagnostics</li>
+<li>Different types of predictors</li>
+<li>Model comparison + cross validation</li>
+</ul>
+</div>
+</div><div class="column" style="width:48%;">
+<div class="fragment" data-fragment-index="2">
+<h3 style="color: #993399" id="logistic-regression">Logistic regression</h3>
+<ul>
+<li>Coefficient estimation and interpretation</li>
+<li>Prediction</li>
+<li>Model assessment</li>
+<li>Inference</li>
+<li>Multinomial logistic regression</li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="3">
+<h3 style="color: #993399" id="general-topics">General topics</h3>
+<ul>
+<li>Computing using R and GitHub</li>
+<li>Presenting statistical results</li>
+<li>Collaboration and teamwork</li>
+</ul>
+</div>
+</div></div>
+</section></section>
+<section>
+<section id="course-overview" class="title-slide slide level1 center">
+<h1>Course overview</h1>
+
+</section>
+<section id="course-toolkit" class="slide level2 midi">
+<h2>Course toolkit</h2>
+<ul>
+<li><strong>Website</strong>: <a href="https://sta210-sp25.netlify.app" class="uri">https://sta210-sp25.netlify.app</a>
+<ul>
+<li>Central hub for the course!</li>
+<li><strong>Tour of the website</strong></li>
+</ul></li>
+<li><strong>Canvas</strong>: <a href="https://canvas.duke.edu/courses/47067" class="uri">https://canvas.duke.edu/courses/47067</a>
+<ul>
+<li>Office hours</li>
+<li>Gradebook</li>
+<li>Announcements</li>
+<li>Gradescope</li>
+<li>Ed Discussion</li>
+</ul></li>
+<li><strong>GitHub:</strong> <a href="https://github.com/sta210-sp25" class="uri">https://github.com/sta210-sp25</a>
+<ul>
+<li>Distribute assignments</li>
+<li>Platform for version control and collaboration</li>
+</ul></li>
 </ul>
 </section>
-<section id="todays-lab" class="slide level2">
-<h2>Today’s lab</h2>
-<p>Today’s lab focuses on using statistical inference based on mathematical models to explore the relationship between coffee’s properties and the overall quality rating.</p>
-<p><br></p>
-<p>🔗 <a href="https://sta210-sp25.netlify.app/labs/lab-02" class="uri">https://sta210-sp25.netlify.app/labs/lab-02</a></p>
+<section id="computing-toolkit" class="slide level2 midi">
+<h2>Computing toolkit</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="fragment" data-fragment-index="1">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/01/rstudio.png" class="quarto-figure quarto-figure-center" style="width:5.61in;height:1.6in" alt="RStudio logo"></p>
+</figure>
+</div>
+</div>
+<div class="fragment" data-fragment-index="2">
+<ul>
+<li><p>All analyses using R, a statistical programming language</p></li>
+<li><p>Write reproducible reports in Quarto</p></li>
+<li><p>Access RStudio through <a href="https://cmgr.oit.duke.edu/containers">STA 210 Docker Containers</a></p></li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="fragment" data-fragment-index="1">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/01/github.png" class="quarto-figure quarto-figure-center" style="width:5.61in;height:1.6in" alt="GitHub logo"></p>
+</figure>
+</div>
+</div>
+<div class="fragment" data-fragment-index="3">
+<ul>
+<li><p>Access assignments</p></li>
+<li><p>Facilitates version control and collaboration</p></li>
+<li><p>All work in <a href="https://github.com/sta210-sp25">STA 210 course organization</a></p></li>
+</ul>
+</div>
+</div></div>
+</section>
+<section id="classroom-community" class="slide level2">
+<h2>Classroom community</h2>
+<div class="small">
+<p>It is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength and benefit.</p>
+<ul>
+<li><p>If you have a name that differs from those that appear in your official Duke records, please let me know.</p></li>
+<li><p>Please let me know your preferred pronouns, if you are comfortable sharing.</p></li>
+<li><p>If you feel like your performance in the class is being impacted by your experiences outside of class, please don’t hesitate to come and talk with me. If you prefer to speak with someone outside of the course, your advisers and deans are excellent resources.</p></li>
+<li><p>I (like many people) am still in the process of learning about diverse perspectives and identities. If something was said or done in class (by anyone) that made you feel uncomfortable, please talk to me about it.</p></li>
+</ul>
+</div>
+</section>
+<section id="accessibility" class="slide level2">
+<h2>Accessibility</h2>
+<ul>
+<li><p>The <a href="https://access.duke.edu/students">Student Disability Access Office (SDAO)</a> is available to ensure that students are able to engage with their courses and related assignments.</p></li>
+<li><p>If you have documented accommodations from SDAO, please send the documentation as soon as possible.</p></li>
+<li><p>I am committed to making all course activities and materials accessible. If any course component is not accessible to you in any way, please don’t hesitate to let me know.</p></li>
+</ul>
+</section>
+<section id="syllabus-activity" class="slide level2">
+<h2>Syllabus activity</h2>
+<div class="question">
+<ol type="1">
+<li>Introduce yourself to your group members.</li>
+<li>Choose a reporter. This person will share the group’s summary with the class.</li>
+<li>Read the portion of the syllabus assigned to your group.</li>
+<li>Discuss the key points and questions you my have.</li>
+<li>The reporter will share a summary with the class.</li>
+</ol>
+</div>
+</section>
+<section id="syllabus-activity-assignments" class="slide level2">
+<h2>Syllabus activity assignments</h2>
+<ul>
+<li><p>Group 1: <a href="https://sta210-sp25.netlify.app/syllabus#what-to-expect-in-the-course">What to expect in the course</a></p></li>
+<li><p>Group 2: <a href="https://sta210-sp25.netlify.app/syllabus#labs">Homework and lab assignments</a></p></li>
+<li><p>Group 3: <a href="https://sta210-sp25.netlify.app/syllabus#exams">Exams Project, Participation</a></p></li>
+<li><p>Group 4: <a href="https://sta210-sp25.netlify.app/syllabus#academic-honesty">Academic honesty (except AI policy)</a></p></li>
+<li><p>Group 5: <a href="https://sta210-sp25.netlify.app/syllabus#academic-honesty">Artificial intelligence policy</a></p></li>
+<li><p>Group 6:<a href="https://sta210-sp25.netlify.app/syllabus#late-work-policy">Late work policy and waiver for extenuating circumstances</a></p></li>
+<li><p>Group 7: <a href="https://sta210-sp25.netlify.app/syllabus#attendance-policy">Attendance and lecture recording request</a></p></li>
+<li><p>Group 8: <a href="https://sta210-sp25.netlify.app/syllabus#getting-help-in-the-course">Getting help in the course</a></p></li>
+</ul>
+</section>
+<section id="syllabus-activity-report-out" class="slide level2">
+<h2>Syllabus activity report out</h2>
+<div>
+<ul>
+<li class="fragment"><p>Group 1: <a href="https://sta210-sp25.netlify.app/syllabus#what-to-expect-in-the-course">What to expect in the course</a></p></li>
+<li class="fragment"><p>Group 2: <a href="https://sta210-sp25.netlify.app/syllabus#labs">Homework and lab assignments</a></p></li>
+<li class="fragment"><p>Group 3: <a href="https://sta210-sp25.netlify.app/syllabus#exams">Exams Project, Participation</a></p></li>
+<li class="fragment"><p>Group 4: <a href="https://sta210-sp25.netlify.app/syllabus#academic-honesty">Academic honesty (except AI policy)</a></p></li>
+<li class="fragment"><p>Group 5: <a href="https://sta210-sp25.netlify.app/syllabus#academic-honesty">Artificial intelligence policy</a></p></li>
+<li class="fragment"><p>Group 6:<a href="https://sta210-sp25.netlify.app/syllabus#late-work-policy">Late work policy and waiver for extenuating circumstances</a></p></li>
+<li class="fragment"><p>Group 7: <a href="https://sta210-sp25.netlify.app/syllabus#attendance-policy">Attendance and lecture recording request</a></p></li>
+<li class="fragment"><p>Group 8: <a href="https://sta210-sp25.netlify.app/syllabus#getting-help-in-the-course">Getting help in the course</a></p></li>
+</ul>
+</div>
+</section>
+<section id="grading" class="slide level2">
+<h2>Grading</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Percentage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Homework</td>
+<td>30%</td>
+</tr>
+<tr class="even">
+<td>Final project</td>
+<td>15%</td>
+</tr>
+<tr class="odd">
+<td>Labs</td>
+<td>10%</td>
+</tr>
+<tr class="even">
+<td>Exam 01</td>
+<td>20%</td>
+</tr>
+<tr class="odd">
+<td>Exam 02</td>
+<td>20%</td>
+</tr>
+<tr class="even">
+<td>Participation (AEs + Teamwork)</td>
+<td>5%</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="five-tips-for-success-in-sta-210" class="slide level2">
+<h2>Five tips for success in STA 210</h2>
+<ol type="1">
+<li><p>Complete all the preparation work before class.</p></li>
+<li><p>Ask questions in class, office hours, and on Ed Discussion.</p></li>
+<li><p>Do the homework and labs; get started on homework early when possible.</p></li>
+<li><p>Don’t procrastinate and don’t let a week pass by with lingering questions.</p></li>
+<li><p>Stay up-to-date on announcements on Ed Discussion and sent via email.</p></li>
+</ol>
+</section></section>
+<section id="questions" class="title-slide slide level1 center">
+<h1>Questions?</h1>
+
+</section>
+
+<section>
+<section id="lets-look-at-data" class="title-slide slide level1 center">
+<h1>Let’s look at data!</h1>
+<div class="appex">
+<p>📋 <a href="https://sta210-sp25.netlify.app/ae/ae-01-movies.html">sta210-sp25.netlify.app/ae/ae-01-movies.html</a></p>
+</div>
+</section>
+<section id="before-next-class" class="slide level2">
+<h2>Before next class</h2>
+<ul>
+<li><p>Review <a href="https://sta210-sp25.netlify.app/syllabus">syllabus</a></p></li>
+<li><p>Complete <a href="../prepare/prepare-lec02.html">Prepare for Lecture 02: The big picture</a></p></li>
+<li><p>Labs start on Monday, January 13</p></li>
+<li><p>Office hours start on Monday, January 13</p></li>
+</ul>
 
 
-</section>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../images/logo.png" class="slide-logo"></p>
@@ -415,7 +702,7 @@
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
